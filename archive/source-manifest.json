@@ -1,0 +1,47 @@
+{
+  "archive_policy": "原文不改写。当前要求见 README、决定登记、产品正文和 v0.4 返航救援补充。",
+  "sources": [
+    {
+      "source_filename": "yudian-3d-product-definition-v0.1.md",
+      "archive_path": "archive/conversation/yudian-3d-product-definition-v0.1.md",
+      "bytes": 38048,
+      "sha256": "be466348a896a4448a34206b505534f106a668b4e4e777f1c7a396ff4da75e24",
+      "handling": "byte-for-byte historical attachment; not current instructions"
+    },
+    {
+      "source_filename": "yudian-3d-product-definition-v0.2.md",
+      "archive_path": "archive/conversation/yudian-3d-product-definition-v0.2.md",
+      "bytes": 43841,
+      "sha256": "87f4492ec1ec55bb36a105230cbaf03c886c684995d63c55d6e7e1494497527a",
+      "handling": "byte-for-byte historical attachment; not current instructions"
+    },
+    {
+      "source_filename": "yudian-3d-product-definition-v0.3.md",
+      "archive_path": "archive/conversation/yudian-3d-product-definition-v0.3.md",
+      "bytes": 53662,
+      "sha256": "9b0522f970d677d63725671c981ac0e385356ea9a869c9e9fa61843ea7ce8f54",
+      "handling": "byte-for-byte historical attachment; not current instructions"
+    },
+    {
+      "source_filename": "yudian-art-direction-brief-v0.1.md",
+      "archive_path": "archive/conversation/yudian-art-direction-brief-v0.1.md",
+      "bytes": 8169,
+      "sha256": "820c1186425cdac4dfeafb60c27063f166b6c04b6bb8ebe8f70f97fa526da40a",
+      "handling": "byte-for-byte historical attachment; not current instructions"
+    },
+    {
+      "source_filename": "yudian-art-direction-v0.2.md",
+      "archive_path": "archive/conversation/yudian-art-direction-v0.2.md",
+      "bytes": 7091,
+      "sha256": "dddd6a3d0bd16eebaf08b3ecd5ddec9f7fadd00371f07d3fbeb4effae47a664c",
+      "handling": "byte-for-byte historical attachment; not current instructions"
+    },
+    {
+      "source_filename": "07-external-review-prompt.md",
+      "archive_path": "archive/conversation/07-external-review-prompt.md",
+      "bytes": 19641,
+      "sha256": "977ea892f3ab93559d987cea5930dd1bdd3aeb88edeae39927ad6fc4b911a55a",
+      "handling": "byte-for-byte historical attachment; not current instructions"
+    }
+  ]
+}
