@@ -1,0 +1,31 @@
+name: Import reviewed documents (one time)
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/import-reviewed-documents.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.repository == 'liuyejinghong/yudian-game' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Reconstruct and verify original attachment hashes
+        run: python3 tools/reconstruct_reviewed_docs.py
+      - name: Commit only verified documentation outputs
+        run: |
+          git add -- archive/conversation/yudian-3d-product-definition-v0.2.md archive/conversation/yudian-3d-product-definition-v0.3.md docs/product/product-definition.md tools/reviewed-document-patches.json
+          if git diff --cached --quiet; then
+            echo 'All reviewed documents already match; no changes.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'docs: import complete reviewed product v0.2 and v0.3 with verified hashes'
+          git push origin HEAD:main
