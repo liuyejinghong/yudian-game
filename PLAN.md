@@ -8,7 +8,7 @@
 4. [x] QA-03/04：移动只读包/不同cwd/重复默认输出/引擎中断/不可写输出通过；实际Forward+/Metal与Mobile/Metal身份。GUI关窗中断NOT_RUN。
 5. [x] QA-05：精确SDK、原始模板两次处理同hash、干净检出构建启动、签名和.NET8实际runtime通过；新OS无SDK验证NOT_RUN。
 6. [x] QA-06/ART-I00：实际GLB导入与独立GUI；原点/尺度/前向/附件/七态桥通过，旧生成区段和fixture不变。生产美术与所有者视觉验收NOT_RUN。
-7. [ ] 独立 architect/reviewer 审查、必要检查、提交开发分支 PR；不自动合并。报告按 QA 子票独立标接受/待复验。
+7. [x] 独立 architect/reviewer 审查、必要检查、提交开发分支 PR；不自动合并。报告按 QA 子票独立标接受/待复验。
 
 文件归属：GLM 仅 prototype/scripts/Configuration/*.cs 和 tools/qa02-tests/*；主控其余文件。两轮同接口失败先缩票重计划。旧本机导出与测量不得覆盖。
 
@@ -16,6 +16,8 @@
 
 两轮整套构建未完整通过，先停止原路径并拆解复核：C#编译已0警告/0错误，新应用已导出且签名有效；第二轮终止在lipo参数顺序错误，已对现有产物用正确顺序独立验arm64。下一轮使用提交后的干净工作树、新输出目录，不覆盖两轮日志或旧包。
 
-重计划结果：代码7341ea8的干净检出整套流程通过；两次失败日志保留。原始旧包、旧benchmark与旧报告未覆盖。验收口径、外包归属、当前限制与下一批仅T3a建议见docs/engineering/reports/2026-10-04-takeover-verification.md。第7步待最终独立审查与PR提交，不能将文档勾选当作完成该步骤。
+重计划结果：代码7341ea8的干净检出整套流程通过；两次失败日志保留。原始旧包、旧benchmark与旧报告未覆盖。验收口径、外包归属、当前限制与下一批仅T3a建议见docs/engineering/reports/2026-10-04-takeover-verification.md。独立reviewer/architect审查与整改均完成；开发PR #16已创建并附本会话，任务#15追踪性能复核，不自动合并/关闭。
 
 公开前脱敏：保留原内部分支/commit，发布分支qa/t1-t2-reviewed-20261004从基线整理为9128523；只改变测试命令注释。运行文件与已测7341ea8包逐项hash一致，证据不伪改构建SHA。
+
+交付入口：https://github.com/liuyejinghong/yudian-game/pull/16 ；https://github.com/liuyejinghong/yudian-game/issues/15 。原repo/main仍902a662且干净，本轮初始脚手架移入可恢复的private/tmp备份；旧导出与测量不动。
