@@ -1,0 +1,22 @@
+{
+  "task_id": "task_76fc5bf2a2",
+  "session_id": "sess_7697b4c358",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "created_at": "2026-10-04T14:36:30.559650+00:00",
+  "started_at": "2026-10-04T14:36:30.569589+00:00",
+  "finished_at": "2026-10-04T14:45:57.040187+00:00",
+  "elapsed_sec": 566,
+  "usage": {
+    "used": 61246,
+    "size": 1000000,
+    "sessionUpdate": "usage_update"
+  },
+  "observed_model": null,
+  "native_model_confirmation": "task_1ca536ef5a: ✓ model = GLM-5.3-Flash",
+  "billing": "UNKNOWN",
+  "base": "6554495316cf31ad24a9ee4f6703a306d5a2396b",
+  "worker_commit": "bf6da0a575a5ab7d740310f61b9bedceede301b3",
+  "files_changed_metadata": "Bridge watches coordinator folder with parallel art worktrees; attribution checked using worker commit diff: six files only",
+  "child_agents": "No invocation evidence reported; permitted, not claimed used"
+}

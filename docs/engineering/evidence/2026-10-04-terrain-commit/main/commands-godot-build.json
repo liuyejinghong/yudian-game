@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "<dotnet-root>/dotnet",
+      "restore",
+      "prototype/Yudian.csproj",
+      "--source",
+      "<empty-nuget-source>",
+      "-p:NuGetAudit=false",
+      "-p:RestoreIgnoreFailedSources=true"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "<dotnet-root>/dotnet",
+      "build",
+      "prototype/Yudian.csproj",
+      "--no-restore",
+      "-m:1",
+      "-nr:false",
+      "/p:UseSharedCompilation=false"
+    ],
+    "exit": 0
+  }
+]
