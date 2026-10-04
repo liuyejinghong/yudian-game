@@ -7,7 +7,7 @@
 | 地形数据 | immutable Snapshot/Patch、严格codec | 已完成，不重做 | 世界权威版本/持久提交未冻结 |
 | 地形CPU几何 | Stage、Heightfield两个独立生成器 | 已完成，曾两工作树并行 | 阶段/局部更新未实现 |
 | 引擎地形显示 | ArrayMesh、独立候选探针 | 已完成 | 正式世界接入未实现 |
-| 静态地形碰撞 | 尚未接受 | **T3-COLLISION已领取**；Codex独占候选队列/联调 | 机器人通行/导航/save不在本票 |
+| 静态地形碰撞 | 静态adapter/候选分帧/M01接线受限接受 | **T3-COLLISION本批已完成复验**；不得重复派单 | 机器人通行/导航/save不在本票 |
 | 性能证据工具 | 单轮复算/原始三轮证据 | **PERF-01-COMPARE READY，未领取** | 实机受控采样/原因裁决主控负责 |
 | 生命周期证据工具 | Recorder/中断原始证据 | **LIFE-01-AUDIT READY，未领取** | GUI关窗/发行包重開主控负责 |
 | 美术接口 | I00校准、M01材质技术接受 | 美术组在做PREVIEW/正式首样；工程soil_mars联调 | U01、T01/T02正式素材缺口见ART-LINK |

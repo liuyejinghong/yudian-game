@@ -1,0 +1,151 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PROBE_CHECK PASS loaded MVID matches current Debug build
+PROBE_IDENTITY CLR=10.0.12 assembly_location='' fresh_file=$WORKTREE/prototype/.godot/mono/temp/bin/Debug/Yudian.dll SHA256=FDEB2ACCC2A2C3AE5F35263B74B0706B00A7941B4A6305393A2B586DFF945B1F loaded_MVID=9d8f7a44-84d1-4352-b5a3-166d2ecbd874 fresh_MVID=9d8f7a44-84d1-4352-b5a3-166d2ecbd874 display=headless adapter=
+PROBE_CHECK PASS material path argument
+PROBE_CHECK PASS material and cull-check modes exclusive
+PROBE_MATERIAL path=res://assets/materials/art-r1/soil_mars.tres file_SHA256=5F8AA3E483006E74E69CBDA1385C2392C2F4F71F73B4129F957F2E15ADF8A4F6 RID=RID(98784247808) binding=surface0
+PROBE_PHYSICS configured_backend=DEFAULT server_class=PhysicsServer3D layers=1,2 masks=0
+PROBE_QUEUE request=base active=none
+PROBE_REPLACE mode=base replacements=1 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=4.522 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.342
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS accepted art material binds only surface0
+PROBE_PHYSICS_SYNCED space_state_class=GodotPhysicsDirectSpaceState3D mode=base replacements=1 assigned_frame=1 query_frame=2 stage_body=27061650904 fine_body=27078428121 center=3.5 nonvertex=3.1625
+PROBE_CHECK PASS collision cold start base
+PROBE_QUEUE request=level active=base
+PROBE_QUEUE request=base active=base
+PROBE_NOOP mode=base replacements=1
+PROBE_CHECK PASS level then active base cancels pending
+PROBE_CHECK PASS cancel keeps four resources
+PROBE_QUEUE request=level active=base
+PROBE_QUEUE request=dig active=base
+PROBE_PENDING_NOOP request=dig
+PROBE_REPLACE mode=dig replacements=2 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.585 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.133
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS accepted art material binds only surface0
+PROBE_PHYSICS_SYNCED space_state_class=GodotPhysicsDirectSpaceState3D mode=dig replacements=2 assigned_frame=3 query_frame=4 stage_body=27061650904 fine_body=27078428121 center=-1.25 nonvertex=-1.25
+PROBE_CHECK PASS latest dig and duplicate pending apply once
+PROBE_CHECK PASS old native resource released
+PROBE_CHECK PASS old native resource released
+PROBE_CHECK PASS old native resource released
+PROBE_CHECK PASS old native resource released
+PROBE_CHECK PASS candidate center readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS single unindexed material-free surface
+PROBE_CHECK PASS candidate center readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS single unindexed material-free surface
+PROBE_QUEUE request=level active=dig
+PROBE_QUEUE request=dig active=dig
+PROBE_NOOP mode=dig replacements=2
+PROBE_CHECK PASS active dig cancels pending level
+PROBE_CHECK PASS duplicate keeps four resources
+PROBE_QUEUE request=level active=dig
+PROBE_QUEUE request=stale active=dig
+PROBE_REJECT mode=dig replacements=2 reason=base.version mismatch: patch base 9 vs current 10
+PROBE_CHECK PASS latest stale rejects without latent candidate
+PROBE_CHECK PASS stale keeps four resources
+PROBE_QUEUE request=perimeter active=dig
+PROBE_REJECT mode=dig replacements=2 reason=heights_m[0] (row 0, column 0) is on the locked perimeter and must equal the base height at this index
+PROBE_CHECK PASS perimeter rejection keeps candidate
+PROBE_CHECK PASS perimeter keeps four resources
+PROBE_QUEUE request=broken active=dig
+PROBE_REJECT second_shape=triangle[0] winding must give positive cross Y, got -1 (Parameter 'mesh')
+PROBE_CHECK PASS second shape rejection releases three prepared resources
+PROBE_CHECK PASS second shape rejection keeps all four
+PROBE_QUEUE request=level active=dig
+PROBE_REPLACE mode=level replacements=3 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.025 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.061
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS accepted art material binds only surface0
+PROBE_PHYSICS_SYNCED space_state_class=GodotPhysicsDirectSpaceState3D mode=level replacements=3 assigned_frame=8 query_frame=9 stage_body=27061650904 fine_body=27078428121 center=0.4 nonvertex=0.4
+PROBE_CHECK PASS valid request works after rejection
+PROBE_CHECK PASS candidate center readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS single unindexed material-free surface
+PROBE_CHECK PASS candidate center readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS single unindexed material-free surface
+PROBE_QUEUE request=base active=level
+PROBE_REPLACE mode=base replacements=4 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.032 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.062
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS accepted art material binds only surface0
+PROBE_PHYSICS_SYNCED space_state_class=GodotPhysicsDirectSpaceState3D mode=base replacements=4 assigned_frame=9 query_frame=10 stage_body=27061650904 fine_body=27078428121 center=3.5 nonvertex=3.1625
+PROBE_CHECK PASS collision reset keeps immutable base
+PROBE_CHECK PASS missing material rejected without fallback
+PROBE_CHECK PASS wrong material type rejected
+PROBE_CHECK PASS double-sided material rejected
+PROBE_CHECK PASS transparent material rejected
+PROBE_CHECK PASS four resources detached and released on exit
+PROBE_COLLISION_SELF_TEST PASS

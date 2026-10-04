@@ -116,8 +116,8 @@ GLM实际交付：T3b原82fa292→集成69d5256，T3c原11bb78a→集成bb8e240�
 授权：所有者持续推进并与美术组联调，缺素材/不合格挂TODO；合格直接合并授权沿用。起点main991b78e，独立集成工作树；美术production/materials保持其独占。
 
 1. [x] 核当前现场、冻结单GLM碰撞票与请求/同步合同，architect计划审查。证明：同帧level→dig/base/非法的定义、全部新资源成功再换、下一物理查询帧同步证明，不冒称引擎事务。
-2. [ ] GLM独立实现静态shape适配与真实物理引擎检查。证明：原生GLM确认、限定commit、Debug/loadedMVID/native ray/headless退出与失败记录。
-3. [ ] 主控增加可选碰撞候选模式/队列/独立分帧检查及GUI，和美术组按接受commit固定M01联调；缺正式素材留工程TODO。证明：显示与body/shape同源、三排队序列/失败保持/释放/真实射线/材质逐surface与拒绝/PNG。
+2. [x] GLM独立实现静态shape适配与真实物理引擎检查。证明：原生GLM确认、限定commit、Debug/loadedMVID/native ray/headless退出与失败记录。
+3. [x] 主控增加可选碰撞候选模式/队列/独立分帧检查及GUI，和美术组按接受commit固定M01联调；缺正式素材留工程TODO。证明：显示与body/shape同源、三排队序列/失败保持/释放/真实射线/材质逐surface与拒绝/PNG。
 4. [ ] reviewer/最终architect审查，更新TODO/证据，发布和核对精确head后合并；干净原main快进。证明：实际源/素材/PNG哈希、PR/Issue状态，完整T3保持未完成。
 
 architect明确早退不能丢弃撤销pending，同帧非法最新请求要清掉先前候选；四属性赋值不证明native同步，下一物理帧核对象/位置/法线；非顶点斜坡及shape独立寿命、明确mask/单面；材质等待其主控接受，不能抢写目录。本合同已纳入。
@@ -125,3 +125,5 @@ architect明确早退不能丢弃撤销pending，同帧非法最新请求要清�
 ## 用户ZCode workflow并行包
 
 所有者指出线性编排，要求可自行开worktree并发GLM、主控统一review/接受合并。architect只读复核后冻结PERF-01-COMPARE与LIFE-01-AUDIT：独占新增工具目录，复用既有复算/真实证据，不相互等待、不争写公共文件；当前T3-COLLISION已领取不得重复。只接受离线工具，父票实机采样/GUI部分保持未完成。步骤：写明接口/金样与退出规则→固定基线→提供独立workflow prompt→实际交付后再review/复验/更新状态。
+
+本批复验：GLM2ea7a23→9768674限定4新文件；主控12适配命名项、118条碰撞检查、36条默认检查与各自SELF_TEST PASS、exit0；MetalGUI及M01/debug三态PNG通过，最终日志确认GodotPhysicsDirectSpaceState3D（不能只用DEFAULT断言）。GUI/PNG DLL0E60与最终加日志字段DLLFDEB分别记录，几何/状态/材质行为未改。reviewer最终无剩实质缺陷；最终architect唯一索引P2已修，无其他发布前必修；发布合并仍待完成。
