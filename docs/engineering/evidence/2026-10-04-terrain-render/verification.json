@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-04",
+  "base": "0a1e54e283f641c2abf1f8baa8dcab9fb76a0e43",
+  "scope": "Godot adapter and uncommitted standalone preview only",
+  "worker": {
+    "session": "sess_2cb78af554",
+    "model_confirmation_task": "task_f212cbe147",
+    "native_model_confirmation": "GLM-5.3-Flash",
+    "observed_model": null,
+    "task": "task_35d0705185",
+    "rework_task": "task_75e6ea5407",
+    "original_commit": "ac457bea0d07aee6f05a60884cbc50bc84496f21",
+    "fix_commit": "80b84d08ba1ab0789e16619de53567d5da721e41",
+    "bridge_usage_initial": {
+      "used": 78804,
+      "size": 1000000
+    },
+    "bridge_usage_rework": {
+      "used": 69625,
+      "size": 1000000
+    },
+    "usage_meaning": "opaque usage_update fields; not summed as billed tokens",
+    "cost": "unknown"
+  },
+  "checks": {
+    "build_warnings": 0,
+    "build_errors": 0,
+    "adapter_named_checks": 10,
+    "adapter_exit": 0,
+    "probe_logged_checks": 35,
+    "probe_exit": 0,
+    "independent_pre_fix_reproduction_exit": 1,
+    "real_gui_exit": 0,
+    "capture_exit": 0,
+    "cull_exit": 0,
+    "empty_input": "N/A button-only UI"
+  },
+  "runtime": {
+    "godot": "4.7.2.stable.mono.official.ed1daf0bf",
+    "CLR": "10.0.12",
+    "renderer": "Metal 4.0 Forward+",
+    "device": "Apple M3 Pro (Apple9)",
+    "reviewed_dll_sha256": "B6396FAE1186AAD994D082FA3EA2090420343E58BC38BDE18133C5B3A4B8A36F",
+    "reviewed_loaded_and_fresh_mvid": "50d1d4a9-2c20-42a9-bfbb-f5a48bac72ab",
+    "gui_dll_sha256_before_comment_only_cleanup": "49C26119ECA134277D15D7FD2174494DB890ECFBEDD6724FB36C5E1260915D62",
+    "assembly_location": "empty; in-memory load; only MVID compared"
+  },
+  "files": {
+    "dig.png": {
+      "sha256": "1ed52b482a40bd4107fb3dd9231c42fa706e50074b01975d003996eeb1033d62",
+      "width": 1152,
+      "height": 648
+    },
+    "level.png": {
+      "sha256": "33cd09ab911f2bae5687aaf20c815e393f2adcd5f89cdd30e1be185bd74166e0",
+      "width": 1152,
+      "height": 648
+    },
+    "base.png": {
+      "sha256": "261a82d9af90eff709d75c8efedea708e70817a78a6403bb06bb7452eb2e9fcc",
+      "width": 1152,
+      "height": 648
+    },
+    "bottom.png": {
+      "sha256": "83d799aeef9c495405116ebacd099743fc8d491088a6c77d619144920db01eaa",
+      "width": 1152,
+      "height": 648,
+      "pink_pixels": 0
+    },
+    "top.png": {
+      "sha256": "435a455db3c403ee07bae01c25104c18c7cc4f0e20fd01c3f987e84458b16962",
+      "width": 1152,
+      "height": 648,
+      "pink_pixels": 141512
+    }
+  },
+  "source_sha256": {
+    "prototype/scripts/TerrainRendering/TerrainMeshAdapter.cs": "95c31cf42a7a71f1558493d21a30e4084ad0c146b1d8c1df3fe61ed714f39bdb",
+    "prototype/scripts/TerrainRendering/Tests/AdapterTests.cs": "8b89d44f211252e0b8409031377a867604bce7f7b51d7aa13d143dd9393005c8",
+    "prototype/scripts/TerrainProbe/TerrainProbe.cs": "6b1f766ac66baf23fbfffa8acc3cee0ce96ea0daa79ad65ad7c84fdf86b7c138",
+    "prototype/fixtures/terrain-probe-r1/base.json": "0bb4934a9e4eca27b59c5ee2893faec515d76116513466736e0960db06411f77",
+    "prototype/fixtures/terrain-probe-r1/dig.json": "65c3d1961f12b1baf4bfc57ebf40732c8c1ee6af69364023778b6c8c1fa7fdc7",
+    "prototype/fixtures/terrain-probe-r1/invalid-perimeter.json": "7faae77c28d9461347f1ddf8875cfcd04a120db1cd2f5037283f3153a78c3003",
+    "prototype/fixtures/terrain-probe-r1/level.json": "f478a18aa9cb2831990b7f894225c1323908660ed14169a6cd774f3b9c19aabd",
+    "prototype/fixtures/terrain-probe-r1/stale-current.json": "19fc37eb9f8810a65b58d9bb98e53448a4999f8c1e10dfcfb819d031698de32b",
+    "prototype/scenes/terrain-probe/TerrainProbe.tscn": "1dc96733d39b763f0eaf3103775970724d59a02b8bff7a240af14a13ae72d509",
+    "prototype/scenes/terrain-render-tests/AdapterTests.tscn": "20377092789ae2b57d3cd8bf0a2cc5cd828b04558df8770f3cfa59fbbed0eeda"
+  },
+  "baseline_modified_existing_files": [
+    "PLAN.md",
+    "TODO.md",
+    "docs/engineering/tasks/todo.md"
+  ],
+  "not_accepted": [
+    "world commit/cancel occurred results",
+    "incremental updates",
+    "collision/navigation/save",
+    "normal seam and T junction",
+    "stable performance",
+    "final art"
+  ],
+  "failure_log_limit": "Earliest worker four-failure engine run was not saved by worker; later original golden FAIL and independent actual adapter FAIL are preserved. Historical golden log identity label overclaimed SHA comparison; corrected to MVID."
+}

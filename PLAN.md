@@ -99,10 +99,12 @@ GLM实际交付：T3b原82fa292→集成69d5256，T3c原11bb78a→集成bb8e240�
 授权：所有者“好，推进吧”；沿用无问题直接合并。起点main0a1e54e，本轮一个GLM适配子票+主控独立探针，不改美术生产/旧Main/fixture和CPU合同。
 
 1. [x] 冻结Godot位置/绕序/平面法线/精度/所有权与实际更新语义，architect只读复核。证明：明确CPU正Y→Godot顺时针转换、float溢出退化拒绝、实际验收案例。
-2. [ ] 独立GLM实现适配器和引擎headless测试，主控写单独probe/新fixture。证明：模型确认、限定提交、实际build/headless，而非直接运行native测试DLL。
-3. [ ] 主控复验headless、GUI输入/重复/拒绝/重开、真实渲染器同条件截图与背面剔除；独立reviewer处理实际发现。证明：日志、PNG、source hash、未运行项明确。
+2. [x] 独立GLM实现适配器和引擎headless测试，主控写单独probe/新fixture。证明：模型确认、限定提交、实际build/headless，而非直接运行native测试DLL。
+3. [x] 主控复验headless、GUI输入/重复/拒绝/重开、真实渲染器同条件截图与背面剔除；独立reviewer处理实际发现。证明：日志、PNG、source hash、未运行项明确。
 4. [ ] 更新TODO/证据、发布PR、核对精确head与必要检查。合并状态以GitHub PR为准，按既有授权合并，原main只有干净时快进。
 
 前置architect指出必须固定主线程/展开顺序与法线、处理float退化、两资源成功才替换/失败保持、释放生命周期；“撤销候选预览”不得表述为撤销已发生世界改造。全部纳入合同。更新只完整重建替换，不能冒称局部GPU/导航/保存更新或稳定性能。
 
 合同复核补齐两点：Godot引擎测试统一Debug构建/显式DOTNET_ROOT并核对程序集位置与SHA；归一化后必须接近单位法线，有限叉积的长度平方溢出也明确拒绝。实际CLR以启动输出为准，不推定Godot与独立dotnet runtime相同。
+
+本轮主控复验：10适配器命名项、35探针日志检查，Debug0警告/错误；Metal真实GUI三态/重复/拒绝/撤销/冷开通过；back-cull top141512粉像素/bottom0。未引用vertex float溢出先真实复现exit1再GLM修复，失败日志保留。最终reviewer无剩功能/资源缺陷；两处MVID注释已修，architect最终复核通过；完整T3不关闭。证据见docs/engineering/reports/2026-10-04-terrain-render-verification.md。

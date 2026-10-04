@@ -2,6 +2,8 @@ using Godot;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection.Metadata;
+using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
 
 namespace Yudian.Terrain;
@@ -29,10 +31,15 @@ public partial class TerrainProbe : Node3D
         {
             string assembly = typeof(TerrainProbe).Assembly.Location;
             string expected = ProjectSettings.GlobalizePath("res://.godot/mono/temp/bin/Debug/Yudian.dll");
-            string hash = Convert.ToHexString(SHA256.HashData(System.IO.File.ReadAllBytes(assembly)));
-            Require(Path.GetFullPath(assembly) == Path.GetFullPath(expected), "current Debug assembly location");
-            Require(hash == Convert.ToHexString(SHA256.HashData(System.IO.File.ReadAllBytes(expected))), "current Debug assembly hash");
-            GD.Print($"PROBE_IDENTITY CLR={System.Environment.Version} assembly={assembly} SHA256={hash} display={DisplayServer.GetName()} adapter={RenderingServer.GetVideoAdapterName()}");
+            byte[] bytes = System.IO.File.ReadAllBytes(expected);
+            string hash = Convert.ToHexString(SHA256.HashData(bytes));
+            using var stream = new MemoryStream(bytes);
+            using var pe = new PEReader(stream);
+            MetadataReader metadata = pe.GetMetadataReader();
+            Guid expectedMvid = metadata.GetGuid(metadata.GetModuleDefinition().Mvid);
+            Guid loadedMvid = typeof(TerrainProbe).Assembly.ManifestModule.ModuleVersionId;
+            Require(loadedMvid == expectedMvid, "loaded MVID matches current Debug build");
+            GD.Print($"PROBE_IDENTITY CLR={System.Environment.Version} assembly_location='{assembly}' fresh_file={expected} SHA256={hash} loaded_MVID={loadedMvid} fresh_MVID={expectedMvid} display={DisplayServer.GetName()} adapter={RenderingServer.GetVideoAdapterName()}");
             var args = OS.GetCmdlineUserArgs();
             _cullCheck = Array.IndexOf(args, "--terrain-cull-check") >= 0;
             int captureArg = Array.IndexOf(args, "--terrain-capture-dir");
@@ -174,11 +181,19 @@ public partial class TerrainProbe : Node3D
 
     private void SelfTest()
     {
+        bool rejected = false;
+        var unusedOverflow = new TerrainMesh(2, 2, new[] {
+            new TerrainVertex(0, 0, 0), new TerrainVertex(0, 0, 1),
+            new TerrainVertex(1, 0, 0), new TerrainVertex(1e300, 0, 1) }, new[] { 0, 1, 2, 0, 1, 2 });
+        try { using var unexpected = TerrainMeshAdapter.Create(unusedOverflow); }
+        catch (ArgumentException ex) { rejected = ex.Message.Contains("vertices[3]"); }
+        Require(rejected, "independent unused vertex float overflow rejected");
         string baseline = TerrainDataCodec.Serialize(_base);
         Require(_mode == "base" && _count == 1, "cold start base");
         var stage = _stage; var fine = _fine; Select("base");
         Require(_count == 1 && ReferenceEquals(stage, _stage) && ReferenceEquals(fine, _fine), "duplicate base noop");
         Select("level"); Require(_count == 2 && !GodotObject.IsInstanceValid(stage) && !GodotObject.IsInstanceValid(fine), "old resources released");
+        CheckReadback(.4f);
         stage = _stage; fine = _fine; Select("level");
         Require(_count == 2 && ReferenceEquals(stage, _stage) && ReferenceEquals(fine, _fine), "duplicate candidate noop");
         InjectFailure(false); InjectFailure(true);
@@ -190,6 +205,20 @@ public partial class TerrainProbe : Node3D
         for (int i = 0; i < 30; i++) Select(i % 2 == 0 ? "dig" : "level");
         Require(_count == 32 && _mode == "level", "30 replacements");
         Select("base"); Require(_count == 33 && TerrainDataCodec.Serialize(_base) == baseline && _base.Version == 9, "preview reset retains immutable base");
+        CheckReadback(3.5f);
+    }
+
+    private void CheckReadback(float centerHeight)
+    {
+        foreach (ArrayMesh mesh in new[] { _stage, _fine })
+        {
+            using var arrays = mesh.SurfaceGetArrays(0);
+            Vector3[] vertices = arrays[(int)Mesh.ArrayType.Vertex].AsVector3Array();
+            Require(Array.IndexOf(vertices, new Vector3(0, centerHeight, 0)) >= 0, "candidate center readback");
+            foreach (Vector3 corner in new[] { new Vector3(-6, 0, -6), new Vector3(6, 0, -6), new Vector3(-6, 0, 6), new Vector3(6, 0, 6) })
+                Require(Array.IndexOf(vertices, corner) >= 0, "locked corner readback");
+            Require(mesh.GetSurfaceCount() == 1 && arrays[(int)Mesh.ArrayType.Index].VariantType == Variant.Type.Nil && mesh.SurfaceGetMaterial(0) == null, "single unindexed material-free surface");
+        }
     }
 
     private static void Require(bool value, string name)

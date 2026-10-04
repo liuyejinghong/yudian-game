@@ -5,7 +5,7 @@ T3-GODOT（terrain-render-r1 冻结 TerrainMeshAdapter）的实际引擎测试�
 `prototype/scripts/TerrainRendering/Tests/AdapterTests.cs`，场景
 `prototype/scenes/terrain-render-tests/AdapterTests.tscn`。native API 须在 Godot 进程内执行，
 不直接 dotnet 跑 DLL；无新增 NuGet 包、无新工程。
-状态：主控 REWORK 返工轮产物；验收状态由主控记录，本目录不自标 ACCEPTED。
+验收状态由[产研TODO](../../docs/engineering/tasks/todo.md)的T3-GODOT行维护。
 
 ## 运行（在仓库工作树根目录执行；$PROJECT_ROOT 是协调项目目录，含 tools-bin 与各工作树）
 

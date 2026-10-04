@@ -11,7 +11,7 @@ namespace Yudian.Terrain;
 /// <summary>
 /// terrain-render-r1 实际引擎测试（headless）。场景启动即跑全部命名用例，
 /// 逐条打印 PASS/FAIL，全过退出 0，任何失败退出 1。启动时核对加载的 Yudian.dll
-/// 是当前工作树 .godot/mono/temp/bin/Debug 的刚构建产物（SHA256 一致）。
+/// MVID与当前工作树Debug文件一致，并打印该文件SHA256；不比对加载字节SHA。
 /// </summary>
 public partial class AdapterTests : Node
 {
@@ -82,7 +82,7 @@ public partial class AdapterTests : Node
         Console.WriteLine($"Assembly.FullName {assembly.FullName}");
         Console.WriteLine($"Assembly.Location {assembly.Location}");
         Console.WriteLine($"AppDomain.BaseDirectory {AppDomain.CurrentDomain.BaseDirectory}");
-        // Godot 4.7 经加载上下文装载，Location 为空；用 MVID 对刚构建文件做字节身份比对。
+        // Godot 4.7 经加载上下文装载，Location 为空；用 MVID 核对刚构建文件的模块身份，文件SHA另行记录。
         Guid loadedMvid = assembly.ManifestModule.ModuleVersionId;
         string expectedPath = ProjectSettings.GlobalizePath("res://.godot/mono/temp/bin/Debug/Yudian.dll");
         if (!File.Exists(expectedPath))

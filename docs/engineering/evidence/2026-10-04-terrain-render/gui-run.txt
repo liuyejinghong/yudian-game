@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+PROBE_CHECK PASS loaded MVID matches current Debug build
+PROBE_IDENTITY CLR=10.0.12 assembly_location='' fresh_file=$WORKTREE/prototype/.godot/mono/temp/bin/Debug/Yudian.dll SHA256=49C26119ECA134277D15D7FD2174494DB890ECFBEDD6724FB36C5E1260915D62 loaded_MVID=e53a7d21-e8e0-4cd7-b924-9e5a1b545847 fresh_MVID=e53a7d21-e8e0-4cd7-b924-9e5a1b545847 display=macOS adapter=Apple M3 Pro (Apple9)
+PROBE_REPLACE mode=base replacements=1 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=5.090 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.368
+PROBE_REPLACE mode=level replacements=2 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=1.091 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.199
+PROBE_NOOP mode=level replacements=2
+PROBE_REJECT mode=level replacements=2 reason=base.version mismatch: patch base 9 vs current 10
+PROBE_REJECT mode=level replacements=2 reason=heights_m[0] (row 0, column 0) is on the locked perimeter and must equal the base height at this index
+PROBE_REPLACE mode=dig replacements=3 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.202 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.105
+PROBE_NOOP mode=dig replacements=3
+PROBE_REPLACE mode=base replacements=4 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.147 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.098
