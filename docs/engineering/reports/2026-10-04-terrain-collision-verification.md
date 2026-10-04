@@ -58,3 +58,5 @@ GUI/PNG/default回归使用文件SHA`0E60CFB1ADB4B2E61D2018FEBE8234FADF8F82C44D9
 前置architect确定latest/base撤销/非法清pending、下一物理查询帧、非顶点/所有权/单面及美术归属；冻结包二次审查修正精确字段、路径基准与末行截断证据规则。reviewer预审及最终读取代码/原始日志未发现剩余实质缺陷；其未重新运行引擎，主控承担实际验证。
 
 最终architect核源码/素材/全部证据hash与计数，唯一P2索引状态滞后已修；无其他发布前必修问题。它仅读取已有证据，未重复运行引擎。PR [#27](https://github.com/liuyejinghong/yudian-game/pull/27)已发布，最初head1c5bf805d661cd894d391faaf54da4bc9192f16b与本地一致、MERGEABLE/CLEAN；statusCheckRollup为空，不声称CI通过。本次后续仅补发布链接，不改源码；合并前仍核对最终head。原Issue6完整T3保持OPEN。
+
+PR27已于2026-10-04T12:11:24Z按授权合并；最终head0d837ed48b7cb701da17c5cdf141c3c65702a6d9与本地一致、MERGEABLE/CLEAN，检查仍为空。merge43daffe88e5040df46134c5a5f09b0fea6cc336f；子Issue26 CLOSED、完整Issue6 OPEN；干净主检出已快进。合并后本条仅记事实并同步PLAN/TODO，源码与证据hash不变。
