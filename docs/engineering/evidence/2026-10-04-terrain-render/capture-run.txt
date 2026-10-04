@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+PROBE_CHECK PASS loaded MVID matches current Debug build
+PROBE_IDENTITY CLR=10.0.12 assembly_location='' fresh_file=$WORKTREE/prototype/.godot/mono/temp/bin/Debug/Yudian.dll SHA256=B6396FAE1186AAD994D082FA3EA2090420343E58BC38BDE18133C5B3A4B8A36F loaded_MVID=50d1d4a9-2c20-42a9-bfbb-f5a48bac72ab fresh_MVID=50d1d4a9-2c20-42a9-bfbb-f5a48bac72ab display=macOS adapter=Apple M3 Pro (Apple9)
+PROBE_CHECK PASS capture directory argument
+PROBE_CHECK PASS new absolute capture directory
+PROBE_REPLACE mode=base replacements=1 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=4.835 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.364
+PROBE_CHECK PASS capture base
+PROBE_REPLACE mode=level replacements=2 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.673 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.156
+PROBE_CHECK PASS capture level
+PROBE_REPLACE mode=dig replacements=3 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.163 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.129
+PROBE_CHECK PASS capture dig
