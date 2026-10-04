@@ -121,3 +121,7 @@ GLM实际交付：T3b原82fa292→集成69d5256，T3c原11bb78a→集成bb8e240�
 4. [ ] reviewer/最终architect审查，更新TODO/证据，发布和核对精确head后合并；干净原main快进。证明：实际源/素材/PNG哈希、PR/Issue状态，完整T3保持未完成。
 
 architect明确早退不能丢弃撤销pending，同帧非法最新请求要清掉先前候选；四属性赋值不证明native同步，下一物理帧核对象/位置/法线；非顶点斜坡及shape独立寿命、明确mask/单面；材质等待其主控接受，不能抢写目录。本合同已纳入。
+
+## 用户ZCode workflow并行包
+
+所有者指出线性编排，要求可自行开worktree并发GLM、主控统一review/接受合并。architect只读复核后冻结PERF-01-COMPARE与LIFE-01-AUDIT：独占新增工具目录，复用既有复算/真实证据，不相互等待、不争写公共文件；当前T3-COLLISION已领取不得重复。只接受离线工具，父票实机采样/GUI部分保持未完成。步骤：写明接口/金样与退出规则→固定基线→提供独立workflow prompt→实际交付后再review/复验/更新状态。

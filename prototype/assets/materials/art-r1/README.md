@@ -2,7 +2,7 @@
 
 日期：2026-10-04。执行：GLM-Material；独立接受：主控。本目录是 M01 唯一写入范围：六个 `.tres` + 本 README。
 
-**配色是首轮试样候选，未获所有者视觉认可，不是最终配色规范。**数值冻结自[首批美术需求 r1](../../../docs/art/production/requirements/first-assets-r1.md) 的 M01 六表（本轮实现输入）；视觉比较等预览场景（preview-r1），本票视觉项 NOT_RUN。
+**配色是首轮试样候选，未获所有者视觉认可，不是最终配色规范。**数值冻结自[首批美术需求 r1](../../../../docs/art/production/requirements/first-assets-r1.md) 的 M01 六表（本轮实现输入）；视觉比较等预览场景（preview-r1），本票视觉项 NOT_RUN。
 
 ## 引用方法（preview-r1 接线合同）
 

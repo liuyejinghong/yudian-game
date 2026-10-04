@@ -64,3 +64,7 @@ Issues 记录在本仓库的 GitHub Issues（`gh` CLI）。See `docs/agents/issu
 ### Domain docs
 
 单上下文：根目录 `GLOSSARY.md` ＋ `docs/adr/`，不存在时静默跳过。See `docs/agents/domain.md`.
+
+## Lessons
+
+- When 已冻结任务可独立修改不同目录，do 同批提供并行任务包与固定基线，集中review验收；只按真实依赖串行，不逐票等待集成。
