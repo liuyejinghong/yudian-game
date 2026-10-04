@@ -44,4 +44,4 @@
 
 本批证据工具：PERF-01-COMPARE与LIFE-01-AUDIT均限定ACCEPTED，原交付与返工分别保留。[PERF复验](docs/engineering/reports/2026-10-04-perf-compare-verification.md) / [LIFE复验](docs/engineering/reports/2026-10-04-lifecycle-audit-verification.md)。父票实机职责继续未完成。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。
 
-本批T3d-MEM与GLM纯判定子件限定接受：[内存提交复验](docs/engineering/reports/2026-10-04-terrain-commit-verification.md)。实机LIFE/PERF用例已冻结，但美术同机窗口尚未协调成功，本轮实际GUI/受控采样NOT_RUN；父票继续未完成。
+本批T3d-MEM与GLM纯判定子件限定接受，已合并[PR #30](https://github.com/liuyejinghong/yudian-game/pull/30)：[内存提交复验](docs/engineering/reports/2026-10-04-terrain-commit-verification.md)。实机LIFE/PERF用例已冻结，但美术同机窗口尚未协调成功，本轮实际GUI/受控采样NOT_RUN；父票继续未完成。

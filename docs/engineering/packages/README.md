@@ -35,3 +35,5 @@ Codex默认通过Agent Bridge承担派单、返工和交回协调，所有者无
 每包交工作树绝对路径、branch与commit SHA、验证命令/完整日志及未完成项。用户开始某包时通知Codex包ID/工作树即可登记IN_PROGRESS；没有回执仍保持READY，不冒称已领取。主控检查diff归属与依赖，必要独立reviewer，只对实际变更做相称复验；存在问题退回同包，不阻塞无依赖的合格包。合格后按既有授权直接合并，TODO更新为限定ACCEPTED；父票剩余实机/产品职责保持未完成。
 
 2026-10-04下一波：[T3d-COMMIT-POLICY](T3d-COMMIT-POLICY.md)已由GLM交回并限定接受；主控World/28例独立验收通过。实机PERF/LIFE按[r1用例](../contracts/runtime-controlled-r1.md)与美术组错开调度。它们不重复领取已ACCEPTED工具包。
+
+T3d内存子件已合并[PR30](https://github.com/liuyejinghong/yudian-game/pull/30)，完整T3d与实机父票继续未完成。[验收边界](../reports/2026-10-04-terrain-commit-verification.md)。
