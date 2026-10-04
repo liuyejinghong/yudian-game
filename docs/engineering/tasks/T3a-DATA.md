@@ -13,3 +13,7 @@
 ## 实际派单
 
 合同/base冻结提交`2a37f4b02113e7e1591fb1b499ac7ecb628964ce`；工人分支`worker/t3a-data-20261004`。Bridge session `sess_b3900411d0`，原生模型确认`task_82aaa44bfd`返回GLM-5.3-Flash；实际实现`task_c2f9d7f145`已启动。Bridge的observed_model未提供，不把原生确认描述成独立模型采样。当前状态见产研权威TODO，未交付不标通过。
+
+## 接受记录
+
+2026-10-04，原提交d1f7cd6经独立reviewer发现SyncRoot可变逃逸/Unicode异常后，限定返工task_8ad63300d8，追加1a0ec1c。主控独立复现原问题，并在修正集成后重新运行388项工人检查和39项独立检查、两TFM编译0警告0错误；reviewer12项复核通过，两问题已关闭。接受范围与[复验报告](../reports/2026-10-04-terrain-data-verification.md)一致，仅数据子件，不签游戏保存/图形/性能。会话已结束，未来不自动领取下一票。

@@ -55,12 +55,11 @@ public sealed class TerrainSnapshot
         return _heightsM[row * Columns + column];
     }
 
-    // 冻结修正（评审P1）：internal 复制入口，快照与补丁共用，防御复制后交给私有包装。
+    // 快照与补丁共用复制入口，避免共享可变数组。
     internal static IReadOnlyList<double> CopyHeights(double[] source)
         => new ImmutableHeightList((double[])source.Clone());
 
-    // 只实现 IReadOnlyList<double>（Count/索引/枚举）：不是 ReadOnlyCollection，
-    // 不实现 ICollection，因此 as ICollection 为 null，SyncRoot 无法触达底层 double[]。
+    // 不实现 ICollection，防止 SyncRoot 暴露底层数组。
     private sealed class ImmutableHeightList : IReadOnlyList<double>
     {
         private readonly double[] _values;
