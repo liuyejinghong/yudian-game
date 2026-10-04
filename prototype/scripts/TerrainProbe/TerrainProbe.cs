@@ -42,6 +42,7 @@ public partial class TerrainProbe : Node3D
             GD.Print($"PROBE_IDENTITY CLR={System.Environment.Version} assembly_location='{assembly}' fresh_file={expected} SHA256={hash} loaded_MVID={loadedMvid} fresh_MVID={expectedMvid} display={DisplayServer.GetName()} adapter={RenderingServer.GetVideoAdapterName()}");
             var args = OS.GetCmdlineUserArgs();
             _cullCheck = Array.IndexOf(args, "--terrain-cull-check") >= 0;
+            ConfigureCollision(args);
             int captureArg = Array.IndexOf(args, "--terrain-capture-dir");
             if (captureArg >= 0)
             {
@@ -58,6 +59,7 @@ public partial class TerrainProbe : Node3D
             if (_cullCheck) SetCullView(false);
             if (Array.IndexOf(args, "--terrain-probe-self-test") >= 0)
             {
+                Require(!_collisionEnabled, "render self-test excludes collision mode");
                 SelfTest();
                 ReleaseMeshes();
                 Require(_stage == null && _fine == null && _stageNode.Mesh == null && _fineNode.Mesh == null, "exit resource cleanup");
@@ -81,13 +83,14 @@ public partial class TerrainProbe : Node3D
             AmbientLightSource = Godot.Environment.AmbientSource.Color,
             AmbientLightColor = Colors.White, AmbientLightEnergy = .65f } });
         AddChild(new DirectionalLight3D { RotationDegrees = new Vector3(-55, -25, 0), LightEnergy = 1.2f });
-        var material = new StandardMaterial3D {
+        _probeMaterial ??= new StandardMaterial3D {
             AlbedoColor = _cullCheck ? new Color("ff55aa") : new Color("7fac9e"),
             Roughness = .9f, CullMode = BaseMaterial3D.CullModeEnum.Back,
             ShadingMode = _cullCheck ? BaseMaterial3D.ShadingModeEnum.Unshaded : BaseMaterial3D.ShadingModeEnum.PerPixel };
-        _stageNode = new MeshInstance3D { Position = new Vector3(-8, 0, 0), MaterialOverride = material };
-        _fineNode = new MeshInstance3D { Position = new Vector3(8, 0, 0), MaterialOverride = material };
+        _stageNode = new MeshInstance3D { Position = new Vector3(-8, 0, 0), MaterialOverride = _surfaceMaterial ? null : _probeMaterial };
+        _fineNode = new MeshInstance3D { Position = new Vector3(8, 0, 0), MaterialOverride = _surfaceMaterial ? null : _probeMaterial };
         AddChild(_stageNode); AddChild(_fineNode);
+        if (_collisionEnabled) BuildCollisionBodies();
         _camera = new Camera3D { Position = new Vector3(23, 24, 29), Fov = 52, Current = true };
         AddChild(_camera); _camera.LookAt(Vector3.Zero);
         if (!_cullCheck)
@@ -113,6 +116,12 @@ public partial class TerrainProbe : Node3D
 
     private void Select(string mode)
     {
+        if (_collisionEnabled) { QueueRequest(mode); return; }
+        ApplySelection(mode);
+    }
+
+    private void ApplySelection(string mode)
+    {
         if (mode == _mode) { GD.Print($"PROBE_NOOP mode={mode} replacements={_count}"); return; }
         TerrainPatch patch = mode switch { "base" => null, "level" => _level, "dig" => _dig, _ => throw new ArgumentException("mode") };
         Replace(mode,
@@ -120,9 +129,10 @@ public partial class TerrainProbe : Node3D
             () => patch == null ? HeightfieldMeshBuilder.Build(_base) : HeightfieldMeshBuilder.Build(patch, _base));
     }
 
-    private void Replace(string mode, Func<TerrainMesh> stageBuilder, Func<TerrainMesh> fineBuilder)
+    private void Replace(string mode, Func<TerrainMesh> stageBuilder, Func<TerrainMesh> fineBuilder, bool breakSecondShape = false)
     {
         ArrayMesh nextStage = null, nextFine = null;
+        ConcavePolygonShape3D nextStageShape = null, nextFineShape = null;
         try
         {
             var watch = Stopwatch.StartNew();
@@ -131,11 +141,31 @@ public partial class TerrainProbe : Node3D
             watch.Restart();
             TerrainMesh fineCpu = fineBuilder(); nextFine = TerrainMeshAdapter.Create(fineCpu);
             double fineMs = watch.Elapsed.TotalMilliseconds;
+            if (_collisionEnabled)
+            {
+                nextStageShape = TerrainCollisionAdapter.Create(stageCpu);
+                // Real second-shape rejection exercises cleanup of both meshes and the first shape.
+                nextFineShape = TerrainCollisionAdapter.Create(breakSecondShape ? BrokenCollisionMesh() : fineCpu);
+            }
             ArrayMesh oldStage = _stage, oldFine = _fine;
+            ConcavePolygonShape3D oldStageShape = _stageShape, oldFineShape = _fineShape;
             _stageNode.Mesh = nextStage; _fineNode.Mesh = nextFine;
+            if (_surfaceMaterial)
+            {
+                _stageNode.SetSurfaceOverrideMaterial(0, _probeMaterial);
+                _fineNode.SetSurfaceOverrideMaterial(0, _probeMaterial);
+            }
             _stage = nextStage; _fine = nextFine; nextStage = null; nextFine = null;
+            if (_collisionEnabled)
+            {
+                _stageCollider.Shape = nextStageShape; _fineCollider.Shape = nextFineShape;
+                _stageShape = nextStageShape; _fineShape = nextFineShape;
+                nextStageShape = null; nextFineShape = null;
+                _assignedFrame = _physicsFrame;
+            }
             _mode = mode; _count++;
             oldStage?.Dispose(); oldFine?.Dispose();
+            oldStageShape?.Dispose(); oldFineShape?.Dispose();
             string result = $"mode={_mode} replacements={_count} base_version={_base.Version}\n" +
                 $"Stage cpu={stageCpu.Vertices.Count} emitted={stageCpu.Indices.Count} triangles={stageCpu.Indices.Count / 3} build+submit_ms={stageMs:F3}\n" +
                 $"Heightfield cpu={fineCpu.Vertices.Count} emitted={fineCpu.Indices.Count} triangles={fineCpu.Indices.Count / 3} build+submit_ms={fineMs:F3}";
@@ -144,12 +174,20 @@ public partial class TerrainProbe : Node3D
         }
         finally
         {
+            if (nextStageShape != null) { nextStageShape.Dispose(); _temporaryReleased++; }
+            if (nextFineShape != null) { nextFineShape.Dispose(); _temporaryReleased++; }
             if (nextStage != null) { nextStage.Dispose(); _temporaryReleased++; }
             if (nextFine != null) { nextFine.Dispose(); _temporaryReleased++; }
         }
     }
 
     private void InjectFailure(bool perimeter)
+    {
+        if (_collisionEnabled) { QueueRequest(perimeter ? "perimeter" : "stale"); return; }
+        ApplyFailure(perimeter);
+    }
+
+    private void ApplyFailure(bool perimeter)
     {
         try
         {
@@ -260,9 +298,11 @@ public partial class TerrainProbe : Node3D
 
     private void ReleaseMeshes()
     {
-        if (_stageNode != null) _stageNode.Mesh = null;
-        if (_fineNode != null) _fineNode.Mesh = null;
+        ReleaseCollision();
+        if (_stageNode != null) { if (_stageNode.Mesh != null) _stageNode.SetSurfaceOverrideMaterial(0, null); _stageNode.MaterialOverride = null; _stageNode.Mesh = null; }
+        if (_fineNode != null) { if (_fineNode.Mesh != null) _fineNode.SetSurfaceOverrideMaterial(0, null); _fineNode.MaterialOverride = null; _fineNode.Mesh = null; }
         _stage?.Dispose(); _fine?.Dispose(); _stage = null; _fine = null;
+        _probeMaterial?.Dispose(); _probeMaterial = null;
     }
 
     public override void _ExitTree() => ReleaseMeshes();
