@@ -36,10 +36,15 @@ python3 -m unittest discover -s tools/lifecycle_audit -p 'test_*.py' -v
   帧数/时长/avg_fps/分位/over_33ms 与独立复算矛盾、行断裂、非法数值（NaN/非正）、
   坏 JSON/类型错、布尔当整数、exit_case 重复匹配、run_id 全批重复、summary 必需
   统计字段缺失/类型错/非有限（NaN、inf、超出浮点范围的整数也判非有限；与 CSV
-  完整性无关，可独立判定）。数值判定一律不抛异常，诊断不含绝对路径。
+  完整性无关，可独立判定）、复算统计非有限（如 frame_ms 极小使 avg_fps=inf，
+  按 `frames_csv.recompute.*` 字段 FAIL，不以无限容差放过矛盾值）。数值判定一律
+  不抛异常，诊断不含绝对路径；报告以 ASCII 转义写出，任意字符串数据（含孤立
+  代理项）不致编码失败。
 - INCOMPLETE：缺 summary/CSV/exit 证据、零帧、末行截断（末尾无换行且末行不足
   四列；完整四列无末尾换行仍可有效）。截断只校验此前完整行并跳过依赖完整 CSV 的
-  汇总数值比较（上句的独立字段判定仍执行）；exit/status 矛盾与重复 run_id 仍 FAIL。
+  汇总数值比较（summary 必需字段的独立类型/有限性判定仍执行）；exit/status 矛盾
+  与重复 run_id 仍 FAIL。零帧摘要允许缺 `frame_time_ms`（真实 producer 仅
+  Frames>0 时写该字段；已存在时类型错/非有限仍 FAIL）。
 - 容差：时长 1e-5 s；avg_fps max(1e-4, |复算|×1e-6)；p50/p95/p99/max 1e-5 ms；
   over_33ms 精确。
 

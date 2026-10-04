@@ -12,10 +12,13 @@ summary_json / exit_record 三个路径（非空字符串；相对路径一律�
 退出码: overall PASS → 0；INCOMPLETE/FAIL → 1；manifest 结构无效或输出已存在 →
 2（stderr 具体错误、不写报告）。统计一律复用 tools/measure_baseline.recompute()
 （按仓库布局定位导入），不复制统计算法。summary 必需统计字段的结构/类型/有限性
-独立检查，与完整 CSV 数值比较解耦（截断时也执行）；数值判定一律不抛异常。输出
-以 O_CREAT|O_EXCL 独占创建：已存在文件或任何符号链接（含悬空）一律拒绝，无
-检查-写入竞态。诊断只含 role/field 与 basename/相对路径，不泄露调用方绝对路径，
-任何输入不产生 traceback。PASS 仅代表产物一致且有相符退出证据，不代表 GUI 关闭、
+独立检查，与完整 CSV 数值比较解耦（截断时也执行）；数值判定一律不抛异常。零帧
+摘要（producer 仅 Frames>0 时写 frame_time_ms）允许缺 frame_time_ms，其余类型
+检查不放宽。复算比较所依赖的统计值必须有限，非有限按 frames_csv.recompute.*
+字段 FAIL。输出以 O_CREAT|O_EXCL 独占创建：已存在文件或任何符号链接（含悬空）
+一律拒绝，无检查-写入竞态。诊断只含 role/field 与 basename/相对路径，不泄露调用
+方绝对路径，任何输入不产生 traceback；报告以 ASCII 转义写出，孤立代理项等任意
+字符串数据不致编码失败。PASS 仅代表产物一致且有相符退出证据，不代表 GUI 关闭、
 无输出覆盖、存档恢复或权限检查已实测。
 """
 import argparse
@@ -286,9 +289,13 @@ def check_stats(summary, calc, fails, compare):
                 f"summary_json.avg_fps: summary={summary['avg_fps']}"
                 f" 复算={calc['avg_fps']} (容差 {tol})")
     ftm = summary.get("frame_time_ms")
+    # 真实 producer（BenchmarkRecorder.Finish）仅 Frames>0 时写 frame_time_ms：
+    # 零帧摘要缺该字段合法；但已存在的 ftm 类型错/字段非有限仍 FAIL。
+    zero_frames = _is_int(summary.get("frames")) and summary["frames"] == 0
     if not isinstance(ftm, dict):
-        fails.append("summary_json.frame_time_ms: 缺失或非对象")
-        return
+        if not (ftm is None and zero_frames):
+            fails.append("summary_json.frame_time_ms: 缺失或非对象")
+        return  # 零帧合法缺 ftm 时无子字段可查；非法则已 FAIL
     pairs = (("p50", "nearest_rank_ms", "50"), ("p95", "nearest_rank_ms", "95"),
              ("p99", "nearest_rank_ms", "99"), ("max", "max_ms", None))
     for key, ck, sub in pairs:
@@ -352,6 +359,19 @@ def audit_run(run, manifest_dir, mb):
             calc = mb.recompute(resolve(run["frames_csv"]))
         except Exception as e:
             rep["_fails"].append(f"frames_csv.recompute: 独立复算失败 ({e})")
+        else:
+            # 比较所依赖的复算值必须有限：avg_fps=inf 会让容差变 inf 放过任意
+            # summary 值；非有限按具体 recompute 字段 FAIL，跳过数值比较。
+            calc_fields = [("avg_fps", calc["avg_fps"]),
+                           ("duration_csv_s", calc["duration_csv_s"]),
+                           ("max_ms", calc["max_ms"])] + [
+                (f"nearest_rank_ms.{p}", calc["nearest_rank_ms"][p])
+                for p in ("50", "95", "99")]
+            bad = [f for f, v in calc_fields if not _is_num(v)]
+            for f in bad:
+                rep["_fails"].append(f"frames_csv.recompute.{f}: 复算结果非有限，无法比较")
+            if bad:
+                calc = None
     if sdata is not None:
         check_stats(sdata, calc, rep["_fails"], compare=calc is not None)
 
@@ -419,11 +439,15 @@ def main(argv=None):
             raise CliError(f"报告创建失败: {_safe_io(e)}")
         try:
             with os.fdopen(fd, "w", encoding="utf-8") as f:
-                f.write(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+                # ensure_ascii=True：数据里的孤立代理项（如 run_id="\ud800"）以
+                # \uXXXX 转义写出，报告保持完整可解析，不因编码失败留下 0 字节。
+                f.write(json.dumps(report, ensure_ascii=True, indent=2) + "\n")
         except OSError as e:
             raise CliError(f"报告写入失败: {_safe_io(e)}")
     except CliError as e:
-        print(f"audit: {e}", file=sys.stderr)
+        # 诊断同样不容孤立代理项导致 print 崩溃
+        msg = str(e).encode("utf-8", "replace").decode("utf-8")
+        print(f"audit: {msg}", file=sys.stderr)
         return 2
     return 0 if overall == "PASS" else 1
 

@@ -689,5 +689,106 @@ class ReworkRegressionTest(unittest.TestCase):
             self.assertNotIn("Traceback", proc.stderr)
 
 
+class FinalReworkRegressionTest(unittest.TestCase):
+    """第二轮返工回归：真实 producer 零帧摘要缺 frame_time_ms 为 INCOMPLETE；
+    复算统计非有限（avg_fps=inf）按 recompute 字段 FAIL 不放过矛盾值；
+    run_id 含孤立代理项时报告仍完整可解析。前轮已关闭行为不退回。"""
+
+    ZERO_SUMMARY = json.dumps(
+        {"schema_version": 1, "run_id": "rid-zero", "status": "interrupted",
+         "frames": 0, "duration_actual_s": 0, "avg_fps": 0})
+
+    def test_real_zero_frame_interruption_incomplete_not_fail(self):
+        # BenchmarkRecorder.Finish 仅 Frames>0 时写 frame_time_ms
+        with tempfile.TemporaryDirectory() as td:
+            rc, rep = Fixture(td).add_and_audit(
+                "r", csv_text="frame,time_s,frame_ms,fps\n",
+                summary_text=self.ZERO_SUMMARY, status="interrupted", exit_code=130)
+            self.assertEqual(rc, 1)
+            self.assertEqual(rep["overall"], "INCOMPLETE", rep)
+            run = rep["runs"][0]
+            self.assertEqual(run["verdict"], "INCOMPLETE")
+            self.assertTrue(any("零帧" in r for r in run["reasons"]), run["reasons"])
+            self.assertFalse([r for r in run["reasons"] if r.startswith("summary_json")],
+                             run["reasons"])
+
+    def test_zero_frame_with_bad_ftm_type_still_fails(self):
+        with tempfile.TemporaryDirectory() as td:
+            s = json.loads(self.ZERO_SUMMARY)
+            s["frame_time_ms"] = 5
+            rc, rep = Fixture(td).add_and_audit(
+                "r", csv_text="frame,time_s,frame_ms,fps\n",
+                summary_text=json.dumps(s), status="interrupted", exit_code=130)
+            self.assertEqual(rc, 1)
+            reasons = rep["runs"][0]["reasons"]
+            self.assertTrue(any("summary_json.frame_time_ms" in r for r in reasons),
+                            reasons)
+
+    def test_zero_frame_with_nonfinite_ftm_value_still_fails(self):
+        with tempfile.TemporaryDirectory() as td:
+            s = json.loads(self.ZERO_SUMMARY)
+            s["frame_time_ms"] = {"p50": float("nan"), "p95": 0.0, "p99": 0.0,
+                                  "max": 0.0, "over_33ms": 0}
+            rc, rep = Fixture(td).add_and_audit(
+                "r", csv_text="frame,time_s,frame_ms,fps\n",
+                summary_text=json.dumps(s), status="interrupted", exit_code=130)
+            self.assertEqual(rc, 1)
+            reasons = rep["runs"][0]["reasons"]
+            self.assertTrue(any("summary_json.frame_time_ms.p50" in r for r in reasons),
+                            reasons)
+
+    def test_nonzero_summary_missing_ftm_still_fails(self):
+        # 零帧豁免不外溢：非零帧摘要缺 frame_time_ms 仍 FAIL
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("bad")
+            s = json.loads((f.root / "bad-summary.json").read_text())
+            del s["frame_time_ms"]
+            (f.root / "bad-summary.json").write_text(json.dumps(s), encoding="utf-8")
+            rc, rep = f.run()
+            self.assertEqual(rc, 1)
+            self.assertTrue(any("summary_json.frame_time_ms" in r
+                                for r in rep["runs"][0]["reasons"]), rep)
+
+    def test_recompute_infinite_avg_fps_fails_specific_field(self):
+        # frame_ms=1e-308 → recompute.avg_fps=inf，无限容差不得放过 summary=1
+        with tempfile.TemporaryDirectory() as td:
+            summary = json.dumps({
+                "schema_version": 1, "run_id": "rid-r", "status": "completed",
+                "frames": 1, "duration_actual_s": 0.0001, "avg_fps": 1,
+                "frame_time_ms": {"p50": 1e-308, "p95": 1e-308, "p99": 1e-308,
+                                  "max": 1e-308, "over_33ms": 0}})
+            rc, rep = Fixture(td).add_and_audit(
+                "r", rows=[(0.0001, 1e-308, 1.0)], summary_text=summary)
+            self.assertEqual(rc, 1)
+            self.assertEqual(rep["overall"], "FAIL", rep)
+            run = rep["runs"][0]
+            self.assertEqual(run["verdict"], "FAIL")
+            self.assertTrue(any("frames_csv.recompute.avg_fps" in r
+                                for r in run["reasons"]), run["reasons"])
+
+    def test_surrogate_run_id_report_parses(self):
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("a", run_id="\ud800")
+            rc, rep = f.run()
+            self.assertEqual(rc, 0, rep)
+            self.assertEqual(rep["runs"][0]["run_id"], "\ud800")
+
+    def test_surrogate_run_id_duplicate_fail_report_parses(self):
+        # 重复 run_id 原因串含孤立代理项：报告仍需完整写出并可解析
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("a", run_id="\ud800")
+            f.add_run("b", run_id="\ud800")
+            out = f.root / "report.json"
+            rc = audit.main(["--manifest", str(f.manifest()), "--output", str(out)])
+            self.assertEqual(rc, 1)
+            self.assertGreater(out.stat().st_size, 0)
+            rep = json.loads(out.read_text(encoding="utf-8"))
+            self.assertEqual(rep["overall"], "FAIL")
+            self.assertTrue(any("run_id.duplicate" in r for r in rep["runs"][0]["reasons"]))
+
+
 if __name__ == "__main__":
     unittest.main()
