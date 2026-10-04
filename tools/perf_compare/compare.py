@@ -107,6 +107,8 @@ def check_frames_csv(csv_path):
             rows = list(reader)
     except UnicodeDecodeError as exc:
         raise InvalidInput(f'{display(csv_path)}: 非法 UTF-8 ({exc})') from exc
+    except csv.Error as exc:  # 超 csv 字段上限（131072 字符）等解析器自身错误
+        raise InvalidInput(f'{display(csv_path)}: CSV 解析失败 ({exc})') from exc
     except OSError as exc:
         raise InvalidInput(f'{display(csv_path)}: 读取失败 ({exc.strerror})') from exc
     require(rows, f'{display(csv_path)}: 没有帧数据')
@@ -312,12 +314,12 @@ def group_id_for(identity):
 
 
 def load_json(path):
-    """读 JSON：坏 JSON/非法 UTF-8/IO 都以带具体文件的 InvalidInput 报告，不泄露绝对路径。"""
+    """读 JSON：坏 JSON/超长整数字面量/非法 UTF-8/IO 都以带具体文件的 InvalidInput 报告，不泄露绝对路径。"""
     try:
         return json.loads(path.read_text(encoding='utf-8'))
     except UnicodeDecodeError as exc:
         raise InvalidInput(f'{display(path)}: 非法 UTF-8 ({exc})') from exc
-    except json.JSONDecodeError as exc:
+    except ValueError as exc:  # JSONDecodeError 与超 digit 上限的大整数字面量同在此接住
         raise InvalidInput(f'{display(path)}: JSON 解析失败 ({exc})') from exc
     except OSError as exc:
         raise InvalidInput(f'{display(path)}: 读取失败 ({exc.strerror})') from exc
@@ -451,7 +453,7 @@ def write_report(report, output_path):
         raise InvalidInput(f'{display(output_path)}: 无法创建输出文件 ({exc.strerror})') from exc
     try:
         with os.fdopen(fd, 'w', encoding='utf-8') as f:
-            json.dump(report, f, indent=2, ensure_ascii=False)
+            json.dump(report, f, indent=2, ensure_ascii=True)
             f.write('\n')
     except OSError as exc:
         remove_quiet(output_path)

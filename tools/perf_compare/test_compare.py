@@ -7,6 +7,7 @@
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -495,6 +496,33 @@ class CompareSchemaDepthTests(FixtureTestMixin, unittest.TestCase):
             'frame_time_ms': {'p50': 10 ** 400, 'p95': 200.0, 'p99': 200.0, 'max': 200.0,
                               'over_33ms': 0, 'method': 'x'}})
         self.run_cli_expect(run, 'field=frame_time_ms.p50 必须为有限数值', absent=('OverflowError', 'Traceback'))
+
+    def test_oversized_int_literal_rejected_without_traceback(self):
+        """5000 位整数字面量触发 json.loads 的 digit 上限 ValueError：exit2、点名文件、无 traceback。"""
+        run = self.make_run('a', run_id='run-a')
+        summary_path = run / 'summary.json'
+        text = re.sub(r'"avg_fps": [0-9.]+', '"avg_fps": ' + '5' * 5000, summary_path.read_text())
+        summary_path.write_text(text, encoding='utf-8')
+        self.run_cli_expect(run, 'summary.json: JSON 解析失败', absent=('Traceback', str(self.tmp)))
+
+    def test_oversized_csv_field_rejected_without_traceback(self):
+        """140000 字符 frame_ms 触发 csv 字段上限 csv.Error：exit2、点名文件、无 traceback。"""
+        run = self.make_run('a', run_id='run-a')
+        csv_path = run / 'frames.csv'
+        lines = csv_path.read_text().splitlines()
+        parts = lines[1].split(',')
+        parts[2] = '1' + '0' * 139999
+        lines[1] = ','.join(parts)
+        csv_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+        self.run_cli_expect(run, 'frames.csv: CSV 解析失败', absent=('Traceback', str(self.tmp)))
+
+    def test_lone_surrogate_report_round_trips(self):
+        """合法 JSON 转义孤立代理不得令写报告崩溃；报告可完整解析回原字符串。"""
+        run = self.make_run('a', run_id='run-\ud800a')
+        result = self.run_cli([run], self.output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        report = json.loads(self.output.read_text(encoding='utf-8'))
+        self.assertEqual(report['runs'][0]['run_id'], 'run-\ud800a')
 
     @unittest.skipIf(hasattr(os, 'geteuid') and os.geteuid() == 0, 'root 不受 0o000 限制')
     def test_unreadable_frames_csv_rejected_without_traceback(self):
