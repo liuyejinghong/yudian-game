@@ -127,3 +127,5 @@ architect明确早退不能丢弃撤销pending，同帧非法最新请求要清�
 所有者指出线性编排，要求可自行开worktree并发GLM、主控统一review/接受合并。architect只读复核后冻结PERF-01-COMPARE与LIFE-01-AUDIT：独占新增工具目录，复用既有复算/真实证据，不相互等待、不争写公共文件；当前T3-COLLISION已领取不得重复。只接受离线工具，父票实机采样/GUI部分保持未完成。步骤：写明接口/金样与退出规则→固定基线→提供独立workflow prompt→实际交付后再review/复验/更新状态。
 
 本批复验：GLM2ea7a23→9768674限定4新文件；主控12适配命名项、118条碰撞检查、36条默认检查与各自SELF_TEST PASS、exit0；MetalGUI及M01/debug三态PNG通过，最终日志确认GodotPhysicsDirectSpaceState3D（不能只用DEFAULT断言）。GUI/PNG DLL0E60与最终加日志字段DLLFDEB分别记录，几何/状态/材质行为未改。reviewer最终无剩实质缺陷；最终architect唯一索引P2已修，无其他发布前必修；发布合并仍待完成。
+
+碰撞PR27已发布：https://github.com/liuyejinghong/yudian-game/pull/27 。发布head1c5bf805d661cd894d391faaf54da4bc9192f16b与本地一致、MERGEABLE/CLEAN；GitHub自动检查为空，不声称CI通过。本次只补发布链接，无源码变化；最终head须再次核对后按授权合并。

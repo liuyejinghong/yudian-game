@@ -1,10 +1,10 @@
 # 余电双线 TODO
 
-更新：2026-10-04。[GitHub总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17) / [文档PR #18](https://github.com/liuyejinghong/yudian-game/pull/18) / [数据PR #20](https://github.com/liuyejinghong/yudian-game/pull/20) / [网格PR #23](https://github.com/liuyejinghong/yudian-game/pull/23) / [显示PR #25](https://github.com/liuyejinghong/yudian-game/pull/25)。本轮执行范围：**推进GLM产研子票，主控独立复验并按授权合并合格交付**。完整游戏功能未完成；首批美术制作已由所有者在美术会话启动。排入表格、指定拟执行槽或依赖齐备，都不等于已派单。后续由主控按所有者阶段指令排批，不逐项追问常规技术细节。
+更新：2026-10-04。[GitHub总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17) / [文档PR #18](https://github.com/liuyejinghong/yudian-game/pull/18) / [数据PR #20](https://github.com/liuyejinghong/yudian-game/pull/20) / [网格PR #23](https://github.com/liuyejinghong/yudian-game/pull/23) / [显示PR #25](https://github.com/liuyejinghong/yudian-game/pull/25) / [碰撞PR #27](https://github.com/liuyejinghong/yudian-game/pull/27)。本轮执行范围：**推进GLM产研子票，主控独立复验并按授权合并合格交付**。完整游戏功能未完成；首批美术制作已由所有者在美术会话启动。排入表格、指定拟执行槽或依赖齐备，都不等于已派单。后续由主控按所有者阶段指令排批，不逐项追问常规技术细节。
 
 | 线 | 权威任务表 | 当前事实 | 后续首要队列（未启动） |
 |---|---|---|---|
-| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | QA受限技术验收已完成，PR #16已合并；性能稳定性仍待复核 | 数据与纯网格子件已接受；Godot适配/候选探针已受限接受；静态碰撞与候选联调已受限复验通过，待本PR合并；两个离线工具并行包READY；阶段/增量/导航保存和性能留项 |
+| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | QA受限技术验收已完成，PR #16已合并；性能稳定性仍待复核 | 数据与纯网格子件已接受；Godot适配/候选探针已受限接受；静态碰撞与候选联调已受限复验通过，PR #27合并状态以GitHub为准；两个离线工具并行包READY；阶段/增量/导航保存和性能留项 |
 | 美术 | [美术 TODO](docs/art/production/todo.md) | ART-I00技术校准已验；[首批需求](docs/art/production/requirements/first-assets-r1.md)由主控编写；正式资产与视觉效果未验 | M01材质已由美术组技术接受，soil_mars工程逐surface联调通过；预览工具正在制作，正式模型/地形素材仍缺；工程缺口见ART-LINK各行 |
 
 2026-10-04所有者授权后，PR [#16](https://github.com/liuyejinghong/yudian-game/pull/16)、[#18](https://github.com/liuyejinghong/yudian-game/pull/18)及[#20](https://github.com/liuyejinghong/yudian-game/pull/20)已合并，本网格批次从main `3999d30`起步。PR [#13](https://github.com/liuyejinghong/yudian-game/pull/13)/[#14](https://github.com/liuyejinghong/yudian-game/pull/14)仍未合并，不顺带处理；历史结果见[接管复验](docs/engineering/reports/2026-10-04-takeover-verification.md)。原Issue [#5](https://github.com/liuyejinghong/yudian-game/issues/5)/[#6](https://github.com/liuyejinghong/yudian-game/issues/6)/[#7](https://github.com/liuyejinghong/yudian-game/issues/7)/[#8](https://github.com/liuyejinghong/yudian-game/issues/8)分别关联T2/T3/T4/T5；旧ready-for-agent标签不能替代新子票的冻结接口和本轮范围。
