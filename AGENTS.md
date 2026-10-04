@@ -50,3 +50,17 @@ Godot 4 .NET＋C# 是首选验证候选，不是已测结论。精确版本、�
 `tools/reconstruct_reviewed_docs.py` 是一次性导入核验工具，不是生产内容生成器；若当前正文已有后续编辑，禁止用它覆盖。
 
 目前没有 Godot 构建、模型评测或游戏测试命令，不能编造已存在的 `dotnet test` 或伪造通过记录。实际验证工程获准建立后，再记录准确版本、启动方式与证据。
+
+## Agent skills
+
+### Issue tracker
+
+Issues 记录在本仓库的 GitHub Issues（`gh` CLI）。See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+使用默认五标签：needs-triage / needs-info / ready-for-agent / ready-for-human / wontfix。See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+单上下文：根目录 `GLOSSARY.md` ＋ `docs/adr/`，不存在时静默跳过。See `docs/agents/domain.md`.
