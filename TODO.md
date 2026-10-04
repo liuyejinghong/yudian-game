@@ -1,13 +1,13 @@
 # 余电双线 TODO
 
-更新：2026-10-04。[GitHub总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17) / [文档PR #18](https://github.com/liuyejinghong/yudian-game/pull/18)。本轮执行范围：**提交双线TODO、由主控细化美术需求，并安排下一批GLM任务；只读工具预检已派单**。完整游戏功能、整批模型生产未启动。排入表格、指定拟执行槽或依赖齐备，都不等于已派单。后续由主控按所有者阶段指令排批，不逐项追问常规技术细节。
+更新：2026-10-04。[GitHub总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17) / [文档PR #18](https://github.com/liuyejinghong/yudian-game/pull/18) / [数据PR #20](https://github.com/liuyejinghong/yudian-game/pull/20)。本轮执行范围：**按所有者授权合并已验收PR16/18，并推进GLM产研数据子票**。完整游戏功能、整批模型生产未启动。排入表格、指定拟执行槽或依赖齐备，都不等于已派单。后续由主控按所有者阶段指令排批，不逐项追问常规技术细节。
 
 | 线 | 权威任务表 | 当前事实 | 后续首要队列（未启动） |
 |---|---|---|---|
-| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | QA受限技术验收已完成，PR #16未合并；性能稳定性仍待复核 | 性能采样条件/退出留项；T3a状态合同；合同下的两个地形候选子件 |
+| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | QA受限技术验收已完成，PR #16已合并；性能稳定性仍待复核 | T3a-DATA已接受；随后冻结两个地形候选子件；性能/退出留项 |
 | 美术 | [美术 TODO](docs/art/production/todo.md) | ART-I00技术校准已验；[首批需求](docs/art/production/requirements/first-assets-r1.md)由主控编写；正式资产与视觉效果未验 | M01材质已具备可派单票；预览约定补全后接驮运→太阳能/加工；地形正式接入等T3 |
 
-当前版本基于 `06f70c9` 的开发成果，不代表main已具备全部底座。PR [#13](https://github.com/liuyejinghong/yudian-game/pull/13)/[#14](https://github.com/liuyejinghong/yudian-game/pull/14)/[#16](https://github.com/liuyejinghong/yudian-game/pull/16)均未合并；历史结果见[接管复验](docs/engineering/reports/2026-10-04-takeover-verification.md)。原Issue [#5](https://github.com/liuyejinghong/yudian-game/issues/5)/[#6](https://github.com/liuyejinghong/yudian-game/issues/6)/[#7](https://github.com/liuyejinghong/yudian-game/issues/7)/[#8](https://github.com/liuyejinghong/yudian-game/issues/8)分别关联T2/T3/T4/T5；旧ready-for-agent标签不能替代新子票的冻结接口和本轮范围。
+2026-10-04所有者授权后，PR [#16](https://github.com/liuyejinghong/yudian-game/pull/16)与[#18](https://github.com/liuyejinghong/yudian-game/pull/18)已合并，本数据批次从main `707258f`起步。PR [#13](https://github.com/liuyejinghong/yudian-game/pull/13)/[#14](https://github.com/liuyejinghong/yudian-game/pull/14)仍未合并，不顺带处理；历史结果见[接管复验](docs/engineering/reports/2026-10-04-takeover-verification.md)。原Issue [#5](https://github.com/liuyejinghong/yudian-game/issues/5)/[#6](https://github.com/liuyejinghong/yudian-game/issues/6)/[#7](https://github.com/liuyejinghong/yudian-game/issues/7)/[#8](https://github.com/liuyejinghong/yudian-game/issues/8)分别关联T2/T3/T4/T5；旧ready-for-agent标签不能替代新子票的冻结接口和本轮范围。
 
 ## 分工与外包默认
 
@@ -36,6 +36,6 @@
 
 性能留项阻塞“将基线当作稳定对照”，不阻塞T3a合同讨论或独立美术造型。土坡/矿点正式接入必须等区域、边界高程、阶段/版本合同；图片和造型不能反推通行/矿物。共享材质只设一名写者；单位与设施可分别实现，但导入由主控串行核查公共接线。
 
-后续可并行：GLM-Eng-A实现冻结的数据子件，GLM-Art-A做驮运，GLM-Art-B做太阳能；文件不交叠。不能并行争写Main、共用fixture、公共材质或同一模型。新资产单独预览/基准，不混旧灰模成绩；正式验收仍需正常指挥距离效果、真实导入与实际成本。
+后续可并行：GLM-Eng-A实现冻结的网格候选子件，GLM-Art-A做驮运，GLM-Art-B做太阳能；文件不交叠。不能并行争写Main、共用fixture、公共材质或同一模型。新资产单独预览/基准，不混旧灰模成绩；正式验收仍需正常指挥距离效果、真实导入与实际成本。
 
-当前编排：GLM已完成TODO-ART-01文档票和ART-TOOLS-01预检（含一次限定返工），主控独立接受；Codex交付首批需求和共享材质票，architect接缝审查问题已修。下一张可交GLM的是ART-M01，共享材质目录只给这一名写者。预览工具与U01随后排；F01/F02具备正式票后可分给不同GLM工人。产研的T3a合同由主控先定，之后才外包纯数据/网格/测试子件。当前没有生产美术或新游戏功能工人在执行。
+当前编排：GLM已完成TODO-ART-01文档票和ART-TOOLS-01预检（含一次限定返工），主控独立接受；Codex交付首批需求和共享材质票，architect接缝审查问题已修。下一张可交GLM的是ART-M01，共享材质目录只给这一名写者。预览工具与U01随后排；F01/F02具备正式票后可分给不同GLM工人。产研的T3a-r1合同与数据子件已接受，随后由主控冻结T3b/T3c候选票，再外包网格/测试子件。当前美术生产票未派出；T3a-DATA独立接受，会话已结束；最新证据见产研权威TODO。
