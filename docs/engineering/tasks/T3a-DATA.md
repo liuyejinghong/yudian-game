@@ -9,3 +9,7 @@
 禁改Main/fixture/桥接/项目/依赖/公共合同/TODO/旧证据；不增加Apply/Commit权威层、库存/矿物/任务状态机、碰撞/导航/保存文件写入、GUI或网络。源码无个人绝对路径；临时输出与bin/obj不提交。源文件归属唯一，其他工人不得写这个目录。
 
 验收由主控：查看真实diff、自己运行新测试；按两个金样和异常输入独立复核，net8编译兼容；必要时独立reviewer审数据/持久化接缝。工人不得写ACCEPTED、不push/merge、不领取下一票。五行报告：实现范围、命令/真实结果、缺项、可见用量、commit。失败保留日志，同接口两轮失败先停并缩票，不静默改变合同。
+
+## 实际派单
+
+合同/base冻结提交`2a37f4b02113e7e1591fb1b499ac7ecb628964ce`；工人分支`worker/t3a-data-20261004`。Bridge session `sess_b3900411d0`，原生模型确认`task_82aaa44bfd`返回GLM-5.3-Flash；实际实现`task_c2f9d7f145`已启动。Bridge的observed_model未提供，不把原生确认描述成独立模型采样。当前状态见产研权威TODO，未交付不标通过。

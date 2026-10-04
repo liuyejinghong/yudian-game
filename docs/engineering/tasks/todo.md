@@ -14,7 +14,7 @@
 | LIFE-01 | P0 | DRAFT | 现有Recorder；独立GUI关窗用例与恢复定义 | GLM-Eng-A用例/局部修正；Codex真实GUI验收 | 关窗exit/status、无覆盖、重启独立run-id；硬杀只允许部分CSV，不冒称游戏恢复 | [NOT_RUN](../reports/2026-10-04-takeover-verification.md) |
 | ENV-01 | P2 | BLOCKED | 合法可用的无SDK隔离系统/设备；禁止为本票擅装系统 | GLM-Eng-A清单/脚本；Codex环境与裁决 | 同一包在无SDK环境启动，真实runtime/身份；未有环境不影响合同与独立样件 | [复验边界](../reports/2026-10-04-takeover-verification.md) |
 | T3a | P1 | ACCEPTED | r1矩形数据接缝/边界/版本与提交取消职责已冻结；实际世界提交系统在T3d | Codex | 接受r1数据合同设计：绝对高度/row-major、不可变base与candidate、外围同值/版本重验和取消保留已发生结果；完整世界/邻区接入未实现，不直接开全套T3 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
-| T3a-DATA | P1 | READY | T3a-r1合同与异常金样冻结 | GLM-Eng-A | 只读解析/校验/序列化和独立异常测试，net8编译/net10执行；不批准权威提交或游戏保存 | [合同r1](../contracts/terrain-patch-r1.md) / [GLM票](T3a-DATA.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
+| T3a-DATA | P1 | IN_PROGRESS | T3a-r1冻结于2a37f4b；独立分支worker/t3a-data-20261004 | GLM-Eng-A | 已实际派GLM，session sess_b3900411d0；只读解析/校验/序列化与测试，net8编译/net10执行；不批准权威提交或游戏保存 | [合同r1](../contracts/terrain-patch-r1.md) / [GLM票](T3a-DATA.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3b | P1 | BLOCKED | T3a与T3a-DATA；一个阶段网格候选的冻结输入/目录 | GLM-Eng-A | 局部阶段网格子件，边界连续、同输入输出；不把网格变化当持久世界已成立 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3c | P1 | BLOCKED | T3a与T3a-DATA；独立高度场候选同一输入/镜头 | GLM-Eng-B | 第二候选子件与边界/局部更新证据；不和T3b争写公共状态 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3d | P1 | BLOCKED | T3b/T3c提交；明确碰撞/通行/保存的最小范围与验收案例，派实现子票前冻结对应契约 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
