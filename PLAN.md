@@ -142,3 +142,5 @@ PR27已于2026-10-04T12:11:24Z合并，精确head0d837ed48b7cb701da17c5cdf141c3c
 4. [ ] 每包合格独立PR合并，更新限定ACCEPTED；证明：PR精确head/merge、主分支干净快进。父PERF受控采样/原因/稳定性能和LIFE真实GUI关闭/发行包重开继续未完成。
 
 实际派单：PERF sess_ce7639b6d6 / task_03d935ac1f；LIFE sess_731d81f2f0 / task_67642905bc；均原生回执model=GLM-5.3-Flash，Bridge observed_model未提供，费用未知。初次手动workflow交付不是Bridge派单，不造账。LIFE初轮门禁路径少斜杠属派单方事故，工人拒绝绕过；与代码审查发现分开记录。
+
+PERF独立验收通过：原ebfb877→修复e1df119/440b686/3926518→集成cf55502；50项完整unit、9主控实际复验、3独立解析复核通过，启动尖刺金样不变。PERF限定ACCEPTED；LIFE仍独立处理最后具体发现，不用PERF通过替代其裁决。源码固定，发布/合并事实待GitHub回执记录。

@@ -49,7 +49,7 @@ rendering_method/rendering_driver/gpu/gpu_api_version/window_pixels/viewport_siz
 
 `schema_version=1`；`runs[]` 含 run_id、三个输入文件 SHA256、group_id、recompute() 全部指标、
 两个外部内存指标；`groups[]` 含 identity、run_ids、组内指标统计；`limitations[]` 为固定声明。
-输入只读，输出必须是不存在的新文件（不覆盖，原子写）。
+输入只读，输出必须是不存在的新文件（不覆盖，独占创建）。
 
 退出码：0 成功；2 无效输入/输出已存在（argparse 用法错误也为 2）。
 
