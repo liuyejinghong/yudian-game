@@ -1,11 +1,11 @@
 # 产研 TODO
 
-更新：2026-10-04；依据真实Issue #5–#8、PR #13与本轮复验。主控Codex。下表拟执行槽见[总入口](../../../TODO.md)；本轮提交TODO、细化美术需求并编排外包，产研未来任务未派单。ACCEPTED的QA行是受限技术接受，均在PR #16未合并的开发版本，不能当main已有功能。
+更新：2026-10-04；依据真实Issue #5–#8、PR #13与本轮复验。主控Codex。下表拟执行槽见[总入口](../../../TODO.md)；PR16/18已按所有者授权合并，main=707258f。本轮冻结T3a-r1并实际外包T3a-DATA；其他产研票仍按依赖排队。ACCEPTED的QA行仍只是原受限技术接受，不扩张为性能稳定/游戏模拟完成。
 
 | ID | 优先级 | 状态 | 依赖/解除条件 | 拟执行槽 | 交付与接受条件 | 来源/证据 |
 |---|---|---|---|---|---|---|
 | QA-01 | P0 | ACCEPTED | QA-03/QA-04/QA-05本轮底座 | Codex（上批实际） | 旧原件复算、新三轮Metal/有效内存可获取；性能稳定性转PERF-01 | [复验](../reports/2026-10-04-takeover-verification.md) / [#15](https://github.com/liuyejinghong/yudian-game/issues/15) |
-| QA-02 | P0 | ACCEPTED | 冻结输入合同 | GLM（上批实际） | 109合同用例+实际Godot异常矩阵；限定commit已集成、未合并 | [交付票](QA-02.md) |
+| QA-02 | P0 | ACCEPTED | 冻结输入合同 | GLM（上批实际） | 109合同用例+实际Godot异常矩阵；限定commit已集成并随PR16合并 | [交付票](QA-02.md) |
 | QA-03 | P0 | ACCEPTED | QA-02 | Codex（上批实际） | 只读移包/不同cwd/默认输出/引擎中断/失败；GUI关窗另列LIFE-01 | [复验](../reports/2026-10-04-takeover-verification.md) |
 | QA-04 | P0 | ACCEPTED | QA-03/QA-05 | Codex（上批实际） | 实际Forward+/Metal、Mobile/Metal、运行身份；尺寸明确estimated | [复验](../reports/2026-10-04-takeover-verification.md) |
 | QA-05 | P0 | ACCEPTED | 既有工具、原始模板 | Codex（上批实际） | 干净检出构建/启动、模板重复hash；新系统验证另列ENV-01 | [构建证据](../evidence/2026-10-04-takeover/clean-build-manifest.json) |
@@ -13,8 +13,8 @@
 | PERF-01 | P0 | DRAFT | 冻结前后台/节奏采样合同；用指定PR16提交或其集成版本 | GLM-Eng-A工具与复算；Codex实机调度/裁决 | 原因分类所需同条件日志/帧/内存，保留启动尖刺；确认可重复性，不能直接沿用75–172FPS作稳定预算 | [#5](https://github.com/liuyejinghong/yudian-game/issues/5) / [#15](https://github.com/liuyejinghong/yudian-game/issues/15) |
 | LIFE-01 | P0 | DRAFT | 现有Recorder；独立GUI关窗用例与恢复定义 | GLM-Eng-A用例/局部修正；Codex真实GUI验收 | 关窗exit/status、无覆盖、重启独立run-id；硬杀只允许部分CSV，不冒称游戏恢复 | [NOT_RUN](../reports/2026-10-04-takeover-verification.md) |
 | ENV-01 | P2 | BLOCKED | 合法可用的无SDK隔离系统/设备；禁止为本票擅装系统 | GLM-Eng-A清单/脚本；Codex环境与裁决 | 同一包在无SDK环境启动，真实runtime/身份；未有环境不影响合同与独立样件 | [复验边界](../reports/2026-10-04-takeover-verification.md) |
-| T3a | P1 | DRAFT | 明确有限局部改造的设计范围、现役产品约束、输入证据和验收案例；不需等PERF-01完结才讨论 | Codex | 冻结高度单位/区域/边界/patch/版本/提交/取消合同；独立世界状态、旧版本拒绝，网格/碰撞/导航消费同一版本；不直接开全套实现 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
-| T3a-DATA | P1 | BLOCKED | T3a冻结API/数据与异常样例 | GLM-Eng-A | 纯数据校验/patch序列化与独立样例；不批准权威提交，不改显示/碰撞/导航合同 | T3a / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
+| T3a | P1 | ACCEPTED | r1矩形数据接缝/边界/版本与提交取消职责已冻结；实际世界提交系统在T3d | Codex | 接受r1数据合同设计：绝对高度/row-major、不可变base与candidate、外围同值/版本重验和取消保留已发生结果；完整世界/邻区接入未实现，不直接开全套T3 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
+| T3a-DATA | P1 | READY | T3a-r1合同与异常金样冻结 | GLM-Eng-A | 只读解析/校验/序列化和独立异常测试，net8编译/net10执行；不批准权威提交或游戏保存 | [合同r1](../contracts/terrain-patch-r1.md) / [GLM票](T3a-DATA.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3b | P1 | BLOCKED | T3a与T3a-DATA；一个阶段网格候选的冻结输入/目录 | GLM-Eng-A | 局部阶段网格子件，边界连续、同输入输出；不把网格变化当持久世界已成立 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3c | P1 | BLOCKED | T3a与T3a-DATA；独立高度场候选同一输入/镜头 | GLM-Eng-B | 第二候选子件与边界/局部更新证据；不和T3b争写公共状态 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3d | P1 | BLOCKED | T3b/T3c提交；明确碰撞/通行/保存的最小范围与验收案例，派实现子票前冻结对应契约 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
