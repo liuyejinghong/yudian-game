@@ -11,11 +11,11 @@
 - 不创造产品／成本／预算事实：面数、材质、贴图预算均未实测，本文不写数值目标；工单中的代理体尺寸只是代码事实，不是美术生产规范。
 - 美术不决定产矿、通行、发电、救援等模拟规则；连接点与动作名的存在不代表能力、载荷或回收方式已获准。
 
-## 2. 状态词汇
+## 2. 状态与优先级
 
-允许状态：`DRAFT / READY / BLOCKED / IN_PROGRESS / SUBMITTED / REVIEW / REWORK / ACCEPTED`。是否获准执行、是否合并另行说明，不挤入状态字段；未真实派单不写 IN_PROGRESS。
+允许状态：`DRAFT / READY / BLOCKED / IN_PROGRESS / SUBMITTED / REVIEW / REWORK / ACCEPTED`。是否获准执行、是否合并另行说明；未真实派单不写IN_PROGRESS。优先级与[总TODO](../../../TODO.md)统一使用P0/P1/P2。
 
-## 3. 冻结事实（本文不得改写）
+## 3. 2026-10-04 当前事实
 
 - **ART-I00 = ACCEPTED**：仅技术校准通过；PR #16 未合并；视觉验收未做（NOT_RUN）。旧清单的「待核定」不覆盖本结论；校准件是原创尺度标尺，不是驮运／设施正式模型。
 - **ART-T01／ART-T02 = BLOCKED**：正式接入等待 T3 区域／边界高程／版本合同；参考造型不必等性能复核。
@@ -32,29 +32,29 @@
 | GLM-Material | ART-M01 | 共享材质单一写者 |
 | Codex（主控） | ART-I00 公共合同／集成 | 技术验收 Codex；视觉效果验收所有者 |
 
-实际派单要求：独立工作树、单票冻结目录；不得两个 agent 同时编辑同一 `.blend`、场景入口或资源注册表。ART-TOOLS-01 的执行槽未指定，待主控派单。
+实际派单要求：独立工作树、单票冻结目录；不得两个 agent 同时编辑同一 `.blend`、场景入口或资源注册表。ART-TOOLS-01拟由GLM-Art-A做只读预检，Codex核定工具方案；实际派单仍待后续执行批次。
 
 ## 5. 任务表（15 行 = 14 个原始 ID + ART-TOOLS-01）
 
-原始 14 行清单见[清单@171c610][14csv]；其旧状态列（待核定／等T3边界／待制作／首批通过后）已被第 3 节冻结事实取代，不覆盖本文状态。优先级为整理建议：高＝冻结事实点名第一批优先的 U01／F01／F02／M01；中＝第一批内受 T3 阻断的 T01／T02 与生产前置的工具预检；低＝第二批七行；最终排批由主控决定。
+原始 14 行清单见[清单@171c610][14csv]；其旧状态列按本轮实证更新，不覆盖当前任务行。P0记录已验接口，P1为首批样件/工具前置，P2为第一批通过后的队列；最终排批由主控决定。
 
 | ID | 任务 | 优先级 | 状态 | 前置 | 拟执行槽 | 交付 / 验收 | 来源 |
 |---|---|---|---|---|---|---|---|
-|ART-I00|模型接入约定（技术校准）|—|ACCEPTED|无（已完成技术验收）|Codex（公共合同／集成）|已交付可编辑 glTF+bin 源、生成脚本、GLB 校准件、manifest 与独立预览场景；技术验收已通过，视觉验收未做（NOT_RUN）；PR #16 未合并。校准件不是驮运／设施正式模型|[接口合同][i00]、[接管复验][takeover]、[PR #16][pr16]|
-|ART-T01|整平土坡样件（原坡／施工中／整平后三阶段）|中|BLOCKED|T3 区域／边界高程／版本合同冻结（主控 T3a）；I00 接口合同已通过（仅技术校准）|GLM-Art-T|三阶段同一局部边界、无裂缝；源文件＋阶段 GLB＋同镜头对照图；不实现矿物结算。参考造型可先行，不必等性能复核；正式接入待 T3|[工单][wo]|
-|ART-T02|开挖矿点样件（未开挖／部分／已开挖三阶段）|中|BLOCKED|同 ART-T01（T3 区域／边界高程／版本合同）|GLM-Art-T|三阶段可辨截面与矿层、统一边界；新增前后状态不自动成为可挖储量，几何／碰撞／导航／保存由 T3 绑定|[工单][wo]|
-|ART-U01|驮运样件|高|DRAFT|I00 接口合同已通过（仅技术校准）；主控派单|GLM-Art-A|无载／有载、轮组、Socket_Cargo／TowFront／TowRear／Charge 连接点；动作 idle／move／disabled／towed，其余标 N/A；独立货箱。代理体 1.15×0.85×1.0 仅参考，非最终比例|[工单][wo]、[接口合同][i00]|
-|ART-F01|太阳能阵列样件|高|DRAFT|I00 接口合同已通过（仅技术校准）；主控派单|GLM-Art-B|打包／安装／展开／建成四阶段；面板可单独驱动、基座固定；不整栋旋转；建成不等于发电，夜间工作灯不证明发电|[工单][wo]|
-|ART-F02|加工设施样件|高|DRAFT|I00 接口合同已通过（仅技术校准）；主控派单|GLM-Art-B|idle／work／offline／maintenance；进出料区域、可动加工件、少量货物道具；缺电／维护由未来状态桥给出，演示动作为预览，不自主生产材料|[工单][wo]|
-|ART-M01|共享基础材质组|高|DRAFT|I00 接口合同已通过（仅技术校准）；单一写者约束|GLM-Material（单一写者）|浅色外壳／深灰结构／太阳能面／标识／火星地表等少量可复用材质；来源与参数记录；实际性能预算由测量决定，本文不预设数值|[工单][wo]、[美术方向][artdir]|
-|ART-U02|筑垒机器人|低|DRAFT|第一批（U01／F01／F02／M01）导入、比例、实际成本与所有者效果通过；主控排批|GLM-Art-A|清场／施工／维护工具可辨；停机与工作姿态不同；不由外形批准额外能力|[工单][wo]|
-|ART-U03|望山机器人|低|DRAFT|同 ART-U02|GLM-Art-A|桅杆、扫描与运动；底部锚点正确，不做悬空人体|[工单][wo]|
-|ART-F03|仓储设施|低|DRAFT|同 ART-U02|GLM-Art-B|固定地基，货物进出与空位清楚；禁止整栋转圈|[工单][wo]|
-|ART-F04|充电站|低|DRAFT|同 ART-U02|GLM-Art-B|可见泊位与接口，占用／停电／充电可区别；立柱不悬浮|[工单][wo]|
-|ART-F05|维修站|低|DRAFT|同 ART-U02|GLM-Art-B|拖入通道、工具工作区与状态；维修不等于充满电；不为迎合占位强做雷达|[工单][wo]|
-|ART-F06|着陆器|低|DRAFT|同 ART-U02|GLM-Art-B|落地支脚、卸货区域与运输用途；不默认增加人口穹顶或人类模拟|[工单][wo]|
-|ART-P01|货箱与回收连接件|低|DRAFT|同 ART-U02|GLM-Art-A|一种货箱即可；拖具只按已核定能力制作，非模型决定规则|[工单][wo]|
-|ART-TOOLS-01|本机可编辑工具链预检|中|DRAFT|主控派单|待主控派单|逐项记录本机合法可编辑工具（如 Blender／Godot）可用性与版本，形成预检记录；上次 Blender 未安装；不自动安装、不购买，不把图片冒称 GLB|TODO-ART-01 冻结事实、[美术方向][artdir]|
+|ART-I00|模型接入约定（技术校准）|P0|ACCEPTED|无（已完成技术验收）|Codex（公共合同／集成）|已交付可编辑 glTF+bin 源、生成脚本、GLB 校准件、manifest 与独立预览场景；技术验收已通过，视觉验收未做（NOT_RUN）；PR #16 未合并。校准件不是驮运／设施正式模型|[接口合同][i00]、[接管复验][takeover]、[PR #16][pr16]|
+|ART-T01|整平土坡样件（原坡／施工中／整平后三阶段）|P1|BLOCKED|ART-TOOLS-01通过；T3区域／边界高程／版本合同冻结（主控T3a）；I00技术接口|GLM-Art-T|三阶段同一局部边界、无裂缝；源文件＋阶段 GLB＋同镜头对照图；不实现矿物结算。参考造型可先行，不必等性能复核；正式接入待 T3|[工单][wo]|
+|ART-T02|开挖矿点样件（未开挖／部分／已开挖三阶段）|P1|BLOCKED|同 ART-T01（T3 区域／边界高程／版本合同）|GLM-Art-T|三阶段可辨截面与矿层、统一边界；新增前后状态不自动成为可挖储量，几何／碰撞／导航／保存由 T3 绑定|[工单][wo]|
+|ART-U01|驮运样件|P1|DRAFT|ART-TOOLS-01通过；I00接口合同已通过（仅技术校准）；主控冻结材质引用/单件预览约定后派单|GLM-Art-A|无载／有载、轮组、Socket_Cargo／TowFront／TowRear／Charge 连接点；动作 idle／move／disabled／towed；其他动作是否适用逐项记录，不适用才标N/A；独立货箱。代理体 1.15×0.85×1.0 仅参考，非最终比例|[工单][wo]、[接口合同][i00]|
+|ART-F01|太阳能阵列样件|P1|DRAFT|ART-TOOLS-01通过；I00接口合同已通过（仅技术校准）；主控冻结材质引用/单件预览约定后派单|GLM-Art-B|打包／安装／展开／建成四阶段；面板可单独驱动、基座固定；不整栋旋转；建成不等于发电，夜间工作灯不证明发电|[工单][wo]|
+|ART-F02|加工设施样件|P1|DRAFT|ART-TOOLS-01通过；I00接口合同已通过（仅技术校准）；主控冻结材质引用/单件预览约定后派单|GLM-Art-B|idle／work／offline／maintenance；进出料区域、可动加工件、少量货物道具；offline为展示标签，接现有七态桥的映射须正式票冻结，不直接传入未知状态；缺电／维护由技术状态给出，演示不生产材料|[工单][wo]|
+|ART-M01|共享基础材质组|P1|DRAFT|ART-TOOLS-01通过；I00接口合同；主控冻结材质接口与单一写者归属|GLM-Material（单一写者）|浅色外壳／深灰结构／太阳能面／标识／火星地表等少量可复用材质；来源与参数记录；实际性能预算由测量决定，本文不预设数值|[工单][wo]、[美术方向][artdir]|
+|ART-U02|筑垒机器人|P2|DRAFT|第一批（U01／F01／F02／M01）导入、比例、实际成本与所有者效果通过；主控排批|GLM-Art-A|清场／施工／维护工具可辨；停机与工作姿态不同；不由外形批准额外能力|[工单][wo]|
+|ART-U03|望山机器人|P2|DRAFT|同 ART-U02|GLM-Art-A|桅杆、扫描与运动；底部锚点正确，不做悬空人体|[工单][wo]|
+|ART-F03|仓储设施|P2|DRAFT|同 ART-U02|GLM-Art-B|固定地基，货物进出与空位清楚；禁止整栋转圈|[工单][wo]|
+|ART-F04|充电站|P2|DRAFT|同 ART-U02|GLM-Art-B|可见泊位与接口，占用／停电／充电可区别；立柱不悬浮|[工单][wo]|
+|ART-F05|维修站|P2|DRAFT|同 ART-U02|GLM-Art-B|拖入通道、工具工作区与状态；维修不等于充满电；不为迎合占位强做雷达|[工单][wo]|
+|ART-F06|着陆器|P2|DRAFT|同 ART-U02|GLM-Art-B|落地支脚、卸货区域与运输用途；不默认增加人口穹顶或人类模拟|[工单][wo]|
+|ART-P01|货箱与回收连接件|P2|DRAFT|同 ART-U02|GLM-Art-A|一种货箱即可；拖具只按已核定能力制作，非模型决定规则|[工单][wo]|
+|ART-TOOLS-01|本机可编辑工具链预检|P1|DRAFT|主控派单|GLM-Art-A预检；Codex核定|逐项记录本机合法可编辑工具（如 Blender／Godot）可用性与版本，形成预检记录；上次 Blender 未安装；不自动安装、不购买，不把图片冒称 GLB|TODO-ART-01 冻结事实、[美术方向][artdir]|
 
 ## 6. 批次与排批说明
 
@@ -66,55 +66,7 @@
 
 逐资产交付格式按工单执行：可编辑源文件＋导入用 GLB、asset.json 清单（稳定 ID、revision、单位、导入后包围盒、原点／前向、连接点、动作、材质数量、三角面、纹理尺寸／色彩空间、文件 hash 与来源许可）、正常白昼同镜头状态对照图（非实机图必须标「设计／离线渲染」）、两档细节方案或明确简化说明、导入与验证记录（未运行标 NOT_RUN）。技术验收由 Codex 负责，视觉效果验收由所有者负责；仅导入成功不等于美术效果通过。本批先记录成本，面数／材质／贴图预算待主控按整场实测数据固定。
 
-## 8. 自检记录（Python 标准库）
-
-真实命令（仓库根＝工作树 `todo-art-worker`，分支 `worker/todo-art-20261004`）：
-
-```bash
-python3 - <<'PY'
-import re, subprocess
-from pathlib import Path
-text = Path("docs/art/production/todo.md").read_text(encoding="utf-8")
-expected = ["ART-I00","ART-T01","ART-T02","ART-U01","ART-F01","ART-F02","ART-M01",
-            "ART-U02","ART-U03","ART-F03","ART-F04","ART-F05","ART-F06","ART-P01",
-            "ART-TOOLS-01"]
-frozen = {"ART-I00": "ACCEPTED", "ART-T01": "BLOCKED", "ART-T02": "BLOCKED"}
-vocab = "DRAFT|READY|BLOCKED|IN_PROGRESS|SUBMITTED|REVIEW|REWORK|ACCEPTED"
-rows = re.findall(rf"^\|(ART-[A-Z0-9-]+)\|[^|\n]*\|[^|\n]*\|({vocab})\|", text, re.M)
-bad = []
-ids = [r[0] for r in rows]
-if len(rows) != 15 or len(set(ids)) != len(ids) or set(ids) != set(expected):
-    bad.append("ID集合/行数不符: " + str(sorted(set(ids) ^ set(expected))))
-for i, s in rows:
-    if s != frozen.get(i, "DRAFT"):
-        bad.append(f"{i}={s} 与冻结映射不符")
-st = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout.splitlines()
-for l in st:
-    path = l[3:].strip()
-    if path == "docs/art/production/todo.md" or path.startswith("docs/art/production/todo-input/"):
-        continue
-    bad.append("越界改动: " + l)
-defs = dict(re.findall(r"^\[([^\]]+)\]:\s+(\S+)$", text, re.M))
-for used in set(re.findall(r"\]\[([^\]\[]+)\]", text)):
-    if used not in defs:
-        bad.append("引用链接无定义: " + used)
-base = Path("docs/art/production")
-for tgt in set(defs.values()):
-    if tgt.startswith("http"):
-        continue
-    rel = (base / tgt).resolve().relative_to(Path(".").resolve()).as_posix()
-    if subprocess.run(["git", "ls-files", "--error-unmatch", rel], capture_output=True).returncode != 0:
-        bad.append("链接目标未入库: " + rel)
-print("CHECK", "PASS" if not bad else "FAIL",
-      "| rows=%d unique_ids=%d statuses=%s" % (len(rows), len(set(ids)),
-      {k: dict(rows)[k] for k in ["ART-I00", "ART-T01", "ART-T02", "ART-TOOLS-01"]}))
-print("\n".join(bad) if bad else "problems: none")
-PY
-```
-
-检查内容：任务表恰为 15 行、14 个原始 ID 加 ART-TOOLS-01 且无重复；每行状态与第 3 节冻结映射一致且都在第 2 节允许词汇内；git 改动仅 `docs/art/production/todo.md`（`todo-input/` 只读副本保持未跟踪、不提交）；文内引用链接均有定义且仓库相对链接目标均为已跟踪文件。
-
-结果：2026-10-04 本地实际运行，输出 `CHECK PASS | rows=15 unique_ids=15 statuses={'ART-I00': 'ACCEPTED', 'ART-T01': 'BLOCKED', 'ART-T02': 'BLOCKED', 'ART-TOOLS-01': 'DRAFT'}`、`problems: none`。
+文档外包交付与独立验收记录见[TODO-ART-01](../../workflow/tasks/TODO-ART-01.md)。当前状态只在任务表凭证据更新，不把本轮映射永久冻结。
 
 [wo]: https://github.com/liuyejinghong/yudian-game/blob/171c610/docs/art/production/2026-10-04-t2-asset-work-order.md
 [14csv]: https://github.com/liuyejinghong/yudian-game/blob/171c610/docs/art/production/2026-10-04-asset-tasks.csv
