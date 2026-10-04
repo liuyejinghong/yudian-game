@@ -724,6 +724,18 @@ class FinalReworkRegressionTest(unittest.TestCase):
             self.assertTrue(any("summary_json.frame_time_ms" in r for r in reasons),
                             reasons)
 
+    def test_zero_frame_with_explicit_null_ftm_fails(self):
+        with tempfile.TemporaryDirectory() as td:
+            summary = json.loads(self.ZERO_SUMMARY)
+            summary["frame_time_ms"] = None
+            rc, report = Fixture(td).add_and_audit(
+                "r", csv_text="frame,time_s,frame_ms,fps\n",
+                summary_text=json.dumps(summary), exit_code=130)
+            self.assertEqual(rc, 1)
+            self.assertEqual(report["overall"], "FAIL")
+            self.assertTrue(any("summary_json.frame_time_ms" in reason
+                                for reason in report["runs"][0]["reasons"]))
+
     def test_zero_frame_with_nonfinite_ftm_value_still_fails(self):
         with tempfile.TemporaryDirectory() as td:
             s = json.loads(self.ZERO_SUMMARY)

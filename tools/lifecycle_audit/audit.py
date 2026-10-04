@@ -293,7 +293,7 @@ def check_stats(summary, calc, fails, compare):
     # 零帧摘要缺该字段合法；但已存在的 ftm 类型错/字段非有限仍 FAIL。
     zero_frames = _is_int(summary.get("frames")) and summary["frames"] == 0
     if not isinstance(ftm, dict):
-        if not (ftm is None and zero_frames):
+        if not (zero_frames and "frame_time_ms" not in summary):
             fails.append("summary_json.frame_time_ms: 缺失或非对象")
         return  # 零帧合法缺 ftm 时无子字段可查；非法则已 FAIL
     pairs = (("p50", "nearest_rank_ms", "50"), ("p95", "nearest_rank_ms", "95"),
