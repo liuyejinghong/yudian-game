@@ -1,0 +1,116 @@
+# QA-02 合同测试完整输出
+# 命令: dotnet run -v q --project tools/qa02-tests/Qa02.Tests.csproj -- <工作树>/prototype/fixtures/s_small.json
+# (工作树内执行；-v q 仅为避免输出中出现绝对路径，测试结果完整)
+== fixture 合同 (prototype/fixtures/s_small.json) ==
+PASS 正常S档: 解析真实 s_small
+PASS 正常S档: name/seed
+PASS 正常S档: 规模字段
+PASS 正常S档: 地形特征
+PASS 正常S档: 相机/质量/分辨率/输出
+PASS 尾逗号允许
+PASS 键大小写不敏感
+PASS 零机器人: 0机0设施合法
+PASS 边界值全合法: 500/类·256设施·各上限
+PASS 总量不一致: 13≠4*3
+PASS 设施不足: 12机3设施
+PASS 每类超500
+PASS 每类为负
+PASS 设施超256
+PASS seed为负
+PASS name为空
+PASS ring_radius为0
+PASS ring_radius为负
+PASS ring_radius超上限
+PASS size为0
+PASS size超上限
+PASS segments为0
+PASS segments超512
+PASS 特征半径为0
+PASS 特征半径为负
+PASS amount低于下限
+PASS amount高于上限
+PASS position元素数≠2(3个)
+PASS position元素数≠2(1个)
+PASS center元素数≠3(2个)
+PASS center元素数≠3(4个)
+PASS position元素超界
+PASS center元素非有限(1e400溢出)
+PASS 相机半径为0
+PASS 相机高度为0
+PASS 相机周期为0
+PASS seed显式null
+PASS scale显式null
+PASS mound显式null
+PASS position元素null
+PASS fxaa显式null
+PASS frames_csv显式null
+PASS 遗漏quality
+PASS 遗漏seed
+PASS 遗漏mound
+PASS 遗漏summary_json
+PASS 遗漏target_resolution
+PASS 重复键seed
+PASS 嵌套重复键radius
+PASS 大小写变体重复键
+PASS 未知键顶层
+PASS 未知键嵌套
+PASS 非法MSAA(1)
+PASS 非法MSAA(16)
+PASS MSAA 0 合法
+PASS scaling_3d_scale为0
+PASS scaling_3d_scale超2
+PASS width为0
+PASS height超8192
+PASS duration_seconds为0
+PASS duration_seconds超3600
+PASS duration_seconds溢出(1e300)
+PASS frames_csv为空
+PASS summary_json为空
+PASS seed为布尔
+PASS fxaa为数字
+PASS width为字符串
+PASS name为数字
+PASS segments为小数
+PASS position为字符串
+PASS 损坏JSON
+PASS 根不是对象
+== CLI 合同 (BenchmarkOptions) ==
+PASS 默认: 不触发/默认fixture/输出为null
+PASS user --benchmark 触发
+PASS user --yudian-benchmark 触发
+PASS engine --yudian-benchmark 触发
+PASS 环境变量env=true 触发
+PASS 引擎裸 --benchmark 不触发且不报错
+PASS user --benchmark + 引擎 --benchmark 触发
+PASS --duration 触发且解析
+PASS engine --duration 触发且解析
+PASS user --fixture 优先
+PASS engine --fixture 兜底
+PASS user --duration 优先
+PASS 输出路径 user 覆盖 / engine 兜底
+PASS 引擎 Godot 参数忽略
+PASS user选项缺值(末尾)
+PASS user选项缺值(下一项是选项)
+PASS engine选项缺值
+PASS user选项空值
+PASS user重复--fixture
+PASS user重复--benchmark
+PASS user重复--yudian-benchmark
+PASS engine重复--duration
+PASS engine重复--yudian-benchmark
+PASS user未知选项
+PASS user位置参数
+PASS user -- 分隔符视为未知
+PASS --duration NaN
+PASS --duration Infinity
+PASS --duration 非数字
+PASS --duration 为0
+PASS --duration 超3600
+PASS --duration 为负
+PASS --duration 上界3600合法
+PASS --duration 小值合法
+PASS CLI duration 文化无关(de-DE下2.5)
+PASS fixture 数值文化无关(de-DE下14.5)
+PASS 组合: 全选项生效
+QA-02 合同测试: 共 109 项, 失败 0
+exit code: 0
