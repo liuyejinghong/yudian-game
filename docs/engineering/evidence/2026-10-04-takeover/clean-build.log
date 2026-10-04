@@ -1,0 +1,112 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started 项目初始化 (5 steps)
+[   0% ] first_scan_filesystem | 正在扫描文件结构……
+[  16% ] first_scan_filesystem | 正在加载全局类名……
+[  33% ] first_scan_filesystem | 正在校验 GDExtension……
+[  50% ] first_scan_filesystem | 正在创建自动加载脚本……
+[  66% ] first_scan_filesystem | 正在初始化插件……
+[  83% ] first_scan_filesystem | 正在启动文件扫描……
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started 正在注册全局类…… (6 steps)
+[   0% ] update_scripts_classes |
+[  14% ] update_scripts_classes |
+[  28% ] update_scripts_classes |
+[  42% ] update_scripts_classes |
+[  57% ] update_scripts_classes |
+[  71% ] update_scripts_classes |
+[ DONE ] update_scripts_classes
+
+[   0% ] reimport | Started 正在导入或重新导入资产 (1 steps)
+[   0% ] reimport | 正在准备重新导入文件……
+[   0% ] reimport | 正在执行重新导入的前置操作……
+[   0% ] preload_reimporting_scene | Started 正在准备重新加载场景 (1 steps)
+[   0% ] preload_reimporting_scene | 正在分析场景 [空]
+[  50% ] preload_reimporting_scene | 准备完成。
+[ DONE ] preload_reimporting_scene
+
+[   0% ] reimport | art_i00.glb
+[   0% ] import | Started 导入场景 (104 steps)
+[   0% ] import | 导入场景中...
+[   1% ] import | 执行自定义脚本...
+[  99% ] import | 保存中...
+[ DONE ] import
+
+[  50% ] reimport | 正在结束资产导入……
+[ DONE ] reimport
+
+[   0% ] reimport | Started 正在导入或重新导入资产 (1 steps)
+[   0% ] reimport | 正在执行重新导入的后置操作……
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started 正在加载编辑器 (5 steps)
+[   0% ] loading_editor_layout | 正在加载编辑器布局……
+[  16% ] loading_editor_layout | 正在加载停靠面板……
+[ DONE ] loading_editor_layout
+
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started 项目初始化 (5 steps)
+[   0% ] first_scan_filesystem | 正在扫描文件结构……
+[  16% ] first_scan_filesystem | 正在加载全局类名……
+[  33% ] first_scan_filesystem | 正在校验 GDExtension……
+[  50% ] first_scan_filesystem | 正在创建自动加载脚本……
+[  66% ] first_scan_filesystem | 正在初始化插件……
+[  83% ] first_scan_filesystem | 正在启动文件扫描……
+[ DONE ] first_scan_filesystem
+
+[   0% ] dotnet_build_project | Started Building .NET project... (1 steps)
+[   0% ] dotnet_build_project | Building project
+[   0% ] loading_editor_layout | Started 正在加载编辑器 (5 steps)
+[   0% ] loading_editor_layout | 正在加载编辑器布局……
+[  16% ] loading_editor_layout | 正在加载停靠面板……
+[ DONE ] loading_editor_layout
+
+[ DONE ] dotnet_build_project
+
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] first_scan_filesystem | Started 项目初始化 (5 steps)
+[   0% ] first_scan_filesystem | 正在扫描文件结构……
+[  16% ] first_scan_filesystem | 正在加载全局类名……
+[  33% ] first_scan_filesystem | 正在校验 GDExtension……
+[  50% ] first_scan_filesystem | 正在创建自动加载脚本……
+[  66% ] first_scan_filesystem | 正在初始化插件……
+[  83% ] first_scan_filesystem | 正在启动文件扫描……
+[ DONE ] first_scan_filesystem
+
+[   0% ] dotnet_publish_project | Started Publishing .NET project... (1 steps)
+[   0% ] dotnet_publish_project | Running dotnet publish
+[ DONE ] dotnet_publish_project
+
+[   0% ] export | Started 正在为 macOS 导出 (3 steps)
+[   0% ] export | 正在创建应用捆绑包
+[  25% ] export | 正在制作 PKG
+[   0% ] savepack | Started 打包中 (102 steps)
+[   1% ] savepack | 正在保存文件：res://.godot/imported/art_i00.glb-d2b379c4fde182f4932bfd96a67f6d2f.scn
+[   1% ] savepack | 正在保存文件：res://assets/calibration/art_i00.glb.import
+[   9% ] savepack | 正在保存文件：res://fixtures/s_small.json
+[  17% ] savepack | 正在保存文件：res://.godot/exported/133200997/export-bc10fbb4959c5ecffa6c2ed72cbfd495-ArtI00.scn
+[  26% ] savepack | 正在保存文件：res://.godot/exported/133200997/export-4a24720ee5e787dbe30abc634fa3679d-Main.scn
+[  33% ] savepack | 正在保存文件：res://scripts/Art/AssetPreview.cs
+[  41% ] savepack | 正在保存文件：res://scripts/Art/VisualStateBridge.cs
+[  50% ] savepack | 正在保存文件：res://scripts/Benchmark/BenchmarkRecorder.cs
+[  58% ] savepack | 正在保存文件：res://scripts/Configuration/BenchmarkOptions.cs
+[  66% ] savepack | 正在保存文件：res://scripts/Configuration/FixtureConfig.cs
+[  74% ] savepack | 正在保存文件：res://scripts/Main.cs
+[  82% ] savepack | 正在保存文件：res://build-info.json
+[  90% ] savepack | 正在保存文件：res://export/clean-r1/Yudian.app/Contents/Resources/icon.icns
+[  90% ] savepack | 正在保存文件：res://scenes/asset_preview/ArtI00.tscn.remap
+[  90% ] savepack | 正在保存文件：res://scenes/Main.tscn.remap
+[  90% ] savepack | 正在保存文件：res://.godot/global_script_class_cache.cfg
+[  90% ] savepack | 正在保存文件：res://.godot/uid_cache.bin
+[  90% ] savepack | 正在保存文件：res://project.binary
+[ DONE ] savepack
+
+[ DONE ] export
+
+<clean-checkout>/prototype/export/clean-r1/Yudian.app: replacing existing signature
+<clean-checkout>/prototype/export/clean-r1/Yudian.app: valid on disk
+<clean-checkout>/prototype/export/clean-r1/Yudian.app: satisfies its Designated Requirement
+BUILD_OK: arm64 export, ad-hoc signature, manifest; GUI/runtime isolation remain separate checks

@@ -1,0 +1,6 @@
+{
+  "two_runs_identical": true,
+  "original_tpz_sha256": "92f8681e349ef1f90891b792da95e3b2b0bd1ed610b78018c58feb2d87e15a9d",
+  "original_macos_zip_sha256": "160fbe611e016d314bed09739d0560dc83ee4227d489ae9c9860d7220d073f5e",
+  "patched_macos_zip_sha256": "95b43bedb9cf066cb68a1f9df5bccf05fdfa9836e824518ab94087084cd74013"
+}

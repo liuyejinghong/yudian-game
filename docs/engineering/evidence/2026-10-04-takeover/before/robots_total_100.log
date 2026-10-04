@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[Yudian] fixture=s_small seed=20261004 facilities=6 robots=12 benchmark=True
+[Yudian] benchmark done: <temporary-input>/robots_total_100-summary.json
+{
+  "fixture": "s_small",
+  "avg_fps": 156.85,
+  "frames": 32,
+  "duration_requested_s": 0.2,
+  "duration_actual_s": 0.204,
+  "window_resolution": "0x0",
+  "internal_3d_resolution": "0x0",
+  "scaling_3d_scale": 1,
+  "msaa_3d": 4,
+  "renderer": "forward_plus",
+  "godot_version": "4.7.2-stable (official)",
+  "seed": 20261004
+}
+ERROR: Failed to open 'user://logs/godot2026-10-04T15.23.54.log'.
+   at: copy (core/io/dir_access.cpp:429)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)

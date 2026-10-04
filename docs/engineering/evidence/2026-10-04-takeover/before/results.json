@@ -1,0 +1,14 @@
+[
+  {
+    "case": "robots_total_100",
+    "exit": 0
+  },
+  {
+    "case": "duration_nan",
+    "exit": "TIMEOUT_4S"
+  },
+  {
+    "case": "facilities_3",
+    "exit": "TIMEOUT_4S"
+  }
+]
