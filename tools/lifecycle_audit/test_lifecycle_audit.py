@@ -4,7 +4,9 @@
 人工反例：completed/130、interrupted/0、帧数/时长/分位矛盾、重复 run_id、
 缺 summary、缺退出记录、截断末行、零帧、NaN、未知状态、坏 JSON、覆盖输出；
 以及 manifest 结构无效（exit 2 不写报告）、相对路径解析、布尔当整数、
-exit_case 找不到/重复匹配。
+exit_case 找不到/重复匹配。返工回归：超大整数统计判定不抛异常、截断时 summary
+必需字段独立判 FAIL、输出独占创建拒绝符号链接、manifest 非 UTF-8、IO 错误
+诊断不含绝对路径且无 traceback。
 """
 import hashlib
 import json
@@ -549,6 +551,142 @@ class PathResolutionTest(unittest.TestCase):
                              "--output", str(out)])
             self.assertEqual(rc, 0)
             self.assertEqual(json.loads(out.read_text())["overall"], "PASS")
+
+
+class ReworkRegressionTest(unittest.TestCase):
+    """返工回归：数值判定不抛异常（超大整数）、截断时 summary 字段独立判 FAIL、
+    输出 O_EXCL 独占创建（悬空/指向已存在文件的符号链接均拒绝）、manifest 非
+    UTF-8、IO 错误诊断不含绝对路径、无 traceback。"""
+
+    def mutate_summary(self, root, name, mutate):
+        p = Path(root) / f"{name}-summary.json"
+        s = json.loads(p.read_text())
+        mutate(s)
+        p.write_text(json.dumps(s), encoding="utf-8")
+
+    def run_cli(self, root, out="report.json", manifest="manifest.json"):
+        return subprocess.run(
+            [sys.executable, str(AUDIT_PY), "--manifest", str(Path(root) / manifest),
+             "--output", str(Path(root) / out)],
+            cwd=root, capture_output=True, text=True)
+
+    def test_huge_int_avg_fps_fails_with_report(self):
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("bad")
+            self.mutate_summary(td, "bad", lambda s: s.update(avg_fps=10 ** 400))
+            rc, rep = f.run()
+            self.assertEqual(rc, 1)
+            self.assertEqual(rep["overall"], "FAIL")
+            run = rep["runs"][0]
+            self.assertEqual(run["verdict"], "FAIL")
+            self.assertTrue(any("summary_json.avg_fps" in r for r in run["reasons"]),
+                            run["reasons"])
+
+    def test_huge_int_frames_and_duration_fail_not_crash(self):
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("bad")
+            self.mutate_summary(td, "bad",
+                                lambda s: s.update(frames=10 ** 400,
+                                                   duration_actual_s=10 ** 400))
+            rc, rep = f.run()
+            self.assertEqual(rc, 1)
+            run = rep["runs"][0]
+            self.assertEqual(run["verdict"], "FAIL")
+            self.assertTrue(any("summary_json.frames" in r for r in run["reasons"]),
+                            run["reasons"])
+            self.assertTrue(any("summary_json.duration_actual_s" in r
+                                for r in run["reasons"]), run["reasons"])
+
+    def test_truncated_csv_nan_avg_fps_fails_independently(self):
+        # 末行截断：数值比较跳过，但必需字段类型/有限性独立判定，NaN 不被缺证掩盖
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("r")
+            write_csv(f.root / "r-frames.csv", BASE_ROWS, truncate_last=True)
+            self.mutate_summary(td, "r", lambda s: s.update(avg_fps=float("nan")))
+            rc, rep = f.run()
+            self.assertEqual(rc, 1)
+            run = rep["runs"][0]
+            self.assertEqual(run["verdict"], "FAIL")
+            self.assertTrue(any("summary_json.avg_fps" in r for r in run["reasons"]),
+                            run["reasons"])
+            self.assertTrue(any("末行截断" in r for r in run["reasons"]), run["reasons"])
+            self.assertEqual(run["frames_read"], 2)
+
+    def test_truncated_csv_missing_stat_field_fails_independently(self):
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("r")
+            write_csv(f.root / "r-frames.csv", BASE_ROWS, truncate_last=True)
+            self.mutate_summary(td, "r",
+                                lambda s: s["frame_time_ms"].pop("p99"))
+            rc, rep = f.run()
+            self.assertEqual(rc, 1)
+            self.assertTrue(any("summary_json.frame_time_ms.p99" in r
+                                for r in rep["runs"][0]["reasons"]), rep)
+
+    def test_dangling_symlink_output_refused(self):
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("ok")
+            target = f.root / "untouched.json"
+            f.manifest()
+            out = f.root / "report.json"
+            out.symlink_to(target)
+            proc = self.run_cli(td)
+            self.assertEqual(proc.returncode, 2, proc.stderr)
+            self.assertTrue(out.is_symlink(), "符号链接必须原样保留")
+            self.assertEqual(os.readlink(out), str(target))
+            self.assertFalse(target.exists(), "悬空目标不得被创建")
+            self.assertIn("输出已存在", proc.stderr)
+            self.assertNotIn("Traceback", proc.stderr)
+
+    def test_symlink_to_existing_file_output_refused(self):
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("ok")
+            keep = f.root / "keep.json"
+            keep.write_text("KEEP-ORIGINAL", encoding="utf-8")
+            f.manifest()
+            out = f.root / "report.json"
+            out.symlink_to(keep)
+            proc = self.run_cli(td)
+            self.assertEqual(proc.returncode, 2, proc.stderr)
+            self.assertEqual(keep.read_text(), "KEEP-ORIGINAL")
+            self.assertTrue(out.is_symlink())
+
+    def test_manifest_non_utf8_exit_2_no_report(self):
+        with tempfile.TemporaryDirectory() as td:
+            (Path(td) / "manifest.json").write_bytes(b'\xff\xfe{"schema_version": 1}')
+            out = Path(td) / "report.json"
+            proc = self.run_cli(td)
+            self.assertEqual(proc.returncode, 2, proc.stderr)
+            self.assertFalse(out.exists())
+            self.assertIn("非 UTF-8", proc.stderr)
+            self.assertNotIn("Traceback", proc.stderr)
+
+    def test_output_io_error_sanitized(self):
+        with tempfile.TemporaryDirectory() as td:
+            f = Fixture(td)
+            f.add_run("ok")
+            f.manifest()
+            proc = self.run_cli(td, out="no-such-dir/report.json")
+            self.assertEqual(proc.returncode, 2, proc.stderr)
+            self.assertIn("报告创建失败", proc.stderr)
+            self.assertNotIn("Traceback", proc.stderr)
+            for secret in (td, "/Users/", "/private/"):
+                self.assertNotIn(secret, proc.stderr)
+
+    def test_missing_manifest_stderr_sanitized(self):
+        with tempfile.TemporaryDirectory() as td:
+            proc = self.run_cli(td, manifest="no-such.json")
+            self.assertEqual(proc.returncode, 2, proc.stderr)
+            self.assertIn("manifest 不存在", proc.stderr)
+            self.assertIn("no-such.json", proc.stderr)
+            self.assertNotIn(td, proc.stderr)
+            self.assertNotIn("Traceback", proc.stderr)
 
 
 if __name__ == "__main__":

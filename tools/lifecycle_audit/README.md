@@ -12,7 +12,8 @@ python3 -m unittest discover -s tools/lifecycle_audit -p 'test_*.py' -v
 ```
 
 - 退出码：overall PASS → 0；INCOMPLETE/FAIL → 1；manifest 结构无效或输出已存在
-  → 2（stderr 具体错误，不写报告、不覆盖原记录）。
+  （含任何符号链接，悬空也算）→ 2（stderr 具体错误，不写报告、不覆盖原记录）。
+  输出以独占创建（O_CREAT|O_EXCL）落盘，检查即创建，无覆盖竞态。
 - 相对路径一律按 manifest 所在目录解析（含相对 `--output`），与 cwd 无关。
 - 报告不含输入绝对路径，只保留 label / 字段名 / SHA256 / 数值。
 
@@ -33,10 +34,12 @@ python3 -m unittest discover -s tools/lifecycle_audit -p 'test_*.py' -v
 
 - FAIL：completed 配 exit≠0、interrupted 配 exit≠130、其他/未知 status、
   帧数/时长/avg_fps/分位/over_33ms 与独立复算矛盾、行断裂、非法数值（NaN/非正）、
-  坏 JSON/类型错、布尔当整数、exit_case 重复匹配、run_id 全批重复。
+  坏 JSON/类型错、布尔当整数、exit_case 重复匹配、run_id 全批重复、summary 必需
+  统计字段缺失/类型错/非有限（NaN、inf、超出浮点范围的整数也判非有限；与 CSV
+  完整性无关，可独立判定）。数值判定一律不抛异常，诊断不含绝对路径。
 - INCOMPLETE：缺 summary/CSV/exit 证据、零帧、末行截断（末尾无换行且末行不足
   四列；完整四列无末尾换行仍可有效）。截断只校验此前完整行并跳过依赖完整 CSV 的
-  汇总比较；exit/status 矛盾与重复 run_id 仍 FAIL。
+  汇总数值比较（上句的独立字段判定仍执行）；exit/status 矛盾与重复 run_id 仍 FAIL。
 - 容差：时长 1e-5 s；avg_fps max(1e-4, |复算|×1e-6)；p50/p95/p99/max 1e-5 ms；
   over_33ms 精确。
 

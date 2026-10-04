@@ -11,13 +11,18 @@ summary_json / exit_record 三个路径（非空字符串；相对路径一律�
 
 退出码: overall PASS → 0；INCOMPLETE/FAIL → 1；manifest 结构无效或输出已存在 →
 2（stderr 具体错误、不写报告）。统计一律复用 tools/measure_baseline.recompute()
-（按仓库布局定位导入），不复制统计算法。PASS 仅代表产物一致且有相符退出证据，
-不代表 GUI 关闭、无输出覆盖、存档恢复或权限检查已实测。
+（按仓库布局定位导入），不复制统计算法。summary 必需统计字段的结构/类型/有限性
+独立检查，与完整 CSV 数值比较解耦（截断时也执行）；数值判定一律不抛异常。输出
+以 O_CREAT|O_EXCL 独占创建：已存在文件或任何符号链接（含悬空）一律拒绝，无
+检查-写入竞态。诊断只含 role/field 与 basename/相对路径，不泄露调用方绝对路径，
+任何输入不产生 traceback。PASS 仅代表产物一致且有相符退出证据，不代表 GUI 关闭、
+无输出覆盖、存档恢复或权限检查已实测。
 """
 import argparse
 import hashlib
 import json
 import math
+import os
 import sys
 from pathlib import Path
 
@@ -34,7 +39,26 @@ def _is_int(v):
 
 
 def _is_num(v):
-    return isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v)
+    # 大整数（如 10**400）float() 会抛 OverflowError：判为非有限而非让检查崩溃
+    if isinstance(v, bool) or not isinstance(v, (int, float)):
+        return False
+    try:
+        return math.isfinite(float(v))
+    except OverflowError:
+        return False
+
+
+def _display_path(p):
+    """诊断里绝对路径只留 basename，相对路径原样：不泄露调用方目录。"""
+    s = str(p)
+    return os.path.basename(s) if os.path.isabs(s) else s
+
+
+def _safe_io(e):
+    """OSError → 'strerror (basename/相对路径)'，不带绝对路径。"""
+    where = getattr(e, "filename", None)
+    msg = getattr(e, "strerror", None) or type(e).__name__
+    return f"{msg} ({_display_path(where)})" if where else msg
 
 
 def load_measure_baseline():
@@ -53,7 +77,9 @@ def load_manifest(manifest_path):
     try:
         text = manifest_path.read_text(encoding="utf-8")
     except OSError as e:
-        raise CliError(f"manifest 读取失败: {e}")
+        raise CliError(f"manifest 读取失败: {_safe_io(e)}")
+    except UnicodeDecodeError:
+        raise CliError(f"manifest: 非 UTF-8 文本（{_display_path(manifest_path)}）")
     try:
         data = json.loads(text)
     except ValueError as e:
@@ -235,22 +261,25 @@ def read_exit_record(path, exit_case):
     return out
 
 
-def compare_stats(summary, calc, fails):
-    """summary 统计字段与独立复算核对（容差按包文档）；reasons 落在具体 field。"""
+def check_stats(summary, calc, fails, compare):
+    """summary 必需统计字段检查。结构/类型/有限性独立判定（NaN/超大整数/缺字段
+    都在具体 field 上 FAIL，与 CSV 完整性无关）；compare=True 时（CSV 完整且
+    recompute 成功）再与复算核对数值，容差按包文档。数值判定不抛异常。"""
+    bad = "缺失、非数值或非有限（超出浮点范围的整数也判非有限）"
     if not _is_int(summary.get("frames")):
         fails.append("summary_json.frames: 缺失或非整数（布尔不算整数）")
-    elif summary["frames"] != calc["frames"]:
+    elif compare and summary["frames"] != calc["frames"]:
         fails.append(
             f"summary_json.frames: summary={summary['frames']} 复算={calc['frames']}")
     if not _is_num(summary.get("duration_actual_s")):
-        fails.append("summary_json.duration_actual_s: 缺失或非有限数值")
-    elif abs(summary["duration_actual_s"] - calc["duration_csv_s"]) > 1e-5:
+        fails.append(f"summary_json.duration_actual_s: {bad}")
+    elif compare and abs(summary["duration_actual_s"] - calc["duration_csv_s"]) > 1e-5:
         fails.append(
             f"summary_json.duration_actual_s: summary={summary['duration_actual_s']}"
             f" 复算={calc['duration_csv_s']} (容差 1e-5s)")
     if not _is_num(summary.get("avg_fps")):
-        fails.append("summary_json.avg_fps: 缺失或非有限数值")
-    else:
+        fails.append(f"summary_json.avg_fps: {bad}")
+    elif compare:
         tol = max(1e-4, abs(calc["avg_fps"]) * 1e-6)
         if abs(summary["avg_fps"] - calc["avg_fps"]) > tol:
             fails.append(
@@ -263,17 +292,19 @@ def compare_stats(summary, calc, fails):
     pairs = (("p50", "nearest_rank_ms", "50"), ("p95", "nearest_rank_ms", "95"),
              ("p99", "nearest_rank_ms", "99"), ("max", "max_ms", None))
     for key, ck, sub in pairs:
-        expected = calc[ck][sub] if sub else calc[ck]
         v = ftm.get(key)
         if not _is_num(v):
-            fails.append(f"summary_json.frame_time_ms.{key}: 缺失或非有限数值")
-        elif abs(v - expected) > 1e-5:
-            fails.append(
-                f"summary_json.frame_time_ms.{key}: summary={v} 复算={expected} (容差 1e-5ms)")
+            fails.append(f"summary_json.frame_time_ms.{key}: {bad}")
+        elif compare:
+            expected = calc[ck][sub] if sub else calc[ck]
+            if abs(v - expected) > 1e-5:
+                fails.append(
+                    f"summary_json.frame_time_ms.{key}: summary={v} 复算={expected}"
+                    f" (容差 1e-5ms)")
     ov = ftm.get("over_33ms")
     if not _is_int(ov):
         fails.append("summary_json.frame_time_ms.over_33ms: 缺失或非整数（布尔不算整数）")
-    elif ov != calc["over_33ms"]:
+    elif compare and ov != calc["over_33ms"]:
         fails.append(
             f"summary_json.frame_time_ms.over_33ms: summary={ov} 复算={calc['over_33ms']}")
 
@@ -311,16 +342,18 @@ def audit_run(run, manifest_dir, mb):
     rep["_incomplete"] += ex["incomplete"]
     rep["exit_code"] = ex["exit_code"]
 
-    # 汇总比较仅在 CSV 完整可读（非截断、非零帧、无格式 FAIL）且 summary 可读时执行；
-    # 截断/零帧/缺证据按包文档跳过 frames/时长/FPS/分位比较。
+    # 数值比较仅在 CSV 完整可读（非截断、非零帧、无格式 FAIL）且 summary 可读时执行；
+    # summary 必需字段的结构/类型/有限性独立检查（compare=False）不受此限制，
+    # 截断/零帧/缺证据/recompute 失败时也执行——NaN/超大整数/坏类型可独立判 FAIL。
+    calc = None
     if (not fr["truncated"] and fr["frames_read"] >= 1 and not fr["reasons"]
             and sdata is not None):
         try:
             calc = mb.recompute(resolve(run["frames_csv"]))
         except Exception as e:
             rep["_fails"].append(f"frames_csv.recompute: 独立复算失败 ({e})")
-        else:
-            compare_stats(sdata, calc, rep["_fails"])
+    if sdata is not None:
+        check_stats(sdata, calc, rep["_fails"], compare=calc is not None)
 
     if rep["summary_status"] in STATUSES and rep["exit_code"] is not None:
         want = STATUSES[rep["summary_status"]]
@@ -367,22 +400,28 @@ def main(argv=None):
         mb = load_measure_baseline()
         manifest_path = Path(args.manifest)
         if not manifest_path.is_file():
-            raise CliError(f"manifest 不存在: {args.manifest}")
+            raise CliError(f"manifest 不存在: {_display_path(args.manifest)}")
         manifest_dir = manifest_path.resolve().parent
         out = Path(args.output)
         if not out.is_absolute():
             out = manifest_dir / out
         runs = load_manifest(manifest_path)
-        if out.exists():
-            raise CliError(f"输出已存在，不覆盖原记录: {args.output}")
         reps = [audit_run(run, manifest_dir, mb) for run in runs]
         overall = finalize(reps)
         report = {"schema_version": 1, "overall": overall, "runs": reps}
+        # 最终目标以 O_CREAT|O_EXCL 独占创建：已存在文件/任何符号链接（含悬空）一律
+        # EEXIST 拒绝，检查即创建，不存在"检查后目标被创建/并发 writer"竞态窗口。
         try:
-            out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n",
-                           encoding="utf-8")
+            fd = os.open(out, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o666)
+        except FileExistsError:
+            raise CliError(f"输出已存在（含符号链接），不覆盖原记录: {_display_path(out)}")
         except OSError as e:
-            raise CliError(f"报告写入失败: {e}")
+            raise CliError(f"报告创建失败: {_safe_io(e)}")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                f.write(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+        except OSError as e:
+            raise CliError(f"报告写入失败: {_safe_io(e)}")
     except CliError as e:
         print(f"audit: {e}", file=sys.stderr)
         return 2
