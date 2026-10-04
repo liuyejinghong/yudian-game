@@ -12,7 +12,7 @@
 | QA-06 | P0 | ACCEPTED | QA-02 / ART-I00 | Codex（上批实际） | 纯输入/统计组件与独立视觉接缝；场景仍是探针，不是核心模拟 | [复验](../reports/2026-10-04-takeover-verification.md) |
 | PERF-01 | P0 | DRAFT | 冻结前后台/节奏采样合同；用指定PR16提交或其集成版本 | GLM-Eng-A工具与复算；Codex实机调度/裁决 | 原因分类所需同条件日志/帧/内存，保留启动尖刺；确认可重复性，不能直接沿用75–172FPS作稳定预算 | [#5](https://github.com/liuyejinghong/yudian-game/issues/5) / [#15](https://github.com/liuyejinghong/yudian-game/issues/15) |
 | PERF-01-COMPARE | P0 | ACCEPTED | 原ebfb877；GLM e1df119/440b686/3926518；独立review与集成复验通过 | Codex编排GLM；Codex review/验收 | 50项unit+9主控复验+3独立解析回归；只接受多轮身份分组/复算工具，不签性能稳定 | [任务包](../packages/PERF-01-COMPARE.md) / [复验](../reports/2026-10-04-perf-compare-verification.md) |
-| LIFE-01-AUDIT | P0 | IN_PROGRESS | 原交付7f72c19；主控负例发现缺陷，Bridge限定返工task_67642905bc | Codex编排GLM；Codex review/验收 | 独占tools/lifecycle_audit，退出/摘要/CSV一致与缺证；不签GUI关闭/存档恢复 | [任务包](../packages/LIFE-01-AUDIT.md) |
+| LIFE-01-AUDIT | P0 | ACCEPTED | 原7f72c19；GLM a0c2f19/93ef427，主控3493ddb；独立review/集成复验通过 | Codex编排GLM；Codex review/验收 | 56项unit+11主控检查；只接受退出/摘要/CSV一致与缺证审计，不签GUI关窗/恢复 | [任务包](../packages/LIFE-01-AUDIT.md) / [复验](../reports/2026-10-04-lifecycle-audit-verification.md) |
 | LIFE-01 | P0 | DRAFT | 现有Recorder；独立GUI关窗用例与恢复定义 | GLM-Eng-A用例/局部修正；Codex真实GUI验收 | 关窗exit/status、无覆盖、重启独立run-id；硬杀只允许部分CSV，不冒称游戏恢复 | [NOT_RUN](../reports/2026-10-04-takeover-verification.md) |
 | ENV-01 | P2 | BLOCKED | 合法可用的无SDK隔离系统/设备；禁止为本票擅装系统 | GLM-Eng-A清单/脚本；Codex环境与裁决 | 同一包在无SDK环境启动，真实runtime/身份；未有环境不影响合同与独立样件 | [复验边界](../reports/2026-10-04-takeover-verification.md) |
 | T3a | P1 | ACCEPTED | r1矩形数据接缝/边界/版本与提交取消职责已冻结；实际世界提交系统在T3d | Codex | 接受r1数据合同设计：绝对高度/row-major、不可变base与candidate、外围同值/版本重验和取消保留已发生结果；完整世界/邻区接入未实现，不直接开全套T3 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
