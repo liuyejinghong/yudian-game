@@ -1,9 +1,11 @@
+#nullable enable
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text.Json;
-using System.Text.Json.Serialization;
+using SHA256 = System.Security.Cryptography.SHA256;
+using System.Runtime.InteropServices;
 using Godot;
 
 namespace Yudian;
@@ -14,75 +16,6 @@ namespace Yudian;
 /// </summary>
 public partial class Main : Node3D
 {
-    private const string DefaultFixture = "fixtures/s_small.json";
-
-    // ---- fixture schema ----
-
-    private sealed class FixtureConfig
-    {
-        [JsonPropertyName("name")] public string Name { get; set; } = "s_small";
-        [JsonPropertyName("seed")] public int Seed { get; set; } = 20261004;
-        [JsonPropertyName("scale")] public ScaleConfig Scale { get; set; } = new();
-        [JsonPropertyName("terrain")] public TerrainConfig Terrain { get; set; } = new();
-        [JsonPropertyName("camera_path")] public CameraPathConfig CameraPath { get; set; } = new();
-        [JsonPropertyName("quality")] public QualityConfig Quality { get; set; } = new();
-        [JsonPropertyName("target_resolution")] public ResConfig TargetResolution { get; set; } = new();
-        [JsonPropertyName("benchmark")] public BenchConfig Benchmark { get; set; } = new();
-    }
-
-    private sealed class ScaleConfig
-    {
-        [JsonPropertyName("robots_total")] public int RobotsTotal { get; set; } = 12;
-        [JsonPropertyName("robots_per_type")] public int RobotsPerType { get; set; } = 4;
-        [JsonPropertyName("facilities")] public int Facilities { get; set; } = 6;
-        [JsonPropertyName("ring_radius")] public float RingRadius { get; set; } = 14f;
-    }
-
-    private sealed class TerrainConfig
-    {
-        [JsonPropertyName("size")] public float Size { get; set; } = 60f;
-        [JsonPropertyName("segments")] public int Segments { get; set; } = 64;
-        [JsonPropertyName("mound")] public FeatureConfig Mound { get; set; } = new();
-        [JsonPropertyName("mineral_pit")] public FeatureConfig MineralPit { get; set; } = new();
-    }
-
-    // Amount > 0 = 土坡高度，Amount < 0 = 凹陷深度（高斯截面占位，非真实地形改造）。
-    private sealed class FeatureConfig
-    {
-        [JsonPropertyName("position")] public float[] Position { get; set; } = [12f, -10f];
-        [JsonPropertyName("radius")] public float Radius { get; set; } = 6f;
-        [JsonPropertyName("amount")] public float Amount { get; set; } = 1.8f;
-    }
-
-    private sealed class CameraPathConfig
-    {
-        [JsonPropertyName("center")] public float[] Center { get; set; } = [0f, 0f, 0f];
-        [JsonPropertyName("radius")] public float Radius { get; set; } = 24f;
-        [JsonPropertyName("height")] public float Height { get; set; } = 13f;
-        [JsonPropertyName("period_seconds")] public float PeriodSeconds { get; set; } = 40f;
-    }
-
-    private sealed class QualityConfig
-    {
-        [JsonPropertyName("msaa_3d")] public int Msaa3d { get; set; } = 4;
-        [JsonPropertyName("fxaa")] public bool Fxaa { get; set; } = false;
-        [JsonPropertyName("scaling_3d_scale")] public float Scaling3dScale { get; set; } = 1f;
-        [JsonPropertyName("shadows")] public bool Shadows { get; set; } = true;
-    }
-
-    private sealed class ResConfig
-    {
-        [JsonPropertyName("width")] public int Width { get; set; } = 1920;
-        [JsonPropertyName("height")] public int Height { get; set; } = 1200;
-    }
-
-    private sealed class BenchConfig
-    {
-        [JsonPropertyName("duration_seconds")] public float DurationSeconds { get; set; } = 45f;
-        [JsonPropertyName("frames_csv")] public string FramesCsv { get; set; } = "benchmarks/s_small_frames.csv";
-        [JsonPropertyName("summary_json")] public string SummaryJson { get; set; } = "benchmarks/s_small_summary.json";
-    }
-
     // ---- runtime state ----
 
     private sealed class Patrol
@@ -110,12 +43,6 @@ public partial class Main : Node3D
         public float Phase;
     }
 
-    private static readonly JsonSerializerOptions JsonOpts = new()
-    {
-        PropertyNameCaseInsensitive = true,
-        AllowTrailingCommas = true,
-    };
-
     private static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
 
     private FixtureConfig _cfg = null!;
@@ -131,53 +58,52 @@ public partial class Main : Node3D
     private double _duration;
     private string _framesPath = "";
     private string _summaryPath = "";
-    private Godot.FileAccess _csv;
+    private BenchmarkRecorder? _recorder;
     private ulong _lastUsec;
-    private long _frames;
-    private double _elapsed;
+    private string _fixtureHash = "";
+    private string _runId = "";
     private double _animTime;
+    private bool _captured;
 
     public override void _Ready()
     {
-        // 用户参数（"--" 之后）优先；同时兼容未加分隔符直接传参的调用方——
-        // Godot 4.7 对未知引擎参数静默忽略，若只查用户参数会导致基准模式永不激活、进程挂住。
-        var userArgs = OS.GetCmdlineUserArgs();
-        var allArgs = OS.GetCmdlineArgs();
-        string Val(string name) => ArgValue(userArgs, name) ?? ArgValue(allArgs, name);
-
-        // 裸传的 --benchmark 会被引擎同名 CLI 选项（--benchmark: Benchmark the run time）吞掉，
-        // 只有 "--" 之后的才到得了游戏；--duration/--yudian-benchmark 等非引擎选项裸传会保留。
-        // 激活基准：--benchmark（须在 "--" 后）或裸传 --yudian-benchmark，或显式 --duration，
-        // 另留 YUDIAN_BENCHMARK=1 环境变量兜底，避免调用方因分隔符约定而挂死在默认模式。
-        var durationValue = Val("--duration");
-        _benchmark = Array.IndexOf(userArgs, "--benchmark") >= 0
-                     || Array.IndexOf(allArgs, "--yudian-benchmark") >= 0
-                     || durationValue is not null
-                     || System.Environment.GetEnvironmentVariable("YUDIAN_BENCHMARK") == "1";
-        double? durationArg = durationValue is { } d ? double.Parse(d, Inv) : null;
-
-        var fixturePath = Val("--fixture") ?? DefaultFixture;
-        _cfg = LoadFixture(fixturePath);
-        _duration = durationArg ?? _cfg.Benchmark.DurationSeconds;
-
-        ApplyWindowAndQuality();
-        BuildLightAndEnvironment();
-        BuildTerrain();
-        BuildFacilities();
-        SpawnRobots();
-        BuildCamera();
-
-        _framesPath = ResolvePath(Val("--frames-csv") ?? _cfg.Benchmark.FramesCsv);
-        _summaryPath = ResolvePath(Val("--summary-json") ?? _cfg.Benchmark.SummaryJson);
-
-        if (_benchmark)
-            StartBenchmark();
-
-        GD.Print($"[Yudian] fixture={_cfg.Name} seed={_cfg.Seed} facilities={_facilityPositions.Count} robots={_robots.Count} benchmark={_benchmark}");
+        try
+        {
+            var options = BenchmarkOptions.Parse(OS.GetCmdlineUserArgs(), OS.GetCmdlineArgs(),
+                System.Environment.GetEnvironmentVariable("YUDIAN_BENCHMARK") == "1");
+            _benchmark = options.Benchmark;
+            _cfg = LoadFixture(options.FixturePath);
+            _duration = options.Duration ?? _cfg.Benchmark.DurationSeconds;
+            ValidateProbeGeometry();
+            _runId = DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ", Inv) + "-" + Guid.NewGuid().ToString("N")[..8];
+            if (_benchmark)
+            {
+                _framesPath = OutputPath(options.FramesCsv, _cfg.Benchmark.FramesCsv);
+                _summaryPath = OutputPath(options.SummaryJson, _cfg.Benchmark.SummaryJson);
+                _recorder = new BenchmarkRecorder(_framesPath, _summaryPath);
+                GetTree().AutoAcceptQuit = false;
+            }
+            ApplyWindowAndQuality();
+            BuildLightAndEnvironment();
+            BuildTerrain();
+            BuildFacilities();
+            SpawnRobots();
+            BuildCamera();
+            if (_benchmark) StartBenchmark();
+            GD.Print($"[Yudian] fixture={_cfg.Name} seed={_cfg.Seed} facilities={_facilityPositions.Count} robots={_robots.Count} benchmark={_benchmark}");
+        }
+        catch (Exception e) { Fail(e); }
     }
 
     public override void _Process(double delta)
     {
+        var capture = System.Environment.GetEnvironmentVariable("YUDIAN_CAPTURE_PNG");
+        if (!_captured && capture != null && Engine.GetProcessFrames() > 120)
+        {
+            _captured = true;
+            var error = GetViewport().GetTexture().GetImage().SavePng(capture);
+            if (error != Error.Ok) { Fail(new IOException("截图保存失败: " + error)); return; }
+        }
         float dt = (float)delta;
         _animTime += dt;
 
@@ -199,40 +125,54 @@ public partial class Main : Node3D
             r.Node.Position = p;
         }
 
-        if (_benchmark)
+        if (_benchmark && _recorder != null)
         {
-            // 相机沿固定圆形路径环绕，角速度由 fixture 的 period_seconds 决定。
             float ang = MathF.Tau * (float)_animTime / _cfg.CameraPath.PeriodSeconds;
             _camera.Position = _cameraCenter + new Vector3(MathF.Cos(ang) * _cfg.CameraPath.Radius, _cfg.CameraPath.Height, MathF.Sin(ang) * _cfg.CameraPath.Radius);
             _camera.LookAt(_cameraCenter);
-
-            RecordFrame();
+            try { RecordFrame(); }
+            catch (Exception e) { Fail(e); }
         }
     }
 
     // ---- setup ----
 
     // 必须经 Godot.FileAccess 读：导出包里 fixture 位于 PCK 内，System.IO 只能看到散文件。
-    private static FixtureConfig LoadFixture(string path)
+    private FixtureConfig LoadFixture(string path)
     {
-        var resPath = Path.IsPathRooted(path) ? path : "res://" + path;
+        var resPath = Path.IsPathRooted(path) || path.StartsWith("res://", StringComparison.Ordinal) || path.StartsWith("user://", StringComparison.Ordinal) ? path : "res://" + path;
         using var f = Godot.FileAccess.Open(resPath, Godot.FileAccess.ModeFlags.Read);
         if (f == null)
             throw new InvalidOperationException($"无法打开 fixture {path}: {Godot.FileAccess.GetOpenError()}");
         var text = f.GetAsText();
-        return JsonSerializer.Deserialize<FixtureConfig>(text, JsonOpts) ?? throw new InvalidOperationException($"fixture {path} 解析为空");
+        _fixtureHash = Convert.ToHexString(SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(text))).ToLowerInvariant();
+        return FixtureConfig.ParseValidated(text);
     }
 
-    private static string ArgValue(string[] args, string name)
+    private void ValidateProbeGeometry()
     {
-        for (int i = 0; i < args.Length - 1; i++)
-            if (args[i] == name)
-                return args[i + 1];
-        return null;
+        foreach (var pair in new[] { (_cfg.Terrain.Mound, "terrain.mound.radius"), (_cfg.Terrain.MineralPit, "terrain.mineral_pit.radius") })
+            if (pair.Item1.Radius * pair.Item1.Radius == 0)
+                throw new ArgumentException(pair.Item2 + " 的平方下溢，不能生成有限地形");
+        if (_cfg.Scale.RobotsTotal > 0)
+        {
+            float chord = 2 * _cfg.Scale.RingRadius * MathF.Sin(MathF.PI / _cfg.Scale.Facilities);
+            if (chord * chord == 0)
+                throw new ArgumentException("scale.ring_radius 导致巡逻路段长度下溢");
+        }
+        if (!float.IsFinite(MathF.Tau * (float)(_duration + 60) / _cfg.CameraPath.PeriodSeconds))
+            throw new ArgumentException("camera_path.period_seconds 导致相机角度溢出");
     }
 
-    private static string ResolvePath(string p) =>
-        Path.IsPathRooted(p) ? p : Path.Combine(ProjectSettings.GlobalizePath("res://"), p);
+    private string OutputPath(string? explicitPath, string fixturePath)
+    {
+        if (explicitPath == null)
+            return ProjectSettings.GlobalizePath($"user://benchmarks/{_runId}/{Path.GetFileName(fixturePath)}");
+        if (explicitPath.StartsWith("res://", StringComparison.Ordinal))
+            throw new ArgumentException("输出不得使用 res://");
+        return Path.GetFullPath(explicitPath.StartsWith("user://", StringComparison.Ordinal)
+            ? ProjectSettings.GlobalizePath(explicitPath) : explicitPath);
+    }
 
     private void ApplyWindowAndQuality()
     {
@@ -436,67 +376,92 @@ public partial class Main : Node3D
     {
         DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
         Engine.MaxFps = 0;
-
-        Directory.CreateDirectory(Path.GetDirectoryName(_framesPath)!);
-        _csv = Godot.FileAccess.Open(_framesPath, Godot.FileAccess.ModeFlags.Write);
-        if (_csv == null)
-        {
-            GD.PushError($"无法打开帧记录文件 {_framesPath}: {Godot.FileAccess.GetOpenError()}");
-            GetTree().Quit(1);
-            return;
-        }
-        _csv.StoreLine("frame,time_s,frame_ms,fps");
         _lastUsec = Time.GetTicksUsec();
+        GD.Print($"[Yudian] run={_runId} frames={_framesPath} summary={_summaryPath}");
     }
 
     private void RecordFrame()
     {
-        if (_csv == null)
-            return;
         ulong now = Time.GetTicksUsec();
         double frameMs = (now - _lastUsec) / 1000.0;
         _lastUsec = now;
-        _frames++;
-        _elapsed += frameMs / 1000.0;
-
-        _csv.StoreLine(string.Create(Inv, $"{_frames},{_elapsed:0.000},{frameMs:0.000},{1000.0 / frameMs:0.00}"));
-        if (_frames % 300 == 0)
-            _csv.Flush();
-
-        if (_elapsed >= _duration)
-            FinishBenchmark();
+        if (frameMs == 0) return;
+        _recorder!.Record(frameMs);
+        if (_recorder.Elapsed >= _duration)
+        {
+            _recorder.Finish(Summary(), "completed");
+            _recorder.Dispose();
+            _recorder = null;
+            SetProcess(false);
+            GD.Print($"[Yudian] benchmark completed: {_summaryPath}");
+            GetTree().Quit();
+        }
     }
 
-    private void FinishBenchmark()
+    private Dictionary<string, object> Summary()
     {
-        _csv!.Flush();
-        _csv.Close();
-        _csv = null;
-
-        double avgFps = _elapsed > 0 ? _frames / _elapsed : 0;
-        var win = DisplayServer.WindowGetSize();
-        float scale = GetViewport().Scaling3DScale;
-        var summary = new Dictionary<string, object>
+        var vp = GetViewport();
+        var window = DisplayServer.WindowGetSize();
+        var size = vp.GetVisibleRect().Size;
+        bool headless = DisplayServer.GetName() == "headless";
+        object build = "EVIDENCE_MISSING";
+        if (Godot.FileAccess.FileExists("res://build-info.json"))
         {
-            ["fixture"] = _cfg.Name,
-            ["avg_fps"] = Math.Round(avgFps, 2),
-            ["frames"] = _frames,
+            using var f = Godot.FileAccess.Open("res://build-info.json", Godot.FileAccess.ModeFlags.Read);
+            if (f != null) build = JsonSerializer.Deserialize<JsonElement>(f.GetAsText());
+        }
+        return new Dictionary<string, object>
+        {
+            ["schema_version"] = 1, ["run_id"] = _runId, ["fixture"] = _cfg.Name,
+            ["fixture_sha256"] = _fixtureHash, ["seed"] = _cfg.Seed,
             ["duration_requested_s"] = _duration,
-            ["duration_actual_s"] = Math.Round(_elapsed, 3),
-            ["window_resolution"] = $"{win.X}x{win.Y}",
-            ["internal_3d_resolution"] = $"{(int)(win.X * scale)}x{(int)(win.Y * scale)}",
-            ["scaling_3d_scale"] = scale,
-            ["msaa_3d"] = _cfg.Quality.Msaa3d,
-            ["renderer"] = ProjectSettings.GetSettingWithOverride(new StringName("rendering/renderer/rendering_method")).AsString(),
+            ["requested"] = new { resolution = _cfg.TargetResolution, quality = _cfg.Quality, scale = _cfg.Scale },
+            ["applied"] = new { msaa_3d = vp.Msaa3D.ToString(), fxaa = vp.ScreenSpaceAA.ToString(), scaling_3d_scale = vp.Scaling3DScale, vsync = DisplayServer.WindowGetVsyncMode().ToString(), max_fps = Engine.MaxFps },
+            ["observed"] = new { headless, rendering_device = RenderingServer.GetRenderingDevice() != null,
+                rendering_method = headless ? "NOT_AVAILABLE" : RenderingServer.GetCurrentRenderingMethod(),
+                rendering_driver = headless ? "NOT_AVAILABLE" : RenderingServer.GetCurrentRenderingDriverName(),
+                gpu = headless ? "NOT_AVAILABLE" : RenderingServer.GetVideoAdapterName(),
+                gpu_api_version = headless ? "NOT_AVAILABLE" : RenderingServer.GetVideoAdapterApiVersion(),
+                window_pixels = new[] {window.X, window.Y}, viewport_size = new[] {size.X, size.Y},
+                internal_3d_size = new { status = "estimated", formula = "viewport_size * applied.scaling_3d_scale", width = size.X * vp.Scaling3DScale, height = size.Y * vp.Scaling3DScale },
+                robots = _robots.Count, facilities = _facilityPositions.Count },
+            ["graphical_performance_eligible"] = !headless,
             ["godot_version"] = Engine.GetVersionInfo()["string"].AsString(),
-            ["seed"] = _cfg.Seed,
+            ["runtime"] = new { framework = RuntimeInformation.FrameworkDescription, version = System.Environment.Version.ToString(), architecture = RuntimeInformation.ProcessArchitecture.ToString(), os = RuntimeInformation.OSDescription },
+            ["assembly_sha256"] = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(typeof(Main).Assembly.Location))).ToLowerInvariant(),
+            ["build"] = build,
+            ["memory"] = "EVIDENCE_MISSING: external process measurement required",
+            ["load_scope"] = "gray-r1 rendering, fixed patrol and animation only; no AI/navigation/save/dynamic terrain"
         };
+    }
 
-        var json = JsonSerializer.Serialize(summary, new JsonSerializerOptions { WriteIndented = true });
-        Directory.CreateDirectory(Path.GetDirectoryName(_summaryPath)!);
-        File.WriteAllText(_summaryPath, json);
+    private void Fail(Exception e)
+    {
+        SetProcess(false);
+        GD.PushError($"[Yudian] {e.GetType().Name}: {e.Message}");
+        try { _recorder?.Dispose(); }
+        catch (Exception cleanup) { GD.PushError($"[Yudian] 关闭记录失败: {cleanup.Message}"); }
+        finally { _recorder = null; GetTree().Quit(1); }
+    }
 
-        GD.Print($"[Yudian] benchmark done: {_summaryPath}\n{json}");
-        GetTree().Quit();
+    public override void _Notification(int what)
+    {
+        if (what == NotificationWMCloseRequest && _recorder != null)
+        {
+            try { _recorder.Finish(Summary(), "interrupted"); }
+            catch (Exception e) { Fail(e); return; }
+            _recorder.Dispose();
+            _recorder = null;
+            GetTree().Quit(130);
+        }
+    }
+
+    public override void _ExitTree()
+    {
+        if (_recorder == null) return;
+        try { _recorder.Finish(Summary(), "interrupted"); }
+        catch (Exception e) { GD.PushError($"benchmark 中断记录失败: {e.Message}"); GetTree().Quit(1); return; }
+        finally { _recorder.Dispose(); _recorder = null; }
+        GetTree().Quit(130);
     }
 }

@@ -1,0 +1,104 @@
+{
+  "scope": "three 45s native Metal gray-r1 runs of the same build/configuration, desktop conditions uncontrolled; all samples retained; after5s descriptive reanalysis only",
+  "runs": [
+    {
+      "run": "run-1",
+      "frames": 7762,
+      "duration_s": 45.01183499999972,
+      "avg_fps": 172.44353623885914,
+      "all_frames_ms": {
+        "p50": 3.416,
+        "p95": 14.472,
+        "p99": 28.341,
+        "max": 1053.338,
+        "over_33ms": 11,
+        "method": "nearest_rank_all_frames_including_startup"
+      },
+      "largest_frame": {
+        "frame": "2",
+        "time_s": "1.061867",
+        "frame_ms": "1053.338000",
+        "fps": "0.949363"
+      },
+      "after_fixed_5s_ms": {
+        "50": 3.416,
+        "95": 14.393,
+        "99": 28.277
+      },
+      "after_5s_max_ms": 36.775,
+      "memory": {
+        "maximum_resident_set_size_bytes": 291766272,
+        "peak_memory_footprint_bytes": 684082520,
+        "method": "macOS /usr/bin/time -l; separate metrics, process lifetime including startup"
+      }
+    },
+    {
+      "run": "run-2",
+      "frames": 7268,
+      "duration_s": 45.00077799999998,
+      "avg_fps": 161.5083188117326,
+      "all_frames_ms": {
+        "p50": 3.583,
+        "p95": 14.058,
+        "p99": 27.448,
+        "max": 73.745,
+        "over_33ms": 9,
+        "method": "nearest_rank_all_frames_including_startup"
+      },
+      "largest_frame": {
+        "frame": "10",
+        "time_s": "0.215072",
+        "frame_ms": "73.745000",
+        "fps": "13.560241"
+      },
+      "after_fixed_5s_ms": {
+        "50": 3.597,
+        "95": 13.971,
+        "99": 27.155
+      },
+      "after_5s_max_ms": 40.881,
+      "memory": {
+        "maximum_resident_set_size_bytes": 290455552,
+        "peak_memory_footprint_bytes": 677872960,
+        "method": "macOS /usr/bin/time -l; separate metrics, process lifetime including startup"
+      }
+    },
+    {
+      "run": "run-3",
+      "frames": 3386,
+      "duration_s": 45.00252699999997,
+      "avg_fps": 75.24021928813025,
+      "all_frames_ms": {
+        "p50": 13.317,
+        "p95": 13.91,
+        "p99": 21.278,
+        "max": 77.351,
+        "over_33ms": 3,
+        "method": "nearest_rank_all_frames_including_startup"
+      },
+      "largest_frame": {
+        "frame": "2",
+        "time_s": "0.083524",
+        "frame_ms": "77.351000",
+        "fps": "12.928081"
+      },
+      "after_fixed_5s_ms": {
+        "50": 13.321,
+        "95": 13.833,
+        "99": 14.47
+      },
+      "after_5s_max_ms": 32.642,
+      "memory": {
+        "maximum_resident_set_size_bytes": 289341440,
+        "peak_memory_footprint_bytes": 675890496,
+        "method": "macOS /usr/bin/time -l; separate metrics, process lifetime including startup"
+      }
+    }
+  ],
+  "conditions": "same build, fixture, assets and configured rendering settings; desktop execution conditions not strictly controlled",
+  "limitations": [
+    "foreground/background focus, thermal state and OS scheduling not controlled",
+    "one read-only GUI observation during sampling",
+    "variation cause not determined; no performance stability or future load headroom acceptance"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "recorded_date": "2026-10-04",
+  "hardware": {
+    "boot_rom_version": "20457.1.29",
+    "chip_type": "Apple M3 Pro",
+    "machine_model": "Mac15,6",
+    "number_processors": "proc 12:0:6:6",
+    "physical_memory": "36 GB"
+  },
+  "gpus": [
+    {
+      "spdisplays_metal": "spdisplays_supported",
+      "sppci_model": "Apple M3 Pro"
+    }
+  ],
+  "os": "27.0",
+  "architecture": "arm64",
+  "scope": "reference-machine probe; not minimum requirement"
+}
