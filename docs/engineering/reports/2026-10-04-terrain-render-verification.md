@@ -1,6 +1,6 @@
 # 地形适配与候选预览复验
 
-2026-10-04，起点main `0a1e54e`。T3-GODOT与T3-PROBE完成受限技术验收，reviewer与最终architect通过，等待PR集成；只接受ArrayMesh适配和独立的未提交候选显示，不关闭完整T3 [#6](https://github.com/liuyejinghong/yudian-game/issues/6)。执行子票[#24](https://github.com/liuyejinghong/yudian-game/issues/24)，[合同](../contracts/terrain-render-r1.md)，[证据与source SHA](../evidence/2026-10-04-terrain-render/verification.json)。
+2026-10-04，起点main `0a1e54e`。T3-GODOT与T3-PROBE完成受限技术验收，reviewer与最终architect通过；[PR #25](https://github.com/liuyejinghong/yudian-game/pull/25)已发布，合并状态以GitHub为准；只接受ArrayMesh适配和独立的未提交候选显示，不关闭完整T3 [#6](https://github.com/liuyejinghong/yudian-game/issues/6)。执行子票[#24](https://github.com/liuyejinghong/yudian-game/issues/24)，[合同](../contracts/terrain-render-r1.md)，[证据与source SHA](../evidence/2026-10-04-terrain-render/verification.json)。
 
 ## 结果与证据
 
