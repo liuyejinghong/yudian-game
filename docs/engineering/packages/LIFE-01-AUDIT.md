@@ -1,6 +1,6 @@
 # LIFE-01-AUDIT · 运行产物与退出证据审计器
 
-状态：READY，尚未派单；可在独立ZCode workflow/worktree与PERF包同时执行。只依赖本基线已有生命周期证据，不依赖新性能工具或碰撞适配器。
+状态：ACCEPTED（限定离线产物审计器）；冻结技术要求保留，交付/返工/验收见[复验记录](../reports/2026-10-04-lifecycle-audit-verification.md)。
 
 只新增`tools/lifecycle_audit/`内的`audit.py`、标准库unittest、README及少量人工fixture。其他任何文件禁止改动；不改Recorder/Main/measure_baseline/公共文档/美术，不启动引擎/GUI/进程杀停，不安装/联网/push/merge。实际GUI关窗验证由主控完成。
 

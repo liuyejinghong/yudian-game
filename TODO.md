@@ -42,4 +42,4 @@
 
 更新只采用完整CPU重建+新ArrayMesh替换。完整T3、阶段/高度场增量更新、世界提交、碰撞导航、保存与最终美术继续留项；下一批先由主控冻结最小子票，再将确定实现/测试交GLM。费用未知如实记录。各行状态以产研/美术权威表为准。
 
-本批证据工具：PERF-01-COMPARE已限定ACCEPTED；LIFE-01-AUDIT独立返工与验收中，原交付均保留。[PERF复验](docs/engineering/reports/2026-10-04-perf-compare-verification.md)。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。
+本批证据工具：PERF-01-COMPARE与LIFE-01-AUDIT均限定ACCEPTED，原交付与返工分别保留。[PERF复验](docs/engineering/reports/2026-10-04-perf-compare-verification.md) / [LIFE复验](docs/engineering/reports/2026-10-04-lifecycle-audit-verification.md)。父票实机职责继续未完成。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。
