@@ -1,6 +1,6 @@
 # 产研 TODO
 
-更新：2026-10-04；依据真实Issue #5–#8、PR #13与本轮复验。主控Codex。下表拟执行槽见[总入口](../../../TODO.md)；PR16/18/20已按所有者授权合并，本网格批次起点main=3999d30。T3a-r1与实际GLM数据子件已接受；本轮两个实际GLM纯网格子件已受限接受，父票仍需候选集成/更新验证。ACCEPTED的QA行仍只是原受限技术接受，不扩张为性能稳定/游戏模拟完成。
+更新：2026-10-04；依据真实Issue #5–#8、PR #13与本轮复验。主控Codex。下表拟执行槽见[总入口](../../../TODO.md)；PR16/18/20/23已按所有者授权合并，本适配批次起点main=0a1e54e。T3a-r1与实际GLM数据子件已接受；两个实际GLM纯网格子件已受限接受；本轮准备Godot适配与独立候选预览，父票仍需完整更新验证。ACCEPTED的QA行仍只是原受限技术接受，不扩张为性能稳定/游戏模拟完成。
 
 | ID | 优先级 | 状态 | 依赖/解除条件 | 拟执行槽 | 交付与接受条件 | 来源/证据 |
 |---|---|---|---|---|---|---|
@@ -19,6 +19,8 @@
 | T3c | P1 | DRAFT | T3c-MESH接受后由主控冻结高度场候选接入/更新与实际Godot验收 | GLM-Eng-B | 第二候选子件与边界/局部更新证据；不和T3b争写公共状态 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3b-MESH | P1 | ACCEPTED | T3a-DATA；网格合同r1、共享输出/金样/独占目录已冻结；base8c3e117；实际GLM交付/主控独立验收/reviewer复核已完成 | GLM-Eng-A | 66工人检查+89共用主控检查通过；固定对角线、候选先验current；只接受纯网格，不做阶段管理/更新 | [复验](../reports/2026-10-04-terrain-mesh-verification.md) / [#21](https://github.com/liuyejinghong/yudian-game/issues/21) / [执行票](T3b-MESH.md) / [合同](../contracts/terrain-mesh-r1.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3c-MESH | P1 | ACCEPTED | T3a-DATA；网格合同r1、共享输出/金样/独占目录已冻结；base8c3e117；实际GLM交付/主控独立验收/reviewer复核已完成 | GLM-Eng-B | 82工人检查+89共用主控检查通过；2×2细分采样顶点、面内仍平面；不做高度场更新系统 | [复验](../reports/2026-10-04-terrain-mesh-verification.md) / [#22](https://github.com/liuyejinghong/yudian-game/issues/22) / [执行票](T3c-MESH.md) / [合同](../contracts/terrain-mesh-r1.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
+| T3-GODOT | P1 | READY | T3b-MESH/T3c-MESH接受；渲染合同r1/API/独占目录冻结；派单后记录实际Bridge任务 | GLM-Eng-A | 单surface ArrayMesh/展开/绕序/平面法线、float拒绝、实际headless；主控独立图形验收，不做世界状态 | [执行票](T3-GODOT.md) / [合同](../contracts/terrain-render-r1.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
+| T3-PROBE | P1 | DRAFT | T3-GODOT交付待验；主控已有冻结输入/候选替换合同，可先写独立probe/fixture | Codex | 同镜头两算法三态真实显示、重复/拒绝/重开/资源所有权；全重建计数与提交耗时，不签增量/稳定性能 | [合同](../contracts/terrain-render-r1.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3d | P1 | BLOCKED | T3b/T3c提交；明确碰撞/通行/保存的最小范围与验收案例，派实现子票前冻结对应契约 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3e | P1 | BLOCKED | PERF-01可用对照；T3d；ART-T01/T02仅为视觉对照需接口与样件 | GLM-Eng-B采集工具/复算；Codex实机/选择 | 两候选同条件更新范围/主线程峰值/导航耗时/保存增长/视觉成本对比；所有者签视觉，主控选技术 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T4a | P2 | DRAFT | 现役产品/共同场景与权限案例，明确本轮候选输入范围 | Codex | 冻结世界事实/行动/权限输入；将原T4大票拆成领域基线、校验器、候选适配与统计小票；真实完成与拦截分计，模型非权威 | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |
