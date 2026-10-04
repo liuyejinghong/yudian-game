@@ -131,3 +131,16 @@ architect明确早退不能丢弃撤销pending，同帧非法最新请求要清�
 碰撞PR27已发布：https://github.com/liuyejinghong/yudian-game/pull/27 。发布head1c5bf805d661cd894d391faaf54da4bc9192f16b与本地一致、MERGEABLE/CLEAN；GitHub自动检查为空，不声称CI通过。本次只补发布链接，无源码变化；最终head须再次核对后按授权合并。
 
 PR27已于2026-10-04T12:11:24Z合并，精确head0d837ed48b7cb701da17c5cdf141c3c65702a6d9，merge43daffe88e5040df46134c5a5f09b0fea6cc336f。实际子票26 CLOSED，完整T3票6 OPEN；原main已从干净991b78e快进43daffe。两并行包READY未领取、固定基线1ba4aa6不变；本条只记录已发生事实，不改源码/证据。
+
+## evidence-tools-review-r1 · 两包独立验收
+
+授权：所有者交回PERF-01-COMPARE（ebfb877）与LIFE-01-AUDIT（7f72c19），均从1ba4aa6冻结基线独立实现；合格直接合并。恢复Codex通过Agent Bridge协调ZCode GLM，允许外包使用原生子代理，文件仍单写者。原交付工作树/commit保留。
+
+1. [x] 核原提交、diff归属、现有门禁/日志，PERF独立review、LIFE主控负例；证明：限定目录与实际失败输入，不重复无关全量检查。
+2. [x] 冻结各包返工范围并独立派GLM；证明：模型原生确认、两session/task、包内测试及新增提交。子代理授权不等于已实际使用。
+3. [ ] 分别审查修复与最终集成head，复验原失败点与原始金样；证明：日志/退出码/输入SHA、无覆盖/诊断/类型边界。源变后才重新跑该包完整测试。
+4. [ ] 每包合格独立PR合并，更新限定ACCEPTED；证明：PR精确head/merge、主分支干净快进。父PERF受控采样/原因/稳定性能和LIFE真实GUI关闭/发行包重开继续未完成。
+
+实际派单：PERF sess_ce7639b6d6 / task_03d935ac1f；LIFE sess_731d81f2f0 / task_67642905bc；均原生回执model=GLM-5.3-Flash，Bridge observed_model未提供，费用未知。初次手动workflow交付不是Bridge派单，不造账。LIFE初轮门禁路径少斜杠属派单方事故，工人拒绝绕过；与代码审查发现分开记录。
+
+PERF独立验收通过：原ebfb877→修复e1df119/440b686/3926518→集成cf55502；50项完整unit、9主控实际复验、3独立解析复核通过，启动尖刺金样不变。PERF限定ACCEPTED；LIFE仍独立处理最后具体发现，不用PERF通过替代其裁决。源码固定，发布/合并事实待GitHub回执记录。

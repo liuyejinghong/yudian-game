@@ -1,6 +1,6 @@
 # PERF-01-COMPARE · 多轮性能证据比较器
 
-状态：READY，尚未派单。所有者可以自行用ZCode workflow在独立worktree执行。依赖仅为本基线已存在的Recorder证据与measure_baseline.py；不依赖碰撞票或LIFE包。基线SHA见同目录README。
+状态：ACCEPTED（限定离线比较器）；冻结技术要求保留，交付/返工/验收见[复验记录](../reports/2026-10-04-perf-compare-verification.md)。
 
 ## 唯一交付
 
