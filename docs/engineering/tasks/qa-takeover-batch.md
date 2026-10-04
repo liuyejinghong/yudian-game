@@ -1,5 +1,7 @@
 # QA 接管批次 · takeover-r1
 
+本表为上一批历史快照；当前任务状态以[产研TODO](todo.md)及[美术TODO](../../art/production/todo.md)为准。本表的Codex文件独占仅覆盖takeover-r1；未来GLM共享材质写者须由后续派单重新指定，当前没有第二个写者。
+
 基线 `902a662`；代码集成 `7341ea8`；公开分支 `qa/t1-t2-reviewed-20261004`，公开代码 `9128523`（运行文件hash与已测包一致）。本票按 PR #13 的 QA 编号管理，不改变 T1/T2 原工单范围。验收人为 Codex；实际证据见[复验记录](../reports/2026-10-04-takeover-verification.md)。
 
 | 票 | 单一交付 | 写者与依赖 | 本轮状态 |
