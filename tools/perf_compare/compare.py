@@ -27,6 +27,20 @@ NOT_AVAILABLE = 'NOT_AVAILABLE'
 DURATION_TOLERANCE_S = 1e-5
 MS_TOLERANCE = 1e-5
 
+# 按真实 summary（docs/engineering/evidence/2026-10-04-takeover/metal-native/run-1..3）
+# 的 requested/applied 嵌套结构定义必需字段与类型；值域不做限制（不臆造配置约束）。
+# dict=嵌套对象；bool/int/str=精确类型（int 拒绝布尔冒充）；float=有限数值（int/float 均可）。
+CONFIG_SHAPE = {
+    'requested': {
+        'resolution': {'width': int, 'height': int},
+        'quality': {'msaa_3d': int, 'fxaa': bool, 'scaling_3d_scale': float, 'shadows': bool},
+        'scale': {'robots_total': int, 'robots_per_type': int, 'facilities': int, 'ring_radius': int},
+    },
+    'applied': {
+        'msaa_3d': str, 'fxaa': str, 'scaling_3d_scale': float, 'vsync': str, 'max_fps': int,
+    },
+}
+
 
 class InvalidInput(Exception):
     """无效输入/输出，带具体 path/field，CLI 以 exit 2 报告。"""
@@ -48,11 +62,19 @@ def resolve_arg(value):
 
 
 def sha256_file(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    try:
+        return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    except OSError as exc:
+        raise InvalidInput(f'{display(path)}: 读取失败 ({exc.strerror})') from exc
 
 
 def is_num(value):
-    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False  # 超出浮点表示范围的 JSON 极大整数按非有限数值拒绝
 
 
 def is_int(value):
@@ -75,11 +97,16 @@ def load_measure_baseline():
 
 def check_frames_csv(csv_path):
     """四列、连续 frame、有限正 frame_ms/fps、有限严格递增 time_s；只读。"""
-    with csv_path.open(newline='', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        require(reader.fieldnames == CSV_COLUMNS,
-                f'{display(csv_path)}: CSV 表头必须恰为 {CSV_COLUMNS}，实际 {reader.fieldnames}')
-        rows = list(reader)
+    try:
+        with csv_path.open(newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            require(reader.fieldnames == CSV_COLUMNS,
+                    f'{display(csv_path)}: CSV 表头必须恰为 {CSV_COLUMNS}，实际 {reader.fieldnames}')
+            rows = list(reader)
+    except UnicodeDecodeError as exc:
+        raise InvalidInput(f'{display(csv_path)}: 非法 UTF-8 ({exc})') from exc
+    except OSError as exc:
+        raise InvalidInput(f'{display(csv_path)}: 读取失败 ({exc.strerror})') from exc
     require(rows, f'{display(csv_path)}: 没有帧数据')
     prev_time = None
     for index, row in enumerate(rows, start=1):
@@ -203,6 +230,37 @@ def check_graphics_eligible(summary, where):
         require(value != NOT_AVAILABLE, f'{where}: field=observed.{field}={NOT_AVAILABLE}')
 
 
+def check_config(config, shape, where, label):
+    """嵌套必需字段/类型/有限值校验；额外键不限制，身份仍携带完整对象。"""
+    require(isinstance(config, dict), f'{where}: field={label} 必须为对象')
+    reject_non_finite(config, f'{label}', where)
+    for key, spec in shape.items():
+        require(key in config, f'{where}: field={label}.{key} 缺失')
+        value = config[key]
+        if isinstance(spec, dict):
+            check_config(value, spec, where, f'{label}.{key}')
+        elif spec is bool:
+            require(isinstance(value, bool), f'{where}: field={label}.{key} 必须为布尔，实际 {value!r}')
+        elif spec is int:
+            require(is_int(value), f'{where}: field={label}.{key} 必须为整数，实际 {value!r}')
+        elif spec is str:
+            require(isinstance(value, str), f'{where}: field={label}.{key} 必须为字符串，实际 {value!r}')
+        else:
+            require(is_num(value), f'{where}: field={label}.{key} 必须为有限数值，实际 {value!r}')
+
+
+def reject_non_finite(node, label, where):
+    """requested/applied 任何位置（含额外键）出现 NaN/Inf/超浮点范围整数都拒绝。"""
+    if isinstance(node, dict):
+        for key, value in node.items():
+            reject_non_finite(value, f'{label}.{key}', where)
+    elif isinstance(node, list):
+        for index, value in enumerate(node):
+            reject_non_finite(value, f'{label}[{index}]', where)
+    elif isinstance(node, (int, float)) and not isinstance(node, bool):
+        require(is_num(node), f'{where}: field={label} 必须为有限数值，实际 {node!r}')
+
+
 def build_identity(summary, verification, where_summary, where_verification):
     """按包文档的精确字段路径组成 canonical 身份；不从目录名猜身份。"""
     observed = summary.get('observed')
@@ -227,7 +285,7 @@ def build_identity(summary, verification, where_summary, where_verification):
             f'{where_summary}: field=duration_requested_s 必须为有限数值')
     identity['summary.duration_requested_s'] = summary['duration_requested_s']
     for field in ('requested', 'applied'):
-        require(isinstance(summary.get(field), dict), f'{where_summary}: field={field} 必须为对象')
+        check_config(summary.get(field), CONFIG_SHAPE[field], where_summary, f'summary.{field}')
         identity[f'summary.{field}'] = summary[field]
     for field in GRAPHICS_STR_FIELDS:
         identity[f'summary.observed.{field}'] = observed[field]
@@ -251,6 +309,18 @@ def group_id_for(identity):
     return 'grp-' + hashlib.sha256(canonical.encode('utf-8')).hexdigest()
 
 
+def load_json(path):
+    """读 JSON：坏 JSON/非法 UTF-8/IO 都以带具体文件的 InvalidInput 报告，不泄露绝对路径。"""
+    try:
+        return json.loads(path.read_text(encoding='utf-8'))
+    except UnicodeDecodeError as exc:
+        raise InvalidInput(f'{display(path)}: 非法 UTF-8 ({exc})') from exc
+    except json.JSONDecodeError as exc:
+        raise InvalidInput(f'{display(path)}: JSON 解析失败 ({exc})') from exc
+    except OSError as exc:
+        raise InvalidInput(f'{display(path)}: 读取失败 ({exc.strerror})') from exc
+
+
 def load_run(run_arg, baseline):
     """返回 (run 记录, canonical identity)；输入只读。"""
     run_dir = resolve_arg(run_arg)
@@ -265,22 +335,25 @@ def load_run(run_arg, baseline):
     frames_count = check_frames_csv(csv_path)
     try:
         recomputed = baseline.recompute(csv_path)
-    except (ValueError, OSError) as exc:
+    except OSError as exc:
+        raise InvalidInput(f'{display(csv_path)}: 复算读取失败 ({exc.strerror})') from exc
+    except ValueError as exc:
         raise InvalidInput(f'{display(csv_path)}: 复算失败 ({exc})') from exc
     require(recomputed['frames'] == frames_count, f'{display(csv_path)}: 复算帧数与逐行检查不一致')
 
-    try:
-        summary = json.loads(summary_path.read_text(encoding='utf-8'))
-        verification = json.loads(verification_path.read_text(encoding='utf-8'))
-    except (json.JSONDecodeError, OSError) as exc:
-        raise InvalidInput(f'JSON 解析失败 ({exc})') from exc
+    summary = load_json(summary_path)
+    verification = load_json(verification_path)
 
     where_summary = f'{display(summary_path)}'
+    where_verification = f'{display(verification_path)}'
+    require(isinstance(summary, dict),
+            f'{where_summary}: field=summary 顶层必须是对象，实际 {type(summary).__name__}')
+    require(isinstance(verification, dict),
+            f'{where_verification}: field=verification 顶层必须是对象，实际 {type(verification).__name__}')
     check_graphics_eligible(summary, where_summary)
     run_id = check_summary(summary, csv_path, frames_count, recomputed)
     csv_sha256 = sha256_file(csv_path)
     memory = check_verification(verification, csv_path, csv_sha256, recomputed)
-    where_verification = f'{display(verification_path)}'
     identity = build_identity(summary, verification, where_summary, where_verification)
 
     record = {
@@ -362,16 +435,35 @@ def build_report_and_groups(run_args):
 
 
 def write_report(report, output_path):
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = output_path.with_name(output_path.name + f'.tmp-{os.getpid()}')
+    """最终目标独占创建（O_EXCL）：已存在文件、悬空 symlink、并发竞态一律 EEXIST 拒绝，
+    原目标/链接内容不变；写入中断则删除本次创建的文件，不留看似成功的报告。"""
     try:
-        with tmp_path.open('w', encoding='utf-8') as f:
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+    except OSError as exc:
+        raise InvalidInput(f'{display(output_path)}: 无法创建输出目录 ({exc.strerror})') from exc
+    try:
+        fd = os.open(output_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o644)
+    except FileExistsError as exc:
+        raise InvalidInput(f'输出已存在，不覆盖（含悬空链接/并发创建）: {display(output_path)}') from exc
+    except OSError as exc:
+        raise InvalidInput(f'{display(output_path)}: 无法创建输出文件 ({exc.strerror})') from exc
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as f:
             json.dump(report, f, indent=2, ensure_ascii=False)
             f.write('\n')
-        os.replace(tmp_path, output_path)
+    except OSError as exc:
+        remove_quiet(output_path)
+        raise InvalidInput(f'{display(output_path)}: 写入失败 ({exc.strerror})') from exc
     except BaseException:
-        tmp_path.unlink(missing_ok=True)
+        remove_quiet(output_path)
         raise
+
+
+def remove_quiet(path):
+    try:
+        os.unlink(path)
+    except OSError:
+        pass
 
 
 def main(argv=None):
@@ -385,10 +477,13 @@ def main(argv=None):
     try:
         report = build_report_and_groups(args.runs)
         output_path = resolve_arg(args.output)
-        require(not output_path.exists(), f'输出已存在，不覆盖: {display(output_path)}')
         write_report(report, output_path)
     except InvalidInput as exc:
         print(f'perf_compare: {exc}', file=sys.stderr)
+        return 2
+    except OSError as exc:
+        # 兜底：任何未预见的文件系统错误仍按合同 exit2，且不回显可能含用户目录的消息
+        print(f'perf_compare: 文件系统错误 ({exc.strerror or "未知错误"})', file=sys.stderr)
         return 2
     print(f'perf_compare: {len(report["runs"])} runs -> {len(report["groups"])} group(s); {display(output_path)}')
     return 0

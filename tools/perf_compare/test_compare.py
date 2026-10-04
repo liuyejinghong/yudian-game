@@ -369,6 +369,170 @@ class CompareRejectionTests(FixtureTestMixin, unittest.TestCase):
         self.assert_rejected([self.tmp / 'no-such-dir'], 'RUN_DIR')
 
 
+class CompareSchemaDepthTests(FixtureTestMixin, unittest.TestCase):
+    """requested/applied 嵌套结构与顶层/编码/极大整数负例：exit2、具体 role.field、无 traceback。"""
+
+    def setUp(self):
+        super().setUp()
+        self.output = self.tmp / 'report.json'
+
+    def run_cli_expect(self, run, fragment=None, absent=()):
+        result = self.run_cli([run], self.output)
+        self.assertEqual(result.returncode, 2, f'期望 exit 2，实际 {result.returncode}：{result.stdout}')
+        self.assertNotIn('Traceback', result.stderr)
+        if fragment:
+            self.assertIn(fragment, result.stderr)
+        for text in absent:
+            self.assertNotIn(text, result.stderr)
+        self.assertFalse(self.output.exists())
+        return result
+
+    def test_empty_requested_rejected(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={'requested': {}})
+        self.run_cli_expect(run, 'summary.requested')
+
+    def test_requested_width_string_rejected(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={
+            'requested': {'resolution': {'width': '1920', 'height': 1200},
+                          'quality': {'msaa_3d': 4, 'fxaa': False, 'scaling_3d_scale': 1, 'shadows': True},
+                          'scale': {'robots_total': 12, 'robots_per_type': 4, 'facilities': 6, 'ring_radius': 14}}})
+        self.run_cli_expect(run, 'summary.requested.resolution.width')
+
+    def test_requested_missing_quality_rejected(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={
+            'requested': {'resolution': {'width': 1920, 'height': 1200},
+                          'scale': {'robots_total': 12, 'robots_per_type': 4, 'facilities': 6, 'ring_radius': 14}}})
+        self.run_cli_expect(run, 'summary.requested.quality')
+
+    def test_applied_nan_rejected(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={
+            'applied': {'msaa_3d': 'Msaa4X', 'fxaa': 'Disabled', 'scaling_3d_scale': float('nan'),
+                        'vsync': 'Disabled', 'max_fps': 0}})
+        self.run_cli_expect(run, 'summary.applied.scaling_3d_scale')
+
+    def test_applied_bool_not_accepted_as_int(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={
+            'applied': {'msaa_3d': 'Msaa4X', 'fxaa': 'Disabled', 'scaling_3d_scale': 1,
+                        'vsync': 'Disabled', 'max_fps': True}})
+        self.run_cli_expect(run, 'summary.applied.max_fps')
+
+    def test_requested_extra_key_huge_int_rejected(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={
+            'requested': {'resolution': {'width': 1920, 'height': 1200},
+                          'quality': {'msaa_3d': 4, 'fxaa': False, 'scaling_3d_scale': 1, 'shadows': True},
+                          'scale': {'robots_total': 12, 'robots_per_type': 4, 'facilities': 6, 'ring_radius': 14},
+                          'extra': 10 ** 400}})
+        self.run_cli_expect(run, 'summary.requested.extra')
+
+    def test_full_object_kept_in_identity(self):
+        """额外键合法时身份仍含完整对象（不丢完整 requested）。"""
+        run_a = self.make_run('a', run_id='run-a', summary_mutations={'requested': {
+            'resolution': {'width': 1920, 'height': 1200},
+            'quality': {'msaa_3d': 4, 'fxaa': False, 'scaling_3d_scale': 1, 'shadows': True},
+            'scale': {'robots_total': 12, 'robots_per_type': 4, 'facilities': 6, 'ring_radius': 14},
+            'extra_note': 'hi'}})
+        run_b = self.make_run('b', run_id='run-b')
+        result = self.run_cli([run_a, run_b], self.output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        groups = json.loads(self.output.read_text())['groups']
+        self.assertEqual(len(groups), 2, '额外键改变完整身份，必须分两组')
+
+    def test_summary_top_level_list_rejected_without_traceback(self):
+        run = self.make_run('a', run_id='run-a')
+        (run / 'summary.json').write_text('[]', encoding='utf-8')
+        self.run_cli_expect(run, 'field=summary 顶层必须是对象', absent=('Traceback', str(self.tmp)))
+
+    def test_verification_top_level_list_rejected_without_traceback(self):
+        run = self.make_run('a', run_id='run-a')
+        (run / 'verification.json').write_text('[]', encoding='utf-8')
+        self.run_cli_expect(run, 'field=verification 顶层必须是对象', absent=('Traceback', str(self.tmp)))
+
+    def test_summary_invalid_utf8_rejected_without_traceback(self):
+        run = self.make_run('a', run_id='run-a')
+        (run / 'summary.json').write_bytes(b'\xff\xfe{"schema_version": 1}')
+        self.run_cli_expect(run, 'summary.json: 非法 UTF-8', absent=('Traceback', str(self.tmp)))
+
+    def test_bad_json_error_names_role(self):
+        run = self.make_run('a', run_id='run-a')
+        (run / 'summary.json').write_text('{bad', encoding='utf-8')
+        self.run_cli_expect(run, 'summary.json: JSON 解析失败')
+        (run / 'summary.json').write_text('{}', encoding='utf-8')
+        (run / 'verification.json').write_text('{bad', encoding='utf-8')
+        self.run_cli_expect(run, 'verification.json: JSON 解析失败')
+
+    def test_huge_int_rejected_without_overflow(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={'avg_fps': 10 ** 400})
+        self.run_cli_expect(run, 'field=avg_fps 必须为有限数值', absent=('OverflowError', 'Traceback'))
+
+    def test_huge_int_percentile_rejected_without_overflow(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={
+            'frame_time_ms': {'p50': 10 ** 400, 'p95': 200.0, 'p99': 200.0, 'max': 200.0,
+                              'over_33ms': 0, 'method': 'x'}})
+        self.run_cli_expect(run, 'field=frame_time_ms.p50 必须为有限数值', absent=('OverflowError', 'Traceback'))
+
+    @unittest.skipIf(hasattr(os, 'geteuid') and os.geteuid() == 0, 'root 不受 0o000 限制')
+    def test_unreadable_frames_csv_rejected_without_traceback(self):
+        run = self.make_run('a', run_id='run-a')
+        (run / 'frames.csv').chmod(0o000)
+        self.addCleanup(lambda: (run / 'frames.csv').chmod(0o644))
+        self.run_cli_expect(run, 'frames.csv: 读取失败', absent=('Traceback', str(self.tmp)))
+
+    def test_output_parent_is_file_rejected_without_traceback(self):
+        run = self.make_run('a', run_id='run-a')
+        blocker = self.tmp / 'blocker'
+        blocker.write_text('x', encoding='utf-8')
+        result = self.run_cli([run], blocker / 'report.json')
+        self.assertEqual(result.returncode, 2, result.stdout)
+        self.assertNotIn('Traceback', result.stderr)
+        self.assertNotIn(str(self.tmp), result.stderr)
+        self.assertIn('report.json', result.stderr)
+
+
+class CompareOutputExclusivityTests(FixtureTestMixin, unittest.TestCase):
+    """输出最终目标独占创建：悬空/实体 symlink 拒绝且原样保留；并发恰一成功。"""
+
+    def setUp(self):
+        super().setUp()
+        self.output = self.tmp / 'report.json'
+
+    def test_dangling_symlink_output_rejected_and_untouched(self):
+        run = self.make_run('a', run_id='run-a')
+        target = self.tmp / 'never-created.json'
+        self.output.symlink_to(target)
+        result = self.run_cli([run], self.output)
+        self.assertEqual(result.returncode, 2, result.stdout)
+        self.assertIn('report.json', result.stderr)
+        self.assertNotIn(os.path.expanduser('~'), result.stderr)
+        self.assertTrue(self.output.is_symlink())
+        self.assertEqual(os.readlink(self.output), str(target))
+        self.assertFalse(target.exists())
+
+    def test_symlink_to_existing_file_rejected_and_target_untouched(self):
+        run = self.make_run('a', run_id='run-a')
+        target = self.tmp / 'real-target.json'
+        target.write_text('SENTINEL', encoding='utf-8')
+        self.output.symlink_to(target)
+        result = self.run_cli([run], self.output)
+        self.assertEqual(result.returncode, 2, result.stdout)
+        self.assertEqual(target.read_text(), 'SENTINEL')
+        self.assertTrue(self.output.is_symlink())
+
+    def test_concurrent_writers_exactly_one_success(self):
+        run_a = self.make_run('a', run_id='run-a')
+        run_b = self.make_run('b', run_id='run-b')
+        argv = [sys.executable, str(COMPARE_PY), '--runs']
+        procs = [subprocess.Popen(argv + [str(run), '--output', str(self.output)],
+                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, cwd=self.tmp)
+                 for run in (run_a, run_b)]
+        results = [proc.communicate() + (proc.returncode,) for proc in procs]
+        self.assertEqual(sorted(code for _, _, code in results), [0, 2],
+                         f'必须恰一成功一拒绝: {results}')
+        report = json.loads(self.output.read_text())
+        self.assertEqual(len(report['runs']), 1)
+        for _, stderr, _ in results:
+            self.assertNotIn('Traceback', stderr)
+
+
 @unittest.skipUnless(EVIDENCE.is_dir(), '仓库内真实三轮证据不存在')
 class RealEvidenceTests(FixtureTestMixin, unittest.TestCase):
     """真实三轮：同一分组，保留金样 max=1053.338/73.745/77.351，报告不泄露绝对路径。"""
