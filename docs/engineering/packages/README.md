@@ -15,7 +15,7 @@
 
 ## 当前并行波次
 
-两包已独立review、返工与验收完成，均限定ACCEPTED；PERF已先合并PR28，LIFE随后单独集成。主控直接协调GLM，原冻结实现不再重复领取；各自worktree从同一固定SHA建立。固定基线：`1ba4aa64573bc484578c03340e304787062dd127`（已包含两包与原始证据）。不要用随时变动的main取代固定输入。每个工作流只分配一包，文件归属见各包；内部子工人也不得越过目录。共享TODO/合同/PLAN由Codex维护，GLM不得争写。
+两包已独立review、返工与验收完成，均限定ACCEPTED；[PERF PR28](https://github.com/liuyejinghong/yudian-game/pull/28)与[LIFE PR29](https://github.com/liuyejinghong/yudian-game/pull/29)已分别合并。主控直接协调GLM，原冻结实现不再重复领取；各自worktree从同一固定SHA建立。固定基线：`1ba4aa64573bc484578c03340e304787062dd127`（已包含两包与原始证据）。不要用随时变动的main取代固定输入。每个工作流只分配一包，文件归属见各包；内部子工人也不得越过目录。共享TODO/合同/PLAN由Codex维护，GLM不得争写。
 
 Codex默认通过Agent Bridge承担派单、返工和交回协调，所有者无需转述。GLM可用原生子代理；每包内每个文件仍只安排一个写者，最终验收/共享TODO/合并由Codex负责。
 

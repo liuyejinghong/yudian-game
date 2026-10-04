@@ -11,3 +11,5 @@ ACCEPTED：只接受只读多轮证据比较器；独立review及最终集成复
 Bridge原生模型回执GLM-5.3-Flash确认，observed_model未提供；工具上下文用量不等于计费token，费用未知。工人报告本包无需子代理而未使用；授权已保留，不冒称调用。Bridge根目录changed-files包含其他会话/主控变动，归属以实际git diff核定。初次手动workflow不伪造Bridge派单。
 
 父票PERF-01继续DRAFT：实机受控采样、原因裁决与稳定性能未完成；同身份不代表温度/前后台/电源受控。本轮未跑引擎/GUI、不触及美术；保留全部启动尖刺，不作跨组性能提升或达标结论。
+
+PR28已于2026-10-04T13:24:04Z合并：head21df8353da953641989c939515d20989f1f7fcdc，merge58346b83aa623289507befffd1cf5da1da8c61c7。自动检查列表为空，不冒称CI通过；主分支源码SHA与受验回执相同。

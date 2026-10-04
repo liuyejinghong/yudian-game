@@ -139,10 +139,12 @@ PR27已于2026-10-04T12:11:24Z合并，精确head0d837ed48b7cb701da17c5cdf141c3c
 1. [x] 核原提交、diff归属、现有门禁/日志，PERF独立review、LIFE主控负例；证明：限定目录与实际失败输入，不重复无关全量检查。
 2. [x] 冻结各包返工范围并独立派GLM；证明：模型原生确认、两session/task、包内测试及新增提交。子代理授权不等于已实际使用。
 3. [x] 分别审查修复与最终集成head，复验原失败点与原始金样；证明：日志/退出码/输入SHA、无覆盖/诊断/类型边界。源变后才重新跑该包完整测试。
-4. [ ] 每包合格独立PR合并，更新限定ACCEPTED；证明：PR精确head/merge、主分支干净快进。父PERF受控采样/原因/稳定性能和LIFE真实GUI关闭/发行包重开继续未完成。
+4. [x] 每包合格独立PR合并，更新限定ACCEPTED；证明：PR精确head/merge、主分支干净快进。父PERF受控采样/原因/稳定性能和LIFE真实GUI关闭/发行包重开继续未完成。
 
 实际派单：PERF sess_ce7639b6d6 / task_03d935ac1f；LIFE sess_731d81f2f0 / task_67642905bc；均原生回执model=GLM-5.3-Flash，Bridge observed_model未提供，费用未知。初次手动workflow交付不是Bridge派单，不造账。LIFE初轮门禁路径少斜杠属派单方事故，工人拒绝绕过；与代码审查发现分开记录。
 
 PERF独立验收通过：原ebfb877→修复e1df119/440b686/3926518→集成cf55502；50项完整unit、9主控实际复验、3独立解析复核通过，启动尖刺金样不变。PERF限定ACCEPTED；LIFE仍独立处理最后具体发现，不用PERF通过替代其裁决。源码固定，发布/合并事实待GitHub回执记录。
 
 PERF PR28于2026-10-04T13:24:04Z合并，head21df8353da953641989c939515d20989f1f7fcdc，merge58346b83aa623289507befffd1cf5da1da8c61c7；原main干净快进。LIFE原7f72c19→修复a0c2f19/93ef427→主控3493ddb，56完整unit/11主控案例及最终独立review通过，限定ACCEPTED；发布与合并事实等待GitHub回执，不先填完成。
+
+两包已分别合并：PERF PR28 head21df8353da953641989c939515d20989f1f7fcdc / merge58346b83aa623289507befffd1cf5da1da8c61c7；LIFE PR29于2026-10-04T13:32:21Z合并，head7a49e759e0796a9fda02759d5f0dff0b1a5d88ea / merge4c28391202bd2fad26d8f7507be09e2a4f380207。GitHub自动检查列表均为空，不声称CI通过；合并依据为实际测试、源码SHA与独立review。最终architect唯一根摘要旧READY已修；原main两次干净快进，Issue17已更新，父#5/#15保持OPEN。只补合并事实，不改源码/旧证据/美术，不重跑已验证模块。

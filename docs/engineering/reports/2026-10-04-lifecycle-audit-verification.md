@@ -11,3 +11,5 @@ ACCEPTED：只接受离线产物审计，独立review与主控最终集成复验
 Bridge原生模型回执GLM-5.3-Flash确认，observed_model未提供；工具可见上下文用量不是计费token，费用未知。子代理已授权，未有实际调用证据，不冒称调用。Bridge协调根目录changed-files包含其他会话与主控变动，包归属仅按实际git diff核定；原手动workflow不伪造Bridge派单。
 
 父票LIFE-01继续DRAFT：真实GUI关窗、发行包重开与游戏恢复未在工具票验收；本轮未启动引擎/GUI，不改美术、Recorder、measure_baseline或原始证据。
+
+PR29已于2026-10-04T13:32:21Z合并：head7a49e759e0796a9fda02759d5f0dff0b1a5d88ea，merge4c28391202bd2fad26d8f7507be09e2a4f380207。自动检查列表为空，不冒称CI通过；主分支源码SHA与受验回执相同。
