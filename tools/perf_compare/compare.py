@@ -28,13 +28,15 @@ DURATION_TOLERANCE_S = 1e-5
 MS_TOLERANCE = 1e-5
 
 # 按真实 summary（docs/engineering/evidence/2026-10-04-takeover/metal-native/run-1..3）
-# 的 requested/applied 嵌套结构定义必需字段与类型；值域不做限制（不臆造配置约束）。
+# 的 requested/applied 嵌套结构定义必需字段与类型；类型与源码一致
+# （prototype/scripts/Configuration/FixtureConfig.cs 属性、Main.cs applied 写入端），
+# 值域不做限制（不臆造配置约束）。
 # dict=嵌套对象；bool/int/str=精确类型（int 拒绝布尔冒充）；float=有限数值（int/float 均可）。
 CONFIG_SHAPE = {
     'requested': {
         'resolution': {'width': int, 'height': int},
         'quality': {'msaa_3d': int, 'fxaa': bool, 'scaling_3d_scale': float, 'shadows': bool},
-        'scale': {'robots_total': int, 'robots_per_type': int, 'facilities': int, 'ring_radius': int},
+        'scale': {'robots_total': int, 'robots_per_type': int, 'facilities': int, 'ring_radius': float},
     },
     'applied': {
         'msaa_3d': str, 'fxaa': str, 'scaling_3d_scale': float, 'vsync': str, 'max_fps': int,

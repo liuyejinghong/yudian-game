@@ -424,6 +424,32 @@ class CompareSchemaDepthTests(FixtureTestMixin, unittest.TestCase):
                           'extra': 10 ** 400}})
         self.run_cli_expect(run, 'summary.requested.extra')
 
+    def test_ring_radius_fractional_accepted(self):
+        """源码 RingRadius 为 float（RangeFloat），14.5 是合法记录，不得收窄为整数。"""
+        run = self.make_run('a', run_id='run-a', summary_mutations={
+            'requested': {'resolution': {'width': 1920, 'height': 1200},
+                          'quality': {'msaa_3d': 4, 'fxaa': False, 'scaling_3d_scale': 1, 'shadows': True},
+                          'scale': {'robots_total': 12, 'robots_per_type': 4, 'facilities': 6,
+                                    'ring_radius': 14.5}}})
+        result = self.run_cli([run], self.output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        group = json.loads(self.output.read_text())['groups'][0]
+        self.assertEqual(group['identity']['summary.requested']['scale']['ring_radius'], 14.5)
+
+    def test_ring_radius_bad_type_rejected(self):
+        run = self.make_run('a', run_id='run-a', summary_mutations={
+            'requested': {'resolution': {'width': 1920, 'height': 1200},
+                          'quality': {'msaa_3d': 4, 'fxaa': False, 'scaling_3d_scale': 1, 'shadows': True},
+                          'scale': {'robots_total': 12, 'robots_per_type': 4, 'facilities': 6,
+                                    'ring_radius': '14.5'}}})
+        self.run_cli_expect(run, 'summary.requested.scale.ring_radius')
+        run = self.make_run('b', run_id='run-b', summary_mutations={
+            'requested': {'resolution': {'width': 1920, 'height': 1200},
+                          'quality': {'msaa_3d': 4, 'fxaa': False, 'scaling_3d_scale': 1, 'shadows': True},
+                          'scale': {'robots_total': 12, 'robots_per_type': 4, 'facilities': 6,
+                                    'ring_radius': True}}})
+        self.run_cli_expect(run, 'summary.requested.scale.ring_radius')
+
     def test_full_object_kept_in_identity(self):
         """额外键合法时身份仍含完整对象（不丢完整 requested）。"""
         run_a = self.make_run('a', run_id='run-a', summary_mutations={'requested': {
