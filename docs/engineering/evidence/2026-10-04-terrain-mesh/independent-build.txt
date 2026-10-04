@@ -1,0 +1,8 @@
+  Independent -> $WORKTREE/tools/terrain-mesh-acceptance/bin/Release/net8.0/Independent.dll
+  Independent -> $WORKTREE/tools/terrain-mesh-acceptance/bin/Release/net10.0/Independent.dll
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:01.89

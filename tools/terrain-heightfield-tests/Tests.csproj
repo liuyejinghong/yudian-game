@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <NuGetAudit>false</NuGetAudit>
+    <UseAppHost>false</UseAppHost>
+    <AssemblyName>Tests</AssemblyName>
+    <RootNamespace>Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- T3c-MESH：零包 console 测试；被测数据合同、共享几何与本候选目录全部链接编译进本程序集。 -->
+    <Compile Include="../../prototype/scripts/TerrainData/*.cs" Link="TerrainData/%(Filename)%(Extension)" />
+    <Compile Include="../../prototype/scripts/TerrainGeometry/*.cs" Link="TerrainGeometry/%(Filename)%(Extension)" />
+    <Compile Include="../../prototype/scripts/TerrainCandidates/Heightfield/*.cs" Link="TerrainCandidates/Heightfield/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

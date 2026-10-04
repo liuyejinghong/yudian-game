@@ -1,0 +1,87 @@
+== culture  ==
+PASS gold-a: shape 3x5 = 15 vertices / 48 indices
+PASS gold-a: all 15 vertices exact (asymmetric, no row/col transpose)
+PASS gold-a: all 48 indices exact, fixed a-d diagonal
+PASS gold-a: every triangle has positive Y winding in XZ projection
+PASS gold-a: completely unchanged patch is legal and matches base geometry
+PASS gold-b: patch build shape 5x7 = 35 vertices / 144 indices
+PASS gold-b: all original nodes copy candidate heights (interior 0/-1 kept)
+PASS gold-b: inputs unchanged after successful build (serialize round-trip)
+PASS expired version rejected
+PASS wrong region rejected
+PASS same version but different content rejected
+PASS layout mismatch rejected
+PASS failed validations leave patch and base unchanged
+PASS warp: 2x2 -> 3x3, 9 vertices / 24 indices, a-d diagonal pattern
+PASS warp: all 9 vertices exact (center = mean of four corners = 1)
+PASS warp: face at (.75,.25) is planar height 1, not exact bilinear .75
+PASS neighbor: both candidates have real border triangle edges on x=2
+PASS neighbor: shared edge world XYZ matches at z=0
+PASS neighbor: shared edge world XYZ matches at z=0.25
+PASS neighbor: shared edge world XYZ matches at z=0.5
+PASS neighbor: shared edge world XYZ matches at z=0.75
+PASS neighbor: shared edge world XYZ matches at z=1
+PASS neighbor: shared edge world XYZ matches at z=1.25
+PASS neighbor: shared edge world XYZ matches at z=1.5
+PASS neighbor: shared edge world XYZ matches at z=1.75
+PASS neighbor: shared edge world XYZ matches at z=2
+PASS min size: 2x2 snapshot builds 3x3 with exact pattern indices
+PASS max size: 257x257 snapshot builds 513x513 = 263169 vertices / 1572864 indices
+PASS max size: every cell keeps positive Y winding (all 1572864 indices)
+PASS max size: corner world positions exact
+PASS determinism: two snapshot builds identical vertex/index values, independent buffers
+PASS determinism: two patch builds identical
+PASS output: Vertices/Indices expose no array, IList, ICollection or SyncRoot
+PASS output: out-of-range indexer throws ArgumentException
+PASS output: IReadOnlyList enumeration and indexing work
+PASS input: snapshot/patch HeightsM never expose arrays or mutable interfaces
+PASS input: builds and failed validations never change GetHeight values
+PASS Build(null snapshot) rejected
+PASS Build(null patch, current) rejected
+PASS Build(patch, null current) rejected
+PASS Build(null, null) rejected
+-- : 41 checks, 0 failed --
+== culture de-DE ==
+PASS gold-a: shape 3x5 = 15 vertices / 48 indices
+PASS gold-a: all 15 vertices exact (asymmetric, no row/col transpose)
+PASS gold-a: all 48 indices exact, fixed a-d diagonal
+PASS gold-a: every triangle has positive Y winding in XZ projection
+PASS gold-a: completely unchanged patch is legal and matches base geometry
+PASS gold-b: patch build shape 5x7 = 35 vertices / 144 indices
+PASS gold-b: all original nodes copy candidate heights (interior 0/-1 kept)
+PASS gold-b: inputs unchanged after successful build (serialize round-trip)
+PASS expired version rejected
+PASS wrong region rejected
+PASS same version but different content rejected
+PASS layout mismatch rejected
+PASS failed validations leave patch and base unchanged
+PASS warp: 2x2 -> 3x3, 9 vertices / 24 indices, a-d diagonal pattern
+PASS warp: all 9 vertices exact (center = mean of four corners = 1)
+PASS warp: face at (.75,.25) is planar height 1, not exact bilinear .75
+PASS neighbor: both candidates have real border triangle edges on x=2
+PASS neighbor: shared edge world XYZ matches at z=0
+PASS neighbor: shared edge world XYZ matches at z=0.25
+PASS neighbor: shared edge world XYZ matches at z=0.5
+PASS neighbor: shared edge world XYZ matches at z=0.75
+PASS neighbor: shared edge world XYZ matches at z=1
+PASS neighbor: shared edge world XYZ matches at z=1.25
+PASS neighbor: shared edge world XYZ matches at z=1.5
+PASS neighbor: shared edge world XYZ matches at z=1.75
+PASS neighbor: shared edge world XYZ matches at z=2
+PASS min size: 2x2 snapshot builds 3x3 with exact pattern indices
+PASS max size: 257x257 snapshot builds 513x513 = 263169 vertices / 1572864 indices
+PASS max size: every cell keeps positive Y winding (all 1572864 indices)
+PASS max size: corner world positions exact
+PASS determinism: two snapshot builds identical vertex/index values, independent buffers
+PASS determinism: two patch builds identical
+PASS output: Vertices/Indices expose no array, IList, ICollection or SyncRoot
+PASS output: out-of-range indexer throws ArgumentException
+PASS output: IReadOnlyList enumeration and indexing work
+PASS input: snapshot/patch HeightsM never expose arrays or mutable interfaces
+PASS input: builds and failed validations never change GetHeight values
+PASS Build(null snapshot) rejected
+PASS Build(null patch, current) rejected
+PASS Build(patch, null current) rejected
+PASS Build(null, null) rejected
+-- de-DE: 41 checks, 0 failed --
+TOTAL checks=82 failed=0
