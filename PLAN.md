@@ -110,3 +110,14 @@ GLM实际交付：T3b原82fa292→集成69d5256，T3c原11bb78a→集成bb8e240�
 本轮主控复验：10适配器命名项、35探针日志检查，Debug0警告/错误；Metal真实GUI三态/重复/拒绝/撤销/冷开通过；back-cull top141512粉像素/bottom0。未引用vertex float溢出先真实复现exit1再GLM修复，失败日志保留。最终reviewer无剩功能/资源缺陷；两处MVID注释已修，architect最终复核通过；完整T3不关闭。证据见docs/engineering/reports/2026-10-04-terrain-render-verification.md。
 
 显示PR25已发布：https://github.com/liuyejinghong/yudian-game/pull/25 。发布head1ce732b947c3f4cb6837bddeb9130082ebffcd8c与本地一致；GitHub MERGEABLE/CLEAN，自动检查列表为空，不声称CI通过。此次后续只记录发布事实、未改源码；最终head须再次核对后按所有者授权合并，合并状态以GitHub PR为准。
+
+## terrain-collision-r1 · 显示/静态碰撞同源与美术联调
+
+授权：所有者持续推进并与美术组联调，缺素材/不合格挂TODO；合格直接合并授权沿用。起点main991b78e，独立集成工作树；美术production/materials保持其独占。
+
+1. [x] 核当前现场、冻结单GLM碰撞票与请求/同步合同，architect计划审查。证明：同帧level→dig/base/非法的定义、全部新资源成功再换、下一物理查询帧同步证明，不冒称引擎事务。
+2. [ ] GLM独立实现静态shape适配与真实物理引擎检查。证明：原生GLM确认、限定commit、Debug/loadedMVID/native ray/headless退出与失败记录。
+3. [ ] 主控增加可选碰撞候选模式/队列/独立分帧检查及GUI，和美术组按接受commit固定M01联调；缺正式素材留工程TODO。证明：显示与body/shape同源、三排队序列/失败保持/释放/真实射线/材质逐surface与拒绝/PNG。
+4. [ ] reviewer/最终architect审查，更新TODO/证据，发布和核对精确head后合并；干净原main快进。证明：实际源/素材/PNG哈希、PR/Issue状态，完整T3保持未完成。
+
+architect明确早退不能丢弃撤销pending，同帧非法最新请求要清掉先前候选；四属性赋值不证明native同步，下一物理帧核对象/位置/法线；非顶点斜坡及shape独立寿命、明确mask/单面；材质等待其主控接受，不能抢写目录。本合同已纳入。
