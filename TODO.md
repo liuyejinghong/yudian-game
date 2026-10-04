@@ -4,7 +4,7 @@
 
 | 线 | 权威任务表 | 当前事实 | 后续首要队列（未启动） |
 |---|---|---|---|
-| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | QA受限技术验收已完成，PR #16已合并；性能稳定性仍待复核 | 数据与纯网格子件已接受；Godot适配/候选探针已受限接受；静态碰撞与候选联调已受限接受，PR #27已合并、子票#26已关闭；两个离线工具包均限定ACCEPTED，PR #28/#29已分别合并；阶段/增量/导航保存和性能留项 |
+| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | QA受限技术验收已完成，PR #16已合并；性能稳定性仍待复核 | 数据与纯网格子件已接受；Godot适配/候选探针已受限接受；静态碰撞与候选联调已受限接受，PR #27已合并、子票#26已关闭；两个离线工具包均限定ACCEPTED，PR #28/#29已分别合并；单区域内存提交与GLM纯判定已限定接受；阶段/同步/导航保存和性能留项 |
 | 美术 | [美术 TODO](docs/art/production/todo.md) | ART-I00技术校准已验；[首批需求](docs/art/production/requirements/first-assets-r1.md)由主控编写；正式资产与视觉效果未验 | M01材质已由美术组技术接受，soil_mars工程逐surface联调通过；预览工具正在制作，正式模型/地形素材仍缺；工程缺口见ART-LINK各行 |
 
 2026-10-04所有者授权后，PR [#16](https://github.com/liuyejinghong/yudian-game/pull/16)、[#18](https://github.com/liuyejinghong/yudian-game/pull/18)及[#20](https://github.com/liuyejinghong/yudian-game/pull/20)已合并，本网格批次从main `3999d30`起步。PR [#13](https://github.com/liuyejinghong/yudian-game/pull/13)/[#14](https://github.com/liuyejinghong/yudian-game/pull/14)仍未合并，不顺带处理；历史结果见[接管复验](docs/engineering/reports/2026-10-04-takeover-verification.md)。原Issue [#5](https://github.com/liuyejinghong/yudian-game/issues/5)/[#6](https://github.com/liuyejinghong/yudian-game/issues/6)/[#7](https://github.com/liuyejinghong/yudian-game/issues/7)/[#8](https://github.com/liuyejinghong/yudian-game/issues/8)分别关联T2/T3/T4/T5；旧ready-for-agent标签不能替代新子票的冻结接口和本轮范围。
@@ -40,6 +40,8 @@
 
 当前编排：美术需求由专门会话按美术权威TODO推进；产研继续由本会话握合同与集成。数据和两个CPU网格子件已经接受并合并PR #20/#23；本轮GLM完成T3-GODOT（含一次限定返工），主控完成独立T3-PROBE，真实Godot复验、reviewer与最终architect通过；仅接受资源适配/未提交候选预览。[本轮复验](docs/engineering/reports/2026-10-04-terrain-render-verification.md) / [子票#24](https://github.com/liuyejinghong/yudian-game/issues/24)。
 
-更新只采用完整CPU重建+新ArrayMesh替换。完整T3、阶段/高度场增量更新、世界提交、碰撞导航、保存与最终美术继续留项；下一批先由主控冻结最小子票，再将确定实现/测试交GLM。费用未知如实记录。各行状态以产研/美术权威表为准。
+更新只采用完整CPU重建+新ArrayMesh替换。完整T3、阶段/高度场增量更新、正式世界与渲染/物理同步、碰撞导航、保存与最终美术继续留项；下一批先由主控冻结最小子票，再将确定实现/测试交GLM。费用未知如实记录。各行状态以产研/美术权威表为准。
 
 本批证据工具：PERF-01-COMPARE与LIFE-01-AUDIT均限定ACCEPTED，原交付与返工分别保留。[PERF复验](docs/engineering/reports/2026-10-04-perf-compare-verification.md) / [LIFE复验](docs/engineering/reports/2026-10-04-lifecycle-audit-verification.md)。父票实机职责继续未完成。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。
+
+本批T3d-MEM与GLM纯判定子件限定接受：[内存提交复验](docs/engineering/reports/2026-10-04-terrain-commit-verification.md)。实机LIFE/PERF用例已冻结，但美术同机窗口尚未协调成功，本轮实际GUI/受控采样NOT_RUN；父票继续未完成。

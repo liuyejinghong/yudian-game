@@ -1,0 +1,14 @@
+{
+  "prototype/scripts/TerrainCommit/Validation/TerrainCommitPolicy.cs": "422e4cc4dfb33cda0ad1f6dc2704a3ff52557f1446e6705d1fb1165ef5e9efde",
+  "prototype/scripts/TerrainCommit/Validation/TerrainCommitStatus.cs": "23c271405282c7e2489cb0ab95576782dfe4590e38b1cf4cc78e548f3903299b",
+  "prototype/scripts/TerrainCommit/World/TerrainCommitResult.cs": "69705a695fe53175cba7141eea06e4c993ac20e1622749524cf6957d04389fdc",
+  "prototype/scripts/TerrainCommit/World/TerrainRegionState.cs": "e4fae6c12fe999a578547707183f02f62e13337fa44a93f06f357fdb39fc5d25",
+  "prototype/scripts/TerrainData/TerrainDataCodec.cs": "46e53be38ac2bea2adc2792b32e9426348aca77caa03fa47d544b63455356ed1",
+  "prototype/scripts/TerrainData/TerrainPatch.cs": "4a11f19f4fbed7305e904d64d0401af1d5582d30930d4714eb1823e87a9c3ea2",
+  "prototype/scripts/TerrainData/TerrainSnapshot.cs": "986c312836a8cc757a753ef1315684efcca5eb74aef2dd14ad084fca8c9cd869",
+  "tools/terrain-commit-acceptance/Independent.csproj": "64dce0b0e0076de1eaac12f53a8fb93d8b65e337e2f0565fc3924dc195111bd0",
+  "tools/terrain-commit-acceptance/Program.cs": "0b5240b21b73a865146b57202ff6b0da694026fbdfbf026b8e02b122295b55b0",
+  "tools/terrain-commit-policy-tests/Program.cs": "bcf161886029c532f809725b2ae24436df8d53e58a84f97a2cef21c31027eb5d",
+  "tools/terrain-commit-policy-tests/TerrainCommitPolicy.Tests.csproj": "c7433976b227ae9a8378b87f0086c6c5024dad75c10e92b22b5c626403bf152b",
+  "tools/terrain-commit-policy-tests/TerrainCommitPolicyTests.cs": "7bf1d95942dfbc442d040a28b3d12970d38ab9505838d30477a21a395bf659a0"
+}
