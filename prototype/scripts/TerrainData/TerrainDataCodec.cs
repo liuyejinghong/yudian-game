@@ -171,9 +171,10 @@ public static class TerrainDataCodec
         var seen = new HashSet<string>(StringComparer.Ordinal);
         foreach (JsonProperty property in element.EnumerateObject())
         {
-            if (!seen.Add(property.Name))
-                throw new ArgumentException($"{prefix}{property.Name}: duplicate field");
-            switch (property.Name)
+            string name = DecodePropertyName(property);
+            if (!seen.Add(name))
+                throw new ArgumentException($"{prefix}{name}: duplicate field");
+            switch (name)
             {
                 case "schema_version":
                     hasSchemaVersion = true;
@@ -216,7 +217,7 @@ public static class TerrainDataCodec
                     heights = property.Value;
                     break;
                 default:
-                    throw new ArgumentException($"{prefix}{property.Name}: unknown field");
+                    throw new ArgumentException($"{prefix}{name}: unknown field");
             }
         }
 
@@ -251,9 +252,10 @@ public static class TerrainDataCodec
         var seen = new HashSet<string>(StringComparer.Ordinal);
         foreach (JsonProperty property in element.EnumerateObject())
         {
-            if (!seen.Add(property.Name))
-                throw new ArgumentException($"{property.Name}: duplicate field");
-            switch (property.Name)
+            string name = DecodePropertyName(property);
+            if (!seen.Add(name))
+                throw new ArgumentException($"{name}: duplicate field");
+            switch (name)
             {
                 case "schema_version":
                     hasSchemaVersion = true;
@@ -273,7 +275,7 @@ public static class TerrainDataCodec
                     heights = property.Value;
                     break;
                 default:
-                    throw new ArgumentException($"{property.Name}: unknown field");
+                    throw new ArgumentException($"{name}: unknown field");
             }
         }
 
@@ -336,10 +338,32 @@ public static class TerrainDataCodec
     {
         if (value.ValueKind != JsonValueKind.String)
             throw new ArgumentException($"{path} must be a JSON string matching {IdPattern}");
-        string id = value.GetString()!;
+        string id;
+        try
+        {
+            id = value.GetString()!;
+        }
+        catch (InvalidOperationException exception)
+        {
+            throw new ArgumentException($"{path} contains an escaped string that is not valid UTF-16 (isolated surrogate)", "json", exception);
+        }
         if (!IsAsciiId(id))
             throw new ArgumentException($"{path} must be a JSON string matching {IdPattern}");
         return id;
+    }
+
+    // JSON 转义中的孤立代理项会让 JsonProperty.Name 抛 InvalidOperationException，
+    // 绕过合同统一异常；在字段名解码边界统一转为带 json 参数路径的 ArgumentException。
+    private static string DecodePropertyName(JsonProperty property)
+    {
+        try
+        {
+            return property.Name;
+        }
+        catch (InvalidOperationException exception)
+        {
+            throw new ArgumentException("json contains a field name that is not valid UTF-16 (isolated surrogate)", "json", exception);
+        }
     }
 
     private static bool IsAsciiId(string id)

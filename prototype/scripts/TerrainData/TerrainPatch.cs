@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace Yudian.Terrain;
 
@@ -11,14 +10,14 @@ namespace Yudian.Terrain;
 /// </summary>
 public sealed class TerrainPatch
 {
-    private readonly ReadOnlyCollection<double> _heightsM;
+    private readonly IReadOnlyList<double> _heightsM;
 
     internal TerrainPatch(int schemaVersion, string patchId, TerrainSnapshot baseSnapshot, double[] heightsM)
     {
         SchemaVersion = schemaVersion;
         PatchId = patchId;
         Base = baseSnapshot;
-        _heightsM = new ReadOnlyCollection<double>((double[])heightsM.Clone());
+        _heightsM = TerrainSnapshot.CopyHeights(heightsM);
     }
 
     public int SchemaVersion { get; }

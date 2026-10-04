@@ -45,22 +45,6 @@ internal static class Check
             throw new Exception("expected ArgumentException, but nothing was thrown");
         });
     }
-
-    public static void NotSupported(string name, Action call)
-    {
-        Ok(name, () =>
-        {
-            try
-            {
-                call();
-            }
-            catch (NotSupportedException)
-            {
-                return;
-            }
-            throw new Exception("expected NotSupportedException, but nothing was thrown");
-        });
-    }
 }
 
 internal static class TerrainDataContractTests
@@ -87,6 +71,7 @@ internal static class TerrainDataContractTests
         PerimeterLock();
         ValidateAgainstTests();
         ReadOnlyCollections();
+        SurrogateDecoding();
         JsonFieldErrors();
         IntegerSyntax();
         RangesAndLimits();
@@ -423,18 +408,91 @@ internal static class TerrainDataContractTests
 
     private static void ReadOnlyCollections()
     {
-        Check.Ok("snapshot HeightsM is not an array", () =>
-            Eq(false, (object)ParseA().HeightsM is double[], "is double[]"));
-        Check.Ok("patch HeightsM is not an array", () =>
-            Eq(false, (object)ParsePatchB().HeightsM is double[], "is double[]"));
-        Check.NotSupported("snapshot HeightsM rejects Add via ICollection",
-            () => ((ICollection<double>)ParseA().HeightsM).Add(99));
-        Check.NotSupported("patch HeightsM rejects Add via ICollection",
-            () => ((ICollection<double>)ParsePatchB().HeightsM).Add(99));
-        Check.NotSupported("snapshot HeightsM rejects Clear via ICollection",
-            () => ((ICollection<double>)ParseA().HeightsM).Clear());
+        Check.Ok("snapshot HeightsM exposes no mutable collection interface", () =>
+        {
+            IReadOnlyList<double> heights = ParseA().HeightsM;
+            Eq(false, (object)heights is double[], "is double[]");
+            Eq(false, heights is IList<double>, "is IList<double>");
+            Eq(false, heights is ICollection<double>, "is ICollection<double>");
+            Eq(false, heights is System.Collections.ICollection, "is ICollection");
+            Eq(false, heights is System.Collections.IList, "is IList");
+        });
+        Check.Ok("patch and base HeightsM expose no mutable collection interface", () =>
+        {
+            TerrainPatch patch = ParsePatchB();
+            Eq(false, patch.HeightsM is double[], "patch is double[]");
+            Eq(false, patch.HeightsM is ICollection<double>, "patch is ICollection<double>");
+            Eq(false, patch.HeightsM is System.Collections.ICollection, "patch is ICollection");
+            Eq(false, patch.Base.HeightsM is ICollection<double>, "base is ICollection<double>");
+            Eq(false, patch.Base.HeightsM is System.Collections.ICollection, "base is ICollection");
+        });
+        Check.Ok("SyncRoot path is closed for snapshot/patch/base heights", () =>
+        {
+            Eq(null, ParseA().HeightsM as System.Collections.ICollection, "snapshot SyncRoot carrier is null");
+            Eq(null, ParsePatchB().HeightsM as System.Collections.ICollection, "patch SyncRoot carrier is null");
+            Eq(null, ParsePatchB().Base.HeightsM as System.Collections.ICollection, "base SyncRoot carrier is null");
+        });
+        Check.Ok("heights remain indexable and enumerable via IReadOnlyList", () =>
+        {
+            IReadOnlyList<double> heights = ParsePatchB().HeightsM;
+            Bits(-1.0, heights[6], "indexer");
+            double last = 0;
+            int count = 0;
+            foreach (double height in ParseA().HeightsM)
+            {
+                last = height;
+                count++;
+            }
+            Eq(6, count, "count");
+            Bits(32.0, last, "last");
+        });
         Check.Ok("two parses do not share the height list instance", () =>
             Eq(false, ReferenceEquals(ParseA().HeightsM, ParseA().HeightsM), "same list instance"));
+    }
+
+    // 评审P2回归：JSON转义中的孤立代理项必须落在合同统一 ArgumentException，不得泄漏 InvalidOperationException。
+    private static void SurrogateDecoding()
+    {
+        Check.Throws("snapshot region_id isolated high surrogate rejected with path", "region_id", () =>
+            TerrainDataCodec.ParseSnapshot(SnapshotJson("1", "\"r\\uD800\"", "1", "0", "0", "1", "2", "2", "[0,0,0,0]")));
+        Check.Throws("snapshot region_id isolated low surrogate rejected with path", "region_id", () =>
+            TerrainDataCodec.ParseSnapshot(SnapshotJson("1", "\"r\\uDC00\"", "1", "0", "0", "1", "2", "2", "[0,0,0,0]")));
+        Check.Throws("patch_id isolated high surrogate rejected with path", "patch_id", () =>
+            TerrainDataCodec.ParsePatch(PatchJson("1", "\"p\\uD800\"", GoldBJson, GoldBPatchHeights)));
+        Check.Throws("patch_id isolated low surrogate rejected with path", "patch_id", () =>
+            TerrainDataCodec.ParsePatch(PatchJson("1", "\"p\\uDC00\"", GoldBJson, GoldBPatchHeights)));
+        Check.Throws("nested base region_id isolated surrogate rejected with base path", "base.region_id", () =>
+            TerrainDataCodec.ParsePatch(PatchJson("1", "\"patch-b\"",
+                GoldBJson.Replace("\"sample-b\"", "\"sample\\uD800-b\""), GoldBPatchHeights)));
+        Check.Throws("snapshot field name isolated surrogate rejected as ArgumentException", "", () =>
+            TerrainDataCodec.ParseSnapshot(
+                "{\"schema_version\":1,\"row\\uD800s\":2,\"region_id\":\"r\",\"version\":1,\"origin_x_m\":0,"
+                + "\"origin_z_m\":0,\"spacing_m\":1,\"rows\":2,\"columns\":2,\"heights_m\":[0,0,0,0]}"));
+        Check.Throws("nested base field name isolated surrogate rejected as ArgumentException", "", () =>
+            TerrainDataCodec.ParsePatch(PatchJson("1", "\"patch-b\"",
+                GoldBJson.Replace("\"region_id\"", "\"reg\\uD800ion_id\""), GoldBPatchHeights)));
+        Check.Throws("legal surrogate pair in region_id rejected as non-ASCII id", "region_id", () =>
+            TerrainDataCodec.ParseSnapshot(SnapshotJson("1", "\"r\\uD83D\\uDE00x\"", "1", "0", "0", "1", "2", "2", "[0,0,0,0]")));
+        Check.Throws("legal surrogate pair as field name rejected as unknown field", "unknown", () =>
+            TerrainDataCodec.ParseSnapshot(SnapshotJson("1", "\"r\"", "1", "0", "0", "1", "2", "2", "[0,0,0,0]")
+                .Replace("\"region_id\"", "\"\\uD83D\\uDE00\"")));
+        Check.Ok("decode failure keeps original exception as inner", () =>
+        {
+            try
+            {
+                TerrainDataCodec.ParseSnapshot(SnapshotJson("1", "\"r\\uD800\"", "1", "0", "0", "1", "2", "2", "[0,0,0,0]"));
+                throw new Exception("expected ArgumentException");
+            }
+            catch (ArgumentException ex)
+            {
+                if (ex.GetType() != typeof(ArgumentException))
+                    throw new Exception($"exact ArgumentException expected, got {ex.GetType().Name}");
+                if (!ex.Message.Contains("region_id", StringComparison.Ordinal))
+                    throw new Exception($"message lacks region_id: {ex.Message}");
+                if (ex.InnerException is not InvalidOperationException)
+                    throw new Exception($"inner is not InvalidOperationException: {ex.InnerException?.GetType().Name ?? "null"}");
+            }
+        });
     }
 
     private static void JsonFieldErrors()
