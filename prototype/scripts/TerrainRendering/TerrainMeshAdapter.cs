@@ -19,6 +19,11 @@ public static class TerrainMeshAdapter
         if (mesh.Indices.Count % 3 != 0)
             throw new ArgumentException($"mesh Indices.Count {mesh.Indices.Count} is not a multiple of 3", nameof(mesh));
 
+        // 公开 TerrainMesh 允许未被索引引用的顶点；先全部转换并校验一次，溢出不因未引用而漏过。
+        var converted = new Vector3[mesh.Vertices.Count];
+        for (int i = 0; i < mesh.Vertices.Count; i++)
+            converted[i] = ToFiniteFloat(mesh.Vertices[i], i);
+
         var positions = new Vector3[mesh.Indices.Count];
         var normals = new Vector3[mesh.Indices.Count];
         int triangleCount = mesh.Indices.Count / 3;
@@ -29,9 +34,9 @@ public static class TerrainMeshAdapter
             int i1 = mesh.Indices[baseIndex + 1];
             int i2 = mesh.Indices[baseIndex + 2];
 
-            Vector3 p0 = ToFiniteFloat(mesh.Vertices[i0], i0);
-            Vector3 p1 = ToFiniteFloat(mesh.Vertices[i1], i1);
-            Vector3 p2 = ToFiniteFloat(mesh.Vertices[i2], i2);
+            Vector3 p0 = converted[i0];
+            Vector3 p1 = converted[i1];
+            Vector3 p2 = converted[i2];
 
             // 法线按原 CPU 顺序三 float 位置计算，同组三顶点同一平面法线。
             Vector3 cross = (p1 - p0).Cross(p2 - p0);

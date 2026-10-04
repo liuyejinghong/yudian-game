@@ -45,8 +45,11 @@ public partial class AdapterTests : Node
             Check("independent resources: repeated builds give fresh RIDs with equal content", Independence);
             Check("inputs preserved: snapshot/patch serialization and CPU buffers unchanged", InputImmutability);
             Check("rejections: null/float overflow/quantized degenerate/negative winding/"
-                + "cross overflow/length-squared overflow/zero-length normal", Rejections);
-            Check("max legal 513x513: counts, finiteness, endpoints, unit up normals", MaxSize);
+                + "cross overflow/length-squared overflow/zero-length normal/"
+                + "unreferenced vertex overflow", Rejections);
+            Check("max legal via real generators: 257x257 snapshot -> Stage 257 mesh / Heightfield 513 mesh",
+                MaxSizeViaGenerators);
+            Check("max legal raw 513x513: counts, finiteness, endpoints, unit up normals", MaxSize);
         }
         catch (Exception ex)
         {
@@ -179,6 +182,10 @@ public partial class AdapterTests : Node
         }
         Expect(mesh.SurfaceGetMaterial(0) is null, "surface material must be null");
         Expect(mesh.SurfaceGetPrimitiveType(0) == Mesh.PrimitiveType.Triangles, "primitive must be Triangles");
+        // 引擎自动切线（PackedFloat32Array，每顶点 4 分量）长度须与发出顶点数一致。
+        float[] tangents = arrays[(int)Mesh.ArrayType.Tangent].As<float[]>();
+        Expect(tangents.Length == ReadVertices(mesh, 0).Length * 4,
+            $"engine tangent length {tangents.Length} != emitted vertices x4");
     }
 
     private static void Independence()
@@ -232,14 +239,17 @@ public partial class AdapterTests : Node
             new[] { V(0, 0, 0), V(0, 0, 1e19), V(1e19, 0, 0), V(2, 0, 2) },
             new[] { 0, 1, 2, 0, 3, 2 })), "triangle[0]", "finite cross but length-squared overflow");
         ExpectArgument(() => TerrainMeshAdapter.Create(RawMesh(
-            new[] { V(0, 0, 0), V(0, 0, 1e-22), V(1e-22, 0, 0), V(2, 0, 2) },
+            new[] { V(0, 0, 1e-22), V(1e-22, 0, 0), V(2, 0, 2), V(1, 0, 1) },
             new[] { 0, 1, 2, 0, 3, 2 })), "triangle[0]", "subnormal length-squared underflow to zero normal");
+        // 公开 TerrainMesh 允许未被索引引用的顶点；溢出不能因未引用而漏过。
+        ExpectArgument(() => TerrainMeshAdapter.Create(RawMesh(
+            new[] { V(0, 0, 0), V(0, 0, 1), V(1, 0, 0), V(1e300, 0, 1) },
+            new[] { 0, 1, 2, 0, 1, 2 })), "vertices[3]", "unreferenced vertex beyond float range");
     }
 
     private static void MaxSize()
     {
-        int rows = 513, columns = 513;
-        var vertices = new TerrainVertex[rows * columns];
+        int rows = 513, columns = 513;        var vertices = new TerrainVertex[rows * columns];
         for (int row = 0; row < rows; row++)
             for (int column = 0; column < columns; column++)
                 vertices[row * columns + column] = new TerrainVertex(column, 0, row);
@@ -273,6 +283,47 @@ public partial class AdapterTests : Node
         ExpectNear(verts[^1], new Vector3(columns - 2, 0, rows - 1), 1e-4, "last endpoint");
         Vector3 farCorner = new(512, 0, 512);
         Expect(verts.Contains(farCorner), "far corner (512,0,512) missing");
+    }
+
+    // 最大合法输入经两个 Build 的实际路径各一次：257×257 snapshot -> Stage 257×257 / Heightfield 513×513。
+    private static void MaxSizeViaGenerators()
+    {
+        string heights = string.Join(",", System.Linq.Enumerable.Repeat("0", 257 * 257));
+        string snapshotJson =
+            "{\"schema_version\":1,\"region_id\":\"max-257\",\"version\":1,\"origin_x_m\":0,\"origin_z_m\":0,"
+            + "\"spacing_m\":1,\"rows\":257,\"columns\":257,\"heights_m\":[" + heights + "]}";
+        TerrainSnapshot snapshot = TerrainDataCodec.ParseSnapshot(snapshotJson);
+
+        TerrainMesh stageCpu = StageMeshBuilder.Build(snapshot);
+        Expect(stageCpu.GridRows == 257 && stageCpu.GridColumns == 257
+            && stageCpu.Vertices.Count == 66049 && stageCpu.Indices.Count == 393216,
+            $"stage CPU shape {stageCpu.GridRows}x{stageCpu.GridColumns}");
+        using ArrayMesh stageMesh = TerrainMeshAdapter.Create(stageCpu);
+        VerifyMaxSurface(stageMesh, 393216, new Vector3(256, 0, 256));
+
+        TerrainMesh fineCpu = HeightfieldMeshBuilder.Build(snapshot);
+        Expect(fineCpu.GridRows == 513 && fineCpu.GridColumns == 513
+            && fineCpu.Vertices.Count == 263169 && fineCpu.Indices.Count == 1572864,
+            $"heightfield CPU shape {fineCpu.GridRows}x{fineCpu.GridColumns}");
+        using ArrayMesh fineMesh = TerrainMeshAdapter.Create(fineCpu);
+        VerifyMaxSurface(fineMesh, 1572864, new Vector3(256, 0, 256));
+    }
+
+    private static void VerifyMaxSurface(ArrayMesh mesh, int expectedExpanded, Vector3 farCorner)
+    {
+        Expect(mesh.GetSurfaceCount() == 1, $"surfaces {mesh.GetSurfaceCount()}");
+        Vector3[] verts = ReadVertices(mesh, 0);
+        Vector3[] norms = ReadNormals(mesh, 0);
+        Expect(verts.Length == expectedExpanded && norms.Length == expectedExpanded,
+            $"expanded {verts.Length}/{norms.Length} != {expectedExpanded}");
+        Vector3 up = new(0, 1, 0);
+        for (int i = 0; i < verts.Length; i++)
+        {
+            Expect(verts[i].IsFinite() && norms[i].IsFinite(), $"non-finite at {i}");
+            Expect(norms[i].Dot(up) >= 0.9999f, $"normal[{i}] not up: {norms[i]}");
+        }
+        ExpectNear(verts[0], new Vector3(0, 0, 0), 1e-4, "origin corner");
+        Expect(verts.Contains(farCorner), $"far corner {farCorner} missing");
     }
 
     // 每个展开槽位 = CPU 三角按 i0,i2,i1 的 float 目标；法线 = CPU 序叉积方向（打包误差 <= 5e-3）。
