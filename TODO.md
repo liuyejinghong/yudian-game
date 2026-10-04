@@ -41,3 +41,5 @@
 当前编排：美术需求由专门会话按美术权威TODO推进；产研继续由本会话握合同与集成。数据和两个CPU网格子件已经接受并合并PR #20/#23；本轮GLM完成T3-GODOT（含一次限定返工），主控完成独立T3-PROBE，真实Godot复验、reviewer与最终architect通过；仅接受资源适配/未提交候选预览。[本轮复验](docs/engineering/reports/2026-10-04-terrain-render-verification.md) / [子票#24](https://github.com/liuyejinghong/yudian-game/issues/24)。
 
 更新只采用完整CPU重建+新ArrayMesh替换。完整T3、阶段/高度场增量更新、世界提交、碰撞导航、保存与最终美术继续留项；下一批先由主控冻结最小子票，再将确定实现/测试交GLM。费用未知如实记录。各行状态以产研/美术权威表为准。
+
+本批证据工具：PERF-01-COMPARE与LIFE-01-AUDIT已交回，审查发现具体缺陷后由主控通过Bridge并行安排GLM限定返工。原交付保留；验收前状态IN_PROGRESS。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。

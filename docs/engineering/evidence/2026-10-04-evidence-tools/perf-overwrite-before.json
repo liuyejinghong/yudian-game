@@ -1,0 +1,12 @@
+[
+  {
+    "exit": 0,
+    "stdout": "perf_compare: 1 runs -> 1 group(s); shared.json\n",
+    "stderr": ""
+  },
+  {
+    "exit": 0,
+    "stdout": "perf_compare: 1 runs -> 1 group(s); shared.json\n",
+    "stderr": ""
+  }
+]
