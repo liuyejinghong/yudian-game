@@ -67,6 +67,8 @@ Issues 记录在本仓库的 GitHub Issues（`gh` CLI）。See `docs/agents/issu
 
 ## Lessons
 
+- When 所有者已授权无问题直接合并，do 核对当前差异并及时集成合格PR；旧PR正文的“不合并”只保留为历史授权记录，不继续用它搁置交付。
+
 - When conducting engineering game, GUI or performance tests, do launch and accept them in engineering; coordinate art only for observed shared-machine load, never gate startup on an art acknowledgement or assign engineering tests to art.
 
 - When 所有者交回外包包并恢复主控协调，do 由Codex通过Agent Bridge直接安排GLM返工；包内子代理已获授权，仍由主控review、验收和合并。
