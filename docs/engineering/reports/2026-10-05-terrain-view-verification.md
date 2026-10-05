@@ -1,6 +1,6 @@
 # 单区域权威提交与显示/静态物理复验
 
-2026-10-05：T3d-PROJECTION-RESOURCES与T3d-VIEW限定接受。独立可运行场景已将真实内存提交接到Stage画面与静态shape；主控独立复验、reviewer和architect未发现剩余实质问题。开发分支已集成，远端PR合并事实在发布后补记。
+2026-10-05：T3d-PROJECTION-RESOURCES与T3d-VIEW限定接受。独立可运行场景已将真实内存提交接到Stage画面与静态shape；主控独立复验、reviewer和architect未发现剩余实质问题。已按所有者授权合并[PR #32](https://github.com/liuyejinghong/yudian-game/pull/32)，merge `8b693447e4e466f1baf0ad2deec710e642c28895`，合并时间 `2026-10-05T03:46:43Z`；主仓库main干净快进。GitHub本PR自动检查列表为空，接受依据为本轮本地实际检查与独立审查。
 
 范围是单区域、单Godot物理写线程、完整重建。旧Main的机器人仍用原TerrainHeight，本场景未接玩法；通行/导航、邻区事务、存档/重载、工程收益与资源经济、正式美术、两候选性能比较/稳定预算未验收。工程自行启动游戏测试，不以美术回执为前置。
 

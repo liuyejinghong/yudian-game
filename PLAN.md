@@ -215,7 +215,7 @@ PR清理实测：PR1旧执行入口冲突已保留当前TODO并标历史；PR2�
 2. [x] GLM独立实现资源束和native小检查；证明：精确冻结基线、限定diff、主控实际Godot复验。
 3. [x] 主控接入权威场景，准备前去重判定、准备后重新提交判定；证明：版本9→10、取消/无权限/过期保留、准备失败、重放不倒退、绑定故障及Current恢复。
 4. [x] 下一物理帧核验真实射线与同源mesh/shape；实际GUI修改/恢复与关窗，独立reviewer审关键状态与资源释放。
-5. [ ] 更新限定TODO/证据，精确head提交PR并按授权合并；证明：必要检查/最终architect/远端merge与main同步。
+5. [x] 更新限定TODO/证据，精确head提交PR并按授权合并；证明：必要检查/最终architect/远端merge与main同步。
 
 文件归属：GLM仅prototype/scripts/TerrainProjection/TerrainProjectionResources.cs、prototype/scripts/TerrainProjection/Tests/*、prototype/scenes/terrain-projection-tests/*、tools/terrain-projection-tests/README.md；主控RegionState的只读判定与复用、TerrainWorld场景/组件、合同与工程追踪。
 
@@ -224,3 +224,5 @@ PR清理实测：PR1旧执行入口冲突已保留当前TODO并标历史；PR2�
 失败与修正：主控首编译Environment命名歧义，明确System.Environment后通过；首次native mesh/shape用bit相等误拒绝真实shape量化，改为既有合同1e-4m容差后通过，原失败保留。reviewer发现输入高度范围使原“准备失败”提前codec拒绝、冷启动旧版按钮误提交，两项修正并自测。
 
 UI收尾重计划：真实游戏关窗exit0后，Cua getAXState自动又开无DOTNET_ROOT管理器；两次退出后目标观察均触发再启动，停止该观察路径，architect独立确认工具副作用。最终通过native quit后只读应用清单确认Godot/Yudian均非运行；不装SDK、不改引擎、不用信号代替关窗。
+
+本批PR32已合并，精确head0bb9ba7、merge8b693447e4e466f1baf0ad2deec710e642c28895；main干净快进，测试后prototype运行源码未变。主控同步总索引；已结束PR附件按所有者清理要求移除，原PR/分支/工作树/日志保留。

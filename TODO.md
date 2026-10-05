@@ -50,3 +50,5 @@
 
 
 2026-10-05 T3d-PROJECTION-RESOURCES / T3d-VIEW限定接受：GLM资源束经一次返工，主控实际单区域权威提交场景已串起内存/画面/静态碰撞；29内存检查、8 native资源检查、7步引擎与Metal GUI通过。[复验](docs/engineering/reports/2026-10-05-terrain-view-verification.md)。完整T3d、旧Main机器人通行/导航/存档/建设闭环、正式美术与性能留项未完成，下一张按真实接入接口再冻结。
+
+本批已合并[PR #32](https://github.com/liuyejinghong/yudian-game/pull/32)，merge `8b693447e4e466f1baf0ad2deec710e642c28895`；主仓库main已同步，完整父票保持未完成。
