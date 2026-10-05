@@ -11,8 +11,8 @@ namespace Yudian.Terrain;
 /// 不绑定节点、不修改输入或材质，不引入依赖。
 /// internal Create(mesh, failBeforeShape) 是唯一内部测试入口：true 在 mesh 创建成功之后、shape
 /// 创建之前抛 InvalidOperationException——这是合成的中途异常（测试如实记录为模拟），不冒称
-/// 真实 native 分配失败；抛出前释放该 mesh 并记录其 RID 供测试用 RenderingServer 有效性查询
-/// 证明确实释放。公开 Create 默认 failBeforeShape=false。
+/// 真实 native 分配失败；抛出前释放该 mesh 并保留其已释放实例，供测试用原实例
+/// GodotObject.IsInstanceValid 证明确实释放。公开 Create 默认 failBeforeShape=false。
 /// </summary>
 public sealed class TerrainProjectionResources : IDisposable
 {
@@ -20,8 +20,8 @@ public sealed class TerrainProjectionResources : IDisposable
     private ConcavePolygonShape3D _shape;
     private bool _disposed;
 
-    /// <summary>模拟中途失败时被释放 mesh 的 RID；仅内部测试入口写入，供测试有效性查询。</summary>
-    internal static Rid? LastSimulatedFailureMeshRid;
+    /// <summary>模拟中途失败时已释放的 ArrayMesh 实例；仅内部测试入口写入，供测试 IsInstanceValid 证明释放。</summary>
+    internal static ArrayMesh? LastSimulatedFailureMesh;
 
     private TerrainProjectionResources(ArrayMesh mesh, ConcavePolygonShape3D shape)
     {
@@ -48,12 +48,11 @@ public sealed class TerrainProjectionResources : IDisposable
         ArrayMesh arrayMesh = TerrainMeshAdapter.Create(mesh);
         if (failBeforeShape)
         {
-            Rid rid = arrayMesh.GetRid();
             arrayMesh.Dispose();
-            LastSimulatedFailureMeshRid = rid;
+            LastSimulatedFailureMesh = arrayMesh;
             throw new InvalidOperationException(
                 $"simulated mid-flight failure after mesh creation (before shape creation), "
-                + $"mesh RID {rid} released; this is a synthesized test exception, not a real native allocation failure");
+                + $"mesh instance released; this is a synthesized test exception, not a real native allocation failure");
         }
 
         ConcavePolygonShape3D shape;

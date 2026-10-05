@@ -11,11 +11,10 @@ namespace Yudian.Terrain;
 /// <summary>
 /// terrain-view-r1 GLM资源束实际引擎测试（headless）。场景启动即跑全部命名用例，逐条打印
 /// PASS/FAIL，全过退出 0，任何失败退出 1。启动时核对加载的 Yudian.dll MVID 与当前工作树
-/// Debug 文件一致并打印该文件 SHA256（不比对加载字节 SHA）。释放证明用 RenderingServer
-/// MeshGetSurfaceCount（活 mesh=1，已释放=0，先用已知活/释放对照演示两侧取值）与
-/// GodotObject.IsInstanceValid（mesh/shape 实例）；对已释放 RID 的查询会打印引擎错误行，
-/// 属预期现象。failBeforeShape 的 InvalidOperationException 是合成中途异常，测试如实记录
-/// 为模拟，不冒称真实 native 分配失败。
+/// Debug 文件一致并打印该文件 SHA256（不比对加载字节 SHA）。释放证明用原实例
+/// GodotObject.IsInstanceValid（合同允许路径）：已知活实例阳性对照为 true、被释放实例为 false；
+/// 不查询失效 RID，输出不含引擎 ERROR 行。failBeforeShape 的 InvalidOperationException
+/// 是合成中途异常，测试如实记录为模拟，不冒称真实 native 分配失败。
 /// </summary>
 public partial class ProjectionResourcesTests : Node
 {
@@ -41,7 +40,7 @@ public partial class ProjectionResourcesTests : Node
             Check("independent bundles: distinct mesh/shape RIDs, equal content, alive until handover", Independence);
             Check("inputs preserved: CPU buffers unchanged after Create and Dispose", InputImmutability);
             Check("rejections: null mesh / negative winding ArgumentException, no bundle, hook untouched", Rejections);
-            Check("simulated mid-flight failure: InvalidOperationException after mesh, mesh RID proven released", SimulatedMidFlightFailure);
+            Check("simulated mid-flight failure: InvalidOperationException after mesh, disposed mesh instance proven invalid", SimulatedMidFlightFailure);
             Check("dispose: idempotent, releases mesh+shape instances, access after dispose rejected", RepeatDispose);
         }
         catch (Exception ex)
@@ -128,8 +127,6 @@ public partial class ProjectionResourcesTests : Node
             "first bundle resources must stay alive after successful handover");
         Expect(GodotObject.IsInstanceValid(second.Mesh) && GodotObject.IsInstanceValid(second.Shape),
             "second bundle resources must stay alive after successful handover");
-        Expect(RenderingServer.MeshGetSurfaceCount(first.Mesh.GetRid()) == 1,
-            "live handed-over mesh must be queryable as a real surface resource");
         Vector3[] a = ReadMeshVertices(first.Mesh);
         Vector3[] b = ReadMeshVertices(second.Mesh);
         Expect(a.Length == b.Length, "expanded counts differ");
@@ -163,14 +160,14 @@ public partial class ProjectionResourcesTests : Node
 
     private static void Rejections()
     {
-        Rid? hookBefore = TerrainProjectionResources.LastSimulatedFailureMeshRid;
+        ArrayMesh? hookBefore = TerrainProjectionResources.LastSimulatedFailureMesh;
 
         ExpectArgument(() => TerrainProjectionResources.Create(null!), "mesh", "null mesh");
         ExpectArgument(() => TerrainProjectionResources.Create(RawMesh(
             new[] { V(0, 0, 0), V(1, 0, 0), V(0, 0, 1), V(1, 0, 1) },
             new[] { 0, 1, 3, 0, 2, 3 })), "triangle[0]", "negative winding");
 
-        Expect(TerrainProjectionResources.LastSimulatedFailureMeshRid == hookBefore,
+        Expect(TerrainProjectionResources.LastSimulatedFailureMesh == hookBefore,
             "public Create failures must not touch the internal simulated-failure hook record");
     }
 
@@ -179,14 +176,6 @@ public partial class ProjectionResourcesTests : Node
         TerrainMesh cpu = StageMeshBuilder.Build(TerrainDataCodec.ParseSnapshot(FlatJson));
         TerrainVertex[] verts = cpu.Vertices.ToArray();
         int[] indices = cpu.Indices.ToArray();
-
-        // 对照：同一查询在已知活 mesh 上取 1，已知释放 mesh 上取 0，证明该查询可区分两侧。
-        ArrayMesh control = TerrainMeshAdapter.Create(cpu);
-        Rid controlRid = control.GetRid();
-        Expect(RenderingServer.MeshGetSurfaceCount(controlRid) == 1, "control live mesh query must return 1");
-        control.Dispose();
-        int controlAfterFree = RenderingServer.MeshGetSurfaceCount(controlRid);
-        Expect(controlAfterFree == 0, $"control freed mesh query must return 0, got {controlAfterFree}");
 
         // 模拟中途失败：mesh 成功后、shape 前抛合成 InvalidOperationException。
         InvalidOperationException failure;
@@ -203,11 +192,14 @@ public partial class ProjectionResourcesTests : Node
         Expect(failure.Message.Contains("simulated", StringComparison.OrdinalIgnoreCase),
             "failure message must record that this is a simulated exception");
 
-        // 用释放前记录的 RID 证明确实释放（非计数猜测）：查询值须与已释放对照同为 0。
-        Rid? recorded = TerrainProjectionResources.LastSimulatedFailureMeshRid;
-        Expect(recorded.HasValue, "internal hook must record the doomed mesh RID before release");
-        int queryAfter = RenderingServer.MeshGetSurfaceCount(recorded.Value);
-        Expect(queryAfter == 0, $"simulated-failure mesh RID must query as released (0), got {queryAfter}");
+        // 释放证明（原实例 IsInstanceValid，非计数猜测）：已知活实例阳性对照，被释放实例阴性。
+        ArrayMesh liveControl = TerrainMeshAdapter.Create(cpu);
+        Expect(GodotObject.IsInstanceValid(liveControl), "known-live control mesh must be valid");
+        liveControl.Dispose();
+
+        ArrayMesh? doomed = TerrainProjectionResources.LastSimulatedFailureMesh;
+        Expect(doomed is not null, "internal hook must retain the disposed mesh instance");
+        Expect(!GodotObject.IsInstanceValid(doomed), "disposed mesh instance must be invalid");
 
         for (int i = 0; i < verts.Length; i++)
             Expect(cpu.Vertices[i].Equals(verts[i]), $"CPU vertex[{i}] changed by failed Create");
@@ -221,13 +213,10 @@ public partial class ProjectionResourcesTests : Node
         TerrainProjectionResources bundle = TerrainProjectionResources.Create(cpu);
         ArrayMesh mesh = bundle.Mesh;
         ConcavePolygonShape3D shape = bundle.Shape;
-        Rid meshRid = mesh.GetRid();
 
         bundle.Dispose();
         Expect(!GodotObject.IsInstanceValid(mesh), "mesh instance must be invalid after Dispose");
         Expect(!GodotObject.IsInstanceValid(shape), "shape instance must be invalid after Dispose");
-        Expect(RenderingServer.MeshGetSurfaceCount(meshRid) == 0,
-            "mesh RID must query as released (0) after Dispose");
 
         bundle.Dispose(); // 重复 Dispose 幂等，不得抛异常。
         Expect(!GodotObject.IsInstanceValid(mesh), "mesh must remain invalid after repeated Dispose");
