@@ -53,14 +53,17 @@ Assembly.FullName 与刚构建 `prototype/.godot/mono/temp/bin/Debug/Yudian.dll`
 - 平面闭环：落地贴地（脚底Y≈0、持续 IsOnFloor）、逐tick实际XZ位移 ≤ speed·dt
   （min(speed, distance/delta) 不越步长）、到点XZ容差0.25m内才换点、TravelledM 与实际路程
   一致、开放平地 Blocked 保持 false；初始化后篡改外部航点数组仍走向原目标（防御复制）。
-- 20°可走坡（<35°）：上坡到顶后**真实下坡折返回低端**（第二次回到低端航点、Y 回到坡底
-  高度，非仅一次到顶），全程贴地、不滑落、不穿入，到点判定同上。
+- 20°可走坡（<35°）：上坡到顶后**真实下坡折返回低端**（第二次回到低端航点，非仅一次到顶），
+  全程贴地、不滑落、不穿入，到点判定同上；判收时刻用 terrain-mask(1) 真实向下 ray 取支撑面，
+  按胶囊半径（合同0.35m）与命中法线推期望脚底高 `hit.Y + 0.35·(1/normal.Y − 1)`，
+  要求 |脚底Y − 期望| ≤ 0.05 且 IsOnFloor。这是测试 oracle，组件不含 sampler、不手设Y。
 - 50°陡坡（>35° FloorMaxAngle，墙语义）：接近后被挡，IsOnWall/Blocked 置位，X 不越过
   接触点、不爬坡不穿过，Y 保持地面高度，停滞120帧后判收。
 - Paused：暂停帧内 XZ/TravelledM/TargetIndex 冻结，仍 IsOnFloor 且 Y 稳定（重力/地面仍
   处理）；恢复后继续前进 ≥1.5m。
 - 空中已Paused（防IsOnFloor缓存假通过）：空中暂停的机器人经真实重力下落并落地（下落量
-  ≥1m、落地Y≈0、稳定≥60帧），XZ全程冻结——证明Paused分支不靠缓存的地面状态直接跳过。
+  ≥1m、落地Y≈0、**连续**贴地稳定≥60帧，离地帧即归零重计），XZ全程冻结——证明Paused分支
+  不靠缓存的地面状态直接跳过。
 - 微小航点差（1mm XZ，合法相邻差）：目标持续轮换 ≥20 次无停摆，位置/速度/TravelledM
   全程有限（无 NaN）。
 

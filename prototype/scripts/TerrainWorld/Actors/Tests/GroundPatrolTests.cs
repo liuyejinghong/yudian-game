@@ -355,7 +355,7 @@ public partial class GroundPatrolTests : Node3D
         AddChild(SlopeBox(new Vector3(10, 0.5f, 4), new Vector3(41, 1.4f, 0), 20f));
         GroundPatrol rampBot = SpawnRobot(new Vector3(37, 0.5f, 0),
             new[] { new Vector3(38.5f, 0, 0), new Vector3(44.5f, 0, 0) }, 2f);
-        _scenarios.Add(new RampPatrolScenario(rampBot));
+        _scenarios.Add(new RampPatrolScenario(this, rampBot));
 
         // 50°陡坡（>35° FloorMaxAngle，墙语义）+ 平面接近段；低端埋入平面下避免缝隙。
         AddChild(FloorBox(new Vector3(8, 1, 8), new Vector3(100, -0.5f, 0)));
@@ -383,6 +383,17 @@ public partial class GroundPatrolTests : Node3D
     }
 
     private static StaticBody3D FloorBox(Vector3 size, Vector3 center) => SlopeBox(size, center, 0f);
+
+    // 只在_PhysicsProcess里调用：terrain-mask(1)向下ray，供场景做贴地oracle。
+    private Godot.Collections.Dictionary RayDown(Vector3 from, Vector3 to)
+    {
+        PhysicsRayQueryParameters3D query = PhysicsRayQueryParameters3D.Create(from, to, 1u);
+        query.CollideWithBodies = true;
+        query.CollideWithAreas = false;
+        query.HitBackFaces = false;
+        query.HitFromInside = false;
+        return GetWorld3D().DirectSpaceState.IntersectRay(query);
+    }
 
     private static StaticBody3D SlopeBox(Vector3 size, Vector3 center, float rotateZDeg)
     {
@@ -511,15 +522,17 @@ public partial class GroundPatrolTests : Node3D
     {
         private static readonly Vector3 Bottom = new(38.5f, 0, 0);
         private static readonly Vector3 Top = new(44.5f, 0, 0);
+        private readonly GroundPatrolTests _owner;
         private readonly GroundPatrol _robot;
         private int _local;
         private int _lastIndex;
         private int _advances;
         private float _maxY;
 
-        public RampPatrolScenario(GroundPatrol robot)
+        public RampPatrolScenario(GroundPatrolTests owner, GroundPatrol robot)
             : base("walkable 20 deg slope: climbs to top, really descends back to bottom, grounded", 900)
         {
+            _owner = owner;
             _robot = robot;
         }
 
@@ -550,14 +563,20 @@ public partial class GroundPatrolTests : Node3D
             if (_advances >= 3 && _local > LandingFrames)
             {
                 Expect(_maxY >= 2.6f, $"never climbed the slope, maxY {_maxY:F2} (top ~2.94)");
-                // Bottom在20°坡面上，表面高≈1.4+(38.5-41)·tan20°=0.49m；到点是XZ语义(0.25m)，
-                // 原生下坡允许snap(0.5m)内滞后，贴地=落在坡面高度±snap带内且持续IsOnFloor。
-                const float bottomSurfaceY = 0.491f;
-                Expect(MathF.Abs(pos.Y - bottomSurfaceY) <= 0.55f,
-                    $"back at bottom waypoint but Y {pos.Y:F3} not on ramp surface"
-                    + $" ({bottomSurfaceY} ± snap 0.5), pos {pos}");
+                // 测试oracle：terrain-mask(1)真实向下ray取支撑面，按胶囊半径(合同0.35)与
+                // 命中法线推脚底期望高；只属于测试，不给组件加sampler、不手设Y。
+                var hit = _owner.RayDown(pos + new Vector3(0, 2, 0), pos + new Vector3(0, -3, 0));
+                Expect(hit.Count > 0, $"no terrain hit below robot at {pos}");
+                Vector3 normal = hit["normal"].AsVector3();
+                Expect(normal.Y > 0f, $"hit normal not up: {normal}");
+                float surfaceY = hit["position"].AsVector3().Y;
+                float expectedFoot = surfaceY + 0.35f * (1f / normal.Y - 1f);
+                Expect(MathF.Abs(pos.Y - expectedFoot) <= 0.05f,
+                    $"foot Y {pos.Y:F3} not resting on ray-surfaced support {expectedFoot:F3}"
+                    + $" (±0.05), pos {pos}");
                 Expect(_robot.IsOnFloor(), $"not grounded after descending, pos {pos}");
-                Done($"local frames {_local}, pos {pos}, maxY {_maxY:F2}, travelled {_robot.TravelledM:F2}m");
+                Done($"local frames {_local}, pos {pos}, surfaceY {surfaceY:F3}, "
+                    + $"expectedFoot {expectedFoot:F3}, maxY {_maxY:F2}, travelled {_robot.TravelledM:F2}m");
             }
         }
     }
@@ -702,6 +721,7 @@ public partial class GroundPatrolTests : Node3D
             {
                 _wasAirborne = true;
                 _minY = MathF.Min(_minY, pos.Y);
+                _groundedFrames = 0; // 离地即归零，60帧必须是连续贴地才算稳定。
             }
             else
             {
