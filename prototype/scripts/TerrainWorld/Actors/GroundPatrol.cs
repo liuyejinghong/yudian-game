@@ -3,13 +3,7 @@ using Godot;
 
 namespace Yudian.Terrain;
 
-/// <summary>
-/// main-ground-r1 GLM包B：固定闭环航点贴地巡逻。脚底为节点原点，全部运动只经
-/// _PhysicsProcess 的 Velocity+MoveAndSlide 原生地面解算（Grounded、35°坡、0.5m snap、
-/// 9.8m/s² 重力），不直接写Y、不传送越墙、不补地形高度。无寻路/动态避让/建设/经济；
-/// Blocked 只表示本帧被墙或陡坡挡住，不构成可达性算法。胶囊与速度等数值是本工程
-/// 验证常量，不是正式机器人平衡或最终外形碰撞。
-/// </summary>
+/// <summary>脚底原点的固定航点巡逻；只用原生MoveAndSlide，不提供寻路或避让。</summary>
 public partial class GroundPatrol : CharacterBody3D
 {
     /// <summary>合同重力常量，m/s²。</summary>
@@ -120,7 +114,6 @@ public partial class GroundPatrol : CharacterBody3D
                 $"speed must be finite in (0, {SpeedLimit}], got {speed}", nameof(speed));
     }
 
-    // 验证全部通过才走到这里；碰撞子节点一次建成，没有中间失败态。
     private void BuildCollision()
     {
         CollisionLayer = 2;

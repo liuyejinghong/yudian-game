@@ -313,7 +313,7 @@ public partial class Main : Node3D
     }
 
     // 12 台机器人：望山（胶囊+球顶）/ 筑垒（方箱）/ 驮运（楔块），各 4 台，
-    // 沿设施间固定闭环航点匀速巡逻（运动学插值，无导航系统）。
+    // 固定闭环航点；旧模式插值，live模式原生贴地移动，均不提供寻路。
     private void SpawnRobots()
     {
         var rng = new RandomNumberGenerator { Seed = (ulong)_cfg.Seed };
