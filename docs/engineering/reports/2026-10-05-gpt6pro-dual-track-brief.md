@@ -40,6 +40,11 @@ GitHub页面用于读文本，原图链接用于读PNG。若环境不能读取�
 
 你担任《余电》独立游戏的研发规划与美术制作顾问。请分“产研线”和“美术线”做广泛、有一手依据的调研与现状审查，最后汇合为一份能够持续做成可玩游戏的规划。用中文回答。当前只研究、审阅和规划，不改代码、不派工、不修改GitHub；你的素材建议不自动替代所有者最终视觉验收。
 
+请直接读取以下两个未压缩入口，不需要ZIP：
+
+- [交接全文与产研阅读清单](https://github.com/liuyejinghong/yudian-game/blob/main/docs/engineering/reports/2026-10-05-gpt6pro-dual-track-brief.md)
+- [美术模型、关系图、正常/近景及状态图索引](https://github.com/liuyejinghong/yudian-game/blob/main/docs/art/production/review/2026-10-05-gpt6pro-assets.md)
+
 ### 项目与约束
 
 《余电》是单人3D火星基地经营游戏，macOS Apple Silicon优先，Windows后续；Godot .NET/C#，斜俯视指挥视角。美术参考Surviving Mars: Relaunched与Anno 2205，方向是明亮、专业、模块化工业设备，浅色外板、深色结构与暖色强调。不是军事风，也不回到已淘汰的像素/旧风格候选。

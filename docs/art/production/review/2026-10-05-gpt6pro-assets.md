@@ -227,7 +227,7 @@
 - [最新美术TODO](https://github.com/liuyejinghong/yudian-game/blob/16e573b01c0f7700e44224fd0fafb6e1246ea930/docs/art/production/todo.md)
 - [交付与技术边界](https://github.com/liuyejinghong/yudian-game/blob/16e573b01c0f7700e44224fd0fafb6e1246ea930/docs/art/production/evidence/lowfi-batch-r1/technical-handoff.md)
 - [待检验的覆盖表](https://github.com/liuyejinghong/yudian-game/blob/16e573b01c0f7700e44224fd0fafb6e1246ea930/docs/art/production/requirements/asset-coverage-2026-10-05.md)
-- [原始预览图片目录](https://github.com/liuyejinghong/yudian-game/blob/16e573b01c0f7700e44224fd0fafb6e1246ea930/docs/art/production/evidence/lowfi-batch-r1/captures)
+- [原始预览图片目录](https://github.com/liuyejinghong/yudian-game/tree/16e573b01c0f7700e44224fd0fafb6e1246ea930/docs/art/production/evidence/lowfi-batch-r1/captures)
 - [公开路径清理说明](https://github.com/liuyejinghong/yudian-game/blob/16e573b01c0f7700e44224fd0fafb6e1246ea930/docs/art/production/evidence/publication-r1/README.md)
 - [公开件清单](https://github.com/liuyejinghong/yudian-game/blob/16e573b01c0f7700e44224fd0fafb6e1246ea930/docs/art/production/evidence/publication-r1/public-files.json)
 
