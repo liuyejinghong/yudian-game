@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-05",
+  "native_actions": [
+    {
+      "api": "cua.getApp(Yudian)",
+      "outcome": "timeout; name resolution opened extra old clean-r1 package; not relied upon as own GUI evidence"
+    },
+    {
+      "api": "cua.getApp(fixed package path)",
+      "outcome": "AX window Yudian; close button index1; full AX+render screenshot observed"
+    },
+    {
+      "api": "cua.click(1)",
+      "outcome": "real owned PID21136 exit130 at70.174849 Recorder seconds, status interrupted; following AX saw another window, process exit verified independently"
+    },
+    {
+      "api": "same fixed binary direct Popen",
+      "outcome": "reopen completed/0; new run ID/default directory; prior inputs/package unchanged"
+    },
+    {
+      "api": "cua close extra windows",
+      "outcome": "only tool-created fixed/old clean-r1 windows closed; no Yudian process before PERF"
+    },
+    {
+      "api": "cua.getApp(com.openai.codex)",
+      "outcome": "tool safety restriction; not bypassed"
+    },
+    {
+      "api": "cua.getApp(Chrome)",
+      "outcome": "timeout; alternative Finder declared"
+    },
+    {
+      "api": "cua Raise on F1",
+      "outcome": "own window raised but most observed foreground PID21200/Codex; NOT_CONTROLLED"
+    },
+    {
+      "api": "cua desktop click on B1",
+      "outcome": "AXError.illegalArgument; NOT_CONTROLLED"
+    }
+  ],
+  "gui_close_method": "native window close button, not signal/quit-after",
+  "gui_screenshot": "observed inline in native tool result; no local PNG export claimed",
+  "perf_state": "Initial Cua focus failures paused and replanned; subsequent user-authorized AppleScript six-run sampling completed; background target drifted, controlled comparison NOT_ACCEPTED",
+  "no_save_claim": true
+}

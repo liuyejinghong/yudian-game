@@ -1,0 +1,6 @@
+{
+  "target": "owned Yudian window",
+  "api": "cua.performSecondaryAction(0, Raise) + getAXState",
+  "elapsed_since_popen_s": 39.39429120812565,
+  "owned_app_pid": 29957
+}

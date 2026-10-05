@@ -1,0 +1,49 @@
+{
+  "order": [
+    {
+      "case": "foreground-1",
+      "mode": "foreground",
+      "collector_exit": 0,
+      "gap_since_previous_end_s": null,
+      "elapsed_s": 47.74927195813507
+    },
+    {
+      "case": "background-1",
+      "mode": "background",
+      "collector_exit": 0,
+      "gap_since_previous_end_s": 15.0048098328989,
+      "elapsed_s": 47.859857792034745
+    },
+    {
+      "case": "background-2",
+      "mode": "background",
+      "collector_exit": 0,
+      "gap_since_previous_end_s": 15.005044833058491,
+      "elapsed_s": 47.146157833980396
+    },
+    {
+      "case": "foreground-2",
+      "mode": "foreground",
+      "collector_exit": 0,
+      "gap_since_previous_end_s": 15.001769207883626,
+      "elapsed_s": 46.966148416977376
+    },
+    {
+      "case": "foreground-3",
+      "mode": "foreground",
+      "collector_exit": 0,
+      "gap_since_previous_end_s": 15.00509470817633,
+      "elapsed_s": 47.038789707934484
+    },
+    {
+      "case": "background-3",
+      "mode": "background",
+      "collector_exit": 0,
+      "gap_since_previous_end_s": 15.001461541978642,
+      "elapsed_s": 46.793931833002716
+    }
+  ],
+  "observer": "0.5s requested interval; actual intervals recorded; all startup frames retained",
+  "finder_pid": 655,
+  "ui_authorization": "user explicitly permitted AppleScript on 2026-10-05"
+}

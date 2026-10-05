@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "run_id": "20261005T015831458Z-6d000969",
+      "run_dir": "docs/engineering/evidence/2026-10-05-runtime-controlled/sampled/foreground-1",
+      "input_sha256": {
+        "frames.csv": "d51f1a26c5a7b987e1f725dc8fd5ac9f77a5eabc45d419a8c61aa83d14ac1516",
+        "summary.json": "5d7df1e840a3d3f48b7b7a29358c85a2dfaaf4b846d3570c50b8266c2d0a5214",
+        "verification.json": "0f65d11f95f703b718f053d82d54cc6c946bcd2d55939d4125b003334955ddfe"
+      },
+      "group_id": "grp-2c4f978b3f9c353d26a964c9a44e82ce3588228bb3eaf2d6717dc0515258b9c4",
+      "recomputed": {
+        "frames": 3452,
+        "duration_csv_s": 45.008138,
+        "avg_fps": 76.69724084120077,
+        "nearest_rank_ms": {
+          "50": 13.313,
+          "95": 14.357,
+          "99": 21.354
+        },
+        "max_ms": 72.528,
+        "over_33ms": 4,
+        "csv_sha256": "d51f1a26c5a7b987e1f725dc8fd5ac9f77a5eabc45d419a8c61aa83d14ac1516"
+      },
+      "memory": {
+        "maximum_resident_set_size_bytes": 290127872,
+        "peak_memory_footprint_bytes": 654312768
+      }
+    },
+    {
+      "run_id": "20261005T020139314Z-ec27aca6",
+      "run_dir": "docs/engineering/evidence/2026-10-05-runtime-controlled/sampled/foreground-2",
+      "input_sha256": {
+        "frames.csv": "a4b9e3a68300f2f263715d98be20e7ad323a04507afd166fbe63c5a60def52cd",
+        "summary.json": "1fb5e83bc5c5c7651e2ef983056fa8f3527a19203efbdbb19ea22eedb5c93130",
+        "verification.json": "266c86ca6a2a11fb3261751139c3b60f79dddda271f9f7112bcb2ffffd8de3e9"
+      },
+      "group_id": "grp-2c4f978b3f9c353d26a964c9a44e82ce3588228bb3eaf2d6717dc0515258b9c4",
+      "recomputed": {
+        "frames": 3379,
+        "duration_csv_s": 45.011205,
+        "avg_fps": 75.0701964099828,
+        "nearest_rank_ms": {
+          "50": 13.322,
+          "95": 14.505,
+          "99": 19.137
+        },
+        "max_ms": 74.498,
+        "over_33ms": 4,
+        "csv_sha256": "a4b9e3a68300f2f263715d98be20e7ad323a04507afd166fbe63c5a60def52cd"
+      },
+      "memory": {
+        "maximum_resident_set_size_bytes": 291356672,
+        "peak_memory_footprint_bytes": 668108120
+      }
+    },
+    {
+      "run_id": "20261005T020241070Z-a9c370b3",
+      "run_dir": "docs/engineering/evidence/2026-10-05-runtime-controlled/sampled/foreground-3",
+      "input_sha256": {
+        "frames.csv": "6cb7b7fab13bc26f807633bfa658e64079062c1c962e592dd59bbcfc05c7b3f2",
+        "summary.json": "4b7b469117d8f90b6d87d23c52019820d103ed43dd0e282bc8db6e54724b2ebe",
+        "verification.json": "89629de923ad9cef7744884c5f9dec2449baed88aaf349bcf4d1b039740cbe62"
+      },
+      "group_id": "grp-2c4f978b3f9c353d26a964c9a44e82ce3588228bb3eaf2d6717dc0515258b9c4",
+      "recomputed": {
+        "frames": 3474,
+        "duration_csv_s": 45.004025,
+        "avg_fps": 77.19309550645748,
+        "nearest_rank_ms": {
+          "50": 13.313,
+          "95": 14.497,
+          "99": 18.978
+        },
+        "max_ms": 79.526,
+        "over_33ms": 4,
+        "csv_sha256": "6cb7b7fab13bc26f807633bfa658e64079062c1c962e592dd59bbcfc05c7b3f2"
+      },
+      "memory": {
+        "maximum_resident_set_size_bytes": 289718272,
+        "peak_memory_footprint_bytes": 671728984
+      }
+    }
+  ],
+  "groups": [
+    {
+      "group_id": "grp-2c4f978b3f9c353d26a964c9a44e82ce3588228bb3eaf2d6717dc0515258b9c4",
+      "identity": {
+        "summary.build.git_head": "7341ea83a3ad879ba98a496792d43eb9cd2d70ab",
+        "summary.build.source_snapshot_sha256": "e178163e2f7eee356cdf039f9a791dff01a856cd126043cc415d0d9df122d7c5",
+        "summary.build.assets_snapshot_sha256": "a82e1f56a1d436b3adf9334ffa7b73244ebf69184408a60a50c598469dffc6dd",
+        "summary.assembly_sha256": "e12648754ce2c79f3ddf72d55b8a7d7da581c53a59d798c6926984dd708f66c0",
+        "verification.app_binary_sha256": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+        "summary.fixture_sha256": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+        "summary.seed": 20261004,
+        "summary.duration_requested_s": 45,
+        "summary.requested": {
+          "resolution": {
+            "width": 1920,
+            "height": 1200
+          },
+          "quality": {
+            "msaa_3d": 4,
+            "fxaa": false,
+            "scaling_3d_scale": 1,
+            "shadows": true
+          },
+          "scale": {
+            "robots_total": 12,
+            "robots_per_type": 4,
+            "facilities": 6,
+            "ring_radius": 14
+          }
+        },
+        "summary.applied": {
+          "msaa_3d": "Msaa4X",
+          "fxaa": "Disabled",
+          "scaling_3d_scale": 1,
+          "vsync": "Disabled",
+          "max_fps": 0
+        },
+        "summary.observed.rendering_method": "forward_plus",
+        "summary.observed.rendering_driver": "metal",
+        "summary.observed.gpu": "Apple M3 Pro (Apple9)",
+        "summary.observed.gpu_api_version": "4.0",
+        "summary.observed.window_pixels": [
+          1920,
+          1200
+        ],
+        "summary.observed.viewport_size": [
+          1920,
+          1200
+        ],
+        "summary.observed.robots": 12,
+        "summary.observed.facilities": 6,
+        "summary.godot_version": "4.7.2-stable (official)",
+        "summary.runtime.framework": ".NET 8.0.31",
+        "summary.runtime.version": "8.0.31",
+        "summary.runtime.architecture": "Arm64",
+        "summary.runtime.os": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030"
+      },
+      "run_ids": [
+        "20261005T015831458Z-6d000969",
+        "20261005T020139314Z-ec27aca6",
+        "20261005T020241070Z-a9c370b3"
+      ],
+      "metrics": {
+        "p50_ms": {
+          "min": 13.313,
+          "max": 13.322,
+          "median": 13.313,
+          "samples": 3
+        },
+        "p95_ms": {
+          "min": 14.357,
+          "max": 14.505,
+          "median": 14.497,
+          "samples": 3
+        },
+        "p99_ms": {
+          "min": 18.978,
+          "max": 21.354,
+          "median": 19.137,
+          "samples": 3
+        },
+        "max_ms": {
+          "min": 72.528,
+          "max": 79.526,
+          "median": 74.498,
+          "samples": 3
+        },
+        "avg_fps": {
+          "min": 75.0701964099828,
+          "max": 77.19309550645748,
+          "median": 76.69724084120077,
+          "samples": 3
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "\u540c\u8eab\u4efd\u5206\u7ec4\u53ea\u4ee3\u8868\u53ef\u6bd4\u8f83\u914d\u7f6e\u4e00\u81f4\uff1b\u73b0\u6709\u8bc1\u636e\u4e0d\u542b\u524d\u53f0/\u540e\u53f0\u3001\u6e29\u5ea6\u4e0e\u7535\u6e90\u72b6\u6001\u8bb0\u5f55\uff0c\u4e0d\u80fd\u58f0\u79f0\u8fd9\u4e9b\u53d8\u91cf\u53d7\u63a7\u3002",
+    "\u8d1f\u8f7d\u4e3a\u6e32\u67d3\u7070\u76d2\u8fb9\u754c\uff1a\u56fa\u5b9a\u5de1\u903b\u4e0e\u52a8\u753b\uff0c\u65e0 AI/\u5bfb\u8def/\u5b58\u6863/\u52a8\u6001\u5730\u5f62\uff08summary.load_scope\uff09\uff0c\u7ed3\u8bba\u4ec5\u9002\u7528\u4e8e\u8be5\u8d1f\u8f7d\u3002",
+    "\u5185\u5b58\u6307\u6807\u6765\u81ea\u5916\u90e8 /usr/bin/time -l\uff0c\u8986\u76d6\u8fdb\u7a0b\u6574\u4e2a\u751f\u547d\u5468\u671f\uff08\u542b\u542f\u52a8\uff09\uff1bsummary.memory \u4ec5\u4e3a\u7f3a\u8bc1\u5360\u4f4d\u5b57\u7b26\u4e32\uff0c\u672a\u4f5c\u4e3a\u8fdb\u7a0b\u5185\u5b58\u4f7f\u7528\u3002",
+    "\u62a5\u544a\u4e0d\u5408\u5e76\u539f\u59cb\u5e27\u3001\u4e0d\u5254\u9664\u542f\u52a8\u5c16\u523a\uff1b\u4e0d\u540c\u8eab\u4efd\u5404\u81ea\u6210\u7ec4\uff0c\u7981\u6b62\u8de8\u7ec4\u6bd4\u8f83\u3001\u8de8\u7ec4\u58f0\u79f0\u6027\u80fd\u6539\u5584\u6216\u8f93\u51fa\u5355\u4e00\u603b\u4f53\u6307\u6807\u3002",
+    "\u672c\u5de5\u5177\u53ea\u505a\u79bb\u7ebf\u6bd4\u8f83\uff1bPERF-01 \u53d7\u63a7\u5b9e\u673a\u91c7\u6837\u3001\u539f\u56e0\u88c1\u51b3\u4e0e\u7a33\u5b9a\u6027\u80fd\u4ecd\u672a\u5b8c\u6210\u3002"
+  ]
+}

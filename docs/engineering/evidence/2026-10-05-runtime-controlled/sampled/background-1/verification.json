@@ -1,0 +1,50 @@
+{
+  "run_id": "20261005T015934657Z-2142387b",
+  "exit_code": 0,
+  "status": "completed",
+  "package_before": {
+    "binary": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+    "pck": "5b6eaf3bda9591450f79e26ed43ed4163379412dad76a1b459f27b8ab1c939e7"
+  },
+  "package_after": {
+    "binary": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+    "pck": "5b6eaf3bda9591450f79e26ed43ed4163379412dad76a1b459f27b8ab1c939e7"
+  },
+  "previous_user_files_count": 12,
+  "previous_user_files_unchanged": true,
+  "default_user_output": false,
+  "recomputed": {
+    "frames": 6187,
+    "duration_csv_s": 45.006165,
+    "avg_fps": 137.4700554912866,
+    "nearest_rank_ms": {
+      "50": 6.9,
+      "95": 7.63,
+      "99": 13.576
+    },
+    "max_ms": 1016.937,
+    "over_33ms": 4,
+    "csv_sha256": "4722fb1de2f4873c6d6f1667cccac8435ccb44929f2ba1d7b69d10056f94d196"
+  },
+  "source_build": "7341ea83a3ad879ba98a496792d43eb9cd2d70ab",
+  "runtime": {
+    "framework": ".NET 8.0.31",
+    "version": "8.0.31",
+    "architecture": "Arm64",
+    "os": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030"
+  },
+  "temperature": "NOT_MEASURED",
+  "monitor": "osascript frontmost PID at approx 0.5s; observer overhead included",
+  "memory": {
+    "maximum_resident_set_size_bytes": 290045952,
+    "peak_memory_footprint_bytes": 666142016,
+    "method": "macOS /usr/bin/time -l; process lifetime including startup"
+  },
+  "app_binary_sha256": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+  "adapter_provenance": {
+    "source": "collector-verification.json",
+    "source_sha256": "8b69f4651db85a828107db97f3d8872e2a89252b308d7a4cfd79da943973a53a",
+    "derived_field": "app_binary_sha256 = package_before.binary = package_after.binary",
+    "raw_csv_summary_unchanged": true
+  }
+}

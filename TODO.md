@@ -1,6 +1,6 @@
 # 余电双线 TODO
 
-更新：2026-10-04。[GitHub总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17) / [文档PR #18](https://github.com/liuyejinghong/yudian-game/pull/18) / [数据PR #20](https://github.com/liuyejinghong/yudian-game/pull/20) / [网格PR #23](https://github.com/liuyejinghong/yudian-game/pull/23) / [显示PR #25](https://github.com/liuyejinghong/yudian-game/pull/25) / [碰撞PR #27](https://github.com/liuyejinghong/yudian-game/pull/27) / [PERF PR #28](https://github.com/liuyejinghong/yudian-game/pull/28) / [LIFE PR #29](https://github.com/liuyejinghong/yudian-game/pull/29)。本轮执行范围：**推进GLM产研子票，主控独立复验并按授权合并合格交付**。完整游戏功能未完成；首批美术制作已由所有者在美术会话启动。排入表格、指定拟执行槽或依赖齐备，都不等于已派单。后续由主控按所有者阶段指令排批，不逐项追问常规技术细节。
+更新：2026-10-05。[GitHub总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17) / [文档PR #18](https://github.com/liuyejinghong/yudian-game/pull/18) / [数据PR #20](https://github.com/liuyejinghong/yudian-game/pull/20) / [网格PR #23](https://github.com/liuyejinghong/yudian-game/pull/23) / [显示PR #25](https://github.com/liuyejinghong/yudian-game/pull/25) / [碰撞PR #27](https://github.com/liuyejinghong/yudian-game/pull/27) / [PERF PR #28](https://github.com/liuyejinghong/yudian-game/pull/28) / [LIFE PR #29](https://github.com/liuyejinghong/yudian-game/pull/29)。本轮执行范围：**推进GLM产研子票，主控独立复验并按授权合并合格交付**。完整游戏功能未完成；首批美术制作已由所有者在美术会话启动。排入表格、指定拟执行槽或依赖齐备，都不等于已派单。后续由主控按所有者阶段指令排批，不逐项追问常规技术细节。
 
 | 线 | 权威任务表 | 当前事实 | 后续首要队列（未启动） |
 |---|---|---|---|
@@ -42,6 +42,6 @@
 
 更新只采用完整CPU重建+新ArrayMesh替换。完整T3、阶段/高度场增量更新、正式世界与渲染/物理同步、碰撞导航、保存与最终美术继续留项；下一批先由主控冻结最小子票，再将确定实现/测试交GLM。费用未知如实记录。各行状态以产研/美术权威表为准。
 
-本批证据工具：PERF-01-COMPARE与LIFE-01-AUDIT均限定ACCEPTED，原交付与返工分别保留。[PERF复验](docs/engineering/reports/2026-10-04-perf-compare-verification.md) / [LIFE复验](docs/engineering/reports/2026-10-04-lifecycle-audit-verification.md)。父票实机职责继续未完成。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。
+本批证据工具：PERF-01-COMPARE与LIFE-01-AUDIT均限定ACCEPTED，原交付与返工分别保留。[PERF复验](docs/engineering/reports/2026-10-04-perf-compare-verification.md) / [LIFE复验](docs/engineering/reports/2026-10-04-lifecycle-audit-verification.md)。LIFE真实GUI/默认目录重开现已限定接受；PERF受控条件/原因/稳定预算继续未完成。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。
 
-本批T3d-MEM与GLM纯判定子件限定接受，已合并[PR #30](https://github.com/liuyejinghong/yudian-game/pull/30)：[内存提交复验](docs/engineering/reports/2026-10-04-terrain-commit-verification.md)。实机LIFE/PERF用例已冻结，但美术同机窗口尚未协调成功，本轮实际GUI/受控采样NOT_RUN；父票继续未完成。
+本批T3d-MEM与GLM纯判定子件限定接受，已合并[PR #30](https://github.com/liuyejinghong/yudian-game/pull/30)：[内存提交复验](docs/engineering/reports/2026-10-04-terrain-commit-verification.md)。2026-10-05主控自行完成LIFE真实关窗与同包重开并限定接受，六轮PERF完成但后台焦点失守，受控项REWORK、原因与稳定预算未完成。[实机复验](docs/engineering/reports/2026-10-05-runtime-verification.md)。工程负责游戏测试，美术负责建模，不以美术回执为启动前提。

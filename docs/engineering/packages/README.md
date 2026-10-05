@@ -9,7 +9,7 @@
 | 引擎地形显示 | ArrayMesh、独立候选探针 | 已完成 | 正式世界接入未实现 |
 | 静态地形碰撞 | 静态adapter/候选分帧/M01接线受限接受 | **T3-COLLISION本批已完成复验**；不得重复派单 | 机器人通行/导航/save不在本票 |
 | 性能证据工具 | 单轮复算/原始三轮证据 | **PERF-01-COMPARE ACCEPTED，限定离线比较器** | 实机受控采样/原因裁决主控负责 |
-| 生命周期证据工具 | Recorder/中断原始证据 | **LIFE-01-AUDIT ACCEPTED，限定离线审计器** | GUI关窗/发行包重開主控负责 |
+| 生命周期证据工具 | Recorder/中断原始证据 | **LIFE-01-AUDIT ACCEPTED，限定离线审计器** | 主控已限定接受固定包GUI关窗/重开；不签存档恢复 |
 | 美术接口 | I00校准、M01材质技术接受 | 美术组在做PREVIEW/正式首样；工程soil_mars联调 | U01、T01/T02正式素材缺口见ART-LINK |
 | 世界提交 | 单区域内存提交限定接受 | T3d-COMMIT-POLICY与Codex T3d-MEM已验收；不重复领取 | 渲染/物理同步、导航/保存仍未实现 |
 | 导航/存档、目标委托 | 尚未实现 | DRAFT/BLOCKED，不给GLM自行决定架构 | 先冻结权威状态、输入输出、失败/重载金样 |
@@ -34,6 +34,6 @@ Codex默认通过Agent Bridge承担派单、返工和交回协调，所有者无
 
 每包交工作树绝对路径、branch与commit SHA、验证命令/完整日志及未完成项。用户开始某包时通知Codex包ID/工作树即可登记IN_PROGRESS；没有回执仍保持READY，不冒称已领取。主控检查diff归属与依赖，必要独立reviewer，只对实际变更做相称复验；存在问题退回同包，不阻塞无依赖的合格包。合格后按既有授权直接合并，TODO更新为限定ACCEPTED；父票剩余实机/产品职责保持未完成。
 
-2026-10-04下一波：[T3d-COMMIT-POLICY](T3d-COMMIT-POLICY.md)已由GLM交回并限定接受；主控World/28例独立验收通过。实机PERF/LIFE按[r1用例](../contracts/runtime-controlled-r1.md)与美术组错开调度。它们不重复领取已ACCEPTED工具包。
+2026-10-04下一波：[T3d-COMMIT-POLICY](T3d-COMMIT-POLICY.md)已由GLM交回并限定接受；主控World/28例独立验收通过。主控按[r1用例](../contracts/runtime-controlled-r1.md)自行启动测试；LIFE限定接受，PERF条件返工见[实机复验](../reports/2026-10-05-runtime-verification.md)。它们不重复领取已ACCEPTED工具包。
 
-T3d内存子件已合并[PR30](https://github.com/liuyejinghong/yudian-game/pull/30)，完整T3d与实机父票继续未完成。[验收边界](../reports/2026-10-04-terrain-commit-verification.md)。
+T3d内存子件已合并[PR30](https://github.com/liuyejinghong/yudian-game/pull/30)，完整T3d与PERF受控/原因/稳定预算继续未完成；LIFE实机范围已限定接受。[验收边界](../reports/2026-10-04-terrain-commit-verification.md)。
