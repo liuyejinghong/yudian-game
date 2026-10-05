@@ -1,0 +1,18 @@
+test_zero_frame_with_explicit_null_ftm_fails (test_lifecycle_audit.FinalReworkRegressionTest.test_zero_frame_with_explicit_null_ftm_fails) ... FAIL
+
+======================================================================
+FAIL: test_zero_frame_with_explicit_null_ftm_fails (test_lifecycle_audit.FinalReworkRegressionTest.test_zero_frame_with_explicit_null_ftm_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<worker-path>", line 735, in test_zero_frame_with_explicit_null_ftm_fails
+    self.assertEqual(report["overall"], "FAIL")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'INCOMPLETE' != 'FAIL'
+- INCOMPLETE
++ FAIL
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+FAILED (failures=1)

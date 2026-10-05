@@ -1,0 +1,14 @@
+{
+  "status": "RECALCULATED_OLD_DATA_NOT_GAME_RERUN",
+  "frames": 5388,
+  "last_time_s": 45.007,
+  "avg_fps": 119.71471104494857,
+  "percentiles_nearest_rank_ms": {
+    "50": 8.33,
+    "95": 8.616,
+    "99": 9.169
+  },
+  "max_ms": 81.761,
+  "over_33ms": 2,
+  "provenance": "local ignored benchmarks; historical binary/code association unverified"
+}

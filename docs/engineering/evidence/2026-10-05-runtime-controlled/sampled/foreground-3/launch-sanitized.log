@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+[Yudian] run=20261005T020241070Z-a9c370b3 frames=<scratch>/yudian-runtime-controlled2-20261005/foreground-3/frames.csv summary=<scratch>/yudian-runtime-controlled2-20261005/foreground-3/summary.json
+[Yudian] fixture=s_small seed=20261004 facilities=6 robots=12 benchmark=True
+[Yudian] benchmark completed: <scratch>/yudian-runtime-controlled2-20261005/foreground-3/summary.json

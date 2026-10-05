@@ -1,0 +1,122 @@
+[
+  {
+    "case": "positive_control",
+    "exit": 0,
+    "status": "completed",
+    "robots": 12
+  },
+  {
+    "case": "total_mismatch",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "facilities_short",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "radius_zero",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "position_short",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "null_quality",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "msaa_invalid",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "tiny_feature_radius",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "tiny_ring_radius",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "tiny_camera_period",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "broken_json",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "duration_nan",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "duration_infinity",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "duration_missing",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "empty_fixture",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "unknown",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "duplicate",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "output_res",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "same_output",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  },
+  {
+    "case": "unwritable",
+    "exit": 1,
+    "scene_created": false,
+    "completed_summary": false
+  }
+]

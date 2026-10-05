@@ -64,3 +64,13 @@ Issues 记录在本仓库的 GitHub Issues（`gh` CLI）。See `docs/agents/issu
 ### Domain docs
 
 单上下文：根目录 `GLOSSARY.md` ＋ `docs/adr/`，不存在时静默跳过。See `docs/agents/domain.md`.
+
+## Lessons
+
+- When 所有者已授权无问题直接合并，do 核对当前差异并及时集成合格PR；旧PR正文的“不合并”只保留为历史授权记录，不继续用它搁置交付。
+
+- When conducting engineering game, GUI or performance tests, do launch and accept them in engineering; coordinate art only for observed shared-machine load, never gate startup on an art acknowledgement or assign engineering tests to art.
+
+- When 所有者交回外包包并恢复主控协调，do 由Codex通过Agent Bridge直接安排GLM返工；包内子代理已获授权，仍由主控review、验收和合并。
+
+- When 已冻结任务可独立修改不同目录，do 同批提供并行任务包与固定基线，集中review验收；只按真实依赖串行，不逐票等待集成。

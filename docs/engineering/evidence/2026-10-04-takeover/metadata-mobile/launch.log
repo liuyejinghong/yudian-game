@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward Mobile - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+[Yudian] run=20261004T075429030Z-e6ae41a2 frames=<project-root>/qa-integration/docs/engineering/evidence/2026-10-04-takeover/metadata-mobile/frames.csv summary=<project-root>/qa-integration/docs/engineering/evidence/2026-10-04-takeover/metadata-mobile/summary.json
+[Yudian] fixture=s_small seed=20261004 facilities=6 robots=12 benchmark=True
+[Yudian] benchmark completed: <project-root>/qa-integration/docs/engineering/evidence/2026-10-04-takeover/metadata-mobile/summary.json

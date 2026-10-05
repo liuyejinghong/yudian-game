@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "label": "life-normal-before",
+      "frames_csv": "life/life-normal-before/frames.csv",
+      "summary_json": "life/life-normal-before/summary.json",
+      "exit_record": "life/life-normal-before/exit.json"
+    },
+    {
+      "label": "life-gui-close",
+      "frames_csv": "life/life-gui-close/frames.csv",
+      "summary_json": "life/life-gui-close/summary.json",
+      "exit_record": "life/life-gui-close/exit.json"
+    },
+    {
+      "label": "life-reopen-after",
+      "frames_csv": "life/life-reopen-after/frames.csv",
+      "summary_json": "life/life-reopen-after/summary.json",
+      "exit_record": "life/life-reopen-after/exit.json"
+    }
+  ]
+}

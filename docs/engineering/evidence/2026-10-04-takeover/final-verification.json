@@ -1,0 +1,12 @@
+{
+  "runtime_source_hashes_match_7341ea8": true,
+  "build_script_hash_matches": true,
+  "metal_raw_replay_3_runs": true,
+  "mobile_override_observed": true,
+  "art_gui_work_double_key_and_maintenance_observed": true,
+  "gui_window_interruption": "NOT_RUN",
+  "clean_os_without_sdk": "NOT_RUN",
+  "public_code_commit": "9128523c2a209fd50d14dc6043e0b219dc3861cf",
+  "public_runtime_files_match_measured_source_hashes": true,
+  "architect_condition_wording_corrected": true
+}

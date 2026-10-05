@@ -1,0 +1,21 @@
+[
+  {
+    "command": [
+      "<dotnet-root>/dotnet",
+      "build",
+      "tools/terrain-commit-acceptance/Independent.csproj",
+      "--no-restore",
+      "-m:1",
+      "-nr:false",
+      "/p:UseSharedCompilation=false"
+    ],
+    "exit": 0
+  },
+  {
+    "command": [
+      "<dotnet-root>/dotnet",
+      "tools/terrain-commit-acceptance/bin/Debug/net10.0/Independent.dll"
+    ],
+    "exit": 0
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "id": "art-i00-calibration",
+  "revision": 1,
+  "purpose": "interface calibration only; not Tuoyun production art",
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "ground_origin": [
+    0,
+    0,
+    0
+  ],
+  "body_size_m": [
+    0.9,
+    0.7,
+    1.25
+  ],
+  "sockets": {
+    "Socket_Cargo": [
+      0,
+      0.7,
+      0.2
+    ],
+    "Socket_TowFront": [
+      0,
+      0.2,
+      -0.625
+    ],
+    "Socket_TowRear": [
+      0,
+      0.2,
+      0.625
+    ],
+    "Socket_Charge": [
+      0.45,
+      0.25,
+      0
+    ]
+  },
+  "animations": {
+    "status": "N/A calibration; preview bridge supplies work motion only"
+  },
+  "source": "original procedural calibration, editable glTF + binary + generator; no third party content",
+  "runtime_authority": "none; no collision/navigation/energy/cargo/inventory rules",
+  "sha256": "52b5b9d6b430c99fecd2faf35c867e1bc618cefb588b84f5ba0cebf58cf7d32a",
+  "triangles": 36,
+  "materials": 2,
+  "textures": 0
+}
