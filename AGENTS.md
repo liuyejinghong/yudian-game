@@ -67,6 +67,8 @@ Issues 记录在本仓库的 GitHub Issues（`gh` CLI）。See `docs/agents/issu
 
 ## Lessons
 
+- When 所有者要启动试玩，do 提供已实测的双击应用入口；终端参数留给工程说明，不让用户承担开发启动流程。
+
 - When 游戏测试进程已知且正在运行，do 直接绑定其窗口读取，避免全量UI盘点超时；关窗后只读应用清单，不重新绑定已关闭app以免自动重启。
 
 - When Bridge续接轮次可能重置shell目录，do 首个命令以绝对路径进入工作树并核对pwd，构建日志每轮独立命名，禁止覆盖失败原件。

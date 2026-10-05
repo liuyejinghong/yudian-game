@@ -257,3 +257,12 @@ PR33已合并：head8e1ddde44215911fc0652e652da9b84f45396c06，mergef041e3e74f20
 归属：GLM-A仅GroundPatrol与新增order native测试；GLM-B仅Construction/WorkMeter与独立console；主控Main与跟踪。无经济/电耗/保存/完整寻路扩签；素材继续ART-LINK，不等待美术开测。
 
 LEVEL-JOB最终复验：Main15步/12贴地、GLM36/新native7/旧10与旧Main7兼容通过；Metal三轮取消/重复/进度/完成/无需改造与真实close0；最终DLL e39f6833…6cb47，源码0b1339a。独立reviewer空中同XZ漏测返工闭合，architect无实质合并阻碍，48份公开hash核对通过。GLM会话已结束，父T3d/#6未完成；PR34已合并，head b79860a、merge 8bcefb1，main已快进同步、重新编译0警告0错误与15步窄烟测exit0。48份审查证据保留，另附3份main复验证据。
+
+
+## desktop-start-r1 · 本机双击试玩入口
+
+授权：所有者指出只能终端启动不正式；补本机可双击.app，默认整平场景。复用既有离线导出/自包含runtime与ad-hoc签名，不改游戏/benchmark，不商业发布。
+
+1. [x] 核现有导出工具/已核模板，限定可选--playable原生启动入口；证明：主引擎仍保留，独立源码diff。
+2. [ ] 从新目录离线导出，签名/包身份、Finder双击任务与真实关窗复验；证明：构建日志、实际窗口/进度/关窗。
+3. [ ] 独立architect收尾、更新启动说明/TODO，合格后PR合并/main同步；证明：精确merge与实际本地.app入口。
