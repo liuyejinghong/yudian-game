@@ -193,3 +193,11 @@ LIFE实际完成0/130/0，三ID/默认目录、旧产物与固定包SHA不变，
 本轮reviewer与architect已通过限定边界，architect两处旧摘要已修；GLM sess_97ec371908/task_f97199c402只读复算完成，六轮数字/SHA一致，主控拒绝其相关性即原因表述，22次tool_call仅一次写本机报告。费用UNKNOWN，Bridge used值仅上下文读数。限定证据包准备按授权集成；PERF控制/归因留项不计完成。
 
 PR31已于2026-10-05T02:23:26Z合并：head7c3554399483911118fd23f840a0a5a7bb2b8bac，merge36603cdf9cd4fc593782a2f8d9350b2566ce746a。GitHub检查列表为空，不称CI通过；依据实际LIFE审计、六轮复算/原件SHA、只读reviewer/architect与GLM交叉检查。main干净快进后134项本批文件与接受head一致。LIFE限定ACCEPTED；PERF控制REWORK，原因/温度/稳定预算未完成。原工作树、原始材料保留，GLM会话已结束。
+
+## 2026-10-05 · 清理旧未合并PR
+
+所有者要求无问题直接合并；当前main eb5ba1f，五张旧PR为1/2/3/13/14，只含历史文档/参考素材。隔离工作树逐包修正，保留现行合同/状态，不重做游戏测试。
+
+1. [x] 固定各原head、逐项审查与architect核验；证明：固定diff、旧新权威入口与原资料保留。
+2. [ ] 更新旧PR历史说明/当前入口、修正冲突，逐张精确head合并；证明：文档/链接检查，27WebP、12SVG、索引blob/尺寸核对。
+3. [ ] 最终组合验证、同步TODO/总索引并确认open队列；证明：实际合并SHA、main一致性、文档校验输出。
