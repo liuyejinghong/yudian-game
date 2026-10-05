@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Reflection.Metadata;
+using System.Reflection.PortableExecutable;
 using System.Text.Json;
 using SHA256 = System.Security.Cryptography.SHA256;
 using System.Runtime.InteropServices;
 using Godot;
+using Yudian.Terrain;
 
 namespace Yudian;
 
@@ -73,6 +76,10 @@ public partial class Main : Node3D
                 System.Environment.GetEnvironmentVariable("YUDIAN_BENCHMARK") == "1");
             _benchmark = options.Benchmark;
             _cfg = LoadFixture(options.FixturePath);
+            _features.Add(_cfg.Terrain.Mound);
+            _features.Add(_cfg.Terrain.MineralPit);
+            _liveMode = options.LiveTerrain;
+            if (_liveMode) PrepareLiveTerrain();
             _duration = options.Duration ?? _cfg.Benchmark.DurationSeconds;
             ValidateProbeGeometry();
             _runId = DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ", Inv) + "-" + Guid.NewGuid().ToString("N")[..8];
@@ -85,11 +92,11 @@ public partial class Main : Node3D
             }
             ApplyWindowAndQuality();
             BuildLightAndEnvironment();
-            BuildTerrain();
-            BuildFacilities();
-            SpawnRobots();
+            if (_liveMode) BuildLiveTerrain();
+            else { BuildTerrain(); BuildFacilities(); SpawnRobots(); }
             BuildCamera();
             if (_benchmark) StartBenchmark();
+            if (_liveMode) GD.Print($"MAIN_GROUND_IDENTITY build_sha256={AssemblyHash()} loaded_mvid={typeof(Main).Assembly.ManifestModule.ModuleVersionId} CLR={System.Environment.Version} display={DisplayServer.GetName()}");
             GD.Print($"[Yudian] fixture={_cfg.Name} seed={_cfg.Seed} facilities={_facilityPositions.Count} robots={_robots.Count} benchmark={_benchmark}");
         }
         catch (Exception e) { Fail(e); }
@@ -206,9 +213,10 @@ public partial class Main : Node3D
         AddChild(new WorldEnvironment { Environment = env });
     }
 
-    // 高斯截面占位高度；地形网格顶点、机器人和设施 Y 都用同一函数，保证一致。
+    // 旧灰模采样高斯高度；live模式只查询已同步的原生地形。
     private float TerrainHeight(float x, float z)
     {
+        if (_liveTerrain != null) return GroundHeight(x, z);
         float h = 0f;
         foreach (var f in _features)
         {
@@ -220,9 +228,6 @@ public partial class Main : Node3D
 
     private void BuildTerrain()
     {
-        _features.Add(_cfg.Terrain.Mound);
-        _features.Add(_cfg.Terrain.MineralPit);
-
         var pm = new PlaneMesh { Size = new Vector2(_cfg.Terrain.Size, _cfg.Terrain.Size), SubdivideWidth = _cfg.Terrain.Segments, SubdivideDepth = _cfg.Terrain.Segments };
         var arrays = pm.GetMeshArrays();
         var verts = arrays[(int)Mesh.ArrayType.Vertex].AsVector3Array();
@@ -325,11 +330,12 @@ public partial class Main : Node3D
         {
             for (int k = 0; k < perType; k++)
             {
-                var root = new Node3D { Name = $"Robot_{types[t].Name}_{k + 1}" };
+                Node3D root = _liveMode ? new GroundPatrol() : new Node3D();
+                root.Name = $"Robot_{types[t].Name}_{k + 1}";
                 AddChild(root);
-                MeshPart(root, types[t].Mesh(), types[t].Color, Vector3.Zero);
+                MeshPart(root, types[t].Mesh(), types[t].Color, _liveMode ? new Vector3(0, .55f, 0) : Vector3.Zero);
                 if (t == 0)
-                    MeshPart(root, new SphereMesh { Radius = 0.12f, Height = 0.24f }, new Color(0.9f, 0.9f, 0.9f), new Vector3(0, 0.72f, 0));
+                    MeshPart(root, new SphereMesh { Radius = 0.12f, Height = 0.24f }, new Color(0.9f, 0.9f, 0.9f), new Vector3(0, _liveMode ? 1.27f : .72f, 0));
 
                 // 固定航点：从 6 个设施里取 4 个组成闭环（种子决定顺序，所有运行一致）。
                 var order = new List<int>();
@@ -348,7 +354,16 @@ public partial class Main : Node3D
                 for (int i = 0; i < 4; i++)
                     cum[i + 1] = cum[i] + pts[i].DistanceTo(pts[(i + 1) % 4]);
 
-                _robots.Add(new Patrol { Node = root, Points = pts, Cum = cum, Speed = types[t].Speed, Dist = rng.Randf() * cum[4] });
+                float dist = rng.Randf() * cum[4];
+                if (root is GroundPatrol ground)
+                {
+                    int i = 0; while (i < 3 && cum[i + 1] < dist) i++;
+                    Vector3 p = pts[i].Lerp(pts[(i + 1) % 4], (dist - cum[i]) / (cum[i + 1] - cum[i]));
+                    p.Y = GroundHeight(p.X, p.Z) + .02f;
+                    ground.Position = p; ground.Initialize(pts, types[t].Speed);
+                    _groundRobots.Add(ground);
+                }
+                else _robots.Add(new Patrol { Node = root, Points = pts, Cum = cum, Speed = types[t].Speed, Dist = dist });
             }
         }
     }
@@ -428,16 +443,37 @@ public partial class Main : Node3D
             ["graphical_performance_eligible"] = !headless,
             ["godot_version"] = Engine.GetVersionInfo()["string"].AsString(),
             ["runtime"] = new { framework = RuntimeInformation.FrameworkDescription, version = System.Environment.Version.ToString(), architecture = RuntimeInformation.ProcessArchitecture.ToString(), os = RuntimeInformation.OSDescription },
-            ["assembly_sha256"] = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(typeof(Main).Assembly.Location))).ToLowerInvariant(),
+            ["assembly_sha256"] = AssemblyHash(),
+            ["assembly_hash_source"] = string.IsNullOrEmpty(typeof(Main).Assembly.Location) ? "Debug file with loaded MVID check" : "assembly location file",
+            ["assembly_mvid"] = typeof(Main).Assembly.ManifestModule.ModuleVersionId.ToString(),
             ["build"] = build,
             ["memory"] = "EVIDENCE_MISSING: external process measurement required",
             ["load_scope"] = "gray-r1 rendering, fixed patrol and animation only; no AI/navigation/save/dynamic terrain"
         };
     }
 
+    private static string AssemblyHash()
+    {
+        var assembly = typeof(Main).Assembly;
+        string path = assembly.Location;
+        if (string.IsNullOrEmpty(path))
+        {
+            // Godot开发态从内存加载；核对已有Debug文件，不能把空Location当路径。
+            path = ProjectSettings.GlobalizePath("res://.godot/mono/temp/bin/Debug/Yudian.dll");
+            using var stream = File.OpenRead(path);
+            using var pe = new PEReader(stream);
+            var metadata = pe.GetMetadataReader();
+            if (metadata.GetGuid(metadata.GetModuleDefinition().Mvid) != assembly.ManifestModule.ModuleVersionId)
+                throw new InvalidOperationException("loaded assembly MVID differs from Debug file");
+        }
+        return Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))).ToLowerInvariant();
+    }
+
     private void Fail(Exception e)
     {
         SetProcess(false);
+        SetPhysicsProcess(false);
+        PauseGround(true);
         GD.PushError($"[Yudian] {e.GetType().Name}: {e.Message}");
         try { _recorder?.Dispose(); }
         catch (Exception cleanup) { GD.PushError($"[Yudian] 关闭记录失败: {cleanup.Message}"); }
