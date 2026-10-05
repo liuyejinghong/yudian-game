@@ -12,4 +12,4 @@ APP-START限定接受。本机协调目录「余电.app」双击直接进入整�
 
 [最终15步](../evidence/2026-10-05-desktop-start/packaged-final-level.log) / [最终构建manifest](../evidence/2026-10-05-desktop-start/build-manifest.json) / [签名与四hash](../evidence/2026-10-05-desktop-start/r2-hash-and-move.json) / [GUI观察](../evidence/2026-10-05-desktop-start/gui-observations.json) / [来源hash](../evidence/2026-10-05-desktop-start/hashes.json)。原始完整构建日志留本机scratch；公开构建摘录明确标excerpt，文本替换个人路径并去行尾空白。
 
-独立architect与精确PR集成待收尾；入口是该次本地构建，不自动跟随源码更新。
+独立architect复核入口、四hash与边界未发现实质阻碍。[PR35](https://github.com/liuyejinghong/yudian-game/pull/35)已合并，head `8a2c986dbc74dc8503bba792293174a3a7257aab`、merge `115f1c7ef320a5c463cc572dbaa104e8335e9ba8`，主工作树干净快进同步；源码/模板与已验本地包一致，文档变更不再扩大重复验证。本机已保留实际应用和根入口，无遗留测试进程；入口是该次本地构建，不自动跟随源码更新。

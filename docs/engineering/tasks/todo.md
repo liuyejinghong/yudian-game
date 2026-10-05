@@ -58,3 +58,5 @@ MAIN-GROUND本波已合并[PR33](https://github.com/liuyejinghong/yudian-game/pu
 2026-10-05 LEVEL-JOB三子票限定ACCEPTED：[复验](../reports/2026-10-05-level-job-verification.md)。GLM同冻结基线两包并行，主控关键状态/实机/集成；下一任务是导航与避让或建设资源接缝新冻结，不重复派单本批；无电耗/经济/存档与正式美术扩签。
 
 PR34本波已合并，精确head b79860a、merge 8bcefb1；主工作树重新编译0警告0错误与15步窄烟测exit0/12贴地，GLM两会话已结束。父#6与PERF-01保持未完成。
+
+APP-START已合并[PR35](https://github.com/liuyejinghong/yudian-game/pull/35)：head8a2c986、merge115f1c7，main同步；本机余电.app入口可双击，固定试玩包保留。

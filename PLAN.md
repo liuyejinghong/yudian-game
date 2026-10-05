@@ -265,4 +265,6 @@ LEVEL-JOB最终复验：Main15步/12贴地、GLM36/新native7/旧10与旧Main7�
 
 1. [x] 核现有导出工具/已核模板，限定可选--playable原生启动入口；证明：主引擎仍保留，独立源码diff。
 2. [x] 从新目录离线导出，签名/包身份、Finder双击任务与真实关窗复验；证明：构建日志、实际窗口/进度/关窗。
-3. [ ] 独立architect收尾、更新启动说明/TODO，合格后PR合并/main同步；证明：精确merge与实际本地.app入口。
+3. [x] 独立architect收尾、更新启动说明/TODO，合格后PR合并/main同步；证明：精确merge与实际本地.app入口。
+
+APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入口/边界复核无阻碍，main已干净快进同步。实际本地包与根余电.app入口已保留。
