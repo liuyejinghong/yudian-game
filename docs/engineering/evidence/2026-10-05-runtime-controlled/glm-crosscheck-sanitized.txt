@@ -1,0 +1,63 @@
+余电 GLM 外包 · 只读离线交叉检查报告
+票：2026-10-05 runtime-controlled 证据包（PERF-01 sampled F/B 六轮）
+执行：GLM-5.3-Flash（ZCode），2026-10-05，只读，唯一写入=本文件
+范围目录：docs/engineering/evidence/2026-10-05-runtime-controlled/{sampled,foreground-compare.json,background-compare.json,method-receipt.json,README.md}
+参照源码：tools/measure_baseline.py（recompute）、tools/perf_compare/compare.py（本工作树，只读）
+
+==================================================================
+一、复算方法（独立实现，纯标准库 csv/json/hashlib/math，未 import 项目模块）
+- 帧数 N=数据行数；duration=末行 time_s；avg_fps=N/Σframe_ms*1000（与 measure_baseline.recompute 同定义）
+- nearest-rank：升序取 sorted[ceil(N*p/100)-1]，p∈{50,95,99}；max=升序末位；over_33ms=严格 >33 计数
+- 全帧保留（含启动尖刺），未删任何帧；另校验列头、frame 连续、frame_ms>0、time_s 严格递增、
+  time_s≡cumsum(frame_ms)/1000（六轮最大偏差 ~2.6e-13，内部自洽，原点=Recorder 首帧）
+- 六轮复算结果与 foreground/background-compare、summary.json、verification.json、collector-verification.json
+  五处记录全部一致（frames/duration/avg_fps/p50/p95/p99/max/over_33ms，零差异）
+
+二、六行表（复算值；avg_fps 保留 4 位）
+run            N     dur_s      avg_fps   p50     p95     p99     max_ms    ov33  前台采样(front_pid=app)
+foreground-1   3452  45.008138  76.6972   13.313  14.357  21.354   72.528    4   58/59 [0.30..45.22]s（末样本45.99s已切28269，在exit前但计时窗外）
+foreground-2   3379  45.011205  75.0702   13.322  14.505  19.137   74.498    4   58/58 [0.31..45.25]s
+foreground-3   3474  45.004025  77.1931   13.313  14.497  18.978   79.526    4   58/58 [0.31..45.32]s
+background-1   6187  45.006165 137.4701    6.900   7.630  13.576  1016.937   4    2/59 [0.37..1.22]s（~2s后切21200，4.4s起28269）
+background-2   4839  45.001392 107.5300    6.952  15.434  19.011   75.325    7    3/57 [1.15..2.74]s（3.6s起37323）
+background-3   3377  45.004301  75.0373   13.335  14.379  18.071   76.656    2    9/58 [1.19..7.46]s（8.2s起28269）
+采样间隔实际 0.74–1.17s（请求 0.5s）；fg-3 frame1072(39.0ms)、bg-1 frame204(1016.9ms) 为非启动段尖刺，均保留未删。
+
+三、SHA / 适配来源核对（对照 method-receipt.original_raw_sha256 与 compare input_sha256）
+- 六轮 frames.csv / summary.json / front-samples.json / memory.txt：与 method-receipt 原件 SHA 全部一致
+- sampled/sequence.json：SHA=8da1f17e…，与 method-receipt 一致；order=F,B,B,F,F,B，collector_exit 全 0，间隔均 ≈15.005s
+- collector-verification.json（六轮）：SHA 逐字节等于 method-receipt 所载原 verification.json（27cd27ec… 等）→ 原件完整保留 ✓
+- 现行 verification.json = collector-verification 原内容 + 仅新增 adapter_provenance、app_binary_sha256 两字段，
+  共有字段全等；app_binary_sha256=package_before.binary=package_after.binary 派生正确（六轮同值 1f8594bf…）✓
+- compare input_sha256：frames/summary/verification 均与盘上现行文件一致 → compare 消费的是适配后 verification ✓
+- group_id 复算（identity canonical JSON→sha256）= grp-2c4f978b…，F/B 两报告 identity 全等 → 六轮同身份（同 binary/fixture/seed/配置）✓
+- conditions-*-sanitized.json、launch-sanitized.log 与原件 SHA 不同：属 README/method-receipt 声明的"仅替换私有路径"脱敏，
+  原件 SHA 已保留；但脱敏变换本身离线不可复核（无法证明未改动其他内容）
+- collector_sha256 / sequence_driver_sha256 / lifecycle_collector_sha256（b739d217…/53a691a3…/1c43b032…）：
+  本工作树 tools/ 及全树未找到对应原件（仅记录 SHA），采/排程工具本体不在本票可核范围内
+
+四、focus-conditions / sequence 受控性：不完全受控，实际偏离如下
+1. 后台三轮均有"前台残留"：激活 Finder(exit 0)后 app 仍为 front_pid——bg-1 前1.2s、bg-2 前2.7s、bg-3 前7.5s。
+   残留时长与 avg_fps 单调负相关（7.5s→75.0、2.7s→107.5、1.2s→137.5），方向上符合前台相关调频假设；
+   但 front-samples origin=外部 Popen monotonic ≠ Recorder 时间零点（文件自述），与 frames.csv 不可对齐，仅作观察不作结论。
+2. "焦点 set 返回 0"六轮全部成立但不能证明状态：bg 轮证明（exit 0 后 app 仍前台约2s）、fg 轮证明（0.8s 级点采样，
+   间隔内瞬时失焦不可观测）；无任何连续前台证明。
+3. 各轮运行前前台 app 不同（28269/75186/21200/37323 混杂），bg 轮运行中焦点落点亦不同（21200/28269/37323/75186），
+   环境本底未对齐；fg 轮 before/after front_pid 相同、bg 轮不同（与模式自洽）。
+4. temperature 六轮均 NOT_MEASURED；电源均 AC 100%、无热警告（仅时点快照，非连续记录）。
+5. compare 工具 limitation 首条"现有证据不含前台/后台…记录"就 compare.py 输入而言成立，但就证据包整体偏保守：
+   front-samples/conditions 实际含时点级焦点/电源/热记录（不连续）。
+6. 启动帧未删：fg 三轮 max 即 frame1 启动尖刺（72.5/74.5/79.5ms），over_33 名单含 frame1-3/16，符合"不剔除"约定 ✓
+
+五、限定结论（本报告不构成验收）
+- 六轮逐轮统计量离线可复现、内部一致、SHA 链完整，作为"逐轮记录"可信。
+- 前台组 75.07–77.19 FPS 仅适用于该灰盒负载与该机器当时状态；不含温度。
+- 后台组 75–137 FPS 离散系前台残留混杂所致，F/B 差异不可归因；"实际前台约75–77、后台75–137"仅为待复核假设，
+  不得作为 expected 使用。
+- 本证据包不能证明持续前台、不包含受控实机采样的最终裁决，不代替真实 GUI 测试（与 README/limitation 一致）。
+- 本票不改 expected、不领新票；复核建议（供人工决策，未执行）：后台轮改用遮挡/隐藏窗口或在激活后确认 front_pid
+  切换完成再进计时窗，前台轮加连续焦点轮询并统一记录两时钟偏移。
+
+六、文件改动与用量
+- 唯一写入：<local-worker-report>（本文件）；repo/TODO/PLAN/合同零改动；
+  未 commit/push、未启动 GUI、未编译、未装依赖、未联网、未用子代理。模型用量未知。

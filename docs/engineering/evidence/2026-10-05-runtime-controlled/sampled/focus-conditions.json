@@ -1,0 +1,115 @@
+{
+  "observations": [
+    {
+      "case": "foreground-1",
+      "assigned_mode": "foreground",
+      "owned_pid": 35725,
+      "requested_target_pid": 35725,
+      "activation_exit": 0,
+      "activation_elapsed_s": 0.29827812500298023,
+      "all_sample_pid_counts": {
+        "35725": 58,
+        "28269": 1
+      },
+      "post_action_plus_1s_samples": 57,
+      "post_action_plus_1s_target_matches": 56,
+      "post_action_plus_1s_game_front": 56,
+      "background_exact_target": "N/A",
+      "alignment": "Popen monotonic; +1s descriptive cut only, not Recorder origin or trimmed CSV"
+    },
+    {
+      "case": "background-1",
+      "assigned_mode": "background",
+      "owned_pid": 36718,
+      "requested_target_pid": 655,
+      "activation_exit": 0,
+      "activation_elapsed_s": 0.36926100007258356,
+      "all_sample_pid_counts": {
+        "36718": 2,
+        "21200": 3,
+        "28269": 36,
+        "75186": 10,
+        "37323": 8
+      },
+      "post_action_plus_1s_samples": 57,
+      "post_action_plus_1s_target_matches": 0,
+      "post_action_plus_1s_game_front": 0,
+      "background_exact_target": "FAIL: foreground app wandered",
+      "alignment": "Popen monotonic; +1s descriptive cut only, not Recorder origin or trimmed CSV"
+    },
+    {
+      "case": "background-2",
+      "assigned_mode": "background",
+      "owned_pid": 37786,
+      "requested_target_pid": 655,
+      "activation_exit": 0,
+      "activation_elapsed_s": 0.31531633296981454,
+      "all_sample_pid_counts": {
+        "655": 1,
+        "37786": 3,
+        "37323": 9,
+        "21200": 17,
+        "75186": 25,
+        "77967": 2
+      },
+      "post_action_plus_1s_samples": 55,
+      "post_action_plus_1s_target_matches": 0,
+      "post_action_plus_1s_game_front": 2,
+      "background_exact_target": "FAIL: foreground app wandered",
+      "alignment": "Popen monotonic; +1s descriptive cut only, not Recorder origin or trimmed CSV"
+    },
+    {
+      "case": "foreground-2",
+      "assigned_mode": "foreground",
+      "owned_pid": 38852,
+      "requested_target_pid": 38852,
+      "activation_exit": 0,
+      "activation_elapsed_s": 0.31047549983486533,
+      "all_sample_pid_counts": {
+        "38852": 58
+      },
+      "post_action_plus_1s_samples": 56,
+      "post_action_plus_1s_target_matches": 56,
+      "post_action_plus_1s_game_front": 56,
+      "background_exact_target": "N/A",
+      "alignment": "Popen monotonic; +1s descriptive cut only, not Recorder origin or trimmed CSV"
+    },
+    {
+      "case": "foreground-3",
+      "assigned_mode": "foreground",
+      "owned_pid": 40168,
+      "requested_target_pid": 40168,
+      "activation_exit": 0,
+      "activation_elapsed_s": 0.30969358305446804,
+      "all_sample_pid_counts": {
+        "40168": 58
+      },
+      "post_action_plus_1s_samples": 56,
+      "post_action_plus_1s_target_matches": 56,
+      "post_action_plus_1s_game_front": 56,
+      "background_exact_target": "N/A",
+      "alignment": "Popen monotonic; +1s descriptive cut only, not Recorder origin or trimmed CSV"
+    },
+    {
+      "case": "background-3",
+      "assigned_mode": "background",
+      "owned_pid": 41293,
+      "requested_target_pid": 655,
+      "activation_exit": 0,
+      "activation_elapsed_s": 0.3139779169578105,
+      "all_sample_pid_counts": {
+        "655": 1,
+        "41293": 9,
+        "28269": 48
+      },
+      "post_action_plus_1s_samples": 56,
+      "post_action_plus_1s_target_matches": 0,
+      "post_action_plus_1s_game_front": 8,
+      "background_exact_target": "FAIL: foreground app wandered",
+      "alignment": "Popen monotonic; +1s descriptive cut only, not Recorder origin or trimmed CSV"
+    }
+  ],
+  "rule": "all original frames used for statistics; monitor ~0.8s actual interval, gaps not certified",
+  "controlled_comparison": "NOT_ACCEPTED: intended background Finder focus not held",
+  "temperature": "NOT_MEASURED"
+}

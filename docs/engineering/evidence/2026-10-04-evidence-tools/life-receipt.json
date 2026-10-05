@@ -1,0 +1,34 @@
+{
+  "package": "LIFE-01-AUDIT",
+  "frozen_base": "1ba4aa64573bc484578c03340e304787062dd127",
+  "original_delivery": "7f72c19e3432a9656bec82888adce26a7a4c004a",
+  "repair_commits": [
+    "a0c2f19",
+    "93ef427"
+  ],
+  "main_null_fix_commit": "3493ddb",
+  "integration_source_head": "3493ddb",
+  "session_id": "sess_731d81f2f0",
+  "model_confirmation_task": "task_968f2e2525",
+  "repair_tasks": [
+    "task_67642905bc",
+    "task_ba8a4a0e3c"
+  ],
+  "native_model_confirmation": "GLM-5.3-Flash",
+  "observed_model": null,
+  "bridge_usage_context_used_by_turn": [
+    80990,
+    82058
+  ],
+  "usage_is_billing": false,
+  "cost": "unknown",
+  "native_subagents": "authorized; no invocation evidence reported",
+  "unit_tests": 56,
+  "main_independent_cases": 11,
+  "source_sha256": {
+    "tools/lifecycle_audit/README.md": "fa4a00f7d8560eac38577d66d7a11f8fe4d1431912c7c8dd981e0168f86a74f3",
+    "tools/lifecycle_audit/audit.py": "38481eb5f224a2e8e9eb74f28ebbd313371a8a4b3cbd48cba5290dcdaf2c29db",
+    "tools/lifecycle_audit/fixtures/lifecycle-r2-manifest.json": "93d9515fd0c8505bb1745739ce4a31d64a3723fa567125478d0787a33f316caf",
+    "tools/lifecycle_audit/test_lifecycle_audit.py": "4fa6365307f691b6af5f20488b6a1acf49c4e9c4ebce2bd8b0ea9023fe7f61e5"
+  }
+}

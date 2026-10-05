@@ -1,0 +1,64 @@
+{
+  "ticket": "ART-TOOLS-01",
+  "checked_at_utc": "2026-10-04T08:50:48Z",
+  "base_sha": "9a896010f4bb7934f97fb6ecd366b1aa44cef2a1",
+  "branch": "worker/art-tools-20261004",
+  "tools": [
+    {
+      "name": "python3",
+      "available": true,
+      "version": "3.14.3",
+      "location_hint": "PATH (basename python3)",
+      "check_status": "pass; stdlib json+struct import ok"
+    },
+    {
+      "name": "godot",
+      "available": true,
+      "version": "4.7.2.stable.mono.official.ed1daf0bf",
+      "location_hint": "$PROJECT_ROOT/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "check_status": "pass; located in coordination-session directory (see $PROJECT_ROOT note in .md), not inside this git worktree"
+    },
+    {
+      "name": "dotnet",
+      "available": true,
+      "version": "10.0.401",
+      "location_hint": "$HOME/.dotnet/dotnet",
+      "check_status": "pass"
+    },
+    {
+      "name": "blender",
+      "available": false,
+      "version": null,
+      "location_hint": "PATH basename blender; /Applications; $HOME/Applications",
+      "check_status": "not_found at all three locations, version probe NOT_RUN"
+    }
+  ],
+  "calibration_sources_present": {
+    "gltf": true,
+    "bin": true,
+    "generator": true,
+    "glb": true,
+    "manifest": true,
+    "paths": {
+      "gltf": "art/source/calibration/calibration.gltf",
+      "bin": "art/source/calibration/calibration.bin",
+      "glb": "prototype/assets/calibration/art_i00.glb",
+      "manifest": "art/manifests/art_i00.json",
+      "generator": "tools/make_art_calibration.py"
+    },
+    "generator_sha256_verified": {
+      "expected": "531f13e68a04fbb643580fe2cdb41cbde122eea389a2dc7d15042089960494df",
+      "matches": true
+    }
+  },
+  "calibration_glb_hash_matches": true,
+  "calibration_glb_sha256": "52b5b9d6b430c99fecd2faf35c867e1bc618cefb588b84f5ba0cebf58cf7d32a",
+  "production_pipeline_verified": false,
+  "limitations": [
+    "blender --version probe NOT_RUN (binary absent); only file-existence checks ran",
+    "godot binary lives in coordination-session PROJECT_ROOT outside this git worktree; only --version ran, no GUI or project import/export ran in this ticket",
+    "checks were --version / file-existence / hash only; generator hash verified but generator not executed",
+    "production pipeline not verified this ticket"
+  ],
+  "corrected_report_commit_at_utc": "2026-10-04T08:56:20Z"
+}

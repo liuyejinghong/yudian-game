@@ -1,5 +1,7 @@
 # 《余电》T2 后首批三维素材工单（交本地 Codex）
 
+> 历史工单（固定902a662；2026-10-05整理）：正文和配套`2026-10-04-asset-tasks.csv`保留当时拟议接口/状态，不作现役派单或接受记录。ART-I00已完成技术校准；当前制作以[美术TODO](todo.md)、[I00合同](art-i00-interface.md)、[首批需求](requirements/first-assets-r1.md)及已冻结生产票为准，不重新执行本页旧提示词。
+
 日期：2026-10-04。依据：`main@902a662392e8047364ace7c0ce93d151945dbb59` 的 `prototype/scripts/Main.cs`、`fixtures/s_small.json`、T2 Issue #5、T3 Issue #6，以及已确认的 `docs/art/art-direction.md`。
 
 状态：**制作需求与拟议接口，尚无本轮生成的 GLB/Blender/纹理/动画或实机通过记录。** 云端当前没有 Blender、Godot、.NET；未能连接 Mac 工作区。此文不把脚本方块、旧海报切片或 SVG 轮廓冒充三维资产。

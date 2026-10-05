@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NuGetAudit>false</NuGetAudit>
+    <UseAppHost>false</UseAppHost>
+    <AssemblyName>TerrainData.Tests</AssemblyName>
+    <RootNamespace>TerrainData.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- T3a-DATA：被测实现即合同冻结的三个源文件，链接编译进本测试程序集，不建类库工程、不引包。 -->
+    <Compile Include="../../prototype/scripts/TerrainData/*.cs" Link="TerrainData/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

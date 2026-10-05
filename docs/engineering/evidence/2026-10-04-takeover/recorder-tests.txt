@@ -1,0 +1,1 @@
+BENCHMARK_RECORDER_OK: known ranks, interrupted state, invalid sample, existing/same paths rejected, handles closed

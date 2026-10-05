@@ -1,0 +1,189 @@
+[
+  {
+    "case": "nested-nan",
+    "returncode": 0,
+    "output_exists": true,
+    "stdout": "perf_compare: 1 runs -> 1 group(s); nested-nan-report.json\n",
+    "stderr": "",
+    "identity": {
+      "summary.build.git_head": "7341ea83a3ad879ba98a496792d43eb9cd2d70ab",
+      "summary.build.source_snapshot_sha256": "e178163e2f7eee356cdf039f9a791dff01a856cd126043cc415d0d9df122d7c5",
+      "summary.build.assets_snapshot_sha256": "a82e1f56a1d436b3adf9334ffa7b73244ebf69184408a60a50c598469dffc6dd",
+      "summary.assembly_sha256": "e12648754ce2c79f3ddf72d55b8a7d7da581c53a59d798c6926984dd708f66c0",
+      "verification.app_binary_sha256": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+      "summary.fixture_sha256": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+      "summary.seed": 20261004,
+      "summary.duration_requested_s": 45,
+      "summary.requested": {
+        "resolution": {
+          "width": 1920,
+          "height": 1200
+        },
+        "quality": {
+          "msaa_3d": 4,
+          "fxaa": false,
+          "scaling_3d_scale": 1,
+          "shadows": true
+        },
+        "scale": {
+          "robots_total": 12,
+          "robots_per_type": 4,
+          "facilities": 6,
+          "ring_radius": 14
+        }
+      },
+      "summary.applied": {
+        "msaa_3d": "Msaa4X",
+        "fxaa": "Disabled",
+        "scaling_3d_scale": NaN,
+        "vsync": "Disabled",
+        "max_fps": 0
+      },
+      "summary.observed.rendering_method": "forward_plus",
+      "summary.observed.rendering_driver": "metal",
+      "summary.observed.gpu": "Apple M3 Pro (Apple9)",
+      "summary.observed.gpu_api_version": "4.0",
+      "summary.observed.window_pixels": [
+        1920,
+        1200
+      ],
+      "summary.observed.viewport_size": [
+        1920,
+        1200
+      ],
+      "summary.observed.robots": 12,
+      "summary.observed.facilities": 6,
+      "summary.godot_version": "4.7.2-stable (official)",
+      "summary.runtime.framework": ".NET 8.0.31",
+      "summary.runtime.version": "8.0.31",
+      "summary.runtime.architecture": "Arm64",
+      "summary.runtime.os": "Darwin 27.0.0 test"
+    }
+  },
+  {
+    "case": "requested-empty",
+    "returncode": 0,
+    "output_exists": true,
+    "stdout": "perf_compare: 1 runs -> 1 group(s); requested-empty-report.json\n",
+    "stderr": "",
+    "identity": {
+      "summary.build.git_head": "7341ea83a3ad879ba98a496792d43eb9cd2d70ab",
+      "summary.build.source_snapshot_sha256": "e178163e2f7eee356cdf039f9a791dff01a856cd126043cc415d0d9df122d7c5",
+      "summary.build.assets_snapshot_sha256": "a82e1f56a1d436b3adf9334ffa7b73244ebf69184408a60a50c598469dffc6dd",
+      "summary.assembly_sha256": "e12648754ce2c79f3ddf72d55b8a7d7da581c53a59d798c6926984dd708f66c0",
+      "verification.app_binary_sha256": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+      "summary.fixture_sha256": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+      "summary.seed": 20261004,
+      "summary.duration_requested_s": 45,
+      "summary.requested": {},
+      "summary.applied": {
+        "msaa_3d": "Msaa4X",
+        "fxaa": "Disabled",
+        "scaling_3d_scale": 1,
+        "vsync": "Disabled",
+        "max_fps": 0
+      },
+      "summary.observed.rendering_method": "forward_plus",
+      "summary.observed.rendering_driver": "metal",
+      "summary.observed.gpu": "Apple M3 Pro (Apple9)",
+      "summary.observed.gpu_api_version": "4.0",
+      "summary.observed.window_pixels": [
+        1920,
+        1200
+      ],
+      "summary.observed.viewport_size": [
+        1920,
+        1200
+      ],
+      "summary.observed.robots": 12,
+      "summary.observed.facilities": 6,
+      "summary.godot_version": "4.7.2-stable (official)",
+      "summary.runtime.framework": ".NET 8.0.31",
+      "summary.runtime.version": "8.0.31",
+      "summary.runtime.architecture": "Arm64",
+      "summary.runtime.os": "Darwin 27.0.0 test"
+    }
+  },
+  {
+    "case": "nested-wrong-type",
+    "returncode": 0,
+    "output_exists": true,
+    "stdout": "perf_compare: 1 runs -> 1 group(s); nested-wrong-type-report.json\n",
+    "stderr": "",
+    "identity": {
+      "summary.build.git_head": "7341ea83a3ad879ba98a496792d43eb9cd2d70ab",
+      "summary.build.source_snapshot_sha256": "e178163e2f7eee356cdf039f9a791dff01a856cd126043cc415d0d9df122d7c5",
+      "summary.build.assets_snapshot_sha256": "a82e1f56a1d436b3adf9334ffa7b73244ebf69184408a60a50c598469dffc6dd",
+      "summary.assembly_sha256": "e12648754ce2c79f3ddf72d55b8a7d7da581c53a59d798c6926984dd708f66c0",
+      "verification.app_binary_sha256": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+      "summary.fixture_sha256": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+      "summary.seed": 20261004,
+      "summary.duration_requested_s": 45,
+      "summary.requested": {
+        "resolution": {
+          "width": "wrong-type",
+          "height": 1200
+        },
+        "quality": {
+          "msaa_3d": 4,
+          "fxaa": false,
+          "scaling_3d_scale": 1,
+          "shadows": true
+        },
+        "scale": {
+          "robots_total": 12,
+          "robots_per_type": 4,
+          "facilities": 6,
+          "ring_radius": 14
+        }
+      },
+      "summary.applied": {
+        "msaa_3d": "Msaa4X",
+        "fxaa": "Disabled",
+        "scaling_3d_scale": 1,
+        "vsync": "Disabled",
+        "max_fps": 0
+      },
+      "summary.observed.rendering_method": "forward_plus",
+      "summary.observed.rendering_driver": "metal",
+      "summary.observed.gpu": "Apple M3 Pro (Apple9)",
+      "summary.observed.gpu_api_version": "4.0",
+      "summary.observed.window_pixels": [
+        1920,
+        1200
+      ],
+      "summary.observed.viewport_size": [
+        1920,
+        1200
+      ],
+      "summary.observed.robots": 12,
+      "summary.observed.facilities": 6,
+      "summary.godot_version": "4.7.2-stable (official)",
+      "summary.runtime.framework": ".NET 8.0.31",
+      "summary.runtime.version": "8.0.31",
+      "summary.runtime.architecture": "Arm64",
+      "summary.runtime.os": "Darwin 27.0.0 test"
+    }
+  },
+  {
+    "case": "summary-list",
+    "returncode": 1,
+    "output_exists": false,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<perf-worker>/tools/perf_compare/compare.py\", line 398, in <module>\n    sys.exit(main())\n             ~~~~^^\n  File \"<perf-worker>/tools/perf_compare/compare.py\", line 386, in main\n    report = build_report_and_groups(args.runs)\n  File \"<perf-worker>/tools/perf_compare/compare.py\", line 350, in build_report_and_groups\n    run, identity = load_run(arg, baseline)\n                    ~~~~~~~~^^^^^^^^^^^^^^^\n  File \"<perf-worker>/tools/perf_compare/compare.py\", line 279, in load_run\n    check_graphics_eligible(summary, where_summary)\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<perf-worker>/tools/perf_compare/compare.py\", line 193, in check_graphics_eligible\n    require(summary.get('graphical_performance_eligible') is True,\n            ^^^^^^^^^^^\nAttributeError: 'list' object has no attribute 'get'\n"
+  },
+  {
+    "case": "malformed-json",
+    "returncode": 2,
+    "output_exists": false,
+    "stdout": "",
+    "stderr": "perf_compare: JSON 解析失败 (Expecting property name enclosed in double quotes: line 1 column 2 (char 1))\n"
+  },
+  {
+    "case": "existing-dangling-output",
+    "returncode": 0,
+    "still_symlink": false,
+    "output_exists": true,
+    "stderr": ""
+  }
+]

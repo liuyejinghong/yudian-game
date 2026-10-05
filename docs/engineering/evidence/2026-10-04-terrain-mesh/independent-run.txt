@@ -1,0 +1,90 @@
+PASS en-US/stage/non-square layout/count/full winding
+PASS en-US/stage/original nodes world coordinates
+PASS en-US/stage/candidate changes and base remains
+PASS en-US/stage/noop patch same mesh
+PASS en-US/stage/repeat determinism
+PASS en-US/stage/no mutable collection/SyncRoot
+PASS en-US/stage/output index guards
+PASS en-US/stage/null snapshot
+PASS en-US/stage/null patch
+PASS en-US/stage/null current
+PASS en-US/stage/stale current
+PASS en-US/stage/wrong region
+PASS en-US/stage/same version different contents
+PASS en-US/stage/maximum grid finite/order
+PASS en-US/stage/2xN minimum band
+PASS en-US/stage/Nx2 minimum band
+PASS en-US/stage/actual triangle nonzero adjacent edge
+PASS en-US/heightfield/non-square layout/count/full winding
+PASS en-US/heightfield/original nodes world coordinates
+PASS en-US/heightfield/candidate changes and base remains
+PASS en-US/heightfield/noop patch same mesh
+PASS en-US/heightfield/repeat determinism
+PASS en-US/heightfield/no mutable collection/SyncRoot
+PASS en-US/heightfield/output index guards
+PASS en-US/heightfield/null snapshot
+PASS en-US/heightfield/null patch
+PASS en-US/heightfield/null current
+PASS en-US/heightfield/stale current
+PASS en-US/heightfield/wrong region
+PASS en-US/heightfield/same version different contents
+PASS en-US/heightfield/maximum grid finite/order
+PASS en-US/heightfield/2xN minimum band
+PASS en-US/heightfield/Nx2 minimum band
+PASS en-US/heightfield/actual triangle nonzero adjacent edge
+PASS en-US/stage exact 2x2 index golden
+PASS en-US/twisted cell distinct diagonal height
+PASS en-US/fine complete non-square vertex golden
+PASS en-US/fine all candidate vertices use new heights
+PASS en-US/fine triangle is not exact bilinear surface
+PASS en-US/cross candidate adjacent edge position-height
+PASS fr-FR/stage/non-square layout/count/full winding
+PASS fr-FR/stage/original nodes world coordinates
+PASS fr-FR/stage/candidate changes and base remains
+PASS fr-FR/stage/noop patch same mesh
+PASS fr-FR/stage/repeat determinism
+PASS fr-FR/stage/no mutable collection/SyncRoot
+PASS fr-FR/stage/output index guards
+PASS fr-FR/stage/null snapshot
+PASS fr-FR/stage/null patch
+PASS fr-FR/stage/null current
+PASS fr-FR/stage/stale current
+PASS fr-FR/stage/wrong region
+PASS fr-FR/stage/same version different contents
+PASS fr-FR/stage/maximum grid finite/order
+PASS fr-FR/stage/2xN minimum band
+PASS fr-FR/stage/Nx2 minimum band
+PASS fr-FR/stage/actual triangle nonzero adjacent edge
+PASS fr-FR/heightfield/non-square layout/count/full winding
+PASS fr-FR/heightfield/original nodes world coordinates
+PASS fr-FR/heightfield/candidate changes and base remains
+PASS fr-FR/heightfield/noop patch same mesh
+PASS fr-FR/heightfield/repeat determinism
+PASS fr-FR/heightfield/no mutable collection/SyncRoot
+PASS fr-FR/heightfield/output index guards
+PASS fr-FR/heightfield/null snapshot
+PASS fr-FR/heightfield/null patch
+PASS fr-FR/heightfield/null current
+PASS fr-FR/heightfield/stale current
+PASS fr-FR/heightfield/wrong region
+PASS fr-FR/heightfield/same version different contents
+PASS fr-FR/heightfield/maximum grid finite/order
+PASS fr-FR/heightfield/2xN minimum band
+PASS fr-FR/heightfield/Nx2 minimum band
+PASS fr-FR/heightfield/actual triangle nonzero adjacent edge
+PASS fr-FR/stage exact 2x2 index golden
+PASS fr-FR/twisted cell distinct diagonal height
+PASS fr-FR/fine complete non-square vertex golden
+PASS fr-FR/fine all candidate vertices use new heights
+PASS fr-FR/fine triangle is not exact bilinear surface
+PASS fr-FR/cross candidate adjacent edge position-height
+PASS shared mesh owns buffers
+PASS shared mesh invalid rows
+PASS shared mesh invalid columns
+PASS shared mesh missing vertices
+PASS shared mesh missing indices
+PASS shared mesh wrong vertices length
+PASS shared mesh wrong indices length
+PASS shared mesh nonfinite coordinates
+PASS shared mesh index outside range
+RESULT 89 PASS / 0 FAIL

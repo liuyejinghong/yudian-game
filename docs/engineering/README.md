@@ -1,0 +1,9 @@
+# 技术归档与研发入口
+
+当前任务、接受范围与执行合同见[产研TODO](tasks/todo.md)和[双线总入口](../../TODO.md)。实际工程与证据已经建立，历史计划不触发重复启动或整款游戏自动派单。
+
+## 历史研发组织提案
+
+[从零研发规划（2026-10-03）](archive/2026-10-03-from-zero/README.md)保留当时main38cff8e只有文档的起点、版本路线与Codex/GLM Spec；替代V0旧05/06组织提案。本目录只维护研发资料，美术参考在`docs/art/`。
+
+当前能力以各项真实复验报告为准；[技术验证计划](technical-validation-plan.md)和[超分/渲染器专项](upscaling-and-renderer-evaluation.md)描述需验证的范围，不替代接受记录。完整世界、导航、存档与稳定性能仍见任务表。

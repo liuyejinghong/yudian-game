@@ -1,0 +1,245 @@
+{
+  "origin": "external Popen monotonic, not Recorder time zero",
+  "samples": [
+    {
+      "elapsed_since_popen_s": 0.05538100004196167,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 0.8151572090573609,
+      "front_pid": 32164
+    },
+    {
+      "elapsed_since_popen_s": 1.6003662089351565,
+      "front_pid": 32164
+    },
+    {
+      "elapsed_since_popen_s": 2.348103916971013,
+      "front_pid": 32164
+    },
+    {
+      "elapsed_since_popen_s": 3.1247610000427812,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 3.9097114589530975,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 4.687945083947852,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 5.512761167017743,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 6.275438042124733,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 7.034823375055566,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 7.780349292093888,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 8.534390124958009,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 9.291764750145376,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 10.053866167087108,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 10.813709125155583,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 11.573673542123288,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 12.331203124951571,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 13.111245500156656,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 13.890900583937764,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 14.650634084129706,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 15.411033667158335,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 16.231271374970675,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 16.99939391715452,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 17.785369666991755,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 18.57871212507598,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 19.382779834093526,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 20.187090374995023,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 20.976410292088985,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 21.770968209020793,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 22.52032995899208,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 23.268710584146902,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 24.009117166977376,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 24.758240333991125,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 25.54901129193604,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 26.327559292083606,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 27.086326000047848,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 27.8548469170928,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 28.65705137513578,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 29.447942666942254,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 30.248129792045802,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 31.10078641702421,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 31.877731709042564,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 32.647909792140126,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 33.417216709116474,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 34.193070667097345,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 34.99312658398412,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 35.78323812503368,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 36.541096792090684,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 37.29735241713934,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 38.0670417919755,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 38.83282170910388,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 39.57743983413093,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 40.3203869999852,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 41.16002700012177,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 41.933312334120274,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 42.677694959100336,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 43.419499499956146,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 44.166058459086344,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 44.91264837514609,
+      "front_pid": 75186
+    },
+    {
+      "elapsed_since_popen_s": 45.67580750002526,
+      "front_pid": 75186
+    }
+  ]
+}

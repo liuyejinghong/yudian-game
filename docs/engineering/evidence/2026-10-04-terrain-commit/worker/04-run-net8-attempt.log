@@ -1,0 +1,15 @@
+You must install or update .NET to run this application.
+
+App: <worker>/tools/terrain-commit-policy-tests/bin/Release/net8.0/TerrainCommit.Policy.Tests.dll
+Architecture: arm64
+Framework: 'Microsoft.NETCore.App', version '8.0.0' (arm64)
+.NET location: <dotnet-root>/
+
+The following frameworks were found:
+  10.0.12 at [<dotnet-root>/shared/Microsoft.NETCore.App]
+
+Learn more:
+https://aka.ms/dotnet/app-launch-failed
+
+To install missing framework, download:
+https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=8.0.0&arch=arm64&rid=osx-arm64&os=osx.27
