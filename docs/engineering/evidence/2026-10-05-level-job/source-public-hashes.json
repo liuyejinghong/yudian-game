@@ -286,5 +286,23 @@
     "public_path": "ground-order/restore.log",
     "source_sha256": "a63e6868e3a15818237b27fe62fdc0d19d475c065c191af2b663eb4a1cdca905",
     "public_sha256": "1a78912f6898ecf4f0081e9ff314a7b5b0f149d53f48b25f47fdd968eb90d997"
+  },
+  {
+    "source": "<scratch>/level-job-main-20261005/main-checkout-build.log",
+    "public_path": "main/main-checkout-build.log",
+    "source_sha256": "ea58c9fa6294c5a0083410d4c9653f67fbb0e2141ac1b4687ad53abff9469a39",
+    "public_sha256": "b55f03a6fb21171f30d68a742d68b7161bdf74a6f7bd8e75fdded117d3e8a9d1"
+  },
+  {
+    "source": "<scratch>/level-job-main-20261005/main-checkout-level.log",
+    "public_path": "main/main-checkout-level.log",
+    "source_sha256": "b08079ac04a7302d300353b63f5e187bc0d9f0e028c982811cc2793e11292d51",
+    "public_sha256": "b08079ac04a7302d300353b63f5e187bc0d9f0e028c982811cc2793e11292d51"
+  },
+  {
+    "source": "<scratch>/level-job-main-20261005/main-checkout-receipt.json",
+    "public_path": "main/main-checkout-receipt.json",
+    "source_sha256": "5b7ae6dcce387865ddf9d42975d7a46e5a215f91db1ca9d16a4abf5918fe6bd2",
+    "public_sha256": "5b7ae6dcce387865ddf9d42975d7a46e5a215f91db1ca9d16a4abf5918fe6bd2"
   }
 ]

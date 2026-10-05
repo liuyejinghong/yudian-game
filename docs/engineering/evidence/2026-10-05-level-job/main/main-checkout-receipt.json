@@ -1,0 +1,14 @@
+[
+  {
+    "log": "main-checkout-build.log",
+    "exit_code": 0
+  },
+  {
+    "log": "main-checkout-level.log",
+    "exit_code": 0
+  },
+  {
+    "source": "8bcefb1e3c168b5f595808f2c22ccc48dc8b46ba",
+    "dll_sha256": "88e85d8863e81783cdccf2c2ddc5fa844722dc666be471d744bd5f2657bcc571"
+  }
+]

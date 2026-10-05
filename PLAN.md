@@ -252,8 +252,8 @@ PR33已合并：head8e1ddde44215911fc0652e652da9b84f45396c06，mergef041e3e74f20
 2. [x] GLM两独占包并行执行单目标覆盖与纯WorkMeter；证明：真实模型回执、限定diff、完整native/console日志。
 3. [x] 主控接入领取→到场→连续施工→提交→后续帧完成；证明：取消、重复、版本/占用拒绝、故障恢复真实Main用例。
 4. [x] 独立reviewer、必要回归与Metal GUI；证明：实际走到现场/作业进度/地形改变/完成/真实关窗。
-5. [ ] 证据/TODO限定接受，精确head PR按授权合并并同步main；证明：实际merge与干净主工作树。
+5. [x] 证据/TODO限定接受，精确head PR按授权合并并同步main；证明：实际merge与干净主工作树。
 
 归属：GLM-A仅GroundPatrol与新增order native测试；GLM-B仅Construction/WorkMeter与独立console；主控Main与跟踪。无经济/电耗/保存/完整寻路扩签；素材继续ART-LINK，不等待美术开测。
 
-LEVEL-JOB最终复验：Main15步/12贴地、GLM36/新native7/旧10与旧Main7兼容通过；Metal三轮取消/重复/进度/完成/无需改造与真实close0；最终DLL e39f6833…6cb47，源码0b1339a。独立reviewer空中同XZ漏测返工闭合，architect无实质合并阻碍，48份公开hash核对通过。GLM会话已结束，父T3d/#6未完成，待精确PR发布集成。
+LEVEL-JOB最终复验：Main15步/12贴地、GLM36/新native7/旧10与旧Main7兼容通过；Metal三轮取消/重复/进度/完成/无需改造与真实close0；最终DLL e39f6833…6cb47，源码0b1339a。独立reviewer空中同XZ漏测返工闭合，architect无实质合并阻碍，48份公开hash核对通过。GLM会话已结束，父T3d/#6未完成；PR34已合并，head b79860a、merge 8bcefb1，main已快进同步、重新编译0警告0错误与15步窄烟测exit0。48份审查证据保留，另附3份main复验证据。

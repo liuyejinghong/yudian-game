@@ -36,4 +36,4 @@ Main超时例只注入任务时钟60秒，机器人改指向而不传送，验�
 
 仍未接受：完整寻路/避让、其他设施建设或自动补前置、资源收益/库存运输、电量耐久/充电维修救援、模型目标规划、存档/重载、正式U01/T01/T02、增量/多区域、稳定性能/归因、发行或无SDK/Windows。工程材料与代理体保持美术既有ART-LINK待交回联调，不把本票替代正式视觉验收；父T3d/#6继续未完成。
 
-收尾：最终architect未发现实质合并阻碍，独立核对48份公开证据SHA与Main/GUI身份，接受边界一致，无需扩大验证。两个GLM会话已结束（proc_state dead），保留原工作树/分支/日志；精确PR head、merge与main同步待集成记录。
+收尾：最终architect未发现实质合并阻碍，独立核对48份公开证据SHA与Main/GUI身份，接受边界一致，无需扩大验证。两个GLM会话已结束（proc_state dead），保留原工作树/分支/日志；[PR34](https://github.com/liuyejinghong/yudian-game/pull/34)已合并：精确head `b79860ac4a29ee33a713ee98cfdb3212a65300c8`、merge `8bcefb1e3c168b5f595808f2c22ccc48dc8b46ba`。main干净快进同步，生产与测试源码相对0b1339a无差异；主工作树离线重编译0警告0错误、15步原生窄烟测exit0/12贴地。该main新构建SHA `88e85d8863e81783cdccf2c2ddc5fa844722dc666be471d744bd5f2657bcc571`、加载MVID `985f4e37-89ff-4186-9dff-8326c44273b5`，不混同前述GUI构建。[main回执](../evidence/2026-10-05-level-job/main/main-checkout-receipt.json) / [构建](../evidence/2026-10-05-level-job/main/main-checkout-build.log) / [15步](../evidence/2026-10-05-level-job/main/main-checkout-level.log)。新增3份公开证据，映射总51份，逐件hash已核。
