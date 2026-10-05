@@ -62,9 +62,11 @@ Godot 4.7 内存加载下 Assembly.Location 为空，如实记录，不宣称对
   机器人继续奔原目标并真实到点。
 - blocked order：订单目标在 50° 陡坡墙后，机器人被墙挡住：X 不越过接触点+0.15、不穿墙
   （X<=104.2）、180帧内永不 OrderReached、Blocked/IsOnWall 置位、TargetIndex 冻结。
-- paused with order airborne：下单+Paused 首帧前悬空：真实重力下落≥1m 落地（XZ与订单
-  距离冻结、TargetIndex 不推进、空中 OrderReached=false），稳定贴地30帧后解除 Paused，
-  继续奔订单目标并到点。
+- paused airborne over target：下单目标为出生点正下方（XZ距离0）+Paused 首帧前悬空：真实
+  重力下落≥1m，≥10个空中物理帧逐帧断言 OrderReached=false（XZ<=.25 但 IsOnFloor=false，
+  杀掉移除 IsOnFloor 保护的变异）；XZ冻结、TargetIndex不推进；稳定贴地30帧后断言
+  OrderReached=true；随后 SetOrder 覆盖为远目标（立即变回 false），解除 Paused 后真实
+  到场到点。
 - replace order mid-chase：奔向第一目标途中（d1<=5m）SetOrder 覆盖：改道（对旧目标距离
   转增、对新目标单调减）并真实到点，TargetIndex 全程冻结。
 

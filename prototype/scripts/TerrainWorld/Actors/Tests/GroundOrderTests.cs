@@ -12,8 +12,9 @@ namespace Yudian.Terrain;
 /// <summary>
 /// level-job-r1 GLM包A（GROUND-ORDER）实际引擎测试（只headless）。_Ready 跑身份核对与
 /// SetOrder/ClearOrder 纯逻辑用例，并搭静态box世界：平面下单区（巡逻→下单→直线进场→到点
-/// 保持→非法拒绝→清除回巡逻）、非法输入保留旧目标区、50°陡坡阻挡区、暂停空中区（Paused下
-/// 真实重力落地、XZ与目标冻结、恢复后到点）、飞行替换目标区；_PhysicsProcess 按帧推进五个
+/// 保持→非法拒绝→清除回巡逻）、非法输入保留旧目标区、50°陡坡阻挡区、暂停空中正上方区
+/// （订单目标在出生点正下方：空中每帧OrderReached=false、真实落地后true，SetOrder远目标
+/// 后恢复到场）、飞行替换目标区；_PhysicsProcess 按帧推进五个
 /// 真实 MoveAndSlide 场景，各自带deadline帧超时，超时按失败计。逐条打印 PASS/FAIL
 /// （Console.WriteLine 走 stdout，不在 --log-file 里，验收须捕获完整 stdout/stderr），
 /// 全过 SUMMARY 后退出0，任一失败退出1。所有地面/到场判定来自原生物理，不手动模拟高度、
@@ -254,11 +255,12 @@ public partial class GroundOrderTests : Node3D
         blockedBot.SetOrder(new Vector3(108, 0, 0));
         _scenarios.Add(new BlockedOrderScenario(blockedBot));
 
-        // 暂停空中区：下单+Paused，首物理帧前就在空中，验证真实重力落地与目标冻结。
+        // 暂停空中正上方区：首个订单目标=出生点正下方（XZ距离0），Paused悬空验证
+        // 空中OrderReached=false（IsOnFloor保护）、真实落地后true，再SetOrder远目标恢复到场。
         AddChild(FloorBox(new Vector3(12, 1, 10), new Vector3(202, -0.5f, 0)));
         GroundPatrol airBot = SpawnRobot(new Vector3(198, 2f, 2),
             new[] { new Vector3(199, 0, 0), new Vector3(205, 0, 0) }, 2f);
-        airBot.SetOrder(new Vector3(206, 0, -2));
+        airBot.SetOrder(new Vector3(198, 0, 2));
         airBot.Paused = true;
         _scenarios.Add(new PausedAirOrderScenario(airBot));
 
@@ -607,32 +609,37 @@ public partial class GroundOrderTests : Node3D
         }
     }
 
-    /// <summary>空中已Paused且有订单：真实重力落地、XZ与订单目标距离冻结，恢复后到点。</summary>
+    /// <summary>
+    /// 空中已Paused且订单目标在出生点正下方：悬空期间XZ<=.25但IsOnFloor=false，
+    /// OrderReached必须逐帧false（杀掉移除IsOnFloor保护的变异）；真实重力落地稳定后true；
+    /// SetOrder覆盖为远目标立即false，解除Paused后真实到场。
+    /// </summary>
     private sealed class PausedAirOrderScenario : Scenario
     {
-        private static readonly Vector3 OrderTarget = new(206f, 0f, -2f);
+        private static readonly Vector3 BelowTarget = new(198f, 0f, 2f);
+        private static readonly Vector3 FarTarget = new(206f, 0f, -2f);
         private readonly GroundPatrol _robot;
         private readonly Vector3 _spawn;
-        private readonly float _orderDistanceAtSpawn;
         private int _phase;
         private int _local;
         private int _groundedFrames;
+        private int _airborneFrames;
         private bool _wasAirborne;
         private float _minY;
         private int _frozenIndex;
 
         public PausedAirOrderScenario(GroundPatrol robot)
-            : base("paused with order airborne: real gravity landing, XZ and order frozen, reaches after unpause", 900)
+            : base("paused airborne over target: OrderReached false every airborne frame, true after landing, far order reached", 900)
         {
             _robot = robot;
             _spawn = robot.GlobalPosition;
-            _orderDistanceAtSpawn = XzDistance(_spawn, OrderTarget);
             _minY = _spawn.Y;
             _frozenIndex = robot.TargetIndex;
         }
 
         public override string Describe() =>
-            $"pos {_robot.GlobalPosition} phase {_phase} minY {_minY:F2} grounded {_groundedFrames}";
+            $"pos {_robot.GlobalPosition} phase {_phase} minY {_minY:F2} "
+            + $"airborne {_airborneFrames} grounded {_groundedFrames}";
 
         public override void Step(int frame, float delta)
         {
@@ -644,14 +651,19 @@ public partial class GroundOrderTests : Node3D
                 Expect(_robot.HasOrder, "order lost while paused");
                 Expect(_robot.TargetIndex == _frozenIndex,
                     $"TargetIndex {_robot.TargetIndex} advanced while paused");
-                float orderDistance = XzDistance(pos, OrderTarget);
-                Expect(MathF.Abs(orderDistance - _orderDistanceAtSpawn) < 1e-4f,
-                    $"order distance changed while paused: {orderDistance:F3} vs {_orderDistanceAtSpawn:F3}");
+                Expect(MathF.Abs(pos.X - _spawn.X) < 1e-4f && MathF.Abs(pos.Z - _spawn.Z) < 1e-4f,
+                    $"XZ moved while paused airborne: {pos} vs spawn {_spawn}");
                 if (!_robot.IsOnFloor())
                 {
                     _wasAirborne = true;
+                    _airborneFrames++;
                     _minY = MathF.Min(_minY, pos.Y);
                     _groundedFrames = 0; // 离地即归零，落地须连续贴地才算稳定。
+                    // 变异杀手：正上方悬空 XZ<=.25，也必须因 IsOnFloor=false 而 false。
+                    Expect(XzDistance(pos, BelowTarget) <= GroundPatrol.WaypointReachXzM,
+                        $"not above the order target while airborne: {XzDistance(pos, BelowTarget):F3}");
+                    Expect(!_robot.OrderReached,
+                        "OrderReached must be false while airborne over the target (IsOnFloor guard)");
                 }
                 else
                 {
@@ -659,10 +671,18 @@ public partial class GroundOrderTests : Node3D
                     _groundedFrames++;
                     if (_groundedFrames >= 30)
                     {
+                        Expect(_airborneFrames >= 10,
+                            $"only {_airborneFrames} airborne frames observed, mutation coverage too thin");
                         Expect(_minY < _spawn.Y - 1f,
                             $"never really fell under gravity: minY {_minY:F2} vs spawn Y {_spawn.Y:F2}");
                         Expect(MathF.Abs(pos.Y) <= 0.05f, $"landed Y {pos.Y:F3} not at floor level");
-                        Expect(!_robot.OrderReached, "OrderReached must be false while paused away from target");
+                        Expect(XzDistance(pos, BelowTarget) <= GroundPatrol.WaypointReachXzM,
+                            "drifted off the target XZ after landing");
+                        Expect(_robot.OrderReached,
+                            "OrderReached must be true once really grounded over the target");
+                        _robot.SetOrder(FarTarget);
+                        Expect(!_robot.OrderReached,
+                            "OrderReached must be false right after SetOrder to a far target");
                         _robot.Paused = false;
                         _phase = 1;
                     }
@@ -672,12 +692,13 @@ public partial class GroundOrderTests : Node3D
             {
                 Expect(_robot.IsOnFloor(), $"lost ground after unpause at {pos}");
                 Expect(_robot.TargetIndex == _frozenIndex, "TargetIndex advanced while ordered");
-                float distance = XzDistance(pos, OrderTarget);
+                float distance = XzDistance(pos, FarTarget);
                 if (distance <= 0.25f)
                 {
                     Expect(_robot.OrderReached, "OrderReached must be true on arrival after unpause");
-                    Done($"fell from Y {_spawn.Y:F2} to ground, held paused, reached {OrderTarget} "
-                        + $"after unpause, local frames {_local}");
+                    Done($"OrderReached false on all {_airborneFrames} airborne frames over target, "
+                        + $"true after landing, then far order {FarTarget} reached after unpause, "
+                        + $"local frames {_local}");
                 }
             }
         }
