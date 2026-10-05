@@ -4,7 +4,7 @@
 
 | 线 | 权威任务表 | 当前事实 | 后续首要队列（未启动） |
 |---|---|---|---|
-| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | 工程验证：地形/原生移动/固定整平已限定接受；玩家经营原型尚未完成 | 先验证目标委托下的经营选择与持续循环，再冻结PLAYER-SLICE；太阳能建设为候选场景，正式素材按ART-LINK联调 |
+| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) / [模块框架](docs/engineering/module-roadmap.md) | 工程地形/运动/固定整平已限定接受；九个游戏模块已有职责划分，D1玩家经营基地未完成 | 围绕D1并行建设UI/资源/执行等模块并主场景集成；玩法短验证随建设推进，成果进入版本；正式素材按ART-LINK联调 |
 | 美术 | [美术 TODO](docs/art/production/todo.md) | ART-I00技术校准已验；[首批需求](docs/art/production/requirements/first-assets-r1.md)由主控编写；正式资产与视觉效果未验 | M01材质已由美术组技术接受，soil_mars工程逐surface联调通过；预览工具正在制作，正式模型/地形素材仍缺；工程缺口见ART-LINK各行 |
 
 2026-10-04所有者授权后，PR [#16](https://github.com/liuyejinghong/yudian-game/pull/16)、[#18](https://github.com/liuyejinghong/yudian-game/pull/18)及[#20](https://github.com/liuyejinghong/yudian-game/pull/20)已合并，本网格批次从main `3999d30`起步。PR [#13](https://github.com/liuyejinghong/yudian-game/pull/13)/[#14](https://github.com/liuyejinghong/yudian-game/pull/14)保留902a662历史评审/工单，已补后续权威入口，不重复派发其中旧任务；历史结果见[接管复验](docs/engineering/reports/2026-10-04-takeover-verification.md)。原Issue [#5](https://github.com/liuyejinghong/yudian-game/issues/5)/[#6](https://github.com/liuyejinghong/yudian-game/issues/6)/[#7](https://github.com/liuyejinghong/yudian-game/issues/7)/[#8](https://github.com/liuyejinghong/yudian-game/issues/8)分别关联T2/T3/T4/T5；旧ready-for-agent标签不能替代新子票的冻结接口和本轮范围。
