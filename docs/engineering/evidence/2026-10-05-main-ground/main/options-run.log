@@ -1,0 +1,22 @@
+PASS user --live-terrain 启用
+PASS engine --live-terrain 启用
+PASS user+engine 同旗标跨 scope 不算重复
+PASS user 重复 --live-terrain
+PASS engine 重复 --live-terrain
+PASS live-terrain 下 user 未知仍拒绝
+PASS live-terrain 下 engine Godot 参数仍忽略
+PASS engine 裸 --benchmark 不触发，与 live-terrain 共存
+PASS 互斥: user --benchmark
+PASS 互斥: user --yudian-benchmark
+PASS 互斥: engine --yudian-benchmark
+PASS 互斥: engine --live-terrain + user --benchmark
+PASS 互斥: user --duration
+PASS 互斥: engine --duration
+PASS 互斥: 环境开关
+PASS 旧默认: 无参数
+PASS 旧默认: 环境开关仍触发 benchmark
+PASS user --duration 仍触发 benchmark
+PASS 旧 fixture 优先级: user>engine
+PASS live-terrain 下 user fixture 优先
+PASS live-terrain 下 engine fixture 兜底
+live-terrain 选项检查: 共 21 项, 失败 0

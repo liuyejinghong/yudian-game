@@ -1,0 +1,31 @@
+{
+  "source_head": "ddb4b131642127ecac489f113a065eac898d9caa",
+  "dll_sha256": "5d2bd71f9d7fd51b40224d33a86bde4f05d7e80b758e9f7a152c09371af57c44",
+  "runs": [
+    {
+      "name": "patrol-native-final",
+      "exit": 0,
+      "passed": true,
+      "args": [
+        "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "<user>/yudian-game/main-ground-r1-20261005/prototype",
+        "res://scenes/ground-patrol-tests/GroundPatrolTests.tscn"
+      ]
+    },
+    {
+      "name": "main-native-final",
+      "exit": 0,
+      "passed": true,
+      "args": [
+        "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "<user>/yudian-game/main-ground-r1-20261005/prototype",
+        "--",
+        "--live-terrain"
+      ]
+    }
+  ]
+}

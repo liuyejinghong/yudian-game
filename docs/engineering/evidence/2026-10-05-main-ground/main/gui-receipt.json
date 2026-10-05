@@ -1,0 +1,42 @@
+{
+  "source_head": "e2dbef102f3b02122da1925be2b32b9ae09dfb00",
+  "dll_sha256": "6e4e2644be81a937762581acc96dfbc1a0146f0331d3550d808f286966680244",
+  "loaded_mvid": "121f2816-4f15-4ac6-bb73-c4ebe309a780",
+  "renderer": "Metal 4.0 / Forward+ / Apple M3 Pro",
+  "actions": [
+    {
+      "action": "cold launch default Main --live-terrain",
+      "observed": "authority/bound/verified 0, 12 grounded moving robots, 6 facilities"
+    },
+    {
+      "action": "Cua click mound [170,155]",
+      "observed": "version 1 triple agreement; 12 grounded, positions changed"
+    },
+    {
+      "action": "Cua click pit [170,190] twice",
+      "observed": "version 2 triple agreement, NoChange on duplicate, 12 grounded moving"
+    },
+    {
+      "action": "Cua Current recovery [170,225]",
+      "observed": "version remains 2, verified on next physics frame, movement continues"
+    },
+    {
+      "action": "Cua native AX close index1; inventory only afterwards",
+      "observed": "exit0, Godot and Yudian isRunning=false; no signal or post-close target observation"
+    }
+  ],
+  "initial_viewport_png": {
+    "path": "<scratch>/main-ground-main-20261005/main-gui-initial.png",
+    "sha256": "8ba0784b144ea97e67c8b060bfb1703f034b065556ac174a45d5ea2bd2b3540b",
+    "pixels": [
+      1920,
+      1200
+    ]
+  },
+  "later_screenshots": "Cua inline observations in this session; no exported after PNG claimed",
+  "limitations": [
+    "GUI did not exercise occupied refusal; actual Main native test did",
+    "not performance sampling",
+    "not navigation, actor/facility avoidance, construction pipeline, save or production art"
+  ]
+}

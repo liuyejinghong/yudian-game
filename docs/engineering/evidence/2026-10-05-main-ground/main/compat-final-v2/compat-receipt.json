@@ -1,0 +1,185 @@
+[
+  {
+    "name": "old-default",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--quit-after",
+      "30",
+      "--"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "old-short-benchmark",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--",
+      "--benchmark",
+      "--duration",
+      "1",
+      "--frames-csv",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/fixed-frames.csv",
+      "--summary-json",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/fixed-summary.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "live-benchmark-conflict",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--",
+      "--live-terrain",
+      "--duration",
+      "1"
+    ],
+    "exit": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "name": "live-range-segments",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--",
+      "--live-terrain",
+      "--fixture",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/range-segments.json"
+    ],
+    "exit": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "name": "old-range-segments",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--quit-after",
+      "10",
+      "--",
+      "--fixture",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/range-segments.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "live-range-spacing",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--",
+      "--live-terrain",
+      "--fixture",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/range-spacing.json"
+    ],
+    "exit": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "name": "old-range-spacing",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--quit-after",
+      "10",
+      "--",
+      "--fixture",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/range-spacing.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "live-range-height",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--",
+      "--live-terrain",
+      "--fixture",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/range-height.json"
+    ],
+    "exit": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "name": "old-range-height",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--quit-after",
+      "10",
+      "--",
+      "--fixture",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/range-height.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "passed": true
+  },
+  {
+    "name": "live-range-layout",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--",
+      "--live-terrain",
+      "--fixture",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/range-layout.json"
+    ],
+    "exit": 1,
+    "expected": 1,
+    "passed": true
+  },
+  {
+    "name": "old-range-layout",
+    "args": [
+      "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "<user>/yudian-game/main-ground-r1-20261005/prototype",
+      "--quit-after",
+      "10",
+      "--",
+      "--fixture",
+      "<scratch>/main-ground-main-20261005/compat-final-v2/range-layout.json"
+    ],
+    "exit": 0,
+    "expected": 0,
+    "passed": true
+  }
+]

@@ -42,3 +42,5 @@ T3d内存子件已合并[PR30](https://github.com/liuyejinghong/yudian-game/pull
 2026-10-05后续波次：T3d-PROJECTION-RESOURCES / T3d-VIEW已限定接受，[合同](../contracts/terrain-view-r1.md) / [复验](../reports/2026-10-05-terrain-view-verification.md)。GLM资源束冻结905458c，执行task_8b2f8b3248→一次返工task_b772ddba6e；主控握Evaluate/Commit与实际场景、GUI与故障恢复，工人不得重复领取。独立单区域已同步，旧Main机器人/导航/save/建设闭环仍须新票冻结；PERF与正式美术留项按权威TODO跟踪。
 
 本波已合并[PR32](https://github.com/liuyejinghong/yudian-game/pull/32)，merge `8b693447e4e466f1baf0ad2deec710e642c28895`；冻结资源束会话已结束，旧工作树和失败证据保留。
+
+2026-10-05 MAIN-GROUND波次：冻结89cb3fb，[合同](../contracts/main-ground-r1.md) / [复验](../reports/2026-10-05-main-ground-verification.md)。参数与运动两GLM包不同工作树并行；原生运动经两次review返工补真实下坡、空中暂停与正确射线oracle，主控最终21参数/10运动/七步Main与Metal GUI通过。三子票限定ACCEPTED，不重复派发；下一票须新冻结建设或导航范围，保存/正式美术/性能留项未扩大接受。

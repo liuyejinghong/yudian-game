@@ -1,0 +1,12 @@
+old-default 0 PASS
+old-short-benchmark 0 PASS
+live-benchmark-conflict 1 PASS
+live-range-segments 1 PASS
+old-range-segments 0 PASS
+live-range-spacing 1 PASS
+old-range-spacing 0 PASS
+live-range-height 1 PASS
+old-range-height 0 PASS
+live-range-layout 1 PASS
+old-range-layout 0 PASS
+SUMMARY 11 cases; assembly identity and headless ineligibility checked

@@ -27,14 +27,17 @@
 | T3-COLLISION-PROBE | P1 | ACCEPTED | T3-COLLISION实现；主控独占TerrainProbe | Codex | 118条分帧检查+36条默认回归、自身PASS/exit0；Metal真实GUI/冷开/三态PNG；实际GodotPhysicsDirectSpaceState3D，reviewer无剩缺陷；只接受候选 | [复验](../reports/2026-10-04-terrain-collision-verification.md) / [#26](https://github.com/liuyejinghong/yudian-game/issues/26) / [合同](../contracts/terrain-collision-r1.md) |
 | ART-LINK-M01 | P1 | ACCEPTED | 美术主控2401b6b技术接受；原1b91467限定材质，soil SHA5f8aa3e4 | Codex联调；美术组材质所有者 | soil_mars两网格surface0绑定，MaterialOverride为空；缺资源/错类型/双面透明拒绝，同镜头三态实机PNG；不签最终视觉 | [美术TODO](../../art/production/todo.md) / [首批需求](../../art/production/requirements/first-assets-r1.md) |
 | ART-LINK-U01 | P1 | BLOCKED | 正式U01源/GLB/manifest/逐surface角色与scale未交付 | 美术组制作；Codex联调 | 正式机器人实际Godot导入/绑定与状态复位验证；I00校准件不能替代 | [美术TODO](../../art/production/todo.md) |
-| ART-LINK-T01-T02 | P1 | BLOCKED | 正式土坡/矿点三态素材与接入说明未交付；正式世界接入尚未实现 | 美术组制作；Codex联调 | 模型/源/manifest/尺度及逐surface绑定齐备后冻结正式接入票；当前工程网格不充当正式美术 | [美术TODO](../../art/production/todo.md) |
+| ART-LINK-T01-T02 | P1 | BLOCKED | 正式土坡/矿点三态素材与接入说明未交付；正式素材绑定尚未实现 | 美术组制作；Codex联调 | 模型/源/manifest/尺度及逐surface绑定齐备后冻结正式接入票；当前工程网格不充当正式美术 | [美术TODO](../../art/production/todo.md) |
 | T3d-MEM | P1 | ACCEPTED | 单区域单写者内存入口；28主控独立例PASS，双TFM及实际Godot项目编译通过；reviewer无剩余问题 | Codex | 内存版本/取消保留/语义去重，失败与NoChange不消费请求；不签渲染/物理同步或存档 | [复验](../reports/2026-10-04-terrain-commit-verification.md) / [合同](../contracts/terrain-commit-r1.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3d-COMMIT-POLICY | P1 | ACCEPTED | base6554495；Bridge sess_7697b4c358/task_76fc5bf2a2；原bf6da0a，原生GLM-5.3-Flash已确认，主控集成验证/reviewer完成 | GLM-Eng-A | 37例×2文化=74检查；仅纯判定；费用未知，net8仅编译、net10执行 | [复验](../reports/2026-10-04-terrain-commit-verification.md) / [任务包](../packages/T3d-COMMIT-POLICY.md) |
 | LIFE-01-GUI | P0 | ACCEPTED | 主控自行启动固定包，Cua真实关闭自有窗口 | Codex | 默认user://三轮审计PASS、exit0/130/0、重开新目录；不签游戏保存 | [实机复验](../reports/2026-10-05-runtime-verification.md) / [用例](../contracts/runtime-controlled-r1.md) |
 | PERF-01-CONTROLLED | P0 | REWORK | 六轮完成，后台Finder焦点漂移；需工程补固定后台/负载条件，不等待美术回执 | Codex | 原始六轮与两组复算保留；仅接受观察，严格受控NOT_ACCEPTED；温度未测、归因/稳定预算未完成 | [实机复验](../reports/2026-10-05-runtime-verification.md) / [用例](../contracts/runtime-controlled-r1.md) |
 | T3d-PROJECTION-RESOURCES | P1 | ACCEPTED | 冻结905458c；Bridge sess_dd53b2aefe，原939c79d→返工0516dda；主控f3b08bf与8项native检查/reviewer通过 | GLM-Eng-A | 单对资源束、失败清理/幂等释放；首轮引擎ERROR已修，最终无ERROR；费用未知 | [复验](../reports/2026-10-05-terrain-view-verification.md) / [合同](../contracts/terrain-view-r1.md) |
 | T3d-VIEW | P1 | ACCEPTED | 单区域Stage完整重建；29内存例/7步真实引擎检查、Metal GUI修改/拒绝/恢复/关窗、reviewer通过 | Codex | 接受独立权威场景、后续帧射线、重放/故障Current恢复；旧Main机器人/导航/save未接入，完整T3d不扩签 | [复验](../reports/2026-10-05-terrain-view-verification.md) / [合同](../contracts/terrain-view-r1.md) |
-| T3d | P1 | DRAFT | T3d-MEM与T3d-VIEW已限定接受；正式Main接入、通行/导航/保存未完成 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
+| LIVE-TERRAIN-OPTIONS | P1 | ACCEPTED | 冻结89cb3fb；原68390afa/集成0efd005，独立reviewer与主控21项复验通过 | GLM-Eng-A | 仅解析：新模式与benchmark互斥；旧109项工人回归通过；不签Main/native | [合同](../contracts/main-ground-r1.md) |
+| GROUND-PATROL | P1 | ACCEPTED | 冻结89cb3fb；原58e99d4→7e64c97→c1300cb；主控最终10项native/reviewer通过 | GLM-Eng-B | 原生CharacterBody固定巡逻、真实坡往返/陡坡阻挡/空中暂停落地；无导航/避让，费用UNKNOWN | [复验](../reports/2026-10-05-main-ground-verification.md) / [合同](../contracts/main-ground-r1.md) |
+| MAIN-GROUND | P1 | ACCEPTED | e2dbef1运行源码；Main七步/11项兼容、Metal真实GUI与close0，reviewer缺陷已修 | Codex | 显式live模式12机贴地、cell占用拒绝、后续帧版本同步与故障Current恢复；不签完整导航/建设/save/正式美术 | [复验](../reports/2026-10-05-main-ground-verification.md) / [合同](../contracts/main-ground-r1.md) |
+| T3d | P1 | DRAFT | T3d-MEM/VIEW与MAIN-GROUND限定接受；灰模Main原生通行已接，完整导航/保存/建设未完成 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3e | P1 | BLOCKED | PERF-01可用对照；T3d；ART-T01/T02仅为视觉对照需接口与样件 | GLM-Eng-B采集工具/复算；Codex实机/选择 | 两候选同条件更新范围/主线程峰值/导航耗时/保存增长/视觉成本对比；所有者签视觉，主控选技术 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T4a | P2 | DRAFT | 现役产品/共同场景与权限案例，明确本轮候选输入范围 | Codex | 冻结世界事实/行动/权限输入；将原T4大票拆成领域基线、校验器、候选适配与统计小票；真实完成与拦截分计，模型非权威 | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |
 | T4-HARNESS | P2 | BLOCKED | T4a；领域计划/错误分类/模拟提供者接口 | GLM-Eng-A / GLM-Eng-B分目录 | 纯harness/适配/测试优先外包；主控握权限与提交；不自动下载权重或开付费API | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |
@@ -42,6 +45,6 @@
 
 ## 进入下一执行批次时
 
-下一批可冻结机器人通行/实际建设闭环的最小接入子票；单区域显示/静态物理同步不重复派单。PERF-01先补受控条件与归因，已接受的LIFE-01不重复派单，不用“整个T3”派单。合同/高风险状态由主控定，后续实现拆成能独测的GLM票；只把需要实机的部分串行交主控，统计/测试/清单让GLM完成。尚无文件归属的DRAFT/BLOCKED票不是可转发完整Spec。
+灰模Main原生通行已限定接受，下一批先冻结实际建设闭环或导航小票，不重复领取原生运动/单区域投影子件。PERF-01先补受控条件与归因，已接受的LIFE-01不重复派单，不用“整个T3”派单。合同/高风险状态由主控定，后续实现拆成能独测的GLM票；只把需要实机的部分串行交主控，统计/测试/清单让GLM完成。尚无文件归属的DRAFT/BLOCKED票不是可转发完整Spec。
 
 T4与T5沿用已存在Issue范围，不重新创建宏观路线；目标委托、机器人保障和生产存档仍未完成，本轮也不排成假装已经READY的大包。低配/Windows/发行是后续范围，当前不因缺设备宣布最低配置，也不把新系统留项扩成购买或部署任务。

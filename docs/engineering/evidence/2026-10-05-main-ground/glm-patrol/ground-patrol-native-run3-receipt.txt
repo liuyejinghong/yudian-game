@@ -1,0 +1,3 @@
+status=ok
+exit=1
+log=<scratch>/ground-patrol-worker-20261005/ground-patrol-native-run3.log
