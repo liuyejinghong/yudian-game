@@ -1,0 +1,15 @@
+id,batch,asset,owner_proposal,deliverable,status
+ART-I00,0,模型接入约定,主控,实际导入校准,待核定
+ART-T01,1,整平土坡,Codex美术,原坡/施工中/整平后三阶段,等T3边界
+ART-T02,1,开挖矿点,Codex美术,未开挖/部分/已开挖,等T3边界
+ART-U01,1,驮运,Codex美术,载荷/轮组/充电与牵引连接点,待制作
+ART-F01,1,太阳能阵列,Codex美术,打包/安装/展开/建成,待制作
+ART-F02,1,加工设施,Codex美术,idle/work/offline/maintenance,待制作
+ART-M01,1,共享基础材质,单一美术写者,来源/参数/可复用材质,待制作
+ART-U02,2,筑垒,Codex美术,工程/维护工具与状态,首批通过后
+ART-U03,2,望山,Codex美术,传感器/扫描/运动,首批通过后
+ART-F03,2,仓储,Codex美术,固定地基/进出料区,首批通过后
+ART-F04,2,充电站,Codex美术,泊位/接口/状态,首批通过后
+ART-F05,2,维修站,Codex美术,拖入/工作区/状态,首批通过后
+ART-F06,2,着陆器,Codex美术,支脚/卸货区,首批通过后
+ART-P01,2,货箱与回收附件,Codex美术,仅已核定能力,首批通过后
