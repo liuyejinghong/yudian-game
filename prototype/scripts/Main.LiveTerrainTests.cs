@@ -26,7 +26,7 @@ public partial class Main
             if (hit.Count == 0) continue;
             float oldRay = hit["position"].AsVector3().Y;
             if (Math.Abs(oldRay - s.HeightsM[i]) <= .0001) continue;
-            GD.Print($"MAIN_GROUND_LONG_RAY_ERROR index={i} expected={s.HeightsM[i]:R} long={oldRay:R} bounded={GroundHeight(x, z):R}");
+            GD.Print($"MAIN_GROUND_LONG_RAY_PRECISION index={i} expected={s.HeightsM[i]:R} long={oldRay:R} bounded={GroundHeight(x, z):R}");
             break;
         }
     }
