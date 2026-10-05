@@ -11,9 +11,10 @@ namespace Yudian.Terrain;
 
 /// <summary>
 /// main-ground-r1 GLM包B实际引擎测试（只headless）。_Ready 跑身份核对与输入验证/一次性
-/// 初始化纯逻辑用例，并搭静态box世界：平面、20°可走坡、50°陡坡、暂停区、微小航点区；
-/// _PhysicsProcess 按帧推进五个真实 MoveAndSlide 巡逻场景，各自带deadline帧超时，
-/// 超时按失败计。逐条打印 PASS/FAIL，全过 SUMMARY 后退出0，任一失败退出1。
+/// 初始化纯逻辑用例，并搭静态box世界：平面、20°可走坡、50°陡坡、暂停区（含空中已暂停）、
+/// 微小航点区；_PhysicsProcess 按帧推进六个真实 MoveAndSlide 巡逻场景，各自带deadline帧超时，
+/// 超时按失败计。逐条打印 PASS/FAIL（Console.WriteLine 走 stdout，不在 --log-file 里，
+/// 验收须捕获完整 stdout/stderr），全过 SUMMARY 后退出0，任一失败退出1。
 /// 所有地面判定来自原生物理，不手动模拟高度、不直接调用C#运动函数冒充 MoveAndSlide。
 /// </summary>
 public partial class GroundPatrolTests : Node3D
@@ -368,6 +369,11 @@ public partial class GroundPatrolTests : Node3D
         GroundPatrol pauseBot = SpawnRobot(new Vector3(198, 0.5f, 0),
             new[] { new Vector3(200, 0, 0), new Vector3(206, 0, 0) }, 2f);
         _scenarios.Add(new PauseScenario(pauseBot));
+        // 空中已暂停：同一暂停区另一XZ位置（z=4），首物理帧前就Paused，验证真实重力落地。
+        GroundPatrol airPauseBot = SpawnRobot(new Vector3(202, 2, 4),
+            new[] { new Vector3(201, 0, 4), new Vector3(203, 0, 4) }, 2f);
+        airPauseBot.Paused = true;
+        _scenarios.Add(new AirPauseScenario(airPauseBot));
 
         // 微小航点差区（1mm XZ，合法相邻差）。
         AddChild(FloorBox(new Vector3(8, 1, 8), new Vector3(300, -0.5f, 0)));
@@ -500,7 +506,7 @@ public partial class GroundPatrolTests : Node3D
         }
     }
 
-    /// <summary>20°可走坡：上坡到顶并折返，全程贴地不滑落。</summary>
+    /// <summary>20°可走坡：上坡到顶、真实下坡折返回底端并贴地，全程不滑落。</summary>
     private sealed class RampPatrolScenario : Scenario
     {
         private static readonly Vector3 Bottom = new(38.5f, 0, 0);
@@ -512,13 +518,13 @@ public partial class GroundPatrolTests : Node3D
         private float _maxY;
 
         public RampPatrolScenario(GroundPatrol robot)
-            : base("walkable 20 deg slope: climbs to top and returns, stays grounded", 900)
+            : base("walkable 20 deg slope: climbs to top, really descends back to bottom, grounded", 900)
         {
             _robot = robot;
         }
 
         public override string Describe() =>
-            $"pos {_robot.GlobalPosition} idx {_robot.TargetIndex} maxY {_maxY:F2} travelled {_robot.TravelledM:F2}";
+            $"pos {_robot.GlobalPosition} idx {_robot.TargetIndex} advances {_advances} maxY {_maxY:F2} travelled {_robot.TravelledM:F2}";
 
         public override void Step(int frame, float delta)
         {
@@ -540,9 +546,17 @@ public partial class GroundPatrolTests : Node3D
                 _advances++;
                 _lastIndex = _robot.TargetIndex;
             }
-            if (_advances >= 2 && _local > LandingFrames)
+            // advances: 1=到底端, 2=到顶端, 3=真实下坡再次回到低端；只到顶不算覆盖折返。
+            if (_advances >= 3 && _local > LandingFrames)
             {
                 Expect(_maxY >= 2.6f, $"never climbed the slope, maxY {_maxY:F2} (top ~2.94)");
+                // Bottom在20°坡面上，表面高≈1.4+(38.5-41)·tan20°=0.49m；到点是XZ语义(0.25m)，
+                // 原生下坡允许snap(0.5m)内滞后，贴地=落在坡面高度±snap带内且持续IsOnFloor。
+                const float bottomSurfaceY = 0.491f;
+                Expect(MathF.Abs(pos.Y - bottomSurfaceY) <= 0.55f,
+                    $"back at bottom waypoint but Y {pos.Y:F3} not on ramp surface"
+                    + $" ({bottomSurfaceY} ± snap 0.5), pos {pos}");
+                Expect(_robot.IsOnFloor(), $"not grounded after descending, pos {pos}");
                 Done($"local frames {_local}, pos {pos}, maxY {_maxY:F2}, travelled {_robot.TravelledM:F2}m");
             }
         }
@@ -654,6 +668,52 @@ public partial class GroundPatrolTests : Node3D
                         Done($"paused {_pausedFrames} frames at {_snapshot}, resumed to {pos}, "
                             + $"travelled {_robot.TravelledM:F2}m");
                     break;
+            }
+        }
+    }
+
+    /// <summary>空中已Paused：真实重力下落并落地，XZ全程冻结；证明Paused路径不依赖IsOnFloor缓存。</summary>
+    private sealed class AirPauseScenario : Scenario
+    {
+        private readonly GroundPatrol _robot;
+        private readonly Vector3 _spawn;
+        private int _groundedFrames;
+        private bool _wasAirborne;
+        private float _minY;
+
+        public AirPauseScenario(GroundPatrol robot)
+            : base("paused airborne: real gravity landing with XZ frozen (no IsOnFloor cache shortcut)", 420)
+        {
+            _robot = robot;
+            _spawn = robot.GlobalPosition;
+            _minY = _spawn.Y;
+        }
+
+        public override string Describe() =>
+            $"pos {_robot.GlobalPosition} paused {_robot.Paused} minY {_minY:F2} groundedFrames {_groundedFrames}";
+
+        public override void Step(int frame, float delta)
+        {
+            Expect(_robot.Paused, "Paused flag lost while airborne");
+            Vector3 pos = _robot.GlobalPosition;
+            Expect(MathF.Abs(pos.X - _spawn.X) < 1e-5f && MathF.Abs(pos.Z - _spawn.Z) < 1e-5f,
+                $"XZ moved while paused airborne: {pos} vs spawn {_spawn}");
+            if (!_robot.IsOnFloor())
+            {
+                _wasAirborne = true;
+                _minY = MathF.Min(_minY, pos.Y);
+            }
+            else
+            {
+                Expect(_wasAirborne, "reported grounded before ever being airborne (no real fall happened)");
+                _groundedFrames++;
+            }
+            if (_groundedFrames >= 60)
+            {
+                Expect(_minY < _spawn.Y - 1f,
+                    $"never really fell under gravity: minY {_minY:F2} vs spawn Y {_spawn.Y:F2}");
+                Expect(MathF.Abs(pos.Y) <= 0.05f, $"landed Y {pos.Y:F3} not at floor level, pos {pos}");
+                Done($"fell from {_spawn.Y:F2} to {pos.Y:F3} while paused, stable for {_groundedFrames} frames");
             }
         }
     }

@@ -16,13 +16,17 @@ DOTNET_ROOT="$HOME/.dotnet" "$HOME/.dotnet/dotnet" restore prototype/Yudian.cspr
 DOTNET_ROOT="$HOME/.dotnet" "$HOME/.dotnet/dotnet" build prototype/Yudian.csproj \
   -c Debug --no-restore -m:1 -p:UseSharedCompilation=false -nodeReuse:false
 DOTNET_ROOT="$HOME/.dotnet" "$PROJECT_ROOT/tools-bin/Godot.app/Contents/MacOS/Godot" --headless \
-  --path prototype --log-file /private/tmp/ground-patrol-worker-20261005/ground-patrol-native.log \
-  res://scenes/ground-patrol-tests/GroundPatrolTests.tscn
+  --path prototype \
+  res://scenes/ground-patrol-tests/GroundPatrolTests.tscn \
+  > /private/tmp/ground-patrol-worker-20261005/ground-patrol-native.log 2>&1
+echo "exit=$?"
 ```
 
-退出码 0 = 全部检查通过；非 0 = 存在失败（逐行打印 PASS/FAIL，另有 SUMMARY 行）。测试内部
-每个物理场景带 deadline 帧超时（外加全局帧上限），超时按失败计；调用方应另设进程看门狗，
-挂起按非0处理。失败日志保留不覆盖。
+退出码 0 = 全部检查通过；非 0 = 存在失败（逐行打印 PASS/FAIL，另有 SUMMARY 行）。注意
+PASS/FAIL/SUMMARY 经 Console.WriteLine 走 **stdout，不进 Godot `--log-file`**（那里只有引擎
+自身日志），验收必须捕获完整 stdout+stderr 并保留退出码，不得用管道截断掩盖 exit。测试内部
+每个物理场景带 deadline 帧超时（外加全局帧上限），超时按失败计；调用方应另设进程看门狗
+（如 subprocess timeout 240s），挂起按非0处理。失败日志保留不覆盖。
 
 ## 启动身份核对
 
@@ -44,16 +48,19 @@ Assembly.FullName 与刚构建 `prototype/.godot/mono/temp/bin/Debug/Yudian.dll`
 - 拒绝矩阵：null、少于2点、非有限坐标、|坐标|>10000、相邻XZ相同（含末点→首点）、
   speed 非 (0,20]（0、负、NaN、∞、>20）；speed=20 边界接受。
 
-真实 MoveAndSlide（_PhysicsProcess，静态box世界，五个互不重叠XZ区域）：
+真实 MoveAndSlide（_PhysicsProcess，静态box世界，六个互不重叠XZ区域）：
 
 - 平面闭环：落地贴地（脚底Y≈0、持续 IsOnFloor）、逐tick实际XZ位移 ≤ speed·dt
   （min(speed, distance/delta) 不越步长）、到点XZ容差0.25m内才换点、TravelledM 与实际路程
   一致、开放平地 Blocked 保持 false；初始化后篡改外部航点数组仍走向原目标（防御复制）。
-- 20°可走坡（<35°）：上坡到顶并折返，全程贴地、不滑落、不穿入，到点判定同上。
+- 20°可走坡（<35°）：上坡到顶后**真实下坡折返回低端**（第二次回到低端航点、Y 回到坡底
+  高度，非仅一次到顶），全程贴地、不滑落、不穿入，到点判定同上。
 - 50°陡坡（>35° FloorMaxAngle，墙语义）：接近后被挡，IsOnWall/Blocked 置位，X 不越过
   接触点、不爬坡不穿过，Y 保持地面高度，停滞120帧后判收。
 - Paused：暂停帧内 XZ/TravelledM/TargetIndex 冻结，仍 IsOnFloor 且 Y 稳定（重力/地面仍
   处理）；恢复后继续前进 ≥1.5m。
+- 空中已Paused（防IsOnFloor缓存假通过）：空中暂停的机器人经真实重力下落并落地（下落量
+  ≥1m、落地Y≈0、稳定≥60帧），XZ全程冻结——证明Paused分支不靠缓存的地面状态直接跳过。
 - 微小航点差（1mm XZ，合法相邻差）：目标持续轮换 ≥20 次无停摆，位置/速度/TravelledM
   全程有限（无 NaN）。
 
