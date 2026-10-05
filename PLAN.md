@@ -242,3 +242,16 @@ UI收尾重计划：真实游戏关窗exit0后，Cua getAXState自动又开无DO
 本批运行源e2dbef1：最终DLL6e4e2644…680244/MVID121f2816…a780；21参数、10运动、七步Main/11兼容及Metal真实GUI通过。review的再次恢复故障原因、真实下坡/空中暂停与坡面oracle均修正。首次长射线精度差0.000122m，缩短到当前高度范围后仍按1e-4容差；基线开发benchmark空Location已复现并按文件MVID核对修复。主控复验脚本重复输出路径一次被Recorder正确拒绝，改新目录后通过，旧轮次保留。
 
 PR33已合并：head8e1ddde44215911fc0652e652da9b84f45396c06，mergef041e3e74f207df2e9e2bf51b31eca3e15832d1c；主工作树干净快进，并重新编译/七步Main窄烟测通过，防旧ignored DLL启动。总索引同步，完成PR附件移除；两GLM会话结束，原工作树/失败日志保留。
+
+
+## level-job-r1 · 单机器人整平任务闭环
+
+授权：2026-10-05所有者“好，那么我们就继续推进吧”；基线dd47fe9。architect已前置审查：单目标占用不能只靠Paused；实际Status/AppliedVersion与后续帧核验才完成；冻结base/连续施工/取消保留。
+
+1. [x] 追踪真实Main/地形提交/机器人与产品要求，冻结最小合同；证明：level-job-r1及前置architect。
+2. [ ] GLM两独占包并行执行单目标覆盖与纯WorkMeter；证明：真实模型回执、限定diff、完整native/console日志。
+3. [ ] 主控接入领取→到场→连续施工→提交→后续帧完成；证明：取消、重复、版本/占用拒绝、故障恢复真实Main用例。
+4. [ ] 独立reviewer、必要回归与Metal GUI；证明：实际走到现场/作业进度/地形改变/完成/真实关窗。
+5. [ ] 证据/TODO限定接受，精确head PR按授权合并并同步main；证明：实际merge与干净主工作树。
+
+归属：GLM-A仅GroundPatrol与新增order native测试；GLM-B仅Construction/WorkMeter与独立console；主控Main与跟踪。无经济/电耗/保存/完整寻路扩签；素材继续ART-LINK，不等待美术开测。
