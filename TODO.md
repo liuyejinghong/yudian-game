@@ -45,3 +45,5 @@
 本批证据工具：PERF-01-COMPARE与LIFE-01-AUDIT均限定ACCEPTED，原交付与返工分别保留。[PERF复验](docs/engineering/reports/2026-10-04-perf-compare-verification.md) / [LIFE复验](docs/engineering/reports/2026-10-04-lifecycle-audit-verification.md)。LIFE真实GUI/默认目录重开现已限定接受；PERF受控条件/原因/稳定预算继续未完成。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。
 
 本批T3d-MEM与GLM纯判定子件限定接受，已合并[PR #30](https://github.com/liuyejinghong/yudian-game/pull/30)：[内存提交复验](docs/engineering/reports/2026-10-04-terrain-commit-verification.md)。2026-10-05主控自行完成LIFE真实关窗与同包重开并限定接受，六轮PERF完成但后台焦点失守，受控项REWORK、原因与稳定预算未完成。[实机复验](docs/engineering/reports/2026-10-05-runtime-verification.md)。工程负责游戏测试，美术负责建模，不以美术回执为启动前提。
+
+2026-10-05旧PR清理完成：[#1](https://github.com/liuyejinghong/yudian-game/pull/1)、[#2](https://github.com/liuyejinghong/yudian-game/pull/2)、[#3](https://github.com/liuyejinghong/yudian-game/pull/3)、[#13](https://github.com/liuyejinghong/yudian-game/pull/13)、[#14](https://github.com/liuyejinghong/yudian-game/pull/14)已全部合并，查询时open队列为0。[限定复验](docs/engineering/reports/2026-10-05-pr-cleanup-verification.md)：历史说明/现役入口已同步，参考图仅归档，游戏代码与生产资产未改；现行PERF/T3/正式美术留项不扩签。
