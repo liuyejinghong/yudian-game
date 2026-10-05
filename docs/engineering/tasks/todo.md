@@ -32,7 +32,9 @@
 | T3d-COMMIT-POLICY | P1 | ACCEPTED | base6554495；Bridge sess_7697b4c358/task_76fc5bf2a2；原bf6da0a，原生GLM-5.3-Flash已确认，主控集成验证/reviewer完成 | GLM-Eng-A | 37例×2文化=74检查；仅纯判定；费用未知，net8仅编译、net10执行 | [复验](../reports/2026-10-04-terrain-commit-verification.md) / [任务包](../packages/T3d-COMMIT-POLICY.md) |
 | LIFE-01-GUI | P0 | ACCEPTED | 主控自行启动固定包，Cua真实关闭自有窗口 | Codex | 默认user://三轮审计PASS、exit0/130/0、重开新目录；不签游戏保存 | [实机复验](../reports/2026-10-05-runtime-verification.md) / [用例](../contracts/runtime-controlled-r1.md) |
 | PERF-01-CONTROLLED | P0 | REWORK | 六轮完成，后台Finder焦点漂移；需工程补固定后台/负载条件，不等待美术回执 | Codex | 原始六轮与两组复算保留；仅接受观察，严格受控NOT_ACCEPTED；温度未测、归因/稳定预算未完成 | [实机复验](../reports/2026-10-05-runtime-verification.md) / [用例](../contracts/runtime-controlled-r1.md) |
-| T3d | P1 | DRAFT | T3d-MEM内存提交已接受；正式渲染/碰撞/通行/保存同步最小范围尚未冻结 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
+| T3d-PROJECTION-RESOURCES | P1 | IN_PROGRESS | 冻结905458c；Bridge sess_dd53b2aefe，GLM-5.3-Flash确认 | GLM-Eng-A | 单对native资源束、创建失败清理与headless检查；主控负责最终验收 | [合同](../contracts/terrain-view-r1.md) |
+| T3d-VIEW | P1 | IN_PROGRESS | 单区域Stage，内存权威/显示/静态物理版本分别跟踪；准备与提交后故障边界冻结 | Codex | 实际权威场景、后续帧射线、重复请求与恢复；旧Main机器人/导航/save不在本票 | [合同](../contracts/terrain-view-r1.md) |
+| T3d | P1 | DRAFT | T3d-MEM已接受，T3d-VIEW执行中；正式Main接入、通行/保存未完成 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3e | P1 | BLOCKED | PERF-01可用对照；T3d；ART-T01/T02仅为视觉对照需接口与样件 | GLM-Eng-B采集工具/复算；Codex实机/选择 | 两候选同条件更新范围/主线程峰值/导航耗时/保存增长/视觉成本对比；所有者签视觉，主控选技术 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T4a | P2 | DRAFT | 现役产品/共同场景与权限案例，明确本轮候选输入范围 | Codex | 冻结世界事实/行动/权限输入；将原T4大票拆成领域基线、校验器、候选适配与统计小票；真实完成与拦截分计，模型非权威 | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |
 | T4-HARNESS | P2 | BLOCKED | T4a；领域计划/错误分类/模拟提供者接口 | GLM-Eng-A / GLM-Eng-B分目录 | 纯harness/适配/测试优先外包；主控握权限与提交；不自动下载权重或开付费API | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |
