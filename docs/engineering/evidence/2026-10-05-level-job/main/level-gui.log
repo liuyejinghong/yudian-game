@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+MAIN_GROUND_IDENTITY build_sha256=fc69af450ac9038f992855e268c4d667602137660d1b93e77fff4538036ad445 loaded_mvid=1cdea8ec-49c4-4eea-9983-3839cc0317bc CLR=10.0.12 display=macOS
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+LEVEL_JOB_START id=level-1 worker=Robot_Zhulei_4 base=0 station=(7.775, 1.0895829, -10) distance=1.997
+LEVEL_JOB_ARRIVED id=level-1 seconds=1.217 position=(7.5271463, 1.0386378, -9.981728)
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+LEVEL_JOB_COMMIT id=level-1 status=Committed applied=1 verified=none
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=24752 query_frame=24753 rays=14
+LEVEL_JOB_END id=level-1 stage=Completed base=0 applied=1 current=1 message=整平已提交，物理验证完成
+LEVEL_JOB_END id=level-2 stage=Completed base=1 applied=none current=1 message=无需改造；地形未增加版本
+LEVEL_JOB_END id=level-3 stage=Completed base=1 applied=none current=1 message=无需改造；地形未增加版本

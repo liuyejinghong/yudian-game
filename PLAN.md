@@ -249,9 +249,11 @@ PR33已合并：head8e1ddde44215911fc0652e652da9b84f45396c06，mergef041e3e74f20
 授权：2026-10-05所有者“好，那么我们就继续推进吧”；基线dd47fe9。architect已前置审查：单目标占用不能只靠Paused；实际Status/AppliedVersion与后续帧核验才完成；冻结base/连续施工/取消保留。
 
 1. [x] 追踪真实Main/地形提交/机器人与产品要求，冻结最小合同；证明：level-job-r1及前置architect。
-2. [ ] GLM两独占包并行执行单目标覆盖与纯WorkMeter；证明：真实模型回执、限定diff、完整native/console日志。
-3. [ ] 主控接入领取→到场→连续施工→提交→后续帧完成；证明：取消、重复、版本/占用拒绝、故障恢复真实Main用例。
-4. [ ] 独立reviewer、必要回归与Metal GUI；证明：实际走到现场/作业进度/地形改变/完成/真实关窗。
+2. [x] GLM两独占包并行执行单目标覆盖与纯WorkMeter；证明：真实模型回执、限定diff、完整native/console日志。
+3. [x] 主控接入领取→到场→连续施工→提交→后续帧完成；证明：取消、重复、版本/占用拒绝、故障恢复真实Main用例。
+4. [x] 独立reviewer、必要回归与Metal GUI；证明：实际走到现场/作业进度/地形改变/完成/真实关窗。
 5. [ ] 证据/TODO限定接受，精确head PR按授权合并并同步main；证明：实际merge与干净主工作树。
 
 归属：GLM-A仅GroundPatrol与新增order native测试；GLM-B仅Construction/WorkMeter与独立console；主控Main与跟踪。无经济/电耗/保存/完整寻路扩签；素材继续ART-LINK，不等待美术开测。
+
+LEVEL-JOB最终复验：Main15步/12贴地、GLM36/新native7/旧10与旧Main7兼容通过；Metal三轮取消/重复/进度/完成/无需改造与真实close0；最终DLL e39f6833…6cb47，源码0b1339a。独立reviewer空中同XZ漏测返工闭合，architect无实质合并阻碍，48份公开hash核对通过。GLM会话已结束，父T3d/#6未完成，待精确PR发布集成。

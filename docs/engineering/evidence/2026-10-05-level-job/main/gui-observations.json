@@ -1,0 +1,10 @@
+{
+  "method": "Cua actual UI screenshots/actions and native process logs; screenshots after actions are inline conversation observations, not exported PNGs",
+  "run_1": {"dll_sha256":"fc69af450ac9038f992855e268c4d667602137660d1b93e77fff4538036ad445","observed":"Working 41% v0 -> Completed 100% authority/bound/physics v1; double click after complete produced explicit NoChange v1; zero-progress wording issue found","close_exit":0},
+  "run_2": {"dll_sha256":"e8a4cd7436bd5f8f2a95aa6c68f8e83c13908ee87074b6d0fa3cb9e848b0d917","observed":"actual dispatch/cancel -> Cancelled 0% v0, 12 grounded; double dispatch kept level-2; travelled -> Completed 100% v1; next task explicit no-work v1; stale active notice found","close_exit":0},
+  "run_3": {"source":"0b1339a200ad3b033c2a28e0137e3ef68390f47b","dll_sha256":"e39f6833ad49c79c96b4a0ceeab4e354576de1386d804443908cc8be19b6cb47","loaded_mvid":"a044a503-c077-451f-998f-0fb888a92a5e","observed":"double dispatch kept level-1; Working 60% v0 -> Completed 100% authority/bound/physics v1; active notice cleared; 12 grounded/0 blocked","close_exit":0},
+  "final_inventory":{"Godot":false,"Yudian":false},
+  "final_process_check":"ps authorized read: no Godot/Yudian rows",
+  "limitations":"UI occupancy/fault not claimed; actual Main native test covers. Three fresh scenes are no save/load proof. Renderer Metal 4.0 Forward+ M3 Pro; no performance claim.",
+  "tool_incident":"initial cua.getState global inventory timed out and reset; direct binding to already-running Godot succeeded. Sandbox ps denied initially, authorized read succeeded. No game exception observed."
+}
