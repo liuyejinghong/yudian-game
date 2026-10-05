@@ -1,0 +1,285 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Yudian ART-I00 calibration"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "CalibrationAsset",
+      "children": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "name": "Body",
+      "mesh": 0
+    },
+    {
+      "name": "ForwardMarker",
+      "mesh": 1
+    },
+    {
+      "name": "WorkPart",
+      "mesh": 2,
+      "translation": [
+        0,
+        0.75,
+        0
+      ]
+    },
+    {
+      "name": "Socket_Cargo",
+      "translation": [
+        0,
+        0.7,
+        0.2
+      ]
+    },
+    {
+      "name": "Socket_TowFront",
+      "translation": [
+        0,
+        0.2,
+        -0.625
+      ]
+    },
+    {
+      "name": "Socket_TowRear",
+      "translation": [
+        0,
+        0.2,
+        0.625
+      ]
+    },
+    {
+      "name": "Socket_Charge",
+      "translation": [
+        0.45,
+        0.25,
+        0
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Body",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "ForwardMarker",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 3,
+            "NORMAL": 4
+          },
+          "indices": 5,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "WorkPart",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7
+          },
+          "indices": 8,
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1944,
+      "uri": "calibration.bin"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 288,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 576,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 648,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 936,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1224,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1296,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1584,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1872,
+      "byteLength": 72
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -0.45,
+        0,
+        -0.625
+      ],
+      "max": [
+        0.45,
+        0.7,
+        0.625
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -0.12,
+        0.25,
+        -1
+      ],
+      "max": [
+        0.12,
+        0.45,
+        -0.625
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -0.2,
+        0,
+        -0.2
+      ],
+      "max": [
+        0.2,
+        0.12,
+        0.2
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    }
+  ],
+  "materials": [
+    {
+      "name": "CalibrationShell",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8,
+          0.82,
+          0.85,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      }
+    },
+    {
+      "name": "ForwardAndWorkMarker",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          0.55,
+          0.1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      }
+    }
+  ]
+}

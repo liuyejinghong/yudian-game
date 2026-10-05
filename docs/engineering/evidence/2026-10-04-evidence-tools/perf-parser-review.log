@@ -1,0 +1,11 @@
+test_oversized_int_literal_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_oversized_int_literal_rejected_without_traceback)
+5000 位整数字面量触发 json.loads 的 digit 上限 ValueError：exit2、点名文件、无 traceback。 ... ok
+test_oversized_csv_field_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_oversized_csv_field_rejected_without_traceback)
+140000 字符 frame_ms 触发 csv 字段上限 csv.Error：exit2、点名文件、无 traceback。 ... ok
+test_lone_surrogate_report_round_trips (test_compare.CompareSchemaDepthTests.test_lone_surrogate_report_round_trips)
+合法 JSON 转义孤立代理不得令写报告崩溃；报告可完整解析回原字符串。 ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.189s
+
+OK

@@ -1,0 +1,162 @@
+{
+  "checked_at_utc": "2026-10-04T10:30:08.990287+00:00",
+  "contract_commit": "8c3e1178557c6c0f9e6aa9e34345a482435bed7f",
+  "checks": [
+    {
+      "suite": "stage",
+      "step": "restore/build/run",
+      "command": "$HOME/.dotnet/dotnet restore tools/terrain-stage-tests/Tests.csproj --source /private/tmp/yudian-mesh-empty-source -p:NuGetAudit=false && $HOME/.dotnet/dotnet build tools/terrain-stage-tests/Tests.csproj -c Release --no-restore -m:1 -p:UseSharedCompilation=false -nodeReuse:false && $HOME/.dotnet/dotnet run --project tools/terrain-stage-tests/Tests.csproj -c Release -f net10.0 --no-build --no-restore",
+      "exit_code": 0,
+      "log": "stage-build-run.txt",
+      "note": "build/run output captured after restore completed; restore exit proven by && chain, no restore stdout in this log"
+    },
+    {
+      "suite": "heightfield",
+      "step": "restore",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "restore",
+        "tools/terrain-heightfield-tests/Tests.csproj",
+        "--source",
+        "/private/tmp/yudian-mesh-empty-source",
+        "-p:NuGetAudit=false"
+      ],
+      "exit_code": 0,
+      "log": "heightfield-restore.txt"
+    },
+    {
+      "suite": "heightfield",
+      "step": "build",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "build",
+        "tools/terrain-heightfield-tests/Tests.csproj",
+        "-c",
+        "Release",
+        "--no-restore",
+        "-m:1",
+        "-p:UseSharedCompilation=false",
+        "-nodeReuse:false"
+      ],
+      "exit_code": 0,
+      "log": "heightfield-build.txt"
+    },
+    {
+      "suite": "heightfield",
+      "step": "run",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "run",
+        "--project",
+        "tools/terrain-heightfield-tests/Tests.csproj",
+        "-c",
+        "Release",
+        "-f",
+        "net10.0",
+        "--no-build",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "heightfield-run.txt"
+    },
+    {
+      "suite": "independent",
+      "step": "restore",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "restore",
+        "tools/terrain-mesh-acceptance/Independent.csproj",
+        "--source",
+        "/private/tmp/yudian-mesh-empty-source",
+        "-p:NuGetAudit=false"
+      ],
+      "exit_code": 0,
+      "log": "independent-restore.txt"
+    },
+    {
+      "suite": "independent",
+      "step": "build",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "build",
+        "tools/terrain-mesh-acceptance/Independent.csproj",
+        "-c",
+        "Release",
+        "--no-restore",
+        "-m:1",
+        "-p:UseSharedCompilation=false",
+        "-nodeReuse:false"
+      ],
+      "exit_code": 0,
+      "log": "independent-build.txt"
+    },
+    {
+      "suite": "independent",
+      "step": "run",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "run",
+        "--project",
+        "tools/terrain-mesh-acceptance/Independent.csproj",
+        "-c",
+        "Release",
+        "-f",
+        "net10.0",
+        "--no-build",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "independent-run.txt"
+    },
+    {
+      "suite": "prototype",
+      "step": "restore",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "restore",
+        "prototype/Yudian.csproj",
+        "--source",
+        "/private/tmp/yudian-mesh-empty-source",
+        "-p:NuGetAudit=false"
+      ],
+      "exit_code": 0,
+      "log": "prototype-restore.txt"
+    },
+    {
+      "suite": "prototype",
+      "step": "build",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "build",
+        "prototype/Yudian.csproj",
+        "-c",
+        "Release",
+        "--no-restore",
+        "-m:1",
+        "-p:UseSharedCompilation=false",
+        "-nodeReuse:false"
+      ],
+      "exit_code": 0,
+      "log": "prototype-build.txt"
+    }
+  ],
+  "source_sha256": {
+    "prototype/scripts/TerrainGeometry/TerrainMesh.cs": "9ce71b40302406d81f5f501eade86cc3dc1dc8372a696b4d62795014955ea41d",
+    "prototype/scripts/TerrainGeometry/TerrainVertex.cs": "323ff1b55d39b5de016e4f0ad296868ce061549ad5f47d943ae35eba77ccefe4",
+    "prototype/scripts/TerrainCandidates/Heightfield/HeightfieldMeshBuilder.cs": "d3229ca6181b76f8c38c7540b32e935b7c0792dc817e9932487cf330aa8bf921",
+    "prototype/scripts/TerrainCandidates/StageGrid/StageMeshBuilder.cs": "0c067613bbc2a2f4c55894a4bcdf21acfd86f86bfacaaacda3bdb45ef5248841"
+  },
+  "scope": "pure CPU mesh generation only",
+  "net8_execution": "NOT_RUN",
+  "net10_execution": "PASS",
+  "game_graphics_collision_navigation_save_update_performance": "NOT_RUN",
+  "stage_worker_commit": "82fa292ab9a5d744497f088df403a52c5c1a467f",
+  "heightfield_worker_commit": "11bb78a5a1a647435150e577e44b2a67f1c9d6d9",
+  "integration_source_commit": "bb8e240",
+  "stage_checks": 66,
+  "heightfield_checks": 82,
+  "primary_independent_checks": 89,
+  "base_commit": "3999d302b4066d92ec7582eb8a62a400d9b91d9d",
+  "existing_tracked_files_unchanged_excluding_authorized_plan_todo": 211,
+  "reviewer_net10_independent_checks": 89
+}

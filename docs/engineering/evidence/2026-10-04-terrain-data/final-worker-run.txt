@@ -1,0 +1,391 @@
+== culture: '' / .NET 10.0.12 ==
+PASS gold A: parse and all nine field values
+PASS gold A: contract coordinate probes (0,2) and (1,0)
+PASS gold A: GetHeight row-major over all cells
+PASS gold A: serialize is exactly the contract example string
+PASS gold A: serialize→parse round trip keeps all values
+PASS gold B: snapshot parses with 3×4 layout
+PASS gold B: patch parses, base kept, only interior (1,1)/(1,2) changed
+PASS gold B: serialize is exactly the contract example shape
+PASS gold B: patch serialize→parse round trip
+PASS gold B: ValidateAgainst accepts the matching current
+PASS GetHeight row -1 rejected with 'row'
+PASS GetHeight column -1 rejected with 'column'
+PASS GetHeight row == Rows rejected
+PASS GetHeight column == Columns rejected
+PASS GetHeight (-1,-1) rejected
+PASS GetHeight boundary cells (0,0) and (2,3) valid
+PASS gold B perimeter cell (0,0) change rejected
+PASS gold B perimeter cell (0,1) change rejected
+PASS gold B perimeter cell (0,2) change rejected
+PASS gold B perimeter cell (0,3) change rejected
+PASS gold B perimeter cell (1,0) change rejected
+PASS gold B perimeter cell (1,3) change rejected
+PASS gold B perimeter cell (2,0) change rejected
+PASS gold B perimeter cell (2,1) change rejected
+PASS gold B perimeter cell (2,2) change rejected
+PASS gold B perimeter cell (2,3) change rejected
+PASS gold B interior-only candidate with other values accepted
+PASS gold A 2×3 all-perimeter cell 0 change rejected
+PASS gold A 2×3 all-perimeter cell 1 change rejected
+PASS gold A 2×3 all-perimeter cell 2 change rejected
+PASS gold A 2×3 all-perimeter cell 3 change rejected
+PASS gold A 2×3 all-perimeter cell 4 change rejected
+PASS gold A 2×3 all-perimeter cell 5 change rejected
+PASS gold A unchanged candidate accepted
+PASS all-zero perimeter unchanged candidate accepted
+PASS all-zero perimeter changed candidate rejected
+PASS perimeter -0 equals +0 and decimal form equals integer form
+PASS ValidateAgainst(null, current) rejected
+PASS ValidateAgainst(patch, null) rejected
+PASS wrong region rejected
+PASS older version rejected
+PASS newer version rejected
+PASS same version but different content rejected
+PASS rows mismatch rejected
+PASS columns mismatch rejected
+PASS origin_x mismatch rejected
+PASS origin_z mismatch rejected
+PASS spacing mismatch rejected
+PASS failed ValidateAgainst keeps both sides untouched
+PASS snapshot HeightsM exposes no mutable collection interface
+PASS patch and base HeightsM expose no mutable collection interface
+PASS SyncRoot path is closed for snapshot/patch/base heights
+PASS heights remain indexable and enumerable via IReadOnlyList
+PASS two parses do not share the height list instance
+PASS snapshot region_id isolated high surrogate rejected with path
+PASS snapshot region_id isolated low surrogate rejected with path
+PASS patch_id isolated high surrogate rejected with path
+PASS patch_id isolated low surrogate rejected with path
+PASS nested base region_id isolated surrogate rejected with base path
+PASS snapshot field name isolated surrogate rejected as ArgumentException
+PASS nested base field name isolated surrogate rejected as ArgumentException
+PASS legal surrogate pair in region_id rejected as non-ASCII id
+PASS legal surrogate pair as field name rejected as unknown field
+PASS decode failure keeps original exception as inner
+PASS missing schema_version
+PASS missing region_id
+PASS missing version
+PASS missing origin_x_m
+PASS missing origin_z_m
+PASS missing spacing_m
+PASS missing rows
+PASS missing columns
+PASS missing heights_m
+PASS null schema_version
+PASS null region_id
+PASS null version
+PASS null origin_x_m
+PASS null spacing_m
+PASS null rows
+PASS null heights_m
+PASS string schema_version
+PASS numeric region_id
+PASS boolean version
+PASS string origin_x_m
+PASS string rows
+PASS object heights_m
+PASS string heights_m
+PASS string height item reports index path
+PASS duplicate region_id
+PASS duplicate heights_m
+PASS duplicate rows
+PASS unknown field rejected
+PASS field names are case-sensitive
+PASS region_id value is case-sensitive
+PASS patch missing patch_id
+PASS patch boolean base
+PASS patch missing heights_m
+PASS patch null patch_id
+PASS patch duplicate patch_id
+PASS patch numeric patch_id
+PASS patch unknown field
+PASS patch numeric heights_m
+PASS patch heights_m wrong length
+PASS patch uppercase patch_id rejected
+PASS patch leading dash patch_id rejected
+PASS patch_id with underscore/digits accepted
+PASS 64-char patch_id accepted
+PASS 65-char patch_id rejected
+PASS base missing field reports base.version
+PASS base unknown field reports base.patch_id
+PASS base duplicate field
+PASS base schema_version must be 1
+PASS base version no float allowed
+PASS base heights wrong length
+PASS base region_id case-sensitive
+PASS ParsePatch rejects snapshot JSON
+PASS ParseSnapshot rejects patch JSON
+PASS schema_version 1.0 rejected
+PASS schema_version 1e0 rejected
+PASS version 7.0 rejected
+PASS version 7e0 rejected
+PASS version beyond 2^53-1 rejected
+PASS version overflowing long rejected
+PASS rows 2.0 rejected
+PASS columns 3e0 rejected
+PASS version 0 accepted
+PASS version 9007199254740991 accepted
+PASS rows 1 rejected
+PASS rows 258 rejected
+PASS columns 258 rejected
+PASS rows 257 accepted
+PASS columns 257 accepted
+PASS spacing 0.0099 rejected
+PASS spacing 100.5 rejected
+PASS spacing 0 rejected
+PASS spacing -0 rejected
+PASS spacing -0.5 rejected
+PASS spacing 1e400 (infinite) rejected
+PASS spacing 0.01 accepted
+PASS spacing 100 accepted
+PASS origin_x 10000.5 rejected
+PASS origin_z -10000.5 rejected
+PASS origin_x 1e400 rejected
+PASS origins ±10000 accepted
+PASS height 1000.5 rejected
+PASS height -1000.5 rejected
+PASS height 1e400 rejected
+PASS heights ±1000 and negative interior accepted
+PASS underflowing 1e-400 height parses as zero
+PASS schema_version 0 rejected
+PASS schema_version 2 rejected
+PASS schema_version -1 rejected
+PASS empty heights for 2×2 rejected
+PASS heights short by one rejected
+PASS heights long by one rejected
+PASS 257×257 heights accepted
+PASS 257×257 minus one height rejected
+PASS json of exactly 4194304 chars accepted
+PASS json of 4194305 chars rejected
+PASS null json rejected
+PASS empty json rejected
+PASS damaged json #0 rejected
+PASS damaged json #1 rejected
+PASS damaged json #2 rejected
+PASS damaged json #3 rejected
+PASS damaged json #4 rejected
+PASS damaged json #5 rejected
+PASS damaged json #6 rejected
+PASS damaged json #7 rejected
+PASS damaged json #8 rejected
+PASS damaged json #9 rejected
+PASS damaged json #10 rejected
+PASS damaged json #11 rejected
+PASS damaged json #12 rejected
+PASS damaged json #13 rejected
+PASS damaged json #14 rejected
+PASS damaged json #15 rejected
+PASS damaged json #16 rejected
+PASS damaged json #17 rejected
+PASS damaged json #18 rejected
+PASS damaged json #19 rejected
+PASS damaged json #20 rejected
+PASS damaged json #21 rejected
+PASS damaged json #22 rejected
+PASS whitespace-only json rejected
+PASS empty patch json rejected
+PASS truncated patch rejected
+PASS tricky doubles round trip bit-exact
+PASS negative zero height serializes and round trips with sign
+PASS exponent form serializes as valid JSON and round trips
+PASS Serialize(null snapshot) rejected
+PASS Serialize(null patch) rejected
+PASS failed parse leaves no state; next parse succeeds
+PASS input json strings unchanged by failed parses
+== culture: 'de-DE' / .NET 10.0.12 ==
+PASS gold A: parse and all nine field values
+PASS gold A: contract coordinate probes (0,2) and (1,0)
+PASS gold A: GetHeight row-major over all cells
+PASS gold A: serialize is exactly the contract example string
+PASS gold A: serialize→parse round trip keeps all values
+PASS gold B: snapshot parses with 3×4 layout
+PASS gold B: patch parses, base kept, only interior (1,1)/(1,2) changed
+PASS gold B: serialize is exactly the contract example shape
+PASS gold B: patch serialize→parse round trip
+PASS gold B: ValidateAgainst accepts the matching current
+PASS GetHeight row -1 rejected with 'row'
+PASS GetHeight column -1 rejected with 'column'
+PASS GetHeight row == Rows rejected
+PASS GetHeight column == Columns rejected
+PASS GetHeight (-1,-1) rejected
+PASS GetHeight boundary cells (0,0) and (2,3) valid
+PASS gold B perimeter cell (0,0) change rejected
+PASS gold B perimeter cell (0,1) change rejected
+PASS gold B perimeter cell (0,2) change rejected
+PASS gold B perimeter cell (0,3) change rejected
+PASS gold B perimeter cell (1,0) change rejected
+PASS gold B perimeter cell (1,3) change rejected
+PASS gold B perimeter cell (2,0) change rejected
+PASS gold B perimeter cell (2,1) change rejected
+PASS gold B perimeter cell (2,2) change rejected
+PASS gold B perimeter cell (2,3) change rejected
+PASS gold B interior-only candidate with other values accepted
+PASS gold A 2×3 all-perimeter cell 0 change rejected
+PASS gold A 2×3 all-perimeter cell 1 change rejected
+PASS gold A 2×3 all-perimeter cell 2 change rejected
+PASS gold A 2×3 all-perimeter cell 3 change rejected
+PASS gold A 2×3 all-perimeter cell 4 change rejected
+PASS gold A 2×3 all-perimeter cell 5 change rejected
+PASS gold A unchanged candidate accepted
+PASS all-zero perimeter unchanged candidate accepted
+PASS all-zero perimeter changed candidate rejected
+PASS perimeter -0 equals +0 and decimal form equals integer form
+PASS ValidateAgainst(null, current) rejected
+PASS ValidateAgainst(patch, null) rejected
+PASS wrong region rejected
+PASS older version rejected
+PASS newer version rejected
+PASS same version but different content rejected
+PASS rows mismatch rejected
+PASS columns mismatch rejected
+PASS origin_x mismatch rejected
+PASS origin_z mismatch rejected
+PASS spacing mismatch rejected
+PASS failed ValidateAgainst keeps both sides untouched
+PASS snapshot HeightsM exposes no mutable collection interface
+PASS patch and base HeightsM expose no mutable collection interface
+PASS SyncRoot path is closed for snapshot/patch/base heights
+PASS heights remain indexable and enumerable via IReadOnlyList
+PASS two parses do not share the height list instance
+PASS snapshot region_id isolated high surrogate rejected with path
+PASS snapshot region_id isolated low surrogate rejected with path
+PASS patch_id isolated high surrogate rejected with path
+PASS patch_id isolated low surrogate rejected with path
+PASS nested base region_id isolated surrogate rejected with base path
+PASS snapshot field name isolated surrogate rejected as ArgumentException
+PASS nested base field name isolated surrogate rejected as ArgumentException
+PASS legal surrogate pair in region_id rejected as non-ASCII id
+PASS legal surrogate pair as field name rejected as unknown field
+PASS decode failure keeps original exception as inner
+PASS missing schema_version
+PASS missing region_id
+PASS missing version
+PASS missing origin_x_m
+PASS missing origin_z_m
+PASS missing spacing_m
+PASS missing rows
+PASS missing columns
+PASS missing heights_m
+PASS null schema_version
+PASS null region_id
+PASS null version
+PASS null origin_x_m
+PASS null spacing_m
+PASS null rows
+PASS null heights_m
+PASS string schema_version
+PASS numeric region_id
+PASS boolean version
+PASS string origin_x_m
+PASS string rows
+PASS object heights_m
+PASS string heights_m
+PASS string height item reports index path
+PASS duplicate region_id
+PASS duplicate heights_m
+PASS duplicate rows
+PASS unknown field rejected
+PASS field names are case-sensitive
+PASS region_id value is case-sensitive
+PASS patch missing patch_id
+PASS patch boolean base
+PASS patch missing heights_m
+PASS patch null patch_id
+PASS patch duplicate patch_id
+PASS patch numeric patch_id
+PASS patch unknown field
+PASS patch numeric heights_m
+PASS patch heights_m wrong length
+PASS patch uppercase patch_id rejected
+PASS patch leading dash patch_id rejected
+PASS patch_id with underscore/digits accepted
+PASS 64-char patch_id accepted
+PASS 65-char patch_id rejected
+PASS base missing field reports base.version
+PASS base unknown field reports base.patch_id
+PASS base duplicate field
+PASS base schema_version must be 1
+PASS base version no float allowed
+PASS base heights wrong length
+PASS base region_id case-sensitive
+PASS ParsePatch rejects snapshot JSON
+PASS ParseSnapshot rejects patch JSON
+PASS schema_version 1.0 rejected
+PASS schema_version 1e0 rejected
+PASS version 7.0 rejected
+PASS version 7e0 rejected
+PASS version beyond 2^53-1 rejected
+PASS version overflowing long rejected
+PASS rows 2.0 rejected
+PASS columns 3e0 rejected
+PASS version 0 accepted
+PASS version 9007199254740991 accepted
+PASS rows 1 rejected
+PASS rows 258 rejected
+PASS columns 258 rejected
+PASS rows 257 accepted
+PASS columns 257 accepted
+PASS spacing 0.0099 rejected
+PASS spacing 100.5 rejected
+PASS spacing 0 rejected
+PASS spacing -0 rejected
+PASS spacing -0.5 rejected
+PASS spacing 1e400 (infinite) rejected
+PASS spacing 0.01 accepted
+PASS spacing 100 accepted
+PASS origin_x 10000.5 rejected
+PASS origin_z -10000.5 rejected
+PASS origin_x 1e400 rejected
+PASS origins ±10000 accepted
+PASS height 1000.5 rejected
+PASS height -1000.5 rejected
+PASS height 1e400 rejected
+PASS heights ±1000 and negative interior accepted
+PASS underflowing 1e-400 height parses as zero
+PASS schema_version 0 rejected
+PASS schema_version 2 rejected
+PASS schema_version -1 rejected
+PASS empty heights for 2×2 rejected
+PASS heights short by one rejected
+PASS heights long by one rejected
+PASS 257×257 heights accepted
+PASS 257×257 minus one height rejected
+PASS json of exactly 4194304 chars accepted
+PASS json of 4194305 chars rejected
+PASS null json rejected
+PASS empty json rejected
+PASS damaged json #0 rejected
+PASS damaged json #1 rejected
+PASS damaged json #2 rejected
+PASS damaged json #3 rejected
+PASS damaged json #4 rejected
+PASS damaged json #5 rejected
+PASS damaged json #6 rejected
+PASS damaged json #7 rejected
+PASS damaged json #8 rejected
+PASS damaged json #9 rejected
+PASS damaged json #10 rejected
+PASS damaged json #11 rejected
+PASS damaged json #12 rejected
+PASS damaged json #13 rejected
+PASS damaged json #14 rejected
+PASS damaged json #15 rejected
+PASS damaged json #16 rejected
+PASS damaged json #17 rejected
+PASS damaged json #18 rejected
+PASS damaged json #19 rejected
+PASS damaged json #20 rejected
+PASS damaged json #21 rejected
+PASS damaged json #22 rejected
+PASS whitespace-only json rejected
+PASS empty patch json rejected
+PASS truncated patch rejected
+PASS tricky doubles round trip bit-exact
+PASS negative zero height serializes and round trips with sign
+PASS exponent form serializes as valid JSON and round trips
+PASS Serialize(null snapshot) rejected
+PASS Serialize(null patch) rejected
+PASS failed parse leaves no state; next parse succeeds
+PASS input json strings unchanged by failed parses
+ALL CHECKS PASSED

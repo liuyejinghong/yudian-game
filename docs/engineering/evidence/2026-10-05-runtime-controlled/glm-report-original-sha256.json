@@ -1,0 +1,5 @@
+{
+  "source_sha256": "0bc8ba049bcbb1b7ae288c39c530f4dec58c184c2c13953d5027b56cbbf0ffa6",
+  "published": "glm-crosscheck-sanitized.txt",
+  "sanitization": "only worker local report path replaced; raw retained"
+}

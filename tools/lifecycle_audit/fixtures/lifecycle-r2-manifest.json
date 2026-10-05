@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "label": "default-1",
+      "frames_csv": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/default-1-frames.csv",
+      "summary_json": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/default-1-summary.json",
+      "exit_record": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/results.json",
+      "exit_case": "default-1"
+    },
+    {
+      "label": "default-2",
+      "frames_csv": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/default-2-frames.csv",
+      "summary_json": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/default-2-summary.json",
+      "exit_record": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/results.json",
+      "exit_case": "default-2"
+    },
+    {
+      "label": "interrupted",
+      "frames_csv": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/interrupted-frames.csv",
+      "summary_json": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/interrupted-summary.json",
+      "exit_record": "../../../docs/engineering/evidence/2026-10-04-takeover/lifecycle-r2/results.json",
+      "exit_case": "interrupted"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-05",
+  "codesign_exit": 0,
+  "codesign_result": "valid on disk; satisfies Designated Requirement",
+  "package_after": {
+    "binary": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+    "pck": "5b6eaf3bda9591450f79e26ed43ed4163379412dad76a1b459f27b8ab1c939e7"
+  },
+  "remaining_yudian_pids": [],
+  "lifecycle_audit_exit": 0,
+  "foreground_compare_exit": 0,
+  "background_compare_exit": 0,
+  "comparison_adapter_initial_failure": "Both CLI attempts rejected missing verification.app_binary_sha256; no report produced; shared collector schema mismatch corrected by derived verification with original retained; tools and input CSV/summary unchanged",
+  "claims": "runtime observations only; no temperature, profiling, save recovery or newest-main rendering claim"
+}

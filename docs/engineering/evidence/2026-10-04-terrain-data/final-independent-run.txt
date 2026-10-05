@@ -1,0 +1,40 @@
+PASS non-symmetric golden orientation
+PASS candidate is read-only, matching current, interior valid
+PASS immutable heights cannot be modified
+PASS perimeter index 1
+PASS perimeter index 9
+PASS perimeter index 4
+PASS perimeter index 7
+PASS same version but different base contents
+PASS mismatch version
+PASS mismatch region_id
+PASS mismatch origin_x_m
+PASS mismatch spacing_m
+PASS reject "version":7.0
+PASS reject "version":7e0
+PASS reject "version":9007199254740992
+PASS reject "rows":258
+PASS reject "spacing_m":1e999
+PASS reject "spacing_m":0
+PASS reject sample-a\n
+PASS reject "Columns":3
+PASS reject "heights_m":[1,2,4,8,16]
+PASS snapshot invalid Unicode ID a\uD800
+PASS snapshot invalid Unicode field name a\uD800
+PASS patch invalid Unicode ID a\uD800
+PASS base invalid Unicode ID a\uD800
+PASS base invalid Unicode field name a\uD800
+PASS snapshot invalid Unicode ID a\uDC00
+PASS snapshot invalid Unicode field name a\uDC00
+PASS patch invalid Unicode ID a\uDC00
+PASS base invalid Unicode ID a\uDC00
+PASS base invalid Unicode field name a\uDC00
+PASS duplicate field
+PASS unknown field
+PASS missing field
+PASS explicit null
+PASS too long input
+PASS index errors
+PASS culture fr-FR
+PASS culture en-US
+Independent acceptance: 39 checks passed; 0 failed.

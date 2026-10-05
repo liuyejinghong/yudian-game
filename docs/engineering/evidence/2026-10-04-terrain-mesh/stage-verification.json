@@ -1,0 +1,10 @@
+[
+  {
+    "suite": "stage",
+    "step": "restore/build/run",
+    "command": "$HOME/.dotnet/dotnet restore tools/terrain-stage-tests/Tests.csproj --source /private/tmp/yudian-mesh-empty-source -p:NuGetAudit=false && $HOME/.dotnet/dotnet build tools/terrain-stage-tests/Tests.csproj -c Release --no-restore -m:1 -p:UseSharedCompilation=false -nodeReuse:false && $HOME/.dotnet/dotnet run --project tools/terrain-stage-tests/Tests.csproj -c Release -f net10.0 --no-build --no-restore",
+    "exit_code": 0,
+    "log": "stage-build-run.txt",
+    "note": "build/run output captured after restore completed; restore exit proven by && chain, no restore stdout in this log"
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "package": "perf",
+  "source_head": "cf555026066c1e350275810111ae09bbe611915e",
+  "checks": [
+    {
+      "case": "nested-nan",
+      "exit": 2,
+      "expected_exit": 2,
+      "pass": true,
+      "stderr": "perf_compare: summary.json: field=summary.applied.scaling_3d_scale 必须为有限数值，实际 nan\n"
+    },
+    {
+      "case": "nested-wrong-type",
+      "exit": 2,
+      "expected_exit": 2,
+      "pass": true,
+      "stderr": "perf_compare: summary.json: field=summary.requested.resolution.width 必须为整数，实际 'wrong-type'\n"
+    },
+    {
+      "case": "requested-empty",
+      "exit": 2,
+      "expected_exit": 2,
+      "pass": true,
+      "stderr": "perf_compare: summary.json: field=summary.requested.resolution 缺失\n"
+    },
+    {
+      "case": "summary-list",
+      "exit": 2,
+      "expected_exit": 2,
+      "pass": true,
+      "stderr": "perf_compare: summary.json: field=summary 顶层必须是对象，实际 list\n"
+    },
+    {
+      "case": "real-three-runs",
+      "exit": 0,
+      "expected_exit": 0,
+      "pass": true,
+      "stderr": "",
+      "max_ms": [
+        1053.338,
+        73.745,
+        77.351
+      ],
+      "groups": 1
+    },
+    {
+      "case": "inputs-unchanged",
+      "pass": true,
+      "sha256": {
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-1/frames.csv": "838733cce7cae2825c5a4da96b870dce0f2289e4e5637a7516d8a786c51113ee",
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-1/summary.json": "f8552c5ba3ae414b666cc51289265f0df2fb5858e46413039ec15447fa0bb2ce",
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-1/verification.json": "0788de7ccb66b790af6eb8dcac5e2f2eb97cb2622fd26da5267cb02f10af73ff",
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-2/frames.csv": "5620b9bb98efd2a0de78ba8d41732801249d922150a4251407d8ddb5ef080abb",
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-2/summary.json": "b9126052135648c0c84895a2f4cc77b0bfd3e2e043dc2fa1fdd614b7b8f476ce",
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-2/verification.json": "b8a192f3c1a76a3db8e4ca86d26edc8ee26655de78aa136faf2bae98298b0cf0",
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-3/frames.csv": "15ed8658734c90d40bfca6a624e297f42abe06d5472eb14e264a597077b3d79a",
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-3/summary.json": "a9ae69ee54544e81e517072abf2d82bd857eb611e20da7b2e90efc0ddd72ab7d",
+        "docs/engineering/evidence/2026-10-04-takeover/metal-native/run-3/verification.json": "e55a7f72b999f5f7849d308bffe877496ae4a67922c5c33bb0383023556956f4"
+      }
+    },
+    {
+      "case": "existing-output",
+      "exit": 2,
+      "expected_exit": 2,
+      "pass": true,
+      "stderr": "perf_compare: 输出已存在，不覆盖（含悬空链接/并发创建）: existing.json\n"
+    },
+    {
+      "case": "dangling-output",
+      "exit": 2,
+      "expected_exit": 2,
+      "pass": true,
+      "stderr": "perf_compare: 输出已存在，不覆盖（含悬空链接/并发创建）: dangling.json\n"
+    },
+    {
+      "case": "concurrent-writers",
+      "results": [
+        {
+          "exit": 0,
+          "stderr": ""
+        },
+        {
+          "exit": 2,
+          "stderr": "perf_compare: 输出已存在，不覆盖（含悬空链接/并发创建）: concurrent.json\n"
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "pass": true
+}

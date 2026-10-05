@@ -1,0 +1,36 @@
+{
+  "package": "PERF-01-COMPARE",
+  "frozen_base": "1ba4aa64573bc484578c03340e304787062dd127",
+  "original_delivery": "ebfb8771f87d2f1eb5bc07fde84dc8b90e5cb772",
+  "repair_commits": [
+    "e1df119",
+    "440b686",
+    "3926518"
+  ],
+  "integration_source_head": "cf55502",
+  "session_id": "sess_ce7639b6d6",
+  "model_confirmation_task": "task_98df47d1d8",
+  "repair_tasks": [
+    "task_03d935ac1f",
+    "task_0f3d04aa4c",
+    "task_67d37f28a0"
+  ],
+  "native_model_confirmation": "GLM-5.3-Flash",
+  "observed_model": null,
+  "bridge_usage_context_used_by_turn": [
+    82329,
+    72172,
+    80385
+  ],
+  "usage_is_billing": false,
+  "cost": "unknown",
+  "native_subagents": "authorized; worker reported not used",
+  "unit_tests": 50,
+  "main_independent_cases": 9,
+  "reviewer_parser_cases": 3,
+  "source_sha256": {
+    "tools/perf_compare/README.md": "2ab8571883beb5fe0bdc9db88d021c929de56436dd72e7f7f252bf826c4f38f7",
+    "tools/perf_compare/compare.py": "7da8f37143e02fe2fb1819e1432f6bcdc1f8fa6f3541543fbfcda2287d6bccdd",
+    "tools/perf_compare/test_compare.py": "362e85a4435cf40b057c6a41e1c553b3aa7af4a8b09cdcd658449f7ed28ebebe"
+  }
+}

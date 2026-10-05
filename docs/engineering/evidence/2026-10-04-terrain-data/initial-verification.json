@@ -1,0 +1,110 @@
+{
+  "checked_at_utc": "2026-10-04T09:41:49.375559+00:00",
+  "worker_commit": "d1f7cd6307689f6ed846c1deb1e4acf70c0aaa9b",
+  "integration_commit": "4fdad1a",
+  "contract_commit": "2a37f4b02113e7e1591fb1b499ac7ecb628964ce",
+  "checks": [
+    {
+      "suite": "worker",
+      "step": "restore",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "restore",
+        "tools/terrain-data-tests/TerrainData.Tests.csproj",
+        "--source",
+        "/private/tmp/yudian-empty-nuget-source",
+        "-p:NuGetAudit=false"
+      ],
+      "exit_code": 0,
+      "log": "worker-restore.txt"
+    },
+    {
+      "suite": "worker",
+      "step": "build",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "build",
+        "tools/terrain-data-tests/TerrainData.Tests.csproj",
+        "-c",
+        "Release",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "worker-build.txt"
+    },
+    {
+      "suite": "worker",
+      "step": "run",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "run",
+        "--project",
+        "tools/terrain-data-tests/TerrainData.Tests.csproj",
+        "-c",
+        "Release",
+        "-f",
+        "net10.0",
+        "--no-build",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "worker-run.txt"
+    },
+    {
+      "suite": "independent",
+      "step": "restore",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "restore",
+        "tools/terrain-data-acceptance/Independent.csproj",
+        "--source",
+        "/private/tmp/yudian-empty-nuget-source",
+        "-p:NuGetAudit=false"
+      ],
+      "exit_code": 0,
+      "log": "independent-restore.txt"
+    },
+    {
+      "suite": "independent",
+      "step": "build",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "build",
+        "tools/terrain-data-acceptance/Independent.csproj",
+        "-c",
+        "Release",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "independent-build.txt"
+    },
+    {
+      "suite": "independent",
+      "step": "run",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "run",
+        "--project",
+        "tools/terrain-data-acceptance/Independent.csproj",
+        "-c",
+        "Release",
+        "-f",
+        "net10.0",
+        "--no-build",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "independent-run.txt"
+    }
+  ],
+  "source_sha256": {
+    "prototype/scripts/TerrainData/TerrainDataCodec.cs": "01005073ca65dbb22d12a9a0f64ca064d7bbc44a4f9cbf422caa59dd2256fffe",
+    "prototype/scripts/TerrainData/TerrainPatch.cs": "366157c5a73fe3c0fdad97b9a2d0efd08d8d84a999fb1df35aa1702222aa22cf",
+    "prototype/scripts/TerrainData/TerrainSnapshot.cs": "0cf3567e0e8835200d448097e8025207c2ae3f861c2c2910690980972c04c551"
+  },
+  "existing_files_unchanged": 130,
+  "net8_execution": "NOT_RUN",
+  "net10_execution": "PASS",
+  "game_native_graphics_performance_save_recovery": "NOT_RUN",
+  "scope": "read-only terrain data validation/serialization only"
+}

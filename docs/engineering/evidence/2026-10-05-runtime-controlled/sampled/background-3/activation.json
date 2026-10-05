@@ -1,0 +1,10 @@
+{
+  "target_pid": 655,
+  "elapsed_s": 0.3139779169578105,
+  "result": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "method": "AppleScript System Events set frontmost by exact PID; explicitly authorized 2026-10-05"
+}

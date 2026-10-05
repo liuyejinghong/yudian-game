@@ -1,0 +1,23 @@
+{
+  "session_id": "sess_97ec371908",
+  "task_id": "task_f97199c402",
+  "agent": "zcode",
+  "status": "completed",
+  "started_at": "2026-10-05T02:11:37.506505+00:00",
+  "finished_at": "2026-10-05T02:20:01.642592+00:00",
+  "elapsed_sec": 504,
+  "native_model_confirmation": "✓ model = GLM-5.3-Flash",
+  "observed_model": null,
+  "bridge_usage": {
+    "used": 81074,
+    "size": 1000000,
+    "sessionUpdate": "usage_update"
+  },
+  "billed_tokens": "UNKNOWN",
+  "cost": "UNKNOWN",
+  "files_changed_snapshot_count": 85,
+  "files_changed_scope": "project-folder concurrent snapshot; not worker attribution",
+  "tool_calls_reviewed": 22,
+  "only_worker_write": "local report outside repository",
+  "acceptance": "statistics and hash crosscheck only; causal inference rejected by coordinator"
+}

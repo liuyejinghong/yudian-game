@@ -1,0 +1,64 @@
+test_identity_difference_splits_groups (test_compare.CompareGroupingTests.test_identity_difference_splits_groups) ... ok
+test_repeated_runs_flags_accumulate (test_compare.CompareGroupingTests.test_repeated_runs_flags_accumulate)
+重复 --runs 不得静默覆盖，必须累加。 ... ok
+test_same_identity_same_group (test_compare.CompareGroupingTests.test_same_identity_same_group) ... ok
+test_concurrent_writers_exactly_one_success (test_compare.CompareOutputExclusivityTests.test_concurrent_writers_exactly_one_success) ... ok
+test_dangling_symlink_output_rejected_and_untouched (test_compare.CompareOutputExclusivityTests.test_dangling_symlink_output_rejected_and_untouched) ... ok
+test_symlink_to_existing_file_rejected_and_target_untouched (test_compare.CompareOutputExclusivityTests.test_symlink_to_existing_file_rejected_and_target_untouched) ... ok
+test_inputs_unchanged_after_run (test_compare.ComparePositiveTests.test_inputs_unchanged_after_run) ... ok
+test_known_nearest_rank_small_sample (test_compare.ComparePositiveTests.test_known_nearest_rank_small_sample)
+人工已知 nearest-rank 小样：分组指标必须等于手算值。 ... ok
+test_output_overwrite_rejected_and_file_untouched (test_compare.ComparePositiveTests.test_output_overwrite_rejected_and_file_untouched) ... ok
+test_report_has_no_absolute_paths (test_compare.ComparePositiveTests.test_report_has_no_absolute_paths) ... ok
+test_report_shape_and_memory_from_verification (test_compare.ComparePositiveTests.test_report_shape_and_memory_from_verification) ... ok
+test_summary_memory_placeholder_never_used_as_process_memory (test_compare.ComparePositiveTests.test_summary_memory_placeholder_never_used_as_process_memory)
+summary.memory 缺证字符串/伪数字不得进入报告；实际内存只来自 verification。 ... ok
+test_bad_memory_type_rejected (test_compare.CompareRejectionTests.test_bad_memory_type_rejected) ... ok
+test_csv_summary_percentile_contradiction_rejected (test_compare.CompareRejectionTests.test_csv_summary_percentile_contradiction_rejected) ... ok
+test_duplicate_run_id_rejected (test_compare.CompareRejectionTests.test_duplicate_run_id_rejected) ... ok
+test_frames_summary_contradiction_rejected (test_compare.CompareRejectionTests.test_frames_summary_contradiction_rejected) ... ok
+test_graphics_ineligible_rejected (test_compare.CompareRejectionTests.test_graphics_ineligible_rejected) ... ok
+test_hash_mismatch_rejected (test_compare.CompareRejectionTests.test_hash_mismatch_rejected) ... ok
+test_headless_rejected (test_compare.CompareRejectionTests.test_headless_rejected) ... ok
+test_invalid_numeric_rejected (test_compare.CompareRejectionTests.test_invalid_numeric_rejected) ... ok
+test_missing_build_identity_rejected (test_compare.CompareRejectionTests.test_missing_build_identity_rejected) ... ok
+test_missing_field_rejected (test_compare.CompareRejectionTests.test_missing_field_rejected) ... ok
+test_missing_input_file_rejected (test_compare.CompareRejectionTests.test_missing_input_file_rejected) ... ok
+test_missing_run_dir_rejected (test_compare.CompareRejectionTests.test_missing_run_dir_rejected) ... ok
+test_non_increasing_time_s_rejected (test_compare.CompareRejectionTests.test_non_increasing_time_s_rejected) ... ok
+test_not_available_driver_rejected (test_compare.CompareRejectionTests.test_not_available_driver_rejected) ... ok
+test_truncated_csv_rejected (test_compare.CompareRejectionTests.test_truncated_csv_rejected) ... ok
+test_verification_exit_code_rejected (test_compare.CompareRejectionTests.test_verification_exit_code_rejected) ... ok
+test_applied_bool_not_accepted_as_int (test_compare.CompareSchemaDepthTests.test_applied_bool_not_accepted_as_int) ... ok
+test_applied_nan_rejected (test_compare.CompareSchemaDepthTests.test_applied_nan_rejected) ... ok
+test_bad_json_error_names_role (test_compare.CompareSchemaDepthTests.test_bad_json_error_names_role) ... ok
+test_empty_requested_rejected (test_compare.CompareSchemaDepthTests.test_empty_requested_rejected) ... ok
+test_full_object_kept_in_identity (test_compare.CompareSchemaDepthTests.test_full_object_kept_in_identity)
+额外键合法时身份仍含完整对象（不丢完整 requested）。 ... ok
+test_huge_int_percentile_rejected_without_overflow (test_compare.CompareSchemaDepthTests.test_huge_int_percentile_rejected_without_overflow) ... ok
+test_huge_int_rejected_without_overflow (test_compare.CompareSchemaDepthTests.test_huge_int_rejected_without_overflow) ... ok
+test_lone_surrogate_report_round_trips (test_compare.CompareSchemaDepthTests.test_lone_surrogate_report_round_trips)
+合法 JSON 转义孤立代理不得令写报告崩溃；报告可完整解析回原字符串。 ... ok
+test_output_parent_is_file_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_output_parent_is_file_rejected_without_traceback) ... ok
+test_oversized_csv_field_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_oversized_csv_field_rejected_without_traceback)
+140000 字符 frame_ms 触发 csv 字段上限 csv.Error：exit2、点名文件、无 traceback。 ... ok
+test_oversized_int_literal_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_oversized_int_literal_rejected_without_traceback)
+5000 位整数字面量触发 json.loads 的 digit 上限 ValueError：exit2、点名文件、无 traceback。 ... ok
+test_requested_extra_key_huge_int_rejected (test_compare.CompareSchemaDepthTests.test_requested_extra_key_huge_int_rejected) ... ok
+test_requested_missing_quality_rejected (test_compare.CompareSchemaDepthTests.test_requested_missing_quality_rejected) ... ok
+test_requested_width_string_rejected (test_compare.CompareSchemaDepthTests.test_requested_width_string_rejected) ... ok
+test_ring_radius_bad_type_rejected (test_compare.CompareSchemaDepthTests.test_ring_radius_bad_type_rejected) ... ok
+test_ring_radius_fractional_accepted (test_compare.CompareSchemaDepthTests.test_ring_radius_fractional_accepted)
+源码 RingRadius 为 float（RangeFloat），14.5 是合法记录，不得收窄为整数。 ... ok
+test_summary_invalid_utf8_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_summary_invalid_utf8_rejected_without_traceback) ... ok
+test_summary_top_level_list_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_summary_top_level_list_rejected_without_traceback) ... ok
+test_unreadable_frames_csv_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_unreadable_frames_csv_rejected_without_traceback) ... ok
+test_verification_top_level_list_rejected_without_traceback (test_compare.CompareSchemaDepthTests.test_verification_top_level_list_rejected_without_traceback) ... ok
+test_real_runs_relative_paths_from_foreign_cwd (test_compare.RealEvidenceTests.test_real_runs_relative_paths_from_foreign_cwd)
+门禁条件：从仓库外 cwd 用相对仓库根的 --runs 运行真实三轮。 ... ok
+test_real_three_runs_single_group_with_golden_maxima (test_compare.RealEvidenceTests.test_real_three_runs_single_group_with_golden_maxima) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 5.023s
+
+OK

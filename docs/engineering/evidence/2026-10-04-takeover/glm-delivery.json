@@ -1,0 +1,17 @@
+{
+  "channel": "agent-bridge zcode",
+  "model_switch_receipt": "\u2713 model = GLM-5.3-Flash",
+  "observed_model_api": null,
+  "worker_base": "902a662392e8047364ace7c0ce93d151945dbb59",
+  "worker_commit": "90b65c9e18d1e37ec77f089c72be4be8182bf978",
+  "integration_commit": "b190720",
+  "worker_scope": [
+    "prototype/scripts/Configuration",
+    "tools/qa02-tests"
+  ],
+  "independent_tests": 109,
+  "independent_failures": 0,
+  "self_test_not_acceptance": true,
+  "worker_rounds": 1,
+  "limitations": "No universal model capability/cost ranking; model switch acknowledged by native session, Bridge observed_model remains null"
+}
