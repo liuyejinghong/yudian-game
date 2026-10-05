@@ -121,11 +121,12 @@ def main():
             plist.write_bytes(plistlib.dumps(info))
             identity['double_click_mode'] = 'live-terrain'
             identity['launcher_source_sha256'] = sha(ROOT / 'tools/macos_launcher.c')
-            identity['launcher_binary_sha256'] = sha(app / 'Contents/MacOS/YudianLauncher')
-            identity['launcher_plist_sha256'] = sha(plist)
         run(['/usr/bin/codesign', '--force', '--deep', '-s', '-', app])
         run(['/usr/bin/codesign', '--verify', '--deep', '--strict', '-v', app])
         run(['/usr/bin/lipo', app / 'Contents/MacOS/Yudian', '-verify_arch', 'arm64'])
+        if a.playable:
+            identity['launcher_binary_sha256'] = sha(app / 'Contents/MacOS/YudianLauncher')
+            identity['launcher_plist_sha256'] = sha(app / 'Contents/Info.plist')
         runtime = app / 'Contents/Resources/data_Yudian_macos_arm64/Yudian.runtimeconfig.json'
         identity['export_runtimeconfig'] = json.loads(runtime.read_text())
         identity['binary_sha256'] = sha(app / 'Contents/MacOS/Yudian')
