@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=7ae07b1ee573f038ed73c65a88df27dbf2ce99581ebda4662c12dc4b22f2eb5b loaded_mvid=aff9be7c-9905-4a18-8123-1000f5d0d49b CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_PAUSED MAIN_GROUND_CHECK changed vertex native ray
+ERROR: [Yudian] InvalidOperationException: MAIN_GROUND_CHECK changed vertex native ray
+   at: void Yudian.Main.Fail(System.Exception) (res://scripts/Main.cs:477)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void Yudian.Main.Fail(System.Exception) (<user>/yudian-game/main-ground-r1-20261005/prototype/scripts/Main.cs:477)
+       [2] void Yudian.Main._PhysicsProcess(double) (<user>/yudian-game/main-ground-r1-20261005/prototype/scripts/Main.LiveTerrain.cs:72)
+       [3] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2648)
+       [4] bool Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node3D.cs:1127)
+       [5] bool Yudian.Main.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (<user>/yudian-game/main-ground-r1-20261005/prototype/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Main_ScriptMethods.generated.cs:300)
+       [6] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)

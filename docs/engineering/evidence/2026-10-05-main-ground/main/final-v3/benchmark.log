@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[Yudian] run=20261005T043815200Z-e7d193ca frames=<scratch>/main-ground-main-20261005/final-v3/frames.csv summary=<scratch>/main-ground-main-20261005/final-v3/summary.json
+[Yudian] fixture=s_small seed=20261004 facilities=6 robots=12 benchmark=True
+[Yudian] benchmark completed: <scratch>/main-ground-main-20261005/final-v3/summary.json

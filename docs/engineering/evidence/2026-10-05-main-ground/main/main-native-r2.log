@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=aa4d20651878d3befb7095335d1589647b2dcb3fb3c380e9b0dfb316352969d5 loaded_mvid=4ed6f836-a605-45d2-bcd2-6724a2376df8 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+MAIN_GROUND_OCCUPIED 设施 0
+MAIN_GROUND_OCCUPIED 设施 4
+MAIN_GROUND_TEST_STEP PASS 0
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+MAIN_GROUND_TEST_STEP PASS 1
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=121 query_frame=122 rays=14
+MAIN_GROUND_COMMIT authority=2 bound=2 paused=True
+MAIN_GROUND_TEST_STEP PASS 2
+MAIN_GROUND_SYNC authority=2 bound=2 verified=2 assigned_frame=122 query_frame=123 rays=15
+MAIN_GROUND_PAUSED synthetic main bind failure
+MAIN_GROUND_COMMIT authority=3 bound= paused=True
+MAIN_GROUND_TEST_STEP PASS 3
+MAIN_GROUND_PAUSED synthetic recovery bind failure
+MAIN_GROUND_TEST_STEP PASS 4
+MAIN_GROUND_SYNC authority=3 bound=3 verified=3 assigned_frame=124 query_frame=125 rays=4225
+MAIN_GROUND_TEST_STEP PASS 5
+MAIN_GROUND_SELF_TEST PASS version=3 robots=12 travelled=78.537 grounded=12
+MAIN_GROUND_TEST_STEP PASS 6

@@ -1,0 +1,14 @@
+{
+  "task_id": "task_8d295c8af4",
+  "session_id": "sess_35827ec30e",
+  "status": "completed",
+  "model": null,
+  "observed_model": null,
+  "result_text": "P2确认属实：0.491只算了旋转box中心平面，漏了半厚0.25沿法线的上表面偏移(≈0.266)+胶囊支撑偏移(≈0.0225)，真实期望≈0.8578，观测0.857754正好吻合——原±0.55带是错误理由下通过。按reviewer方案改用terrain-mask真实向下ray做测试oracle，AirPause `_groundedFrames` 离地归零，只动测试与README。README 同步：坡bullet改成ray oracle描述、去掉snap结论；AirPause改“连续稳定”。run5 通过：exit=0、`pass=10 fail=0`、stderr空。关键证据：坡案例 `surfaceY 0.836, expectedFoot 0.858`，观测脚底Y=0.85775——|差|≈0.0002，reviewer的几何分析（表面≈0.835而非0.491）被ray oracle实测证实，机器人精确躺在支撑面上。核对日志干净、旧日志未动，提交。P2修正完成，5行交回：\n\n1. **改动**：仅 `GroundPatrolTests.cs` 与 `tools/ground-patrol-tests/README.md`（GroundPatrol组件逻辑已实际通过，未动）——坡判收删除错误的“中心平面0.491±snap滞后”断言与注释，改为测试oracle：terrain-mask(1)真实向下ray（起点脚底+2m、终点-3m），`expectedFoot = hit.Y + 0.35·(1/normal.Y − 1)`，要求 `|脚底Y − 期望| ≤ 0.05` 且 IsOnFloor，`>=3` 真实往返保持；AirPause `_groundedFrames` 离地即归零，60帧为**连续**贴地稳定；README同步去掉snap结论、改为ray oracle描述。\n2. **实测证实reviewer分析**：run5 坡PASS行 `surfaceY 0.836, expectedFoot 0.858`，观测脚底Y=0.85775（差≈0.0002）——此前0.857754正是“表面0.835+胶囊偏移0.0225”的原生贴地，非snap滞后；`_advances>=3` 下422帧、travelled 12.82m 真实往返不变。\n3. **实际日志与退出码**：Python subprocess（cwd=worker、DOTNET_ROOT、timeout240、capture_output）run5：完整stdout含identity核对（MVID一致、SHA256 E07D5D39…）+10条PASS+`SUMMARY pass=10 fail=0`，stderr空，receipt `exit=0`，grep ERROR/WARNING/FAIL=0；离线build零警告零错、noGUI/无网络/无新依赖。\n4. **SHA**：`worker/ground-patrol-20261005` commit `c1300cbf2b9c787a62c323c8d06c3a4b2785f1ab`（2 files changed, 35 insertions, 12 deletions；提交后status干净；run1/3/4失败与通过日志及receipt全部保留未覆盖，位于 `<scratch>/ground-patrol-worker-20261005/`）。\n5. **限制**：不自验收，最终验收归主控；本轮费用未知不作声称；未push/merge、未动合同/Main/TODO/工具配置。✓ completed · cache 116/117 messages · 76.1k cache-read tokens",
+  "usage": {
+    "used": 77548,
+    "size": 1000000,
+    "sessionUpdate": "usage_update"
+  },
+  "has_more": false
+}

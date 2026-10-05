@@ -56,3 +56,12 @@ prototype/export/local-r1/Yudian.app/Contents/MacOS/Yudian --rendering-driver me
 ```
 
 按1–7选预览状态；仅work活动件旋转，不改变EntityRoot或世界事实。可编辑源、真实GLB、连接点和导入约定见[ART-I00](../docs/art/production/art-i00-interface.md)。默认Main仍为旧灰模几何与镜头。`YUDIAN_CAPTURE_PNG`仅用于独立画面取证，截图的GPU读回会影响采样，不在正式性能运行中设置。
+
+主场景真实地形与物理巡逻（2026-10-05限定接受）：先在仓库根用已有SDK编译Debug，再启动明确的新模式。
+
+```bash
+"$YUDIAN_DOTNET" build prototype/Yudian.csproj --no-restore -m:1 -p:UseSharedCompilation=false -nodeReuse:false
+"$YUDIAN_GODOT" --path prototype -- --live-terrain
+```
+
+土坡整平/矿点挖低检查受影响cell占用，投影成功后等待下一物理帧验证再继续巡逻；Current恢复不增加版本。新模式不能与benchmark、duration或环境benchmark组合，并独立拒绝超出r1与场内布局范围的fixture；旧模式输入范围不收窄。完整导航、彼此/设施避让、实际建设工序/电耗/保存与正式美术未接入。实际10项原生运动/七步Main/Metal GUI与运行身份见[复验](../docs/engineering/reports/2026-10-05-main-ground-verification.md)，可复跑入口见[Main检查](../tools/main-ground-tests/README.md)。

@@ -52,3 +52,5 @@
 2026-10-05 T3d-PROJECTION-RESOURCES / T3d-VIEW限定接受：GLM资源束经一次返工，主控实际单区域权威提交场景已串起内存/画面/静态碰撞；29内存检查、8 native资源检查、7步引擎与Metal GUI通过。[复验](docs/engineering/reports/2026-10-05-terrain-view-verification.md)。完整T3d、旧Main机器人通行/导航/存档/建设闭环、正式美术与性能留项未完成，下一张按真实接入接口再冻结。
 
 本批已合并[PR #32](https://github.com/liuyejinghong/yudian-game/pull/32)，merge `8b693447e4e466f1baf0ad2deec710e642c28895`；主仓库main已同步，完整父票保持未完成。
+
+2026-10-05 MAIN-GROUND限定接受：[主场景复验](docs/engineering/reports/2026-10-05-main-ground-verification.md)。两包GLM并行：参数21项与原生运动10项；Codex接真正Main、受影响cell占用与后续帧同步，12机真实贴地，Metal整平/挖低/重复点击/恢复与close0通过。默认灰模与旧benchmark保持原负载；新模式显式--live-terrain。导航/避让、目标委托、建设工序、电耗/维修救援、保存、正式U01/T01/T02与性能原因/稳定预算继续未完成。

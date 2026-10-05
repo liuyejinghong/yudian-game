@@ -1,0 +1,14 @@
+{
+  "fixture": "s_small",
+  "avg_fps": 147.33,
+  "frames": 148,
+  "duration_requested_s": 1,
+  "duration_actual_s": 1.005,
+  "window_resolution": "0x0",
+  "internal_3d_resolution": "0x0",
+  "scaling_3d_scale": 1,
+  "msaa_3d": 4,
+  "renderer": "forward_plus",
+  "godot_version": "4.7.2-stable (official)",
+  "seed": 20261004
+}

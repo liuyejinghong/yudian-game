@@ -1,0 +1,50 @@
+{
+  "source_head": "e2dbef102f3b02122da1925be2b32b9ae09dfb00",
+  "dll_sha256": "6e4e2644be81a937762581acc96dfbc1a0146f0331d3550d808f286966680244",
+  "runs": [
+    {
+      "name": "patrol",
+      "args": [
+        "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "<user>/yudian-game/main-ground-r1-20261005/prototype",
+        "res://scenes/ground-patrol-tests/GroundPatrolTests.tscn"
+      ],
+      "exit": 0,
+      "passed": true
+    },
+    {
+      "name": "main",
+      "args": [
+        "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "<user>/yudian-game/main-ground-r1-20261005/prototype",
+        "--",
+        "--live-terrain"
+      ],
+      "exit": 0,
+      "passed": true
+    },
+    {
+      "name": "benchmark",
+      "args": [
+        "<user>/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "<user>/yudian-game/main-ground-r1-20261005/prototype",
+        "--",
+        "--benchmark",
+        "--duration",
+        "1",
+        "--frames-csv",
+        "<scratch>/main-ground-main-20261005/final-v3/frames.csv",
+        "--summary-json",
+        "<scratch>/main-ground-main-20261005/final-v3/summary.json"
+      ],
+      "exit": 0,
+      "passed": true
+    }
+  ]
+}

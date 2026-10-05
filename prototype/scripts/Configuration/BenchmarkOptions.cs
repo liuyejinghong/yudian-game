@@ -13,6 +13,9 @@ public sealed class BenchmarkOptions
     /// <summary>是否进入基准模式：user --benchmark、任一 --yudian-benchmark、--duration 或环境开关。</summary>
     public bool Benchmark { get; set; }
 
+    /// <summary>权威地形新路径：任一 scope 的无值旗标 --live-terrain；与 Benchmark 互斥。</summary>
+    public bool LiveTerrain { get; set; }
+
     /// <summary>--duration 解析结果（InvariantCulture、有限、(0,3600]）；未提供为 null。</summary>
     public double? Duration { get; set; }
 
@@ -27,6 +30,7 @@ public sealed class BenchmarkOptions
 
     private const string BenchmarkFlag = "--benchmark";
     private const string YudianBenchmarkFlag = "--yudian-benchmark";
+    private const string LiveTerrainFlag = "--live-terrain";
     private static readonly string[] ValuedOptions = { "--duration", "--fixture", "--frames-csv", "--summary-json" };
 
     public static BenchmarkOptions Parse(string[] userArgs, string[] engineArgs, bool environmentBenchmark = false)
@@ -50,13 +54,19 @@ public sealed class BenchmarkOptions
             duration = d;
         }
 
-        return new BenchmarkOptions
-        {
-            Benchmark = user.ContainsKey(BenchmarkFlag)
+        var benchmark = user.ContainsKey(BenchmarkFlag)
                         || user.ContainsKey(YudianBenchmarkFlag)
                         || engine.ContainsKey(YudianBenchmarkFlag)
                         || duration != null
-                        || environmentBenchmark,
+                        || environmentBenchmark;
+        var liveTerrain = user.ContainsKey(LiveTerrainFlag) || engine.ContainsKey(LiveTerrainFlag);
+        if (benchmark && liveTerrain)
+            throw new ArgumentException("--live-terrain 与 benchmark 互斥（--benchmark/--yudian-benchmark/--duration/环境开关）");
+
+        return new BenchmarkOptions
+        {
+            Benchmark = benchmark,
+            LiveTerrain = liveTerrain,
             Duration = duration,
             FixturePath = Value("--fixture") ?? "fixtures/s_small.json",
             FramesCsv = Value("--frames-csv"),
@@ -82,6 +92,12 @@ public sealed class BenchmarkOptions
                 found[arg] = "";
             }
             else if (arg == YudianBenchmarkFlag)
+            {
+                if (found.ContainsKey(arg))
+                    throw new ArgumentException($"重复参数 {arg}");
+                found[arg] = "";
+            }
+            else if (arg == LiveTerrainFlag)
             {
                 if (found.ContainsKey(arg))
                     throw new ArgumentException($"重复参数 {arg}");
