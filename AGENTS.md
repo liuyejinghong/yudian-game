@@ -67,6 +67,10 @@ Issues 记录在本仓库的 GitHub Issues（`gh` CLI）。See `docs/agents/issu
 
 ## Lessons
 
+- When 游戏测试进程已知且正在运行，do 直接绑定其窗口读取，避免全量UI盘点超时；关窗后只读应用清单，不重新绑定已关闭app以免自动重启。
+
+- When Bridge续接轮次可能重置shell目录，do 首个命令以绝对路径进入工作树并核对pwd，构建日志每轮独立命名，禁止覆盖失败原件。
+
 - When 所有者已授权无问题直接合并，do 核对当前差异并及时集成合格PR；旧PR正文的“不合并”只保留为历史授权记录，不继续用它搁置交付。
 
 - When conducting engineering game, GUI or performance tests, do launch and accept them in engineering; coordinate art only for observed shared-machine load, never gate startup on an art acknowledgement or assign engineering tests to art.

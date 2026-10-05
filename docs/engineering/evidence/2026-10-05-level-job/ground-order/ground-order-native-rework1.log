@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+CLR 10.0.12
+physics/3d/physics_engine = DEFAULT
+Assembly.FullName Yudian, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Assembly.Location
+Fresh Debug Yudian.dll SHA256 BC2C4508501E315F6312E1C1EC242B1BF86B4A336E2BC1D618EDD7FCC8B7A501
+Loaded MVID  eba353d7-f301-48fe-941a-98244c1dfe23
+Fresh  MVID  eba353d7-f301-48fe-941a-98244c1dfe23
+PASS identity: CLR version, physics backend, loaded MVID == fresh Debug PE MVID, SHA256
+PASS order-api: SetOrder before Initialize throws without consuming Initialize, defaults false, rejection matrix, boundary accept, idempotent ClearOrder
+PASS invalid SetOrder keeps old target: rejected inputs, robot still reaches original reached original target (52, 0, -2) after 3 rejected SetOrder calls, local frames 183
+PASS replace order mid-chase: SetOrder overrides, robot reaches the new target switched at d1 8.73, reached new target (298, 0, -2), local frames 218
+PASS paused airborne over target: OrderReached false every airborne frame, true after landing, far order reached OrderReached false on all 37 airborne frames over target, true after landing, then far order (206, 0, -2) reached after unpause, local frames 328
+PASS blocked order: wall between robot and target, never reached, Blocked set held against wall for 180 frames at X 103.111, never reached, pos (103.111374, 0.00020579528, 0)
+PASS order flow: chase only via MoveAndSlide, arrival hold, invalid rejected, clear resumes patrol held 90 frames at (7.781523, 0.0008282672, -3.8907616), frozen idx 1, resumed idx 2, travelled 12.37m
+SUMMARY pass=7 fail=0

@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+MAIN_GROUND_IDENTITY build_sha256=e39f6833ad49c79c96b4a0ceeab4e354576de1386d804443908cc8be19b6cb47 loaded_mvid=a044a503-c077-451f-998f-0fb888a92a5e CLR=10.0.12 display=macOS
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+LEVEL_JOB_START id=level-1 worker=Robot_Zhulei_3 base=0 station=(7.775, 1.0895829, -10) distance=1.808
+LEVEL_JOB_ARRIVED id=level-1 seconds=1.017 position=(7.9202843, 1.1358839, -9.817871)
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+LEVEL_JOB_COMMIT id=level-1 status=Committed applied=1 verified=none
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=2751 query_frame=2752 rays=14
+LEVEL_JOB_END id=level-1 stage=Completed base=0 applied=1 current=1 message=整平已提交，物理验证完成

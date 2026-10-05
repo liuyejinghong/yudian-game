@@ -4,7 +4,7 @@
 
 | 线 | 权威任务表 | 当前事实 | 后续首要队列（未启动） |
 |---|---|---|---|
-| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | QA受限技术验收已完成，PR #16已合并；性能稳定性仍待复核 | 数据与纯网格子件已接受；Godot适配/候选探针已受限接受；静态碰撞与候选联调已受限接受，PR #27已合并、子票#26已关闭；两个离线工具包均限定ACCEPTED，PR #28/#29已分别合并；单区域内存提交与GLM纯判定已限定接受；阶段/同步/导航保存和性能留项 |
+| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | 单区域权威地形、真正Main原生巡逻与单机器人整平任务已限定接受；性能稳定仍待复核 | 导航/避让、建设资源与机器人保障、存档；后续票须新冻结接口；正式素材按ART-LINK联调 |
 | 美术 | [美术 TODO](docs/art/production/todo.md) | ART-I00技术校准已验；[首批需求](docs/art/production/requirements/first-assets-r1.md)由主控编写；正式资产与视觉效果未验 | M01材质已由美术组技术接受，soil_mars工程逐surface联调通过；预览工具正在制作，正式模型/地形素材仍缺；工程缺口见ART-LINK各行 |
 
 2026-10-04所有者授权后，PR [#16](https://github.com/liuyejinghong/yudian-game/pull/16)、[#18](https://github.com/liuyejinghong/yudian-game/pull/18)及[#20](https://github.com/liuyejinghong/yudian-game/pull/20)已合并，本网格批次从main `3999d30`起步。PR [#13](https://github.com/liuyejinghong/yudian-game/pull/13)/[#14](https://github.com/liuyejinghong/yudian-game/pull/14)保留902a662历史评审/工单，已补后续权威入口，不重复派发其中旧任务；历史结果见[接管复验](docs/engineering/reports/2026-10-04-takeover-verification.md)。原Issue [#5](https://github.com/liuyejinghong/yudian-game/issues/5)/[#6](https://github.com/liuyejinghong/yudian-game/issues/6)/[#7](https://github.com/liuyejinghong/yudian-game/issues/7)/[#8](https://github.com/liuyejinghong/yudian-game/issues/8)分别关联T2/T3/T4/T5；旧ready-for-agent标签不能替代新子票的冻结接口和本轮范围。
@@ -56,3 +56,5 @@
 2026-10-05 MAIN-GROUND限定接受：[主场景复验](docs/engineering/reports/2026-10-05-main-ground-verification.md)。两包GLM并行：参数21项与原生运动10项；Codex接真正Main、受影响cell占用与后续帧同步，12机真实贴地，Metal整平/挖低/重复点击/恢复与close0通过。默认灰模与旧benchmark保持原负载；新模式显式--live-terrain。导航/避让、目标委托、建设工序、电耗/维修救援、保存、正式U01/T01/T02与性能原因/稳定预算继续未完成。
 
 上述MAIN-GROUND已合并[PR33](https://github.com/liuyejinghong/yudian-game/pull/33)，mergef041e3e；main源码同步与本地重新编译/窄烟测通过，GLM会话结束，父#6仍OPEN。
+
+2026-10-05单机器人整平任务已限定接受：[复验](docs/engineering/reports/2026-10-05-level-job-verification.md)。一名筑垒真实到场、连续施工、地形提交与后续帧验证；取消/重复/权限/过期/占用/故障恢复通过。导航/避让、完整建设资源、能源维护、存档和正式美术仍未完成。

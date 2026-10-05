@@ -1,0 +1,9 @@
+<user>/yudian-game/ground-order-worker-20261005/prototype/scripts/TerrainWorld/Actors/Tests/GroundOrderTests.cs(402,45): error CS1501: “Dot”方法没有采用 2 个参数的重载 [<user>/yudian-game/ground-order-worker-20261005/prototype/Yudian.csproj]
+
+生成失败。
+
+<user>/yudian-game/ground-order-worker-20261005/prototype/scripts/TerrainWorld/Actors/Tests/GroundOrderTests.cs(402,45): error CS1501: “Dot”方法没有采用 2 个参数的重载 [<user>/yudian-game/ground-order-worker-20261005/prototype/Yudian.csproj]
+    0 个警告
+    1 个错误
+
+已用时间 00:00:01.41

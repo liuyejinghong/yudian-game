@@ -1,0 +1,41 @@
+== culture: '' / .NET 10.0.12 ==
+PASS ctor_fresh_meter_state
+PASS ctor_accepts_smallest_positive
+PASS ctor_accepts_exact_3600
+PASS ctor_rejects_zero
+PASS ctor_rejects_negative
+PASS ctor_rejects_above_3600
+PASS ctor_rejects_nan_and_infinities
+PASS advance_accepts_zero_and_3600_boundary
+PASS advance_rejects_negative_delta
+PASS advance_rejects_above_3600
+PASS advance_rejects_nan_and_infinities
+PASS accumulate_eligible_advances
+PASS ineligible_clears_partial_progress
+PASS cap_at_required_on_overshoot
+PASS complete_survives_eligible_advance
+PASS complete_survives_ineligible_advance
+PASS illegal_delta_leaves_state_unchanged
+PASS independent_meters_no_shared_state
+== culture: 'de-DE' / .NET 10.0.12 ==
+PASS ctor_fresh_meter_state
+PASS ctor_accepts_smallest_positive
+PASS ctor_accepts_exact_3600
+PASS ctor_rejects_zero
+PASS ctor_rejects_negative
+PASS ctor_rejects_above_3600
+PASS ctor_rejects_nan_and_infinities
+PASS advance_accepts_zero_and_3600_boundary
+PASS advance_rejects_negative_delta
+PASS advance_rejects_above_3600
+PASS advance_rejects_nan_and_infinities
+PASS accumulate_eligible_advances
+PASS ineligible_clears_partial_progress
+PASS cap_at_required_on_overshoot
+PASS complete_survives_eligible_advance
+PASS complete_survives_ineligible_advance
+PASS illegal_delta_leaves_state_unchanged
+PASS independent_meters_no_shared_state
+checks run: 36, failed: 0
+ALL CHECKS PASSED
+EXIT=0

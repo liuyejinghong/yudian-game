@@ -1,6 +1,6 @@
 # 产研 TODO
 
-更新：2026-10-05；主控Codex。PR16/18/20/23/25/27已按所有者授权合并，碰撞merge43daffe。数据/两套CPU网格/ArrayMesh/独立候选显示已受限接受；本批静态碰撞适配与分帧/M01联调已受限接受，本批单区域权威场景的显示/静态碰撞同步已限定接受；旧Main、机器人通行、导航、保存仍未实现。美术侧已启动M01与预览工具制作，工程只维护其联调依赖，不替代美术验收。
+更新：2026-10-05；主控Codex。PR33已合并：单区域权威地形、真正Main原生通行与手动改造限定接受。本批单机器人整平任务闭环限定接受；完整导航、建设/经济、保存与稳定性能仍未完成，正式素材按ART-LINK跟踪。
 
 | ID | 优先级 | 状态 | 依赖/解除条件 | 拟执行槽 | 交付与接受条件 | 来源/证据 |
 |---|---|---|---|---|---|---|
@@ -37,6 +37,9 @@
 | LIVE-TERRAIN-OPTIONS | P1 | ACCEPTED | 冻结89cb3fb；原68390afa/集成0efd005，独立reviewer与主控21项复验通过 | GLM-Eng-A | 仅解析：新模式与benchmark互斥；旧109项工人回归通过；不签Main/native | [合同](../contracts/main-ground-r1.md) |
 | GROUND-PATROL | P1 | ACCEPTED | 冻结89cb3fb；原58e99d4→7e64c97→c1300cb；主控最终10项native/reviewer通过 | GLM-Eng-B | 原生CharacterBody固定巡逻、真实坡往返/陡坡阻挡/空中暂停落地；无导航/避让，费用UNKNOWN | [复验](../reports/2026-10-05-main-ground-verification.md) / [合同](../contracts/main-ground-r1.md) |
 | MAIN-GROUND | P1 | ACCEPTED | e2dbef1运行源码；Main七步/11项兼容、Metal真实GUI与close0，reviewer缺陷已修 | Codex | 显式live模式12机贴地、cell占用拒绝、后续帧版本同步与故障Current恢复；不签完整导航/建设/save/正式美术 | [复验](../reports/2026-10-05-main-ground-verification.md) / [合同](../contracts/main-ground-r1.md) |
+| GROUND-ORDER | P1 | ACCEPTED | 冻结4cbdf3c；session sess_a371c1f521，原生GLM-5.3-Flash确认 | GLM-Eng-A | 单目标native7/旧10通过；37个同XZ空中帧false/落地true，清除保Paused/巡逻；不签导航 | [合同](../contracts/level-job-r1.md) |
+| WORK-METER | P1 | ACCEPTED | 冻结4cbdf3c；session sess_54983ddecd，原生GLM-5.3-Flash确认 | GLM-Eng-B | 纯计时两文化36PASS；累计/中断清零/封顶/非法无副作用，不签任务状态 | [合同](../contracts/level-job-r1.md) |
+| LEVEL-JOB | P1 | ACCEPTED | GROUND-ORDER/WORK-METER；主控合同与集成 | Codex | 一名筑垒真实到场与连续作业；Main15/旧七步/Metal取消与完成通过，取消/重复/过期/占用/故障复验，限定接受 | [合同](../contracts/level-job-r1.md) |
 | T3d | P1 | DRAFT | T3d-MEM/VIEW与MAIN-GROUND限定接受；灰模Main原生通行已接，完整导航/保存/建设未完成 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3e | P1 | BLOCKED | PERF-01可用对照；T3d；ART-T01/T02仅为视觉对照需接口与样件 | GLM-Eng-B采集工具/复算；Codex实机/选择 | 两候选同条件更新范围/主线程峰值/导航耗时/保存增长/视觉成本对比；所有者签视觉，主控选技术 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T4a | P2 | DRAFT | 现役产品/共同场景与权限案例，明确本轮候选输入范围 | Codex | 冻结世界事实/行动/权限输入；将原T4大票拆成领域基线、校验器、候选适配与统计小票；真实完成与拦截分计，模型非权威 | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |
@@ -50,3 +53,5 @@
 T4与T5沿用已存在Issue范围，不重新创建宏观路线；目标委托、机器人保障和生产存档仍未完成，本轮也不排成假装已经READY的大包。低配/Windows/发行是后续范围，当前不因缺设备宣布最低配置，也不把新系统留项扩成购买或部署任务。
 
 MAIN-GROUND本波已合并[PR33](https://github.com/liuyejinghong/yudian-game/pull/33)，精确head8e1ddde、mergef041e3e；真实main重新编译与窄烟测通过。完成包不重复派发，下一冻结建设或导航小票；两GLM会话已结束，费用UNKNOWN。
+
+2026-10-05 LEVEL-JOB三子票限定ACCEPTED：[复验](../reports/2026-10-05-level-job-verification.md)。GLM同冻结基线两包并行，主控关键状态/实机/集成；下一任务是导航与避让或建设资源接缝新冻结，不重复派单本批；无电耗/经济/存档与正式美术扩签。

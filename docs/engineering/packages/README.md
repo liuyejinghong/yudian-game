@@ -4,14 +4,14 @@
 
 | 模块 | 当前已接受 | 当前执行/可并行包 | 后续依赖 |
 |---|---|---|---|
-| 地形数据 | immutable Snapshot/Patch、严格codec | 已完成，不重做 | 世界权威版本/持久提交未冻结 |
+| 地形数据 | immutable Snapshot/Patch、严格codec | 已完成，不重做 | 单区域内存提交已接受，生产存档未实现 |
 | 地形CPU几何 | Stage、Heightfield两个独立生成器 | 已完成，曾两工作树并行 | 阶段/局部更新未实现 |
-| 引擎地形显示 | ArrayMesh、独立候选探针 | 已完成 | 正式世界接入未实现 |
+| 引擎地形显示 | ArrayMesh、独立候选探针 | 已完成 | Main单区域显示已接受，完整建设/存档未实现 |
 | 静态地形碰撞 | 静态adapter/候选分帧/M01接线受限接受 | **T3-COLLISION本批已完成复验**；不得重复派单 | 机器人通行/导航/save不在本票 |
 | 性能证据工具 | 单轮复算/原始三轮证据 | **PERF-01-COMPARE ACCEPTED，限定离线比较器** | 实机受控采样/原因裁决主控负责 |
 | 生命周期证据工具 | Recorder/中断原始证据 | **LIFE-01-AUDIT ACCEPTED，限定离线审计器** | 主控已限定接受固定包GUI关窗/重开；不签存档恢复 |
 | 美术接口 | I00校准、M01材质技术接受 | 美术组在做PREVIEW/正式首样；工程soil_mars联调 | U01、T01/T02正式素材缺口见ART-LINK |
-| 世界提交 | 单区域内存提交限定接受 | T3d-COMMIT-POLICY与Codex T3d-MEM已验收；不重复领取 | 独立单区域显示/静态物理同步已限定接受，旧Main与机器人/导航/保存未实现 |
+| 世界提交 | 单区域内存提交限定接受 | T3d-COMMIT-POLICY与Codex T3d-MEM已验收；不重复领取 | Main显示/静态物理同步与单机器人整平另票已接受；完整导航/经济/保存未实现 |
 | 导航/存档、目标委托 | 尚未实现 | DRAFT/BLOCKED，不给GLM自行决定架构 | 先冻结权威状态、输入输出、失败/重载金样 |
 
 ## 当前并行波次
@@ -46,3 +46,5 @@ T3d内存子件已合并[PR30](https://github.com/liuyejinghong/yudian-game/pull
 2026-10-05 MAIN-GROUND波次：冻结89cb3fb，[合同](../contracts/main-ground-r1.md) / [复验](../reports/2026-10-05-main-ground-verification.md)。参数与运动两GLM包不同工作树并行；原生运动经两次review返工补真实下坡、空中暂停与正确射线oracle，主控最终21参数/10运动/七步Main与Metal GUI通过。三子票限定ACCEPTED，不重复派发；下一票须新冻结建设或导航范围，保存/正式美术/性能留项未扩大接受。
 
 MAIN-GROUND本波[PR33](https://github.com/liuyejinghong/yudian-game/pull/33)已MERGED，精确head8e1ddde、mergef041e3e；main干净同步与开发程序集重建/窄烟测通过。两个GLM会话已结束，保留worker分支/工作树与原日志。
+
+2026-10-05 LEVEL-JOB波次：[合同](../contracts/level-job-r1.md) / [复验](../reports/2026-10-05-level-job-verification.md)。两GLM包GROUND-ORDER/WORK-METER同4cbdf3c独立工作树并行；单目标native7与旧10、纯计时36、主控Main15与Metal实际取消/完成通过，三子票限定接受，不重复领取。下一票新冻结导航/资源边界，父T3d继续未完成。

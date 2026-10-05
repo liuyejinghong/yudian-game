@@ -1,0 +1,20 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+CLR 10.0.12
+physics/3d/physics_engine = DEFAULT
+Assembly.FullName Yudian, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Assembly.Location
+Fresh Debug Yudian.dll SHA256 EDA2C13820A33DBF913CC89A023EC7FA8701788A2678D72B7F746CA63DC40D31
+Loaded MVID  c26a9d0a-75dc-4073-80ba-9f1ef02f8443
+Fresh  MVID  c26a9d0a-75dc-4073-80ba-9f1ef02f8443
+PASS identity: CLR version, physics backend, loaded MVID == fresh Debug PE MVID, SHA256
+PASS initialize: defaults, target 0, contract capsule/layer/mask/floor settings
+PASS lifecycle: failed Initialize builds nothing and stays usable, success once then locked
+PASS rejections: null/single/non-finite/out-of-range/duplicate-XZ incl last-to-first/speed (0,20]
+PASS paused airborne: real gravity landing with XZ frozen (no IsOnFloor cache shortcut) fell from 2.00 to 0.000 while paused, stable for 60 frames
+PASS tiny waypoint difference: no NaN, keeps cycling targets local frames 165, toggles 112, pos (299.76627, 0.00079943147, 0), travelled 1.766m
+PASS paused: no horizontal or waypoint advance, still grounded, resumes paused 90 frames at (199.03345, 0.0008273461, 0), resumed to (200.53357, 0.0008364656, 0), travelled 2.53m
+PASS 50 deg steep slope: blocked with wall semantics, never passes through contact X 103.111, pos (103.111374, -0.0018761641, 0), travelled 5.11m
+PASS flat loop: grounded walk, per-tick speed cap, ordered waypoints, defensive copy local frames 289, pos (5.986014, 0.0008263761, 3.760273), travelled 9.53m
+PASS walkable 20 deg slope: climbs to top, really descends back to bottom, grounded local frames 422, pos (38.718273, 0.85775423, 0), surfaceY 0.836, expectedFoot 0.858, maxY 2.88, travelled 12.82m
+SUMMARY pass=10 fail=0

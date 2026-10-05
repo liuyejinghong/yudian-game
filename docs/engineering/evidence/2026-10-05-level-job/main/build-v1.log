@@ -1,0 +1,16 @@
+<user>/yudian-game/level-job-r1-20261005/prototype/scripts/Main.LevelJobTests.cs(31,49): warning CS8602: 解引用可能出现空引用。 [<user>/yudian-game/level-job-r1-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/level-job-r1-20261005/prototype/scripts/Main.LevelJobTests.cs(32,36): warning CS8602: 解引用可能出现空引用。 [<user>/yudian-game/level-job-r1-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/level-job-r1-20261005/prototype/scripts/Main.LevelJobTests.cs(42,17): warning CS8602: 解引用可能出现空引用。 [<user>/yudian-game/level-job-r1-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/level-job-r1-20261005/prototype/scripts/Main.LevelJobTests.cs(98,63): warning CS8602: 解引用可能出现空引用。 [<user>/yudian-game/level-job-r1-20261005/prototype/Yudian.csproj]
+  Yudian -> <user>/yudian-game/level-job-r1-20261005/prototype/.godot/mono/temp/bin/Debug/Yudian.dll
+
+已成功生成。
+
+<user>/yudian-game/level-job-r1-20261005/prototype/scripts/Main.LevelJobTests.cs(31,49): warning CS8602: 解引用可能出现空引用。 [<user>/yudian-game/level-job-r1-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/level-job-r1-20261005/prototype/scripts/Main.LevelJobTests.cs(32,36): warning CS8602: 解引用可能出现空引用。 [<user>/yudian-game/level-job-r1-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/level-job-r1-20261005/prototype/scripts/Main.LevelJobTests.cs(42,17): warning CS8602: 解引用可能出现空引用。 [<user>/yudian-game/level-job-r1-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/level-job-r1-20261005/prototype/scripts/Main.LevelJobTests.cs(98,63): warning CS8602: 解引用可能出现空引用。 [<user>/yudian-game/level-job-r1-20261005/prototype/Yudian.csproj]
+    4 个警告
+    0 个错误
+
+已用时间 00:00:01.61

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "run_id": "20261005T073738694Z-8f1c5304",
+  "fixture": "s_small",
+  "fixture_sha256": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+  "seed": 20261004,
+  "duration_requested_s": 0.2,
+  "requested": {
+    "resolution": {
+      "width": 1920,
+      "height": 1200
+    },
+    "quality": {
+      "msaa_3d": 4,
+      "fxaa": false,
+      "scaling_3d_scale": 1,
+      "shadows": true
+    },
+    "scale": {
+      "robots_total": 12,
+      "robots_per_type": 4,
+      "facilities": 6,
+      "ring_radius": 14
+    }
+  },
+  "applied": {
+    "msaa_3d": "Msaa4X",
+    "fxaa": "Disabled",
+    "scaling_3d_scale": 1,
+    "vsync": "Enabled",
+    "max_fps": 0
+  },
+  "observed": {
+    "headless": true,
+    "rendering_device": false,
+    "rendering_method": "NOT_AVAILABLE",
+    "rendering_driver": "NOT_AVAILABLE",
+    "gpu": "NOT_AVAILABLE",
+    "gpu_api_version": "NOT_AVAILABLE",
+    "window_pixels": [
+      0,
+      0
+    ],
+    "viewport_size": [
+      1920,
+      1200
+    ],
+    "internal_3d_size": {
+      "status": "estimated",
+      "formula": "viewport_size * applied.scaling_3d_scale",
+      "width": 1920,
+      "height": 1200
+    },
+    "robots": 12,
+    "facilities": 6
+  },
+  "graphical_performance_eligible": false,
+  "godot_version": "4.7.2-stable (official)",
+  "runtime": {
+    "framework": ".NET 10.0.12",
+    "version": "10.0.12",
+    "architecture": "Arm64",
+    "os": "macOS 27.0.0"
+  },
+  "assembly_sha256": "fc69af450ac9038f992855e268c4d667602137660d1b93e77fff4538036ad445",
+  "assembly_hash_source": "Debug file with loaded MVID check",
+  "assembly_mvid": "1cdea8ec-49c4-4eea-9983-3839cc0317bc",
+  "build": "EVIDENCE_MISSING",
+  "memory": "EVIDENCE_MISSING: external process measurement required",
+  "load_scope": "gray-r1 rendering, fixed patrol and animation only; no AI/navigation/save/dynamic terrain",
+  "status": "completed",
+  "frames": 32,
+  "duration_actual_s": 0.206103,
+  "avg_fps": 155.26217473787378,
+  "frame_time_ms": {
+    "p50": 6.414,
+    "p95": 9.696,
+    "p99": 10.077,
+    "max": 10.077,
+    "over_33ms": 0,
+    "method": "nearest_rank_all_frames_including_startup"
+  }
+}
