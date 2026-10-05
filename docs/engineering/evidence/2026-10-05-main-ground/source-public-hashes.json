@@ -592,5 +592,17 @@
     "public_path": "glm-patrol/run_native.py",
     "source_sha256": "893c8e2b3b369025c989f1cc5e902a9cf5dbb17a74d03c946f64bcd54ba0d50e",
     "public_sha256": "738edb37b96c910cb4a44706e15189181bfd229dfb957ff4e22cb453676b7c8f"
+  },
+  {
+    "source": "<scratch>/main-ground-main-20261005/main-checkout-build.log",
+    "public_path": "main/main-checkout-build.log",
+    "source_sha256": "990699f1c0884d198e5893d2b6bc6f32ae359a4d4a895c47e49796a467dc7a12",
+    "public_sha256": "0da9119917e6e3d4a6eaa926440f0105be310babfd39f636b8cbfb815ec28387"
+  },
+  {
+    "source": "<scratch>/main-ground-main-20261005/main-checkout-native.log",
+    "public_path": "main/main-checkout-native.log",
+    "source_sha256": "97a86c27abab665d93340f48ea303e1d6a58a5b557c79b4488da721786f14e21",
+    "public_sha256": "97a86c27abab665d93340f48ea303e1d6a58a5b557c79b4488da721786f14e21"
   }
 ]

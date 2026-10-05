@@ -33,3 +33,7 @@
 原始文件留本机scratch与各工作树；[公开文件/原始SHA映射](../evidence/2026-10-05-main-ground/source-public-hashes.json)保留出处，个人路径已替换。源码复跑入口见[Main](../../../tools/main-ground-tests/README.md)与[运动组件](../../../tools/ground-patrol-tests/README.md)。独立reviewer缺陷已解决，最终architect无实质合并阻碍，独立核对99份公开文件hash、源码/GUI身份与限定接受边界；发布合并事实另记于集成记录。
 
 仍未接受：完整导航/机器人与设施避让、目标委托、实际建设/资源收益、电耗/维修救援、生产存档、正式U01/T01/T02、增量/多区域、稳定性能或profiler原因、发行/无SDK环境与Windows。本票工程材质/胶囊代理不是正式美术；素材缺口继续由ART-LINK既有票跟踪。
+
+## 集成记录
+
+[PR33](https://github.com/liuyejinghong/yudian-game/pull/33)已在2026-10-05T04:52:47Z合并；精确head `8e1ddde44215911fc0652e652da9b84f45396c06`，merge `f041e3e74f207df2e9e2bf51b31eca3e15832d1c`。主工作树main干净快进，运行源码/场景与e2dbef1完全相同。为防旧ignored DLL，另在实际main目录重编译并跑七步Main窄烟测，exit0/零编译警告错误/无引擎ERROR；[构建](../evidence/2026-10-05-main-ground/main/main-checkout-build.log) / [主工作树Main](../evidence/2026-10-05-main-ground/main/main-checkout-native.log)记录其独立MVID/SHA，不混同集成树DLL。GLM两会话已结束；完成PR附件移除，原PR/工作树/分支/失败日志保留，父#6仍OPEN。首次PR创建网络EOF后实查分支无PR，再创建唯一33成功；无重复PR。

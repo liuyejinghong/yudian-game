@@ -54,3 +54,5 @@
 本批已合并[PR #32](https://github.com/liuyejinghong/yudian-game/pull/32)，merge `8b693447e4e466f1baf0ad2deec710e642c28895`；主仓库main已同步，完整父票保持未完成。
 
 2026-10-05 MAIN-GROUND限定接受：[主场景复验](docs/engineering/reports/2026-10-05-main-ground-verification.md)。两包GLM并行：参数21项与原生运动10项；Codex接真正Main、受影响cell占用与后续帧同步，12机真实贴地，Metal整平/挖低/重复点击/恢复与close0通过。默认灰模与旧benchmark保持原负载；新模式显式--live-terrain。导航/避让、目标委托、建设工序、电耗/维修救援、保存、正式U01/T01/T02与性能原因/稳定预算继续未完成。
+
+上述MAIN-GROUND已合并[PR33](https://github.com/liuyejinghong/yudian-game/pull/33)，mergef041e3e；main源码同步与本地重新编译/窄烟测通过，GLM会话结束，父#6仍OPEN。

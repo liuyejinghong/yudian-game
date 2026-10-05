@@ -235,8 +235,10 @@ UI收尾重计划：真实游戏关窗exit0后，Cua getAXState自动又开无DO
 2. [x] GLM并行执行参数解析与原生GroundPatrol；证明：真实model回执、限定gitdiff/commit、离线console/native检查。
 3. [x] 主控接Main/占用拒绝/后续物理同步；证明：旧默认/短benchmark与live主场景，机器人体使用native shape而非旧高斯。
 4. [x] 独立reviewer、必要检查与真实Metal GUI；证明：贴地/改造/暂停/占用与恢复，未接导航/建设/存档与正式美术清楚。
-5. [ ] TODO/证据/PR精确head发布并按授权合并，main与总索引同步；证明：来源hash、真实merge与限定ACCEPTED。
+5. [x] TODO/证据/PR精确head发布并按授权合并，main与总索引同步；证明：来源hash、真实merge与限定ACCEPTED。
 
 文件归属：GLM-A Configuration/BenchmarkOptions.cs + tools/live-terrain-options-tests；GLM-B TerrainWorld/Actors + ground-patrol-tests场景/README；主控Main与其他公共文件。旧日志/工作树/基准fixture保留；无依赖安装或付费API。
 
 本批运行源e2dbef1：最终DLL6e4e2644…680244/MVID121f2816…a780；21参数、10运动、七步Main/11兼容及Metal真实GUI通过。review的再次恢复故障原因、真实下坡/空中暂停与坡面oracle均修正。首次长射线精度差0.000122m，缩短到当前高度范围后仍按1e-4容差；基线开发benchmark空Location已复现并按文件MVID核对修复。主控复验脚本重复输出路径一次被Recorder正确拒绝，改新目录后通过，旧轮次保留。
+
+PR33已合并：head8e1ddde44215911fc0652e652da9b84f45396c06，mergef041e3e74f207df2e9e2bf51b31eca3e15832d1c；主工作树干净快进，并重新编译/七步Main窄烟测通过，防旧ignored DLL启动。总索引同步，完成PR附件移除；两GLM会话结束，原工作树/失败日志保留。

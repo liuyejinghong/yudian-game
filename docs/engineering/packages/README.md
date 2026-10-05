@@ -44,3 +44,5 @@ T3d内存子件已合并[PR30](https://github.com/liuyejinghong/yudian-game/pull
 本波已合并[PR32](https://github.com/liuyejinghong/yudian-game/pull/32)，merge `8b693447e4e466f1baf0ad2deec710e642c28895`；冻结资源束会话已结束，旧工作树和失败证据保留。
 
 2026-10-05 MAIN-GROUND波次：冻结89cb3fb，[合同](../contracts/main-ground-r1.md) / [复验](../reports/2026-10-05-main-ground-verification.md)。参数与运动两GLM包不同工作树并行；原生运动经两次review返工补真实下坡、空中暂停与正确射线oracle，主控最终21参数/10运动/七步Main与Metal GUI通过。三子票限定ACCEPTED，不重复派发；下一票须新冻结建设或导航范围，保存/正式美术/性能留项未扩大接受。
+
+MAIN-GROUND本波[PR33](https://github.com/liuyejinghong/yudian-game/pull/33)已MERGED，精确head8e1ddde、mergef041e3e；main干净同步与开发程序集重建/窄烟测通过。两个GLM会话已结束，保留worker分支/工作树与原日志。
