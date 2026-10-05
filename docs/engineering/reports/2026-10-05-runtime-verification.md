@@ -44,3 +44,5 @@ Cua原生关闭按钮，目标自有PID21136；没有用信号/quit-after代替�
 下一步工程在实际固定后台目标/负载条件下补受控对照，并为尖刺做有证据的profiling；两次焦点控制失败已保留并重计划，不机械扩大采样。GLM可做离线复算/日志整理，主控负责启动、焦点条件与最终原因裁决。完整世界、导航、存档和正式美术继续按已有TODO，不扩签。
 
 GLM-5.3-Flash经Agent Bridge完成独立标准库复算，六轮数字/适配SHA一致；[工人原报告脱敏副本](../evidence/2026-10-05-runtime-controlled/glm-crosscheck-sanitized.txt)及[主控裁决](../evidence/2026-10-05-runtime-controlled/glm-main-disposition.txt)保留。主控未接受其把后台散布归因为前台残留的表述：离散轨迹与三点关联不证明原因。B1最大帧实核为frame204/Recorder3.736257秒，启动阶段边界未定义，不据此定位根因。采样18份脱敏副本与本机原件仅路径替换核对一致；采集器本体本机保留，公共包不声称完全离线重放实机动作。
+
+[PR31](https://github.com/liuyejinghong/yudian-game/pull/31)已合并（merge36603cdf9cd4fc593782a2f8d9350b2566ce746a）；main快进后134项本批文件与已接受head一致。GitHub检查列表为空，未声称CI通过。
