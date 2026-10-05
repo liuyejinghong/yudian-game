@@ -32,7 +32,7 @@ Main超时例只注入任务时钟60秒，机器人改指向而不传送，验�
 
 实机发现两条真实反馈问题：无需施工却显示0%已改明确“无需施工”；重复下单活动提示在完成后残留已清除并加原生断言、最后GUI复核。失败/修正前后日志均保留，未抹掉成果或伪造恢复。
 
-[原件/公开SHA映射](../evidence/2026-10-05-level-job/source-public-hashes.json)；公开文本仅替换个人路径，原件留本机scratch/工人树。复跑入口：[任务Main](../../../tools/level-job-tests/README.md)、[单目标](../../../tools/ground-order-tests/README.md)、[连续作业](../../../tools/work-meter-tests/README.md)。
+[原件/公开SHA映射](../evidence/2026-10-05-level-job/source-public-hashes.json)；公开文本替换个人路径并去除行尾空白；原始SHA保留，原件留本机scratch/工人树。复跑入口：[任务Main](../../../tools/level-job-tests/README.md)、[单目标](../../../tools/ground-order-tests/README.md)、[连续作业](../../../tools/work-meter-tests/README.md)。
 
 仍未接受：完整寻路/避让、其他设施建设或自动补前置、资源收益/库存运输、电量耐久/充电维修救援、模型目标规划、存档/重载、正式U01/T01/T02、增量/多区域、稳定性能/归因、发行或无SDK/Windows。工程材料与代理体保持美术既有ART-LINK待交回联调，不把本票替代正式视觉验收；父T3d/#6继续未完成。
 

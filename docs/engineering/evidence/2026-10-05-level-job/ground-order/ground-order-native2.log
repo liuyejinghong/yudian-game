@@ -3,7 +3,7 @@ Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
 CLR 10.0.12
 physics/3d/physics_engine = DEFAULT
 Assembly.FullName Yudian, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-Assembly.Location 
+Assembly.Location
 Fresh Debug Yudian.dll SHA256 EDA2C13820A33DBF913CC89A023EC7FA8701788A2678D72B7F746CA63DC40D31
 Loaded MVID  c26a9d0a-75dc-4073-80ba-9f1ef02f8443
 Fresh  MVID  c26a9d0a-75dc-4073-80ba-9f1ef02f8443

@@ -165,7 +165,7 @@
     "source": "<scratch>/level-job-main-20261005/order-final.log",
     "public_path": "main/order-final.log",
     "source_sha256": "15bf1f5125d6bd9e80212060cf6a8c113fdf651a15e4ef5978c057a569cd3735",
-    "public_sha256": "15bf1f5125d6bd9e80212060cf6a8c113fdf651a15e4ef5978c057a569cd3735"
+    "public_sha256": "691b6d7af509b62ca24ffad96124f1b037851198915eca328e90c1e25ba482ad"
   },
   {
     "source": "<scratch>/level-job-main-20261005/order-fix-result.json",
@@ -261,25 +261,25 @@
     "source": "<scratch>/ground-order-worker-20261005/ground-order-native-rework1.log",
     "public_path": "ground-order/ground-order-native-rework1.log",
     "source_sha256": "f6bd8060fcdcbff9b59c186a7556b9660676a7d75868268bfa27b27e96d66e78",
-    "public_sha256": "f6bd8060fcdcbff9b59c186a7556b9660676a7d75868268bfa27b27e96d66e78"
+    "public_sha256": "4796079bb26b42a1f03790139ea8d9eddae9dc83b0f3b6ca12e7111c823a0e82"
   },
   {
     "source": "<scratch>/ground-order-worker-20261005/ground-order-native.log",
     "public_path": "ground-order/ground-order-native.log",
     "source_sha256": "18e8516f40aad2e8ed8d3ef308e4785477f26c208b6606f7913b406bed64fc1f",
-    "public_sha256": "18e8516f40aad2e8ed8d3ef308e4785477f26c208b6606f7913b406bed64fc1f"
+    "public_sha256": "15cc9d680ea5a35800b646cd774300b0b8976b804b5617f68bb1a3bd8b3732ba"
   },
   {
     "source": "<scratch>/ground-order-worker-20261005/ground-order-native2.log",
     "public_path": "ground-order/ground-order-native2.log",
     "source_sha256": "33d2c766254dd10cbac93c920e4551db0c922f8c25744886e32c3f5bf5b82d88",
-    "public_sha256": "33d2c766254dd10cbac93c920e4551db0c922f8c25744886e32c3f5bf5b82d88"
+    "public_sha256": "240bb70740c0e509ee5b7b6472b47b56eb12a6c79fe20b4d833dbc7bca2257f6"
   },
   {
     "source": "<scratch>/ground-order-worker-20261005/ground-patrol-regression.log",
     "public_path": "ground-order/ground-patrol-regression.log",
     "source_sha256": "6a74db814c1d4780a29bd92f2ee6b67423b63d0f6716c1a7cd2783753575cc99",
-    "public_sha256": "6a74db814c1d4780a29bd92f2ee6b67423b63d0f6716c1a7cd2783753575cc99"
+    "public_sha256": "ad23bef3f260567e36d6405163c197c3ace04dfbe10478ce6e072881e3e1728a"
   },
   {
     "source": "<scratch>/ground-order-worker-20261005/restore.log",
