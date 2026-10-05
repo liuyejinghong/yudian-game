@@ -21,6 +21,7 @@ public partial class Main
     private long? _groundVerified;
     private int _groundFrame, _groundAssignedFrame, _groundRequest;
     private int[] _groundRayIndices = [];
+    private float _groundRayTop, _groundRayBottom;
     private static readonly float[] FacilityRadii = [2.5f, 2f, 2.8f, 1.7f, 1.9f, 1.1f];
 
     private void PrepareLiveTerrain()
@@ -100,7 +101,7 @@ public partial class Main
 
     private float GroundHeight(float x, float z)
     {
-        using var query = PhysicsRayQueryParameters3D.Create(new Vector3(x, 1100, z), new Vector3(x, -1100, z), 1);
+        using var query = PhysicsRayQueryParameters3D.Create(new Vector3(x, _groundRayTop, z), new Vector3(x, _groundRayBottom, z), 1);
         query.HitBackFaces = false; query.CollideWithAreas = false;
         using var hit = GetWorld3D().DirectSpaceState.IntersectRay(query);
         if (hit.Count == 0 || hit["collider"].AsGodotObject() != _liveTerrain!.Body || hit["normal"].AsVector3().Y <= 0)
@@ -120,11 +121,14 @@ public partial class Main
         GroundRequire(vertices.Length == faces.Length, "mesh/shape corner count");
         for (int i = 0; i < faces.Length; i++) GroundRequire(vertices[i].DistanceTo(faces[i]) <= .0001f, "mesh/shape corner");
         var s = region.Current;
+        // 贴近当前高度范围，避免长射线的float消减误差；不放宽高度核验容差。
+        _groundRayTop = (float)s.HeightsM.Max() + 2; _groundRayBottom = (float)s.HeightsM.Min() - 2;
         foreach (int i in _groundRayIndices)
         {
             float x = (float)(s.OriginXM + i % s.Columns * s.SpacingM);
             float z = (float)(s.OriginZM + i / s.Columns * s.SpacingM);
-            GroundRequire(Math.Abs(GroundHeight(x, z) - s.HeightsM[i]) <= .0001, "changed vertex native ray");
+            float observed = GroundHeight(x, z);
+            GroundRequire(Math.Abs(observed - s.HeightsM[i]) <= .0001, $"changed vertex native ray index={i} expected={s.HeightsM[i]:R} observed={observed:R}");
         }
         _groundVerified = s.Version; PauseGround(false);
         _groundMessage = "当前物理已验证，继续巡逻";
