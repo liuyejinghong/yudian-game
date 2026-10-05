@@ -1,0 +1,4 @@
+.godot/
+export/
+benchmarks/
+build-info.json

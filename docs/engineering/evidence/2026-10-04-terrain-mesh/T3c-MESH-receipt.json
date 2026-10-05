@@ -1,0 +1,19 @@
+{
+  "ticket": "T3c-MESH",
+  "contract_commit": "8c3e1178557c6c0f9e6aa9e34345a482435bed7f",
+  "worker_commit": "11bb78a5a1a647435150e577e44b2a67f1c9d6d9",
+  "session_id": "sess_f8784b9881",
+  "task_id": "task_9974dbe4a9",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "elapsed_sec": 937,
+  "usage": {
+    "used": 79317,
+    "size": 1000000,
+    "sessionUpdate": "usage_update"
+  },
+  "observed_model": null,
+  "billing_cost": "unknown",
+  "report": "收到T3c-MESH任务。先切到工作树确认HEAD，再精读合同与任务文件。HEAD正确且工作树干净。现在精读合同与任务文件。合同与任务已读。现在看共享TerrainGeometry与TerrainData接口。共享类型已读。合同引用数据r1的sample-a金样，需要看数据合同；同时确认候选目录现状。TerrainCandidates尚不存在，由我创建。读数据合同取sample-a金样。接口与金样齐全。看一眼现有已提交的data测试工程结构作参照（已提交文件，非他人活动工作树）。合同、任务、接口、金样全部就绪。开始实现。先看现有测试runner风格与.gitignore，并确认dotnet。环境就绪。开始写实现与测试。实现完成。现在写测试工程。现在写测试主程序——覆盖两金样、扭曲cell、邻区边、最大/最小尺寸、全索引绕序、确定性、不可变、版本/内容拒绝、null参数，全套在两个Culture下跑。修正Program.cs里两处草稿残留（假的`TestsBufferIndices`转换和怪异的扩展类）。写README，然后开始真实构建验证。两个TFM编译通过，0警告0错误。运行net10.0。9个失败全部是测试脚本的期望值/数据错误，实现本身正确：\n1. gold-b中心期望算错：cell(1,1)四角是(0,-1,31,32)→15.5，cell(1,2)是(-1,23,32,33)→21.75（我错用了20）\n2. layout不匹配的codec先查columns，消息是\"columns\"\n3. 2×2输入的fine输出是3×3=4个cell=24索引，我误写成单cell金样6条；[0,3,1,0,2,3]是2×2输出的cell模式，3×3输出的首cell是[0,4,1,0,3,4]\n4. 邻区left数据我把9放错了列（row2=[9,8,7]导致h(2,2)=7而非9），应为[7,8,9]\n5. 边界三角边每cell只有(d,b)一条，3×3输出共4条不是8条\n6. min尺寸顶点x应为105（fine index 2 = 1个spacing）\n\n逐项修正测试：README同步修正索引描述，然后重建重跑。全部82项检查（41×2文化）通过，exit 0。确认net8仅编译未执行、变更范围仅限两目录，然后限定提交。变更仅限两个新目录，net8.0已编译（不执行）。限定提交：T3c-MESH完成。工作树起点HEAD `8c3e117`确认无误，实现与测试已限定提交，未push/merge，未自写ACCEPTED，等主控独立验收。\n\n**五行报告**\n\n1. **范围**：仅新增 `prototype/scripts/TerrainCandidates/Heightfield/HeightfieldMeshBuilder.cs`（97行，两个Build重载，patch先`ValidateAgainst`再用候选高度+base布局，2×细分无可配置LOD，固定`a,d,b,a,c,d`绕序）与 `tools/terrain-heightfield-tests/`（Tests.csproj + Program.cs + README）；零改动既有文件，未读取其他工人目录。\n2. **检查/数量**：空本地NuGet源restore成功；Release两TFM编译0警告0错误；net10.0实际执行 `TOTAL checks=82 failed=0`（41检查 × InvariantCulture/de-DE两文化），exit 0——覆盖sample-a/sample-b金样逐顶点逐索引精确值、不变patch、过期版本/错误region/同版内容不同/布局不符拒绝、扭曲cell重心复核（面高1≠双线性0.75）、邻区共享边9点世界XYZ误差≤1e-9米、257×257→513×513全量有限/在界/全索引正绕序、确定性、不可变（SyncRoot不可达）、null参数。\n3. **限制**：net8.0仅编译未执行（NOT_RUN，按票面未安装net8运行时）；合同声明的T-junction未焊接、Godot剔除适配、碰撞/导航/保存/性能均不在本轮范围；第一轮运行暴露9处测试脚本期望值错误（cell中心手算、codec列优先报错、3×3输出索引数、邻区数据列错位、边界边计数），全部为测试侧修正后复跑通过，实现代码未改动。\n4. **用量可见性**：token/费用对我不透明，如实在此声明未知。\n5. **commit**：`11bb78a`（branch `worker/t3c-mesh-20261004`，4文件+768行，无bin/obj、无绝对个人路径）。✓ completed · cache 79/80 messages · 78.4k cache-read tokens",
+  "note": "Worker self-report, not final acceptance. Bridge root-wide files_changed excluded; owned scope verified from Git commit."
+}

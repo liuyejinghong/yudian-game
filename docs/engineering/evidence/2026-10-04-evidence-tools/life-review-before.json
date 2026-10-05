@@ -1,0 +1,68 @@
+[
+  {
+    "case": "huge-int",
+    "exit": 1,
+    "report_exists": false,
+    "target_created": false,
+    "is_symlink": false,
+    "stderr": "Traceback (most recent call last):\n  File \"<life-worker>/tools/lifecycle_audit/audit.py\", line 393, in <module>\n    sys.exit(main())\n             ~~~~^^\n  File \"<life-worker>/tools/lifecycle_audit/audit.py\", line 378, in main\n    reps = [audit_run(run, manifest_dir, mb) for run in runs]\n            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<life-worker>/tools/lifecycle_audit/audit.py\", line 323, in audit_run\n    compare_stats(sdata, calc, rep[\"_fails\"])\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<life-worker>/tools/lifecycle_audit/audit.py\", line 251, in compare_stats\n    if not _is_num(summary.get(\"avg_fps\")):\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<life-worker>/tools/lifecycle_audit/audit.py\", line 37, in _is_num\n    return isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v)\n                                                                       ~~~~~~~~~~~~~^^^\nOverflowError: int too large to convert to float\n"
+  },
+  {
+    "case": "truncated-nan",
+    "exit": 1,
+    "report_exists": true,
+    "target_created": false,
+    "is_symlink": false,
+    "stderr": "",
+    "report": {
+      "schema_version": 1,
+      "overall": "INCOMPLETE",
+      "runs": [
+        {
+          "label": "sample",
+          "run_id": "rid-sample",
+          "summary_status": "completed",
+          "exit_code": 0,
+          "verdict": "INCOMPLETE",
+          "reasons": [
+            "frames_csv.line4: 末行截断（不足四列且文件末尾无换行），仅校验此前完整行"
+          ],
+          "file_sha256": {
+            "frames_csv": "ddce619e5cdeecae2f50488461af6f612970c49f0e2306ac4512fbd92cda6729",
+            "summary_json": "1c8cc538cfb23577bd29f6c4a8fdb2ef6d7e6676f2e915f4c9d30c67afa8e08b",
+            "exit_record": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01"
+          },
+          "frames_read": 2
+        }
+      ]
+    }
+  },
+  {
+    "case": "dangling-output",
+    "exit": 0,
+    "report_exists": true,
+    "target_created": true,
+    "is_symlink": true,
+    "stderr": "",
+    "report": {
+      "schema_version": 1,
+      "overall": "PASS",
+      "runs": [
+        {
+          "label": "sample",
+          "run_id": "rid-sample",
+          "summary_status": "completed",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "reasons": [],
+          "file_sha256": {
+            "frames_csv": "24e70589d1115f813961dca0287bfac92f0fbde3b11f22e54adc68fa20292b3c",
+            "summary_json": "b811bc112722ca6cb10d1628f7550541a2c39e151757f75183754f8e1b4284e2",
+            "exit_record": "124fd50cb6d223cdd18fedc166d00af7254199b6e6dedf9be82f71db87af6d01"
+          },
+          "frames_read": 3
+        }
+      ]
+    }
+  }
+]

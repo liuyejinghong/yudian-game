@@ -1,0 +1,24 @@
+{
+  "exit_code": 0,
+  "memory": {
+    "maximum_resident_set_size_bytes": 289341440,
+    "peak_memory_footprint_bytes": 675890496,
+    "method": "macOS /usr/bin/time -l; separate metrics, process lifetime including startup"
+  },
+  "recomputed": {
+    "frames": 3386,
+    "duration_csv_s": 45.002527,
+    "avg_fps": 75.24021928813019,
+    "nearest_rank_ms": {
+      "50": 13.317,
+      "95": 13.91,
+      "99": 21.278
+    },
+    "max_ms": 77.351,
+    "over_33ms": 3,
+    "csv_sha256": "15ed8658734c90d40bfca6a624e297f42abe06d5472eb14e264a597077b3d79a"
+  },
+  "launch": "Yudian --rendering-driver metal -- --benchmark --duration N --frames-csv <new-directory>/frames.csv --summary-json <new-directory>/summary.json",
+  "environment": "DOTNET_ROOT and DOTNET_ROOT_ARM64 nonexistent; DOTNET_MULTILEVEL_LOOKUP=0; PATH retained",
+  "app_binary_sha256": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9"
+}

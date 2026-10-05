@@ -1,0 +1,77 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PROBE_CHECK PASS loaded MVID matches current Debug build
+PROBE_IDENTITY CLR=10.0.12 assembly_location='' fresh_file=$WORKTREE/prototype/.godot/mono/temp/bin/Debug/Yudian.dll SHA256=0E60CFB1ADB4B2E61D2018FEBE8234FADF8F82C44D9EC5629726227CB386F41E loaded_MVID=accde2ce-159c-4315-9b7d-21538329f5c5 fresh_MVID=accde2ce-159c-4315-9b7d-21538329f5c5 display=headless adapter=
+PROBE_REPLACE mode=base replacements=1 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=4.202 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.328
+PROBE_CHECK PASS render self-test excludes collision mode
+PROBE_CHECK PASS independent unused vertex float overflow rejected
+PROBE_CHECK PASS cold start base
+PROBE_NOOP mode=base replacements=1
+PROBE_CHECK PASS duplicate base noop
+PROBE_REPLACE mode=level replacements=2 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.381 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.129
+PROBE_CHECK PASS old resources released
+PROBE_CHECK PASS candidate center readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS single unindexed material-free surface
+PROBE_CHECK PASS candidate center readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS single unindexed material-free surface
+PROBE_NOOP mode=level replacements=2
+PROBE_CHECK PASS duplicate candidate noop
+PROBE_REJECT mode=level replacements=2 reason=base.version mismatch: patch base 9 vs current 10
+PROBE_REJECT mode=level replacements=2 reason=heights_m[0] (row 0, column 0) is on the locked perimeter and must equal the base height at this index
+PROBE_CHECK PASS real rejection preserves display
+PROBE_CHECK PASS partial candidate released and old pair preserved
+PROBE_REPLACE mode=dig replacements=3 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.026 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.062
+PROBE_REPLACE mode=level replacements=4 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.021 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.062
+PROBE_REPLACE mode=dig replacements=5 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.021 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.065
+PROBE_REPLACE mode=level replacements=6 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.018 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=dig replacements=7 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.064
+PROBE_REPLACE mode=level replacements=8 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.021 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.059
+PROBE_REPLACE mode=dig replacements=9 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.061
+PROBE_REPLACE mode=level replacements=10 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.021 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.063
+PROBE_REPLACE mode=dig replacements=11 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.025 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.059
+PROBE_REPLACE mode=level replacements=12 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=dig replacements=13 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=level replacements=14 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.018 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.062
+PROBE_REPLACE mode=dig replacements=15 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=level replacements=16 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.018 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.062
+PROBE_REPLACE mode=dig replacements=17 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.017 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=level replacements=18 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.059
+PROBE_REPLACE mode=dig replacements=19 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=level replacements=20 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.021 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=dig replacements=21 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.100
+PROBE_REPLACE mode=level replacements=22 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.018 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=dig replacements=23 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.018 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=level replacements=24 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.018 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=dig replacements=25 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.060
+PROBE_REPLACE mode=level replacements=26 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.018 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.062
+PROBE_REPLACE mode=dig replacements=27 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.059
+PROBE_REPLACE mode=level replacements=28 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.020 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.061
+PROBE_REPLACE mode=dig replacements=29 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.070
+PROBE_REPLACE mode=level replacements=30 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.020 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.062
+PROBE_REPLACE mode=dig replacements=31 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.063
+PROBE_REPLACE mode=level replacements=32 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.018 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.062
+PROBE_CHECK PASS 30 replacements
+PROBE_REPLACE mode=base replacements=33 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.019 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.059
+PROBE_CHECK PASS preview reset retains immutable base
+PROBE_CHECK PASS candidate center readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS single unindexed material-free surface
+PROBE_CHECK PASS candidate center readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS locked corner readback
+PROBE_CHECK PASS single unindexed material-free surface
+PROBE_CHECK PASS exit resource cleanup
+PROBE_SELF_TEST PASS

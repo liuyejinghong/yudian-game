@@ -50,3 +50,27 @@ Godot 4 .NET＋C# 是首选验证候选，不是已测结论。精确版本、�
 `tools/reconstruct_reviewed_docs.py` 是一次性导入核验工具，不是生产内容生成器；若当前正文已有后续编辑，禁止用它覆盖。
 
 目前没有 Godot 构建、模型评测或游戏测试命令，不能编造已存在的 `dotnet test` 或伪造通过记录。实际验证工程获准建立后，再记录准确版本、启动方式与证据。
+
+## Agent skills
+
+### Issue tracker
+
+Issues 记录在本仓库的 GitHub Issues（`gh` CLI）。See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+使用默认五标签：needs-triage / needs-info / ready-for-agent / ready-for-human / wontfix。See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+单上下文：根目录 `GLOSSARY.md` ＋ `docs/adr/`，不存在时静默跳过。See `docs/agents/domain.md`.
+
+## Lessons
+
+- When 所有者已授权无问题直接合并，do 核对当前差异并及时集成合格PR；旧PR正文的“不合并”只保留为历史授权记录，不继续用它搁置交付。
+
+- When conducting engineering game, GUI or performance tests, do launch and accept them in engineering; coordinate art only for observed shared-machine load, never gate startup on an art acknowledgement or assign engineering tests to art.
+
+- When 所有者交回外包包并恢复主控协调，do 由Codex通过Agent Bridge直接安排GLM返工；包内子代理已获授权，仍由主控review、验收和合并。
+
+- When 已冻结任务可独立修改不同目录，do 同批提供并行任务包与固定基线，集中review验收；只按真实依赖串行，不逐票等待集成。

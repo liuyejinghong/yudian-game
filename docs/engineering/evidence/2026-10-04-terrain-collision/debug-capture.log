@@ -1,0 +1,68 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+PROBE_CHECK PASS loaded MVID matches current Debug build
+PROBE_IDENTITY CLR=10.0.12 assembly_location='' fresh_file=$WORKTREE/prototype/.godot/mono/temp/bin/Debug/Yudian.dll SHA256=0E60CFB1ADB4B2E61D2018FEBE8234FADF8F82C44D9EC5629726227CB386F41E loaded_MVID=accde2ce-159c-4315-9b7d-21538329f5c5 fresh_MVID=accde2ce-159c-4315-9b7d-21538329f5c5 display=macOS adapter=Apple M3 Pro (Apple9)
+PROBE_CHECK PASS capture directory argument
+PROBE_CHECK PASS new absolute capture directory
+PROBE_PHYSICS configured_backend=DEFAULT server_class=PhysicsServer3D layers=1,2 masks=0
+PROBE_QUEUE request=base active=none
+PROBE_REPLACE mode=base replacements=1 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=4.632 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.368
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_PHYSICS_SYNCED mode=base replacements=1 assigned_frame=1 query_frame=2 stage_body=34225522148 fine_body=34242299365 center=3.5 nonvertex=3.1625
+PROBE_CHECK PASS capture base
+PROBE_QUEUE request=level active=base
+PROBE_REPLACE mode=level replacements=2 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.724 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.162
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_PHYSICS_SYNCED mode=level replacements=2 assigned_frame=91 query_frame=92 stage_body=34225522148 fine_body=34242299365 center=0.4 nonvertex=0.4
+PROBE_CHECK PASS capture level
+PROBE_QUEUE request=dig active=level
+PROBE_REPLACE mode=dig replacements=3 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=0.159 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.106
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_CHECK PASS body binding and display transform
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS ray hits expected body
+PROBE_CHECK PASS ray world position matches independent planar height
+PROBE_CHECK PASS ray normal finite unit upward
+PROBE_CHECK PASS backside outside wrong-mask rays miss
+PROBE_PHYSICS_SYNCED mode=dig replacements=3 assigned_frame=182 query_frame=183 stage_body=34225522148 fine_body=34242299365 center=-1.25 nonvertex=-1.25
+PROBE_CHECK PASS capture dig

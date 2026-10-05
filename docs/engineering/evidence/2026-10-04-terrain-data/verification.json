@@ -1,0 +1,86 @@
+{
+  "checked_at_utc": "2026-10-04T09:50:33.109062+00:00",
+  "worker_initial_commit": "d1f7cd6307689f6ed846c1deb1e4acf70c0aaa9b",
+  "worker_rework_commit": "1a0ec1c2a0efa2c116274eddd1fa6732b9d50a5c",
+  "integration_rework_commit": "80b8148",
+  "primary_source_change": "comment wording only",
+  "contract_commit": "2a37f4b02113e7e1591fb1b499ac7ecb628964ce",
+  "checks": [
+    {
+      "suite": "worker",
+      "step": "build",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "build",
+        "tools/terrain-data-tests/TerrainData.Tests.csproj",
+        "-c",
+        "Release",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "final-worker-build.txt"
+    },
+    {
+      "suite": "worker",
+      "step": "run",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "run",
+        "--project",
+        "tools/terrain-data-tests/TerrainData.Tests.csproj",
+        "-c",
+        "Release",
+        "-f",
+        "net10.0",
+        "--no-build",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "final-worker-run.txt"
+    },
+    {
+      "suite": "independent",
+      "step": "build",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "build",
+        "tools/terrain-data-acceptance/Independent.csproj",
+        "-c",
+        "Release",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "final-independent-build.txt"
+    },
+    {
+      "suite": "independent",
+      "step": "run",
+      "command": [
+        "$HOME/.dotnet/dotnet",
+        "run",
+        "--project",
+        "tools/terrain-data-acceptance/Independent.csproj",
+        "-c",
+        "Release",
+        "-f",
+        "net10.0",
+        "--no-build",
+        "--no-restore"
+      ],
+      "exit_code": 0,
+      "log": "final-independent-run.txt"
+    }
+  ],
+  "source_sha256": {
+    "prototype/scripts/TerrainData/TerrainDataCodec.cs": "46e53be38ac2bea2adc2792b32e9426348aca77caa03fa47d544b63455356ed1",
+    "prototype/scripts/TerrainData/TerrainPatch.cs": "4a11f19f4fbed7305e904d64d0401af1d5582d30930d4714eb1823e87a9c3ea2",
+    "prototype/scripts/TerrainData/TerrainSnapshot.cs": "986c312836a8cc757a753ef1315684efcca5eb74aef2dd14ad084fca8c9cd869"
+  },
+  "worker_checks_passed": 388,
+  "independent_checks_passed": 39,
+  "existing_files_unchanged": 130,
+  "net8_execution": "NOT_RUN",
+  "net10_execution": "PASS",
+  "game_native_graphics_performance_save_recovery": "NOT_RUN",
+  "scope": "read-only terrain data validation/serialization only"
+}

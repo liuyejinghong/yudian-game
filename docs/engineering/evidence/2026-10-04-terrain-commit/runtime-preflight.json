@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-04T14:53:05.895504+00:00",
+  "package_source": "7341ea83a3ad879ba98a496792d43eb9cd2d70ab",
+  "binary_sha256": "1f8594bfcebb09f30ea10ba72d6aa169e6dcdf5154ff43d37edd4c9ef2684bb9",
+  "pck_sha256": "5b6eaf3bda9591450f79e26ed43ed4163379412dad76a1b459f27b8ab1c939e7",
+  "runtimeconfig": {
+    "runtimeOptions": {
+      "tfm": "net8.0",
+      "includedFrameworks": [
+        {
+          "name": "Microsoft.NETCore.App",
+          "version": "8.0.31"
+        }
+      ],
+      "configProperties": {
+        "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
+        "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false
+      }
+    }
+  },
+  "temperature": "NOT_MEASURED",
+  "gui_actions": "NOT_RUN",
+  "controlled_samples": "NOT_RUN",
+  "reservation": "requested; no available art window acknowledged",
+  "signature": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "<fixed-app>: valid on disk\n<fixed-app>: satisfies its Designated Requirement\n"
+  },
+  "power": {
+    "exit_code": 0,
+    "stdout": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=22610019)\t100%; charged; 0:00 remaining present: true\n",
+    "stderr": ""
+  },
+  "thermal": {
+    "exit_code": 0,
+    "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+    "stderr": ""
+  }
+}

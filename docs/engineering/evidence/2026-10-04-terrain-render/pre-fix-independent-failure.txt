@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+PROBE_CHECK PASS loaded MVID matches current Debug build
+PROBE_IDENTITY CLR=10.0.12 assembly_location='' fresh_file=$WORKTREE/prototype/.godot/mono/temp/bin/Debug/Yudian.dll SHA256=4C9F8E78179AB43047787EACDDC46DE384DAF5F251605DF8171E20B0F406E74B loaded_MVID=1db1e2e7-2fa1-4d88-8835-cb156c53374c fresh_MVID=1db1e2e7-2fa1-4d88-8835-cb156c53374c display=headless adapter=
+PROBE_REPLACE mode=base replacements=1 base_version=9 Stage cpu=49 emitted=216 triangles=72 build+submit_ms=4.379 Heightfield cpu=169 emitted=864 triangles=288 build+submit_ms=0.337
+ERROR: PROBE_FAIL System.InvalidOperationException: check failed: independent unused vertex float overflow rejected
+   at Yudian.Terrain.TerrainProbe.Require(Boolean value, String name) in $WORKTREE/prototype/scripts/TerrainProbe/TerrainProbe.cs:line 226
+   at Yudian.Terrain.TerrainProbe.SelfTest() in $WORKTREE/prototype/scripts/TerrainProbe/TerrainProbe.cs:line 190
+   at Yudian.Terrain.TerrainProbe._Ready() in $WORKTREE/prototype/scripts/TerrainProbe/TerrainProbe.cs:line 61
+   at: void Yudian.Terrain.TerrainProbe._Ready() (res://scripts/TerrainProbe/TerrainProbe.cs:61)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void Yudian.Terrain.TerrainProbe._Ready() ($WORKTREE/prototype/scripts/TerrainProbe/TerrainProbe.cs:61)
+       [2] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2660)
+       [3] bool Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node3D.cs:1127)
+       [4] bool Yudian.Terrain.TerrainProbe.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) ($WORKTREE/prototype/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Terrain.TerrainProbe_ScriptMethods.generated.cs:160)
+       [5] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)

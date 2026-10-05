@@ -1,0 +1,48 @@
+WorkerThreadPool: 12 threads, 3 max low-priority.
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+SDL: Init OK!
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+.NET: Initializing module...
+Found hostfxr: $HOME/.dotnet/host/fxr/10.0.12/libhostfxr.dylib
+.NET: hostfxr initialized
+.NET: GodotPlugins initialized
+CORE API HASH: 3677103882
+EDITOR API HASH: 1629494564
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://scenes/terrain-collision-tests/CollisionTests.tscn remapped: res://scenes/terrain-collision-tests/CollisionTests.tscn
+Loading resource: res://scripts/TerrainCollision/Tests/CollisionTests.cs remapped: res://scripts/TerrainCollision/Tests/CollisionTests.cs
+Completed load for: 'res://scripts/TerrainCollision/Tests/CollisionTests.cs' remapped 'res://scripts/TerrainCollision/Tests/CollisionTests.cs' at thread -1
+Completed load for: 'res://scenes/terrain-collision-tests/CollisionTests.tscn' remapped 'res://scenes/terrain-collision-tests/CollisionTests.tscn' at thread -1
+CLR 10.0.12
+physics/3d/physics_engine = DEFAULT
+Assembly.FullName Yudian, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Assembly.Location 
+AppDomain.BaseDirectory $WORKTREE/prototype/.godot/mono/temp/bin/Debug/
+Fresh Debug Yudian.dll SHA256 34C0DCA2D2DF82CE35D1AA5A81B9E88EEC7B184F8104FC13C7A0790CF0F7210E
+Loaded MVID  67ea3a5f-36e0-48cd-9b2e-bddec81a3d24
+Fresh  MVID  67ea3a5f-36e0-48cd-9b2e-bddec81a3d24
+PASS identity: CLR version, physics backend, loaded MVID == fresh Debug PE MVID, SHA256
+PASS stage flat 2x2: face corners equal ArrayMesh emitted order/count, backface false
+PASS sample-a: shape face count 48 == Indices.Count, emitted-order equality
+PASS independent RIDs, equal content, shape queryable after temp mesh freed inside Create
+PASS collision Create leaves CPU mesh unchanged
+PASS rejections: null/unreferenced vertex overflow/quantized degenerate/negative winding
+PASS max legal via real generators: shape counts and endpoints (not a performance claim)
+  stage slope hit position (0.5, 1.25, 0.25) normal (-0.30151138, 0.30151138, -0.90453404)
+PASS physics: mask 1 from above hits stage slope at Y=1.25 with up normal
+  heightfield slope hit position (0.5, 6.125, 10.25) normal (-0.34815532, 0.34815532, -0.87038827)
+PASS physics: mask 2 from above hits heightfield slope at Y=6.125 with up normal
+PASS physics: from below no hit (single-sided, backfaces off)
+PASS physics: outside terrain XZ no hit
+PASS physics: wrong mask no cross-layer hit
+SUMMARY pass=12 fail=0
+Unloading: Disposing tracked instances...
+Unloading: Finished disposing tracked instances.
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"
