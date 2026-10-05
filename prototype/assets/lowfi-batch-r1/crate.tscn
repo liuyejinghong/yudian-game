@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://assets/lowfi-batch-r1/preview.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/lowfi-batch-r1/models/crate.glb" id="2"]
+[node name="SampleRoot" type="Node3D"]
+script=ExtResource("1")
+asset_key="crate"
+[node name="Model" parent="." instance=ExtResource("2")]

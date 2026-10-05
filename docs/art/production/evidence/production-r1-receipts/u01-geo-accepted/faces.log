@@ -1,0 +1,339 @@
+{
+  "file": "prototype/assets/units/tuoyun-r1/tuoyun-r1.glb",
+  "mesh_surfaces": [
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 0,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 1,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 2,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 3,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 4,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 5,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 6,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 7,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 8,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 9,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 10,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 11,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 12,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 13,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 14,
+      "triangles": 12
+    },
+    {
+      "mesh": 0,
+      "name": "Chassis",
+      "surface": 15,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 0,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 1,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 2,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 3,
+      "triangles": 16
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 4,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 5,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 6,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 7,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 8,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 9,
+      "triangles": 12
+    },
+    {
+      "mesh": 1,
+      "name": "Head",
+      "surface": 10,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 0,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 1,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 2,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 3,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 4,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 5,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 6,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 7,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 8,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 9,
+      "triangles": 12
+    },
+    {
+      "mesh": 2,
+      "name": "Body",
+      "surface": 10,
+      "triangles": 12
+    },
+    {
+      "mesh": 3,
+      "name": "HoodLid",
+      "surface": 0,
+      "triangles": 12
+    },
+    {
+      "mesh": 3,
+      "name": "HoodLid",
+      "surface": 1,
+      "triangles": 12
+    },
+    {
+      "mesh": 4,
+      "name": "RearLock",
+      "surface": 0,
+      "triangles": 12
+    },
+    {
+      "mesh": 4,
+      "name": "RearLock",
+      "surface": 1,
+      "triangles": 12
+    },
+    {
+      "mesh": 4,
+      "name": "RearLock",
+      "surface": 2,
+      "triangles": 12
+    },
+    {
+      "mesh": 5,
+      "name": "ChargeCap",
+      "surface": 0,
+      "triangles": 12
+    },
+    {
+      "mesh": 6,
+      "name": "Wheel_LF",
+      "surface": 0,
+      "triangles": 192
+    },
+    {
+      "mesh": 6,
+      "name": "Wheel_LF",
+      "surface": 1,
+      "triangles": 44
+    },
+    {
+      "mesh": 7,
+      "name": "Wheel_LR",
+      "surface": 0,
+      "triangles": 192
+    },
+    {
+      "mesh": 7,
+      "name": "Wheel_LR",
+      "surface": 1,
+      "triangles": 44
+    },
+    {
+      "mesh": 8,
+      "name": "Wheel_RF",
+      "surface": 0,
+      "triangles": 192
+    },
+    {
+      "mesh": 8,
+      "name": "Wheel_RF",
+      "surface": 1,
+      "triangles": 44
+    },
+    {
+      "mesh": 9,
+      "name": "Wheel_RR",
+      "surface": 0,
+      "triangles": 192
+    },
+    {
+      "mesh": 9,
+      "name": "Wheel_RR",
+      "surface": 1,
+      "triangles": 44
+    },
+    {
+      "mesh": 10,
+      "name": "CargoBox",
+      "surface": 0,
+      "triangles": 12
+    },
+    {
+      "mesh": 10,
+      "name": "CargoBox",
+      "surface": 1,
+      "triangles": 12
+    },
+    {
+      "mesh": 10,
+      "name": "CargoBox",
+      "surface": 2,
+      "triangles": 12
+    }
+  ],
+  "inward_or_mismatched_triangles": [],
+  "degenerate_triangles": [],
+  "winding": "glTF CCW against exported normals"
+}
+GLB_FACE_AUDIT_OK

@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "collar_vs_feed_gate": 0.06499999999999995,
+    "collar_vs_stop_gate": 1.226,
+    "collar_vs_input_crate": 0.2499999999999999,
+    "inner_cover_vs_service_cover": 0.0674999999999999,
+    "heat_panel_vs_press_ram": 0.18999999999999995,
+    "heat_panel_vs_press_guide": 0.06999999999999995,
+    "solar_protection_vs_folding_panels": 0.09087409719266692,
+    "solar_inner_cover_vs_service_cover": 0.007499999869614804
+  },
+  "samples_per_motion": 101,
+  "method": "source vertices transformed, disjoint AABB axes certify separation; finite samples only",
+  "engineering_reliability": "NOT_RUN"
+}

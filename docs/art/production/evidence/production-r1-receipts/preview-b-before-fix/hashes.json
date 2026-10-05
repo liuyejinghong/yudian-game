@@ -1,0 +1,32 @@
+[
+  {
+    "raw_path": "/private/tmp/yudian-preview-b-selftest1.log",
+    "raw_sha256": "9dae187c20c95b590873dbe9d861b94b32deb17add863be05c44d9fe7cedf2d5",
+    "published": "yudian-preview-b-selftest1.log",
+    "published_sha256": "9dae187c20c95b590873dbe9d861b94b32deb17add863be05c44d9fe7cedf2d5"
+  },
+  {
+    "raw_path": "/private/tmp/yudian-preview-b-selftest2.log",
+    "raw_sha256": "9dae187c20c95b590873dbe9d861b94b32deb17add863be05c44d9fe7cedf2d5",
+    "published": "yudian-preview-b-selftest2.log",
+    "published_sha256": "9dae187c20c95b590873dbe9d861b94b32deb17add863be05c44d9fe7cedf2d5"
+  },
+  {
+    "raw_path": "/private/tmp/yudian-preview-b-independent-check-only-before.log",
+    "raw_sha256": "80d6249eadcaca9c9ba3a5b240088f426895b7f6681ef46240b438f50b6a4072",
+    "published": "yudian-preview-b-independent-check-only-before.log",
+    "published_sha256": "80d6249eadcaca9c9ba3a5b240088f426895b7f6681ef46240b438f50b6a4072"
+  },
+  {
+    "raw_path": "/private/tmp/yudian-preview-b-api.log",
+    "raw_sha256": "688510e08b5315154d4c4e8d16d422b9a892cdf20258e3bb4fd5a651a20718c9",
+    "published": "yudian-preview-b-api.log",
+    "published_sha256": "688510e08b5315154d4c4e8d16d422b9a892cdf20258e3bb4fd5a651a20718c9"
+  },
+  {
+    "raw_path": "/private/tmp/yudian-art-import-independent-20261004/api_b.gd",
+    "raw_sha256": "5c2df6a3c8c8808521577f1f7ee198af8855e3f1087703a35b2a7d7a86406d5d",
+    "published": "api_b.gd",
+    "published_sha256": "5c2df6a3c8c8808521577f1f7ee198af8855e3f1087703a35b2a7d7a86406d5d"
+  }
+]

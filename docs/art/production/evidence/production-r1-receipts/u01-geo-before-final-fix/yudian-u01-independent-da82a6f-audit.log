@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed loading resource: res://prototype/assets/units/tuoyun-r1/tuoyun-r1.glb.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] run (res://audit.gd:39)
+AUDIT GLB load failure

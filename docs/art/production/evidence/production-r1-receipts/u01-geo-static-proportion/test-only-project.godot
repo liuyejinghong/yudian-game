@@ -1,0 +1,4 @@
+[application]
+config/name="U01 GEO Static Proportion Check"
+[rendering]
+renderer/rendering_method="forward_plus"

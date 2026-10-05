@@ -1,0 +1,159 @@
+{
+  "id": "ART-P01-CRATE-GEO",
+  "generator": "generate_crate_r1.py",
+  "coordinate": "meter, +Y up, forward -Z, ground Y=0, translations only",
+  "origin": "bottom-center on ground Y=0",
+  "envelope_m": {
+    "min": [
+      -0.32,
+      0.0,
+      -0.35
+    ],
+    "max": [
+      0.32,
+      0.38,
+      0.35
+    ]
+  },
+  "static_bbox": {
+    "min": [
+      -0.32,
+      0.0,
+      -0.35
+    ],
+    "max": [
+      0.32,
+      0.38,
+      0.35
+    ]
+  },
+  "parts": [
+    {
+      "part": "lower_frame",
+      "role": "frame_dark",
+      "size_m": [
+        0.59,
+        0.14,
+        0.65
+      ],
+      "bounds_m": {
+        "min": [
+          -0.295,
+          0.0,
+          -0.325
+        ],
+        "max": [
+          0.295,
+          0.14,
+          0.325
+        ]
+      }
+    },
+    {
+      "part": "body",
+      "role": "body_light",
+      "size_m": [
+        0.62,
+        0.18,
+        0.68
+      ],
+      "bounds_m": {
+        "min": [
+          -0.31,
+          0.14,
+          -0.34
+        ],
+        "max": [
+          0.31,
+          0.32,
+          0.34
+        ]
+      }
+    },
+    {
+      "part": "top_rim",
+      "role": "frame_dark",
+      "size_m": [
+        0.64,
+        0.06,
+        0.7
+      ],
+      "bounds_m": {
+        "min": [
+          -0.32,
+          0.32,
+          -0.35
+        ],
+        "max": [
+          0.32,
+          0.38,
+          0.35
+        ]
+      }
+    },
+    {
+      "part": "id_plate_front",
+      "role": "accent_warm",
+      "size_m": [
+        0.16,
+        0.05,
+        0.008
+      ],
+      "bounds_m": {
+        "min": [
+          0.08,
+          0.245,
+          -0.347
+        ],
+        "max": [
+          0.24,
+          0.295,
+          -0.339
+        ]
+      }
+    }
+  ],
+  "surface_table": [
+    {
+      "node": "Crate",
+      "surface": 0,
+      "role": "frame_dark",
+      "part": "lower_frame",
+      "tris": 12,
+      "verts": 8
+    },
+    {
+      "node": "Crate",
+      "surface": 1,
+      "role": "body_light",
+      "part": "body",
+      "tris": 12,
+      "verts": 8
+    },
+    {
+      "node": "Crate",
+      "surface": 2,
+      "role": "frame_dark",
+      "part": "top_rim",
+      "tris": 12,
+      "verts": 8
+    },
+    {
+      "node": "Crate",
+      "surface": 3,
+      "role": "accent_warm",
+      "part": "id_plate_front",
+      "tris": 12,
+      "verts": 8
+    }
+  ],
+  "triangles_total": 48,
+  "materials_count": 3,
+  "bin_bytes": 1344,
+  "sha256": {
+    "gltf": "b363d6af9daecb9e7873368d2d28703d704a1757190380314bb5e0f0f1f4e2ac",
+    "bin": "76f292e9691f0fea8e5f792708829e0f4ca17070bd27a14594a338777fdca69b",
+    "glb": "07c1b3b65d9298735ae8673239942a84dde2070f80daa6f48e4e01a3e7503d68",
+    "glb_prototype": "07c1b3b65d9298735ae8673239942a84dde2070f80daa6f48e4e01a3e7503d68"
+  }
+}

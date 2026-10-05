@@ -1,0 +1,512 @@
+{
+  "id": "ART-F06",
+  "revision": 1,
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "preview_scene": "res://assets/lowfi-batch-r1/lander.tscn",
+  "glb": "res://assets/lowfi-batch-r1/models/lander.glb",
+  "glb_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6",
+  "bounds": {
+    "static": {
+      "max": [
+        1.60000002384186,
+        2.375,
+        1.60000002384186
+      ],
+      "min": [
+        -1.60000002384186,
+        0.0,
+        -1.60000002384186
+      ]
+    },
+    "loaded": {
+      "max": [
+        1.60000002384186,
+        2.375,
+        1.60000002384186
+      ],
+      "min": [
+        -1.60000002384186,
+        0.0,
+        -1.60000002384186
+      ]
+    },
+    "active": {
+      "max": [
+        1.60000002384186,
+        2.58999991416931,
+        1.60000002384186
+      ],
+      "min": [
+        -1.60000002384186,
+        0.0,
+        -1.9449999332428
+      ]
+    }
+  },
+  "bounds_scope": "实际顶点与有限动作采样；不作为物理碰撞或导航包络认证",
+  "material_bindings": [
+    {
+      "node": "Model/Lander/Model/CargoFloor",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/CargoFrontBeam",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Lander/Model/CargoHingeSeatL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/CargoHingeSeatR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/CargoLid/CargoLidAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/CargoLid/CargoLidPanel",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Lander/Model/CargoTopBeam",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Lander/Model/CargoWallL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/CargoWallR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/CoreBus",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Lander/Model/FootPad-1-1",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/FootPad-11",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/FootPad1-1",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/FootPad11",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/HandlingEar",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/LanderPayloadDemo/Crate",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/LanderPayloadDemo/Crate",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Lander/Model/LanderPayloadDemo/Crate",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Lander/Model/LandingStrut-1-1",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/LandingStrut-11",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/LandingStrut1-1",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/LandingStrut11",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/RearHingeSeatL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/RearHingeSeatR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/RearModule",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/RearServiceLid/RearServiceAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/RearServiceLid/RearServiceLidPanel",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Lander/Model/StopPlate/StopPlateAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/StopPlate/StopPlatePanel",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Lander/Model/StopPlateSeatL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/StopPlateSeatR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Lander/Model/StrutSeat-1-1",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Lander/Model/StrutSeat-11",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Lander/Model/StrutSeat1-1",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Lander/Model/StrutSeat11",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Lander/Model/UnderCarriage",
+      "surface": 0,
+      "role": "frame_dark"
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Lander/Model/Socket_Cargo",
+      "position": [
+        0.0,
+        0.860000014305115,
+        -0.829999983310699
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        8.74227765734759e-08,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Lander/Model/Socket_Handling",
+      "position": [
+        0.0,
+        0.699999988079071,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        8.74227765734759e-08,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Lander/Model/Socket_Service",
+      "position": [
+        0.0,
+        1.29999995231628,
+        1.11249995231628
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "states": {
+    "idle": {
+      "mode": "static",
+      "reason": "静态候选轮廓",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "move": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "work": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "work",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "charge": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "disabled": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "disabled",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "towed": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "maintenance": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "maintenance",
+      "duration_s": 1.0,
+      "loop": false
+    }
+  },
+  "phases": [
+    "completed"
+  ],
+  "cargo_modes": [
+    "empty",
+    "loaded"
+  ],
+  "source": {
+    "source_path": "art/source/lowfi-batch-r1/new/lander/lander.blend",
+    "tool_version": "Blender 4.5.14 LTS",
+    "original": true,
+    "inheritance": "现役原创模型继承及本批新增；具体见源报告",
+    "hash": "6a1a9a880e097b564989bde72cf05dd6f7d95af57d3e646543e144dd4ff16602",
+    "generators": [
+      "art/source/lowfi-batch-r1/new/build_samples.py"
+    ],
+    "files": [
+      {
+        "path": "art/source/lowfi-batch-r1/new/lander/lander.blend",
+        "sha256": "6a1a9a880e097b564989bde72cf05dd6f7d95af57d3e646543e144dd4ff16602"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/new/lander/lander.glb",
+        "sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/new/build_samples.py",
+        "sha256": "8d6f7423b4b57dbcf42a0b723e48ea484ddf42e38a9517aa09235039388dcf81"
+      }
+    ]
+  },
+  "triangles": 2444,
+  "triangles_with_candidate_attachment": 2444,
+  "textures": [],
+  "source_clips": {
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Lander/Model/CargoLid",
+        "Lander/Model/RearServiceLid",
+        "Lander/Model/StopPlate"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Lander/Model/CargoLid",
+        "Lander/Model/RearServiceLid",
+        "Lander/Model/StopPlate"
+      ]
+    },
+    "work": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Lander/Model/CargoLid",
+        "Lander/Model/RearServiceLid",
+        "Lander/Model/StopPlate"
+      ]
+    }
+  },
+  "source_clip_changes": [
+    {
+      "clip": "disabled",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "StopPlate",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "CargoLid",
+          "rotation"
+        ],
+        [
+          "RearServiceLid",
+          "rotation"
+        ],
+        [
+          "StopPlate",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "maintenance",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "RearServiceLid",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "CargoLid",
+          "rotation"
+        ],
+        [
+          "RearServiceLid",
+          "rotation"
+        ],
+        [
+          "StopPlate",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "work",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "CargoLid",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "CargoLid",
+          "rotation"
+        ],
+        [
+          "RearServiceLid",
+          "rotation"
+        ],
+        [
+          "StopPlate",
+          "rotation"
+        ]
+      ]
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "godot_import": {
+    "path": "prototype/assets/lowfi-batch-r1/models/lander.glb.import",
+    "sha256": "f472dcb59a6d33a5d1d9e9c2f6a64dabc6dc091ab3e590bd8f48bba98b812a37",
+    "animation_player": "PATH:AnimationPlayer",
+    "optimizer_enabled": false,
+    "reason": "保留源动作转折点；Godot实际重导入端点通过"
+  },
+  "phase_state_modes": {
+    "completed": {
+      "idle": {
+        "mode": "static",
+        "reason": "静态候选轮廓"
+      },
+      "move": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "charge": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "disabled": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "towed": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "maintenance": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      }
+    }
+  }
+}

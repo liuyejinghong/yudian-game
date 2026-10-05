@@ -1,0 +1,1053 @@
+{
+  "bounds_including_hidden": {
+    "max": [
+      0.629999995231628,
+      0.860000014305115,
+      0.800000011920929
+    ],
+    "min": [
+      -0.629999995231628,
+      0.0000000149011611938477,
+      -0.800000011920929
+    ]
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "glb": "res://models/u01-hf.glb",
+  "meshes": [
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.560000002384186,
+          0.723414301872253,
+          0.800000011920929
+        ],
+        "min": [
+          -0.560000002384186,
+          0.46000000834465,
+          -0.25
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Body",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 792,
+          "vertices": 560
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 3217,
+          "vertices": 3245
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.361999988555908,
+          0.504000008106232,
+          0.615000009536743
+        ],
+        "min": [
+          -0.388000011444092,
+          0.480000019073486,
+          -0.0550000071525574
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Body/Deck_edge_strip_-1",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 285
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.388000011444092,
+          0.504000008106232,
+          0.615000009536743
+        ],
+        "min": [
+          0.361999988555908,
+          0.480000019073486,
+          -0.0550000071525574
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Body/Deck_edge_strip_1",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 285
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          0.860000014305115,
+          0.629999995231628
+        ],
+        "min": [
+          -0.319999992847443,
+          0.479999989271164,
+          -0.0699999928474426
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/CargoBox",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 376,
+          "vertices": 192
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 188,
+          "vertices": 96
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.494999974966049,
+          0.579999983310699,
+          -0.25
+        ],
+        "min": [
+          0.479999989271164,
+          0.439999997615814,
+          -0.449999988079071
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/ChargeCap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 96
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.479999989271164,
+          0.509999990463257,
+          0.800000011920929
+        ],
+        "min": [
+          -0.479999989271164,
+          0.159999996423721,
+          -0.800000011920929
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Chassis",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 144,
+          "vertices": 96
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.479999959468842,
+          0.629999995231628,
+          -0.245999991893768
+        ],
+        "min": [
+          -0.409999996423721,
+          0.305999994277954,
+          -0.791999995708466
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Head",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 790,
+          "vertices": 456
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 940,
+          "vertices": 480
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 376,
+          "vertices": 192
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.349999994039536,
+          0.649999976158142,
+          -0.25
+        ],
+        "min": [
+          -0.349999994039536,
+          0.629999995231628,
+          -0.751999974250793
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 96
+        },
+        {
+          "material": "accent_warm",
+          "surface": 1,
+          "triangles": 188,
+          "vertices": 96
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.23307178914547,
+          0.660999953746796,
+          -0.602156519889832
+        ],
+        "min": [
+          -0.246928200125694,
+          0.657000005245209,
+          -0.617843508720398
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid/Lid_fastener_0",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 164,
+          "vertices": 190
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.246928200125694,
+          0.660999953746796,
+          -0.602156519889832
+        ],
+        "min": [
+          0.23307178914547,
+          0.657000005245209,
+          -0.617843508720398
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid/Lid_fastener_1",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 164,
+          "vertices": 190
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.23307178914547,
+          0.660999953746796,
+          -0.362156510353088
+        ],
+        "min": [
+          -0.246928200125694,
+          0.657000005245209,
+          -0.377843499183655
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid/Lid_fastener_2",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 164,
+          "vertices": 190
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.246928200125694,
+          0.660999953746796,
+          -0.362156510353088
+        ],
+        "min": [
+          0.23307178914547,
+          0.657000005245209,
+          -0.377843499183655
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid/Lid_fastener_3",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 164,
+          "vertices": 190
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.275000005960464,
+          0.657000005245209,
+          -0.340000003576279
+        ],
+        "min": [
+          -0.275000005960464,
+          0.648999989032745,
+          -0.639999985694885
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid/Lid_inset_plate",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 281
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.0599999986588955,
+          0.677000045776367,
+          -0.677999973297119
+        ],
+        "min": [
+          -0.0599999986588955,
+          0.662999987602234,
+          -0.702000021934509
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid/Lid_lift_tab",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 297
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.0380000025033951,
+          0.666999995708466,
+          -0.677999973297119
+        ],
+        "min": [
+          -0.0520000010728836,
+          0.647000014781952,
+          -0.702000021934509
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid/Lid_tab_mount_-1",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 292
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.0520000010728836,
+          0.666999995708466,
+          -0.677999973297119
+        ],
+        "min": [
+          0.0380000025033951,
+          0.647000014781952,
+          -0.702000021934509
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/HoodLid/Lid_tab_mount_1",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 292
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.261519491672516,
+          0.46000000834465,
+          -0.30535614490509
+        ],
+        "min": [
+          -0.262828409671783,
+          0.319999992847443,
+          -0.452828407287598
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/ProtectedElectronics",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 134,
+          "vertices": 100
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 111,
+          "vertices": 77
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.25,
+          0.849999964237213,
+          0.799999952316284
+        ],
+        "min": [
+          -0.25,
+          0.641999959945679,
+          0.759999990463257
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/RearLock",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 188,
+          "vertices": 96
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 564,
+          "vertices": 288
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.399999976158142,
+          0.385000020265579,
+          0.28301665186882
+        ],
+        "min": [
+          -0.539999961853027,
+          0.173000007867813,
+          -0.592000007629395
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_L",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 80,
+          "vertices": 48
+        },
+        {
+          "material": "rubber",
+          "surface": 1,
+          "triangles": 128,
+          "vertices": 256
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.427499979734421,
+          0.306745439767838,
+          0.592000007629395
+        ],
+        "min": [
+          -0.539999961853027,
+          0.173000022768974,
+          -0.0320000052452087
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_L/Bogie_L",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 112,
+          "vertices": 64
+        },
+        {
+          "material": "rubber",
+          "surface": 1,
+          "triangles": 256,
+          "vertices": 512
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.470000028610229,
+          0.410000026226044,
+          0.204999998211861
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000000149011611938477,
+          -0.204999998211861
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 192,
+          "vertices": 384
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 648,
+          "vertices": 672
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 24,
+          "vertices": 16
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.470000028610229,
+          0.410000026226044,
+          0.764999985694885
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000000149011611938477,
+          0.355000019073486
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 192,
+          "vertices": 384
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 648,
+          "vertices": 672
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 24,
+          "vertices": 16
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.470000028610229,
+          0.410000026226044,
+          -0.355000019073486
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000000149011611938477,
+          -0.764999985694885
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_L/Wheel_LF",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 192,
+          "vertices": 384
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 648,
+          "vertices": 672
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 24,
+          "vertices": 16
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.539999961853027,
+          0.385000020265579,
+          0.28301665186882
+        ],
+        "min": [
+          0.399999976158142,
+          0.173000007867813,
+          -0.592000007629395
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_R",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 80,
+          "vertices": 48
+        },
+        {
+          "material": "rubber",
+          "surface": 1,
+          "triangles": 128,
+          "vertices": 256
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.539999961853027,
+          0.306745439767838,
+          0.592000007629395
+        ],
+        "min": [
+          0.427499979734421,
+          0.173000022768974,
+          -0.0320000052452087
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_R/Bogie_R",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 112,
+          "vertices": 64
+        },
+        {
+          "material": "rubber",
+          "surface": 1,
+          "triangles": 256,
+          "vertices": 512
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.629999995231628,
+          0.410000026226044,
+          0.204999998211861
+        ],
+        "min": [
+          0.470000028610229,
+          0.0000000149011611938477,
+          -0.204999998211861
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 192,
+          "vertices": 384
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 648,
+          "vertices": 672
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 24,
+          "vertices": 16
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.629999995231628,
+          0.410000026226044,
+          0.764999985694885
+        ],
+        "min": [
+          0.470000028610229,
+          0.0000000149011611938477,
+          0.355000019073486
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 192,
+          "vertices": 384
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 648,
+          "vertices": 672
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 24,
+          "vertices": 16
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.629999995231628,
+          0.410000026226044,
+          -0.355000019073486
+        ],
+        "min": [
+          0.470000028610229,
+          0.0000000149011611938477,
+          -0.764999985694885
+        ]
+      },
+      "path": "/root/u01-hf/tuoyun-r1/Model/Wheels/Rocker_R/Wheel_RF",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 192,
+          "vertices": 384
+        },
+        {
+          "material": "frame_dark",
+          "surface": 1,
+          "triangles": 648,
+          "vertices": 672
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 24,
+          "vertices": 16
+        }
+      ],
+      "visible": true
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "path": "/root/u01-hf/tuoyun-r1/Model/Socket_Cargo",
+      "position": [
+        0.0,
+        0.479999989271164,
+        0.280000001192093
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.999999940395355,
+        0.0,
+        0.000000119209289550781
+      ],
+      "path": "/root/u01-hf/tuoyun-r1/Model/Socket_Charge",
+      "position": [
+        0.479999989271164,
+        0.550000011920929,
+        -0.349999994039536
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "path": "/root/u01-hf/tuoyun-r1/Model/Socket_TowFront",
+      "position": [
+        0.0,
+        0.239999994635582,
+        -0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "path": "/root/u01-hf/tuoyun-r1/Model/Socket_TowRear",
+      "position": [
+        0.0,
+        0.239999994635582,
+        0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "triangles": 16504
+}

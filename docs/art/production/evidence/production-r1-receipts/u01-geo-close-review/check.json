@@ -1,0 +1,24 @@
+{
+  "command": [
+    "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+    "--path",
+    "/private/tmp/yudian-u01-geo-visual-master-r4",
+    "--rendering-driver",
+    "metal",
+    "res://scenes/art_preview_r1/PreviewR1.tscn",
+    "--",
+    "--manifest",
+    "/private/tmp/yudian-u01-geo-visual-master-r4/geo_check/manifest.json",
+    "--camera",
+    "close",
+    "--cargo",
+    "empty",
+    "--labels",
+    "blind",
+    "--capture-dir",
+    "<project-root>/art-preview-evidence/u01-geo-close-master-r4/capture"
+  ],
+  "exit": 0,
+  "marker": true,
+  "script_error": false
+}

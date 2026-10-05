@@ -1,0 +1,58 @@
+{
+  "adapter": "Apple M3 Pro (Apple9)",
+  "ambient_energy": 0.6,
+  "camera": {
+    "fov": 50,
+    "keep_height": true,
+    "look_at": [
+      0,
+      0.4,
+      0
+    ],
+    "position": [
+      4,
+      4,
+      6
+    ]
+  },
+  "candidate_colors": true,
+  "display_server": "macOS",
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "exposure": 1.0,
+  "light_energy": 1.0,
+  "light_rotation": [
+    -55,
+    -30,
+    0
+  ],
+  "owner_visual": "NOT_RUN",
+  "png_error": 0,
+  "rendering_method": "forward_plus",
+  "roles": [
+    "body_light",
+    "frame_dark",
+    "rubber",
+    "accent_warm",
+    "solar_face",
+    "soil_mars"
+  ],
+  "source": "Godot independent runtime preview",
+  "sphere_cube_offset_z": [
+    -0.35,
+    0.35
+  ],
+  "viewport": [
+    1920,
+    1200
+  ]
+}

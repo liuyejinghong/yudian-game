@@ -1,0 +1,643 @@
+{
+  "id": "solar",
+  "manifest": {
+    "id": "ART-F01",
+    "revision": 1,
+    "unit": "meter",
+    "up": "+Y",
+    "forward": "-Z",
+    "preview_scene": "res://assets/facilities/solar-r1/preview.tscn",
+    "glb": "res://assets/facilities/solar-r1/solar-r1.glb",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "bounds": {
+      "static": {
+        "min": [
+          -2.385403,
+          0,
+          -1.46
+        ],
+        "max": [
+          2.385403,
+          1.2071346,
+          1.6
+        ]
+      },
+      "loaded": {
+        "min": [
+          -2.385403,
+          0,
+          -1.46
+        ],
+        "max": [
+          2.385403,
+          1.2071346,
+          1.6
+        ]
+      },
+      "active": {
+        "min": [
+          -2.4,
+          0,
+          -1.46
+        ],
+        "max": [
+          2.4,
+          2.86,
+          1.81
+        ]
+      }
+    },
+    "material_bindings": [
+      {
+        "node": "Model/solar-r1/Model/Base/SpineFrame",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/SpineShell",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/FrontNose",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/ServiceSide-0_31",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/ServiceSide0_31",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/ServiceEdge0_37",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/ServiceEdge0_79",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/IndicatorStand",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/IndicatorArm",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/IndicatorAxle",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/StandFoot",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/StopAxle",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/Base/PowerDuct",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/LFFoot/Pad6",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/LFFoot/Arm6",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LBFoot/Pad9",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/LBFoot/Arm9",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RFFoot/Pad12",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/RFFoot/Arm12",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RBFoot/Pad15",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/RBFoot/Arm15",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/Straps/StrapSide19",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/Straps/StrapSide20",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/Straps/StrapCross21",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/Straps/StrapCross22",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/Straps/StrapSide23",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/Straps/StrapSide24",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/Straps/StrapCross25",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/Straps/StrapCross26",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerBack",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerFace",
+        "surface": 0,
+        "role": "solar_face"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerEdge0_02",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerEdge0_98",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerEnd-1_38",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerEnd1_38",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerGrid-0_7",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerGrid0",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftInnerGrid0_7",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterBack",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterFace",
+        "surface": 0,
+        "role": "solar_face"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterEdge0_02",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterEdge0_98",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterEnd-1_38",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterEnd1_38",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterGrid-0_7",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterGrid0",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/LeftInner/LeftOuter/LeftOuterGrid0_7",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerBack",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerFace",
+        "surface": 0,
+        "role": "solar_face"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerEdge0_02",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerEdge0_98",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerEnd-1_38",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerEnd1_38",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerGrid-0_7",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerGrid0",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightInnerGrid0_7",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterBack",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterFace",
+        "surface": 0,
+        "role": "solar_face"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterEdge0_02",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterEdge0_98",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterEnd-1_38",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterEnd1_38",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterGrid-0_7",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterGrid0",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/RightInner/RightOuter/RightOuterGrid0_7",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/ServiceCover/CoverPanel",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/solar-r1/Model/ServiceCover/CoverHandle",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/WorkIndicator/IndicatorBlade",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/solar-r1/Model/StopFlap/StopBlade",
+        "surface": 0,
+        "role": "accent_warm"
+      }
+    ],
+    "sockets": [
+      {
+        "forward": [
+          -1.22464685258517e-16,
+          0.0,
+          1.0
+        ],
+        "position": [
+          0.0,
+          0.300000011920929,
+          1.45000004768372
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "node": "Model/solar-r1/Model/Socket_PowerOut"
+      },
+      {
+        "forward": [
+          -1.22464685258517e-16,
+          0.0,
+          1.0
+        ],
+        "position": [
+          0.0,
+          0.649999976158142,
+          1.35000002384186
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "node": "Model/solar-r1/Model/Socket_Service"
+      }
+    ],
+    "states": {
+      "idle": {
+        "mode": "static",
+        "reason": "仅源内局部表现，不代表发电或维护规则",
+        "clip": null,
+        "duration_s": 0,
+        "loop": false
+      },
+      "move": {
+        "mode": "na",
+        "reason": "固定设施；本态不适用",
+        "clip": null,
+        "duration_s": 0,
+        "loop": false
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "仅源内局部表现，不代表发电或维护规则",
+        "clip": "work",
+        "duration_s": 1,
+        "loop": true
+      },
+      "charge": {
+        "mode": "na",
+        "reason": "固定设施；本态不适用",
+        "clip": null,
+        "duration_s": 0,
+        "loop": false
+      },
+      "disabled": {
+        "mode": "animated",
+        "reason": "仅源内局部表现，不代表发电或维护规则",
+        "clip": "disabled",
+        "duration_s": 1,
+        "loop": false
+      },
+      "towed": {
+        "mode": "na",
+        "reason": "固定设施；本态不适用",
+        "clip": null,
+        "duration_s": 0,
+        "loop": false
+      },
+      "maintenance": {
+        "mode": "animated",
+        "reason": "仅源内局部表现，不代表发电或维护规则",
+        "clip": "maintenance",
+        "duration_s": 1,
+        "loop": false
+      }
+    },
+    "phases": [
+      "packed",
+      "installed",
+      "deploying",
+      "completed"
+    ],
+    "cargo_modes": [
+      "empty"
+    ],
+    "phase_state_modes": {
+      "packed": {
+        "idle": {
+          "mode": "static",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "move": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "work": {
+          "mode": "static",
+          "reason": "未建成不运转；保持本阶段"
+        },
+        "charge": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "disabled": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "towed": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "maintenance": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        }
+      },
+      "installed": {
+        "idle": {
+          "mode": "static",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "move": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "work": {
+          "mode": "static",
+          "reason": "未建成不运转；保持本阶段"
+        },
+        "charge": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "disabled": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "towed": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "maintenance": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        }
+      },
+      "deploying": {
+        "idle": {
+          "mode": "static",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "move": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "work": {
+          "mode": "static",
+          "reason": "未建成不运转；保持本阶段"
+        },
+        "charge": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "disabled": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "towed": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "maintenance": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        }
+      },
+      "completed": {
+        "idle": {
+          "mode": "static",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "move": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "work": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "charge": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "disabled": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        },
+        "towed": {
+          "mode": "na",
+          "reason": "固定设施；本态不适用"
+        },
+        "maintenance": {
+          "mode": "animated",
+          "reason": "仅源内局部表现，不代表发电或维护规则"
+        }
+      }
+    },
+    "source": {
+      "generator": "art/source/facilities/solar-r1/generate_solar_r1.py",
+      "source_path": "art/source/facilities/solar-r1/solar-r1.gltf",
+      "tool_version": "Python 3.14.3 standard library",
+      "original": true,
+      "hash": "57c59441ac587759e003b9c7cbe58911faa634b97135c7d25bf526c2075adeef",
+      "files": [
+        {
+          "path": "art/source/facilities/solar-r1/generate_solar_r1.py",
+          "sha256": "fb4f78218ee858cd106b57130ad8af64607c58d80b1148f3c43bb7a6e84a9f4e"
+        },
+        {
+          "path": "art/source/facilities/solar-r1/solar-r1.gltf",
+          "sha256": "57c59441ac587759e003b9c7cbe58911faa634b97135c7d25bf526c2075adeef"
+        },
+        {
+          "path": "art/source/facilities/solar-r1/solar-r1.bin",
+          "sha256": "a52c40f672c4c6c441461437a0c7c135d26f23e4856cead91a79f2e331499c01"
+        }
+      ]
+    },
+    "triangles": 828,
+    "textures": []
+  },
+  "original_matrix_script_sha256": "1404a714528fe1896df7e666b2df8584a60598dfa99e079dc282359d60768d45",
+  "archived_script_output_path": "user://actual.json (checks unchanged; output path made portable)"
+}

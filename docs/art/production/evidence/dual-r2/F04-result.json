@@ -1,0 +1,19 @@
+{
+  "task_id": "task_0e18fb6a1d",
+  "session_id": "sess_1584816a79",
+  "agent": "zcode",
+  "status": "completed",
+  "elapsed_sec": 729,
+  "error": null,
+  "warnings": [],
+  "result_text": "收到。我将在独立工作树 `art-f04-worker-20261005` 制作 ART-F04-GEO，先读任务票与需求文档。工作树存在且干净。现在读任务票与需求。现在读 M01 引用与 F03 现有源结构（复用其最小辅助）。工作树就绪。先核对 M01 三角色 PBR 值与 prototype 目录结构，然后写生成器。确认：U01 manifest 的 Socket_Charge=(.48,.55,-.35) forward +X，我的 Socket_Dock 需 forward -X 与之相对。三角色 PBR 与 F03 同源。现在写生成器。修两处问题：`_dock_q` 在 SOCKETS 之后才定义（会 NameError），以及 `forward_world` 里一处残留的混乱表达式。再修两处：`bin_bytes` 的取值写法，以及 readback 打印里误把 `fwd_want` 当作旋转输入。现在跑三步实测：六类负例自检 → 正常构建 → 独立回读。`baymark_parts` 返回二元组而 `merge_role` 需要三元组。修正为带角色的三元组并统一解包。六类负例全部拒绝。现在正常构建并独立回读。节点集合比对把根节点也算进了子节点集合。修正比对口径。`validate_scene` 里把 surface 元组的索引表当顶点用了（应为 `s[1]`）。修正。构建与回读都通过。现在做跨目录重跑确定性核验与交付物检查。跨目录重跑 hash 一致，副本字节一致，报告 52 行（≤60）。检查 facts 内容与关键冻结尺寸。facts 齐全：头部面 X=.65、杆 X=.71… .88、socket 朝向 -X/-Z、包络逐轴一致。看一眼最终报告文本后提交。报告合规（52 行）。检查可编辑 glTF/bin 对与 git 状态，然后提交本票两个目录。提交完成，工作树干净。取真实耗时数据后汇报。ART-F04-GEO 完成，已在工人树提交，等待主控 review。\n\n## 交付\n\n- **commit**：`83f7987`（`83f79871e2602a8c182deacb93ae85876627c8f0`，分支 `art/f04-worker-20261005`），仅含本票两个目录共 7 个文件，未 push/merge，工作树干净。\n- **GLB SHA256**：`84c4849bda02625c0499b4dcfb2bc14ec59b6f02b429c2cde86b43e0d1c0b791`；`prototype/assets/facilities/charger-r1/charger-r1.glb` 与源目录字节一致（同 hash）。\n- **面数**：144 三角 / 12 节点 / 9 mesh / 9 surface / 3 材质（M01 三角色只读同源）。\n- **真实耗时**：生成器单次构建实测 0.003s；源码首次落盘到提交约 48 秒工具时间（不含前置读票与 F03 辅助研究）。\n\n## 冻结尺寸遵守\n\nContactHead 受保护接触面 X=.65（未使用旧候选 .52）、ArmStem X=.71… .88、Socket_Dock=(.65,.57,-.35) forward **-X**、Socket_PowerIn=(1.055,.18,-.66) forward **-Z**（均在 GLB 里以真实节点平移+四元数导出，纯标记无网格）；包络 X[-.90,1.30]/Y[0,1.45]/Z[-1.10,1.10] 实测逐轴一致，落地 Y=0；主体固定无动画。BayMark X±.78 导向线 + Z±1.0 端标（Y .020… .024）。报告 52 行（≤60）。\n\n## 真实测试（本机 stdlib 实测）\n\n- `--selftest` 六类非法输入（非有限数/负尺寸/未知角色/坏索引/超包络/缺或坏 socket 方向）全部被具体异常拒绝，非零退出。\n- 确定性：同轮二次重建 + 工作树与 /tmp 两个 cwd 重跑，GLB hash 一致。\n- `--readback` 独立解析 GLB 原始字节（header/JSON/BIN 块），核根/节点集合、两个 socket 平移与朝向（-X/-Z）、逐 surface 顶点 AABB、包络、面数、平法线轴向、材质角色，与 facts 一致。\n\n## NOT_RUN（不代签）\n\nGodot 4 导入、同镜头 normal/close/yaw0/90 空泊位图、U01（含开盖 charge 姿态）静态对位与顶点净空、引擎世界几何核验：主控执行。机械插合、正式电网/补能/维修/导航/保存、STATE、占用逻辑、性能、所有者最终视觉：未制作。本票不宣称最终视觉或机械插合通过。✓ completed · cache 70/71 messages · 81.3k cache-read tokens",
+  "usage": {
+    "used": 83098,
+    "size": 1000000,
+    "sessionUpdate": "usage_update"
+  },
+  "observed_model": null,
+  "worker_commit": "83f7987",
+  "native_confirmation_task": "task_ca0b2cae00",
+  "authorship_note": "Authorship verified from worker commit, not coordinator cwd Bridge files_changed."
+}

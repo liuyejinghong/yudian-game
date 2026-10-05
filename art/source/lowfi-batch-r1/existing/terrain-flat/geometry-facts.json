@@ -1,0 +1,253 @@
+{
+  "scope": "ART-LF-BATCH-01 subpackage B: T01/T02/T03 terrain shape references; static, formal terrain integration BLOCKED",
+  "ticket": "docs/art/production/tasks/ART-LF-BATCH-01.md (T01/T02)",
+  "blender": "4.5.14 LTS",
+  "provenance": "original geometry from ticket formulas; palette soil_mars new candidate, others from legacy GLBs",
+  "not_run": [
+    "gameplay ore/inventory",
+    "deformation/terrain system",
+    "Godot engine verification NOT_RUN by this subpackage (master native suite)",
+    "UV/baking/LOD",
+    "owner visual acceptance"
+  ],
+  "checks": {
+    "negative_suite": {
+      "formula_identity": "PASS",
+      "boundary_zero": "PASS",
+      "dug_nonnegative": "PASS",
+      "non_finite": "PASS (finite grid asserted in check_variant)"
+    }
+  },
+  "variants": {
+    "terrain-original": {
+      "envelope": {
+        "min": [
+          -4.5,
+          0.0,
+          -4.5
+        ],
+        "max": [
+          4.5,
+          1.184066,
+          4.5
+        ],
+        "terrain_tris": 4608
+      },
+      "triangles_total": 4740,
+      "meshes": [
+        {
+          "node": "OreRockA",
+          "triangles": 44,
+          "vertices": 24,
+          "roles": [
+            "frame_dark"
+          ],
+          "bounds": {
+            "min": [
+              1.385195,
+              0.756227,
+              -1.111772
+            ],
+            "max": [
+              2.014805,
+              0.956227,
+              -0.588228
+            ]
+          }
+        },
+        {
+          "node": "OreRockB",
+          "triangles": 44,
+          "vertices": 24,
+          "roles": [
+            "frame_dark"
+          ],
+          "bounds": {
+            "min": [
+              2.026349,
+              0.737985,
+              -1.449467
+            ],
+            "max": [
+              2.573651,
+              0.897985,
+              -0.950533
+            ]
+          }
+        },
+        {
+          "node": "OreRockC",
+          "triangles": 44,
+          "vertices": 24,
+          "roles": [
+            "frame_dark"
+          ],
+          "bounds": {
+            "min": [
+              1.725952,
+              0.741765,
+              -0.820967
+            ],
+            "max": [
+              2.174048,
+              0.861765,
+              -0.379033
+            ]
+          }
+        },
+        {
+          "node": "TerrainSurface",
+          "triangles": 4608,
+          "vertices": 2401,
+          "roles": [
+            "soil_mars"
+          ],
+          "bounds": {
+            "min": [
+              -4.5,
+              0.0,
+              -4.5
+            ],
+            "max": [
+              4.5,
+              1.184066,
+              4.5
+            ]
+          }
+        }
+      ],
+      "files": {
+        "terrain-original.blend": {
+          "bytes": 603031,
+          "sha256": "8947e3801353334489d97556eb9ba6b598a5dca4478c6e31b49e85c8eb04cba8"
+        },
+        "terrain-original.glb": {
+          "bytes": 235496,
+          "sha256": "946a457fb11f567b88963cc217a57b8b4a69d1d0b15c20a66f94f072f879333a"
+        }
+      },
+      "reopen_check": {
+        "max_float_diff": 0.0,
+        "problems": [],
+        "reexport_sha256": "946a457fb11f567b88963cc217a57b8b4a69d1d0b15c20a66f94f072f879333a",
+        "deliverable_sha256": "946a457fb11f567b88963cc217a57b8b4a69d1d0b15c20a66f94f072f879333a",
+        "identical_bytes": true
+      }
+    },
+    "terrain-flat": {
+      "envelope": {
+        "min": [
+          -4.5,
+          0.0,
+          -4.5
+        ],
+        "max": [
+          4.5,
+          0.956226,
+          4.5
+        ],
+        "terrain_tris": 4608
+      },
+      "triangles_total": 4740,
+      "meshes": [
+        {
+          "node": "OreRockA",
+          "triangles": 44,
+          "vertices": 24,
+          "roles": [
+            "frame_dark"
+          ],
+          "bounds": {
+            "min": [
+              1.385195,
+              0.756226,
+              -1.111772
+            ],
+            "max": [
+              2.014805,
+              0.956226,
+              -0.588228
+            ]
+          }
+        },
+        {
+          "node": "OreRockB",
+          "triangles": 44,
+          "vertices": 24,
+          "roles": [
+            "frame_dark"
+          ],
+          "bounds": {
+            "min": [
+              2.026349,
+              0.737985,
+              -1.449467
+            ],
+            "max": [
+              2.573651,
+              0.897985,
+              -0.950533
+            ]
+          }
+        },
+        {
+          "node": "OreRockC",
+          "triangles": 44,
+          "vertices": 24,
+          "roles": [
+            "frame_dark"
+          ],
+          "bounds": {
+            "min": [
+              1.725952,
+              0.741765,
+              -0.820967
+            ],
+            "max": [
+              2.174048,
+              0.861765,
+              -0.379033
+            ]
+          }
+        },
+        {
+          "node": "TerrainSurface",
+          "triangles": 4608,
+          "vertices": 2401,
+          "roles": [
+            "soil_mars"
+          ],
+          "bounds": {
+            "min": [
+              -4.5,
+              0.0,
+              -4.5
+            ],
+            "max": [
+              4.5,
+              0.838599,
+              4.5
+            ]
+          }
+        }
+      ],
+      "files": {
+        "terrain-flat.blend": {
+          "bytes": 603031,
+          "sha256": "536cd61dc2f1a3a1de9baf7be1a8adf3f49e449faba569e6fefe19c9abc0fd0c"
+        },
+        "terrain-flat.glb": {
+          "bytes": 197284,
+          "sha256": "55161c4f45527a00af6758f8461414476b77f56518a74ca7af4c59e1917a5d00"
+        }
+      },
+      "reopen_check": {
+        "max_float_diff": 0.0,
+        "problems": [],
+        "reexport_sha256": "55161c4f45527a00af6758f8461414476b77f56518a74ca7af4c59e1917a5d00",
+        "deliverable_sha256": "55161c4f45527a00af6758f8461414476b77f56518a74ca7af4c59e1917a5d00",
+        "identical_bytes": true
+      }
+    }
+  }
+}

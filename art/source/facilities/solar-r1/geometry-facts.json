@@ -1,0 +1,465 @@
+{
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "original": true,
+  "surfaces": [
+    {
+      "node": "SpineFrame",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "SpineShell",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "FrontNose",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "Pad6",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "Arm6",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "Pad9",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "Arm9",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "Pad12",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "Arm12",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "Pad15",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "Arm15",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "StrapSide19",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "StrapSide20",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "StrapCross21",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "StrapCross22",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "StrapSide23",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "StrapSide24",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "StrapCross25",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "StrapCross26",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerBack",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerFace",
+      "surface": 0,
+      "role": "solar_face",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerEdge0.02",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerEdge0.98",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerEnd-1.38",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerEnd1.38",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerGrid-0.7",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerGrid0",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftInnerGrid0.7",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterBack",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterFace",
+      "surface": 0,
+      "role": "solar_face",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterEdge0.02",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterEdge0.98",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterEnd-1.38",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterEnd1.38",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterGrid-0.7",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterGrid0",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "LeftOuterGrid0.7",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerBack",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerFace",
+      "surface": 0,
+      "role": "solar_face",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerEdge0.02",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerEdge0.98",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerEnd-1.38",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerEnd1.38",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerGrid-0.7",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerGrid0",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightInnerGrid0.7",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterBack",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterFace",
+      "surface": 0,
+      "role": "solar_face",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterEdge0.02",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterEdge0.98",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterEnd-1.38",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterEnd1.38",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterGrid-0.7",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterGrid0",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "RightOuterGrid0.7",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "ServiceSide-0.31",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "ServiceSide0.31",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "ServiceEdge0.37",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "ServiceEdge0.79",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "CoverPanel",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "CoverHandle",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "IndicatorBlade",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "IndicatorStand",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "IndicatorArm",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "IndicatorAxle",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "StandFoot",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "StopAxle",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "StopBlade",
+      "surface": 0,
+      "role": "accent_warm",
+      "triangles": 12
+    },
+    {
+      "node": "PowerDuct",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "ElectronicsMount",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "ProtectedElectronics",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "ElectronicsInnerCover",
+      "surface": 0,
+      "role": "body_light",
+      "triangles": 12
+    },
+    {
+      "node": "FixedCableGuardL",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    },
+    {
+      "node": "FixedCableGuardR",
+      "surface": 0,
+      "role": "frame_dark",
+      "triangles": 12
+    }
+  ],
+  "triangles": 888,
+  "glb_sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73",
+  "source_clips": [
+    "deploying",
+    "work-loop",
+    "disabled",
+    "maintenance",
+    "packed"
+  ],
+  "visibility_requires_wrapper": [
+    "Straps"
+  ],
+  "import_visual": "NOT_RUN"
+}

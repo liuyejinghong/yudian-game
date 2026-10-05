@@ -1,0 +1,14 @@
+{
+  "files": {
+    "board.json": {
+      "bytes": 5695,
+      "sha256": "d39756a0eb05932d33c522bb87eb2bc0d78ee7f55dab731ccce0ce4280e82998"
+    },
+    "board.png": {
+      "bytes": 109115,
+      "sha256": "84467ae5fbc81aff950cd2a776086edbf77aed24c765d91b459f61c7ddd0333b"
+    }
+  },
+  "note": "capture-side hash manifest; this file cannot contain its own hash",
+  "schema": "art-preview-r1-capture-hashes/1"
+}

@@ -1,0 +1,39 @@
+{
+  "revision": 3,
+  "glb_sha256": "b4a338d48919df5745189a59603b210ed46c91b06dabf01e70874ff42b8aff81",
+  "triangles": 19504,
+  "meshes": 46,
+  "sockets_checked": 4,
+  "images": 16,
+  "image_sha256": {
+    "u01-prev_normal_0_empty.png": "8f80af864dbe49d10542a1ddb4f4e4ce2d56e92ec86bbe71779b6b06e92d0f8f",
+    "u01-prev_normal_0_loaded.png": "36a41cb3c4ba1e7dd47c0ad8fa864a5db491935f0ec1fd756946687c1bacd24c",
+    "u01-prev_normal_90_empty.png": "155fad7acc921287d0ea3ccbe4e5908fcacc0d790c37fdc90da11cdd4fb59ea3",
+    "u01-prev_normal_90_loaded.png": "f10f76af73a7f73fc888a1fdda7a85127ac3b5a851713a52140ecb476095a6bf",
+    "u01-prev_close_0_empty.png": "30d9a3fc74ffdb107549b073d897b2c4b62d07701a7fd6b2e5d87712ae7b2864",
+    "u01-prev_close_0_loaded.png": "890c65ce384c99b64b6cd47dba6a841c6b1535735b14aa7d13f82c50ee141ca3",
+    "u01-prev_close_90_empty.png": "5b3a2fd6eb920fc08fd249ea0bbd599dc980f398ad704f8810034cbfaae9e111",
+    "u01-prev_close_90_loaded.png": "761a308280ff0a268bfecfbe997987fd1dcfdcbe1aefb560ca41d9e08dfbb2ec",
+    "u01-hf_normal_0_empty.png": "bcb752090f4d4f4d1f20303a49cac4f6ee1dc474b4a733bac8b0e848fe1ba72b",
+    "u01-hf_normal_0_loaded.png": "31fcd840267f8de92318bc1631c916da1ab2445571bae76123531def80c61009",
+    "u01-hf_normal_90_empty.png": "5d37f4d80ceb5945152d80d4319d6e8c2b61760144ff1677eeb64ce6641fdd67",
+    "u01-hf_normal_90_loaded.png": "bcdde6c421bda266cded489a51e0af6b1fc3ff086c8567ecd4549cb96a9e6f39",
+    "u01-hf_close_0_empty.png": "66e58910d34c8c8edab4f55e65532c8bb37d3a4e860f91f129f70f0f7950a04b",
+    "u01-hf_close_0_loaded.png": "3e2cb46687d3d1aa0a1fa645e39939ab778ff2bf07cc62fee50a7a386425e267",
+    "u01-hf_close_90_empty.png": "c62403cdf2aca72d39ccb0303ee09fbc738ddd59e0f9c338f8c6cc230caa32d5",
+    "u01-hf_close_90_loaded.png": "69d3240b55c0d276dbf66fdbadda5d85b778873e80cfbd75849613f7ef4cf551"
+  },
+  "bounds": {
+    "max": [
+      0.64599996805191,
+      0.860000014305115,
+      0.800000011920929
+    ],
+    "min": [
+      -0.64599996805191,
+      1.49011611938477e-08,
+      -0.800000011920929
+    ]
+  },
+  "scope": "idle static shape only, no full movement/UV/baking/owner acceptance"
+}

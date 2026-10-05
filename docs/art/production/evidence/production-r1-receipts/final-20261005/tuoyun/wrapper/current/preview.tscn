@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://assets/units/tuoyun-r1/preview.gd" id="1_wrap"]
+[ext_resource type="PackedScene" path="res://assets/units/tuoyun-r1/tuoyun-r1.glb" id="2_glb"]
+
+[node name="SampleRoot" type="Node3D"]
+script = ExtResource("1_wrap")
+
+[node name="Model" parent="." instance=ExtResource("2_glb")]

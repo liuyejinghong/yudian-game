@@ -1,0 +1,384 @@
+{
+  "id": "ART-F04",
+  "revision": 1,
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "preview_scene": "res://assets/lowfi-batch-r1/charger.tscn",
+  "glb": "res://assets/lowfi-batch-r1/models/charger.glb",
+  "glb_sha256": "5537e297f44705ab2b96e1e4fecddff41d854f3b2005ae30dfaeca8f5d408a8c",
+  "bounds": {
+    "static": {
+      "max": [
+        1.29999995231628,
+        1.49000000953674,
+        1.10000002384186
+      ],
+      "min": [
+        -0.899999976158142,
+        0.0,
+        -1.33999991416931
+      ]
+    },
+    "loaded": {
+      "max": [
+        1.29999995231628,
+        1.49000000953674,
+        1.10000002384186
+      ],
+      "min": [
+        -0.899999976158142,
+        0.0,
+        -1.33999991416931
+      ]
+    },
+    "active": {
+      "max": [
+        1.82089376449585,
+        1.71000003814697,
+        1.10000002384186
+      ],
+      "min": [
+        -0.899999976158142,
+        0.0,
+        -1.33999991416931
+      ]
+    }
+  },
+  "bounds_scope": "实际顶点与有限动作采样；不作为物理碰撞或导航包络认证",
+  "material_bindings": [
+    {
+      "node": "Model/ChargingStation/ArmStem",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/BayMark",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/ChargingStation/Cabinet",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/ChargingStation/CabinetCap",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/ChargingStation/CabinetFoot",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/ContactHead",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/ChargingStation/Foundation",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/PowerInGuard",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/ServicePanelAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/ServicePanelMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/ServicePanelPivot/ServicePanel",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/StatusPaddleAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/StatusPaddleMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/StatusPaddlePivot/StatusPaddleMark",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/ChargingStation/StatusPaddlePivot/StatusPaddlePanel",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/ChargingStation/StopGateAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/StopGateMountL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/StopGateMountR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/ChargingStation/StopGatePivot/StopGatePanel",
+      "surface": 0,
+      "role": "accent_warm"
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        -1.0,
+        0.0,
+        1.19209303761636e-07
+      ],
+      "node": "Model/ChargingStation/Socket_Dock",
+      "position": [
+        0.649999976158142,
+        0.569999992847443,
+        -0.349999994039536
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/ChargingStation/Socket_PowerIn",
+      "position": [
+        1.05499994754791,
+        0.180000007152557,
+        -0.660000026226044
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "states": {
+    "idle": {
+      "mode": "static",
+      "reason": "静态候选轮廓",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "move": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "work": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "work",
+      "duration_s": 2.0,
+      "loop": true
+    },
+    "charge": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "disabled": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "disabled",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "towed": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "maintenance": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "maintenance",
+      "duration_s": 1.0,
+      "loop": false
+    }
+  },
+  "phases": [
+    "completed"
+  ],
+  "cargo_modes": [
+    "empty"
+  ],
+  "source": {
+    "source_path": "art/source/lowfi-batch-r1/existing/charger/charger.blend",
+    "tool_version": "Blender 4.5.14 LTS",
+    "original": true,
+    "inheritance": "现役原创模型继承及本批新增；具体见源报告",
+    "hash": "13414d35072d6bd787c3dea1bad6a012a0961f721214f01e831bb2dc8093edb4",
+    "generators": [
+      "art/source/lowfi-batch-r1/existing/build_charger.py"
+    ],
+    "files": [
+      {
+        "path": "art/source/lowfi-batch-r1/existing/charger/charger.blend",
+        "sha256": "13414d35072d6bd787c3dea1bad6a012a0961f721214f01e831bb2dc8093edb4"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/existing/charger/charger.glb",
+        "sha256": "5537e297f44705ab2b96e1e4fecddff41d854f3b2005ae30dfaeca8f5d408a8c"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/existing/build_charger.py",
+        "sha256": "7ffb8aecd642a1dc3f84a9854fb66f049af96c32fa8ad4ca31ea0aead0e049da"
+      }
+    ]
+  },
+  "triangles": 824,
+  "triangles_with_candidate_attachment": 824,
+  "textures": [],
+  "source_clips": {
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "ChargingStation/StopGatePivot",
+        "ChargingStation/ServicePanelPivot",
+        "ChargingStation/StatusPaddlePivot"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "ChargingStation/ServicePanelPivot",
+        "ChargingStation/StatusPaddlePivot",
+        "ChargingStation/StopGatePivot"
+      ]
+    },
+    "work": {
+      "duration_s": 2.0,
+      "tracks": [
+        "ChargingStation/StatusPaddlePivot",
+        "ChargingStation/ServicePanelPivot",
+        "ChargingStation/StopGatePivot"
+      ]
+    }
+  },
+  "source_clip_changes": [
+    {
+      "clip": "maintenance",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "ServicePanelPivot",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ServicePanelPivot",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "work",
+      "duration_s": 2,
+      "changed_targets": [
+        [
+          "StatusPaddlePivot",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "StatusPaddlePivot",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "disabled",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "StopGatePivot",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "StopGatePivot",
+          "rotation"
+        ]
+      ]
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "godot_import": {
+    "path": "prototype/assets/lowfi-batch-r1/models/charger.glb.import",
+    "sha256": "a949857bdec06524c692a33af8002eb5914ec640332fb989b69237a31e9a34e5",
+    "animation_player": "PATH:AnimationPlayer",
+    "optimizer_enabled": false,
+    "reason": "保留源动作转折点；Godot实际重导入端点通过"
+  },
+  "phase_state_modes": {
+    "completed": {
+      "idle": {
+        "mode": "static",
+        "reason": "静态候选轮廓"
+      },
+      "move": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "charge": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "disabled": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "towed": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "maintenance": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      }
+    }
+  }
+}

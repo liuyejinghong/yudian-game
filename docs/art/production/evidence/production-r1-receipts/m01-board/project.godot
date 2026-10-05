@@ -1,0 +1,6 @@
+config_version=5
+[application]
+config/name="Yudian M01 Independent Board"
+run/main_scene="res://board.tscn"
+[rendering]
+renderer/rendering_method="forward_plus"

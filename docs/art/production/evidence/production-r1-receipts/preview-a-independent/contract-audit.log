@@ -1,0 +1,39 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+INDEPENDENT baseline_manifest PASS
+SCRIPT ERROR: Trying to assign value of type 'StandardMaterial3D' to a variable of type 'PackedScene'.
+   at: _instantiate_sample (res://scenes/art_preview_r1/preview_r1.gd:371)
+   GDScript backtrace (most recent call first):
+       [0] _instantiate_sample (res://scenes/art_preview_r1/preview_r1.gd:371)
+       [1] fresh (res://independent/audit.gd:11)
+       [2] run (res://independent/audit.gd:23)
+INDEPENDENT wrong_resource_returns_error FAIL {  }
+INDEPENDENT baseline_wrapper PASS
+INDEPENDENT baseline_binding PASS
+INDEPENDENT declared_static_holds FAIL (0.0, 0.25, 0.0)
+SCRIPT ERROR: Trying to assign value of type 'Array' to a variable of type 'float'.
+   at: _validate (res://scenes/art_preview_r1/sample_wrapper.gd:104)
+   GDScript backtrace (most recent call first):
+       [0] _validate (res://scenes/art_preview_r1/sample_wrapper.gd:104)
+       [1] apply_preview (res://scenes/art_preview_r1/sample_wrapper.gd:77)
+       [2] run (res://independent/audit.gd:34)
+SCRIPT ERROR: Trying to assign value of type 'Array' to a variable of type 'float'.
+   at: _apply_pose (res://scenes/art_preview_r1/sample_wrapper.gd:152)
+   GDScript backtrace (most recent call first):
+       [0] _apply_pose (res://scenes/art_preview_r1/sample_wrapper.gd:152)
+       [1] apply_preview (res://scenes/art_preview_r1/sample_wrapper.gd:86)
+       [2] run (res://independent/audit.gd:34)
+INDEPENDENT wrong_preset_type_returns_error FAIL
+INDEPENDENT minimal_wrapper_load PASS
+SCRIPT ERROR: Invalid call. Nonexistent function 'get_state_mode (via call)' in base 'Node3D (minimal.gd)'.
+   at: _apply_preset (res://scenes/art_preview_r1/preview_r1.gd:541)
+   GDScript backtrace (most recent call first):
+       [0] _apply_preset (res://scenes/art_preview_r1/preview_r1.gd:541)
+       [1] run (res://independent/audit.gd:41)
+INDEPENDENT only_apply_contract_works FAIL {  }
+INDEPENDENT whole_material_override_rejected FAIL
+actual effective material is whole override=true
+INDEPENDENT wrapper_actual_glb_identity_rejected FAIL
+INDEPENDENT wrong_static_bounds_rejected FAIL
+INDEPENDENT nonidentity_sample_root_rejected FAIL
+PREVIEW_A_INDEPENDENT_CONTRACT_FAILED_COUNT=8

@@ -1,0 +1,218 @@
+{
+  "applied": {
+    "mode": "animated",
+    "mode_reason": "源内局部表现；不计算游戏规则",
+    "na_reason": ""
+  },
+  "asset": {
+    "id": "ART-U01",
+    "revision": 2
+  },
+  "files": {
+    "json": "blind_0001.json",
+    "png": "blind_0001.png"
+  },
+  "git": {
+    "dirty": null,
+    "error": "git rev-parse failed: fatal: not a git repository (or any of the parent directories): .git",
+    "head": "unavailable"
+  },
+  "hashes": {
+    "glb": {
+      "actual_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+      "declared_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+      "path": "res://assets/units/tuoyun-r1/tuoyun-r1.glb"
+    },
+    "manifest": {
+      "actual_sha256": "5974289c242f69137c3443b27cfd8b70ad6d5c7f0dcf4913dbf42cfb701602b6",
+      "note": "recorded by the capture side only; the manifest cannot hash itself",
+      "path": "<temp>/yudian-u01-preview-master-r9/capture-manifest.json"
+    },
+    "materials": {
+      "accent_warm": {
+        "path": "res://assets/materials/art-r1/accent_warm.tres",
+        "sha256": "fe01e258db57c387c7dbba6aa9b1febe67a8b24c6fbc479d1fc71a3824faa290"
+      },
+      "body_light": {
+        "path": "res://assets/materials/art-r1/body_light.tres",
+        "sha256": "c42d893024832f054751605a3cbb672222c022a83825cfa8fb45a9d19af8ffa1"
+      },
+      "frame_dark": {
+        "path": "res://assets/materials/art-r1/frame_dark.tres",
+        "sha256": "3d98442ab026c3ebaf73b98e397428e97c3185012a16bf1ace5917ddf6ad6936"
+      },
+      "rubber": {
+        "path": "res://assets/materials/art-r1/rubber.tres",
+        "sha256": "82c0f80a962402f8c204dbb73680062b1e2fcf80389895b3cce8bf243ffe246a"
+      },
+      "soil_mars": {
+        "path": "res://assets/materials/art-r1/soil_mars.tres",
+        "sha256": "5f8aa3e483006e74e69cbda1385c2392c2f4f71f73b4129f957f2e15adf8a4f6"
+      },
+      "solar_face": {
+        "path": "res://assets/materials/art-r1/solar_face.tres",
+        "sha256": "1b1be352ed4d6694b2883a4a6392a60b15a8c31dcc386517dd7d94f52571c209"
+      }
+    },
+    "preview_config": {
+      "res://scenes/art_preview_r1/PreviewR1.tscn": {
+        "sha256": "04419f702b26595f0d34b72ab0231ca61cc55eeb1f166a20ef501848815b2fb5"
+      },
+      "res://scenes/art_preview_r1/preview_capture_r1.gd": {
+        "sha256": "ea5076694c5cc4eab19a9ad7bc516a5a472338bba352d71f772920a5ca19c74c"
+      },
+      "res://scenes/art_preview_r1/preview_overlay_r1.gd": {
+        "sha256": "35843e958a11ccf7c7074a5087d7a6243396137cc319511b3c472457f80c7e38"
+      },
+      "res://scenes/art_preview_r1/preview_panel_r1.gd": {
+        "sha256": "f17b8575ec0a27a95160d2d606c0077b30b22d73350ec0d2f081e7af680059e2"
+      },
+      "res://scenes/art_preview_r1/preview_r1.gd": {
+        "sha256": "41eea168533f5168050e3de1d6ecb099daafc396815a177a3f2e6e268d40eb36"
+      },
+      "res://scenes/art_preview_r1/preview_view_r1.gd": {
+        "sha256": "1b485c1bb539c3dd353c27dd24cd0fbab9b59001038282e137c5487348131282"
+      },
+      "res://scenes/art_preview_r1/sample_wrapper.gd": {
+        "sha256": "9eff00d89f8157a5b55e9236354b14b9f083d0374d2badac8e0dbadedf3c8c4d"
+      }
+    },
+    "source": {
+      "declared_hash": "71aa74f54c85fa55dbd34a720cc64a0406bbaa58b0116cf51771cf63712633aa",
+      "files": [
+        {
+          "actual_sha256": "4f8c8f8af2ff5e0dcdbe83ce53a3c28993d13badb40fb37706b222b79389a493",
+          "declared_sha256": "4f8c8f8af2ff5e0dcdbe83ce53a3c28993d13badb40fb37706b222b79389a493",
+          "match": true,
+          "path": "<workspace>/art-production-r1-20261004/art/source/units/tuoyun-r1/generate_tuoyun_r1.py"
+        },
+        {
+          "actual_sha256": "71aa74f54c85fa55dbd34a720cc64a0406bbaa58b0116cf51771cf63712633aa",
+          "declared_sha256": "71aa74f54c85fa55dbd34a720cc64a0406bbaa58b0116cf51771cf63712633aa",
+          "match": true,
+          "path": "<workspace>/art-production-r1-20261004/art/source/units/tuoyun-r1/tuoyun-r1.gltf"
+        },
+        {
+          "actual_sha256": "98bd7d0e6c1149f1ef499c0642bd5401722c189b20aaeb819e965950ed29c2f3",
+          "declared_sha256": "98bd7d0e6c1149f1ef499c0642bd5401722c189b20aaeb819e965950ed29c2f3",
+          "match": true,
+          "path": "<workspace>/art-production-r1-20261004/art/source/units/tuoyun-r1/tuoyun-r1.bin"
+        }
+      ],
+      "generator": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py"
+    }
+  },
+  "labels": "blind",
+  "mode": "manifest",
+  "requested": {
+    "camera": "normal",
+    "cargo": "empty",
+    "phase": "completed",
+    "phase_t": 0.0,
+    "reason": "none",
+    "state": "disabled",
+    "time_s": 1.0,
+    "yaw": 90
+  },
+  "roots": {
+    "entity_position": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "entity_rotation_y_deg": 90.0000025044782,
+    "sample_identity": true,
+    "visual_identity": true
+  },
+  "schema": "art-preview-r1-capture/1",
+  "view": {
+    "camera": {
+      "attributes": "none",
+      "far": 200.0,
+      "fov": 60.0,
+      "keep_aspect": "keep_height",
+      "mode_requested": "normal",
+      "near": 0.0500000007450581,
+      "position": [
+        18.3847999572754,
+        28.0,
+        18.3847999572754
+      ],
+      "projection": "perspective",
+      "rotation_degrees": [
+        -47.1210594177246,
+        45.0,
+        0.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "environment": {
+      "ambient_light_color": "d5dbdf",
+      "ambient_light_energy": 0.600000023841858,
+      "ambient_light_sky_contribution": 0.0,
+      "ambient_light_source": "color",
+      "background_color": "aeb8bc",
+      "background_energy_multiplier": 1.0,
+      "background_mode": "color",
+      "fog_enabled": false,
+      "glow_enabled": false,
+      "reflected_light_source": "disabled",
+      "sdfgi_enabled": false,
+      "ssao_enabled": false,
+      "ssil_enabled": false,
+      "ssr_enabled": false,
+      "tonemap_exposure": 1.0,
+      "tonemap_mode": "linear",
+      "volumetric_fog_enabled": false
+    },
+    "light": {
+      "directional_shadow_max_distance": 80.0,
+      "light_color": "ffffff",
+      "light_energy": 1.0,
+      "rotation_degrees": [
+        -54.9999961853027,
+        -30.0,
+        0.0
+      ],
+      "shadow_enabled": true,
+      "soft_shadow_filter_quality": {
+        "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+        "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+        "value": 2
+      }
+    },
+    "render": {
+      "adapter_name": "Apple M3 Pro (Apple9)",
+      "adapter_vendor": "Apple",
+      "display_server": "macOS",
+      "engine_build": "official",
+      "engine_version": "4.7.2-stable (official)",
+      "rendering_driver_actual": "metal",
+      "rendering_method_actual": "forward_plus",
+      "video_adapter_api_version": "4.0"
+    },
+    "shadow_atlas": {
+      "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+      "requested_size": 4096
+    },
+    "viewport": {
+      "height": 1200,
+      "msaa_3d": "4x",
+      "msaa_3d_raw": 2,
+      "own_world_3d": true,
+      "render_target_update_mode": 4,
+      "scaling_3d_scale": 1.0,
+      "screen_space_aa": "disabled",
+      "transparent_bg": false,
+      "use_taa": false,
+      "width": 1920
+    },
+    "world_environment": {
+      "camera_attributes": "none"
+    }
+  }
+}

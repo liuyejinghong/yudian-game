@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+SCRIPT ERROR: Assertion failed: source pose target SensorYaw(0.0, 35.0, 0.0)(0.0, 30.625, 0.0)
+          at: rotation (res://validate.gd:99)
+          GDScript backtrace (most recent call first):
+              [0] rotation (res://validate.gd:99)
+              [1] check_poses (res://validate.gd:122)
+              [2] run (res://validate.gd:164)
+SCRIPT ERROR: Assertion failed.
+          at: check_poses (res://validate.gd:122)
+          GDScript backtrace (most recent call first):
+              [0] check_poses (res://validate.gd:122)
+              [1] run (res://validate.gd:164)
+SCRIPT ERROR: Assertion failed.
+          at: run (res://validate.gd:164)
+          GDScript backtrace (most recent call first):
+              [0] run (res://validate.gd:164)
+
+TASK_TIMEOUT_55_SECONDS

@@ -1,0 +1,18 @@
+{
+  "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+  "triangles": 756,
+  "distinct_payload_world_positions": 12,
+  "surfaces": 52,
+  "images": 8,
+  "image_sha256": {
+    "storage_normal_0_empty.png": "feed2f2c1bb1cef2e917953a85dc67e2fb6df39b4dad07c826a49b6af3f89e6b",
+    "storage_normal_0_loaded.png": "1a3067e254f7e4bc3f69c058bd0ff84e814ac0716994a1c22254fe8e9f65e8c7",
+    "storage_normal_90_empty.png": "433598c70d828c96fefdde2589cd718e87aab6a19bd5915d030ba3aa4f2ef4cc",
+    "storage_normal_90_loaded.png": "ecbc2505684e5201c6d9105bd143c687d7ac71fb60ca47cc945e69838eae5092",
+    "storage_close_0_empty.png": "c4a8f5dd3eb8d8e2a44df8ae05986917db280ec4bb5bd46ef693ab9b193ee966",
+    "storage_close_0_loaded.png": "5eb2a540f26e0c44f9e7fdf390be90ec8c4a38c5a058a64ca22462b30deadc69",
+    "storage_close_90_empty.png": "4b5ecc482a0ccb2997c89c0a9ec6e9e211e93174dae352dcab8f6198b9c249a5",
+    "storage_close_90_loaded.png": "e9b49c9ef87d036d1375a851b424838d56839adccbcbbaebc727c2a9412d263d"
+  },
+  "visual_acceptance": "primary inspection recorded in README, owner NOT_RUN"
+}

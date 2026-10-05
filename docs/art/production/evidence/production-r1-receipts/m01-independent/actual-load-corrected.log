@@ -1,0 +1,45 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+ERROR: M01 unexpected texture: body_light/heightmap_flip_texture
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:29)
+M01_PARAM body_light color=d8dcd6ff roughness=0.64999997615814 metallic=0.0
+ERROR: M01 unexpected texture: frame_dark/heightmap_flip_texture
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:29)
+M01_PARAM frame_dark color=38454bff roughness=0.75 metallic=0.20000000298023
+ERROR: M01 unexpected texture: rubber/heightmap_flip_texture
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:29)
+M01_PARAM rubber color=24292bff roughness=0.89999997615814 metallic=0.0
+ERROR: M01 unexpected texture: accent_warm/heightmap_flip_texture
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:29)
+M01_PARAM accent_warm color=d77b3dff roughness=0.60000002384186 metallic=0.0
+ERROR: M01 unexpected texture: solar_face/heightmap_flip_texture
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:29)
+M01_PARAM solar_face color=203b52ff roughness=0.34999999403954 metallic=0.10000000149012
+ERROR: M01 unexpected texture: soil_mars/heightmap_flip_texture
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:29)
+M01_PARAM soil_mars color=98684dff roughness=0.94999998807907 metallic=0.0
+ERROR: Cannot open file 'res://materials/not_a_role.tres'.
+   at: load (scene/resources/resource_format_text.cpp:1442)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:32)
+ERROR: Failed loading resource: res://materials/not_a_role.tres.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:32)
+ERROR: Error loading resource: 'res://materials/not_a_role.tres'.
+   at: load (core/core_bind.cpp:82)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://check.gd:32)
+M01_MISSING_PATH_REJECTED=true

@@ -1,0 +1,290 @@
+{
+  "scope": "ART-LF-BATCH-01 subpackage B: U02 zhulei charge lid + five real clips; root static, candidates only",
+  "ticket": "docs/art/production/tasks/ART-LF-BATCH-01.md (U02)",
+  "blender": "4.5.14 LTS",
+  "source": {
+    "path": "<project-root>/art-lowfi-batch-b-20261005/art/source/units/zhulei-r1/zhulei-r1.blend",
+    "sha256": "6d985fe2db16e31889df94018f3005839fc57a0ca3e3f478ef5c5b19688f531a",
+    "provenance": "current zhulei-r1 .blend at 39e9618 (read-only); all legacy nodes kept; ChargePivot + hinge added"
+  },
+  "idle_envelope": {
+    "min": [
+      -0.87,
+      2.4e-05,
+      -0.810649
+    ],
+    "max": [
+      0.87,
+      1.103437,
+      0.8
+    ]
+  },
+  "triangles_total": 8584,
+  "sockets": {
+    "Socket_Charge": {
+      "position": [
+        -0.48,
+        0.55,
+        0.34
+      ],
+      "forward": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_Service": {
+      "position": [
+        0.0,
+        0.69,
+        0.695
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_TowFront": {
+      "position": [
+        0.0,
+        0.24,
+        -0.8
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_TowRear": {
+      "position": [
+        0.0,
+        0.24,
+        0.8
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_Work": {
+      "parent": "Wrist",
+      "position": [
+        0.0,
+        0.478084,
+        -0.639545
+      ]
+    }
+  },
+  "clips": {
+    "move": {
+      "duration": 1.0,
+      "channels": 6,
+      "channels_detail": [
+        "Wheel_LF.rotation",
+        "Wheel_LM.rotation",
+        "Wheel_LR.rotation",
+        "Wheel_RF.rotation",
+        "Wheel_RM.rotation",
+        "Wheel_RR.rotation"
+      ]
+    },
+    "work": {
+      "duration": 2.0,
+      "channels": 4,
+      "channels_detail": [
+        "Elbow.rotation",
+        "Shoulder.rotation",
+        "SupportSlideL.translation",
+        "SupportSlideR.translation"
+      ]
+    },
+    "charge": {
+      "duration": 1.0,
+      "channels": 1,
+      "channels_detail": [
+        "ChargePivot.rotation"
+      ]
+    },
+    "disabled": {
+      "duration": 1.0,
+      "channels": 1,
+      "channels_detail": [
+        "Shoulder.rotation"
+      ]
+    },
+    "maintenance": {
+      "duration": 1.0,
+      "channels": 1,
+      "channels_detail": [
+        "HoodLid.rotation"
+      ]
+    }
+  },
+  "clip_envelopes": {
+    "move": {
+      "min": [
+        -0.87,
+        2.4e-05,
+        -0.810649
+      ],
+      "max": [
+        0.87,
+        1.103437,
+        0.8
+      ]
+    },
+    "work": {
+      "min": [
+        -0.87,
+        0.0,
+        -0.810649
+      ],
+      "max": [
+        0.87,
+        1.103437,
+        0.8
+      ]
+    },
+    "charge": {
+      "min": [
+        -0.87,
+        2.4e-05,
+        -0.810649
+      ],
+      "max": [
+        0.87,
+        1.103437,
+        0.8
+      ]
+    },
+    "disabled": {
+      "min": [
+        -0.87,
+        2.4e-05,
+        -0.810649
+      ],
+      "max": [
+        0.87,
+        1.103437,
+        0.8
+      ]
+    },
+    "maintenance": {
+      "min": [
+        -0.87,
+        2.4e-05,
+        -0.810649
+      ],
+      "max": [
+        0.87,
+        1.103437,
+        0.8
+      ]
+    }
+  },
+  "delivered_check": {
+    "clip_durations": {
+      "move": 1.0,
+      "work": 2.0,
+      "charge": 1.0,
+      "disabled": 1.0,
+      "maintenance": 1.0
+    },
+    "checks": {
+      "move_wheel_quarter_turn_deg_error": 0.0,
+      "work_shoulder_deg_error": 0.0,
+      "work_slide_y": 0.03,
+      "charge_lid_deg_error": 0.0,
+      "disabled_shoulder_deg_error": 0.0,
+      "maintenance_hood_deg_error": 0.0,
+      "root_static_no_channels": true,
+      "baseline_via_rest_or_channel": true,
+      "animated_nodes_per_clip": {
+        "charge": [
+          "ChargePivot"
+        ],
+        "maintenance": [
+          "HoodLid"
+        ],
+        "work": [
+          "Elbow",
+          "Shoulder",
+          "SupportSlideL",
+          "SupportSlideR"
+        ],
+        "disabled": [
+          "Shoulder"
+        ],
+        "move": [
+          "Wheel_LF",
+          "Wheel_LM",
+          "Wheel_LR",
+          "Wheel_RF",
+          "Wheel_RM",
+          "Wheel_RR"
+        ]
+      }
+    }
+  },
+  "files": {
+    "zhulei.blend": {
+      "bytes": 1492348,
+      "sha256": "e946d0b95d2f5eb0f9c6643a0734f53751b4642f94dcca55d458fc1a2a2bb375"
+    },
+    "zhulei.glb": {
+      "bytes": 342456,
+      "sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+    }
+  },
+  "reopen_check": {
+    "max_float_diff": 0.0,
+    "problems": [],
+    "reexport_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "deliverable_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "identical_bytes": true
+  },
+  "checks": {
+    "missing_input": "PASS (build aborts)",
+    "missing_wheel_nodes": "PASS (axle assert in build_clips)",
+    "unknown_role": "PASS (asserted via material())",
+    "non_finite": "PASS (survey_pose finite assert)",
+    "empty_output": "PASS (GLB magic + size asserted)",
+    "negative_suite": {
+      "missing_input": "PASS",
+      "missing_wheel_nodes": "PASS",
+      "unknown_role": "PASS",
+      "clip_duration_map": "PASS"
+    }
+  },
+  "not_run": [
+    "towed clip (packaging freeze per ticket)",
+    "charge/dock gameplay",
+    "Godot engine verification NOT_RUN by this subpackage (master native suite)",
+    "LOD/UV/baking",
+    "owner visual acceptance"
+  ],
+  "build_seconds": 1.185
+}

@@ -1,0 +1,26 @@
+{
+  "station_sha256": "84c4849bda02625c0499b4dcfb2bc14ec59b6f02b429c2cde86b43e0d1c0b791",
+  "u01_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+  "triangles": 144,
+  "meshes": 9,
+  "surfaces": 9,
+  "sockets_checked": 2,
+  "images": 12,
+  "charge_samples": 61,
+  "minimum_separating_axis_gap_m": 0.0412564277648926,
+  "image_sha256": {
+    "charger_normal_0_empty.png": "bdcec46cde8d575521e7cc354f85a9066f91a636a56cf756d2998d32f6bd7383",
+    "charger_normal_0_idle_demo.png": "c3720e1d6ad381002f0c593a0b9e15c4401960cad1c0c8db00621fed348a951c",
+    "charger_normal_0_charge_demo.png": "22dac1e37d4d4cf544d0f8643febe90f627ed8d257ed6e6f57f707f2a32d68d9",
+    "charger_normal_90_empty.png": "ab591d4aeb55de4081877610ad1c707c63652f8e5c8f9189b2ed4de2308af7ce",
+    "charger_normal_90_idle_demo.png": "a29bcaf190673419c110a37d585869ec0e2a6f042e5c389c34da4df8add1f927",
+    "charger_normal_90_charge_demo.png": "2dceaba0359049fec96fe47ad06478a6526eb9f40f0f343f843403e1f55edf86",
+    "charger_close_0_empty.png": "38e02721222e7c596f91760c33a7bb110e72fef5c0cf278bda4c77b2af3b619a",
+    "charger_close_0_idle_demo.png": "b43c95a37caa4589286dc8dceef45795bdf535ce450780a7bbf1fbebe6ce46ea",
+    "charger_close_0_charge_demo.png": "5d8c0048beb39b126b15acf7c1837deee1ad86489401223bf0a0b64b4c847437",
+    "charger_close_90_empty.png": "24969980a199eda1dfd6f35e2715f92a6c3a77f0f1987b574a5d8c92d82faf7a",
+    "charger_close_90_idle_demo.png": "2ef8b7fc2ebf42f572d7d9ee9c9fdb1bb567d8978710cc11393be488a4080404",
+    "charger_close_90_charge_demo.png": "0917751dec409728574209d47e823c3a27c5bcfe98b7e6c4519155a82c6cb0b6"
+  },
+  "scope": "static waiting pose only; physical insertion/gameplay/state/owner acceptance NOT_RUN"
+}

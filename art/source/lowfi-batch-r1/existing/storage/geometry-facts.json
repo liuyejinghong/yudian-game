@@ -1,0 +1,154 @@
+{
+  "scope": "ART-LF-BATCH-01 subpackage B: F03 storage gate + rear service pod; fixed facility, disabled/maintenance clips only",
+  "ticket": "docs/art/production/tasks/ART-LF-BATCH-01.md (F03)",
+  "blender": "4.5.14 LTS",
+  "source": {
+    "path": "<project-root>/art-lowfi-batch-b-20261005/art/source/facilities/storage-r1/storage-r1.glb",
+    "sha256": "dcaac7f78d9d11f2aa0b5fd9745f68d4ec4c8f6d4860c30e95a14586210d90ed",
+    "provenance": "read-only canonical storage-r1 GLB; untouched"
+  },
+  "idle_envelope": {
+    "min": [
+      -2.25,
+      0.0,
+      -2.96
+    ],
+    "max": [
+      2.25,
+      2.2,
+      1.745
+    ]
+  },
+  "triangles_total": 1312,
+  "sockets": {
+    "Socket_Input": {
+      "position": [
+        0.0,
+        0.2,
+        -1.6
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_Output": {
+      "position": [
+        0.0,
+        0.2,
+        1.78
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_Service": {
+      "position": [
+        0.0,
+        0.85,
+        1.7425
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    }
+  },
+  "clip_envelopes": {
+    "disabled": {
+      "min": [
+        -2.25,
+        0.0,
+        -2.96
+      ],
+      "max": [
+        2.25,
+        2.2,
+        1.745
+      ]
+    },
+    "maintenance": {
+      "min": [
+        -2.25,
+        0.0,
+        -2.96
+      ],
+      "max": [
+        2.25,
+        2.2,
+        2.29292
+      ]
+    }
+  },
+  "delivered_check": {
+    "checks": {
+      "disabled_gate_open_deg_error": 0.0,
+      "disabled_gate_closed_deg_error": 0.0,
+      "maintenance_cover_deg_error": 0.0,
+      "root_and_crates_static": true,
+      "animated_nodes_per_clip": {
+        "maintenance": [
+          "CoverPivot"
+        ],
+        "disabled": [
+          "GatePivot"
+        ]
+      }
+    }
+  },
+  "files": {
+    "storage.blend": {
+      "bytes": 676535,
+      "sha256": "791871094c420a443254187718e6a0c877efe2d8687b6fb96a6534ab31fc5f15"
+    },
+    "storage.glb": {
+      "bytes": 110748,
+      "sha256": "ea594929b3e110b99130d45068916a4859dae346a31db00d9a75d490ff07033d"
+    }
+  },
+  "reopen_check": {
+    "max_float_diff": 1.1920928955078125e-07,
+    "problems": [],
+    "reexport_sha256": "297adcf8e89eddaa616d986d5b0b16bf8aadef096c0a2853e2d0613394ebb02a",
+    "deliverable_sha256": "ea594929b3e110b99130d45068916a4859dae346a31db00d9a75d490ff07033d",
+    "identical_bytes": false
+  },
+  "checks": {
+    "missing_input": "PASS (build aborts)",
+    "gate_backward_sweep": "PASS (gate degrees guarded to [0,90])",
+    "crate_set": "PASS (12 asserted)",
+    "non_finite": "PASS (survey_pose finite assert)",
+    "empty_output": "PASS (GLB magic + size asserted)",
+    "negative_suite": {
+      "missing_input": "PASS",
+      "gate_backward_sweep": "PASS",
+      "crate_set": "PASS"
+    }
+  },
+  "not_run": [
+    "take/put gameplay",
+    "Godot engine verification NOT_RUN by this subpackage (master native suite)",
+    "LOD/UV/baking",
+    "owner visual acceptance"
+  ],
+  "build_seconds": 0.193
+}

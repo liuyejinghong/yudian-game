@@ -1,0 +1,17 @@
+[
+  {
+    "file": "reopen-r2.log",
+    "original_sha256": "b7dfd371e050f1bedf9144524f72d664c8176fe2a2f9dbbd6705ff1d05fc85f7",
+    "path_redaction_only": true
+  },
+  {
+    "file": "build-hf-r2.log",
+    "original_sha256": "f13f747fe15730adc1992dcbd823c91af3ac293451fee5cebe85b1823e529067",
+    "path_redaction_only": true
+  },
+  {
+    "file": "negative-missing-source.log",
+    "original_sha256": "5e793b74d8f50c0435a9437a816d86fc8ff13f092cf9d78f8b4ef03edb25ea0e",
+    "path_redaction_only": true
+  }
+]

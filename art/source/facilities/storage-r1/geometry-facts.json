@@ -1,0 +1,756 @@
+{
+  "id": "ART-F03-GEO",
+  "generator": "generate_storage_r1.py",
+  "coordinate": "meter, +Y up, forward -Z, ground Y=0, translations only",
+  "origin": "foundation bottom-center on ground Y=0",
+  "envelope_m": {
+    "min": [
+      -2.25,
+      0.0,
+      -1.6
+    ],
+    "max": [
+      2.25,
+      2.2,
+      1.6
+    ]
+  },
+  "static_bbox": {
+    "min": [
+      -2.25,
+      0.0,
+      -1.6
+    ],
+    "max": [
+      2.25,
+      2.2,
+      1.6
+    ]
+  },
+  "loaded_bbox": {
+    "min": [
+      -2.25,
+      0.0,
+      -1.6
+    ],
+    "max": [
+      2.25,
+      2.2,
+      1.6
+    ]
+  },
+  "payload_parent": "RackPayloadDemo",
+  "payload_slots": [
+    {
+      "node": "Crate_B01",
+      "x": -1.35,
+      "bottom_y": 0.2,
+      "z": -0.7
+    },
+    {
+      "node": "Crate_B02",
+      "x": -1.35,
+      "bottom_y": 0.2,
+      "z": 0.6
+    },
+    {
+      "node": "Crate_B03",
+      "x": 0.0,
+      "bottom_y": 0.2,
+      "z": -0.7
+    },
+    {
+      "node": "Crate_B04",
+      "x": 0.0,
+      "bottom_y": 0.2,
+      "z": 0.6
+    },
+    {
+      "node": "Crate_B05",
+      "x": 1.35,
+      "bottom_y": 0.2,
+      "z": -0.7
+    },
+    {
+      "node": "Crate_B06",
+      "x": 1.35,
+      "bottom_y": 0.2,
+      "z": 0.6
+    },
+    {
+      "node": "Crate_T01",
+      "x": -1.35,
+      "bottom_y": 1.1,
+      "z": -0.7
+    },
+    {
+      "node": "Crate_T02",
+      "x": -1.35,
+      "bottom_y": 1.1,
+      "z": 0.6
+    },
+    {
+      "node": "Crate_T03",
+      "x": 0.0,
+      "bottom_y": 1.1,
+      "z": -0.7
+    },
+    {
+      "node": "Crate_T04",
+      "x": 0.0,
+      "bottom_y": 1.1,
+      "z": 0.6
+    },
+    {
+      "node": "Crate_T05",
+      "x": 1.35,
+      "bottom_y": 1.1,
+      "z": -0.7
+    },
+    {
+      "node": "Crate_T06",
+      "x": 1.35,
+      "bottom_y": 1.1,
+      "z": 0.6
+    }
+  ],
+  "rack_parts": [
+    {
+      "part": "foundation",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          -2.25,
+          0.0,
+          -1.6
+        ],
+        "max": [
+          2.25,
+          0.12,
+          1.6
+        ]
+      }
+    },
+    {
+      "part": "shelf_bottom",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          -2.11,
+          0.14,
+          -1.46
+        ],
+        "max": [
+          2.11,
+          0.2,
+          1.46
+        ]
+      }
+    },
+    {
+      "part": "shelf_top",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          -2.11,
+          1.04,
+          -1.46
+        ],
+        "max": [
+          2.11,
+          1.1,
+          1.46
+        ]
+      }
+    },
+    {
+      "part": "column_x-1_z-1",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          -2.23,
+          0.11999999999999988,
+          -1.58
+        ],
+        "max": [
+          -2.11,
+          2.2,
+          -1.46
+        ]
+      }
+    },
+    {
+      "part": "column_x-1_z1",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          -2.23,
+          0.11999999999999988,
+          1.46
+        ],
+        "max": [
+          -2.11,
+          2.2,
+          1.58
+        ]
+      }
+    },
+    {
+      "part": "column_x1_z-1",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          2.11,
+          0.11999999999999988,
+          -1.58
+        ],
+        "max": [
+          2.23,
+          2.2,
+          -1.46
+        ]
+      }
+    },
+    {
+      "part": "column_x1_z1",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          2.11,
+          0.11999999999999988,
+          1.46
+        ],
+        "max": [
+          2.23,
+          2.2,
+          1.58
+        ]
+      }
+    },
+    {
+      "part": "beam_x_zm",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          -2.23,
+          2.08,
+          -1.58
+        ],
+        "max": [
+          2.23,
+          2.2,
+          -1.46
+        ]
+      }
+    },
+    {
+      "part": "beam_x_zp",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          -2.23,
+          2.08,
+          1.46
+        ],
+        "max": [
+          2.23,
+          2.2,
+          1.58
+        ]
+      }
+    },
+    {
+      "part": "beam_z_xm",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          -2.23,
+          2.08,
+          -1.46
+        ],
+        "max": [
+          -2.11,
+          2.2,
+          1.46
+        ]
+      }
+    },
+    {
+      "part": "beam_z_xp",
+      "role": "frame_dark",
+      "bounds_m": {
+        "min": [
+          2.11,
+          2.08,
+          -1.46
+        ],
+        "max": [
+          2.23,
+          2.2,
+          1.46
+        ]
+      }
+    },
+    {
+      "part": "rear_panel",
+      "role": "body_light",
+      "bounds_m": {
+        "min": [
+          -2.05,
+          1.725,
+          1.5
+        ],
+        "max": [
+          2.05,
+          1.975,
+          1.58
+        ]
+      }
+    },
+    {
+      "part": "canopy_left",
+      "role": "body_light",
+      "bounds_m": {
+        "min": [
+          -2.05,
+          2.14,
+          -1.39
+        ],
+        "max": [
+          -1.77,
+          2.1999999999999997,
+          1.39
+        ]
+      }
+    },
+    {
+      "part": "canopy_right",
+      "role": "body_light",
+      "bounds_m": {
+        "min": [
+          1.77,
+          2.14,
+          -1.39
+        ],
+        "max": [
+          2.05,
+          2.1999999999999997,
+          1.39
+        ]
+      }
+    },
+    {
+      "part": "front_mark",
+      "role": "accent_warm",
+      "bounds_m": {
+        "min": [
+          -0.45,
+          0.12,
+          -1.55
+        ],
+        "max": [
+          0.45,
+          0.135,
+          -1.49
+        ]
+      }
+    }
+  ],
+  "nodes": [
+    "Storage",
+    "Structure",
+    "RearPanel",
+    "TopCanopy",
+    "FrontMark",
+    "RackPayloadDemo",
+    "Crate_B01",
+    "Crate_B02",
+    "Crate_B03",
+    "Crate_B04",
+    "Crate_B05",
+    "Crate_B06",
+    "Crate_T01",
+    "Crate_T02",
+    "Crate_T03",
+    "Crate_T04",
+    "Crate_T05",
+    "Crate_T06"
+  ],
+  "node_count": 18,
+  "mesh_count": 16,
+  "surface_table": [
+    {
+      "node": "Structure",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 132,
+      "verts": 396
+    },
+    {
+      "node": "RearPanel",
+      "surface": 0,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "TopCanopy",
+      "surface": 0,
+      "role": "body_light",
+      "tris": 24,
+      "verts": 72
+    },
+    {
+      "node": "FrontMark",
+      "surface": 0,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B01",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B01",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B01",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B01",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B02",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B02",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B02",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B02",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B03",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B03",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B03",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B03",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B04",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B04",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B04",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B04",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B05",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B05",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B05",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B05",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B06",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B06",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B06",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_B06",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T01",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T01",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T01",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T01",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T02",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T02",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T02",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T02",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T03",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T03",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T03",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T03",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T04",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T04",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T04",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T04",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T05",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T05",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T05",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T05",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T06",
+      "surface": 0,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T06",
+      "surface": 1,
+      "role": "body_light",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T06",
+      "surface": 2,
+      "role": "frame_dark",
+      "tris": 12,
+      "verts": 36
+    },
+    {
+      "node": "Crate_T06",
+      "surface": 3,
+      "role": "accent_warm",
+      "tris": 12,
+      "verts": 36
+    }
+  ],
+  "triangles_total": 756,
+  "materials_count": 3,
+  "bin_bytes": 63504,
+  "sha256": {
+    "gltf": "ca4039a0b61ac511234d72b3db3c607e1a3737aedde80e42fcb1bc6a4848e7b1",
+    "bin": "d2c8105bd3c4ceed1c00603a33363291349c940ac10d6ea5eb92a47bf0eca18a",
+    "glb": "dcaac7f78d9d11f2aa0b5fd9745f68d4ec4c8f6d4860c30e95a14586210d90ed",
+    "glb_prototype": "dcaac7f78d9d11f2aa0b5fd9745f68d4ec4c8f6d4860c30e95a14586210d90ed"
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "active_measured": {
+    "max": [
+      2.38540291786194,
+      2.84999990463257,
+      1.79801917076111
+    ],
+    "min": [
+      -2.38540291786194,
+      0.0,
+      -1.45999991893768
+    ]
+  },
+  "cases": 392,
+  "failures": [
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"packed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "packed width exceeds candidate",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"installed\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.0, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.25, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.5, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"disabled\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.25 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 0.75 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.0 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 1.5 }",
+    "state changed phase: { \"state\": \"maintenance\", \"phase\": \"deploying\", \"phase_t\": 0.75, \"cargo\": \"empty\", \"reason\": \"none\", \"time_s\": 2.25 }"
+  ],
+  "negative_hold": 10,
+  "phases": {
+    "completed0.0": {
+      "max": [
+        2.38540291786194,
+        1.20713460445404,
+        1.55250000953674
+      ],
+      "min": [
+        -2.38540291786194,
+        0.0,
+        -1.45999991893768
+      ]
+    },
+    "deploying0.0": {
+      "max": [
+        0.799999952316284,
+        1.85000002384186,
+        1.55250000953674
+      ],
+      "min": [
+        -0.799999952316284,
+        0.0,
+        -1.45999991893768
+      ]
+    },
+    "deploying0.25": {
+      "max": [
+        1.5,
+        1.89000022411346,
+        1.55250000953674
+      ],
+      "min": [
+        -1.5,
+        0.0,
+        -1.45999991893768
+      ]
+    },
+    "deploying0.5": {
+      "max": [
+        0.799999952316284,
+        2.84999990463257,
+        1.55250000953674
+      ],
+      "min": [
+        -0.799999952316284,
+        0.0,
+        -1.45999991893768
+      ]
+    },
+    "deploying0.75": {
+      "max": [
+        1.7674412727356,
+        2.36653280258179,
+        1.55250000953674
+      ],
+      "min": [
+        -1.7674412727356,
+        0.0,
+        -1.45999991893768
+      ]
+    },
+    "deploying1.0": {
+      "max": [
+        2.38540291786194,
+        1.20713460445404,
+        1.55250000953674
+      ],
+      "min": [
+        -2.38540291786194,
+        0.0,
+        -1.45999991893768
+      ]
+    },
+    "installed0.0": {
+      "max": [
+        0.799999952316284,
+        1.85000002384186,
+        1.55250000953674
+      ],
+      "min": [
+        -0.799999952316284,
+        0.0,
+        -1.45999991893768
+      ]
+    },
+    "packed0.0": {
+      "max": [
+        2.38540291786194,
+        1.89000010490417,
+        1.55250000953674
+      ],
+      "min": [
+        -2.38540291786194,
+        0.0,
+        -1.45999991893768
+      ]
+    }
+  }
+}

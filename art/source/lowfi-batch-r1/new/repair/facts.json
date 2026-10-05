@@ -1,0 +1,823 @@
+{
+  "scope": "ART-LF-BATCH-01 subpackage A repair low-fi candidate",
+  "ticket": "docs/art/production/tasks/ART-LF-BATCH-01.md",
+  "blender": "4.5.14 LTS",
+  "triangles_total": 1348,
+  "mesh_count": 27,
+  "roles_used": {
+    "accent_warm": 5,
+    "body_light": 6,
+    "frame_dark": 16
+  },
+  "meshes": [
+    {
+      "node": "BayGuide-1",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -1.0175,
+          0.04,
+          -1.2
+        ],
+        "max": [
+          -0.9825,
+          0.05,
+          1.2
+        ]
+      }
+    },
+    {
+      "node": "BayGuide1",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          0.9825,
+          0.04,
+          -1.2
+        ],
+        "max": [
+          1.0175,
+          0.05,
+          1.2
+        ]
+      }
+    },
+    {
+      "node": "CabinetBody",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -1.8,
+          0.1,
+          0.6
+        ],
+        "max": [
+          -1.4,
+          1.4,
+          1.2
+        ]
+      }
+    },
+    {
+      "node": "CabinetCap",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -1.82,
+          1.4,
+          0.58
+        ],
+        "max": [
+          -1.38,
+          1.45,
+          1.22
+        ]
+      }
+    },
+    {
+      "node": "CabinetFoot",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -1.85,
+          0.0,
+          0.55
+        ],
+        "max": [
+          -1.35,
+          0.1,
+          1.25
+        ]
+      }
+    },
+    {
+      "node": "CoverHingeAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -1.41,
+          1.235,
+          0.7
+        ],
+        "max": [
+          -1.38,
+          1.265,
+          1.1
+        ]
+      }
+    },
+    {
+      "node": "CoverHingeSeatFront",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -1.425,
+          1.22,
+          1.03
+        ],
+        "max": [
+          -1.365,
+          1.28,
+          1.13
+        ]
+      }
+    },
+    {
+      "node": "CoverHingeSeatRear",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -1.425,
+          1.22,
+          0.67
+        ],
+        "max": [
+          -1.365,
+          1.28,
+          0.77
+        ]
+      }
+    },
+    {
+      "node": "Foundation",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -1.7,
+          0.0,
+          -1.6
+        ],
+        "max": [
+          1.7,
+          0.04,
+          1.6
+        ]
+      }
+    },
+    {
+      "node": "PortalCrossbar-1",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -1.51,
+          2.19,
+          -0.97
+        ],
+        "max": [
+          1.51,
+          2.31,
+          -0.83
+        ]
+      }
+    },
+    {
+      "node": "PortalCrossbar1",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -1.51,
+          2.19,
+          0.83
+        ],
+        "max": [
+          1.51,
+          2.31,
+          0.97
+        ]
+      }
+    },
+    {
+      "node": "PortalPost-1-1",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -1.51,
+          0.04,
+          -0.96
+        ],
+        "max": [
+          -1.39,
+          2.22,
+          -0.84
+        ]
+      }
+    },
+    {
+      "node": "PortalPost-11",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -1.51,
+          0.04,
+          0.84
+        ],
+        "max": [
+          -1.39,
+          2.22,
+          0.96
+        ]
+      }
+    },
+    {
+      "node": "PortalPost1-1",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          1.39,
+          0.04,
+          -0.96
+        ],
+        "max": [
+          1.51,
+          2.22,
+          -0.84
+        ]
+      }
+    },
+    {
+      "node": "PortalPost11",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          1.39,
+          0.04,
+          0.84
+        ],
+        "max": [
+          1.51,
+          2.22,
+          0.96
+        ]
+      }
+    },
+    {
+      "node": "PowerInGuard",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -1.75,
+          0.12,
+          1.2
+        ],
+        "max": [
+          -1.45,
+          0.24,
+          1.26
+        ]
+      }
+    },
+    {
+      "node": "ServiceCoverPanel",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -1.404,
+          0.55,
+          0.7
+        ],
+        "max": [
+          -1.386,
+          1.25,
+          1.1
+        ]
+      }
+    },
+    {
+      "node": "SideRail-1",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -1.51,
+          2.19,
+          -0.9
+        ],
+        "max": [
+          -1.39,
+          2.31,
+          0.9
+        ]
+      }
+    },
+    {
+      "node": "SideRail1",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          1.39,
+          2.19,
+          -0.9
+        ],
+        "max": [
+          1.51,
+          2.31,
+          0.9
+        ]
+      }
+    },
+    {
+      "node": "StopGateAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.72,
+          0.025,
+          -1.54
+        ],
+        "max": [
+          0.72,
+          0.065,
+          -1.5
+        ]
+      }
+    },
+    {
+      "node": "StopGatePanel",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -1.0,
+          0.0275,
+          -1.86
+        ],
+        "max": [
+          1.0,
+          0.0625,
+          -1.52
+        ]
+      }
+    },
+    {
+      "node": "StopGateSeatL",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.78,
+          0.0,
+          -1.58
+        ],
+        "max": [
+          -0.66,
+          0.1,
+          -1.46
+        ]
+      }
+    },
+    {
+      "node": "StopGateSeatR",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.66,
+          0.0,
+          -1.58
+        ],
+        "max": [
+          0.78,
+          0.1,
+          -1.46
+        ]
+      }
+    },
+    {
+      "node": "ToolBlock",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          0.9,
+          0.9,
+          -0.45
+        ],
+        "max": [
+          1.2,
+          1.0,
+          -0.25
+        ]
+      }
+    },
+    {
+      "node": "ToolDropRod",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          1.0,
+          1.0,
+          -0.4
+        ],
+        "max": [
+          1.1,
+          1.6,
+          -0.3
+        ]
+      }
+    },
+    {
+      "node": "ToolTrack",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.65,
+          1.55,
+          -0.43
+        ],
+        "max": [
+          1.45,
+          1.67,
+          -0.27
+        ]
+      }
+    },
+    {
+      "node": "TrackHanger",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          1.39,
+          1.61,
+          -0.41
+        ],
+        "max": [
+          1.51,
+          2.25,
+          -0.29
+        ]
+      }
+    }
+  ],
+  "sockets": {
+    "Socket_Bay": {
+      "position": [
+        0.0,
+        0.04,
+        -0.0
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_PowerIn": {
+      "position": [
+        -1.6,
+        0.18,
+        1.255
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_Service": {
+      "position": [
+        -1.385,
+        0.9,
+        0.9
+      ],
+      "forward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    }
+  },
+  "clips": [
+    {
+      "name": "disabled",
+      "duration_s": 1,
+      "channels": {
+        "ServiceCover": [
+          "rotation"
+        ],
+        "StopGate": [
+          "rotation"
+        ],
+        "ToolSlide": [
+          "rotation"
+        ]
+      },
+      "key_counts": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "maintenance",
+      "duration_s": 1,
+      "channels": {
+        "ServiceCover": [
+          "rotation"
+        ],
+        "StopGate": [
+          "rotation"
+        ],
+        "ToolSlide": [
+          "rotation"
+        ]
+      },
+      "key_counts": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "work",
+      "duration_s": 2,
+      "channels": {
+        "ServiceCover": [
+          "rotation"
+        ],
+        "StopGate": [
+          "rotation"
+        ],
+        "ToolSlide": [
+          "rotation",
+          "translation"
+        ]
+      },
+      "key_counts": [
+        2,
+        2,
+        3,
+        2
+      ]
+    }
+  ],
+  "envelopes": {
+    "idle": {
+      "min": [
+        -1.85,
+        0.0,
+        -1.86
+      ],
+      "max": [
+        1.7,
+        2.31,
+        1.6
+      ],
+      "hold_min": [
+        -1.85,
+        0.0,
+        -1.86
+      ],
+      "hold_max": [
+        1.7,
+        2.31,
+        1.6
+      ],
+      "candidate_min": [
+        -1.85,
+        0.0,
+        -1.9
+      ],
+      "candidate_max": [
+        1.7,
+        2.32,
+        1.6
+      ],
+      "within": true,
+      "hold_within": true
+    },
+    "work": {
+      "min": [
+        -1.85,
+        0.0,
+        -1.86
+      ],
+      "max": [
+        1.7,
+        2.31,
+        1.6
+      ],
+      "frames": [
+        0.0,
+        30.0,
+        60.0
+      ],
+      "hold_min": [
+        -1.85,
+        0.0,
+        -1.86
+      ],
+      "hold_max": [
+        1.7,
+        2.31,
+        1.6
+      ],
+      "candidate_min": [
+        -1.85,
+        0.0,
+        -1.9
+      ],
+      "candidate_max": [
+        1.7,
+        2.32,
+        1.6
+      ],
+      "within": true,
+      "hold_within": true
+    },
+    "disabled": {
+      "min": [
+        -1.85,
+        0.0,
+        -1.86
+      ],
+      "max": [
+        1.7,
+        2.31,
+        1.6
+      ],
+      "frames": [
+        0.0,
+        30.0
+      ],
+      "hold_min": [
+        -1.85,
+        0.0,
+        -1.6
+      ],
+      "hold_max": [
+        1.7,
+        2.31,
+        1.6
+      ],
+      "candidate_min": [
+        -1.85,
+        0.0,
+        -1.9
+      ],
+      "candidate_max": [
+        1.7,
+        2.32,
+        1.6
+      ],
+      "within": true,
+      "hold_within": true
+    },
+    "maintenance": {
+      "min": [
+        -1.85,
+        0.0,
+        -1.86
+      ],
+      "max": [
+        1.7,
+        2.31,
+        1.6
+      ],
+      "frames": [
+        0.0,
+        30.0
+      ],
+      "hold_min": [
+        -1.85,
+        0.0,
+        -1.86
+      ],
+      "hold_max": [
+        1.7,
+        2.31,
+        1.6
+      ],
+      "candidate_min": [
+        -1.85,
+        0.0,
+        -1.9
+      ],
+      "candidate_max": [
+        1.7,
+        2.32,
+        1.6
+      ],
+      "within": true,
+      "hold_within": true
+    }
+  },
+  "sources": "original geometry",
+  "helpers_provenance": "zhulei-r1 build_sample.py (accepted)",
+  "files": {
+    "repair.blend": {
+      "bytes": 632915,
+      "sha256": "d16f64e670d98dacf636d05af0d84b581ffeda9b75784519c046c86455274401"
+    },
+    "repair.glb": {
+      "bytes": 85332,
+      "sha256": "5e80d480c8deaa7be29d043b3b010b2dc48bb7d8ab8302b715f0a07149e371a8"
+    }
+  },
+  "checks": {
+    "envelope_within": "PASS",
+    "clip_names": "PASS",
+    "root_not_animated": "PASS",
+    "finite_coords": "PASS",
+    "roles_known": "PASS",
+    "glb_magic": "PASS",
+    "frame0_idle": "PASS"
+  },
+  "not_run": [
+    "owner visual acceptance",
+    "master preview packaging/manifest",
+    "gameplay/performance/navigation",
+    "Godot runtime import (separate step)"
+  ],
+  "build_seconds": 0.247
+}

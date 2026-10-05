@@ -1,0 +1,2890 @@
+[
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "bindings": [
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/Structure",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RearPanel",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/TopCanopy",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/FrontMark",
+        "role": "accent_warm",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "accent_warm",
+        "surface": 3
+      }
+    ],
+    "camera": "normal",
+    "file": "storage_normal_0_empty.png",
+    "geometry_pose": "idle static trial",
+    "loaded_demo": false,
+    "sample": "storage",
+    "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+    "yaw": 0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "bindings": [
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/Structure",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RearPanel",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/TopCanopy",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/FrontMark",
+        "role": "accent_warm",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "accent_warm",
+        "surface": 3
+      }
+    ],
+    "camera": "normal",
+    "file": "storage_normal_0_loaded.png",
+    "geometry_pose": "idle static trial",
+    "loaded_demo": true,
+    "sample": "storage",
+    "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+    "yaw": 0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "bindings": [
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/Structure",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RearPanel",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/TopCanopy",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/FrontMark",
+        "role": "accent_warm",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "accent_warm",
+        "surface": 3
+      }
+    ],
+    "camera": "normal",
+    "file": "storage_normal_90_empty.png",
+    "geometry_pose": "idle static trial",
+    "loaded_demo": false,
+    "sample": "storage",
+    "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+    "yaw": 90
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "bindings": [
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/Structure",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RearPanel",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/TopCanopy",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/FrontMark",
+        "role": "accent_warm",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "accent_warm",
+        "surface": 3
+      }
+    ],
+    "camera": "normal",
+    "file": "storage_normal_90_loaded.png",
+    "geometry_pose": "idle static trial",
+    "loaded_demo": true,
+    "sample": "storage",
+    "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+    "yaw": 90
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "bindings": [
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/Structure",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RearPanel",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/TopCanopy",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/FrontMark",
+        "role": "accent_warm",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "accent_warm",
+        "surface": 3
+      }
+    ],
+    "camera": "close",
+    "file": "storage_close_0_empty.png",
+    "geometry_pose": "idle static trial",
+    "loaded_demo": false,
+    "sample": "storage",
+    "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+    "yaw": 0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "bindings": [
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/Structure",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RearPanel",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/TopCanopy",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/FrontMark",
+        "role": "accent_warm",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "accent_warm",
+        "surface": 3
+      }
+    ],
+    "camera": "close",
+    "file": "storage_close_0_loaded.png",
+    "geometry_pose": "idle static trial",
+    "loaded_demo": true,
+    "sample": "storage",
+    "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+    "yaw": 0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "bindings": [
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/Structure",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RearPanel",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/TopCanopy",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/FrontMark",
+        "role": "accent_warm",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "accent_warm",
+        "surface": 3
+      }
+    ],
+    "camera": "close",
+    "file": "storage_close_90_empty.png",
+    "geometry_pose": "idle static trial",
+    "loaded_demo": false,
+    "sample": "storage",
+    "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+    "yaw": 90
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "bindings": [
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/Structure",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RearPanel",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/TopCanopy",
+        "role": "body_light",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/FrontMark",
+        "role": "accent_warm",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_B06",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T01",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T02",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T03",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T04",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T05",
+        "role": "accent_warm",
+        "surface": 3
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 0
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "body_light",
+        "surface": 1
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "frame_dark",
+        "surface": 2
+      },
+      {
+        "node": "/root/DualPreview/@SubViewport@2/@Node3D@3/storage/Storage/RackPayloadDemo/Crate_T06",
+        "role": "accent_warm",
+        "surface": 3
+      }
+    ],
+    "camera": "close",
+    "file": "storage_close_90_loaded.png",
+    "geometry_pose": "idle static trial",
+    "loaded_demo": true,
+    "sample": "storage",
+    "source_sha256": "60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0",
+    "yaw": 90
+  }
+]

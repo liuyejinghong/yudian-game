@@ -1,0 +1,170 @@
+{
+  "scope": "ART-LF-BATCH-01 subpackage B: P01 recovery-link visual candidate; static, no clips, no rescue capability claim",
+  "ticket": "docs/art/production/tasks/ART-LF-BATCH-01.md (P01 recovery)",
+  "blender": "4.5.14 LTS",
+  "provenance": "original geometry from ticket spec; palette copied from legacy storage-r1 GLB materials",
+  "triangles_total": 132,
+  "roles_used": {
+    "frame_dark": 1,
+    "accent_warm": 2
+  },
+  "meshes": [
+    {
+      "node": "LinkBar",
+      "triangles": 44,
+      "vertices": 24,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.03,
+          -0.03,
+          -0.175
+        ],
+        "max": [
+          0.03,
+          0.03,
+          0.175
+        ]
+      }
+    },
+    {
+      "node": "LugEndA",
+      "triangles": 44,
+      "vertices": 24,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -0.1,
+          -0.04,
+          -0.175
+        ],
+        "max": [
+          0.1,
+          0.04,
+          -0.125
+        ]
+      }
+    },
+    {
+      "node": "LugEndB",
+      "triangles": 44,
+      "vertices": 24,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -0.1,
+          -0.04,
+          0.125
+        ],
+        "max": [
+          0.1,
+          0.04,
+          0.175
+        ]
+      }
+    }
+  ],
+  "sockets": {
+    "Socket_EndA": {
+      "position": [
+        0.0,
+        0.0,
+        -0.175
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_EndB": {
+      "position": [
+        0.0,
+        0.0,
+        0.175
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    }
+  },
+  "envelope": {
+    "min": [
+      -0.1,
+      -0.04,
+      -0.175
+    ],
+    "max": [
+      0.1,
+      0.04,
+      0.175
+    ],
+    "candidate": [
+      [
+        -0.1,
+        -0.04,
+        -0.175
+      ],
+      [
+        0.1,
+        0.04,
+        0.175
+      ]
+    ],
+    "within": true
+  },
+  "files": {
+    "recovery.blend": {
+      "bytes": 440093,
+      "sha256": "a6a1dd3b8964f880aa5ffcf6b7082370e29fbc164253fd7bae553f6bf494afe7"
+    },
+    "recovery.glb": {
+      "bytes": 6988,
+      "sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be"
+    }
+  },
+  "reopen_check": {
+    "max_float_diff": 0.0,
+    "problems": [],
+    "reexport_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "deliverable_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "identical_bytes": true
+  },
+  "checks": {
+    "unknown_role": "PASS (palette subset asserted)",
+    "non_finite": "PASS (finite coords asserted)",
+    "missing_lugs": "PASS (name set asserted)",
+    "empty_output": "PASS (GLB magic + size asserted)",
+    "negative_suite": {
+      "empty_output": "PASS",
+      "unknown_role": "PASS",
+      "non_finite": "PASS",
+      "missing_lugs": "PASS"
+    }
+  },
+  "not_run": [
+    "towed/recovery gameplay",
+    "Godot engine verification NOT_RUN by this subpackage (master native suite)",
+    "UV/baking/LOD",
+    "owner visual acceptance"
+  ],
+  "build_seconds": 0.1
+}

@@ -1,0 +1,19 @@
+{
+  "task_id": "task_083dce1c82",
+  "session_id": "sess_796e07dcb4",
+  "agent": "zcode",
+  "status": "completed",
+  "error": null,
+  "warnings": [],
+  "elapsed_sec": 117,
+  "result_text": "按冻结修订做最小局部返修：改两处几何定义、build_scene 装配、文档串与报告，删未用变量，不动其他。更新报告文本（冻结范围描述＋修订记录）。独立回读修订版 GLB（含新板件几何与开放中部核验）。W 写成了生成器列表，改元组重跑。r1.1 返修完成并已提交。\n\n- **commit**：`e14a907` art: open up storage-r1 rear panel and canopy (ART-F03-GEO r1.1 rework)，基于 `eb024eb`，仅改 storage-r1 两个独占目录 7 件（未 push/merge）\n- **真实改动**：rear_panel → 窄横服务板 center (0,1.85,1.54) size (4.10,0.25,0.08)，实测 Y1.725…1.975；TopCanopy → 两块 body_light 盒（X=±1.91，size 0.28×0.06×2.78）合并为单节点单 surface 24 tris，顶面中部 |X|<1.77 敞开（顶点 X 集合恰为 ±1.77/±2.05）；地基、柱/梁/托板、12 箱位、箱体局部坐标、单位/包络/角色全部未动；删除未用 `gltf_children`，只更新相关注释与报告（58 行），无重构\n- **真实核验**：跨 cwd 重跑两次 GLB SHA 一致 `60ff3b480c18a662974ed47fb8d23a857c8dc152b0acf06182e36dd1cb4aaca0`，prototype 副本同字节；原 6 负例全拒；独立回读 GLB 原始字节：static AABB=X±2.25/Y0…2.20/Z±1.60 落地 Y0、12 箱世界落位不变（顶 Y1.48）、逐箱 P01 角色、法线全轴向单位、逐 primitive 外向闭合、756 tris（原 744＋遮护双盒 12）与 facts SHA 一致\n- **耗时**：单轮生成约 0.006s，返修全程约 6 分钟\n- **NOT_RUN**：Godot 实机导入与白昼空/有重新取证（主控拍图，不自行宣称视觉通过）；STATE/preview/容量库存/动画/socket 仍未制作；不领取后续票✓ completed · cache 151/152 messages · 108.4k cache-read tokens",
+  "usage": {
+    "used": 109270,
+    "size": 1000000,
+    "sessionUpdate": "usage_update"
+  },
+  "observed_model": null,
+  "actual_worker_commit": "e14a907",
+  "model_confirmation": "native GLM-5.3-Flash, same sess_796e07dcb4",
+  "files_changed_note": "Actual authorship checked from worker commit, not coordinator cwd Bridge drift."
+}

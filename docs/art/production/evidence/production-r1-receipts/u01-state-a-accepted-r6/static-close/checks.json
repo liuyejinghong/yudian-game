@@ -1,0 +1,42 @@
+[
+  {
+    "name": "import",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--editor",
+      "--import",
+      "--quit",
+      "--path",
+      "/private/tmp/yudian-u01-static-master-r6"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "error": false,
+    "marker": false
+  },
+  {
+    "name": "close",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "/private/tmp/yudian-u01-static-master-r6",
+      "--rendering-driver",
+      "metal",
+      "res://scenes/art_preview_r1/PreviewR1.tscn",
+      "--",
+      "--manifest",
+      "/private/tmp/yudian-u01-static-master-r6/geo_check/manifest.json",
+      "--camera",
+      "close",
+      "--labels",
+      "blind",
+      "--capture-dir",
+      "<project-root>/art-preview-evidence/u01-source-r6-static-master/close"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "error": false,
+    "marker": true
+  }
+]

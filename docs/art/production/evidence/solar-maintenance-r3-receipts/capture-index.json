@@ -1,0 +1,358 @@
+{
+  "date": "2026-10-05",
+  "base": "230342f",
+  "png_count": 10,
+  "png_pixels": [
+    1920,
+    1200
+  ],
+  "evidence_kind": "Godot 4.7.2 Metal independent asset preview, normal and close; not gameplay",
+  "inputs": {
+    "art/manifests/solar-r1.json": "decbd4419139eb58c41f5fb9f6e80628c8a922e6c1a021fcdd07978b557e06bf",
+    "art/source/units/tuoyun-r1/generate_tuoyun_r1.py": "7017f0df22e88da8f036dc88fb99433d29fc620419fb74279c90ad2d5115b385",
+    "prototype/assets/facilities/solar-r1/preview.gd": "c13531c52d9642322ed44465a9c03a39fb3fb2e486d8870be1813f97491bf316",
+    "prototype/assets/facilities/solar-r1/preview.tscn": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+    "art/source/facilities/solar-r1/generate_solar_r1.py": "4b6904caf26570e2708d20efe23e3b9bf2c2a33a2d6711b04862af50b1f4fc18",
+    "art/source/facilities/solar-r1/solar-r1.gltf": "d241e36aad43aa1fb3d1ae98974a446a0a91768c1aaf28d29cca32b333b7f195",
+    "art/source/facilities/solar-r1/solar-r1.bin": "180858bad79c23ca574ac58c4c675bf38fbc8ca299018081a3b43668ea6a5b9f",
+    "prototype/scenes/art_preview_r1/PreviewR1.tscn": "04419f702b26595f0d34b72ab0231ca61cc55eeb1f166a20ef501848815b2fb5",
+    "prototype/scenes/art_preview_r1/preview_capture_r1.gd": "ea5076694c5cc4eab19a9ad7bc516a5a472338bba352d71f772920a5ca19c74c",
+    "prototype/scenes/art_preview_r1/preview_overlay_r1.gd": "35843e958a11ccf7c7074a5087d7a6243396137cc319511b3c472457f80c7e38",
+    "prototype/scenes/art_preview_r1/preview_panel_r1.gd": "f17b8575ec0a27a95160d2d606c0077b30b22d73350ec0d2f081e7af680059e2",
+    "prototype/scenes/art_preview_r1/preview_r1.gd": "41eea168533f5168050e3de1d6ecb099daafc396815a177a3f2e6e268d40eb36",
+    "prototype/scenes/art_preview_r1/preview_view_r1.gd": "1b485c1bb539c3dd353c27dd24cd0fbab9b59001038282e137c5487348131282",
+    "prototype/scenes/art_preview_r1/sample_wrapper.gd": "9eff00d89f8157a5b55e9236354b14b9f083d0374d2badac8e0dbadedf3c8c4d",
+    "prototype/assets/materials/art-r1/accent_warm.tres": "fe01e258db57c387c7dbba6aa9b1febe67a8b24c6fbc479d1fc71a3824faa290",
+    "prototype/assets/materials/art-r1/body_light.tres": "c42d893024832f054751605a3cbb672222c022a83825cfa8fb45a9d19af8ffa1",
+    "prototype/assets/materials/art-r1/frame_dark.tres": "3d98442ab026c3ebaf73b98e397428e97c3185012a16bf1ace5917ddf6ad6936",
+    "prototype/assets/materials/art-r1/rubber.tres": "82c0f80a962402f8c204dbb73680062b1e2fcf80389895b3cce8bf243ffe246a",
+    "prototype/assets/materials/art-r1/soil_mars.tres": "5f8aa3e483006e74e69cbda1385c2392c2f4f71f73b4129f957f2e15adf8a4f6",
+    "prototype/assets/materials/art-r1/solar_face.tres": "1b1be352ed4d6694b2883a4a6392a60b15a8c31dcc386517dd7d94f52571c209"
+  },
+  "files": [
+    {
+      "path": "runs/solar-idle-normal-180.log",
+      "raw_sha256": "4813aa0ca56949f77f810e92ecd65bf6250d732ef39ab80d89cf8cb3231ab10d",
+      "archive_sha256": "1a69a932914e4b0817ec341cca92aadfe03c44a0516ba458899a1044479095fd",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-import.json",
+      "raw_sha256": "844041b3f944ec310d267d09d5811ad5f7710e4a806ee2164514e315ed2085e7",
+      "archive_sha256": "844041b3f944ec310d267d09d5811ad5f7710e4a806ee2164514e315ed2085e7",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-clips.log",
+      "raw_sha256": "b06883931fdd64586b3489a83f19809a5892a3bee136cbf996100ee4d96d02bd",
+      "archive_sha256": "b06883931fdd64586b3489a83f19809a5892a3bee136cbf996100ee4d96d02bd",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-maintenance-normal-0.log",
+      "raw_sha256": "ff2544ffb19be141acffc10803db1d3c0c0cb94e42add154f3f33c5b2ae5af34",
+      "archive_sha256": "5c33318a7a51739789ee5998f396aa17490592d61e729fe845bf42436d27ffe5",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-actual.json",
+      "raw_sha256": "39927a594281be785188b2cfc1f244d6bf6091f9bca304b5c2b5ebcd4d7ead3b",
+      "archive_sha256": "39927a594281be785188b2cfc1f244d6bf6091f9bca304b5c2b5ebcd4d7ead3b",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-maintenance-close-90.log",
+      "raw_sha256": "9d95bd94d9dd9e3b5b949401fbc745befe015af9721b22be51359f445d30ee70",
+      "archive_sha256": "0e9c3d938d7fa327b4f42428fa05d9c56a8888d6b2211ba51931280114622a4b",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-maintenance-normal-90.log",
+      "raw_sha256": "f4857cc99c7b787944cf8103ce1c1e16449eeaa29926814cc0f67e854245ee71",
+      "archive_sha256": "cccae4d1c8a6b3bb215ee2421f9736c4c7b4304a080f9e5a048e1903c6d6e348",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-maintenance-close-0.log",
+      "raw_sha256": "624a15735cf67962ce993cb737c8492c96426af3977aca1e80eed39658329bc0",
+      "archive_sha256": "600b2bfa43a48d94bd96c66ce1b767fc159d6080a845f3d31a20eff7ec49df62",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-idle-normal-90.log",
+      "raw_sha256": "b0201a52af7a642412a9da3283d866cf43a0481eb0f21b5d71cd29b1aefbad38",
+      "archive_sha256": "3cf35b611f84548ae6ff694ef4457c389159eeb08b0aed659afc091c02b56076",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-idle-normal-0.log",
+      "raw_sha256": "f9c15e512a399600fddbd046bda97c152acd77dad57745d935a56a6581b7ee84",
+      "archive_sha256": "2139b8b3db0be93f0d5a62e0de20f73ab572ec52d980d798c1728ec9b328938a",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-clips.json",
+      "raw_sha256": "714c372be3e1c1f8f5bf28e913b4e0091fa01f70705dc107136136be9d997f88",
+      "archive_sha256": "714c372be3e1c1f8f5bf28e913b4e0091fa01f70705dc107136136be9d997f88",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/cover-clearance.json",
+      "raw_sha256": "e613df11f6ff8773b034a41adb535735bdc7d518cecd182d28e7a6929c837141",
+      "archive_sha256": "e613df11f6ff8773b034a41adb535735bdc7d518cecd182d28e7a6929c837141",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-idle-close-90.log",
+      "raw_sha256": "43598c0adc548b86df4e8a933fd2ced5cc24129eaaa33db67d43a33c183e60b1",
+      "archive_sha256": "4660dca5875250f0d9fcfe93ebbbd4b28d6fc117a4f85f01b37f11d9f317c9ec",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-matrix.log",
+      "raw_sha256": "28163ddcd0dbbe6f5d8344b65fd5b3b0fa5bfbae92525d63853fe6e90e57457d",
+      "archive_sha256": "28163ddcd0dbbe6f5d8344b65fd5b3b0fa5bfbae92525d63853fe6e90e57457d",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-idle-close-0.log",
+      "raw_sha256": "555516061aadec4b75ab966dab45299af42d9285267d2c0cfb330e1342f11ea4",
+      "archive_sha256": "67d5e66999de552a004f3d629e2b483f35f0c45cab62116d5ce2d000385a5d04",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/cover-clearance.log",
+      "raw_sha256": "5cbe76704cbece24c02aa3df986761c6391ca80faca11670210c35ec337bd859",
+      "archive_sha256": "5cbe76704cbece24c02aa3df986761c6391ca80faca11670210c35ec337bd859",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-maintenance-normal-180.log",
+      "raw_sha256": "8bae231e0d538d05d4d1ce24a72fbf5492ff6d1dc24ded52a6f697f4976c4777",
+      "archive_sha256": "8d862e6c3fc750d8de1abd4bb6396575b3bb653d85045f89f201e2c29b17ae33",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/solar-import.log",
+      "raw_sha256": "f252a415752894164d2b8c8f4712e5672fc752fbd10e460bb6b5e536eb04073f",
+      "archive_sha256": "f252a415752894164d2b8c8f4712e5672fc752fbd10e460bb6b5e536eb04073f",
+      "path_redacted": true
+    },
+    {
+      "path": "runs/import.log",
+      "raw_sha256": "a7c3d1adfbb1b107b8ee71cd4f8106b1849fe053f362f7c7ad38637dbcf27fa1",
+      "archive_sha256": "a7c3d1adfbb1b107b8ee71cd4f8106b1849fe053f362f7c7ad38637dbcf27fa1",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-normal-90/blind_0001.json",
+      "raw_sha256": "ffa3260e27fc68a673e0bb90b5e9f723d22c1d3afebe95d037d43a20756535de",
+      "archive_sha256": "ba1cead742f35d5529f531279d6b2326471f987b9d09fb5995fb36859fc53e94",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-normal-90/capture_hashes.json",
+      "raw_sha256": "c1ce9a2abcd3308e9c9e04f9b9f8532821a86dd0a4eb82cf13b0ca85028bdfaf",
+      "archive_sha256": "c1ce9a2abcd3308e9c9e04f9b9f8532821a86dd0a4eb82cf13b0ca85028bdfaf",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-normal-90/blind_0001.png",
+      "raw_sha256": "552cd01cbfef17010c7bb1edac56d82459337a07a25194deeedc3a0661b70450",
+      "archive_sha256": "552cd01cbfef17010c7bb1edac56d82459337a07a25194deeedc3a0661b70450",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-idle-close-0/blind_0001.json",
+      "raw_sha256": "e7f8a2f4f5b5389f171020fcf1dbb09b1a707e0de57aabe2975a538a287f7a20",
+      "archive_sha256": "7c88f0497e1aa0cbe30949cab444a485008dee38a0eb526589b9f9c093a5e2ee",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-close-0/capture_hashes.json",
+      "raw_sha256": "f71dbc3ecb6074cd7fd9b390ee54d63c870c5798ddc85dff9f50d997ff668681",
+      "archive_sha256": "f71dbc3ecb6074cd7fd9b390ee54d63c870c5798ddc85dff9f50d997ff668681",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-close-0/blind_0001.png",
+      "raw_sha256": "3de2966d558c95f32023305c6b21d8e523f7c05505fb32f0ba072aaab76c350e",
+      "archive_sha256": "3de2966d558c95f32023305c6b21d8e523f7c05505fb32f0ba072aaab76c350e",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-maintenance-close-90/blind_0001.json",
+      "raw_sha256": "c6c9d7ef69af0771046076b71580e89d314f2a1e054f13433af4380c74b4b590",
+      "archive_sha256": "e428b91806cd324928edca5bca9fb75310416cdfdfaf943cfa51108bcaabfc4d",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-close-90/capture_hashes.json",
+      "raw_sha256": "79414cd23db8d1272f220f1f170836cd03477070e4915e026bc2a52fa0afc09c",
+      "archive_sha256": "79414cd23db8d1272f220f1f170836cd03477070e4915e026bc2a52fa0afc09c",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-close-90/blind_0001.png",
+      "raw_sha256": "a722330c2686cc233a5a9dd5f6c46257bd16341339f75c22d2e06e9bb774586b",
+      "archive_sha256": "a722330c2686cc233a5a9dd5f6c46257bd16341339f75c22d2e06e9bb774586b",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-idle-close-90/blind_0001.json",
+      "raw_sha256": "315067d67fab35245a03a8c66b225f1423f6bb72d67b8a4d14117a5ac8c8e138",
+      "archive_sha256": "f7cb3d314c6a967c500ca8173c2fc254c5ed136b84016449d5cafa331c608726",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-close-90/capture_hashes.json",
+      "raw_sha256": "8edc65e6e8b8d4cd177e6973ef814332acdcb34b1a88fa9fd82ffecdae1e1eb9",
+      "archive_sha256": "8edc65e6e8b8d4cd177e6973ef814332acdcb34b1a88fa9fd82ffecdae1e1eb9",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-close-90/blind_0001.png",
+      "raw_sha256": "48fe64703ee51da7e12c4e7b992fb062856ca596b2d2019e5af823f371360c28",
+      "archive_sha256": "48fe64703ee51da7e12c4e7b992fb062856ca596b2d2019e5af823f371360c28",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-maintenance-normal-90/blind_0001.json",
+      "raw_sha256": "4233651716e347569713ac7aa524ce7d3631dbdcd33864feb94f121cc672ec2f",
+      "archive_sha256": "ed747c7519baa1b28f53949963be1cec4137db6d5fb0f86563d50d85e03b879c",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-normal-90/capture_hashes.json",
+      "raw_sha256": "aa4e3545ae3c1fe04a2bcd84fa542d9a780eb6d91c22514d6a795993c112de9d",
+      "archive_sha256": "aa4e3545ae3c1fe04a2bcd84fa542d9a780eb6d91c22514d6a795993c112de9d",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-normal-90/blind_0001.png",
+      "raw_sha256": "c472ad3538c0e42fd1904155792e144fe16c61376bff3fc671ff906e92f8ae6f",
+      "archive_sha256": "c472ad3538c0e42fd1904155792e144fe16c61376bff3fc671ff906e92f8ae6f",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-maintenance-close-0/blind_0001.json",
+      "raw_sha256": "e1ffbaeccb23574f12636b8c30a6323c62622da7d166177ac2113ea5897a59f3",
+      "archive_sha256": "574a69ef931bc7a4597aa3f2abf236a690727c1655a5342584c9371851a1f2b9",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-close-0/capture_hashes.json",
+      "raw_sha256": "88740fd99daeb37047f93e7459f7f400334450a33f624990668f2b01c768e8d8",
+      "archive_sha256": "88740fd99daeb37047f93e7459f7f400334450a33f624990668f2b01c768e8d8",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-close-0/blind_0001.png",
+      "raw_sha256": "ae459df996150888cc00e9f13b4f750a3a00ae1d9565ee7ee440d0626fd90560",
+      "archive_sha256": "ae459df996150888cc00e9f13b4f750a3a00ae1d9565ee7ee440d0626fd90560",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-idle-normal-0/blind_0001.json",
+      "raw_sha256": "559bba07448f954dd09628729f0c19e4ab6611193c0661a28e6899ec8c1950cf",
+      "archive_sha256": "81519b09171028edd69b79e201c2a5b38f0761adc16a502a81708d624d467bf8",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-normal-0/capture_hashes.json",
+      "raw_sha256": "3c3f3531bb6896b082f932af0b282e427b5c0535716cf6983b3bc0e65fb75f0b",
+      "archive_sha256": "3c3f3531bb6896b082f932af0b282e427b5c0535716cf6983b3bc0e65fb75f0b",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-normal-0/blind_0001.png",
+      "raw_sha256": "2c0ff7efd3ed250a4d492a98a8c57438b26f221c3cfde46c5dc323e271d6a8e1",
+      "archive_sha256": "2c0ff7efd3ed250a4d492a98a8c57438b26f221c3cfde46c5dc323e271d6a8e1",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-maintenance-normal-180/blind_0001.json",
+      "raw_sha256": "06b21854785c654eb93035f90a7379257c8852d38cf9c6c368ec6660eb4d2314",
+      "archive_sha256": "fb2b3686f0965c0d82319a0512aa70d91cc73c8adc6379c1e62948cc1f2a4c44",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-normal-180/capture_hashes.json",
+      "raw_sha256": "c3dffb6277444f4675ef4638aa5d555b4e23209c3f3fc87de72f9b98f52f8e30",
+      "archive_sha256": "c3dffb6277444f4675ef4638aa5d555b4e23209c3f3fc87de72f9b98f52f8e30",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-normal-180/blind_0001.png",
+      "raw_sha256": "97c46313587b426644b89e81ff071342111c6d71bbd646fb789d188501f8ea62",
+      "archive_sha256": "97c46313587b426644b89e81ff071342111c6d71bbd646fb789d188501f8ea62",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-idle-normal-180/blind_0001.json",
+      "raw_sha256": "8540a005e472debd44ac5e9ca25b86d6fd4e6c5e2c218c454c1dade32076a57b",
+      "archive_sha256": "74ddfb9eb598491191af0b8bc9f395b8392362f10e0e4711470280820f476742",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-normal-180/capture_hashes.json",
+      "raw_sha256": "893c607c71a0aeb1fa2561db732aff3d23f337484ca1facb53a0303fbc4965db",
+      "archive_sha256": "893c607c71a0aeb1fa2561db732aff3d23f337484ca1facb53a0303fbc4965db",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-idle-normal-180/blind_0001.png",
+      "raw_sha256": "937ccfea07a75e3791f7a9f7c3163a2aeee1e6117e5c236db3c7451f481d1dd3",
+      "archive_sha256": "937ccfea07a75e3791f7a9f7c3163a2aeee1e6117e5c236db3c7451f481d1dd3",
+      "path_redacted": false
+    },
+    {
+      "path": "images/solar-maintenance-normal-0/blind_0001.json",
+      "raw_sha256": "6f1686b05bf896d15d8bf7b4c5fd97d9ce504e85033397744f812f71018715b8",
+      "archive_sha256": "3aa46e098e5fa2b7c9cbdbd93c6ca014ef906317c90260483d5be73f6505c59c",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-normal-0/capture_hashes.json",
+      "raw_sha256": "9ea16954a6072e2a581110f21fe1f28cce00e69150a4ace2b6ae2eff76bb5a3c",
+      "archive_sha256": "9ea16954a6072e2a581110f21fe1f28cce00e69150a4ace2b6ae2eff76bb5a3c",
+      "path_redacted": true
+    },
+    {
+      "path": "images/solar-maintenance-normal-0/blind_0001.png",
+      "raw_sha256": "26909dd31e6a54a1b3ba243ac9a82257aea475001bf0e31a3fdc72d30d5a63d3",
+      "archive_sha256": "26909dd31e6a54a1b3ba243ac9a82257aea475001bf0e31a3fdc72d30d5a63d3",
+      "path_redacted": false
+    },
+    {
+      "path": "checks/check_cover.py",
+      "raw_sha256": "652385de29b1860ec52ceb055857ba913bca7ae9ea311815cc7409ce92e3bb33",
+      "archive_sha256": "652385de29b1860ec52ceb055857ba913bca7ae9ea311815cc7409ce92e3bb33",
+      "path_redacted": false
+    },
+    {
+      "path": "checks/solar-actual.gd",
+      "raw_sha256": "88129b396747ca93050b2e41974a1164c4114749160badd05879223eded09ea5",
+      "archive_sha256": "88129b396747ca93050b2e41974a1164c4114749160badd05879223eded09ea5",
+      "path_redacted": false
+    },
+    {
+      "path": "checks/solar-audit.gd",
+      "raw_sha256": "c2dd7b10e92c00f3597ef26ae5cfd106ca84399e9ff317e00227f3a26aa3e8e8",
+      "archive_sha256": "c2dd7b10e92c00f3597ef26ae5cfd106ca84399e9ff317e00227f3a26aa3e8e8",
+      "path_redacted": false
+    },
+    {
+      "path": "checks/solar-clips-audit.gd",
+      "raw_sha256": "86236028ef35aaa80e28983c62ed655993caa16dab86740a58c24cbd1d0d0826",
+      "archive_sha256": "86236028ef35aaa80e28983c62ed655993caa16dab86740a58c24cbd1d0d0826",
+      "path_redacted": false
+    },
+    {
+      "path": "inputs/manifests/solar-r1.json",
+      "raw_sha256": "decbd4419139eb58c41f5fb9f6e80628c8a922e6c1a021fcdd07978b557e06bf",
+      "archive_sha256": "decbd4419139eb58c41f5fb9f6e80628c8a922e6c1a021fcdd07978b557e06bf",
+      "path_redacted": false
+    }
+  ]
+}

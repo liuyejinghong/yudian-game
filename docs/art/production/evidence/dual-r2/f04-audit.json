@@ -1,0 +1,328 @@
+{
+  "bounds_including_hidden": {
+    "max": [
+      1.29999995231628,
+      1.45000004768372,
+      1.10000002384186
+    ],
+    "min": [
+      -0.899999976158142,
+      0.0,
+      -1.10000002384186
+    ]
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "glb": "res://models/charger.glb",
+  "meshes": [
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.899999976158142,
+          0.0199999995529652,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.10000002384186
+        ]
+      },
+      "path": "/root/charger/ChargingStation/Foundation",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.29999995231628,
+          0.0799999982118607,
+          -0.0400000214576721
+        ],
+        "min": [
+          0.810000002384186,
+          0.0,
+          -0.660000026226044
+        ]
+      },
+      "path": "/root/charger/ChargingStation/CabinetFoot",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.24500000476837,
+          1.39999997615814,
+          -0.100000023841858
+        ],
+        "min": [
+          0.865000009536743,
+          0.0799999982118607,
+          -0.600000023841858
+        ]
+      },
+      "path": "/root/charger/ChargingStation/Cabinet",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.26499998569489,
+          1.45000004768372,
+          -0.0799999833106995
+        ],
+        "min": [
+          0.845000028610229,
+          1.39999997615814,
+          -0.620000004768372
+        ]
+      },
+      "path": "/root/charger/ChargingStation/CabinetCap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.879999995231628,
+          0.610000014305115,
+          -0.300000011920929
+        ],
+        "min": [
+          0.709999978542328,
+          0.529999971389771,
+          -0.400000005960464
+        ]
+      },
+      "path": "/root/charger/ChargingStation/ArmStem",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.709999978542328,
+          0.629999995231628,
+          -0.270000010728836
+        ],
+        "min": [
+          0.649999976158142,
+          0.509999990463257,
+          -0.430000007152557
+        ]
+      },
+      "path": "/root/charger/ChargingStation/ContactHead",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.11500000953674,
+          0.239999994635582,
+          -0.569999992847443
+        ],
+        "min": [
+          0.995000004768372,
+          0.119999997317791,
+          -0.660000026226044
+        ]
+      },
+      "path": "/root/charger/ChargingStation/PowerInGuard",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.26300001144409,
+          1.11000001430511,
+          -0.180000007152557
+        ],
+        "min": [
+          1.24500000476837,
+          0.509999990463257,
+          -0.519999980926514
+        ]
+      },
+      "path": "/root/charger/ChargingStation/ServicePanel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.797500014305115,
+          0.0240000002086163,
+          1.01750004291534
+        ],
+        "min": [
+          -0.797500014305115,
+          0.0199999995529652,
+          -1.01750004291534
+        ]
+      },
+      "path": "/root/charger/ChargingStation/BayMark",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 48,
+          "vertices": 144
+        }
+      ],
+      "visible": true
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "path": "/root/charger/ChargingStation/Socket_Dock",
+      "position": [
+        0.649999976158142,
+        0.569999992847443,
+        -0.349999994039536
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "path": "/root/charger/ChargingStation/Socket_PowerIn",
+      "position": [
+        1.05499994754791,
+        0.180000007152557,
+        -0.660000026226044
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "triangles": 144
+}

@@ -1,0 +1,2172 @@
+{
+  "active_sampled": {
+    "max": [
+      2.25,
+      2.20000004768372,
+      2.29291963577271
+    ],
+    "min": [
+      -2.25,
+      0.0,
+      -2.96000003814697
+    ]
+  },
+  "asset": "storage",
+  "candidate_envelope_check": "PASS",
+  "clips": {
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Storage/GatePivot",
+        "Storage/CoverPivot"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Storage/CoverPivot",
+        "Storage/GatePivot"
+      ]
+    }
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frozen_socket_check": "PASS",
+  "glb": "res://assets/lowfi-batch-r1/models/storage.glb",
+  "glb_sha256": "ea594929b3e110b99130d45068916a4859dae346a31db00d9a75d490ff07033d",
+  "illegal_preserved": 10,
+  "loaded": {
+    "max": [
+      2.25,
+      2.20000004768372,
+      1.74500000476837
+    ],
+    "min": [
+      -2.25,
+      0.0,
+      -2.96000003814697
+    ]
+  },
+  "meshes": [
+    {
+      "node": "Model/Storage/CoverAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/CoverMountL",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/CoverMountR",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/CoverPivot/ServiceCoverPanel",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/FrontMark",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/GateAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/GatePivot/GatePanel",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/GatePivot/GateStrip",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/PodBracket",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_B01",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_B02",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_B03",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_B04",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_B05",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_B06",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_T01",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_T02",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_T03",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_T04",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_T05",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RackPayloadDemo/Crate_T06",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 24
+        },
+        {
+          "role": "body_light",
+          "surface": 1,
+          "triangles": 12
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/RearPanel",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/ServicePod",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/Structure",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 132
+        }
+      ]
+    },
+    {
+      "node": "Model/Storage/TopCanopy",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 24
+        }
+      ]
+    }
+  ],
+  "motion_comparison": {},
+  "pose_cases": [
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.8607189655304
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.55733394622803
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.09763693809509
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.9188289642334
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.07971596717834
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.20831704139709
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.29291963577271
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.29291963577271
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.29291963577271
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "idle",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "idle",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "idle",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "idle",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "idle",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "idle",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "move",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "move",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "move",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "move",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "move",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "move",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "move",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "work",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "work",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "work",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "work",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "work",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "work",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "work",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "charge",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "charge",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "charge",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "charge",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "charge",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "charge",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "disabled",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.8607189655304
+        ]
+      },
+      "cargo": "loaded",
+      "state": "disabled",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.55733394622803
+        ]
+      },
+      "cargo": "loaded",
+      "state": "disabled",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.09763693809509
+        ]
+      },
+      "cargo": "loaded",
+      "state": "disabled",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "loaded",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "loaded",
+      "state": "disabled",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "loaded",
+      "state": "disabled",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "towed",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "towed",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "towed",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "towed",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "towed",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "towed",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.74500000476837
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "maintenance",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.9188289642334
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "maintenance",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.07971596717834
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "maintenance",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.20831704139709
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "maintenance",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.29291963577271
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.29291963577271
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "maintenance",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          2.29291963577271
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -2.96000003814697
+        ]
+      },
+      "cargo": "loaded",
+      "state": "maintenance",
+      "time_s": 2.0
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Storage/Socket_Input",
+      "position": [
+        0.0,
+        0.200000002980232,
+        -1.60000002384186
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0000000874227765734759,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Storage/Socket_Output",
+      "position": [
+        0.0,
+        0.200000002980232,
+        1.77999997138977
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0000000874227765734759,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Storage/Socket_Service",
+      "position": [
+        0.0,
+        0.850000023841858,
+        1.74249994754791
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "source_endpoint_check": "PASS",
+  "source_faults_preserved": 2,
+  "static": {
+    "max": [
+      2.25,
+      2.20000004768372,
+      1.74500000476837
+    ],
+    "min": [
+      -2.25,
+      0.0,
+      -2.96000003814697
+    ]
+  },
+  "triangles_with_candidate_attachment": 1312
+}

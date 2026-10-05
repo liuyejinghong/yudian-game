@@ -1,0 +1,1223 @@
+{
+  "scope": "ART-LF-BATCH-01 subpackage A wangshan low-fi candidate",
+  "ticket": "docs/art/production/tasks/ART-LF-BATCH-01.md",
+  "blender": "4.5.14 LTS",
+  "triangles_total": 7544,
+  "mesh_count": 32,
+  "roles_used": {
+    "body_light": 10,
+    "frame_dark": 26,
+    "rubber": 4,
+    "accent_warm": 8
+  },
+  "meshes": [
+    {
+      "node": "BodyShell",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.45,
+          0.42,
+          -0.51
+        ],
+        "max": [
+          0.45,
+          0.64,
+          0.71
+        ]
+      }
+    },
+    {
+      "node": "Bogie_L",
+      "triangles": 368,
+      "roles": [
+        "frame_dark",
+        "rubber"
+      ],
+      "bounds": {
+        "min": [
+          -0.54,
+          0.173,
+          -0.032
+        ],
+        "max": [
+          -0.4275,
+          0.306745,
+          0.592
+        ]
+      }
+    },
+    {
+      "node": "Bogie_R",
+      "triangles": 368,
+      "roles": [
+        "frame_dark",
+        "rubber"
+      ],
+      "bounds": {
+        "min": [
+          0.4275,
+          0.173,
+          -0.032
+        ],
+        "max": [
+          0.54,
+          0.306745,
+          0.592
+        ]
+      }
+    },
+    {
+      "node": "ChargeCapPanel",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          0.48,
+          0.49,
+          -0.38
+        ],
+        "max": [
+          0.488,
+          0.61,
+          -0.26
+        ]
+      }
+    },
+    {
+      "node": "ChargeHingeAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.472,
+          0.598,
+          -0.395
+        ],
+        "max": [
+          0.496,
+          0.622,
+          -0.245
+        ]
+      }
+    },
+    {
+      "node": "ChargeHousing",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.43,
+          0.47,
+          -0.4
+        ],
+        "max": [
+          0.48,
+          0.63,
+          -0.24
+        ]
+      }
+    },
+    {
+      "node": "FrameBed",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.45,
+          0.3,
+          -0.525
+        ],
+        "max": [
+          0.45,
+          0.44,
+          0.725
+        ]
+      }
+    },
+    {
+      "node": "HeadForkBridge",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.38,
+          1.3,
+          -0.16
+        ],
+        "max": [
+          0.38,
+          1.36,
+          -0.0
+        ]
+      }
+    },
+    {
+      "node": "HeadForkPostL",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.375,
+          1.3,
+          -0.13
+        ],
+        "max": [
+          -0.325,
+          1.7,
+          -0.03
+        ]
+      }
+    },
+    {
+      "node": "HeadForkPostR",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.325,
+          1.3,
+          -0.13
+        ],
+        "max": [
+          0.375,
+          1.7,
+          -0.03
+        ]
+      }
+    },
+    {
+      "node": "Mast",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.06,
+          0.74,
+          -0.14
+        ],
+        "max": [
+          0.06,
+          1.27,
+          -0.02
+        ]
+      }
+    },
+    {
+      "node": "MastHeadMount",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.12,
+          1.26,
+          -0.19
+        ],
+        "max": [
+          0.12,
+          1.3,
+          0.03
+        ]
+      }
+    },
+    {
+      "node": "RearModule",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.29,
+          0.64,
+          0.21
+        ],
+        "max": [
+          0.29,
+          0.86,
+          0.63
+        ]
+      }
+    },
+    {
+      "node": "Rocker_L",
+      "triangles": 208,
+      "roles": [
+        "frame_dark",
+        "rubber"
+      ],
+      "bounds": {
+        "min": [
+          -0.54,
+          0.173,
+          -0.592
+        ],
+        "max": [
+          -0.4,
+          0.385,
+          0.283017
+        ]
+      }
+    },
+    {
+      "node": "Rocker_R",
+      "triangles": 208,
+      "roles": [
+        "frame_dark",
+        "rubber"
+      ],
+      "bounds": {
+        "min": [
+          0.4,
+          0.173,
+          -0.592
+        ],
+        "max": [
+          0.54,
+          0.385,
+          0.283017
+        ]
+      }
+    },
+    {
+      "node": "SensorBase",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.16,
+          0.64,
+          -0.24
+        ],
+        "max": [
+          0.16,
+          0.74,
+          0.08
+        ]
+      }
+    },
+    {
+      "node": "SensorFace",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.24,
+          1.56,
+          -0.324
+        ],
+        "max": [
+          0.24,
+          1.68,
+          -0.31
+        ]
+      }
+    },
+    {
+      "node": "SensorHead",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.3,
+          1.51,
+          -0.31
+        ],
+        "max": [
+          0.3,
+          1.73,
+          -0.01
+        ]
+      }
+    },
+    {
+      "node": "SensorPitchAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.38,
+          1.575,
+          -0.125
+        ],
+        "max": [
+          0.38,
+          1.665,
+          -0.035
+        ]
+      }
+    },
+    {
+      "node": "ServiceHingeAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.22,
+          0.845,
+          0.625
+        ],
+        "max": [
+          0.22,
+          0.875,
+          0.655
+        ]
+      }
+    },
+    {
+      "node": "ServiceHingeMountL",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.25,
+          0.835,
+          0.59
+        ],
+        "max": [
+          -0.15,
+          0.885,
+          0.67
+        ]
+      }
+    },
+    {
+      "node": "ServiceHingeMountR",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.15,
+          0.835,
+          0.59
+        ],
+        "max": [
+          0.25,
+          0.885,
+          0.67
+        ]
+      }
+    },
+    {
+      "node": "ServiceLidPanel",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.32,
+          0.8475,
+          0.19
+        ],
+        "max": [
+          0.32,
+          0.8725,
+          0.65
+        ]
+      }
+    },
+    {
+      "node": "TowFrontEar",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -0.1,
+          0.21,
+          -0.8
+        ],
+        "max": [
+          0.1,
+          0.27,
+          -0.72
+        ]
+      }
+    },
+    {
+      "node": "TowFrontMount",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.09,
+          0.22,
+          -0.72
+        ],
+        "max": [
+          0.09,
+          0.34,
+          -0.49
+        ]
+      }
+    },
+    {
+      "node": "TowRearMount",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.09,
+          0.22,
+          0.63
+        ],
+        "max": [
+          0.09,
+          0.34,
+          0.8
+        ]
+      }
+    },
+    {
+      "node": "Wheel_LF",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.63,
+          2.4e-05,
+          -0.764976
+        ],
+        "max": [
+          -0.47,
+          0.409976,
+          -0.355024
+        ]
+      }
+    },
+    {
+      "node": "Wheel_LM",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.63,
+          2.4e-05,
+          -0.204976
+        ],
+        "max": [
+          -0.47,
+          0.409976,
+          0.204976
+        ]
+      }
+    },
+    {
+      "node": "Wheel_LR",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.63,
+          2.4e-05,
+          0.355024
+        ],
+        "max": [
+          -0.47,
+          0.409976,
+          0.764976
+        ]
+      }
+    },
+    {
+      "node": "Wheel_RF",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.47,
+          2.4e-05,
+          -0.764976
+        ],
+        "max": [
+          0.63,
+          0.409976,
+          -0.355024
+        ]
+      }
+    },
+    {
+      "node": "Wheel_RM",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.47,
+          2.4e-05,
+          -0.204976
+        ],
+        "max": [
+          0.63,
+          0.409976,
+          0.204976
+        ]
+      }
+    },
+    {
+      "node": "Wheel_RR",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.47,
+          2.4e-05,
+          0.355024
+        ],
+        "max": [
+          0.63,
+          0.409976,
+          0.764976
+        ]
+      }
+    }
+  ],
+  "sockets": {
+    "Socket_Charge": {
+      "position": [
+        0.48,
+        0.55,
+        -0.32
+      ],
+      "forward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_Sensor": {
+      "position": [
+        0.0,
+        1.62,
+        -0.325
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_Service": {
+      "position": [
+        0.0,
+        0.75,
+        0.65
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_TowFront": {
+      "position": [
+        0.0,
+        0.24,
+        -0.8
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    },
+    "Socket_TowRear": {
+      "position": [
+        0.0,
+        0.24,
+        0.8
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        -0.0
+      ]
+    }
+  },
+  "clips": [
+    {
+      "name": "charge",
+      "duration_s": 1,
+      "channels": {
+        "ChargeCap": [
+          "rotation"
+        ],
+        "SensorPitch": [
+          "rotation"
+        ],
+        "SensorYaw": [
+          "rotation"
+        ],
+        "ServiceLid": [
+          "rotation"
+        ],
+        "Wheel_LF": [
+          "rotation"
+        ],
+        "Wheel_LM": [
+          "rotation"
+        ],
+        "Wheel_LR": [
+          "rotation"
+        ],
+        "Wheel_RF": [
+          "rotation"
+        ],
+        "Wheel_RM": [
+          "rotation"
+        ],
+        "Wheel_RR": [
+          "rotation"
+        ]
+      },
+      "key_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "disabled",
+      "duration_s": 1,
+      "channels": {
+        "ChargeCap": [
+          "rotation"
+        ],
+        "SensorPitch": [
+          "rotation"
+        ],
+        "SensorYaw": [
+          "rotation"
+        ],
+        "ServiceLid": [
+          "rotation"
+        ],
+        "Wheel_LF": [
+          "rotation"
+        ],
+        "Wheel_LM": [
+          "rotation"
+        ],
+        "Wheel_LR": [
+          "rotation"
+        ],
+        "Wheel_RF": [
+          "rotation"
+        ],
+        "Wheel_RM": [
+          "rotation"
+        ],
+        "Wheel_RR": [
+          "rotation"
+        ]
+      },
+      "key_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "maintenance",
+      "duration_s": 1,
+      "channels": {
+        "ChargeCap": [
+          "rotation"
+        ],
+        "SensorPitch": [
+          "rotation"
+        ],
+        "SensorYaw": [
+          "rotation"
+        ],
+        "ServiceLid": [
+          "rotation"
+        ],
+        "Wheel_LF": [
+          "rotation"
+        ],
+        "Wheel_LM": [
+          "rotation"
+        ],
+        "Wheel_LR": [
+          "rotation"
+        ],
+        "Wheel_RF": [
+          "rotation"
+        ],
+        "Wheel_RM": [
+          "rotation"
+        ],
+        "Wheel_RR": [
+          "rotation"
+        ]
+      },
+      "key_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "move",
+      "duration_s": 1,
+      "channels": {
+        "ChargeCap": [
+          "rotation"
+        ],
+        "SensorPitch": [
+          "rotation"
+        ],
+        "SensorYaw": [
+          "rotation"
+        ],
+        "ServiceLid": [
+          "rotation"
+        ],
+        "Wheel_LF": [
+          "rotation"
+        ],
+        "Wheel_LM": [
+          "rotation"
+        ],
+        "Wheel_LR": [
+          "rotation"
+        ],
+        "Wheel_RF": [
+          "rotation"
+        ],
+        "Wheel_RM": [
+          "rotation"
+        ],
+        "Wheel_RR": [
+          "rotation"
+        ]
+      },
+      "key_counts": [
+        2,
+        2,
+        2,
+        2,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "work",
+      "duration_s": 2,
+      "channels": {
+        "ChargeCap": [
+          "rotation"
+        ],
+        "SensorPitch": [
+          "rotation"
+        ],
+        "SensorYaw": [
+          "rotation"
+        ],
+        "ServiceLid": [
+          "rotation"
+        ],
+        "Wheel_LF": [
+          "rotation"
+        ],
+        "Wheel_LM": [
+          "rotation"
+        ],
+        "Wheel_LR": [
+          "rotation"
+        ],
+        "Wheel_RF": [
+          "rotation"
+        ],
+        "Wheel_RM": [
+          "rotation"
+        ],
+        "Wheel_RR": [
+          "rotation"
+        ]
+      },
+      "key_counts": [
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "envelopes": {
+    "idle": {
+      "min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "hold_min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "hold_max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "candidate_min": [
+        -0.65,
+        0.0,
+        -0.84
+      ],
+      "candidate_max": [
+        0.65,
+        1.8,
+        0.84
+      ],
+      "within": true,
+      "hold_within": true
+    },
+    "move": {
+      "min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "frames": [
+        0.0,
+        30.0
+      ],
+      "hold_min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "hold_max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "candidate_min": [
+        -0.65,
+        0.0,
+        -0.84
+      ],
+      "candidate_max": [
+        0.65,
+        1.8,
+        0.84
+      ],
+      "within": true,
+      "hold_within": true
+    },
+    "work": {
+      "min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "frames": [
+        0.0,
+        30.0,
+        60.0
+      ],
+      "hold_min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "hold_max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "candidate_min": [
+        -0.65,
+        0.0,
+        -0.84
+      ],
+      "candidate_max": [
+        0.65,
+        1.8,
+        0.84
+      ],
+      "within": true,
+      "hold_within": true
+    },
+    "charge": {
+      "min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "frames": [
+        0.0,
+        30.0
+      ],
+      "hold_min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "hold_max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "candidate_min": [
+        -0.65,
+        0.0,
+        -0.84
+      ],
+      "candidate_max": [
+        0.65,
+        1.8,
+        0.84
+      ],
+      "within": true,
+      "hold_within": true
+    },
+    "disabled": {
+      "min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "max": [
+        0.63,
+        1.748536,
+        0.8
+      ],
+      "frames": [
+        0.0,
+        30.0
+      ],
+      "hold_min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "hold_max": [
+        0.63,
+        1.748536,
+        0.8
+      ],
+      "candidate_min": [
+        -0.65,
+        0.0,
+        -0.84
+      ],
+      "candidate_max": [
+        0.65,
+        1.8,
+        0.84
+      ],
+      "within": true,
+      "hold_within": true
+    },
+    "maintenance": {
+      "min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "frames": [
+        0.0,
+        30.0
+      ],
+      "hold_min": [
+        -0.63,
+        2.4e-05,
+        -0.8
+      ],
+      "hold_max": [
+        0.63,
+        1.73,
+        0.8
+      ],
+      "candidate_min": [
+        -0.65,
+        0.0,
+        -0.84
+      ],
+      "candidate_max": [
+        0.65,
+        1.85,
+        0.84
+      ],
+      "within": true,
+      "hold_within": true
+    }
+  },
+  "sources": "U01 tuoyun-r1.glb chassis subtree (read-only)",
+  "helpers_provenance": "zhulei-r1 build_sample.py (accepted)",
+  "files": {
+    "wangshan.blend": {
+      "bytes": 1291452,
+      "sha256": "3183816657a9110fc349c0f54127f96072fe80b003710aa2a53af55bf9e64a99"
+    },
+    "wangshan.glb": {
+      "bytes": 301160,
+      "sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b"
+    }
+  },
+  "checks": {
+    "envelope_within": "PASS",
+    "clip_names": "PASS",
+    "root_not_animated": "PASS",
+    "finite_coords": "PASS",
+    "roles_known": "PASS",
+    "glb_magic": "PASS",
+    "frame0_idle": "PASS"
+  },
+  "not_run": [
+    "owner visual acceptance",
+    "master preview packaging/manifest",
+    "gameplay/performance/navigation",
+    "Godot runtime import (separate step)"
+  ],
+  "build_seconds": 0.278
+}

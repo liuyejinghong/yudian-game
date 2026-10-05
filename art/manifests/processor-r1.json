@@ -1,0 +1,401 @@
+{
+  "id": "ART-F02",
+  "revision": 2,
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "preview_scene": "res://assets/facilities/processor-r1/preview.tscn",
+  "glb": "res://assets/facilities/processor-r1/processor-r1.glb",
+  "glb_sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157",
+  "bounds": {
+    "static": {
+      "min": [
+        -1.8,
+        0.0,
+        -2.4
+      ],
+      "max": [
+        1.8,
+        2.4,
+        2.4
+      ]
+    },
+    "loaded": {
+      "min": [
+        -1.8,
+        0,
+        -2.4
+      ],
+      "max": [
+        1.8,
+        2.4,
+        2.4
+      ]
+    },
+    "active": {
+      "min": [
+        -2.24,
+        0,
+        -2.4
+      ],
+      "max": [
+        1.8,
+        2.4,
+        2.4
+      ]
+    }
+  },
+  "material_bindings": [
+    {
+      "node": "Model/processor-r1/Model/Base",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/Chamber",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/Chamber",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/Chamber",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/processor-r1/Model/PressGuide",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/PressRam",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/PressRam",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/PressRam",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/processor-r1/Model/FeedBed",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/FeedBed",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/FeedGate",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/FeedGate",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/Gantry",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/StopGate",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/StopGate",
+      "surface": 1,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/processor-r1/Model/OutputRack",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/OutputRack",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/ServicePort",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/ServicePort",
+      "surface": 1,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/processor-r1/Model/PowerPort",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/PowerPort",
+      "surface": 1,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/processor-r1/Model/DustCollar",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/DustCollar",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/ElectronicsInnerCover",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/ElectronicsInnerCover",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/HeatPanel",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/HeatPanel",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/ServiceCover",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/ServiceCover",
+      "surface": 1,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/processor-r1/Model/InputCrate",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/InputCrate",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/processor-r1/Model/OutputCrate",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/processor-r1/Model/OutputCrate",
+      "surface": 1,
+      "role": "body_light"
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "position": [
+        0.0,
+        0.479999989271164,
+        -2.20000004768372
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "node": "Model/processor-r1/Model/Socket_Input"
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.479999989271164,
+        2.20000004768372
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "node": "Model/processor-r1/Model/Socket_Output"
+    },
+    {
+      "forward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "position": [
+        1.60000002384186,
+        0.349999994039536,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "node": "Model/processor-r1/Model/Socket_PowerIn"
+    },
+    {
+      "forward": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "position": [
+        -1.29999995231628,
+        1.0,
+        0.400000005960464
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "node": "Model/processor-r1/Model/Socket_Service"
+    }
+  ],
+  "states": {
+    "idle": {
+      "mode": "static",
+      "reason": "仅源内局部表现，不代表库存或维护规则",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "move": {
+      "mode": "na",
+      "reason": "固定加工设施；本态不适用",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "work": {
+      "mode": "animated",
+      "reason": "仅源内局部表现，不代表库存或维护规则",
+      "clip": "work",
+      "duration_s": 2,
+      "loop": true
+    },
+    "charge": {
+      "mode": "na",
+      "reason": "固定加工设施；本态不适用",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "disabled": {
+      "mode": "animated",
+      "reason": "仅源内局部表现，不代表库存或维护规则",
+      "clip": "disabled",
+      "duration_s": 1,
+      "loop": false
+    },
+    "towed": {
+      "mode": "na",
+      "reason": "固定加工设施；本态不适用",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "maintenance": {
+      "mode": "animated",
+      "reason": "仅源内局部表现，不代表库存或维护规则",
+      "clip": "maintenance",
+      "duration_s": 1,
+      "loop": false
+    }
+  },
+  "phases": [
+    "completed"
+  ],
+  "cargo_modes": [
+    "empty"
+  ],
+  "phase_state_modes": {
+    "completed": {
+      "idle": {
+        "mode": "static",
+        "reason": "仅源内局部表现，不代表库存或维护规则"
+      },
+      "move": {
+        "mode": "na",
+        "reason": "固定加工设施；本态不适用"
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "仅源内局部表现，不代表库存或维护规则"
+      },
+      "charge": {
+        "mode": "na",
+        "reason": "固定加工设施；本态不适用"
+      },
+      "disabled": {
+        "mode": "animated",
+        "reason": "仅源内局部表现，不代表库存或维护规则"
+      },
+      "towed": {
+        "mode": "na",
+        "reason": "固定加工设施；本态不适用"
+      },
+      "maintenance": {
+        "mode": "animated",
+        "reason": "仅源内局部表现，不代表库存或维护规则"
+      }
+    }
+  },
+  "source": {
+    "generator": "art/source/facilities/processor-r1/generate_processor_r1.py",
+    "source_path": "art/source/facilities/processor-r1/processor-r1.gltf",
+    "tool_version": "Python 3.14.3 standard library",
+    "original": true,
+    "hash": "95f884fb17a0dac25711095a4cbb7bb85406442277625fc30beb486511efb3ba",
+    "files": [
+      {
+        "path": "art/source/facilities/processor-r1/generate_processor_r1.py",
+        "sha256": "a2109b127868fbd2e2f1c57f290beb0d9dd82974dc6dc3b29405c0492ae65904"
+      },
+      {
+        "path": "art/source/facilities/processor-r1/processor-r1.gltf",
+        "sha256": "95f884fb17a0dac25711095a4cbb7bb85406442277625fc30beb486511efb3ba"
+      },
+      {
+        "path": "art/source/facilities/processor-r1/processor-r1.bin",
+        "sha256": "32cbabcd8dc5f4387da9e3f7896a5dbb89bc735eadd5fd314f322ec854e522c0"
+      }
+    ]
+  },
+  "triangles": 1224,
+  "textures": []
+}

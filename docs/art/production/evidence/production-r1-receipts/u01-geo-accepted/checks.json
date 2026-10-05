@@ -1,0 +1,49 @@
+{
+  "commands": [
+    {
+      "command": [
+        "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/private/tmp/yudian-u01-import-one-master-r4",
+        "--import"
+      ],
+      "exit": 0,
+      "script_error": false,
+      "error": false
+    },
+    {
+      "command": [
+        "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/private/tmp/yudian-u01-import-one-master-r4",
+        "--script",
+        "res://audit.gd",
+        "--",
+        "res://tuoyun.glb",
+        "/private/tmp/yudian-u01-import-one-master-r4/actual.json"
+      ],
+      "exit": 0,
+      "script_error": false,
+      "error": false
+    }
+  ],
+  "empty": {
+    "min": [
+      -0.586000025272369,
+      0.0,
+      -0.800000011920929
+    ],
+    "max": [
+      0.586000025272369,
+      0.720000028610229,
+      0.800000011920929
+    ]
+  },
+  "sockets_positions": "PASS",
+  "socket_forward": "GEO extras only; STATE must bake orientations",
+  "triangles": 1512,
+  "result": "U01_GEO_INDEPENDENT_PASS",
+  "imported_glb_sha256": "dce2eb0bed0b6443e7ededefb59a48b09c9000566d8ae92e3cd85741bc06ccfc"
+}

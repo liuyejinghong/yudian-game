@@ -1,0 +1,18 @@
+[
+  {
+    "asset": "tuoyun",
+    "exit": 0,
+    "log": "OK static=[[-0.594, 0.0, -0.8], [0.594, 0.85, 0.8]] loaded=[[-0.594, 0.0, -0.8], [0.594, 0.86, 0.8]] tris=2040 bin=98624B\n",
+    "expected": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "byte_identical": true
+  },
+  {
+    "asset": "solar",
+    "exit": 0,
+    "log": "SOLAR_SOURCE_WRITTEN 69 meshes ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d\n",
+    "expected": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "byte_identical": true
+  }
+]

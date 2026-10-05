@@ -1,0 +1,2002 @@
+[
+  {
+    "asset": "wangshan",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "wangshan",
+    "label": "move_0.25",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "move",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.25
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "wangshan",
+    "label": "move_0.75",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "move",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.75
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "wangshan",
+    "label": "work_0.25",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.25
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "wangshan",
+    "label": "work_0.75",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.75
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "wangshan",
+    "label": "charge",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "charge",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "wangshan",
+    "label": "disabled",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "disabled",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "both",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "wangshan",
+    "label": "towed",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "towed",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN; recovery attachment is visual candidate, no approved towing capacity/ability"
+  },
+  {
+    "asset": "wangshan",
+    "label": "maintenance",
+    "scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+    "preset": {
+      "state": "maintenance",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "repair",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/repair.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "repair",
+    "label": "work_0.25",
+    "scene": "res://assets/lowfi-batch-r1/repair.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.25
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "repair",
+    "label": "work_0.75",
+    "scene": "res://assets/lowfi-batch-r1/repair.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.75
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "repair",
+    "label": "disabled",
+    "scene": "res://assets/lowfi-batch-r1/repair.tscn",
+    "preset": {
+      "state": "disabled",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "repair",
+    "label": "maintenance",
+    "scene": "res://assets/lowfi-batch-r1/repair.tscn",
+    "preset": {
+      "state": "maintenance",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "lander",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/lander.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "lander",
+    "label": "work_empty",
+    "scene": "res://assets/lowfi-batch-r1/lander.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "lander",
+    "label": "work_loaded",
+    "scene": "res://assets/lowfi-batch-r1/lander.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "loaded",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "lander",
+    "label": "disabled",
+    "scene": "res://assets/lowfi-batch-r1/lander.tscn",
+    "preset": {
+      "state": "disabled",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "lander",
+    "label": "maintenance",
+    "scene": "res://assets/lowfi-batch-r1/lander.tscn",
+    "preset": {
+      "state": "maintenance",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "zhulei",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "zhulei",
+    "label": "move_0.25",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "move",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.25
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "zhulei",
+    "label": "move_0.75",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "move",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.75
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "zhulei",
+    "label": "work_0.25",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.25
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "zhulei",
+    "label": "work_0.75",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.75
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "zhulei",
+    "label": "charge",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "charge",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "zhulei",
+    "label": "disabled",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "disabled",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "both",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "zhulei",
+    "label": "towed",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "towed",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN; recovery attachment is visual candidate, no approved towing capacity/ability"
+  },
+  {
+    "asset": "zhulei",
+    "label": "maintenance",
+    "scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+    "preset": {
+      "state": "maintenance",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "storage",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/storage.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "storage",
+    "label": "idle_loaded",
+    "scene": "res://assets/lowfi-batch-r1/storage.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "loaded",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "storage",
+    "label": "disabled_loaded",
+    "scene": "res://assets/lowfi-batch-r1/storage.tscn",
+    "preset": {
+      "state": "disabled",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "loaded",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "storage",
+    "label": "maintenance_loaded",
+    "scene": "res://assets/lowfi-batch-r1/storage.tscn",
+    "preset": {
+      "state": "maintenance",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "loaded",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "charger",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/charger.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "charger",
+    "label": "work_0.5",
+    "scene": "res://assets/lowfi-batch-r1/charger.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.5
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "charger",
+    "label": "work_1.5",
+    "scene": "res://assets/lowfi-batch-r1/charger.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1.5
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "charger",
+    "label": "disabled",
+    "scene": "res://assets/lowfi-batch-r1/charger.tscn",
+    "preset": {
+      "state": "disabled",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "charger",
+    "label": "maintenance",
+    "scene": "res://assets/lowfi-batch-r1/charger.tscn",
+    "preset": {
+      "state": "maintenance",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "crate",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/crate.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "recovery",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/recovery.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN; recovery attachment is visual candidate, no approved towing capacity/ability"
+  },
+  {
+    "asset": "terrain-original",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/terrain-original.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot standalone terrain shape reference; not T3 data/system, no mining/save rules"
+  },
+  {
+    "asset": "terrain-flat",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/terrain-flat.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot standalone terrain shape reference; not T3 data/system, no mining/save rules"
+  },
+  {
+    "asset": "terrain-dug",
+    "label": "idle_empty",
+    "scene": "res://assets/lowfi-batch-r1/terrain-dug.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot standalone terrain shape reference; not T3 data/system, no mining/save rules"
+  },
+  {
+    "asset": "tuoyun",
+    "label": "idle_empty",
+    "scene": "res://assets/units/tuoyun-r1/preview.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "tuoyun",
+    "label": "idle_loaded",
+    "scene": "res://assets/units/tuoyun-r1/preview.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "loaded",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "tuoyun",
+    "label": "maintenance",
+    "scene": "res://assets/units/tuoyun-r1/preview.tscn",
+    "preset": {
+      "state": "maintenance",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "solar",
+    "label": "idle_empty",
+    "scene": "res://assets/facilities/solar-r1/preview.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "solar",
+    "label": "packed",
+    "scene": "res://assets/facilities/solar-r1/preview.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "packed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "solar",
+    "label": "installed",
+    "scene": "res://assets/facilities/solar-r1/preview.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "installed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "solar",
+    "label": "deploying",
+    "scene": "res://assets/facilities/solar-r1/preview.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "deploying",
+      "phase_t": 0.5,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "solar",
+    "label": "work",
+    "scene": "res://assets/facilities/solar-r1/preview.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.25
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "processor",
+    "label": "idle_empty",
+    "scene": "res://assets/facilities/processor-r1/preview.tscn",
+    "preset": {
+      "state": "idle",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 0
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "processor",
+    "label": "work",
+    "scene": "res://assets/facilities/processor-r1/preview.tscn",
+    "preset": {
+      "state": "work",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 0.5
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "processor",
+    "label": "disabled",
+    "scene": "res://assets/facilities/processor-r1/preview.tscn",
+    "preset": {
+      "state": "disabled",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  },
+  {
+    "asset": "processor",
+    "label": "maintenance",
+    "scene": "res://assets/facilities/processor-r1/preview.tscn",
+    "preset": {
+      "state": "maintenance",
+      "phase": "completed",
+      "phase_t": 0,
+      "cargo": "empty",
+      "reason": "none",
+      "time_s": 1
+    },
+    "views": [
+      {
+        "camera": "normal",
+        "yaw": 0
+      },
+      {
+        "camera": "normal",
+        "yaw": 90
+      },
+      {
+        "camera": "normal",
+        "yaw": 180
+      },
+      {
+        "camera": "close",
+        "yaw": 90
+      },
+      {
+        "camera": "close",
+        "yaw": 180
+      }
+    ],
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN"
+  }
+]

@@ -1,0 +1,1511 @@
+{
+  "active_sampled": {
+    "max": [
+      0.629999995231628,
+      1.74853456020355,
+      0.799999952316284
+    ],
+    "min": [
+      -0.629999995231628,
+      0.0000196993350982666,
+      -1.14999997615814
+    ]
+  },
+  "asset": "wangshan",
+  "candidate_envelope_check": "PASS",
+  "clips": {
+    "charge": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "move": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "work": {
+      "duration_s": 2.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    }
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frozen_socket_check": "PASS",
+  "glb": "res://assets/lowfi-batch-r1/models/wangshan.glb",
+  "glb_sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b",
+  "illegal_preserved": 10,
+  "loaded": {
+    "max": [
+      0.629999995231628,
+      1.73000001907349,
+      0.799999952316284
+    ],
+    "min": [
+      -0.629999995231628,
+      0.0000212341547012329,
+      -0.800000011920929
+    ]
+  },
+  "meshes": [
+    {
+      "node": "Model/Wangshan/Model/BodyShell",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/ChargeCap/ChargeCapPanel",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/ChargeHingeAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/ChargeHousing",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/FrameBed",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Mast",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/MastHeadMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/RearModule",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorBase",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/HeadForkBridge",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/HeadForkPostL",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/HeadForkPostR",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/SensorPitch/SensorFace",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/SensorPitch/SensorHead",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/SensorPitch/SensorPitchAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/ServiceHingeAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/ServiceHingeMountL",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/ServiceHingeMountR",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/ServiceLid/ServiceLidPanel",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/TowFrontEar",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/TowFrontMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/TowRearMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 80
+        },
+        {
+          "role": "rubber",
+          "surface": 1,
+          "triangles": 128
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 112
+        },
+        {
+          "role": "rubber",
+          "surface": 1,
+          "triangles": 256
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 80
+        },
+        {
+          "role": "rubber",
+          "surface": 1,
+          "triangles": 128
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 112
+        },
+        {
+          "role": "rubber",
+          "surface": 1,
+          "triangles": 256
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Wheel_RF",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LinkBar",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LugEndA",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LugEndB",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    }
+  ],
+  "motion_comparison": {
+    "move": {
+      "different": true,
+      "times": [
+        0.25,
+        0.75
+      ]
+    },
+    "work": {
+      "different": true,
+      "times": [
+        0.25,
+        0.75
+      ]
+    }
+  },
+  "pose_cases": [
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000272840261459351,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000257492065429688,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000196993350982666,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000257492065429688,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73891162872314,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74505531787872,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74828803539276,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.74853456020355,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.629999995231628,
+          1.73000001907349,
+          0.799999952316284
+        ],
+        "min": [
+          -0.629999995231628,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 2.0
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Wangshan/Model/SensorYaw/SensorPitch/Socket_Sensor",
+      "position": [
+        0.0,
+        1.62000000476837,
+        -0.324999988079071
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "node": "Model/Wangshan/Model/Socket_Charge",
+      "position": [
+        0.479999989271164,
+        0.550000011920929,
+        -0.319999992847443
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0000000874227765734759,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Wangshan/Model/Socket_Service",
+      "position": [
+        0.0,
+        0.75,
+        0.649999976158142
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Wangshan/Model/Socket_TowFront",
+      "position": [
+        0.0,
+        0.239999994635582,
+        -0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0000000874227765734759,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Wangshan/Model/Socket_TowRear",
+      "position": [
+        0.0,
+        0.239999994635582,
+        0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "source_endpoint_check": "PASS",
+  "source_faults_preserved": 2,
+  "static": {
+    "max": [
+      0.629999995231628,
+      1.73000001907349,
+      0.799999952316284
+    ],
+    "min": [
+      -0.629999995231628,
+      0.0000212341547012329,
+      -0.800000011920929
+    ]
+  },
+  "triangles_with_candidate_attachment": 7676
+}

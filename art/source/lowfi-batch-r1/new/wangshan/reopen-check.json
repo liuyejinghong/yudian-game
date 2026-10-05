@@ -1,0 +1,9 @@
+{
+  "max_float_diff": 1.1920928955078125e-07,
+  "problems": [],
+  "reexport_sha256": "aa652335a48c2110d97f32d571e43fba3505513c99234cee360081e330bc9baa",
+  "deliverable_sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b",
+  "identical_bytes": false,
+  "reopened_blend": "art/source/lowfi-batch-r1/new/wangshan/wangshan.blend",
+  "compared_glb": "art/source/lowfi-batch-r1/new/wangshan/wangshan.glb"
+}

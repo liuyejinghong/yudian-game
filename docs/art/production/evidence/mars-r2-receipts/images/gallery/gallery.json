@@ -1,0 +1,85 @@
+{
+  "adapter": "Apple M3 Pro (Apple9)",
+  "normal": {
+    "fov": 60,
+    "position": [
+      18.3848,
+      28,
+      18.3848
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ]
+  },
+  "paused_two_rendered_frames": "PASS",
+  "presentation": {
+    "fov": 50,
+    "position": [
+      9,
+      9,
+      13
+    ],
+    "purpose": "presentation only, not frozen acceptance view",
+    "target": [
+      0,
+      0,
+      0
+    ]
+  },
+  "renderer": "forward_plus",
+  "samples": [
+    {
+      "glb_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+      "id": "ART-U01",
+      "offset_m": [
+        -5.0,
+        0.0,
+        0.0
+      ],
+      "preset": {
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 1.0
+      }
+    },
+    {
+      "glb_sha256": "0b9b07ac221c55a50af1d15a9f3d0081c358354e86b40daf874e65b08742c347",
+      "id": "ART-F01",
+      "offset_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "preset": {
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 0.25
+      }
+    },
+    {
+      "glb_sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157",
+      "id": "ART-F02",
+      "offset_m": [
+        5.0,
+        0.0,
+        0.0
+      ],
+      "preset": {
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 0.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+INDEPENDENT baseline_manifest PASS
+INDEPENDENT wrong_resource_returns_error PASS { "ok": false, "error": "preview_scene is not a scene: res://assets/materials/art-r1/body_light.tres (loaded StandardMaterial3D)", "wrapper": <null> }
+INDEPENDENT baseline_wrapper PASS
+INDEPENDENT baseline_binding PASS
+INDEPENDENT declared_static_holds PASS (0.0, 0.2, 0.0)
+INDEPENDENT wrong_preset_type_returns_error PASS preset phase_t must be a number, got Array
+INDEPENDENT minimal_wrapper_load PASS
+INDEPENDENT only_apply_contract_works PASS { "error": "", "mode": "static", "mode_reason": "rest", "na_reason": "" }
+INDEPENDENT whole_material_override_rejected PASS material_override is set on Body; whole-mesh material covers are not allowed
+actual effective material is whole override=true
+INDEPENDENT wrapper_actual_glb_identity_rejected PASS Model actual GLB (res://scenes/art_preview_r1/probe_model_r1.glb) does not match manifest glb (res://independent/other_model.glb)
+INDEPENDENT wrong_static_bounds_rejected PASS
+INDEPENDENT nonidentity_sample_root_rejected PASS SampleRoot must have an identity transform, got: [X: (2.0, 0.0, 0.0), Y: (0.0, 2.0, 0.0), Z: (0.0, 0.0, 2.0), O: (0.0, 0.0, 0.0)]
+PREVIEW_A_INDEPENDENT_CONTRACT_FAILED_COUNT=0

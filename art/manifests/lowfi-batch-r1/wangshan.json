@@ -1,0 +1,881 @@
+{
+  "id": "ART-U03",
+  "revision": 1,
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "preview_scene": "res://assets/lowfi-batch-r1/wangshan.tscn",
+  "glb": "res://assets/lowfi-batch-r1/models/wangshan.glb",
+  "glb_sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b",
+  "bounds": {
+    "static": {
+      "max": [
+        0.629999995231628,
+        1.73000001907349,
+        0.799999952316284
+      ],
+      "min": [
+        -0.629999995231628,
+        2.12341547012329e-05,
+        -0.800000011920929
+      ]
+    },
+    "loaded": {
+      "max": [
+        0.629999995231628,
+        1.73000001907349,
+        0.799999952316284
+      ],
+      "min": [
+        -0.629999995231628,
+        2.12341547012329e-05,
+        -0.800000011920929
+      ]
+    },
+    "active": {
+      "max": [
+        0.629999995231628,
+        1.74853456020355,
+        0.799999952316284
+      ],
+      "min": [
+        -0.629999995231628,
+        1.96993350982666e-05,
+        -1.14999997615814
+      ]
+    }
+  },
+  "bounds_scope": "实际顶点与有限动作采样；不作为物理碰撞或导航包络认证",
+  "material_bindings": [
+    {
+      "node": "Model/Wangshan/Model/BodyShell",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/ChargeCap/ChargeCapPanel",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Wangshan/Model/ChargeHingeAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/ChargeHousing",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/FrameBed",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Mast",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/MastHeadMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/RearModule",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorBase",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/HeadForkBridge",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/HeadForkPostL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/HeadForkPostR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/SensorPitch/SensorFace",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/SensorPitch/SensorHead",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/SensorYaw/SensorPitch/SensorPitchAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/ServiceHingeAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/ServiceHingeMountL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/ServiceHingeMountR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/ServiceLid/ServiceLidPanel",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/TowFrontEar",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Wangshan/Model/TowFrontMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/TowRearMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L",
+      "surface": 1,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L",
+      "surface": 1,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R",
+      "surface": 1,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R",
+      "surface": 1,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Wheel_RF",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Wheel_RF",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Wangshan/Model/Wheels/Rocker_R/Wheel_RF",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LinkBar",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LugEndA",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LugEndB",
+      "surface": 0,
+      "role": "accent_warm"
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Wangshan/Model/SensorYaw/SensorPitch/Socket_Sensor",
+      "position": [
+        0.0,
+        1.62000000476837,
+        -0.324999988079071
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "node": "Model/Wangshan/Model/Socket_Charge",
+      "position": [
+        0.479999989271164,
+        0.550000011920929,
+        -0.319999992847443
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        8.74227765734759e-08,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Wangshan/Model/Socket_Service",
+      "position": [
+        0.0,
+        0.75,
+        0.649999976158142
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Wangshan/Model/Socket_TowFront",
+      "position": [
+        0.0,
+        0.239999994635582,
+        -0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        8.74227765734759e-08,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Wangshan/Model/Socket_TowRear",
+      "position": [
+        0.0,
+        0.239999994635582,
+        0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "states": {
+    "idle": {
+      "mode": "static",
+      "reason": "静态候选轮廓",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "move": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "move",
+      "duration_s": 1.0,
+      "loop": true
+    },
+    "work": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "work",
+      "duration_s": 2.0,
+      "loop": true
+    },
+    "charge": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "charge",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "disabled": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "disabled",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "towed": {
+      "mode": "static",
+      "reason": "停机定格与独立候选杆，不批准拖救能力或载荷",
+      "clip": "disabled",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "maintenance": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "maintenance",
+      "duration_s": 1.0,
+      "loop": false
+    }
+  },
+  "phases": [
+    "completed"
+  ],
+  "cargo_modes": [
+    "empty"
+  ],
+  "source": {
+    "source_path": "art/source/lowfi-batch-r1/new/wangshan/wangshan.blend",
+    "tool_version": "Blender 4.5.14 LTS",
+    "original": true,
+    "inheritance": "现役原创模型继承及本批新增；具体见源报告",
+    "hash": "ef88b3819f8caa110e8b110b4792395d4bcf256446dcdbe02a8a6d8146924127",
+    "generators": [
+      "art/source/lowfi-batch-r1/new/build_samples.py"
+    ],
+    "files": [
+      {
+        "path": "art/source/lowfi-batch-r1/new/wangshan/wangshan.blend",
+        "sha256": "ef88b3819f8caa110e8b110b4792395d4bcf256446dcdbe02a8a6d8146924127"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/new/wangshan/wangshan.glb",
+        "sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/new/build_samples.py",
+        "sha256": "8d6f7423b4b57dbcf42a0b723e48ea484ddf42e38a9517aa09235039388dcf81"
+      }
+    ]
+  },
+  "triangles": 7544,
+  "triangles_with_candidate_attachment": 7676,
+  "textures": [],
+  "source_clips": {
+    "charge": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "move": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "work": {
+      "duration_s": 2.0,
+      "tracks": [
+        "Wangshan/Model/ChargeCap",
+        "Wangshan/Model/SensorYaw",
+        "Wangshan/Model/SensorYaw/SensorPitch",
+        "Wangshan/Model/ServiceLid",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Wangshan/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Wangshan/Model/Wheels/Rocker_L/Wheel_LF",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Wangshan/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Wangshan/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    }
+  },
+  "source_clip_changes": [
+    {
+      "clip": "charge",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "ChargeCap",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ChargeCap",
+          "rotation"
+        ],
+        [
+          "SensorYaw",
+          "rotation"
+        ],
+        [
+          "SensorPitch",
+          "rotation"
+        ],
+        [
+          "ServiceLid",
+          "rotation"
+        ],
+        [
+          "Wheel_LM",
+          "rotation"
+        ],
+        [
+          "Wheel_LR",
+          "rotation"
+        ],
+        [
+          "Wheel_LF",
+          "rotation"
+        ],
+        [
+          "Wheel_RM",
+          "rotation"
+        ],
+        [
+          "Wheel_RR",
+          "rotation"
+        ],
+        [
+          "Wheel_RF",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "disabled",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "SensorPitch",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ChargeCap",
+          "rotation"
+        ],
+        [
+          "SensorYaw",
+          "rotation"
+        ],
+        [
+          "SensorPitch",
+          "rotation"
+        ],
+        [
+          "ServiceLid",
+          "rotation"
+        ],
+        [
+          "Wheel_LM",
+          "rotation"
+        ],
+        [
+          "Wheel_LR",
+          "rotation"
+        ],
+        [
+          "Wheel_LF",
+          "rotation"
+        ],
+        [
+          "Wheel_RM",
+          "rotation"
+        ],
+        [
+          "Wheel_RR",
+          "rotation"
+        ],
+        [
+          "Wheel_RF",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "maintenance",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "ServiceLid",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ChargeCap",
+          "rotation"
+        ],
+        [
+          "SensorYaw",
+          "rotation"
+        ],
+        [
+          "SensorPitch",
+          "rotation"
+        ],
+        [
+          "ServiceLid",
+          "rotation"
+        ],
+        [
+          "Wheel_LM",
+          "rotation"
+        ],
+        [
+          "Wheel_LR",
+          "rotation"
+        ],
+        [
+          "Wheel_LF",
+          "rotation"
+        ],
+        [
+          "Wheel_RM",
+          "rotation"
+        ],
+        [
+          "Wheel_RR",
+          "rotation"
+        ],
+        [
+          "Wheel_RF",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "move",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "Wheel_LM",
+          "rotation"
+        ],
+        [
+          "Wheel_LR",
+          "rotation"
+        ],
+        [
+          "Wheel_LF",
+          "rotation"
+        ],
+        [
+          "Wheel_RM",
+          "rotation"
+        ],
+        [
+          "Wheel_RR",
+          "rotation"
+        ],
+        [
+          "Wheel_RF",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ChargeCap",
+          "rotation"
+        ],
+        [
+          "SensorYaw",
+          "rotation"
+        ],
+        [
+          "SensorPitch",
+          "rotation"
+        ],
+        [
+          "ServiceLid",
+          "rotation"
+        ],
+        [
+          "Wheel_LM",
+          "rotation"
+        ],
+        [
+          "Wheel_LR",
+          "rotation"
+        ],
+        [
+          "Wheel_LF",
+          "rotation"
+        ],
+        [
+          "Wheel_RM",
+          "rotation"
+        ],
+        [
+          "Wheel_RR",
+          "rotation"
+        ],
+        [
+          "Wheel_RF",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "work",
+      "duration_s": 2,
+      "changed_targets": [
+        [
+          "SensorYaw",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ChargeCap",
+          "rotation"
+        ],
+        [
+          "SensorYaw",
+          "rotation"
+        ],
+        [
+          "SensorPitch",
+          "rotation"
+        ],
+        [
+          "ServiceLid",
+          "rotation"
+        ],
+        [
+          "Wheel_LM",
+          "rotation"
+        ],
+        [
+          "Wheel_LR",
+          "rotation"
+        ],
+        [
+          "Wheel_LF",
+          "rotation"
+        ],
+        [
+          "Wheel_RM",
+          "rotation"
+        ],
+        [
+          "Wheel_RR",
+          "rotation"
+        ],
+        [
+          "Wheel_RF",
+          "rotation"
+        ]
+      ]
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "godot_import": {
+    "path": "prototype/assets/lowfi-batch-r1/models/wangshan.glb.import",
+    "sha256": "623b24dcf75fac1d7fb63a59075bfbc9c6b603b929423f50a0837e3987dd2609",
+    "animation_player": "PATH:AnimationPlayer",
+    "optimizer_enabled": false,
+    "reason": "保留源动作转折点；Godot实际重导入端点通过"
+  },
+  "phase_state_modes": {
+    "completed": {
+      "idle": {
+        "mode": "static",
+        "reason": "静态候选轮廓"
+      },
+      "move": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "charge": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "disabled": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "towed": {
+        "mode": "static",
+        "reason": "停机定格与独立候选杆，不批准拖救能力或载荷"
+      },
+      "maintenance": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      }
+    }
+  }
+}

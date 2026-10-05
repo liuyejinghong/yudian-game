@@ -1,0 +1,1107 @@
+{
+  "ground_size_m": [
+    26,
+    26
+  ],
+  "scope": "Godot independent art arrangement; terrain/recovery are visual candidates, no gameplay, power, mining, inventory, maintenance or owner acceptance",
+  "stages": [
+    {
+      "actual_view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 60.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "normal",
+          "near": 0.0500000007450581,
+          "position": [
+            18.3847999572754,
+            28.0,
+            18.3847999572754
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -47.1210594177246,
+            45.0,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      },
+      "file": "terrain-original_normal.png",
+      "layout": [
+        {
+          "asset": "solar",
+          "binding_count": 74,
+          "position": [
+            -5.30000019073486,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73"
+        },
+        {
+          "asset": "solar",
+          "binding_count": 74,
+          "position": [
+            0.200000002980232,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "deploying",
+            "phase_t": 0.5,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0
+          },
+          "source_sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73"
+        },
+        {
+          "asset": "processor",
+          "binding_count": 33,
+          "position": [
+            5.80000019073486,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157"
+        },
+        {
+          "asset": "storage",
+          "binding_count": 49,
+          "position": [
+            -5.69999980926514,
+            0.0,
+            0.0
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "ea594929b3e110b99130d45068916a4859dae346a31db00d9a75d490ff07033d"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            -5.69999980926514,
+            0.0,
+            -2.40000009536743
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "repair",
+          "binding_count": 27,
+          "position": [
+            0.0,
+            0.0,
+            0.300000011920929
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "5e80d480c8deaa7be29d043b3b010b2dc48bb7d8ab8302b715f0a07149e371a8"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            0.0,
+            0.0399999991059303,
+            0.300000011920929
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "maintenance",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "charger",
+          "binding_count": 19,
+          "position": [
+            4.19999980926514,
+            0.0,
+            0.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "5537e297f44705ab2b96e1e4fecddff41d854f3b2005ae30dfaeca8f5d408a8c"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            4.19999980926514,
+            0.0199999995529652,
+            0.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "charge",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "lander",
+          "binding_count": 36,
+          "position": [
+            5.5,
+            0.0,
+            5.30000019073486
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 1
+          },
+          "source_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6"
+        },
+        {
+          "asset": "wangshan",
+          "binding_count": 51,
+          "position": [
+            0.600000023841858,
+            0.0,
+            5.59999990463257
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.75
+          },
+          "source_sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b"
+        },
+        {
+          "asset": "zhulei",
+          "binding_count": 71,
+          "position": [
+            0.600000023841858,
+            0.0,
+            8.19999980926514
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.75
+          },
+          "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            5.5,
+            0.0,
+            9.0
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "zhulei",
+          "binding_count": 71,
+          "position": [
+            5.5,
+            0.0,
+            10.9499998092651
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "towed",
+            "time_s": 1
+          },
+          "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+        },
+        {
+          "asset": "terrain-original",
+          "binding_count": 4,
+          "position": [
+            -5.0,
+            0.0,
+            7.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "946a457fb11f567b88963cc217a57b8b4a69d1d0b15c20a66f94f072f879333a"
+        }
+      ],
+      "png_sha256": "e89ebcf54ca8acbafe0c6cb91b2035697662ffbe085997cee6a13fd68e7a5c3e"
+    },
+    {
+      "actual_view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 60.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "normal",
+          "near": 0.0500000007450581,
+          "position": [
+            18.3847999572754,
+            28.0,
+            18.3847999572754
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -47.1210594177246,
+            45.0,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      },
+      "file": "terrain-flat_normal.png",
+      "layout": [
+        {
+          "asset": "solar",
+          "binding_count": 74,
+          "position": [
+            -5.30000019073486,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73"
+        },
+        {
+          "asset": "solar",
+          "binding_count": 74,
+          "position": [
+            0.200000002980232,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "deploying",
+            "phase_t": 0.5,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0
+          },
+          "source_sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73"
+        },
+        {
+          "asset": "processor",
+          "binding_count": 33,
+          "position": [
+            5.80000019073486,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157"
+        },
+        {
+          "asset": "storage",
+          "binding_count": 49,
+          "position": [
+            -5.69999980926514,
+            0.0,
+            0.0
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "ea594929b3e110b99130d45068916a4859dae346a31db00d9a75d490ff07033d"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            -5.69999980926514,
+            0.0,
+            -2.40000009536743
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "repair",
+          "binding_count": 27,
+          "position": [
+            0.0,
+            0.0,
+            0.300000011920929
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "5e80d480c8deaa7be29d043b3b010b2dc48bb7d8ab8302b715f0a07149e371a8"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            0.0,
+            0.0399999991059303,
+            0.300000011920929
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "maintenance",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "charger",
+          "binding_count": 19,
+          "position": [
+            4.19999980926514,
+            0.0,
+            0.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "5537e297f44705ab2b96e1e4fecddff41d854f3b2005ae30dfaeca8f5d408a8c"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            4.19999980926514,
+            0.0199999995529652,
+            0.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "charge",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "lander",
+          "binding_count": 36,
+          "position": [
+            5.5,
+            0.0,
+            5.30000019073486
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 1
+          },
+          "source_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6"
+        },
+        {
+          "asset": "wangshan",
+          "binding_count": 51,
+          "position": [
+            0.600000023841858,
+            0.0,
+            5.59999990463257
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.75
+          },
+          "source_sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b"
+        },
+        {
+          "asset": "zhulei",
+          "binding_count": 71,
+          "position": [
+            0.600000023841858,
+            0.0,
+            8.19999980926514
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.75
+          },
+          "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            5.5,
+            0.0,
+            9.0
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "zhulei",
+          "binding_count": 71,
+          "position": [
+            5.5,
+            0.0,
+            10.9499998092651
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "towed",
+            "time_s": 1
+          },
+          "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+        },
+        {
+          "asset": "terrain-flat",
+          "binding_count": 4,
+          "position": [
+            -5.0,
+            0.0,
+            7.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "55161c4f45527a00af6758f8461414476b77f56518a74ca7af4c59e1917a5d00"
+        }
+      ],
+      "png_sha256": "eb33b3994ad7f08f292630087e6be2ab54bcc72c3263246eccfaddea2c2f60c5"
+    },
+    {
+      "actual_view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 60.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "normal",
+          "near": 0.0500000007450581,
+          "position": [
+            18.3847999572754,
+            28.0,
+            18.3847999572754
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -47.1210594177246,
+            45.0,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      },
+      "file": "terrain-dug_normal.png",
+      "layout": [
+        {
+          "asset": "solar",
+          "binding_count": 74,
+          "position": [
+            -5.30000019073486,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73"
+        },
+        {
+          "asset": "solar",
+          "binding_count": 74,
+          "position": [
+            0.200000002980232,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "deploying",
+            "phase_t": 0.5,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0
+          },
+          "source_sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73"
+        },
+        {
+          "asset": "processor",
+          "binding_count": 33,
+          "position": [
+            5.80000019073486,
+            0.0,
+            -5.30000019073486
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157"
+        },
+        {
+          "asset": "storage",
+          "binding_count": 49,
+          "position": [
+            -5.69999980926514,
+            0.0,
+            0.0
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "ea594929b3e110b99130d45068916a4859dae346a31db00d9a75d490ff07033d"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            -5.69999980926514,
+            0.0,
+            -2.40000009536743
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "repair",
+          "binding_count": 27,
+          "position": [
+            0.0,
+            0.0,
+            0.300000011920929
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "5e80d480c8deaa7be29d043b3b010b2dc48bb7d8ab8302b715f0a07149e371a8"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            0.0,
+            0.0399999991059303,
+            0.300000011920929
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "maintenance",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "charger",
+          "binding_count": 19,
+          "position": [
+            4.19999980926514,
+            0.0,
+            0.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.5
+          },
+          "source_sha256": "5537e297f44705ab2b96e1e4fecddff41d854f3b2005ae30dfaeca8f5d408a8c"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            4.19999980926514,
+            0.0199999995529652,
+            0.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "charge",
+            "time_s": 1
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "lander",
+          "binding_count": 36,
+          "position": [
+            5.5,
+            0.0,
+            5.30000019073486
+          ],
+          "preset": {
+            "cargo": "loaded",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 1
+          },
+          "source_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6"
+        },
+        {
+          "asset": "wangshan",
+          "binding_count": 51,
+          "position": [
+            0.600000023841858,
+            0.0,
+            5.59999990463257
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.75
+          },
+          "source_sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b"
+        },
+        {
+          "asset": "zhulei",
+          "binding_count": 71,
+          "position": [
+            0.600000023841858,
+            0.0,
+            8.19999980926514
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "work",
+            "time_s": 0.75
+          },
+          "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+        },
+        {
+          "asset": "tuoyun",
+          "binding_count": 109,
+          "position": [
+            5.5,
+            0.0,
+            9.0
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+        },
+        {
+          "asset": "zhulei",
+          "binding_count": 71,
+          "position": [
+            5.5,
+            0.0,
+            10.9499998092651
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "towed",
+            "time_s": 1
+          },
+          "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+        },
+        {
+          "asset": "terrain-dug",
+          "binding_count": 4,
+          "position": [
+            -5.0,
+            0.0,
+            7.5
+          ],
+          "preset": {
+            "cargo": "empty",
+            "phase": "completed",
+            "phase_t": 0.0,
+            "reason": "none",
+            "state": "idle",
+            "time_s": 0.0
+          },
+          "source_sha256": "f65fca9225733b8b63f3b39245612bd01419b4b8e244ddd12af5c462215ead10"
+        }
+      ],
+      "png_sha256": "9af4b70ddbc9c788dbf935645b0d774a5f546ba51e6d7cab276c9e594bc7097c"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+[ART_PREVIEW_R1] engine=4.7.2-stable (official) adapter=Apple M3 Pro (Apple9)
+[ART_PREVIEW_R1] CAPTURE_OK dir=<RAW_EVIDENCE>/images/tuoyun-04-move-normal-0 png=blind_0001.png json=blind_0001.json size=1920x1200 camera=normal yaw=0 state=move phase=completed phase_t=0.0 cargo=empty reason=none time_s=0.75 labels=blind mode=animated

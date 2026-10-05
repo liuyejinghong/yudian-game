@@ -1,0 +1,116 @@
+[
+  {
+    "name": "selftest",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "<project-root>/art-production-r1-20261004/prototype",
+      "--headless",
+      "res://scenes/art_preview_r1/PreviewR1.tscn",
+      "--",
+      "--self-test",
+      "--manifest",
+      "<project-root>/art-production-r1-20261004/prototype/scenes/art_preview_r1/probe_manifest_r1.json"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "marker": false,
+    "tail": "cord_glb_actual\nPASS b_record_manifest_actual\nPASS b_record_config\nPASS b_record_source_files_match\nPASS b_manifest_no_self_hash\nPASS b_overlay_in_world\nPASS b_overlay_info_text\nPASS b_overlay_blind_hides\nPASS b_overlay_evidence_shows\nPASS b_overlay_reason_icons\nART_PREVIEW_R1_SELFTEST_PASS 228/228\n"
+  },
+  {
+    "name": "bad-source-files",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "<project-root>/art-production-r1-20261004/prototype",
+      "--rendering-driver",
+      "metal",
+      "res://scenes/art_preview_r1/PreviewR1.tscn",
+      "--",
+      "--manifest",
+      "/private/tmp/yudian-preview-b-source-files-bad.json",
+      "--capture-dir",
+      "<project-root>/art-preview-evidence/preview-b-independent-20261004/fix-source-files/bad-no-output"
+    ],
+    "exit": 1,
+    "script_error": false,
+    "marker": false,
+    "tail": "https://godotengine.org\nMetal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)\n\n[ART_PREVIEW_R1] engine=4.7.2-stable (official) adapter=Apple M3 Pro (Apple9)\n[ART_PREVIEW_R1] RUN ERROR: manifest /private/tmp/yudian-preview-b-source-files-bad.json: source.files entries must be objects\n"
+  },
+  {
+    "name": "blind-normal",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "<project-root>/art-production-r1-20261004/prototype",
+      "--rendering-driver",
+      "metal",
+      "res://scenes/art_preview_r1/PreviewR1.tscn",
+      "--",
+      "--manifest",
+      "<project-root>/art-production-r1-20261004/prototype/scenes/art_preview_r1/probe_manifest_r1.json",
+      "--labels",
+      "blind",
+      "--capture-dir",
+      "<project-root>/art-preview-evidence/preview-b-independent-20261004/fix-source-files/blind-normal"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "marker": true,
+    "tail": "R1] CAPTURE_OK dir=<project-root>/art-preview-evidence/preview-b-independent-20261004/fix-source-files/blind-normal png=blind_0001.png json=blind_0001.json size=1920x1200 camera=normal yaw=0 state=idle phase=completed phase_t=0.0 cargo=empty reason=none time_s=0.0 labels=blind mode=static\n"
+  },
+  {
+    "name": "evidence-close",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "<project-root>/art-production-r1-20261004/prototype",
+      "--rendering-driver",
+      "metal",
+      "res://scenes/art_preview_r1/PreviewR1.tscn",
+      "--",
+      "--manifest",
+      "<project-root>/art-production-r1-20261004/prototype/scenes/art_preview_r1/probe_manifest_r1.json",
+      "--camera",
+      "close",
+      "--state",
+      "work",
+      "--cargo",
+      "loaded",
+      "--time",
+      "0.5",
+      "--capture-dir",
+      "<project-root>/art-preview-evidence/preview-b-independent-20261004/fix-source-files/evidence-close"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "marker": true,
+    "tail": "evidence-close png=probe_r1_close_yaw000_work_completed_pt0p000_loaded_none_t0p500.png json=probe_r1_close_yaw000_work_completed_pt0p000_loaded_none_t0p500.json size=1920x1200 camera=close yaw=0 state=work phase=completed phase_t=0.0 cargo=loaded reason=none time_s=0.5 labels=evidence mode=animated\n"
+  },
+  {
+    "name": "return-arrow",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--path",
+      "<project-root>/art-production-r1-20261004/prototype",
+      "--rendering-driver",
+      "metal",
+      "res://scenes/art_preview_r1/PreviewR1.tscn",
+      "--",
+      "--manifest",
+      "<project-root>/art-production-r1-20261004/prototype/scenes/art_preview_r1/probe_manifest_r1.json",
+      "--state",
+      "move",
+      "--reason",
+      "return_charge",
+      "--time",
+      "0.25",
+      "--capture-dir",
+      "<project-root>/art-preview-evidence/preview-b-independent-20261004/fix-source-files/return-arrow"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "marker": true,
+    "tail": "normal_yaw000_move_completed_pt0p000_empty_return_charge_t0p250.png json=probe_r1_normal_yaw000_move_completed_pt0p000_empty_return_charge_t0p250.json size=1920x1200 camera=normal yaw=0 state=move phase=completed phase_t=0.0 cargo=empty reason=return_charge time_s=0.25 labels=evidence mode=animated\n"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "active_measured": {
+    "max": [
+      1.79999995231628,
+      2.40000009536743,
+      2.40000009536743
+    ],
+    "min": [
+      -2.21050214767456,
+      0.0,
+      -2.40000009536743
+    ]
+  },
+  "cases": 49,
+  "failures": [
+    "missing clip failed to keep legal pose"
+  ],
+  "missing_clip_holds": false,
+  "negative_hold": 10,
+  "phases": {
+    "completed0.0": {
+      "max": [
+        1.79999995231628,
+        2.40000009536743,
+        2.40000009536743
+      ],
+      "min": [
+        -1.79999995231628,
+        0.0,
+        -2.40000009536743
+      ]
+    }
+  },
+  "reason_pose": 9,
+  "reverse_time": 4
+}

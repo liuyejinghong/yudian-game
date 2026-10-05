@@ -1,0 +1,47 @@
+[
+  {
+    "name": "work_endpoint",
+    "max_error": 2.9468782081210065e-08,
+    "pass": true
+  },
+  {
+    "name": "charge_endpoint",
+    "max_error": 4.40610203877867e-08,
+    "pass": true
+  },
+  {
+    "name": "disabled_endpoint",
+    "max_error": 4.560779010009952e-08,
+    "pass": true
+  },
+  {
+    "name": "maintenance_endpoint",
+    "max_error": 1.0853562981694154e-07,
+    "pass": true
+  },
+  {
+    "name": "cargo_actual_size",
+    "actual": [
+      0.639999985694886,
+      0.38000002503395097,
+      0.6999999880790706
+    ],
+    "pass": true
+  },
+  {
+    "name": "Socket_Cargo",
+    "pass": true
+  },
+  {
+    "name": "Socket_TowFront",
+    "pass": true
+  },
+  {
+    "name": "Socket_TowRear",
+    "pass": true
+  },
+  {
+    "name": "Socket_Charge",
+    "pass": true
+  }
+]

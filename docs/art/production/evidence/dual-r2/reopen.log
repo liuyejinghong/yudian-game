@@ -1,0 +1,101 @@
+INFO Draco mesh compression is available, use library at <project-tools>/Blender-4.5.14.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+12:51:01 | INFO: Starting glTF 2.0 export
+12:51:01 | INFO: Extracting primitive: Body
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: Cube.006
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.010
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.005
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.009
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: CargoBox
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: ChargeCap
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Chassis
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Head
+12:51:01 | INFO: Primitives created: 3
+12:51:01 | INFO: Extracting primitive: HoodLid
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: Formed_service_cover
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.001
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.002
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.003
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.001
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.002
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.011
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.004
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.008
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.003
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cube.007
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: ProtectedElectronics
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: RearLock
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: Rocker_L
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: Bogie_L
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: Wheel_LM
+12:51:01 | INFO: Primitives created: 3
+12:51:01 | INFO: Extracting primitive: Cylinder.006
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.007
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Wheel_LR
+12:51:01 | INFO: Primitives created: 3
+12:51:01 | INFO: Extracting primitive: Cylinder.008
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.009
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Wheel_LF
+12:51:01 | INFO: Primitives created: 3
+12:51:01 | INFO: Extracting primitive: Cylinder.004
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.005
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Rocker_R
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: Bogie_R
+12:51:01 | INFO: Primitives created: 2
+12:51:01 | INFO: Extracting primitive: Wheel_RM
+12:51:01 | INFO: Primitives created: 3
+12:51:01 | INFO: Extracting primitive: Cylinder.012
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.013
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Wheel_RR
+12:51:01 | INFO: Primitives created: 3
+12:51:01 | INFO: Extracting primitive: Cylinder.014
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.015
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Wheel_RF
+12:51:01 | INFO: Primitives created: 3
+12:51:01 | INFO: Extracting primitive: Cylinder.010
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Extracting primitive: Cylinder.011
+12:51:01 | INFO: Primitives created: 1
+12:51:01 | INFO: Finished glTF 2.0 export in 0.05446910858154297 s
+
+HF_REOPEN_OK 46 meshes
+Blender 4.5.14 LTS (hash 62c1db4208e8 built 2026-09-15 01:30:44)
+Read blend: "<art-worktree>/art/source/units/tuoyun-hf-r1/tuoyun-hf-r1.blend"
+
+Blender quit
