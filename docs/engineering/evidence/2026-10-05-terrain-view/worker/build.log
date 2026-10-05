@@ -1,0 +1,15 @@
+<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs(138,26): error CS0029: 无法将类型“Godot.Vector3[]”隐式转换为“float[]” [<user>/yudian-game/terrain-projection-worker-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs(139,26): error CS0029: 无法将类型“Godot.Vector3[]”隐式转换为“float[]” [<user>/yudian-game/terrain-projection-worker-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs(211,70): error CS1503: 参数 1: 无法从“ulong”转换为“Godot.GodotObject” [<user>/yudian-game/terrain-projection-worker-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs(246,25): error CS0029: 无法将类型“Godot.Vector3[]”隐式转换为“float[]” [<user>/yudian-game/terrain-projection-worker-20261005/prototype/Yudian.csproj]
+
+生成失败。
+
+<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs(138,26): error CS0029: 无法将类型“Godot.Vector3[]”隐式转换为“float[]” [<user>/yudian-game/terrain-projection-worker-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs(139,26): error CS0029: 无法将类型“Godot.Vector3[]”隐式转换为“float[]” [<user>/yudian-game/terrain-projection-worker-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs(211,70): error CS1503: 参数 1: 无法从“ulong”转换为“Godot.GodotObject” [<user>/yudian-game/terrain-projection-worker-20261005/prototype/Yudian.csproj]
+<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs(246,25): error CS0029: 无法将类型“Godot.Vector3[]”隐式转换为“float[]” [<user>/yudian-game/terrain-projection-worker-20261005/prototype/Yudian.csproj]
+    0 个警告
+    4 个错误
+
+已用时间 00:00:01.36

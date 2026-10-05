@@ -11,7 +11,7 @@
 | 性能证据工具 | 单轮复算/原始三轮证据 | **PERF-01-COMPARE ACCEPTED，限定离线比较器** | 实机受控采样/原因裁决主控负责 |
 | 生命周期证据工具 | Recorder/中断原始证据 | **LIFE-01-AUDIT ACCEPTED，限定离线审计器** | 主控已限定接受固定包GUI关窗/重开；不签存档恢复 |
 | 美术接口 | I00校准、M01材质技术接受 | 美术组在做PREVIEW/正式首样；工程soil_mars联调 | U01、T01/T02正式素材缺口见ART-LINK |
-| 世界提交 | 单区域内存提交限定接受 | T3d-COMMIT-POLICY与Codex T3d-MEM已验收；不重复领取 | 渲染/物理同步、导航/保存仍未实现 |
+| 世界提交 | 单区域内存提交限定接受 | T3d-COMMIT-POLICY与Codex T3d-MEM已验收；不重复领取 | 独立单区域显示/静态物理同步已限定接受，旧Main与机器人/导航/保存未实现 |
 | 导航/存档、目标委托 | 尚未实现 | DRAFT/BLOCKED，不给GLM自行决定架构 | 先冻结权威状态、输入输出、失败/重载金样 |
 
 ## 当前并行波次
@@ -37,3 +37,6 @@ Codex默认通过Agent Bridge承担派单、返工和交回协调，所有者无
 2026-10-04下一波：[T3d-COMMIT-POLICY](T3d-COMMIT-POLICY.md)已由GLM交回并限定接受；主控World/28例独立验收通过。主控按[r1用例](../contracts/runtime-controlled-r1.md)自行启动测试；LIFE限定接受，PERF条件返工见[实机复验](../reports/2026-10-05-runtime-verification.md)。它们不重复领取已ACCEPTED工具包。
 
 T3d内存子件已合并[PR30](https://github.com/liuyejinghong/yudian-game/pull/30)，完整T3d与PERF受控/原因/稳定预算继续未完成；LIFE实机范围已限定接受。[验收边界](../reports/2026-10-04-terrain-commit-verification.md)。
+
+
+2026-10-05后续波次：T3d-PROJECTION-RESOURCES / T3d-VIEW已限定接受，[合同](../contracts/terrain-view-r1.md) / [复验](../reports/2026-10-05-terrain-view-verification.md)。GLM资源束冻结905458c，执行task_8b2f8b3248→一次返工task_b772ddba6e；主控握Evaluate/Commit与实际场景、GUI与故障恢复，工人不得重复领取。独立单区域已同步，旧Main机器人/导航/save/建设闭环仍须新票冻结；PERF与正式美术留项按权威TODO跟踪。

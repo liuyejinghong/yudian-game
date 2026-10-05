@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+CLR 10.0.12
+Assembly.FullName Yudian, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Assembly.Location 
+Fresh Debug Yudian.dll SHA256 6C2D67A1937A5C6A420C5149DB15AD82D0736ADAF8032E22C6362801AFF60171
+Loaded MVID  97832950-f200-4220-87a5-631e9ab6ba86
+Fresh  MVID  97832950-f200-4220-87a5-631e9ab6ba86
+PASS identity: current worktree Debug/Yudian.dll loaded, MVID matches fresh build (SHA256 printed)
+PASS corners: flat(Stage) mesh+shape all corners equal CPU emission one-to-one
+PASS corners: sample-a(Heightfield) mesh+shape all corners equal CPU emission one-to-one
+PASS independent bundles: distinct mesh/shape RIDs, equal content, alive until handover
+PASS inputs preserved: CPU buffers unchanged after Create and Dispose
+PASS rejections: null mesh / negative winding ArgumentException, no bundle, hook untouched
+SIMULATED (synthetic, not a real native allocation failure): simulated mid-flight failure after mesh creation (before shape creation), mesh instance released; this is a synthesized test exception, not a real native allocation failure
+PASS simulated mid-flight failure: InvalidOperationException after mesh, disposed mesh instance proven invalid
+PASS dispose: idempotent, releases mesh+shape instances, access after dispose rejected
+SUMMARY pass=8 fail=0

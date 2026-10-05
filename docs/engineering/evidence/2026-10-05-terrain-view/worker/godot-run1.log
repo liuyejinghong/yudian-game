@@ -1,0 +1,35 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:151)
+   C# backtrace (most recent call first):
+       [0] int Godot.NativeCalls.godot_icall_1_865(nint, nint, Godot.Rid) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/NativeCalls.cs:7655)
+       [1] int Godot.RenderingServer.MeshGetSurfaceCount(Godot.Rid) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/RenderingServer.cs:3226)
+       [2] void Yudian.Terrain.ProjectionResourcesTests.SimulatedMidFlightFailure() (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:188)
+       [3] void Yudian.Terrain.ProjectionResourcesTests.Check(string, System.Action) (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:60)
+       [4] void Yudian.Terrain.ProjectionResourcesTests._Ready() (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:44)
+       [5] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2660)
+       [6] bool Yudian.Terrain.ProjectionResourcesTests.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (<user>/yudian-game/terrain-projection-worker-20261005/prototype/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Terrain.ProjectionResourcesTests_ScriptMethods.generated.cs:170)
+       [7] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:151)
+   C# backtrace (most recent call first):
+       [0] int Godot.NativeCalls.godot_icall_1_865(nint, nint, Godot.Rid) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/NativeCalls.cs:7655)
+       [1] int Godot.RenderingServer.MeshGetSurfaceCount(Godot.Rid) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/RenderingServer.cs:3226)
+       [2] void Yudian.Terrain.ProjectionResourcesTests.SimulatedMidFlightFailure() (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:209)
+       [3] void Yudian.Terrain.ProjectionResourcesTests.Check(string, System.Action) (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:60)
+       [4] void Yudian.Terrain.ProjectionResourcesTests._Ready() (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:44)
+       [5] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2660)
+       [6] bool Yudian.Terrain.ProjectionResourcesTests.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (<user>/yudian-game/terrain-projection-worker-20261005/prototype/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Terrain.ProjectionResourcesTests_ScriptMethods.generated.cs:170)
+       [7] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)
+ERROR: Parameter "m" is null.
+   at: mesh_get_surface_count (servers/rendering/dummy/storage/mesh_storage.h:151)
+   C# backtrace (most recent call first):
+       [0] int Godot.NativeCalls.godot_icall_1_865(nint, nint, Godot.Rid) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/NativeCalls.cs:7655)
+       [1] int Godot.RenderingServer.MeshGetSurfaceCount(Godot.Rid) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/RenderingServer.cs:3226)
+       [2] void Yudian.Terrain.ProjectionResourcesTests.RepeatDispose() (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:229)
+       [3] void Yudian.Terrain.ProjectionResourcesTests.Check(string, System.Action) (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:60)
+       [4] void Yudian.Terrain.ProjectionResourcesTests._Ready() (<user>/yudian-game/terrain-projection-worker-20261005/prototype/scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs:45)
+       [5] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2660)
+       [6] bool Yudian.Terrain.ProjectionResourcesTests.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (<user>/yudian-game/terrain-projection-worker-20261005/prototype/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Terrain.ProjectionResourcesTests_ScriptMethods.generated.cs:170)
+       [7] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)

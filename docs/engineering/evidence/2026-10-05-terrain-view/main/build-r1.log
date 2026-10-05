@@ -1,0 +1,9 @@
+<user>/yudian-game/terrain-view-r1-20261005/prototype/scripts/TerrainWorld/TerrainWorldDemo.cs(38,44): error CS0104: “Environment”是“Godot.Environment”和“System.Environment”之间的不明确的引用 [<user>/yudian-game/terrain-view-r1-20261005/prototype/Yudian.csproj]
+
+生成失败。
+
+<user>/yudian-game/terrain-view-r1-20261005/prototype/scripts/TerrainWorld/TerrainWorldDemo.cs(38,44): error CS0104: “Environment”是“Godot.Environment”和“System.Environment”之间的不明确的引用 [<user>/yudian-game/terrain-view-r1-20261005/prototype/Yudian.csproj]
+    0 个警告
+    1 个错误
+
+已用时间 00:00:01.71

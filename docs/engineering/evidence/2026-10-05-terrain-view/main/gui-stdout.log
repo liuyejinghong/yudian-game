@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+WORLD_IDENTITY CLR=10.0.12 display=macOS adapter=Apple M3 Pro (Apple9) build_sha256=6c2d67a1937a5c6a420c5149db15ad82d0736adaf8032e22c6362801aff60171
+WORLD_PHYSICS_SYNCED authority=9 bound=9 verified=9 center=3.5 assigned_frame=0 query_frame=1
+WORLD_REQUEST Committed · request=request-1 · applied=10 authority=10 bound=10 error=
+WORLD_PHYSICS_SYNCED authority=10 bound=10 verified=10 center=0.4 assigned_frame=5838 query_frame=5839
+WORLD_REQUEST NoChange · request=request-2 · applied= authority=10 bound=10 error=
+WORLD_REQUEST Committed · request=request-3 · applied=11 authority=11 bound=11 error=
+WORLD_PHYSICS_SYNCED authority=11 bound=11 verified=11 center=-1.25 assigned_frame=7932 query_frame=7933
+WORLD_REQUEST AlreadyCommitted · request=request-3 · applied=11 authority=11 bound=11 error=
+WORLD_REQUEST Cancelled · request=request-4 · applied= authority=11 bound=11 error=
+WORLD_REQUEST StaleBase · request=stale-ui · applied= authority=11 bound=11 error=
+WORLD_PHYSICS_SYNCED authority=11 bound=11 verified=11 center=-1.25 assigned_frame=11520 query_frame=11521

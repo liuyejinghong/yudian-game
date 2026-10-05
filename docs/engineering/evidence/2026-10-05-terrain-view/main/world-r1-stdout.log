@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+WORLD_IDENTITY CLR=10.0.12 display=headless adapter= build_sha256=3c4710aeeec3e7638dfdd55b6cfd1d3c9b0ffe403afe3c23912b04f665d7d7c6
+TERRAIN_WORLD_FAIL System.InvalidOperationException: mesh/shape corner 8
+   at Yudian.Terrain.TerrainWorldDemo.Require(Boolean condition, String name) in <user>/yudian-game/terrain-view-r1-20261005/prototype/scripts/TerrainWorld/TerrainWorldDemo.cs:line 270
+   at Yudian.Terrain.TerrainWorldDemo.VerifyProjection() in <user>/yudian-game/terrain-view-r1-20261005/prototype/scripts/TerrainWorld/TerrainWorldDemo.cs:line 140
+   at Yudian.Terrain.TerrainWorldDemo._PhysicsProcess(Double delta) in <user>/yudian-game/terrain-view-r1-20261005/prototype/scripts/TerrainWorld/TerrainWorldDemo.cs:line 72

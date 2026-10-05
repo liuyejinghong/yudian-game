@@ -40,10 +40,13 @@
 
 当前编排：美术需求由专门会话按美术权威TODO推进；产研继续由本会话握合同与集成。数据和两个CPU网格子件已经接受并合并PR #20/#23；本轮GLM完成T3-GODOT（含一次限定返工），主控完成独立T3-PROBE，真实Godot复验、reviewer与最终architect通过；仅接受资源适配/未提交候选预览。[本轮复验](docs/engineering/reports/2026-10-04-terrain-render-verification.md) / [子票#24](https://github.com/liuyejinghong/yudian-game/issues/24)。
 
-更新只采用完整CPU重建+新ArrayMesh替换。完整T3、阶段/高度场增量更新、正式世界与渲染/物理同步、碰撞导航、保存与最终美术继续留项；下一批先由主控冻结最小子票，再将确定实现/测试交GLM。费用未知如实记录。各行状态以产研/美术权威表为准。
+更新只采用完整CPU重建+新ArrayMesh替换。完整T3、阶段/高度场增量更新、完整世界、旧Main接线与机器人通行/导航、保存与最终美术继续留项；下一批先由主控冻结最小子票，再将确定实现/测试交GLM。费用未知如实记录。各行状态以产研/美术权威表为准。
 
 本批证据工具：PERF-01-COMPARE与LIFE-01-AUDIT均限定ACCEPTED，原交付与返工分别保留。[PERF复验](docs/engineering/reports/2026-10-04-perf-compare-verification.md) / [LIFE复验](docs/engineering/reports/2026-10-04-lifecycle-audit-verification.md)。LIFE真实GUI/默认目录重开现已限定接受；PERF受控条件/原因/稳定预算继续未完成。外包可用原生子代理，主控保留最终审查/集成职责；各行以产研权威表为准。
 
 本批T3d-MEM与GLM纯判定子件限定接受，已合并[PR #30](https://github.com/liuyejinghong/yudian-game/pull/30)：[内存提交复验](docs/engineering/reports/2026-10-04-terrain-commit-verification.md)。2026-10-05主控自行完成LIFE真实关窗与同包重开并限定接受，六轮PERF完成但后台焦点失守，受控项REWORK、原因与稳定预算未完成。[实机复验](docs/engineering/reports/2026-10-05-runtime-verification.md)。工程负责游戏测试，美术负责建模，不以美术回执为启动前提。
 
 2026-10-05旧PR清理完成：[#1](https://github.com/liuyejinghong/yudian-game/pull/1)、[#2](https://github.com/liuyejinghong/yudian-game/pull/2)、[#3](https://github.com/liuyejinghong/yudian-game/pull/3)、[#13](https://github.com/liuyejinghong/yudian-game/pull/13)、[#14](https://github.com/liuyejinghong/yudian-game/pull/14)已全部合并，查询时open队列为0。[限定复验](docs/engineering/reports/2026-10-05-pr-cleanup-verification.md)：历史说明/现役入口已同步，参考图仅归档，游戏代码与生产资产未改；现行PERF/T3/正式美术留项不扩签。
+
+
+2026-10-05 T3d-PROJECTION-RESOURCES / T3d-VIEW限定接受：GLM资源束经一次返工，主控实际单区域权威提交场景已串起内存/画面/静态碰撞；29内存检查、8 native资源检查、7步引擎与Metal GUI通过。[复验](docs/engineering/reports/2026-10-05-terrain-view-verification.md)。完整T3d、旧Main机器人通行/导航/存档/建设闭环、正式美术与性能留项未完成，下一张按真实接入接口再冻结。

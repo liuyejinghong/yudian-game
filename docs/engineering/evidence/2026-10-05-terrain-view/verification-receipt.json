@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-05",
+  "baseline": "909cca33b40206a1654b741868a4394fb8e31af5",
+  "tested_source_commit": "f3b08bfa594501771eb802ff929d4d471fc85709",
+  "build_dll_sha256": "6c2d67a1937a5c6a420c5149db15ad82d0736adaf8032e22c6362801aff60171",
+  "loaded_and_file_mvid": "97832950-f200-4220-87a5-631e9ab6ba86",
+  "loaded_bytes_sha": "NOT_MEASURED",
+  "runtime": "Godot 4.7.2 .NET dev engine / CLR 10.0.12 / macOS arm64",
+  "gui_renderer": "Forward+ / Metal 4.0 / Apple M3 Pro (Apple9)",
+  "final_build": {
+    "exit_code": 0,
+    "warnings": 0,
+    "errors": 0,
+    "log": "main/build-final-r2.log"
+  },
+  "memory": {
+    "exit_code": 0,
+    "cases": 29,
+    "failed": 0,
+    "log": "main/memory-with-evaluate.log"
+  },
+  "bundle": {
+    "exit_code": 0,
+    "passed": 8,
+    "failed": 0,
+    "engine_errors": 0,
+    "log": "main/bundle-final-r2-stdout.log"
+  },
+  "world": {
+    "exit_code": 0,
+    "steps": 7,
+    "engine_errors": 0,
+    "log": "main/world-final-r2-stdout.log",
+    "physical_verified_versions": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "terminal_authority_version_after_native_target_loss": 14
+  },
+  "gui": {
+    "exit_code": 0,
+    "close": "Cua actual close button, no process signal",
+    "log": "main/gui-stdout.log",
+    "versions": [
+      9,
+      10,
+      11
+    ],
+    "screenshots": "Observed inline through Cua; no exported screenshot files claimed",
+    "checks": [
+      "cold stale guard v9",
+      "level center .4 v10",
+      "double-click level NoChange v10",
+      "dig center -1.25 v11",
+      "replay AppliedVersion11 unchanged",
+      "cancel unchanged",
+      "stale base unchanged",
+      "Current projection rebuild unchanged"
+    ]
+  },
+  "tool_cleanup": {
+    "app_inventory_after_final_quit": "Godot isRunning=false; Yudian isRunning=false",
+    "extra_manager_hostfxr_dialog": "Cua getAXState after app exit relaunched Godot without DOTNET_ROOT; confirmed tool side effect, dismissed and quit; final observation via inventory instead"
+  },
+  "worker": {
+    "model_confirmation_task": "task_89ba7f6e95",
+    "native_model": "GLM-5.3-Flash",
+    "session_id": "sess_dd53b2aefe",
+    "tasks": [
+      "task_8b2f8b3248",
+      "task_b772ddba6e"
+    ],
+    "original_commits": [
+      "939c79d63f1875ee7f7f8efeffb1f4588924451e",
+      "0516dda5a97f014a929959e8ec0eef8b8a52cce9"
+    ],
+    "tool_call_entries_read": 97,
+    "observed_bridge_context_used": 66604,
+    "cost": "UNKNOWN; context readout is not billed token/cost evidence"
+  },
+  "scope_exclusions": [
+    "old Main",
+    "robot traversal",
+    "navigation",
+    "save/load",
+    "neighbor transaction",
+    "resource economy",
+    "production art",
+    "controlled performance/stable budget"
+  ]
+}
