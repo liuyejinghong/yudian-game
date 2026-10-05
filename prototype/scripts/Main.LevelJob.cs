@@ -167,7 +167,7 @@ public partial class Main
 
     private void FinishLevelJob(LevelStage stage, string message)
     {
-        var job = _levelJob!; job.Stage = stage; job.Message = message; job.Worker?.ClearOrder();
+        var job = _levelJob!; job.Stage = stage; job.Message = message; job.Worker?.ClearOrder(); _levelNotice = "";
         GD.Print($"LEVEL_JOB_END id={job.Id} stage={stage} base={job.Patch.Base.Version} applied={job.AppliedVersion?.ToString() ?? "none"} current={_liveTerrain!.Current.Version} message={message}");
     }
 }

@@ -90,10 +90,13 @@ public partial class Main
                     _groundRobots.All(x => x.Paused), "commit fault not completed, authority retained");
                 var replay = region.Submit(_levelJob.Id, _levelJob.Patch);
                 GroundRequire(replay.Status == TerrainCommitStatus.AlreadyCommitted && replay.AppliedVersion == 2 && region.Current.Version == 2, "stable request replay no second commit");
+                StartLevelJob();
+                GroundRequire(_levelNotice.Contains(_levelJob.Id), "duplicate active task notice");
                 RecoverGround();
                 GroundRequire(_groundVerified == null && _levelJob.Stage == LevelStage.AwaitingPhysics, "recovery waits later frame");
                 break;
             case 10:
+                GroundRequire(_levelNotice == "", "completed task clears active notice");
                 GroundRequire(_levelJob!.Stage == LevelStage.Completed && _groundVerified == 2 && !_levelJob.Worker!.HasOrder && !_groundFault, "verified result only then completes");
                 _levelTestJob = _levelJob; _levelTestTravel = _levelJob.Worker.TravelledM;
                 StartLevelJob();
