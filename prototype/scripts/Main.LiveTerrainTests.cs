@@ -14,6 +14,23 @@ public partial class Main
     private Mesh? _groundTestMesh;
     private Shape3D? _groundTestShape;
 
+    private void LogLongRayError()
+    {
+        var s = _liveTerrain!.Current;
+        for (int i = 0; i < s.HeightsM.Count; i++)
+        {
+            float x = (float)(s.OriginXM + i % s.Columns * s.SpacingM);
+            float z = (float)(s.OriginZM + i / s.Columns * s.SpacingM);
+            using var query = PhysicsRayQueryParameters3D.Create(new Vector3(x, 1100, z), new Vector3(x, -1100, z), 1);
+            using var hit = GetWorld3D().DirectSpaceState.IntersectRay(query);
+            if (hit.Count == 0) continue;
+            float oldRay = hit["position"].AsVector3().Y;
+            if (Math.Abs(oldRay - s.HeightsM[i]) <= .0001) continue;
+            GD.Print($"MAIN_GROUND_LONG_RAY_ERROR index={i} expected={s.HeightsM[i]:R} long={oldRay:R} bounded={GroundHeight(x, z):R}");
+            break;
+        }
+    }
+
     private void GroundTestStep()
     {
         GroundRequire(_groundFrame < 900, "test timeout");
@@ -32,9 +49,16 @@ public partial class Main
                 var mesh = region.MeshNode.Mesh; var shape = region.Collider.Shape;
                 var facility = _facilityPositions[0];
                 GroundRequire(!SubmitGround(GroundPatch(facility.X, facility.Z, .7)), "occupied facility rejected");
-                var robot = _groundRobots[0].GlobalPosition;
-                var occupied = GroundPatch(robot.X, robot.Z, .8);
-                GroundRequire(TouchesFootprint(occupied, robot.X, robot.Z, .35f) && !SubmitGround(occupied), "occupied robot rejected");
+                TerrainPatch? occupied = null;
+                foreach (var actor in _groundRobots)
+                {
+                    var robot = actor.GlobalPosition; var candidate = GroundPatch(robot.X, robot.Z, .8);
+                    if (_facilityPositions.Select((p, i) => TouchesFootprint(candidate, p.X, p.Z, FacilityRadii[i % 6])).Any(x => x)) continue;
+                    GroundRequire(TouchesFootprint(candidate, robot.X, robot.Z, .35f), "capsule touched");
+                    occupied = candidate; break;
+                }
+                GroundRequire(occupied != null && !SubmitGround(occupied), "robot-only occupancy rejected");
+                LogLongRayError();
                 GroundRequire(region.Current.Version == 0 && ReferenceEquals(mesh, region.MeshNode.Mesh) && ReferenceEquals(shape, region.Collider.Shape) && _groundRobots.All(x => !x.Paused), "reject preserves authority/resources and resumes");
                 break;
             case 1:
