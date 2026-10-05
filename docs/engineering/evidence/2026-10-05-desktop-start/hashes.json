@@ -1,0 +1,57 @@
+[
+  {
+    "file": "build-receipt.json",
+    "source_sha256": "81868a6e94ffc0178bf833deb1c9013d9fab4ee95ddb876a5e8ec4f1d26376d2",
+    "public_sha256": "81868a6e94ffc0178bf833deb1c9013d9fab4ee95ddb876a5e8ec4f1d26376d2"
+  },
+  {
+    "file": "build-r2-receipt.json",
+    "source_sha256": "81868a6e94ffc0178bf833deb1c9013d9fab4ee95ddb876a5e8ec4f1d26376d2",
+    "public_sha256": "81868a6e94ffc0178bf833deb1c9013d9fab4ee95ddb876a5e8ec4f1d26376d2"
+  },
+  {
+    "file": "r1-hash-failure.json",
+    "source_sha256": "8170630946222292addb82b1587a1b1d80a0c3d79bddaa58d20971b9410b021d",
+    "public_sha256": "8170630946222292addb82b1587a1b1d80a0c3d79bddaa58d20971b9410b021d"
+  },
+  {
+    "file": "r2-hash-and-move.json",
+    "source_sha256": "9eacee3f2b7c5d6ce68f5de59c411fae50b2607d352e8c662302ffe64dd6236c",
+    "public_sha256": "9eacee3f2b7c5d6ce68f5de59c411fae50b2607d352e8c662302ffe64dd6236c"
+  },
+  {
+    "file": "signature-moved.log",
+    "source_sha256": "9ae67242f3b0bf7e4fe93664ce1f8cea9e63808c89b95af3f29b09b10cc81fac",
+    "public_sha256": "8b8aad66f8d88b32de907b11dcca67b24a1cbbd15bacf022d4c4b938292207dd"
+  },
+  {
+    "file": "packaged-main-level.log",
+    "source_sha256": "b0aedb834df82359b172275d40b86e8e43d4084116f511cabcec4aecf75ab2c9",
+    "public_sha256": "b0aedb834df82359b172275d40b86e8e43d4084116f511cabcec4aecf75ab2c9"
+  },
+  {
+    "file": "packaged-main-level-receipt.json",
+    "source_sha256": "bcaee5f230bf0dcff017f7b753662b07e473818f62d09f8044ace26e238764f6",
+    "public_sha256": "bcaee5f230bf0dcff017f7b753662b07e473818f62d09f8044ace26e238764f6"
+  },
+  {
+    "file": "packaged-final-level.log",
+    "source_sha256": "f0d9ecce18d98a95d485197c86ff549a9d99265d4ac897bb00fd94c31b02c6ce",
+    "public_sha256": "f0d9ecce18d98a95d485197c86ff549a9d99265d4ac897bb00fd94c31b02c6ce"
+  },
+  {
+    "file": "packaged-final-level-receipt.json",
+    "source_sha256": "bcaee5f230bf0dcff017f7b753662b07e473818f62d09f8044ace26e238764f6",
+    "public_sha256": "bcaee5f230bf0dcff017f7b753662b07e473818f62d09f8044ace26e238764f6"
+  },
+  {
+    "file": "gui-observations.json",
+    "source_sha256": "b3a0abd8ac8e2b50da8dc02c1ac05e0b484f692b2771bd18dd3f3bdcde14800e",
+    "public_sha256": "b3a0abd8ac8e2b50da8dc02c1ac05e0b484f692b2771bd18dd3f3bdcde14800e"
+  },
+  {
+    "file": "build-manifest.json",
+    "source_sha256": "000594ab24e9f05f71d51f137c9f4ae9577229df73ac43a5c6a8722787893d56",
+    "public_sha256": "000594ab24e9f05f71d51f137c9f4ae9577229df73ac43a5c6a8722787893d56"
+  }
+]

@@ -5,6 +5,7 @@ import copy
 import hashlib
 import json
 import os
+import plistlib
 from pathlib import Path
 import subprocess
 import tempfile
@@ -66,6 +67,7 @@ def main():
     p.add_argument('--dotnet', type=Path, required=True)
     p.add_argument('--templates', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True, help='新的输出目录；不覆盖旧导出')
+    p.add_argument('--playable', action='store_true', help='双击进入当前整平试玩场景；原引擎入口保留')
     a = p.parse_args()
     a.output = a.output.resolve()
     a.output.mkdir(parents=True, exist_ok=True)
@@ -109,9 +111,22 @@ def main():
         preset.write_text(config)
         run([a.godot, '--headless', '--path', PROJECT, '--build-solutions', '--quit'], env)
         run([a.godot, '--headless', '--path', PROJECT, '--export-release', 'macOS', app], env)
+        if a.playable:
+            run(['/usr/bin/xcrun', 'clang', '-arch', 'arm64', '-mmacosx-version-min=13.0',
+                 '-Wall', '-Wextra', '-Werror', ROOT / 'tools/macos_launcher.c',
+                 '-o', app / 'Contents/MacOS/YudianLauncher'])
+            plist = app / 'Contents/Info.plist'
+            info = plistlib.loads(plist.read_bytes())
+            info.update(CFBundleExecutable='YudianLauncher', CFBundleDisplayName='余电')
+            plist.write_bytes(plistlib.dumps(info))
+            identity['double_click_mode'] = 'live-terrain'
+            identity['launcher_source_sha256'] = sha(ROOT / 'tools/macos_launcher.c')
         run(['/usr/bin/codesign', '--force', '--deep', '-s', '-', app])
         run(['/usr/bin/codesign', '--verify', '--deep', '--strict', '-v', app])
         run(['/usr/bin/lipo', app / 'Contents/MacOS/Yudian', '-verify_arch', 'arm64'])
+        if a.playable:
+            identity['launcher_binary_sha256'] = sha(app / 'Contents/MacOS/YudianLauncher')
+            identity['launcher_plist_sha256'] = sha(app / 'Contents/Info.plist')
         runtime = app / 'Contents/Resources/data_Yudian_macos_arm64/Yudian.runtimeconfig.json'
         identity['export_runtimeconfig'] = json.loads(runtime.read_text())
         identity['binary_sha256'] = sha(app / 'Contents/MacOS/Yudian')

@@ -1,0 +1,5 @@
+Excerpt from retained raw build log; not the full output.
+<user>/yudian-game/repo/prototype/export/playable-r2-20261005/Yudian.app: replacing existing signature
+<user>/yudian-game/repo/prototype/export/playable-r2-20261005/Yudian.app: valid on disk
+<user>/yudian-game/repo/prototype/export/playable-r2-20261005/Yudian.app: satisfies its Designated Requirement
+BUILD_OK: arm64 export, ad-hoc signature, manifest; GUI/runtime isolation remain separate checks

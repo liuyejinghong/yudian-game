@@ -1,0 +1,26 @@
+[
+  {
+    "field": "launcher_binary_sha256",
+    "manifest": "e645e6c94264e60a4887f45e851122133102ea5ff404e1522197074dca0227b8",
+    "actual": "a46d6816281bdda9b97f122cd209e239377868ccebcdaa3eb6fdb0c6089b4c96",
+    "match": false
+  },
+  {
+    "field": "launcher_plist_sha256",
+    "manifest": "51ea082fabd47b669644f4c05ab507ecd48a6dc143a476dbffd2ac1af9399153",
+    "actual": "51ea082fabd47b669644f4c05ab507ecd48a6dc143a476dbffd2ac1af9399153",
+    "match": true
+  },
+  {
+    "field": "binary_sha256",
+    "manifest": "7b9bf0197b4b67172f365c90b626880db4f50de64056a256471af897f4722d53",
+    "actual": "7b9bf0197b4b67172f365c90b626880db4f50de64056a256471af897f4722d53",
+    "match": true
+  },
+  {
+    "field": "pck_sha256",
+    "manifest": "3fb48a93945f4d20f82252684433a653f68df7f3d9bce2c7bd5a1de44f48394b",
+    "actual": "3fb48a93945f4d20f82252684433a653f68df7f3d9bce2c7bd5a1de44f48394b",
+    "match": true
+  }
+]

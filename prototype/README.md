@@ -1,4 +1,8 @@
-# 灰模探针运行与验证
+# 原型试玩与工程验证
+
+本机试玩：在项目协调目录双击 **余电.app**，直接进入整平场景；无需终端、参数或SDK。点击「下达整平任务」，可观察机器人到场与施工；关窗退出。此入口是当前本地试玩包，重新打包后再更新，不自动追踪代码变更。
+
+工程构建说明如下。
 
 候选组合：Godot 4.7.2 .NET，SDK 10.0.401（根 global.json），游戏项目 TFM net8.0。没有把 SDK10 当作运行目标迁移；导出 runtimeconfig 与实际 CLR 各自记录。
 
@@ -23,8 +27,10 @@ export PATH="$DOTNET_ROOT:$PATH"
 
 ```bash
 python3 tools/build_macos.py --godot "$YUDIAN_GODOT" --dotnet "$YUDIAN_DOTNET" \
-  --templates "$YUDIAN_TEMPLATES" --output prototype/export/local-r1
+  --templates "$YUDIAN_TEMPLATES" --output prototype/export/local-r1 --playable
 ```
+
+`--playable`增加原生Finder启动入口，双击即整平模式；不传该选项保留旧导出行为，包内原始`Contents/MacOS/Yudian`仍供工程命令行使用。
 
 已有同名.app时失败并保留；再次构建换新目录。SDK与Godot须精确匹配；仍需本机原生Xcode命令工具、已缓存/可恢复的.NET包。没有公证或发行。
 
