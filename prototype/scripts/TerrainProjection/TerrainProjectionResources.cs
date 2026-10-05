@@ -4,15 +4,8 @@ using Godot;
 namespace Yudian.Terrain;
 
 /// <summary>
-/// terrain-view-r1 GLM资源束：复用已验收 TerrainMeshAdapter.Create 与 TerrainCollisionAdapter.Create，
-/// 返回全新 ArrayMesh/ConcavePolygonShape3D 资源对。先建 mesh，再建 shape；任一阶段抛异常时
-/// 释放已创建资源（shape 失败释放 mesh），不返回半持有状态。成功由接收者持有整个 bundle，
-/// 替换/退出后 Dispose；重复 Dispose 幂等无害。只读 Mesh/Shape；不缓存、不持有 RegionState、
-/// 不绑定节点、不修改输入或材质，不引入依赖。
-/// internal Create(mesh, failBeforeShape) 是唯一内部测试入口：true 在 mesh 创建成功之后、shape
-/// 创建之前抛 InvalidOperationException——这是合成的中途异常（测试如实记录为模拟），不冒称
-/// 真实 native 分配失败；抛出前释放该 mesh 并保留其已释放实例，供测试用原实例
-/// GodotObject.IsInstanceValid 证明确实释放。公开 Create 默认 failBeforeShape=false。
+/// 一对独立的渲染/静态碰撞资源，创建失败释放已建资源，成功由接收者Dispose。
+/// 复用两个adapter，不持有世界状态；内部钩子只模拟mesh创建后的中途异常。
 /// </summary>
 public sealed class TerrainProjectionResources : IDisposable
 {
@@ -21,7 +14,7 @@ public sealed class TerrainProjectionResources : IDisposable
     private bool _disposed;
 
     /// <summary>模拟中途失败时已释放的 ArrayMesh 实例；仅内部测试入口写入，供测试 IsInstanceValid 证明释放。</summary>
-    internal static ArrayMesh? LastSimulatedFailureMesh;
+    internal static ArrayMesh LastSimulatedFailureMesh;
 
     private TerrainProjectionResources(ArrayMesh mesh, ConcavePolygonShape3D shape)
     {

@@ -160,7 +160,7 @@ public partial class ProjectionResourcesTests : Node
 
     private static void Rejections()
     {
-        ArrayMesh? hookBefore = TerrainProjectionResources.LastSimulatedFailureMesh;
+        ArrayMesh hookBefore = TerrainProjectionResources.LastSimulatedFailureMesh;
 
         ExpectArgument(() => TerrainProjectionResources.Create(null!), "mesh", "null mesh");
         ExpectArgument(() => TerrainProjectionResources.Create(RawMesh(
@@ -197,7 +197,7 @@ public partial class ProjectionResourcesTests : Node
         Expect(GodotObject.IsInstanceValid(liveControl), "known-live control mesh must be valid");
         liveControl.Dispose();
 
-        ArrayMesh? doomed = TerrainProjectionResources.LastSimulatedFailureMesh;
+        ArrayMesh doomed = TerrainProjectionResources.LastSimulatedFailureMesh;
         Expect(doomed is not null, "internal hook must retain the disposed mesh instance");
         Expect(!GodotObject.IsInstanceValid(doomed), "disposed mesh instance must be invalid");
 
