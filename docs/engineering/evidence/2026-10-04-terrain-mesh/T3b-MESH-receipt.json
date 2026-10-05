@@ -1,0 +1,19 @@
+{
+  "ticket": "T3b-MESH",
+  "contract_commit": "8c3e1178557c6c0f9e6aa9e34345a482435bed7f",
+  "worker_commit": "82fa292ab9a5d744497f088df403a52c5c1a467f",
+  "session_id": "sess_f8ea17b9fe",
+  "task_id": "task_8501addd0a",
+  "status": "completed",
+  "stop_reason": "end_turn",
+  "elapsed_sec": 702,
+  "usage": {
+    "used": 73261,
+    "size": 1000000,
+    "sessionUpdate": "usage_update"
+  },
+  "observed_model": null,
+  "billing_cost": "unknown",
+  "report": "收到。先确认工作树与 HEAD，再精读合同与任务书，然后直接落实现。HEAD 一致且工作树干净。现在精读合同与任务书。合同与任务书已读。现在看共享 TerrainGeometry 与 TerrainData 接口。接口清楚了。看一眼现有测试工程的 csproj 模式以保持一致。共享接口已明确。合同金样引用数据 r1 的 sample-a/sample-b，我需要它们的冻结 JSON 值，同时看一眼现有测试的 harness 风格保持一致。金样拿到了。看下现有测试 harness 的结构。合同、任务、共享接口、金样都齐了。合同要点：固定顶点 row-major、索引 `a,d,b,a,c,d`、2×2 金样 `[0,3,1,0,2,3]`、patch 先 ValidateAgainst、null 统一 ArgumentException。开始落实现和测试。实现完成。现在写测试工程。上一个文件末尾写坏了（伪代码泄漏、Determinism 空缺）。重写完整正确的测试文件。五个文件就绪。现在离线构建：空 NuGet 源 → restore → Release 双 TFM 编译 → net10 运行。离线 restore 通过（37ms，空源零包）。Release 编译两个 TFM。net8.0 与 net10.0 均编译成功、零警告。net10 运行测试。三个失败全是测试侧错误，实现输出正确：\n1. 257×257 索引数：6×256×256 = **393216**（我常量算错成 392064，合同公式 6*(rows-1)*(columns-1) 实现正确）；\n2. sample-b 36 索引字面量我多写了 2 行 cell（3×4 只有 2×3=6 个 cell）；\n3. rows-mismatch 的 JSON 高度数给错，codec 在 heights 数量处先拒绝，没走到 ValidateAgainst。\n\n修正测试。重新编译并运行，这次正确捕获退出码。66 项检查（33 × 两种文化）全部通过，退出码 0，运行时 .NET 10.0.12。确认日志头部与干净提交范围。暂存区只有本票 5 个文件，无 bin/obj。提交。T3b-MESH 完成。五行报告：\n\n1. **范围**：仅新增 `prototype/scripts/TerrainCandidates/StageGrid/StageMeshBuilder.cs`（两个 Build 重载：snapshot 原高度；patch 先 `ValidateAgainst` 再用候选高度+base 布局；顶点/cell row-major、固定 `a,d,b,a,c,d`、输出经主控 TerrainMesh 防御复制）和 `tools/terrain-stage-tests/`（Tests.csproj/Program/合同测试/README），未改任何既有文件。\n2. **检查/数量**：restore 于工作树外空 NuGet 源 `~/.t3b-mesh-empty-nuget`（37ms 零包、离线）；`dotnet build -c Release --no-restore` net8.0+net10.0 编译成功零警告；`dotnet run -f net10.0 -c Release --no-build --no-restore` 真实结果 **checks run: 66, failed: 0，exit 0**（33 项命名检查 × Invariant/de-DE 两文化，覆盖金样 2×2/2×3/3×4 字面量、扭曲 cell 重心复核=2、邻区边 ≤1e-9、257×257=66049 顶点/393216 索引全量绕序、2×N/N×2、null/过期/错 region/同版内容不符、不可变含无 SyncRoot、确定性）。中途 3 个失败均为测试侧常量错误（393216 算错、36 索引字面量多写 2 行、rows-mismatch JSON 高度数不足），修正后全绿；实现代码未因此改动。\n3. **限制**：net8.0 仅编译未执行（任务规定 NOT_RUN）；net10 编译用的共享类型为本票链接源码，主控侧 net10 编译仍在运行、未当成本票通过依据；Godot 剔除/性能/焊接不在本票。\n4. **用量可见性**：本会话模型 token 用量我无法读取，如实未知。\n5. **commit**：`82fa292`（基线 `8c3e117`，分支 worker/t3b-mesh-20261004），仅含上述 5 文件 650 行插入，无 bin/obj；未 push、未 merge、未自写 ACCEPTED。✓ completed · cache 68/69 messages · 72.3k cache-read tokens",
+  "note": "Worker self-report, not final acceptance. Bridge root-wide files_changed excluded; owned scope verified from Git commit."
+}

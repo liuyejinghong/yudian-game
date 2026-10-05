@@ -1,5 +1,7 @@
 # T 线：用真实目标链决定引擎、AI 与性能路线
 
+> 历史快照（2026-10-03；2026-10-05整理）：保留当时计划与证据边界，不代表当前工程状态或自动开工授权。当前任务与执行合同以[双线TODO](../../TODO.md)及其链接为准。
+
 2026-10-03｜T-plan-1｜状态：**本轮未执行原生/模型/性能测试。**
 
 输入：[技术总计划](../engineering/technical-validation-plan.md)、[超分专项](../engineering/upscaling-and-renderer-evaluation.md)、[逻辑约定](00-logic-readiness.md)、[共同 fixture](01-shared-fixture.md)。

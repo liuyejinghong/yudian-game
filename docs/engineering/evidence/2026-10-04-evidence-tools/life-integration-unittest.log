@@ -1,0 +1,75 @@
+test_bad_exit_json_fails (test_lifecycle_audit.CounterexampleTest.test_bad_exit_json_fails) ... ok
+test_bad_summary_json_fails (test_lifecycle_audit.CounterexampleTest.test_bad_summary_json_fails) ... ok
+test_bool_exit_code_rejected (test_lifecycle_audit.CounterexampleTest.test_bool_exit_code_rejected) ... ok
+test_completed_with_exit_130_fails (test_lifecycle_audit.CounterexampleTest.test_completed_with_exit_130_fails) ... ok
+test_duplicate_run_id_fails (test_lifecycle_audit.CounterexampleTest.test_duplicate_run_id_fails) ... ok
+test_duration_mismatch_fails (test_lifecycle_audit.CounterexampleTest.test_duration_mismatch_fails) ... ok
+test_exit_case_duplicate_match_rejected (test_lifecycle_audit.CounterexampleTest.test_exit_case_duplicate_match_rejected) ... ok
+test_exit_case_not_found_incomplete (test_lifecycle_audit.CounterexampleTest.test_exit_case_not_found_incomplete) ... ok
+test_frame_gap_fails (test_lifecycle_audit.CounterexampleTest.test_frame_gap_fails) ... ok
+test_frames_mismatch_fails (test_lifecycle_audit.CounterexampleTest.test_frames_mismatch_fails) ... ok
+test_interrupted_with_exit_0_fails (test_lifecycle_audit.CounterexampleTest.test_interrupted_with_exit_0_fails) ... ok
+test_missing_exit_record_incomplete (test_lifecycle_audit.CounterexampleTest.test_missing_exit_record_incomplete) ... ok
+test_missing_frames_csv_incomplete (test_lifecycle_audit.CounterexampleTest.test_missing_frames_csv_incomplete) ... ok
+test_missing_summary_incomplete (test_lifecycle_audit.CounterexampleTest.test_missing_summary_incomplete) ... ok
+test_nan_frame_ms_fails (test_lifecycle_audit.CounterexampleTest.test_nan_frame_ms_fails) ... ok
+test_nan_in_summary_stats_fails (test_lifecycle_audit.CounterexampleTest.test_nan_in_summary_stats_fails) ... ok
+test_negative_fps_fails (test_lifecycle_audit.CounterexampleTest.test_negative_fps_fails) ... ok
+test_over_33ms_mismatch_fails (test_lifecycle_audit.CounterexampleTest.test_over_33ms_mismatch_fails) ... ok
+test_overwrite_output_refused (test_lifecycle_audit.CounterexampleTest.test_overwrite_output_refused) ... audit: 输出已存在（含符号链接），不覆盖原记录: report.json
+ok
+test_percentile_mismatch_fails (test_lifecycle_audit.CounterexampleTest.test_percentile_mismatch_fails) ... ok
+test_report_has_no_absolute_paths (test_lifecycle_audit.CounterexampleTest.test_report_has_no_absolute_paths) ... ok
+test_synthetic_inputs_unchanged_after_fail_audit (test_lifecycle_audit.CounterexampleTest.test_synthetic_inputs_unchanged_after_fail_audit) ... ok
+test_time_not_increasing_fails (test_lifecycle_audit.CounterexampleTest.test_time_not_increasing_fails) ... ok
+test_truncated_but_exit_contradiction_still_fails (test_lifecycle_audit.CounterexampleTest.test_truncated_but_exit_contradiction_still_fails) ... ok
+test_truncated_last_line_incomplete_and_stats_skipped (test_lifecycle_audit.CounterexampleTest.test_truncated_last_line_incomplete_and_stats_skipped) ... ok
+test_truncated_last_line_with_four_columns_illegal_fails (test_lifecycle_audit.CounterexampleTest.test_truncated_last_line_with_four_columns_illegal_fails) ... ok
+test_unknown_status_fails (test_lifecycle_audit.CounterexampleTest.test_unknown_status_fails) ... ok
+test_zero_frames_incomplete (test_lifecycle_audit.CounterexampleTest.test_zero_frames_incomplete) ... ok
+test_nonzero_summary_missing_ftm_still_fails (test_lifecycle_audit.FinalReworkRegressionTest.test_nonzero_summary_missing_ftm_still_fails) ... ok
+test_real_zero_frame_interruption_incomplete_not_fail (test_lifecycle_audit.FinalReworkRegressionTest.test_real_zero_frame_interruption_incomplete_not_fail) ... ok
+test_recompute_infinite_avg_fps_fails_specific_field (test_lifecycle_audit.FinalReworkRegressionTest.test_recompute_infinite_avg_fps_fails_specific_field) ... ok
+test_surrogate_run_id_duplicate_fail_report_parses (test_lifecycle_audit.FinalReworkRegressionTest.test_surrogate_run_id_duplicate_fail_report_parses) ... ok
+test_surrogate_run_id_report_parses (test_lifecycle_audit.FinalReworkRegressionTest.test_surrogate_run_id_report_parses) ... ok
+test_zero_frame_with_bad_ftm_type_still_fails (test_lifecycle_audit.FinalReworkRegressionTest.test_zero_frame_with_bad_ftm_type_still_fails) ... ok
+test_zero_frame_with_explicit_null_ftm_fails (test_lifecycle_audit.FinalReworkRegressionTest.test_zero_frame_with_explicit_null_ftm_fails) ... ok
+test_zero_frame_with_nonfinite_ftm_value_still_fails (test_lifecycle_audit.FinalReworkRegressionTest.test_zero_frame_with_nonfinite_ftm_value_still_fails) ... ok
+test_gate_cli_from_other_cwd (test_lifecycle_audit.GoldenManifestTest.test_gate_cli_from_other_cwd)
+门禁同款：任意 cwd 用绝对路径跑金样 CLI，三项 PASS、run_id 互异。 ... ok
+test_golden_manifest_relative_paths_resolve_from_other_cwd (test_lifecycle_audit.GoldenManifestTest.test_golden_manifest_relative_paths_resolve_from_other_cwd) ... ok
+test_report_run_keys (test_lifecycle_audit.GoldenManifestTest.test_report_run_keys) ... ok
+test_all_invalid_manifests_exit_2_without_report (test_lifecycle_audit.InvalidManifestTest.test_all_invalid_manifests_exit_2_without_report) ... audit: manifest 不存在: no-such-manifest.json
+audit: manifest JSON 解析失败: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+audit: manifest 顶层必须是 JSON 对象
+audit: manifest.schema_version: 必须是整数 1（布尔不算整数）
+audit: manifest.schema_version: 必须是整数 1（布尔不算整数）
+audit: manifest.runs: 必须是非空列表
+audit: manifest.runs: 必须是非空列表
+audit: manifest.runs[0]: 必须是对象
+audit: manifest.runs[0].label: 必须是非空字符串
+audit: manifest.runs[0].frames_csv: 必须是非空字符串
+audit: manifest.runs[1].label: 重复 label 'a'
+audit: manifest.runs[0].exit_case: 可选，必须是字符串
+ok
+test_stderr_specific_on_invalid (test_lifecycle_audit.InvalidManifestTest.test_stderr_specific_on_invalid) ... ok
+test_absolute_run_paths_allowed (test_lifecycle_audit.PathResolutionTest.test_absolute_run_paths_allowed) ... ok
+test_relative_output_resolves_against_manifest_dir (test_lifecycle_audit.PathResolutionTest.test_relative_output_resolves_against_manifest_dir) ... ok
+test_dangling_symlink_output_refused (test_lifecycle_audit.ReworkRegressionTest.test_dangling_symlink_output_refused) ... ok
+test_huge_int_avg_fps_fails_with_report (test_lifecycle_audit.ReworkRegressionTest.test_huge_int_avg_fps_fails_with_report) ... ok
+test_huge_int_frames_and_duration_fail_not_crash (test_lifecycle_audit.ReworkRegressionTest.test_huge_int_frames_and_duration_fail_not_crash) ... ok
+test_manifest_non_utf8_exit_2_no_report (test_lifecycle_audit.ReworkRegressionTest.test_manifest_non_utf8_exit_2_no_report) ... ok
+test_missing_manifest_stderr_sanitized (test_lifecycle_audit.ReworkRegressionTest.test_missing_manifest_stderr_sanitized) ... ok
+test_output_io_error_sanitized (test_lifecycle_audit.ReworkRegressionTest.test_output_io_error_sanitized) ... ok
+test_symlink_to_existing_file_output_refused (test_lifecycle_audit.ReworkRegressionTest.test_symlink_to_existing_file_output_refused) ... ok
+test_truncated_csv_missing_stat_field_fails_independently (test_lifecycle_audit.ReworkRegressionTest.test_truncated_csv_missing_stat_field_fails_independently) ... ok
+test_truncated_csv_nan_avg_fps_fails_independently (test_lifecycle_audit.ReworkRegressionTest.test_truncated_csv_nan_avg_fps_fails_independently) ... ok
+test_complete_last_line_without_newline_is_valid (test_lifecycle_audit.SyntheticPassTest.test_complete_last_line_without_newline_is_valid) ... ok
+test_consistent_run_passes (test_lifecycle_audit.SyntheticPassTest.test_consistent_run_passes) ... ok
+test_exit_case_results_json_pass (test_lifecycle_audit.SyntheticPassTest.test_exit_case_results_json_pass) ... ok
+test_interrupted_130_passes (test_lifecycle_audit.SyntheticPassTest.test_interrupted_130_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 56 tests in 0.499s
+
+OK

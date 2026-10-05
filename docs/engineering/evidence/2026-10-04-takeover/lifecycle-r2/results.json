@@ -1,0 +1,51 @@
+{
+  "cases": [
+    {
+      "case": "default-1",
+      "exit": 0,
+      "status": "completed",
+      "runtime": {
+        "framework": ".NET 8.0.31",
+        "version": "8.0.31",
+        "architecture": "Arm64",
+        "os": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030"
+      },
+      "default_path_inside_user_data": true,
+      "app_readonly": true,
+      "different_cwd": true,
+      "environment": "HOME retained for Godot user dir; other env stripped; PATH=/usr/bin:/bin; invalid DOTNET_ROOT and ROOT_ARM64; multilevel lookup disabled"
+    },
+    {
+      "case": "default-2",
+      "exit": 0,
+      "status": "completed",
+      "runtime": {
+        "framework": ".NET 8.0.31",
+        "version": "8.0.31",
+        "architecture": "Arm64",
+        "os": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030"
+      },
+      "default_path_inside_user_data": true,
+      "app_readonly": true,
+      "different_cwd": true,
+      "environment": "HOME retained for Godot user dir; other env stripped; PATH=/usr/bin:/bin; invalid DOTNET_ROOT and ROOT_ARM64; multilevel lookup disabled"
+    },
+    {
+      "case": "interrupted",
+      "exit": 130,
+      "status": "interrupted",
+      "runtime": {
+        "framework": ".NET 8.0.31",
+        "version": "8.0.31",
+        "architecture": "Arm64",
+        "os": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030"
+      },
+      "default_path_inside_user_data": true,
+      "app_readonly": true,
+      "different_cwd": true,
+      "environment": "HOME retained for Godot user dir; other env stripped; PATH=/usr/bin:/bin; invalid DOTNET_ROOT and ROOT_ARM64; multilevel lookup disabled"
+    }
+  ],
+  "unique_run_ids": true,
+  "signature_after_exit": 0
+}

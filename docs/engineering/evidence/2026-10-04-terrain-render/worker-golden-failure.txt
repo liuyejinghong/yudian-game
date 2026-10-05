@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+CLR 10.0.12
+Assembly.FullName Yudian, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Assembly.Location 
+AppDomain.BaseDirectory $WORKER/prototype/.godot/mono/temp/bin/Debug/
+Fresh Debug Yudian.dll SHA256 2A3B8AC21BD029408717FD9CA67D8C5AB86D56EC892B94E1C4DD4F65ED0B993E
+Loaded MVID  6dd119a5-398f-4ff2-9f82-9d38eabab761
+Fresh  MVID  6dd119a5-398f-4ff2-9f82-9d38eabab761
+PASS identity: current worktree Debug/Yudian.dll loaded, SHA256 matches fresh build
+FAIL flat 2x2: full i0,i2,i1 emission order and Up normals: position[1]: got (1, 0, 0), want (1, 0, 1)
+PASS sample-a: expanded count 48 and full world-XYZ emission mapping
+PASS patch-b: both generators, candidate original nodes readback
+PASS surface shape: single, only Vertex+Normal, no index/UV/material, Triangles
+PASS independent resources: repeated builds give fresh RIDs with equal content
+PASS inputs preserved: snapshot/patch serialization and CPU buffers unchanged
+PASS rejections: null/float overflow/quantized degenerate/negative winding/cross overflow/length-squared overflow/zero-length normal
+PASS max legal 513x513: counts, finiteness, endpoints, unit up normals
+SUMMARY pass=8 fail=1

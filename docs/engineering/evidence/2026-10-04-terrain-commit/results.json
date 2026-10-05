@@ -1,0 +1,19 @@
+{
+  "policy_worker_checks": 74,
+  "policy_worker_cases": 37,
+  "policy_cultures": [
+    "InvariantCulture",
+    "de-DE"
+  ],
+  "authority_main_cases": 28,
+  "main_failures": 0,
+  "net8_compile": "PASS",
+  "net10_compile": "PASS",
+  "net10_runtime": ".NET 10.0.12",
+  "net8_runtime_execution": "UNAVAILABLE: attempt exit150, missing runtime; no install",
+  "godot_project_net8_build": "PASS: 0 warnings, 0 errors",
+  "first_main_attempt": "sandbox multi-process build waited; main stopped own PID34521, partial net8 output only; first net10 execution exit1 missing DLL; retained logs; final single-process build/run PASS",
+  "world_engine_sync": "NOT_RUN: not wired",
+  "gui_lifecycle": "NOT_RUN: no reserved art window",
+  "controlled_perf": "NOT_RUN: no reserved art window"
+}

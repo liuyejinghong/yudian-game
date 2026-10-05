@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <NuGetAudit>false</NuGetAudit>
+    <UseAppHost>false</UseAppHost>
+    <AssemblyName>TerrainCommit.Policy.Tests</AssemblyName>
+    <RootNamespace>TerrainCommit.Policy.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- T3d-COMMIT-POLICY：共享数据 codec + 本判定目录源码链接编译进本测试程序集，零外部包、不建类库工程。 -->
+    <Compile Include="../../prototype/scripts/TerrainData/*.cs" Link="TerrainData/%(Filename)%(Extension)" />
+    <Compile Include="../../prototype/scripts/TerrainCommit/Validation/*.cs" Link="TerrainCommit/Validation/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

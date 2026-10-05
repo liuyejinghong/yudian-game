@@ -1,0 +1,78 @@
+  Tests -> $WORKTREE/tools/terrain-stage-tests/bin/Release/net8.0/TerrainStage.Tests.dll
+  Tests -> $WORKTREE/tools/terrain-stage-tests/bin/Release/net10.0/TerrainStage.Tests.dll
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:01.95
+== culture: '' / .NET 10.0.12 ==
+PASS null snapshot rejected
+PASS null patch rejected
+PASS null current rejected
+PASS sample-a 2x3: counts/positions/heights/literal indices
+PASS sample-a: original node (0,2) is (-0.5,4,2)
+PASS warp 2x2: golden indices [0,3,1,0,2,3]
+PASS warp 2x2: triangle a,d,b surface height at (.5,.5) is 2
+PASS warp 2x2: triangle a,c,d surface height at (.5,.5) is 2
+PASS warp 2x2: grid/winding/finite valid
+PASS sample-b patch: 12 verts/36 indices, candidate heights, base layout
+PASS sample-b patch: full 36-index literal
+PASS sample-b patch: perimeter nodes equal base heights
+PASS same version but different content rejected
+PASS expired version rejected
+PASS wrong region rejected
+PASS rows mismatch rejected
+PASS version and content both matching accepted
+PASS min 2x2 builds with golden indices
+PASS skinny 2x5 builds valid
+PASS skinny 5x2 builds valid
+PASS max 257x257: counts and every vertex/index valid
+PASS over-limit 258 rows rejected at data entry
+PASS neighbor edge at x=2, z=0.25: both sides within 1e-9 of lerp and of each other
+PASS neighbor edge at x=2, z=0.75: both sides within 1e-9 of lerp and of each other
+PASS neighbor edge at x=2, z=1.25: both sides within 1e-9 of lerp and of each other
+PASS neighbor edge at x=2, z=1.75: both sides within 1e-9 of lerp and of each other
+PASS output buffers and input lists expose no ICollection/SyncRoot
+PASS mesh buffer indexers reject out-of-range with ArgumentException
+PASS snapshot GetHeight rejects out-of-range with ArgumentException
+PASS build does not mutate snapshot/patch/base heights
+PASS output enumeration is stable across repeats
+PASS snapshot build is deterministic
+PASS patch build is deterministic
+== culture: 'de-DE' / .NET 10.0.12 ==
+PASS null snapshot rejected
+PASS null patch rejected
+PASS null current rejected
+PASS sample-a 2x3: counts/positions/heights/literal indices
+PASS sample-a: original node (0,2) is (-0.5,4,2)
+PASS warp 2x2: golden indices [0,3,1,0,2,3]
+PASS warp 2x2: triangle a,d,b surface height at (.5,.5) is 2
+PASS warp 2x2: triangle a,c,d surface height at (.5,.5) is 2
+PASS warp 2x2: grid/winding/finite valid
+PASS sample-b patch: 12 verts/36 indices, candidate heights, base layout
+PASS sample-b patch: full 36-index literal
+PASS sample-b patch: perimeter nodes equal base heights
+PASS same version but different content rejected
+PASS expired version rejected
+PASS wrong region rejected
+PASS rows mismatch rejected
+PASS version and content both matching accepted
+PASS min 2x2 builds with golden indices
+PASS skinny 2x5 builds valid
+PASS skinny 5x2 builds valid
+PASS max 257x257: counts and every vertex/index valid
+PASS over-limit 258 rows rejected at data entry
+PASS neighbor edge at x=2, z=0.25: both sides within 1e-9 of lerp and of each other
+PASS neighbor edge at x=2, z=0.75: both sides within 1e-9 of lerp and of each other
+PASS neighbor edge at x=2, z=1.25: both sides within 1e-9 of lerp and of each other
+PASS neighbor edge at x=2, z=1.75: both sides within 1e-9 of lerp and of each other
+PASS output buffers and input lists expose no ICollection/SyncRoot
+PASS mesh buffer indexers reject out-of-range with ArgumentException
+PASS snapshot GetHeight rejects out-of-range with ArgumentException
+PASS build does not mutate snapshot/patch/base heights
+PASS output enumeration is stable across repeats
+PASS snapshot build is deterministic
+PASS patch build is deterministic
+checks run: 66, failed: 0
+ALL CHECKS PASSED
