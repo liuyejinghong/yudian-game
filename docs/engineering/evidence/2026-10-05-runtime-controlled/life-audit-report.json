@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "overall": "PASS",
+  "runs": [
+    {
+      "label": "life-normal-before",
+      "run_id": "20261005T014056135Z-30e50773",
+      "summary_status": "completed",
+      "exit_code": 0,
+      "verdict": "PASS",
+      "reasons": [],
+      "file_sha256": {
+        "frames_csv": "84fbab830e8271d20b1a318140cb9d30a14cc7afe1bce4fbc6e6e506d37370bb",
+        "summary_json": "a438ed8b65b6583d3fe6806d642af8b863d61652ca062483f8f9b676570c07ad",
+        "exit_record": "1e808e887165cc5fc6884a53e28d16f30554fe159d99999695b83a52d13082cf"
+      },
+      "frames_read": 301
+    },
+    {
+      "label": "life-gui-close",
+      "run_id": "20261005T014119253Z-e8f42159",
+      "summary_status": "interrupted",
+      "exit_code": 130,
+      "verdict": "PASS",
+      "reasons": [],
+      "file_sha256": {
+        "frames_csv": "3bd249020d0ab90f66fd1de30b2e845d47ed020b7bf29f06b00cfa2137f5f71d",
+        "summary_json": "a7b8df8b0ac04853ff34613c943c9350380d74c9074b7e3e12eaa2bf1bde3af7",
+        "exit_record": "52e3b2bc71393f14f32cdbbc9da4dbca542e569b0f2fbb69dcd974f9d7c8c143"
+      },
+      "frames_read": 8916
+    },
+    {
+      "label": "life-reopen-after",
+      "run_id": "20261005T014318637Z-354b853d",
+      "summary_status": "completed",
+      "exit_code": 0,
+      "verdict": "PASS",
+      "reasons": [],
+      "file_sha256": {
+        "frames_csv": "5bd8415de552dcc860e9134532522ab25843fb2d782504c910d3c2de33c537d2",
+        "summary_json": "6eabd1e90b700f661737a79fd96dfe213b1692da5b6e992eee5e0be9520ad5c8",
+        "exit_record": "bef6f4f16e62b766d485bc8a3a7d010629a6b60436db94a14719c7f75502a6a6"
+      },
+      "frames_read": 344
+    }
+  ]
+}
