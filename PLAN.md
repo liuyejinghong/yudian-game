@@ -205,3 +205,22 @@ PR31已于2026-10-05T02:23:26Z合并：head7c3554399483911118fd23f840a0a5a7bb2b8
 PR清理实测：PR1旧执行入口冲突已保留当前TODO并标历史；PR2从零启动Spec加日期/当前入口；PR3 SVG门禁两次漏合法title/desc，停止并经architect读取实际四元素/属性重计划后完整复核通过，素材原字节未改。27WebP解码/尺寸/blob与12SVG/索引/链接通过。PR13/14历史状态不回写现行合同。两轴review无新增阻塞，准备最后工单集成。
 
 本批五张PR已全部合并，main快进后65项接受路径一致，open队列实查0。真实head/merge与验证范围见[清理复验](docs/engineering/reports/2026-10-05-pr-cleanup-verification.md)。仅记录归档集成事实，源码/生产素材不变；GitHub总索引#17已同步，原正文备份保留。
+
+
+## terrain-view-r1 · 单区域权威提交与引擎投影
+
+授权：所有者2026-10-05“好，推进吧”，沿用合格直接合并。基线909cca33b40206a1654b741868a4394fb8e31af5。固定Stage生成器、单区域、完整重建；不改旧Main/候选探针/美术，不签导航、保存或完整建设闭环。
+
+1. [x] architect前置审查与实际调用追踪；冻结准备/去重/提交后投影故障边界。
+2. [x] GLM独立实现资源束和native小检查；证明：精确冻结基线、限定diff、主控实际Godot复验。
+3. [x] 主控接入权威场景，准备前去重判定、准备后重新提交判定；证明：版本9→10、取消/无权限/过期保留、准备失败、重放不倒退、绑定故障及Current恢复。
+4. [x] 下一物理帧核验真实射线与同源mesh/shape；实际GUI修改/恢复与关窗，独立reviewer审关键状态与资源释放。
+5. [ ] 更新限定TODO/证据，精确head提交PR并按授权合并；证明：必要检查/最终architect/远端merge与main同步。
+
+文件归属：GLM仅prototype/scripts/TerrainProjection/TerrainProjectionResources.cs、prototype/scripts/TerrainProjection/Tests/*、prototype/scenes/terrain-projection-tests/*、tools/terrain-projection-tests/README.md；主控RegionState的只读判定与复用、TerrainWorld场景/组件、合同与工程追踪。
+
+本批复验：GLM原939c79d首轮native检查虽exit0却产生3个失效RID ERROR，主控退回；返工0516dda改已释放实例IsInstanceValid，保留原日志。主控进一步修3个Nullable注解警告，源码固定f3b08bf。29内存例、8资源束检查、7步权威/物理检查与Metal GUI均通过；MVID核对一致，DLL6c2d67a1…60171。
+
+失败与修正：主控首编译Environment命名歧义，明确System.Environment后通过；首次native mesh/shape用bit相等误拒绝真实shape量化，改为既有合同1e-4m容差后通过，原失败保留。reviewer发现输入高度范围使原“准备失败”提前codec拒绝、冷启动旧版按钮误提交，两项修正并自测。
+
+UI收尾重计划：真实游戏关窗exit0后，Cua getAXState自动又开无DOTNET_ROOT管理器；两次退出后目标观察均触发再启动，停止该观察路径，architect独立确认工具副作用。最终通过native quit后只读应用清单确认Godot/Yudian均非运行；不装SDK、不改引擎、不用信号代替关窗。

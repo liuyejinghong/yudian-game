@@ -1,0 +1,30 @@
+PASS read-only preflight does not reserve requests; replay before policy
+PASS golden commit and immutable source
+PASS two offline ready candidates rechecked at authority
+PASS new base advances and old receipts remain frozen
+PASS semantic replay accepts separately parsed patch
+PASS replay uses numeric signed-zero equality
+PASS same request changed candidate rejected
+PASS same request changed patch id rejected even cancelled
+PASS request conflict includes full base version
+PASS fresh request rejects stale version
+PASS request conflict includes full base region
+PASS fresh request rejects stale region
+PASS request conflict includes full base origin-x
+PASS fresh request rejects stale origin-x
+PASS request conflict includes full base origin-z
+PASS fresh request rejects stale origin-z
+PASS request conflict includes full base spacing
+PASS fresh request rejects stale spacing
+PASS request conflict includes full base same-version heights
+PASS fresh request rejects stale same-version heights
+PASS permission rejection does not consume request
+PASS cancellation precedes permission and permits later retry
+PASS late cancellation preserves previous committed result
+PASS no change consumes neither version nor id
+PASS version ceiling distinguishes unchanged and changed
+PASS last supported increment and later replay
+PASS authority and receipt immutable public surfaces
+PASS null argument names and validation before replay
+PASS ASCII request boundary and invalid ids
+runtime=.NET 10.0.12; cases=29; failed=0

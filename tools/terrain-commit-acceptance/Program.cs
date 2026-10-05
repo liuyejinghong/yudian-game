@@ -30,6 +30,16 @@ TerrainPatch Patch(TerrainSnapshot b, double h1 = 0, double h2 = -1, string id =
         + ",\"base\":" + TerrainDataCodec.Serialize(b) + ",\"heights_m\":" + JsonSerializer.Serialize(hs) + "}");
 }
 
+Case("read-only preflight does not reserve requests; replay before policy", () => {
+    var b = Snapshot(); var s = new TerrainRegionState(b); var p = Patch(b);
+    Status(s.Evaluate("preflight", p, true, false), TerrainCommitStatus.Ready, b);
+    Status(s.Evaluate("preflight", p, false, true), TerrainCommitStatus.Cancelled, b);
+    Status(s.Commit("preflight", p, true, false), TerrainCommitStatus.Committed, s.Current, 10);
+    s.Commit("later", Patch(s.Current, -2, -3), true, false);
+    Status(s.Evaluate("preflight", p, false, true), TerrainCommitStatus.AlreadyCommitted, s.Current, 10);
+    Status(s.Evaluate("preflight", Patch(b, 2, 3), false, true), TerrainCommitStatus.RequestConflict, s.Current);
+    Check(s.Current.Version == 11, "preflight changed authority");
+});
 Case("golden commit and immutable source", () => {
     var b = Snapshot(); var p = Patch(b); var before = TerrainDataCodec.Serialize(p);
     var state = new TerrainRegionState(b); var r = state.Commit("req-a", p, true, false);

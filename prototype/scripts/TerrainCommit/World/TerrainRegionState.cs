@@ -18,7 +18,8 @@ public sealed class TerrainRegionState
 
     public TerrainSnapshot Current { get; private set; }
 
-    public TerrainCommitResult Commit(string requestId, TerrainPatch patch,
+    /// <summary>只读预判，含成功请求重放；不消费ID或发布版本。Commit仍须重新判定。</summary>
+    public TerrainCommitResult Evaluate(string requestId, TerrainPatch patch,
         bool permissionGranted, bool cancellationRequested)
     {
         ValidateRequestId(requestId);
@@ -35,8 +36,15 @@ public sealed class TerrainRegionState
 
         TerrainCommitStatus status = TerrainCommitPolicy.Evaluate(patch, Current,
             permissionGranted, cancellationRequested);
-        if (status != TerrainCommitStatus.Ready)
-            return new TerrainCommitResult(status, requestId, patch.PatchId, Current, null);
+        return new TerrainCommitResult(status, requestId, patch.PatchId, Current, null);
+    }
+
+    public TerrainCommitResult Commit(string requestId, TerrainPatch patch,
+        bool permissionGranted, bool cancellationRequested)
+    {
+        TerrainCommitResult decision = Evaluate(requestId, patch, permissionGranted, cancellationRequested);
+        if (decision.Status != TerrainCommitStatus.Ready)
+            return decision;
 
         var heights = new double[patch.HeightsM.Count];
         for (int i = 0; i < heights.Length; i++)

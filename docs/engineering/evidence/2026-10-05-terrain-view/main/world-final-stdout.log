@@ -1,0 +1,29 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+WORLD_IDENTITY CLR=10.0.12 display=headless adapter= build_sha256=26cc45275200b48a07c0307ab4202f33d2f1379f7edab1ac468927f4705b31fa
+WORLD_PHYSICS_SYNCED authority=9 bound=9 verified=9 center=3.5 assigned_frame=0 query_frame=1
+WORLD_REQUEST Committed · request=level-one · applied=10 authority=10 bound=10 error=
+WORLD_TEST_STEP PASS 0
+WORLD_PHYSICS_SYNCED authority=10 bound=10 verified=10 center=0.4 assigned_frame=1 query_frame=2
+WORLD_REQUEST Committed · request=dig-two · applied=11 authority=11 bound=11 error=
+WORLD_TEST_STEP PASS 1
+WORLD_PHYSICS_SYNCED authority=11 bound=11 verified=11 center=-1.25 assigned_frame=2 query_frame=3
+WORLD_REQUEST AlreadyCommitted · request=level-one · applied=10 authority=11 bound=11 error=
+WORLD_REQUEST RequestConflict · request=level-one · applied= authority=11 bound=11 error=
+WORLD_REQUEST StaleBase · request=stale · applied= authority=11 bound=11 error=
+WORLD_REQUEST NoChange · request=same · applied= authority=11 bound=11 error=
+WORLD_REQUEST PermissionDenied · request=denied · applied= authority=11 bound=11 error=
+WORLD_REQUEST Cancelled · request=cancel · applied= authority=11 bound=11 error=
+WORLD_REQUEST PermissionDenied · request=revoke · applied= authority=11 bound=11 error=
+WORLD_TEST_STEP PASS 2
+WORLD_REQUEST Committed · request=concurrent · applied=12 authority=12 bound=12 error=
+WORLD_REQUEST StaleBase · request=delayed · applied= authority=12 bound=12 error=
+WORLD_TEST_STEP PASS 3
+WORLD_PHYSICS_SYNCED authority=12 bound=12 verified=12 center=-0.5 assigned_frame=4 query_frame=5
+WORLD_REQUEST Committed · request=prepare-failed · applied=13 authority=13 bound= error=synthetic failure after mesh binding
+WORLD_REQUEST AlreadyCommitted · request=prepare-failed · applied=13 authority=13 bound= error=synthetic failure after mesh binding
+WORLD_TEST_STEP PASS 4
+WORLD_TEST_STEP PASS 5
+WORLD_PHYSICS_SYNCED authority=13 bound=13 verified=13 center=0.2 assigned_frame=6 query_frame=7
+TERRAIN_WORLD_SELF_TEST PASS
+WORLD_TEST_STEP PASS 6
