@@ -21,6 +21,8 @@ public partial class GroundPatrol : CharacterBody3D
     private Vector3[] _waypoints;
     private float _speed;
     private int _targetIndex = -1;
+    private Vector3 _orderTarget;
+    private bool _hasOrder;
 
     /// <summary>暂停时不推水平运动与航点，仍处理重力/地面。</summary>
     public bool Paused { get; set; }
@@ -33,6 +35,54 @@ public partial class GroundPatrol : CharacterBody3D
 
     /// <summary>本帧希望水平移动但实际XZ位移&lt;1e-4且被墙/陡坡阻挡。</summary>
     public bool Blocked { get; private set; }
+
+    /// <summary>存在活动单目标订单；不反映是否已到点（见OrderReached）。</summary>
+    public bool HasOrder => _hasOrder;
+
+    /// <summary>
+    /// 订单已到点且真实站在地面：IsOnFloor且XZ距离&lt;=.25；离场/空中为false。
+    /// 只在订单存活期间为true，ClearOrder后恒false。
+    /// </summary>
+    public bool OrderReached
+    {
+        get
+        {
+            if (!_hasOrder || !IsOnFloor())
+                return false;
+            Vector3 toTarget = _orderTarget - GlobalPosition;
+            toTarget.Y = 0f;
+            return toTarget.Length() <= WaypointReachXzM;
+        }
+    }
+
+    /// <summary>
+    /// 覆盖式设置单目标订单：须已Initialize成功；target各坐标须有限且绝对值&lt;=10000，
+    /// 非法抛 ArgumentException 且不改变旧订单。保留巡逻航点与TargetIndex；有订单期间
+    /// 巡逻推进暂停，到XZ&lt;=.25原地保持（重力/地面照常），不循环、不自动恢复巡逻。
+    /// </summary>
+    public void SetOrder(Vector3 target)
+    {
+        if (_waypoints == null)
+            throw new InvalidOperationException(
+                "GroundPatrol.SetOrder requires a successful Initialize first");
+        if (!float.IsFinite(target.X) || !float.IsFinite(target.Y) || !float.IsFinite(target.Z)
+            || MathF.Abs(target.X) > CoordinateLimit || MathF.Abs(target.Y) > CoordinateLimit
+            || MathF.Abs(target.Z) > CoordinateLimit)
+            throw new ArgumentException(
+                $"order target {target} must be finite with |coordinate| <= {CoordinateLimit}",
+                nameof(target));
+        _orderTarget = target;
+        _hasOrder = true;
+    }
+
+    /// <summary>
+    /// 清除当前订单，幂等；只取消订单，不重置巡逻TargetIndex/TravelledM，不解除Paused。
+    /// 清除后从原TargetIndex恢复巡逻。
+    /// </summary>
+    public void ClearOrder()
+    {
+        _hasOrder = false;
+    }
 
     /// <summary>
     /// 仅成功一次：先全量验证（非法即抛 ArgumentException，不建任何碰撞），
@@ -60,17 +110,21 @@ public partial class GroundPatrol : CharacterBody3D
         Vector3 horizontal = Vector3.Zero;
         if (!Paused)
         {
-            Vector3 toTarget = _waypoints[_targetIndex] - before;
+            Vector3 target = _hasOrder ? _orderTarget : _waypoints[_targetIndex];
+            Vector3 toTarget = target - before;
             toTarget.Y = 0f;
             float distance = toTarget.Length();
-            if (distance <= WaypointReachXzM)
+            bool advancePatrol = !_hasOrder && distance <= WaypointReachXzM;
+            bool chase = distance > WaypointReachXzM && dt > 0f;
+            if (advancePatrol)
             {
                 _targetIndex = (_targetIndex + 1) % _waypoints.Length;
             }
-            else if (dt > 0f)
+            else if (chase)
             {
                 horizontal = toTarget * (MathF.Min(_speed, distance / dt) / distance);
             }
+            // 订单到点（<=.25）：原地保持，不推进航点、不恢复巡逻。
         }
 
         Vector3 velocity = Velocity;
