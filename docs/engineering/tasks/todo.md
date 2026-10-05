@@ -40,6 +40,7 @@
 | GROUND-ORDER | P1 | ACCEPTED | 冻结4cbdf3c；session sess_a371c1f521，原生GLM-5.3-Flash确认 | GLM-Eng-A | 单目标native7/旧10通过；37个同XZ空中帧false/落地true，清除保Paused/巡逻；不签导航 | [合同](../contracts/level-job-r1.md) |
 | WORK-METER | P1 | ACCEPTED | 冻结4cbdf3c；session sess_54983ddecd，原生GLM-5.3-Flash确认 | GLM-Eng-B | 纯计时两文化36PASS；累计/中断清零/封顶/非法无副作用，不签任务状态 | [合同](../contracts/level-job-r1.md) |
 | LEVEL-JOB | P1 | ACCEPTED | GROUND-ORDER/WORK-METER；主控合同与集成 | Codex | 一名筑垒真实到场与连续作业；Main15/旧七步/Metal取消与完成通过，取消/重复/过期/占用/故障复验，限定接受 | [合同](../contracts/level-job-r1.md) |
+| APP-START | P1 | ACCEPTED | 既有离线导出/自包含runtime | Codex | 本机双击进入整平；签名/路径移动/实际GUI，非发行验收 | [启动说明](../../../prototype/README.md) / [复验](../reports/2026-10-05-desktop-start-verification.md) |
 | T3d | P1 | DRAFT | T3d-MEM/VIEW与MAIN-GROUND限定接受；灰模Main原生通行已接，完整导航/保存/建设未完成 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3e | P1 | BLOCKED | PERF-01可用对照；T3d；ART-T01/T02仅为视觉对照需接口与样件 | GLM-Eng-B采集工具/复算；Codex实机/选择 | 两候选同条件更新范围/主线程峰值/导航耗时/保存增长/视觉成本对比；所有者签视觉，主控选技术 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T4a | P2 | DRAFT | 现役产品/共同场景与权限案例，明确本轮候选输入范围 | Codex | 冻结世界事实/行动/权限输入；将原T4大票拆成领域基线、校验器、候选适配与统计小票；真实完成与拦截分计，模型非权威 | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |

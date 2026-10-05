@@ -1,0 +1,19 @@
+{
+  "method": "Cua Finder double click, then native window observation; no terminal used for either GUI launch",
+  "r1": {
+    "initial": "live-terrain v0, 12 grounded",
+    "task": "level-1 Robot_Zhulei_2 travelling -> completed 100%, authority/bound/physics v1",
+    "close": "native close button, inventory isRunning false",
+    "exit_code": "NOT_CAPTURED"
+  },
+  "final_relocated": {
+    "entry": "余电.app symbolic link to retained export directory",
+    "path": "Chinese characters and spaces",
+    "initial": "live-terrain v0, 12 grounded",
+    "task": "level-1 Robot_Zhulei_4 working41% -> completed100%, authority/bound/physics v1, 12 grounded",
+    "close": "native close button, inventory isRunning false",
+    "exit_code": "NOT_CAPTURED"
+  },
+  "screenshots": "inline conversation observations, not exported PNG files",
+  "tool_incident": "initial Cua click pipe closed; fresh window observation showed no task; one retry delivered action; game process remained running"
+}

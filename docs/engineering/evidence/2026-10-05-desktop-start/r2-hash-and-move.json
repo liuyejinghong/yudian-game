@@ -1,0 +1,27 @@
+[
+  {
+    "field": "launcher_binary_sha256",
+    "sha256": "b0d525842d6659f24edfe09f2d337c5b6157b98baaa70f4427d6d373575d404f",
+    "match": true
+  },
+  {
+    "field": "launcher_plist_sha256",
+    "sha256": "51ea082fabd47b669644f4c05ab507ecd48a6dc143a476dbffd2ac1af9399153",
+    "match": true
+  },
+  {
+    "field": "binary_sha256",
+    "sha256": "7b9bf0197b4b67172f365c90b626880db4f50de64056a256471af897f4722d53",
+    "match": true
+  },
+  {
+    "field": "pck_sha256",
+    "sha256": "dee843af840e5a4e4070e6c3c08fa09331e9c4f06d219ee88a685134b452bfac",
+    "match": true
+  },
+  {
+    "move": "fresh export relocated to a path containing spaces and Chinese characters",
+    "entry": "余电.app",
+    "symlink_resolves": true
+  }
+]

@@ -58,3 +58,5 @@
 上述MAIN-GROUND已合并[PR33](https://github.com/liuyejinghong/yudian-game/pull/33)，mergef041e3e；main源码同步与本地重新编译/窄烟测通过，GLM会话结束，父#6仍OPEN。
 
 2026-10-05单机器人整平任务已限定接受：[复验](docs/engineering/reports/2026-10-05-level-job-verification.md)。一名筑垒真实到场、连续施工、地形提交与后续帧验证；取消/重复/权限/过期/占用/故障恢复通过。导航/避让、完整建设资源、能源维护、存档和正式美术仍未完成。
+
+2026-10-05 APP-START限定接受：项目目录「余电.app」双击进入整平场景，自包含runtime；移动中文含空格路径/签名/真实GUI与最终包Main15步通过。[复验](docs/engineering/reports/2026-10-05-desktop-start-verification.md)。本地试玩包，不自动跟随源码更新。
