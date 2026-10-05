@@ -148,7 +148,8 @@ public partial class Main
         }
         if (_levelStatus != null)
             _levelStatus.Text = _levelNotice + (_levelJob == null ? "" :
-                $"\n整平任务 {_levelJob.Id} · {LevelStageText(_levelJob.Stage)}\n工人 {_levelJob.Worker?.Name.ToString() ?? "无"} · 进度 {_levelJob.Work.Fraction:P0}\n" +
+                $"\n整平任务 {_levelJob.Id} · {LevelStageText(_levelJob.Stage)}\n" +
+                (_levelJob.Worker == null ? (_levelJob.Stage == LevelStage.Completed ? "无需施工\n" : "未分配工人\n") : $"工人 {_levelJob.Worker.Name} · 进度 {_levelJob.Work.Fraction:P0}\n") +
                 _levelJob.Message + (_levelJob.AppliedVersion is long version ? $" · 已提交 v{version}" : ""));
     }
 
