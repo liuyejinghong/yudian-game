@@ -27,6 +27,7 @@
 | [决定登记](docs/decisions/decision-register.md) | 已确认、建议、待验证及被替代提案 |
 | [技术验证计划](docs/engineering/technical-validation-plan.md) | 引擎、地形、模拟、本地 AI 与较低配置联合验证 |
 | [游戏模块与开发里程碑](docs/engineering/module-roadmap.md) | UI、探索、资源、建设等九模块职责与可玩版本集成，验证成果进入游戏建设 |
+| [双线独立审查与可执行路线](docs/roadmap/README.md) | 产研／美术详细检查点、34个规划工作包、逐项验收及Agent交接；提案不等于派工或实现 |
 | [超分辨率与平台加速调研](docs/engineering/upscaling-and-renderer-evaluation.md) | MetalFX、FSR、DLSS、XeSS 的已查证能力、接入边界与验收 |
 | [双线验证](docs/workflow/parallel-validation.md) | 美术与技术并行的工作范围 |
 | [Codex 交接](docs/workflow/codex-handoff.md) | 从当前仓库接手，不再创建同名仓库、不自动实施全路线 |
