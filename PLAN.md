@@ -204,4 +204,4 @@ PR31已于2026-10-05T02:23:26Z合并：head7c3554399483911118fd23f840a0a5a7bb2b8
 
 PR清理实测：PR1旧执行入口冲突已保留当前TODO并标历史；PR2从零启动Spec加日期/当前入口；PR3 SVG门禁两次漏合法title/desc，停止并经architect读取实际四元素/属性重计划后完整复核通过，素材原字节未改。27WebP解码/尺寸/blob与12SVG/索引/链接通过。PR13/14历史状态不回写现行合同。两轴review无新增阻塞，准备最后工单集成。
 
-本批五张PR已全部合并，main快进后65项接受路径一致，open队列实查0。真实head/merge与验证范围见[清理复验](docs/engineering/reports/2026-10-05-pr-cleanup-verification.md)。仅记录归档集成事实，源码/生产素材不变；待最终文档索引同步。
+本批五张PR已全部合并，main快进后65项接受路径一致，open队列实查0。真实head/merge与验证范围见[清理复验](docs/engineering/reports/2026-10-05-pr-cleanup-verification.md)。仅记录归档集成事实，源码/生产素材不变；GitHub总索引#17已同步，原正文备份保留。
