@@ -1,0 +1,110 @@
+INFO Draco mesh compression is available, use library at <project-root>/tools-bin/Blender-4.5.14.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+16:31:13 | INFO: Starting glTF 2.0 export
+16:31:13 | INFO: Extracting primitive: Cube.001
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.032
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.031
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cylinder
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.010
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.009
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.007
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.002
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.006
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.005
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.003
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.004
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cylinder.002
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.012
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.013
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.014
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cylinder.003
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cylinder.001
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.011
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.008
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.015
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.023
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.020
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.018
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.016
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.019
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.017
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.028
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.026
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.024
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.027
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.025
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.022
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.021
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.030
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.029
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.034
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.033
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Cube.035
+16:31:13 | INFO: Primitives created: 1
+16:31:13 | INFO: Extracting primitive: Rocker_L
+16:31:13 | INFO: Primitives created: 2
+16:31:13 | INFO: Extracting primitive: Bogie_L
+16:31:13 | INFO: Primitives created: 2
+16:31:13 | INFO: Extracting primitive: Wheel_LM
+16:31:13 | INFO: Primitives created: 3
+16:31:13 | INFO: Extracting primitive: Wheel_LR
+16:31:13 | INFO: Primitives created: 3
+16:31:13 | INFO: Extracting primitive: Wheel_LF
+16:31:13 | INFO: Primitives created: 3
+16:31:13 | INFO: Extracting primitive: Rocker_R
+16:31:13 | INFO: Primitives created: 2
+16:31:13 | INFO: Extracting primitive: Bogie_R
+16:31:13 | INFO: Primitives created: 2
+16:31:13 | INFO: Extracting primitive: Wheel_RM
+16:31:13 | INFO: Primitives created: 3
+16:31:13 | INFO: Extracting primitive: Wheel_RR
+16:31:13 | INFO: Primitives created: 3
+16:31:13 | INFO: Extracting primitive: Wheel_RF
+16:31:13 | INFO: Primitives created: 3
+16:31:13 | INFO: Finished glTF 2.0 export in 0.039010047912597656 s
+
+VERIFY_RESULT {"max_float_diff": 1.1920928955078125e-07, "problems": [], "reexport_sha256": "74facc7a9c6a0697ad3ce6b0f899b2ed2be6fd04a106ea50d3d8abad45a633f1", "deliverable_sha256": "3f75fb7ebb2c2c29bc7296012bf4315c7f20857ba12aa86e2dd382891f520812", "identical_bytes": false, "reopened_blend": "<project-root>/art-production-r1-20261004/art/source/units/zhulei-r1/zhulei-r1.blend", "compared_glb": "<project-root>/art-production-r1-20261004/art/source/units/zhulei-r1/zhulei-r1.glb"}
+U02_EXISTING_EMPTY_OUTPUT_REJECTED
+Blender 4.5.14 LTS (hash 62c1db4208e8 built 2026-09-15 01:30:44)
+Read blend: "<project-root>/art-production-r1-20261004/art/source/units/zhulei-r1/zhulei-r1.blend"
+
+Blender quit

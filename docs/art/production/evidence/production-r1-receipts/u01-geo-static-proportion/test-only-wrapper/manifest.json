@@ -1,0 +1,466 @@
+{
+  "id": "U01_GEOR4_STATIC_ONLY",
+  "revision": 4,
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "preview_scene": "res://geo_check/preview.tscn",
+  "glb": "res://assets/units/tuoyun-r1/tuoyun-r1.glb",
+  "glb_sha256": "dce2eb0bed0b6443e7ededefb59a48b09c9000566d8ae92e3cd85741bc06ccfc",
+  "bounds": {
+    "static": {
+      "min": [
+        -0.586,
+        0,
+        -0.8
+      ],
+      "max": [
+        0.586,
+        0.72,
+        0.8
+      ]
+    },
+    "loaded": {
+      "min": [
+        -0.586,
+        0,
+        -0.8
+      ],
+      "max": [
+        0.586,
+        0.86,
+        0.8
+      ]
+    },
+    "active": {
+      "min": [
+        -0.586,
+        0,
+        -0.8
+      ],
+      "max": [
+        0.586,
+        0.86,
+        0.8
+      ]
+    }
+  },
+  "material_bindings": [
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 2,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 3,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 4,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 5,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 6,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 7,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 8,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 9,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 10,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 11,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 12,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 13,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 14,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Chassis",
+      "surface": 15,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 2,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 3,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 4,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 5,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 6,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 7,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 8,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 9,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Head",
+      "surface": 10,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 2,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 3,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 4,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 5,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 6,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 7,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 8,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 9,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Body",
+      "surface": 10,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/HoodLid",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/HoodLid",
+      "surface": 1,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/RearLock",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/RearLock",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/RearLock",
+      "surface": 2,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/ChargeCap",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LF",
+      "surface": 0,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LF",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LR",
+      "surface": 0,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LR",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RF",
+      "surface": 0,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RF",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RR",
+      "surface": 0,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RR",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/CargoBox",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/CargoBox",
+      "surface": 1,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/CargoBox",
+      "surface": 2,
+      "role": "frame_dark"
+    }
+  ],
+  "sockets": [
+    {
+      "node": "Model/tuoyun-r1/Model/Socket_Cargo",
+      "position": [
+        0.0,
+        0.479999989271164,
+        0.280000001192093
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Socket_TowFront",
+      "position": [
+        0.0,
+        0.239999994635582,
+        -0.800000011920929
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Socket_TowRear",
+      "position": [
+        0.0,
+        0.239999994635582,
+        0.800000011920929
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "node": "Model/tuoyun-r1/Model/Socket_Charge",
+      "position": [
+        0.479999989271164,
+        0.550000011920929,
+        -0.349999994039536
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "states": {
+    "idle": {
+      "mode": "static",
+      "reason": "\u56fa\u5b9aGEO\u9759\u6001\u6bd4\u4f8b\u9884\u6838\uff1b\u975eU01\u5b8c\u6574\u6837\u4ef6",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "move": {
+      "mode": "na",
+      "reason": "\u56fa\u5b9aGEO\u9759\u6001\u6bd4\u4f8b\u9884\u6838\uff1b\u975eU01\u5b8c\u6574\u6837\u4ef6",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "work": {
+      "mode": "na",
+      "reason": "\u56fa\u5b9aGEO\u9759\u6001\u6bd4\u4f8b\u9884\u6838\uff1b\u975eU01\u5b8c\u6574\u6837\u4ef6",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "charge": {
+      "mode": "na",
+      "reason": "\u56fa\u5b9aGEO\u9759\u6001\u6bd4\u4f8b\u9884\u6838\uff1b\u975eU01\u5b8c\u6574\u6837\u4ef6",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "disabled": {
+      "mode": "na",
+      "reason": "\u56fa\u5b9aGEO\u9759\u6001\u6bd4\u4f8b\u9884\u6838\uff1b\u975eU01\u5b8c\u6574\u6837\u4ef6",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "towed": {
+      "mode": "na",
+      "reason": "\u56fa\u5b9aGEO\u9759\u6001\u6bd4\u4f8b\u9884\u6838\uff1b\u975eU01\u5b8c\u6574\u6837\u4ef6",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "maintenance": {
+      "mode": "na",
+      "reason": "\u56fa\u5b9aGEO\u9759\u6001\u6bd4\u4f8b\u9884\u6838\uff1b\u975eU01\u5b8c\u6574\u6837\u4ef6",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    }
+  },
+  "phases": [
+    "completed"
+  ],
+  "cargo_modes": [
+    "empty",
+    "loaded"
+  ],
+  "source": {
+    "generator": "original generate_tuoyun_r1.py",
+    "source_path": "<project-root>/art-production-r1-20261004/art/source/units/tuoyun-r1",
+    "tool_version": "Python3.14.3/Godot4.7.2",
+    "original": true,
+    "hash": "50cc2ebe7591252ed6ad3c883c9e93bb397587b3fd2c12c0843b92ac86f5f357"
+  },
+  "triangles": 1512,
+  "textures": []
+}

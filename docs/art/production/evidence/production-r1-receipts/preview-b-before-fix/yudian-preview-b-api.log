@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+{"Camera3D":[],"DirectionalLight3D":[],"Engine":[],"Environment":[],"HSlider":["editable"],"LineEdit":["editable"],"RenderingServer":["positional_soft_shadow_filter_set_quality","directional_soft_shadow_filter_set_quality","canvas_light_set_shadow_filter","get_current_rendering_driver_name","get_current_rendering_method"],"WorldEnvironment":["camera_attributes"],"shadow_filter_project_default":2}
+PREVIEW_B_API_PROBE_OK

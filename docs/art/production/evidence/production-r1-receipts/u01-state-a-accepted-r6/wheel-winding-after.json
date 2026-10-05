@@ -1,0 +1,20 @@
+{
+  "outer": {
+    "triangles": 48,
+    "correct": 48,
+    "reversed": 0,
+    "min": 0.002004294685273918
+  },
+  "inner": {
+    "triangles": 48,
+    "correct": 48,
+    "reversed": 0,
+    "min": 0.0009949004093740884
+  },
+  "caps": {
+    "triangles": 96,
+    "correct": 96,
+    "reversed": 0,
+    "min": 0.0026076018794078926
+  }
+}

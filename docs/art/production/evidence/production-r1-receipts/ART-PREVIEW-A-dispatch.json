@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "task_id": "task_29574b89b9",
+  "session_id": "sess_81c578d1cb",
+  "agent": "zcode",
+  "model": null,
+  "effort": null,
+  "request_id": "a1b513e6-fc62-45e2-9e48-8faea00b69a4",
+  "reused": false,
+  "base": "2401b6b67ab08f0bddea392964e79dd98698d772",
+  "worker_branch": "worker/art-preview-20261004",
+  "cwd": "<project-root>/art-preview-worker",
+  "slice": "ART-PREVIEW-01-A",
+  "native_model_task": "task_48432eb587",
+  "native_model_result": "model = GLM-5.3-Flash",
+  "write_paths": [
+    "prototype/scenes/art_preview_r1/",
+    "tools/art-preview-r1/"
+  ]
+}

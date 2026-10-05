@@ -1,0 +1,587 @@
+{
+  "bounds_including_hidden": {
+    "max": [
+      1.79999995231628,
+      2.40000009536743,
+      2.40000009536743
+    ],
+    "min": [
+      -1.79999995231628,
+      0.0,
+      -2.40000009536743
+    ]
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "glb": "res://processor.glb",
+  "meshes": [
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.79999995231628,
+          0.239999994635582,
+          2.40000009536743
+        ],
+        "min": [
+          -1.79999995231628,
+          0.0,
+          -2.40000009536743
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/Base",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 144,
+          "vertices": 96
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.14999997615814,
+          2.40000009536743,
+          1.01199996471405
+        ],
+        "min": [
+          -1.14999997615814,
+          0.200000002980232,
+          -0.800000011920929
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/Chamber",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 228,
+          "vertices": 152
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 144,
+          "vertices": 96
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.22000002861023,
+          2.40000009536743,
+          0.519999980926514
+        ],
+        "min": [
+          1.14999997615814,
+          1.04999995231628,
+          -0.519999980926514
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/PressGuide",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 36,
+          "vertices": 24
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.40000009536743,
+          2.20000004768372,
+          0.400000005960464
+        ],
+        "min": [
+          1.23000001907349,
+          1.59999990463257,
+          -0.400000005960464
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/PressRam",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "accent_warm",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.600000023841858,
+          0.479999989271164,
+          -0.799999952316284
+        ],
+        "min": [
+          -0.600000023841858,
+          0.200000002980232,
+          -2.40000009536743
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/FeedBed",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 48,
+          "vertices": 32
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 48,
+          "vertices": 32
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.550000011920929,
+          0.980000019073486,
+          -0.810000002384186
+        ],
+        "min": [
+          -0.550000011920929,
+          0.5,
+          -0.889999985694885
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/FeedGate",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 48,
+          "vertices": 32
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.680000007152557,
+          2.40000009536743,
+          -2.20000004768372
+        ],
+        "min": [
+          -0.680000007152557,
+          0.200000002980232,
+          -2.35999989509583
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/Gantry",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 36,
+          "vertices": 24
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.579999983310699,
+          2.20000004768372,
+          -2.24600005149841
+        ],
+        "min": [
+          -0.579999983310699,
+          1.29999995231628,
+          -2.33399987220764
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/StopGate",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "accent_warm",
+          "surface": 1,
+          "triangles": 72,
+          "vertices": 48
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.449999988079071,
+          0.479999989271164,
+          2.40000009536743
+        ],
+        "min": [
+          -0.449999988079071,
+          0.200000002980232,
+          1.0
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/OutputRack",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 84,
+          "vertices": 56
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 36,
+          "vertices": 24
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.14999997615814,
+          1.13999998569489,
+          0.550000011920929
+        ],
+        "min": [
+          -1.29999995231628,
+          0.860000014305115,
+          0.25
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/ServicePort",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "accent_warm",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.60000002384186,
+          0.469999998807907,
+          0.140000000596046
+        ],
+        "min": [
+          1.14999997615814,
+          0.230000004172325,
+          -0.140000000596046
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/PowerPort",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "accent_warm",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.14999997615814,
+          2.0,
+          0.899999976158142
+        ],
+        "min": [
+          -1.20999991893768,
+          1.20000004768372,
+          -0.200000047683716
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/ServiceCover",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "accent_warm",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          0.860000014305115,
+          -1.19999992847443
+        ],
+        "min": [
+          -0.319999992847443,
+          0.479999989271164,
+          -1.89999997615814
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/InputCrate",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 24,
+          "vertices": 16
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          0.860000014305115,
+          2.0
+        ],
+        "min": [
+          -0.319999992847443,
+          0.479999989271164,
+          1.29999995231628
+        ]
+      },
+      "path": "/root/processor/processor-r1/Model/OutputCrate",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 24,
+          "vertices": 16
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "path": "/root/processor/processor-r1/Model/Socket_Input",
+      "position": [
+        0.0,
+        0.479999989271164,
+        -2.20000004768372
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "path": "/root/processor/processor-r1/Model/Socket_Output",
+      "position": [
+        0.0,
+        0.479999989271164,
+        2.20000004768372
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "path": "/root/processor/processor-r1/Model/Socket_PowerIn",
+      "position": [
+        1.60000002384186,
+        0.349999994039536,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "path": "/root/processor/processor-r1/Model/Socket_Service",
+      "position": [
+        -1.29999995231628,
+        1.0,
+        0.400000005960464
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "triangles": 1140
+}

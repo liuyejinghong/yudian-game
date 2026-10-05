@@ -1,0 +1,2068 @@
+{
+  "bounds_including_hidden": {
+    "max": [
+      2.38540291786194,
+      1.89000010490417,
+      1.60000002384186
+    ],
+    "min": [
+      -2.38540291786194,
+      0.0,
+      -1.45999991893768
+    ]
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "glb": "res://solar.glb",
+  "meshes": [
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.400000005960464,
+          0.759999990463257,
+          1.39999997615814
+        ],
+        "min": [
+          -0.400000005960464,
+          0.259999990463257,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/SpineFrame",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.379999995231628,
+          0.799999952316284,
+          1.36000001430511
+        ],
+        "min": [
+          -0.379999995231628,
+          0.759999990463257,
+          -1.36000001430511
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/SpineShell",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.28999999165535,
+          0.480000019073486,
+          -1.37999999523163
+        ],
+        "min": [
+          -0.28999999165535,
+          0.319999992847443,
+          -1.45999991893768
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/FrontNose",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.300000011920929,
+          0.799999952316284,
+          1.45999991893768
+        ],
+        "min": [
+          -0.319999992847443,
+          0.359999984502792,
+          1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/ServiceSide-0_31",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          0.799999952316284,
+          1.45999991893768
+        ],
+        "min": [
+          0.300000011920929,
+          0.359999984502792,
+          1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/ServiceSide0_31",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.300000011920929,
+          0.379999995231628,
+          1.45999991893768
+        ],
+        "min": [
+          -0.300000011920929,
+          0.360000014305115,
+          1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/ServiceEdge0_37",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.300000011920929,
+          0.800000011920929,
+          1.45999991893768
+        ],
+        "min": [
+          -0.300000011920929,
+          0.780000030994415,
+          1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/ServiceEdge0_79",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.377500027418137,
+          1.08000004291534,
+          1.59750008583069
+        ],
+        "min": [
+          0.342500001192093,
+          0.380000025033951,
+          1.5625
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/IndicatorStand",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.360000014305115,
+          1.06749999523163,
+          1.59750008583069
+        ],
+        "min": [
+          0.0,
+          1.03249990940094,
+          1.5625
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/IndicatorArm",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.0199999995529652,
+          1.0699999332428,
+          1.57999992370605
+        ],
+        "min": [
+          -0.0199999995529652,
+          1.02999997138977,
+          1.53999996185303
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/IndicatorAxle",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.390000015497208,
+          0.409999996423721,
+          1.60000002384186
+        ],
+        "min": [
+          0.330000013113022,
+          0.349999994039536,
+          1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/StandFoot",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.380000025033951,
+          0.589999973773956,
+          1.5200001001358
+        ],
+        "min": [
+          0.340000003576279,
+          0.550000011920929,
+          1.37999999523163
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/StopAxle",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.150000005960464,
+          0.400000005960464,
+          1.5
+        ],
+        "min": [
+          -0.150000005960464,
+          0.200000017881393,
+          1.42000007629395
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Base/PowerDuct",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.359999984502792,
+          0.0799999982118607,
+          -0.940000057220459
+        ],
+        "min": [
+          -0.799999952316284,
+          0.0,
+          -1.25999999046326
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LFFoot/Pad6",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.280000001192093,
+          0.259999990463257,
+          -1.01999998092651
+        ],
+        "min": [
+          -0.600000023841858,
+          0.119999997317791,
+          -1.1800000667572
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LFFoot/Arm6",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.359999984502792,
+          0.0799999982118607,
+          1.25999999046326
+        ],
+        "min": [
+          -0.799999952316284,
+          0.0,
+          0.940000057220459
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LBFoot/Pad9",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.280000001192093,
+          0.259999990463257,
+          1.1800000667572
+        ],
+        "min": [
+          -0.600000023841858,
+          0.119999997317791,
+          1.01999998092651
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LBFoot/Arm9",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.799999952316284,
+          0.0799999982118607,
+          -0.940000057220459
+        ],
+        "min": [
+          0.359999984502792,
+          0.0,
+          -1.25999999046326
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RFFoot/Pad12",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.600000023841858,
+          0.259999990463257,
+          -1.01999998092651
+        ],
+        "min": [
+          0.280000001192093,
+          0.119999997317791,
+          -1.1800000667572
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RFFoot/Arm12",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.799999952316284,
+          0.0799999982118607,
+          1.25999999046326
+        ],
+        "min": [
+          0.359999984502792,
+          0.0,
+          0.940000057220459
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RBFoot/Pad15",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.600000023841858,
+          0.259999990463257,
+          1.1800000667572
+        ],
+        "min": [
+          0.280000001192093,
+          0.119999997317791,
+          1.01999998092651
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RBFoot/Arm15",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.569999992847443,
+          1.89000010490417,
+          -0.849999964237213
+        ],
+        "min": [
+          -0.599999964237213,
+          0.810000002384186,
+          -0.949999988079071
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Straps/StrapSide19",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.599999964237213,
+          1.89000010490417,
+          -0.849999964237213
+        ],
+        "min": [
+          0.569999992847443,
+          0.810000002384186,
+          -0.949999988079071
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Straps/StrapSide20",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.569999992847443,
+          0.829999983310699,
+          -0.849999964237213
+        ],
+        "min": [
+          -0.569999992847443,
+          0.810000002384186,
+          -0.949999988079071
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Straps/StrapCross21",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.569999992847443,
+          1.88999998569489,
+          -0.849999964237213
+        ],
+        "min": [
+          -0.569999992847443,
+          1.87000000476837,
+          -0.949999988079071
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Straps/StrapCross22",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.569999992847443,
+          1.89000010490417,
+          0.949999988079071
+        ],
+        "min": [
+          -0.599999964237213,
+          0.810000002384186,
+          0.849999964237213
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Straps/StrapSide23",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.599999964237213,
+          1.89000010490417,
+          0.949999988079071
+        ],
+        "min": [
+          0.569999992847443,
+          0.810000002384186,
+          0.849999964237213
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Straps/StrapSide24",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.569999992847443,
+          0.829999983310699,
+          0.949999988079071
+        ],
+        "min": [
+          -0.569999992847443,
+          0.810000002384186,
+          0.849999964237213
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Straps/StrapCross25",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.569999992847443,
+          1.88999998569489,
+          0.949999988079071
+        ],
+        "min": [
+          -0.569999992847443,
+          1.87000000476837,
+          0.849999964237213
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/Straps/StrapCross26",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.40207913517952,
+          1.04813027381897,
+          1.39999997615814
+        ],
+        "min": [
+          -1.38646411895752,
+          0.810874104499817,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerBack",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.431641072034836,
+          1.08480858802795,
+          1.35000002384186
+        ],
+        "min": [
+          -1.34110081195831,
+          0.848535060882568,
+          -1.35000002384186
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerFace",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "solar_face",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.391683518886566,
+          0.897442400455475,
+          1.39999997615814
+        ],
+        "min": [
+          -0.444531619548798,
+          0.824568212032318,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerEdge0_02",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.33070528507233,
+          1.09703767299652,
+          1.39999997615814
+        ],
+        "min": [
+          -1.38355338573456,
+          1.02416336536407,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerEdge0_98",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.430809408426285,
+          1.0887211561203,
+          -1.36000001430511
+        ],
+        "min": [
+          -1.34442746639252,
+          0.832884669303894,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerEnd-1_38",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.430809408426285,
+          1.0887211561203,
+          1.39999997615814
+        ],
+        "min": [
+          -1.34442746639252,
+          0.832884669303894,
+          1.36000001430511
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerEnd1_38",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.430809438228607,
+          1.0887211561203,
+          -0.694000005722046
+        ],
+        "min": [
+          -1.33195281028748,
+          0.891573548316956,
+          -0.705999970436096
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerGrid-0_7",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.430809438228607,
+          1.0887211561203,
+          0.00600000005215406
+        ],
+        "min": [
+          -1.33195281028748,
+          0.891573548316956,
+          -0.00600000005215406
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerGrid0",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -0.430809438228607,
+          1.0887211561203,
+          0.705999970436096
+        ],
+        "min": [
+          -1.33195281028748,
+          0.891573548316956,
+          0.694000005722046
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftInnerGrid0_7",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.40101790428162,
+          1.1582270860672,
+          1.39999997615814
+        ],
+        "min": [
+          -2.38540291786194,
+          0.920970976352692,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterBack",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.43057978153229,
+          1.19490551948547,
+          1.35000002384186
+        ],
+        "min": [
+          -2.34003949165344,
+          0.958631992340088,
+          -1.35000002384186
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterFace",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "solar_face",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.39062225818634,
+          1.00753939151764,
+          1.39999997615814
+        ],
+        "min": [
+          -1.44347035884857,
+          0.934665143489838,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterEdge0_02",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -2.32964420318604,
+          1.20713460445404,
+          1.39999997615814
+        ],
+        "min": [
+          -2.38249206542969,
+          1.13426029682159,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterEdge0_98",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.42974817752838,
+          1.19881808757782,
+          -1.36000001430511
+        ],
+        "min": [
+          -2.34336614608765,
+          0.942981600761414,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterEnd-1_38",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.42974817752838,
+          1.19881808757782,
+          1.39999997615814
+        ],
+        "min": [
+          -2.34336614608765,
+          0.942981600761414,
+          1.36000001430511
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterEnd1_38",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.42974817752838,
+          1.19881808757782,
+          -0.694000005722046
+        ],
+        "min": [
+          -2.33089160919189,
+          1.00167047977448,
+          -0.705999970436096
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterGrid-0_7",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.42974817752838,
+          1.19881808757782,
+          0.00600000005215406
+        ],
+        "min": [
+          -2.33089160919189,
+          1.00167047977448,
+          -0.00600000005215406
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterGrid0",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.42974817752838,
+          1.19881808757782,
+          0.705999970436096
+        ],
+        "min": [
+          -2.33089160919189,
+          1.00167047977448,
+          0.694000005722046
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/LeftInner/LeftOuter/LeftOuterGrid0_7",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.38646411895752,
+          1.04813027381897,
+          1.39999997615814
+        ],
+        "min": [
+          0.40207913517952,
+          0.810874104499817,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerBack",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.34110081195831,
+          1.08480858802795,
+          1.35000002384186
+        ],
+        "min": [
+          0.431641072034836,
+          0.848535060882568,
+          -1.35000002384186
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerFace",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "solar_face",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.444531619548798,
+          0.897442400455475,
+          1.39999997615814
+        ],
+        "min": [
+          0.391683518886566,
+          0.824568212032318,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerEdge0_02",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.38355338573456,
+          1.09703767299652,
+          1.39999997615814
+        ],
+        "min": [
+          1.33070528507233,
+          1.02416336536407,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerEdge0_98",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.34442746639252,
+          1.0887211561203,
+          -1.36000001430511
+        ],
+        "min": [
+          0.430809408426285,
+          0.832884669303894,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerEnd-1_38",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.34442746639252,
+          1.0887211561203,
+          1.39999997615814
+        ],
+        "min": [
+          0.430809408426285,
+          0.832884669303894,
+          1.36000001430511
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerEnd1_38",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.33195281028748,
+          1.0887211561203,
+          -0.694000005722046
+        ],
+        "min": [
+          0.430809438228607,
+          0.891573548316956,
+          -0.705999970436096
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerGrid-0_7",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.33195281028748,
+          1.0887211561203,
+          0.00600000005215406
+        ],
+        "min": [
+          0.430809438228607,
+          0.891573548316956,
+          -0.00600000005215406
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerGrid0",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.33195281028748,
+          1.0887211561203,
+          0.705999970436096
+        ],
+        "min": [
+          0.430809438228607,
+          0.891573548316956,
+          0.694000005722046
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightInnerGrid0_7",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.38540291786194,
+          1.1582270860672,
+          1.39999997615814
+        ],
+        "min": [
+          1.40101790428162,
+          0.920970976352692,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterBack",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.34003949165344,
+          1.19490551948547,
+          1.35000002384186
+        ],
+        "min": [
+          1.43057978153229,
+          0.958631992340088,
+          -1.35000002384186
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterFace",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "solar_face",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.44347035884857,
+          1.00753939151764,
+          1.39999997615814
+        ],
+        "min": [
+          1.39062225818634,
+          0.934665143489838,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterEdge0_02",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.38249206542969,
+          1.20713460445404,
+          1.39999997615814
+        ],
+        "min": [
+          2.32964420318604,
+          1.13426029682159,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterEdge0_98",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.34336614608765,
+          1.19881808757782,
+          -1.36000001430511
+        ],
+        "min": [
+          1.42974817752838,
+          0.942981600761414,
+          -1.39999997615814
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterEnd-1_38",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.34336614608765,
+          1.19881808757782,
+          1.39999997615814
+        ],
+        "min": [
+          1.42974817752838,
+          0.942981600761414,
+          1.36000001430511
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterEnd1_38",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.33089160919189,
+          1.19881808757782,
+          -0.694000005722046
+        ],
+        "min": [
+          1.42974817752838,
+          1.00167047977448,
+          -0.705999970436096
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterGrid-0_7",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.33089160919189,
+          1.19881808757782,
+          0.00600000005215406
+        ],
+        "min": [
+          1.42974817752838,
+          1.00167047977448,
+          -0.00600000005215406
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterGrid0",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.33089160919189,
+          1.19881808757782,
+          0.705999970436096
+        ],
+        "min": [
+          1.42974817752838,
+          1.00167047977448,
+          0.694000005722046
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/RightInner/RightOuter/RightOuterGrid0_7",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.28999999165535,
+          0.800000011920929,
+          1.4925000667572
+        ],
+        "min": [
+          -0.28999999165535,
+          0.439999997615814,
+          1.46749997138977
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/ServiceCover/CoverPanel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.170000001788139,
+          0.542499959468842,
+          1.51750004291534
+        ],
+        "min": [
+          -0.170000001788139,
+          0.497499972581863,
+          1.49249994754791
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/ServiceCover/CoverHandle",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.25,
+          1.19999992847443,
+          1.55250000953674
+        ],
+        "min": [
+          -0.25,
+          0.899999976158142,
+          1.52749991416931
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/WorkIndicator/IndicatorBlade",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.410000026226044,
+          0.889999985694885,
+          1.52250003814697
+        ],
+        "min": [
+          0.310000002384186,
+          0.570000052452087,
+          1.49749994277954
+        ]
+      },
+      "path": "/root/solar/solar-r1/Model/StopFlap/StopBlade",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        -0.000000000000000122464685258517,
+        0.0,
+        1.0
+      ],
+      "path": "/root/solar/solar-r1/Model/Socket_PowerOut",
+      "position": [
+        0.0,
+        0.300000011920929,
+        1.45000004768372
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        -0.000000000000000122464685258517,
+        0.0,
+        1.0
+      ],
+      "path": "/root/solar/solar-r1/Model/Socket_Service",
+      "position": [
+        0.0,
+        0.649999976158142,
+        1.35000002384186
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "triangles": 828
+}

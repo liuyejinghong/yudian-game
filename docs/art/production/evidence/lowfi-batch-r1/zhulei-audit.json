@@ -1,0 +1,1721 @@
+{
+  "active_sampled": {
+    "max": [
+      0.870000004768372,
+      1.46188902854919,
+      0.799999952316284
+    ],
+    "min": [
+      -0.870000004768372,
+      0.0,
+      -1.4729288816452
+    ]
+  },
+  "asset": "zhulei",
+  "candidate_envelope_check": "PASS",
+  "clips": {
+    "charge": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/Shoulder/Elbow",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/Shoulder/Elbow",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/Shoulder/Elbow",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "move": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/Shoulder/Elbow"
+      ]
+    },
+    "work": {
+      "duration_s": 2.0,
+      "tracks": [
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/Shoulder/Elbow",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    }
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frozen_socket_check": "PASS",
+  "glb": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+  "glb_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+  "illegal_preserved": 10,
+  "loaded": {
+    "max": [
+      0.870000004768372,
+      1.10343647003174,
+      0.799999952316284
+    ],
+    "min": [
+      -0.870000004768372,
+      0.0000212341547012329,
+      -0.810648679733276
+    ]
+  },
+  "meshes": [
+    {
+      "node": "Model/Zhulei/Model/BodyShell",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/ChargeHingeAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/ChargeHingeMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/ChargeHousing",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/ChargePivot/ChargeCap",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/FrameBed",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/HoodHingeAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/HoodHingeMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/HoodLid/HoodLidPanel",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/ProtectedModule",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/RearFloor",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/RearWallBack",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/RearWallFront",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/RearWallL",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/RearWallR",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/ElbowAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/LowerArm",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/Wrist/WorkPad",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/Wrist/WorkPadMark",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/Wrist/WristAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/ShoulderAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/UpperArm",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/ShoulderMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportBeamL",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportBeamR",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_Cap",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_WallXNeg",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_WallXPos",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_WallZNeg",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_WallZPos",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_Cap",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_WallXNeg",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_WallXPos",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_WallZNeg",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_WallZPos",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSlideL/SupportSlideL_Pad",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSlideL/SupportSlideL_Rod",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSlideR/SupportSlideR_Pad",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSlideR/SupportSlideR_Rod",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/TowFrontEar",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/TowFrontMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/TowRearMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 80
+        },
+        {
+          "role": "rubber",
+          "surface": 1,
+          "triangles": 128
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 112
+        },
+        {
+          "role": "rubber",
+          "surface": 1,
+          "triangles": 256
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 80
+        },
+        {
+          "role": "rubber",
+          "surface": 1,
+          "triangles": 128
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 112
+        },
+        {
+          "role": "rubber",
+          "surface": 1,
+          "triangles": 256
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Wheel_RF",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 192
+        },
+        {
+          "role": "frame_dark",
+          "surface": 1,
+          "triangles": 648
+        },
+        {
+          "role": "accent_warm",
+          "surface": 2,
+          "triangles": 24
+        }
+      ]
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LinkBar",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LugEndA",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LugEndB",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    }
+  ],
+  "motion_comparison": {
+    "move": {
+      "different": true,
+      "times": [
+        0.25,
+        0.75
+      ]
+    },
+    "work": {
+      "different": true,
+      "times": [
+        0.25,
+        0.75
+      ]
+    }
+  },
+  "pose_cases": [
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648679733276
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648679733276
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648679733276
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648679733276
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648679733276
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648679733276
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648679733276
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000196993350982666,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000257492065429688,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000272989273071289,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000257492065429688,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343658924103,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648620128632
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          0.98921400308609,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.01092743873596
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          0.844213247299194,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.26830494403839
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          0.822000026702881,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.42928063869476
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          0.822000026702881,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0,
+          -1.4729288816452
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          0.844213247299194,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.26830494403839
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343658924103,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648620128632
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343658924103,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648620128632
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.13843405246735,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.16456115245819,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.18200755119324,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.800000011920929
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.19302523136139,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -1.14999997615814
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.10343647003174,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.21207523345947,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.36265230178833,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.46188902854919,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.46188902854919,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          0.870000004768372,
+          1.46188902854919,
+          0.799999952316284
+        ],
+        "min": [
+          -0.870000004768372,
+          0.0000212341547012329,
+          -0.810648739337921
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 2.0
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        -0.984807789325714,
+        0.173648208379745
+      ],
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/Wrist/Socket_Work",
+      "position": [
+        0.0,
+        0.478083670139313,
+        -0.639545321464539
+      ],
+      "up": [
+        0.0,
+        -0.173648208379745,
+        -0.984807789325714
+      ]
+    },
+    {
+      "forward": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "node": "Model/Zhulei/Model/Socket_Charge",
+      "position": [
+        -0.479999989271164,
+        0.550000011920929,
+        0.340000003576279
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0000000874227765734759,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Zhulei/Model/Socket_Service",
+      "position": [
+        0.0,
+        0.689999997615814,
+        0.694999992847443
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Zhulei/Model/Socket_TowFront",
+      "position": [
+        0.0,
+        0.239999994635582,
+        -0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0000000874227765734759,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Zhulei/Model/Socket_TowRear",
+      "position": [
+        0.0,
+        0.239999994635582,
+        0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "source_endpoint_check": "PASS",
+  "source_faults_preserved": 2,
+  "static": {
+    "max": [
+      0.870000004768372,
+      1.10343647003174,
+      0.799999952316284
+    ],
+    "min": [
+      -0.870000004768372,
+      0.0000212341547012329,
+      -0.810648679733276
+    ]
+  },
+  "triangles_with_candidate_attachment": 8716
+}

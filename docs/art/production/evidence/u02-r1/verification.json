@@ -1,0 +1,42 @@
+{
+  "source_sha256": {
+    "zhulei-r1.blend": "6d985fe2db16e31889df94018f3005839fc57a0ca3e3f478ef5c5b19688f531a",
+    "zhulei-r1.glb": "3f75fb7ebb2c2c29bc7296012bf4315c7f20857ba12aa86e2dd382891f520812",
+    "zhulei-work.glb": "626fd98b6b5a7205a1696255b38de56402bf302710e999dce7ea064f644de2ea",
+    "zhulei-maintenance.glb": "76e28c66ab9c8bceef0d8959b5060c4c7888bf75dc826fe3dc212e0e1ddffefc"
+  },
+  "triangles": 8416,
+  "meshes": 50,
+  "surfaces": 66,
+  "sockets": 5,
+  "images": 24,
+  "pose_samples": 132,
+  "minimum_separating_axis_gap_m": 0.00307023525238037,
+  "image_sha256": {
+    "u02-idle_normal_0_empty.png": "2da149e1fab5360b807841a99c421194f07fe23db80014af88c4f8aba5e221b4",
+    "u02-idle_normal_90_empty.png": "ad21619460b7a6ffc8be6ce406d867d475ac4c1e870e5945b55727dc860f664e",
+    "u02-idle_normal_180_empty.png": "923b23111910c6caa2c16b3b4fb6c7a1211dff434e43fdb85de3118168e8ec49",
+    "u02-idle_close_0_empty.png": "bb0e819c950a68452297b5ad3aa2b4956fc33dd94e85b53b47dc7f138a02702d",
+    "u02-idle_close_90_empty.png": "6e36fc94f8e1b1af0582c1bcb20e827d6cfa29a3097ffdee1366585f66981623",
+    "u02-idle_close_180_empty.png": "688517fd7e058bc7f4b4a4b872d1292372704a21188bff6d44e581b5ffe042d0",
+    "u02-work-demo_normal_0_empty.png": "5b9004a815557cda33ee8d9bf2707d45694c927a60624a0f345b370e2e93d07c",
+    "u02-work-demo_normal_90_empty.png": "cf6dab4ec238f8eca32c2c4274d52fdf441f6335d868f6cefe5e4ed0877d00ba",
+    "u02-work-demo_normal_180_empty.png": "e63f91442d077c9e389fd06857c96833e6ea6457c12e7143717366035768d0e1",
+    "u02-work-demo_close_0_empty.png": "06d3d69aa651f5169a644db8a00b3d303c8f60093476de781850eb9fb7267d51",
+    "u02-work-demo_close_90_empty.png": "285e76ee06e7be64653758dd842fa50e3723bb182cde49ecfe48a3caa99411e1",
+    "u02-work-demo_close_180_empty.png": "4d6aff1ab1ae1dffd26e16dac10476a7d2fe39b71d866049914b0247e33da31d",
+    "u02-maintenance-demo_normal_0_empty.png": "b84e6fb8ce3b36e9faaeb5bebf621e09c2e627508a5dc4e2ffa75094e35d84e9",
+    "u02-maintenance-demo_normal_90_empty.png": "bc859977b0f6ffddebdf4834676df74279d9bb8791af712ade1db4ca4b53a2d6",
+    "u02-maintenance-demo_normal_180_empty.png": "88406eabac81097a8c26afa92b90d16b19593c9ef7a67c7eec6ec1ca4a202aa4",
+    "u02-maintenance-demo_close_0_empty.png": "0d4001840bbf98358a9f9cec2ebdded2c505b8210fb2d24afab553b8df810f8e",
+    "u02-maintenance-demo_close_90_empty.png": "29eddebf6d44ea7cc2effb14b2e9b5ceaad18bc1aa6c46db773f84bbe096f1ee",
+    "u02-maintenance-demo_close_180_empty.png": "45bfcd0ccfac47920d2a3685d09ca3e6734a607fa4b64fecb9f7c740a3b87678",
+    "u01-ref_normal_0_empty.png": "6b969f9eaf3498145fb6453ef7a2b47f35e3324c6c12931bca10d534e797559d",
+    "u01-ref_normal_90_empty.png": "a41bb91bdc234e8d61835c9234d83d80595ceeb4892629f3b3ef7e965e93a4d6",
+    "u01-ref_normal_180_empty.png": "8a93e2e2799ea92d4093f926560d8fdcfbc4b10e7b7bae2919639b24ef00e0e5",
+    "u01-ref_close_0_empty.png": "e8082930a468fb2414f480b8338ca0aef051cc0533c570f004623ea3cdb5e842",
+    "u01-ref_close_90_empty.png": "0c60f5805fa638e4c81395b2e40ce462d912be5902b7b8eaffc9c9abe2114f10",
+    "u01-ref_close_180_empty.png": "b179600af84c1b32ec288e6f085f7519dea40243d550fb8c63c323116c8d9c7d"
+  },
+  "scope": "static GEO candidate and finite pose samples; seven-state animation/gameplay/owner acceptance NOT_RUN"
+}

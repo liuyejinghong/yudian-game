@@ -1,0 +1,30 @@
+{
+  "A": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"ok\": true,\n  \"session_id\": \"sess_2a8c5b12d7\",\n  \"proc_state\": \"dead\"\n}"
+      }
+    ],
+    "structuredContent": {
+      "ok": true,
+      "session_id": "sess_2a8c5b12d7",
+      "proc_state": "dead"
+    },
+    "isError": false
+  },
+  "B": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"ok\": true,\n  \"session_id\": \"sess_fedb9781d9\",\n  \"proc_state\": \"dead\"\n}"
+      }
+    ],
+    "structuredContent": {
+      "ok": true,
+      "session_id": "sess_fedb9781d9",
+      "proc_state": "dead"
+    },
+    "isError": false
+  }
+}

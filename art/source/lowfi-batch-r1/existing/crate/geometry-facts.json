@@ -1,0 +1,82 @@
+{
+  "scope": "ART-LF-BATCH-01 subpackage B: P01 crate-r1 re-host; static, no animation, no new capability",
+  "ticket": "docs/art/production/tasks/ART-LF-BATCH-01.md (P01 crate)",
+  "blender": "4.5.14 LTS",
+  "source": {
+    "path": "<project-root>/art-lowfi-batch-b-20261005/art/source/props/crate-r1/crate-r1.glb",
+    "sha256": "07c1b3b65d9298735ae8673239942a84dde2070f80daa6f48e4e01a3e7503d68",
+    "provenance": "read-only canonical crate-r1 GLB (hand-authored r3, no coplanar artifacts); untouched"
+  },
+  "triangles_total": 48,
+  "vertices_total": 32,
+  "roles_used": [
+    "accent_warm",
+    "body_light",
+    "frame_dark"
+  ],
+  "meshes": [
+    {
+      "node": "Crate",
+      "triangles": 48,
+      "vertices": 32,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.32,
+          0.0,
+          -0.35
+        ],
+        "max": [
+          0.32,
+          0.38,
+          0.35
+        ]
+      }
+    }
+  ],
+  "files": {
+    "crate.blend": {
+      "bytes": 449917,
+      "sha256": "3fd6ca65df45a921a99260b66ca1e605d8b66534fde6c88e8f50a703e9c0097c"
+    },
+    "crate.glb": {
+      "bytes": 3424,
+      "sha256": "af183991e69c7a6d595518aba5bdddba847343cdb9002fa9127adcad8441c435"
+    }
+  },
+  "reopen_check": {
+    "max_float_diff": 0.0,
+    "problems": [],
+    "reexport_sha256": "af183991e69c7a6d595518aba5bdddba847343cdb9002fa9127adcad8441c435",
+    "deliverable_sha256": "af183991e69c7a6d595518aba5bdddba847343cdb9002fa9127adcad8441c435",
+    "identical_bytes": true
+  },
+  "original_check": {
+    "max_float_diff": 0.0,
+    "problems": []
+  },
+  "checks": {
+    "missing_input": "PASS (build aborts)",
+    "wrong_triangles": "PASS (asserted in check_rows)",
+    "unknown_role": "PASS (roles subset asserted)",
+    "non_finite": "PASS (finite coords asserted)",
+    "empty_output": "PASS (GLB magic + size asserted)",
+    "negative_suite": {
+      "missing_input": "PASS",
+      "wrong_triangles": "PASS",
+      "unknown_role": "PASS",
+      "non_finite": "PASS"
+    }
+  },
+  "not_run": [
+    "Godot engine verification NOT_RUN by this subpackage (master native suite)",
+    "gameplay/inventory integration",
+    "UV/baking/LOD",
+    "owner visual acceptance"
+  ],
+  "build_seconds": 0.162
+}

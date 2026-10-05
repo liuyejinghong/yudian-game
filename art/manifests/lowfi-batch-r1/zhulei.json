@@ -1,0 +1,855 @@
+{
+  "id": "ART-U02",
+  "revision": 1,
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "preview_scene": "res://assets/lowfi-batch-r1/zhulei.tscn",
+  "glb": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+  "glb_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+  "bounds": {
+    "static": {
+      "max": [
+        0.870000004768372,
+        1.10343647003174,
+        0.799999952316284
+      ],
+      "min": [
+        -0.870000004768372,
+        2.12341547012329e-05,
+        -0.810648679733276
+      ]
+    },
+    "loaded": {
+      "max": [
+        0.870000004768372,
+        1.10343647003174,
+        0.799999952316284
+      ],
+      "min": [
+        -0.870000004768372,
+        2.12341547012329e-05,
+        -0.810648679733276
+      ]
+    },
+    "active": {
+      "max": [
+        0.870000004768372,
+        1.46188902854919,
+        0.799999952316284
+      ],
+      "min": [
+        -0.870000004768372,
+        0.0,
+        -1.4729288816452
+      ]
+    }
+  },
+  "bounds_scope": "实际顶点与有限动作采样；不作为物理碰撞或导航包络认证",
+  "material_bindings": [
+    {
+      "node": "Model/Zhulei/Model/BodyShell",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/ChargeHingeAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/ChargeHingeMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/ChargeHousing",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/ChargePivot/ChargeCap",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/FrameBed",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/HoodHingeAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/HoodHingeMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/HoodLid/HoodLidPanel",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/ProtectedModule",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/RearFloor",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/RearWallBack",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/RearWallFront",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/RearWallL",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/RearWallR",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/ElbowAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/LowerArm",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/Wrist/WorkPad",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/Wrist/WorkPadMark",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/Wrist/WristAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/ShoulderAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Shoulder/UpperArm",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/ShoulderMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportBeamL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportBeamR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_Cap",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_WallXNeg",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_WallXPos",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_WallZNeg",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveL/SupportSleeveL_WallZPos",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_Cap",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_WallXNeg",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_WallXPos",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_WallZNeg",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSleeveR/SupportSleeveR_WallZPos",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSlideL/SupportSlideL_Pad",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSlideL/SupportSlideL_Rod",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSlideR/SupportSlideR_Pad",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/SupportSlideR/SupportSlideR_Rod",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/TowFrontEar",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/TowFrontMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/TowRearMount",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L",
+      "surface": 1,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L",
+      "surface": 1,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R",
+      "surface": 1,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R",
+      "surface": 1,
+      "role": "rubber"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Wheel_RF",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Wheel_RF",
+      "surface": 1,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Zhulei/Model/Wheels/Rocker_R/Wheel_RF",
+      "surface": 2,
+      "role": "accent_warm"
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LinkBar",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LugEndA",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "TowDemo/RecoveryLink/LugEndB",
+      "surface": 0,
+      "role": "accent_warm"
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        -0.984807789325714,
+        0.173648208379745
+      ],
+      "node": "Model/Zhulei/Model/Shoulder/Elbow/Wrist/Socket_Work",
+      "position": [
+        0.0,
+        0.478083670139313,
+        -0.639545321464539
+      ],
+      "up": [
+        0.0,
+        -0.173648208379745,
+        -0.984807789325714
+      ]
+    },
+    {
+      "forward": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "node": "Model/Zhulei/Model/Socket_Charge",
+      "position": [
+        -0.479999989271164,
+        0.550000011920929,
+        0.340000003576279
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        8.74227765734759e-08,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Zhulei/Model/Socket_Service",
+      "position": [
+        0.0,
+        0.689999997615814,
+        0.694999992847443
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Zhulei/Model/Socket_TowFront",
+      "position": [
+        0.0,
+        0.239999994635582,
+        -0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        8.74227765734759e-08,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Zhulei/Model/Socket_TowRear",
+      "position": [
+        0.0,
+        0.239999994635582,
+        0.800000011920929
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "states": {
+    "idle": {
+      "mode": "static",
+      "reason": "静态候选轮廓",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "move": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "move",
+      "duration_s": 1.0,
+      "loop": true
+    },
+    "work": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "work",
+      "duration_s": 2.0,
+      "loop": true
+    },
+    "charge": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "charge",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "disabled": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "disabled",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "towed": {
+      "mode": "static",
+      "reason": "停机定格与独立候选杆，不批准拖救能力或载荷",
+      "clip": "disabled",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "maintenance": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "maintenance",
+      "duration_s": 1.0,
+      "loop": false
+    }
+  },
+  "phases": [
+    "completed"
+  ],
+  "cargo_modes": [
+    "empty"
+  ],
+  "source": {
+    "source_path": "art/source/lowfi-batch-r1/existing/zhulei/zhulei.blend",
+    "tool_version": "Blender 4.5.14 LTS",
+    "original": true,
+    "inheritance": "现役原创模型继承及本批新增；具体见源报告",
+    "hash": "e785bbeaa1ac7338283a416ca3f3b33956b5b92dc05d4f7492d2ebe8b751b536",
+    "generators": [
+      "art/source/lowfi-batch-r1/existing/build_zhulei.py"
+    ],
+    "files": [
+      {
+        "path": "art/source/lowfi-batch-r1/existing/zhulei/zhulei.blend",
+        "sha256": "e785bbeaa1ac7338283a416ca3f3b33956b5b92dc05d4f7492d2ebe8b751b536"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/existing/zhulei/zhulei.glb",
+        "sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/existing/build_zhulei.py",
+        "sha256": "d90cc4ce101c2c7b8b8997c9ad6ce6c3c7de9ba68b5e266d1dd919b6b2e0cd05"
+      }
+    ]
+  },
+  "triangles": 8584,
+  "triangles_with_candidate_attachment": 8716,
+  "textures": [],
+  "source_clips": {
+    "charge": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/Shoulder/Elbow",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/Shoulder/Elbow",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/Shoulder/Elbow",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    },
+    "move": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/Shoulder/Elbow"
+      ]
+    },
+    "work": {
+      "duration_s": 2.0,
+      "tracks": [
+        "Zhulei/Model/Shoulder",
+        "Zhulei/Model/Shoulder/Elbow",
+        "Zhulei/Model/SupportSlideL",
+        "Zhulei/Model/SupportSlideR",
+        "Zhulei/Model/ChargePivot",
+        "Zhulei/Model/HoodLid",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+        "Zhulei/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+        "Zhulei/Model/Wheels/Rocker_L/Wheel_LF",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+        "Zhulei/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR",
+        "Zhulei/Model/Wheels/Rocker_R/Wheel_RF"
+      ]
+    }
+  },
+  "source_clip_changes": [
+    {
+      "clip": "charge",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "ChargePivot",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ChargePivot",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "maintenance",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "HoodLid",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "HoodLid",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "work",
+      "duration_s": 2,
+      "changed_targets": [
+        [
+          "Shoulder",
+          "rotation"
+        ],
+        [
+          "Elbow",
+          "rotation"
+        ],
+        [
+          "SupportSlideL",
+          "translation"
+        ],
+        [
+          "SupportSlideR",
+          "translation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "Shoulder",
+          "rotation"
+        ],
+        [
+          "Elbow",
+          "rotation"
+        ],
+        [
+          "SupportSlideL",
+          "translation"
+        ],
+        [
+          "SupportSlideR",
+          "translation"
+        ]
+      ]
+    },
+    {
+      "clip": "disabled",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "Shoulder",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "Shoulder",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "move",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "Wheel_LM",
+          "rotation"
+        ],
+        [
+          "Wheel_LR",
+          "rotation"
+        ],
+        [
+          "Wheel_LF",
+          "rotation"
+        ],
+        [
+          "Wheel_RM",
+          "rotation"
+        ],
+        [
+          "Wheel_RR",
+          "rotation"
+        ],
+        [
+          "Wheel_RF",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "Wheel_LM",
+          "rotation"
+        ],
+        [
+          "Wheel_LR",
+          "rotation"
+        ],
+        [
+          "Wheel_LF",
+          "rotation"
+        ],
+        [
+          "Wheel_RM",
+          "rotation"
+        ],
+        [
+          "Wheel_RR",
+          "rotation"
+        ],
+        [
+          "Wheel_RF",
+          "rotation"
+        ]
+      ]
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "godot_import": {
+    "path": "prototype/assets/lowfi-batch-r1/models/zhulei.glb.import",
+    "sha256": "0b1367b3d8f5bcc5ee486a78412b8fca5eb45e23fe36526ff95dfd0a80d7f062",
+    "animation_player": "PATH:AnimationPlayer",
+    "optimizer_enabled": false,
+    "reason": "保留源动作转折点；Godot实际重导入端点通过"
+  },
+  "phase_state_modes": {
+    "completed": {
+      "idle": {
+        "mode": "static",
+        "reason": "静态候选轮廓"
+      },
+      "move": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "charge": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "disabled": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "towed": {
+        "mode": "static",
+        "reason": "停机定格与独立候选杆，不批准拖救能力或载荷"
+      },
+      "maintenance": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      }
+    }
+  }
+}

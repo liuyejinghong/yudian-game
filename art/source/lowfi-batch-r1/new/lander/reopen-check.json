@@ -1,0 +1,9 @@
+{
+  "max_float_diff": 1.1920928955078125e-07,
+  "problems": [],
+  "reexport_sha256": "d2deb9790b14153ca252d6504448699723f1091be14de52707666600011fb473",
+  "deliverable_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6",
+  "identical_bytes": false,
+  "reopened_blend": "art/source/lowfi-batch-r1/new/lander/lander.blend",
+  "compared_glb": "art/source/lowfi-batch-r1/new/lander/lander.glb"
+}

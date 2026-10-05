@@ -1,0 +1,1159 @@
+{
+  "active_sampled": {
+    "max": [
+      1.82089376449585,
+      1.71000003814697,
+      1.10000002384186
+    ],
+    "min": [
+      -0.899999976158142,
+      0.0,
+      -1.33999991416931
+    ]
+  },
+  "asset": "charger",
+  "candidate_envelope_check": "PASS",
+  "clips": {
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "ChargingStation/StopGatePivot",
+        "ChargingStation/ServicePanelPivot",
+        "ChargingStation/StatusPaddlePivot"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "ChargingStation/ServicePanelPivot",
+        "ChargingStation/StatusPaddlePivot",
+        "ChargingStation/StopGatePivot"
+      ]
+    },
+    "work": {
+      "duration_s": 2.0,
+      "tracks": [
+        "ChargingStation/StatusPaddlePivot",
+        "ChargingStation/ServicePanelPivot",
+        "ChargingStation/StopGatePivot"
+      ]
+    }
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frozen_socket_check": "PASS",
+  "glb": "res://assets/lowfi-batch-r1/models/charger.glb",
+  "glb_sha256": "5537e297f44705ab2b96e1e4fecddff41d854f3b2005ae30dfaeca8f5d408a8c",
+  "illegal_preserved": 10,
+  "loaded": {
+    "max": [
+      1.29999995231628,
+      1.49000000953674,
+      1.10000002384186
+    ],
+    "min": [
+      -0.899999976158142,
+      0.0,
+      -1.33999991416931
+    ]
+  },
+  "meshes": [
+    {
+      "node": "Model/ChargingStation/ArmStem",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/BayMark",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 48
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/Cabinet",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/CabinetCap",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/CabinetFoot",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/ContactHead",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/Foundation",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/PowerInGuard",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/ServicePanelAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/ServicePanelMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/ServicePanelPivot/ServicePanel",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 12
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/StatusPaddleAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/StatusPaddleMount",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/StatusPaddlePivot/StatusPaddleMark",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/StatusPaddlePivot/StatusPaddlePanel",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/StopGateAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/StopGateMountL",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/StopGateMountR",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/ChargingStation/StopGatePivot/StopGatePanel",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    }
+  ],
+  "motion_comparison": {
+    "work": {
+      "different": true,
+      "times": [
+        0.5,
+        1.5
+      ]
+    }
+  },
+  "pose_cases": [
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.71000003814697,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.70966827869415,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.70489358901978,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.70966839790344,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.71000003814697,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.70489346981049,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.71000003814697,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.3196679353714
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.25066947937012
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.14513075351715
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.10000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.10000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.10000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.29999995231628,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.44300699234009,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.60551810264587,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.73549091815948,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.82089376449585,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.82089376449585,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.82089376449585,
+          1.49000000953674,
+          1.10000002384186
+        ],
+        "min": [
+          -0.899999976158142,
+          0.0,
+          -1.33999991416931
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 2.0
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "sockets": [
+    {
+      "forward": [
+        -1.0,
+        0.0,
+        0.000000119209303761636
+      ],
+      "node": "Model/ChargingStation/Socket_Dock",
+      "position": [
+        0.649999976158142,
+        0.569999992847443,
+        -0.349999994039536
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/ChargingStation/Socket_PowerIn",
+      "position": [
+        1.05499994754791,
+        0.180000007152557,
+        -0.660000026226044
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "source_endpoint_check": "PASS",
+  "source_faults_preserved": 2,
+  "static": {
+    "max": [
+      1.29999995231628,
+      1.49000000953674,
+      1.10000002384186
+    ],
+    "min": [
+      -0.899999976158142,
+      0.0,
+      -1.33999991416931
+    ]
+  },
+  "triangles_with_candidate_attachment": 824
+}

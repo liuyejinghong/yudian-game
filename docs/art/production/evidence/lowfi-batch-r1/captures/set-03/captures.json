@@ -1,0 +1,4146 @@
+[
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "lander",
+    "binding_count": 36,
+    "camera": "normal",
+    "candidate_attachment_sha256": null,
+    "entity_offset_y": 0.0,
+    "file": "lander_maintenance_normal_0.0.png",
+    "label": "maintenance",
+    "png_sha256": "bab4a31c46c12635b856dff51a94ac82650ff98632b42edbac2d1a3a4fc25558",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/lander.glb",
+    "source_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "lander",
+    "binding_count": 36,
+    "camera": "normal",
+    "candidate_attachment_sha256": null,
+    "entity_offset_y": 0.0,
+    "file": "lander_maintenance_normal_90.0.png",
+    "label": "maintenance",
+    "png_sha256": "52bb091d7dd26aa774380c7baf19438ea1a95b68ea892fcae72eb8b69ada4030",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/lander.glb",
+    "source_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "lander",
+    "binding_count": 36,
+    "camera": "normal",
+    "candidate_attachment_sha256": null,
+    "entity_offset_y": 0.0,
+    "file": "lander_maintenance_normal_180.0.png",
+    "label": "maintenance",
+    "png_sha256": "09c5e4df156722038996c7dd6b1d7bb7ae85109c508d4cafb1a666b2901ffefd",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/lander.glb",
+    "source_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "lander",
+    "binding_count": 36,
+    "camera": "close",
+    "candidate_attachment_sha256": null,
+    "entity_offset_y": 0.0,
+    "file": "lander_maintenance_close_90.0.png",
+    "label": "maintenance",
+    "png_sha256": "4e97cd275259625fc73a27796b9d94221a81951babf19550a3616b3985dbe07c",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/lander.glb",
+    "source_sha256": "86e994ad34ee283d99937074c7e5f42ed26f91a03a0ae766c906e412cfd15be6",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_idle_empty_normal_0.0.png",
+    "label": "idle_empty",
+    "png_sha256": "2da149e1fab5360b807841a99c421194f07fe23db80014af88c4f8aba5e221b4",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_idle_empty_normal_90.0.png",
+    "label": "idle_empty",
+    "png_sha256": "83f9f98a2dda15f2f584614a95490b6f0e8b7fd7ba5bd8b991530e5a6daf43bd",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_idle_empty_normal_180.0.png",
+    "label": "idle_empty",
+    "png_sha256": "dde3b6b8eb5ccc2e8084971f6013d69e01761b58591420ebf75507af22c06347",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_idle_empty_close_0.0.png",
+    "label": "idle_empty",
+    "png_sha256": "6d2502c6493f562438052cba8515d13c1c57d898d31d0e0e08c1ea13f7211339",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_idle_empty_close_90.0.png",
+    "label": "idle_empty",
+    "png_sha256": "a495e78bc276ac3da00ca04e8616df3723aaae4ca2c0f2e64fc1eaba2404acdc",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_move_0.25_normal_0.0.png",
+    "label": "move_0.25",
+    "png_sha256": "540472c56509144ea1b5007e190600d144c04479c9622fe626e9e875ae4568c8",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.25
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_move_0.25_normal_90.0.png",
+    "label": "move_0.25",
+    "png_sha256": "f920cadb113676e741e8ac81100b268397b448346ec569f1365ea8fd0dc7b7d9",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.25
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_move_0.25_normal_180.0.png",
+    "label": "move_0.25",
+    "png_sha256": "a6014e7243a4ce664f0cd7e56ac0a052f9829d9a8abb2d69723eec2d67afc921",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.25
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_move_0.25_close_90.0.png",
+    "label": "move_0.25",
+    "png_sha256": "ab328343111700c05aec89e281ccf6a6c2780bf79f8e55bcccdc35d1cfe4b2e2",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.25
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_move_0.75_normal_0.0.png",
+    "label": "move_0.75",
+    "png_sha256": "a03b5713397e5533fa24b18916e846fbbccf5bd318326a6ebf0f1ae0c779a192",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.75
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_move_0.75_normal_90.0.png",
+    "label": "move_0.75",
+    "png_sha256": "93a659987c0a65e49f5a9d6b459bc46442e3f0518fa9284e8d86a6c65ad79189",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.75
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_move_0.75_normal_180.0.png",
+    "label": "move_0.75",
+    "png_sha256": "071bc90698b0a1b59bbed99f6f318c1977fa75f0693092bd2e52a87deada959d",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.75
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_move_0.75_close_90.0.png",
+    "label": "move_0.75",
+    "png_sha256": "5da4303e3ce89782f6a4caf63e92ec69d776274a67450946987fb850bb9258a0",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.75
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_work_0.25_normal_0.0.png",
+    "label": "work_0.25",
+    "png_sha256": "d5dc2325b3797fc6d4ff3bf6e867af262a36f9d9a2a453de06a44bbd869aeb7f",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.25
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_work_0.25_normal_90.0.png",
+    "label": "work_0.25",
+    "png_sha256": "4c8574ba05f0258a56a5897a720dd60c6c48bab2fadeb46758bf5883dacc3613",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.25
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_work_0.25_normal_180.0.png",
+    "label": "work_0.25",
+    "png_sha256": "94764f77c1a6fb0d5b7bab289e6a44e05ce5f63fdc9432b81b26cb58f2ebf05e",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.25
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_work_0.25_close_90.0.png",
+    "label": "work_0.25",
+    "png_sha256": "c110a814650433b2aa89690eb22befbd518332a93685256d0744716911baf6bc",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.25
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_work_0.75_normal_0.0.png",
+    "label": "work_0.75",
+    "png_sha256": "2fa29ffbe63bce13ec2af406ed44ddcd840b33ff2685b57736e99a619c385179",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.75
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_work_0.75_normal_90.0.png",
+    "label": "work_0.75",
+    "png_sha256": "6f99b7909d0b0101dd9e8cada785362562ee631e6df8e173ae44a92f5c860414",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.75
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_work_0.75_normal_180.0.png",
+    "label": "work_0.75",
+    "png_sha256": "7e9ccf97191087219e9ceb27eab2771ad6257db7eac934425f21c8873e2b3ad0",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.75
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_work_0.75_close_90.0.png",
+    "label": "work_0.75",
+    "png_sha256": "27aaf1fafa83585f129258680ab53ad39cf7ffb899230e8f10d8f404d7d66792",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.75
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_charge_normal_0.0.png",
+    "label": "charge",
+    "png_sha256": "e33c42dc422077a1784051b8c17a6b5073a994523df616907e720a63e63a9db1",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_charge_normal_90.0.png",
+    "label": "charge",
+    "png_sha256": "2da8141efe2c5f0cdf81b548ef1ecf931da67d8bdad7d2c75eefcd2195cb3c35",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_charge_normal_180.0.png",
+    "label": "charge",
+    "png_sha256": "895676763f87972109d97480093ca7831f284e4b19ff0ecb6e10286ac6f26624",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_charge_close_90.0.png",
+    "label": "charge",
+    "png_sha256": "8849a5174809bf2b7a0425a5ad1e45427e737b664629023b6c2e8a190cdc992a",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_disabled_normal_0.0.png",
+    "label": "disabled",
+    "png_sha256": "fcf63c640786742823d691c8b6c9278bd2b00c61d78a1a30aa60140649aeea93",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "both",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_disabled_normal_90.0.png",
+    "label": "disabled",
+    "png_sha256": "c6530a9c91cc7a00d4d0fbe417e1d1f82b395638d339a4c687abfc28400bcdb2",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "both",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_disabled_normal_180.0.png",
+    "label": "disabled",
+    "png_sha256": "db13f062b4194c5937db95cc7189643ce62f53de517b9ee46af907bf6c2899d7",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "both",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_disabled_close_90.0.png",
+    "label": "disabled",
+    "png_sha256": "e53fc4fc474e83fda49454ff2a3f9dc0e133585edcd24c503b49b855a512466d",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "both",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_towed_normal_0.0.png",
+    "label": "towed",
+    "png_sha256": "2b85c70fb1d0136ca629824e08fe49a2fe6be1d5e57ad033a0c860ffa1388539",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN; recovery attachment is visual candidate, no approved towing capacity/ability",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 0.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_towed_normal_90.0.png",
+    "label": "towed",
+    "png_sha256": "91b0b793e0adc3b94f1ebf55badd9d2f33503a1ada031d4efa067e9f2bfffa95",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN; recovery attachment is visual candidate, no approved towing capacity/ability",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 60.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          18.3847999572754,
+          28.0,
+          18.3847999572754
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -47.1210594177246,
+          45.0,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "normal",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_towed_normal_180.0.png",
+    "label": "towed",
+    "png_sha256": "ed123a6edcb42d04b39a4272f0fcae04722b737831fec7d7ce74cf1522379180",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN; recovery attachment is visual candidate, no approved towing capacity/ability",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 180.0
+  },
+  {
+    "actual_view": {
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "render": {
+        "adapter_name": "Apple M3 Pro (Apple9)",
+        "adapter_vendor": "Apple",
+        "display_server": "macOS",
+        "engine_build": "official",
+        "engine_version": "4.7.2-stable (official)",
+        "rendering_driver_actual": "metal",
+        "rendering_method_actual": "forward_plus",
+        "video_adapter_api_version": "4.0"
+      },
+      "shadow_atlas": {
+        "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+        "requested_size": 4096
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "world_environment": {
+        "camera_attributes": "none"
+      }
+    },
+    "asset": "zhulei",
+    "binding_count": 71,
+    "camera": "close",
+    "candidate_attachment_sha256": "18163cc43cfa7f7b6ee50e6c29cce1f3b5f5b884558ded0b5919b139985a06be",
+    "entity_offset_y": 0.0,
+    "file": "zhulei_towed_close_90.0.png",
+    "label": "towed",
+    "png_sha256": "fdb1fa61872e58197bd76793b9518914ab5ed843785f0e035d77fc15e64f6cdb",
+    "preset": {
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    "scope": "Godot source-animation art preview; gameplay/owner acceptance NOT_RUN; recovery attachment is visual candidate, no approved towing capacity/ability",
+    "source": "res://assets/lowfi-batch-r1/models/zhulei.glb",
+    "source_sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d",
+    "yaw": 90.0
+  }
+]

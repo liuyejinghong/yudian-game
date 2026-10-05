@@ -1,0 +1,278 @@
+{
+  "id": "probe_r1",
+  "revision": 1,
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "preview_scene": "res://scenes/art_preview_r1/probe_sample_r1.tscn",
+  "glb": "res://scenes/art_preview_r1/probe_model_r1.glb",
+  "glb_sha256": "aa274ff353a0c94d88f0f1b5f88a9d6f464d43df5b8542958660aa3bd913ce7b",
+  "bounds": {
+    "static": {
+      "min": [
+        -0.2,
+        0.0,
+        -0.2
+      ],
+      "max": [
+        0.2,
+        0.4,
+        0.2
+      ]
+    },
+    "loaded": {
+      "min": [
+        -0.2,
+        0.0,
+        -0.2
+      ],
+      "max": [
+        0.2,
+        0.57,
+        0.2
+      ]
+    },
+    "active": {
+      "min": [
+        -0.216670096,
+        -0.05,
+        -0.2
+      ],
+      "max": [
+        1.2,
+        0.57,
+        0.2
+      ]
+    }
+  },
+  "material_bindings": [
+    {
+      "node": "Model/Body",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Socket_Cargo/Cargo",
+      "surface": 0,
+      "role": "rubber"
+    }
+  ],
+  "sockets": [
+    {
+      "node": "Model/Socket_Cargo",
+      "position": [
+        0.0,
+        0.45,
+        0.0
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "states": {
+    "idle": {
+      "mode": "static",
+      "reason": "rest",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "move": {
+      "mode": "animated",
+      "reason": "procedural traverse driven by time_s, test-only, no glTF clip",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "work": {
+      "mode": "animated",
+      "reason": "procedural work bob driven by time_s, test-only, no glTF clip",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "charge": {
+      "mode": "static",
+      "reason": "rest at pad",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "disabled": {
+      "mode": "static",
+      "reason": "inert",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "towed": {
+      "mode": "static",
+      "reason": "tilted transport pose",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "maintenance": {
+      "mode": "static",
+      "reason": "service pose",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    }
+  },
+  "phases": [
+    "packed",
+    "installed",
+    "deploying",
+    "completed"
+  ],
+  "cargo_modes": [
+    "empty",
+    "loaded"
+  ],
+  "phase_state_modes": {
+    "packed": {
+      "idle": {
+        "mode": "na",
+        "reason": "probe packed; no state poses exist"
+      },
+      "move": {
+        "mode": "na",
+        "reason": "probe packed; no state poses exist"
+      },
+      "work": {
+        "mode": "na",
+        "reason": "probe packed; no state poses exist"
+      },
+      "charge": {
+        "mode": "na",
+        "reason": "probe packed; no state poses exist"
+      },
+      "disabled": {
+        "mode": "na",
+        "reason": "probe packed; no state poses exist"
+      },
+      "towed": {
+        "mode": "na",
+        "reason": "probe packed; no state poses exist"
+      },
+      "maintenance": {
+        "mode": "na",
+        "reason": "probe packed; no state poses exist"
+      }
+    },
+    "installed": {
+      "idle": {
+        "mode": "static",
+        "reason": "pre-deploy static baseline"
+      },
+      "move": {
+        "mode": "static",
+        "reason": "pre-deploy static baseline"
+      },
+      "work": {
+        "mode": "static",
+        "reason": "pre-deploy static baseline"
+      },
+      "charge": {
+        "mode": "static",
+        "reason": "pre-deploy static baseline"
+      },
+      "disabled": {
+        "mode": "static",
+        "reason": "pre-deploy static baseline"
+      },
+      "towed": {
+        "mode": "static",
+        "reason": "pre-deploy static baseline"
+      },
+      "maintenance": {
+        "mode": "static",
+        "reason": "pre-deploy static baseline"
+      }
+    },
+    "deploying": {
+      "idle": {
+        "mode": "na",
+        "reason": "deploy pose addressed by phase_t only"
+      },
+      "move": {
+        "mode": "na",
+        "reason": "deploy pose addressed by phase_t only"
+      },
+      "work": {
+        "mode": "na",
+        "reason": "deploy pose addressed by phase_t only"
+      },
+      "charge": {
+        "mode": "na",
+        "reason": "deploy pose addressed by phase_t only"
+      },
+      "disabled": {
+        "mode": "na",
+        "reason": "deploy pose addressed by phase_t only"
+      },
+      "towed": {
+        "mode": "na",
+        "reason": "deploy pose addressed by phase_t only"
+      },
+      "maintenance": {
+        "mode": "na",
+        "reason": "deploy pose addressed by phase_t only"
+      }
+    },
+    "completed": {
+      "idle": {
+        "mode": "static",
+        "reason": "rest"
+      },
+      "move": {
+        "mode": "animated",
+        "reason": "procedural traverse driven by time_s, test-only"
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "procedural work bob driven by time_s, test-only"
+      },
+      "charge": {
+        "mode": "static",
+        "reason": "rest at pad"
+      },
+      "disabled": {
+        "mode": "static",
+        "reason": "inert"
+      },
+      "towed": {
+        "mode": "static",
+        "reason": "tilted transport pose"
+      },
+      "maintenance": {
+        "mode": "static",
+        "reason": "service pose"
+      }
+    }
+  },
+  "source": {
+    "generator": "tools/art-preview-r1/make_probe_glb.py",
+    "source_path": "tools/art-preview-r1/make_probe_glb.py",
+    "tool_version": "CPython 3.14.3 standard library only",
+    "original": true,
+    "hash": "df99a87ea1d26b252a21123603caa24122edeb31f88c12322b2563ba05d51c23",
+    "files": [
+      {
+        "path": "tools/art-preview-r1/make_probe_glb.py",
+        "sha256": "df99a87ea1d26b252a21123603caa24122edeb31f88c12322b2563ba05d51c23"
+      }
+    ]
+  },
+  "triangles": 24,
+  "textures": []
+}

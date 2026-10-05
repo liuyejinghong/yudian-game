@@ -1,0 +1,22 @@
+{
+  "source_sha256": "dcaac7f78d9d11f2aa0b5fd9745f68d4ec4c8f6d4860c30e95a14586210d90ed",
+  "triangles": 756,
+  "distinct_payload_world_positions": 12,
+  "surfaces": 52,
+  "images": 8,
+  "image_sha256": {
+    "storage_normal_0_empty.png": "feed2f2c1bb1cef2e917953a85dc67e2fb6df39b4dad07c826a49b6af3f89e6b",
+    "storage_normal_0_loaded.png": "13e657af2cacddc3db75f3cdf57ce9fefbec566a4ca37f0351d46a22e1167f74",
+    "storage_normal_90_empty.png": "433598c70d828c96fefdde2589cd718e87aab6a19bd5915d030ba3aa4f2ef4cc",
+    "storage_normal_90_loaded.png": "2bcf0ce4bea7fde4c7d185b408760967ccc9ac293c5170e9fee2e7b37c7b16f0",
+    "storage_close_0_empty.png": "c4a8f5dd3eb8d8e2a44df8ae05986917db280ec4bb5bd46ef693ab9b193ee966",
+    "storage_close_0_loaded.png": "52ca50f696b9f41cd8817f2822c2da8b0666a01e07006961bbdfcd10cf86c13f",
+    "storage_close_90_empty.png": "4b5ecc482a0ccb2997c89c0a9ec6e9e211e93174dae352dcab8f6198b9c249a5",
+    "storage_close_90_loaded.png": "e8d77d1293a4e4eb998891b565ed4abaac8b3938a9e7e6eb310f2bfba883a395",
+    "crate_normal_0_empty.png": "7197ec109f00696f04b02dd1bbacc18f1e246cc36d8801f8ad6dc81260480926",
+    "crate_normal_90_empty.png": "228a34d3126f7e96691b4008e4aaf2234bba9794ea684d5abaab6a754f453890",
+    "crate_close_0_empty.png": "99acb164b0a1e7ce7a9ce73b6693bc5a059db5341745ec88086b7483b030bf3b",
+    "crate_close_90_empty.png": "9c1c73edb6fac769d52ef32d243cce2a459e8ecdbb56fb63d0f22fb43d48c6f4"
+  },
+  "visual_acceptance": "primary inspection recorded in README, owner NOT_RUN"
+}

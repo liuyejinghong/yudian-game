@@ -1,0 +1,770 @@
+[
+  {
+    "asset": "wangshan",
+    "author_roots": [
+      "Wangshan"
+    ],
+    "root_tracks": 0,
+    "clips": [
+      {
+        "clip": "charge",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "ChargeCap",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ChargeCap",
+            "rotation"
+          ],
+          [
+            "SensorYaw",
+            "rotation"
+          ],
+          [
+            "SensorPitch",
+            "rotation"
+          ],
+          [
+            "ServiceLid",
+            "rotation"
+          ],
+          [
+            "Wheel_LM",
+            "rotation"
+          ],
+          [
+            "Wheel_LR",
+            "rotation"
+          ],
+          [
+            "Wheel_LF",
+            "rotation"
+          ],
+          [
+            "Wheel_RM",
+            "rotation"
+          ],
+          [
+            "Wheel_RR",
+            "rotation"
+          ],
+          [
+            "Wheel_RF",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "disabled",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "SensorPitch",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ChargeCap",
+            "rotation"
+          ],
+          [
+            "SensorYaw",
+            "rotation"
+          ],
+          [
+            "SensorPitch",
+            "rotation"
+          ],
+          [
+            "ServiceLid",
+            "rotation"
+          ],
+          [
+            "Wheel_LM",
+            "rotation"
+          ],
+          [
+            "Wheel_LR",
+            "rotation"
+          ],
+          [
+            "Wheel_LF",
+            "rotation"
+          ],
+          [
+            "Wheel_RM",
+            "rotation"
+          ],
+          [
+            "Wheel_RR",
+            "rotation"
+          ],
+          [
+            "Wheel_RF",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "maintenance",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "ServiceLid",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ChargeCap",
+            "rotation"
+          ],
+          [
+            "SensorYaw",
+            "rotation"
+          ],
+          [
+            "SensorPitch",
+            "rotation"
+          ],
+          [
+            "ServiceLid",
+            "rotation"
+          ],
+          [
+            "Wheel_LM",
+            "rotation"
+          ],
+          [
+            "Wheel_LR",
+            "rotation"
+          ],
+          [
+            "Wheel_LF",
+            "rotation"
+          ],
+          [
+            "Wheel_RM",
+            "rotation"
+          ],
+          [
+            "Wheel_RR",
+            "rotation"
+          ],
+          [
+            "Wheel_RF",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "move",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "Wheel_LM",
+            "rotation"
+          ],
+          [
+            "Wheel_LR",
+            "rotation"
+          ],
+          [
+            "Wheel_LF",
+            "rotation"
+          ],
+          [
+            "Wheel_RM",
+            "rotation"
+          ],
+          [
+            "Wheel_RR",
+            "rotation"
+          ],
+          [
+            "Wheel_RF",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ChargeCap",
+            "rotation"
+          ],
+          [
+            "SensorYaw",
+            "rotation"
+          ],
+          [
+            "SensorPitch",
+            "rotation"
+          ],
+          [
+            "ServiceLid",
+            "rotation"
+          ],
+          [
+            "Wheel_LM",
+            "rotation"
+          ],
+          [
+            "Wheel_LR",
+            "rotation"
+          ],
+          [
+            "Wheel_LF",
+            "rotation"
+          ],
+          [
+            "Wheel_RM",
+            "rotation"
+          ],
+          [
+            "Wheel_RR",
+            "rotation"
+          ],
+          [
+            "Wheel_RF",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "work",
+        "duration_s": 2,
+        "changed_targets": [
+          [
+            "SensorYaw",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ChargeCap",
+            "rotation"
+          ],
+          [
+            "SensorYaw",
+            "rotation"
+          ],
+          [
+            "SensorPitch",
+            "rotation"
+          ],
+          [
+            "ServiceLid",
+            "rotation"
+          ],
+          [
+            "Wheel_LM",
+            "rotation"
+          ],
+          [
+            "Wheel_LR",
+            "rotation"
+          ],
+          [
+            "Wheel_LF",
+            "rotation"
+          ],
+          [
+            "Wheel_RM",
+            "rotation"
+          ],
+          [
+            "Wheel_RR",
+            "rotation"
+          ],
+          [
+            "Wheel_RF",
+            "rotation"
+          ]
+        ]
+      }
+    ],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "na"
+  },
+  {
+    "asset": "repair",
+    "author_roots": [
+      "Repair"
+    ],
+    "root_tracks": 0,
+    "clips": [
+      {
+        "clip": "disabled",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "StopGate",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ServiceCover",
+            "rotation"
+          ],
+          [
+            "StopGate",
+            "rotation"
+          ],
+          [
+            "ToolSlide",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "maintenance",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "ServiceCover",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ServiceCover",
+            "rotation"
+          ],
+          [
+            "StopGate",
+            "rotation"
+          ],
+          [
+            "ToolSlide",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "work",
+        "duration_s": 2,
+        "changed_targets": [
+          [
+            "ToolSlide",
+            "translation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ServiceCover",
+            "rotation"
+          ],
+          [
+            "StopGate",
+            "rotation"
+          ],
+          [
+            "ToolSlide",
+            "translation"
+          ],
+          [
+            "ToolSlide",
+            "rotation"
+          ]
+        ]
+      }
+    ],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "na"
+  },
+  {
+    "asset": "lander",
+    "author_roots": [
+      "Lander"
+    ],
+    "root_tracks": 0,
+    "clips": [
+      {
+        "clip": "disabled",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "StopPlate",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "CargoLid",
+            "rotation"
+          ],
+          [
+            "RearServiceLid",
+            "rotation"
+          ],
+          [
+            "StopPlate",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "maintenance",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "RearServiceLid",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "CargoLid",
+            "rotation"
+          ],
+          [
+            "RearServiceLid",
+            "rotation"
+          ],
+          [
+            "StopPlate",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "work",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "CargoLid",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "CargoLid",
+            "rotation"
+          ],
+          [
+            "RearServiceLid",
+            "rotation"
+          ],
+          [
+            "StopPlate",
+            "rotation"
+          ]
+        ]
+      }
+    ],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "na"
+  },
+  {
+    "asset": "zhulei",
+    "author_roots": [
+      "Zhulei"
+    ],
+    "root_tracks": 0,
+    "clips": [
+      {
+        "clip": "charge",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "ChargePivot",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ChargePivot",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "maintenance",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "HoodLid",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "HoodLid",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "work",
+        "duration_s": 2,
+        "changed_targets": [
+          [
+            "Shoulder",
+            "rotation"
+          ],
+          [
+            "Elbow",
+            "rotation"
+          ],
+          [
+            "SupportSlideL",
+            "translation"
+          ],
+          [
+            "SupportSlideR",
+            "translation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "Shoulder",
+            "rotation"
+          ],
+          [
+            "Elbow",
+            "rotation"
+          ],
+          [
+            "SupportSlideL",
+            "translation"
+          ],
+          [
+            "SupportSlideR",
+            "translation"
+          ]
+        ]
+      },
+      {
+        "clip": "disabled",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "Shoulder",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "Shoulder",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "move",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "Wheel_LM",
+            "rotation"
+          ],
+          [
+            "Wheel_LR",
+            "rotation"
+          ],
+          [
+            "Wheel_LF",
+            "rotation"
+          ],
+          [
+            "Wheel_RM",
+            "rotation"
+          ],
+          [
+            "Wheel_RR",
+            "rotation"
+          ],
+          [
+            "Wheel_RF",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "Wheel_LM",
+            "rotation"
+          ],
+          [
+            "Wheel_LR",
+            "rotation"
+          ],
+          [
+            "Wheel_LF",
+            "rotation"
+          ],
+          [
+            "Wheel_RM",
+            "rotation"
+          ],
+          [
+            "Wheel_RR",
+            "rotation"
+          ],
+          [
+            "Wheel_RF",
+            "rotation"
+          ]
+        ]
+      }
+    ],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "na"
+  },
+  {
+    "asset": "storage",
+    "author_roots": [
+      "Storage"
+    ],
+    "root_tracks": 0,
+    "clips": [
+      {
+        "clip": "maintenance",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "CoverPivot",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "CoverPivot",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "disabled",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "GatePivot",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "GatePivot",
+            "rotation"
+          ]
+        ]
+      }
+    ],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "na"
+  },
+  {
+    "asset": "charger",
+    "author_roots": [
+      "ChargingStation"
+    ],
+    "root_tracks": 0,
+    "clips": [
+      {
+        "clip": "maintenance",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "ServicePanelPivot",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "ServicePanelPivot",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "work",
+        "duration_s": 2,
+        "changed_targets": [
+          [
+            "StatusPaddlePivot",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "StatusPaddlePivot",
+            "rotation"
+          ]
+        ]
+      },
+      {
+        "clip": "disabled",
+        "duration_s": 1,
+        "changed_targets": [
+          [
+            "StopGatePivot",
+            "rotation"
+          ]
+        ],
+        "all_targets": [
+          [
+            "StopGatePivot",
+            "rotation"
+          ]
+        ]
+      }
+    ],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "na"
+  },
+  {
+    "asset": "crate",
+    "author_roots": [
+      "Crate"
+    ],
+    "root_tracks": 0,
+    "clips": [],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "na"
+  },
+  {
+    "asset": "recovery",
+    "author_roots": [
+      "RecoveryLink"
+    ],
+    "root_tracks": 0,
+    "clips": [],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "na"
+  },
+  {
+    "asset": "terrain-original",
+    "author_roots": [
+      "TerrainOriginal"
+    ],
+    "root_tracks": 0,
+    "clips": [],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "PASS"
+  },
+  {
+    "asset": "terrain-flat",
+    "author_roots": [
+      "TerrainFlat"
+    ],
+    "root_tracks": 0,
+    "clips": [],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "PASS"
+  },
+  {
+    "asset": "terrain-dug",
+    "author_roots": [
+      "TerrainDug"
+    ],
+    "root_tracks": 0,
+    "clips": [],
+    "source_runtime_identical": true,
+    "terrain_formula_topology_check": "PASS"
+  }
+]

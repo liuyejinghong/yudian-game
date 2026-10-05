@@ -1,0 +1,11 @@
+{
+  "blend_reopened": true,
+  "evaluated_mesh_rows_identical": true,
+  "glb_json_identical": true,
+  "topology_indices_identical": true,
+  "glb_byte_identical": false,
+  "max_float_attribute_delta": 1.1920928955078125e-07,
+  "different_float_accessors": 10,
+  "tolerance": 1e-06,
+  "triangles": 65967
+}

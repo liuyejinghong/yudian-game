@@ -1,0 +1,470 @@
+{
+  "id": "ART-F05",
+  "revision": 1,
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "preview_scene": "res://assets/lowfi-batch-r1/repair.tscn",
+  "glb": "res://assets/lowfi-batch-r1/models/repair.glb",
+  "glb_sha256": "5e80d480c8deaa7be29d043b3b010b2dc48bb7d8ab8302b715f0a07149e371a8",
+  "bounds": {
+    "static": {
+      "max": [
+        1.70000004768372,
+        2.30999994277954,
+        1.60000002384186
+      ],
+      "min": [
+        -1.85000002384186,
+        0.0,
+        -1.85999989509583
+      ]
+    },
+    "loaded": {
+      "max": [
+        1.70000004768372,
+        2.30999994277954,
+        1.60000002384186
+      ],
+      "min": [
+        -1.85000002384186,
+        0.0,
+        -1.85999989509583
+      ]
+    },
+    "active": {
+      "max": [
+        1.70000004768372,
+        2.30999994277954,
+        1.60000002384186
+      ],
+      "min": [
+        -1.85000002384186,
+        0.0,
+        -1.85999989509583
+      ]
+    }
+  },
+  "bounds_scope": "实际顶点与有限动作采样；不作为物理碰撞或导航包络认证",
+  "material_bindings": [
+    {
+      "node": "Model/Repair/Model/BayGuide-1",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Repair/Model/BayGuide1",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Repair/Model/CabinetBody",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Repair/Model/CabinetCap",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Repair/Model/CabinetFoot",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/CoverHingeAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/CoverHingeSeatFront",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/CoverHingeSeatRear",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/Foundation",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/PortalCrossbar-1",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Repair/Model/PortalCrossbar1",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Repair/Model/PortalPost-1-1",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/PortalPost-11",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/PortalPost1-1",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/PortalPost11",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/PowerInGuard",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Repair/Model/ServiceCover/ServiceCoverPanel",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/SideRail-1",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Repair/Model/SideRail1",
+      "surface": 0,
+      "role": "body_light"
+    },
+    {
+      "node": "Model/Repair/Model/StopGate/StopGatePanel",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Repair/Model/StopGateAxle",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/StopGateSeatL",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/StopGateSeatR",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/ToolSlide/ToolBlock",
+      "surface": 0,
+      "role": "accent_warm"
+    },
+    {
+      "node": "Model/Repair/Model/ToolSlide/ToolDropRod",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/ToolTrack",
+      "surface": 0,
+      "role": "frame_dark"
+    },
+    {
+      "node": "Model/Repair/Model/TrackHanger",
+      "surface": 0,
+      "role": "frame_dark"
+    }
+  ],
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Repair/Model/Socket_Bay",
+      "position": [
+        0.0,
+        0.0399999991059303,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        8.74227765734759e-08,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Repair/Model/Socket_PowerIn",
+      "position": [
+        -1.60000002384186,
+        0.180000007152557,
+        1.25499999523163
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "node": "Model/Repair/Model/Socket_Service",
+      "position": [
+        -1.38499999046326,
+        0.899999976158142,
+        0.899999976158142
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "states": {
+    "idle": {
+      "mode": "static",
+      "reason": "静态候选轮廓",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "move": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "work": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "work",
+      "duration_s": 2.0,
+      "loop": true
+    },
+    "charge": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "disabled": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "disabled",
+      "duration_s": 1.0,
+      "loop": false
+    },
+    "towed": {
+      "mode": "na",
+      "reason": "固定设施／道具或地表参考不适用该运行态",
+      "clip": null,
+      "duration_s": 0,
+      "loop": false
+    },
+    "maintenance": {
+      "mode": "animated",
+      "reason": "Blender源局部动作；不计算游戏规则",
+      "clip": "maintenance",
+      "duration_s": 1.0,
+      "loop": false
+    }
+  },
+  "phases": [
+    "completed"
+  ],
+  "cargo_modes": [
+    "empty"
+  ],
+  "source": {
+    "source_path": "art/source/lowfi-batch-r1/new/repair/repair.blend",
+    "tool_version": "Blender 4.5.14 LTS",
+    "original": true,
+    "inheritance": "现役原创模型继承及本批新增；具体见源报告",
+    "hash": "8e0a1f6f4697038894b6f0f994af73bed954cde111bbf563240b7f7e7e40dafb",
+    "generators": [
+      "art/source/lowfi-batch-r1/new/build_samples.py"
+    ],
+    "files": [
+      {
+        "path": "art/source/lowfi-batch-r1/new/repair/repair.blend",
+        "sha256": "8e0a1f6f4697038894b6f0f994af73bed954cde111bbf563240b7f7e7e40dafb"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/new/repair/repair.glb",
+        "sha256": "5e80d480c8deaa7be29d043b3b010b2dc48bb7d8ab8302b715f0a07149e371a8"
+      },
+      {
+        "path": "art/source/lowfi-batch-r1/new/build_samples.py",
+        "sha256": "8d6f7423b4b57dbcf42a0b723e48ea484ddf42e38a9517aa09235039388dcf81"
+      }
+    ]
+  },
+  "triangles": 1348,
+  "triangles_with_candidate_attachment": 1348,
+  "textures": [],
+  "source_clips": {
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Repair/Model/ServiceCover",
+        "Repair/Model/StopGate",
+        "Repair/Model/ToolSlide"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Repair/Model/ServiceCover",
+        "Repair/Model/StopGate",
+        "Repair/Model/ToolSlide"
+      ]
+    },
+    "work": {
+      "duration_s": 2.0,
+      "tracks": [
+        "Repair/Model/ServiceCover",
+        "Repair/Model/StopGate",
+        "Repair/Model/ToolSlide"
+      ]
+    }
+  },
+  "source_clip_changes": [
+    {
+      "clip": "disabled",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "StopGate",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ServiceCover",
+          "rotation"
+        ],
+        [
+          "StopGate",
+          "rotation"
+        ],
+        [
+          "ToolSlide",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "maintenance",
+      "duration_s": 1,
+      "changed_targets": [
+        [
+          "ServiceCover",
+          "rotation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ServiceCover",
+          "rotation"
+        ],
+        [
+          "StopGate",
+          "rotation"
+        ],
+        [
+          "ToolSlide",
+          "rotation"
+        ]
+      ]
+    },
+    {
+      "clip": "work",
+      "duration_s": 2,
+      "changed_targets": [
+        [
+          "ToolSlide",
+          "translation"
+        ]
+      ],
+      "all_targets": [
+        [
+          "ServiceCover",
+          "rotation"
+        ],
+        [
+          "StopGate",
+          "rotation"
+        ],
+        [
+          "ToolSlide",
+          "translation"
+        ],
+        [
+          "ToolSlide",
+          "rotation"
+        ]
+      ]
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "godot_import": {
+    "path": "prototype/assets/lowfi-batch-r1/models/repair.glb.import",
+    "sha256": "d2ac906a9617239a6a1caef22a46eef12031a10929a20bd0ca6147b02336bf15",
+    "animation_player": "PATH:AnimationPlayer",
+    "optimizer_enabled": false,
+    "reason": "保留源动作转折点；Godot实际重导入端点通过"
+  },
+  "phase_state_modes": {
+    "completed": {
+      "idle": {
+        "mode": "static",
+        "reason": "静态候选轮廓"
+      },
+      "move": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "charge": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "disabled": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      },
+      "towed": {
+        "mode": "na",
+        "reason": "固定设施／道具或地表参考不适用该运行态"
+      },
+      "maintenance": {
+        "mode": "animated",
+        "reason": "Blender源局部动作；不计算游戏规则"
+      }
+    }
+  }
+}

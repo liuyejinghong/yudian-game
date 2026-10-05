@@ -1,0 +1,1438 @@
+{
+  "scope": "ART-U02-GEO frozen zhulei-r1 GEO first sample; static snapshots only, no animation, no seven-state run",
+  "ticket": "docs/art/production/tasks/ART-U02-GEO.md",
+  "revision": 1,
+  "blender": "4.5.14 LTS",
+  "source": {
+    "path": "<project-root>/art-production-r1-20261004/art/source/units/tuoyun-r1/tuoyun-r1.glb",
+    "sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+    "provenance": "active U01 tuoyun-r1 GLB, read-only; wheels/Rocker/Bogie subtree kept verbatim"
+  },
+  "dropped_nodes": [
+    "Body",
+    "CargoBox",
+    "ChargeCap",
+    "Chassis",
+    "Head",
+    "HoodLid",
+    "ProtectedElectronics",
+    "RearLock",
+    "Socket_Cargo",
+    "Socket_Charge",
+    "Socket_TowFront",
+    "Socket_TowRear",
+    "TowRod"
+  ],
+  "hierarchy": {
+    "Zhulei": [
+      "Model"
+    ],
+    "Model": [
+      "BodyShell",
+      "ChargeCap",
+      "ChargeHousing",
+      "FrameBed",
+      "HoodHingeAxle",
+      "HoodHingeMount",
+      "HoodLid",
+      "ProtectedModule",
+      "RearFloor",
+      "RearWallBack",
+      "RearWallFront",
+      "RearWallL",
+      "RearWallR",
+      "Shoulder",
+      "ShoulderMount",
+      "Socket_Charge",
+      "Socket_Service",
+      "Socket_TowFront",
+      "Socket_TowRear",
+      "SupportBeamL",
+      "SupportBeamR",
+      "SupportSleeveL",
+      "SupportSleeveR",
+      "SupportSlideL",
+      "SupportSlideR",
+      "TowFrontEar",
+      "TowFrontMount",
+      "TowRearMount",
+      "Wheels"
+    ]
+  },
+  "triangles_total": 8416,
+  "roles_used": {
+    "body_light": 22,
+    "frame_dark": 29,
+    "rubber": 4,
+    "accent_warm": 11
+  },
+  "meshes": [
+    {
+      "node": "BodyShell",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.45,
+          0.44,
+          -0.51
+        ],
+        "max": [
+          0.45,
+          0.52,
+          0.71
+        ]
+      }
+    },
+    {
+      "node": "Bogie_L",
+      "triangles": 368,
+      "roles": [
+        "frame_dark",
+        "rubber"
+      ],
+      "bounds": {
+        "min": [
+          -0.54,
+          0.173,
+          -0.032
+        ],
+        "max": [
+          -0.4275,
+          0.306745,
+          0.592
+        ]
+      }
+    },
+    {
+      "node": "Bogie_R",
+      "triangles": 368,
+      "roles": [
+        "frame_dark",
+        "rubber"
+      ],
+      "bounds": {
+        "min": [
+          0.4275,
+          0.173,
+          -0.032
+        ],
+        "max": [
+          0.54,
+          0.306745,
+          0.592
+        ]
+      }
+    },
+    {
+      "node": "ChargeCap",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -0.488,
+          0.49,
+          0.28
+        ],
+        "max": [
+          -0.48,
+          0.61,
+          0.4
+        ]
+      }
+    },
+    {
+      "node": "ChargeHousing",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.48,
+          0.47,
+          0.26
+        ],
+        "max": [
+          -0.43,
+          0.63,
+          0.42
+        ]
+      }
+    },
+    {
+      "node": "ElbowAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.18,
+          0.955715,
+          -0.810649
+        ],
+        "max": [
+          0.18,
+          1.103437,
+          -0.662928
+        ]
+      }
+    },
+    {
+      "node": "FrameBed",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.45,
+          0.3,
+          -0.525
+        ],
+        "max": [
+          0.45,
+          0.44,
+          0.725
+        ]
+      }
+    },
+    {
+      "node": "HoodHingeAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.18,
+          0.778,
+          0.658
+        ],
+        "max": [
+          0.18,
+          0.822,
+          0.702
+        ]
+      }
+    },
+    {
+      "node": "HoodHingeMount",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.14,
+          0.76,
+          0.65
+        ],
+        "max": [
+          0.14,
+          0.8,
+          0.71
+        ]
+      }
+    },
+    {
+      "node": "HoodLidPanel",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.37,
+          0.785,
+          -0.02
+        ],
+        "max": [
+          0.37,
+          0.815,
+          0.68
+        ]
+      }
+    },
+    {
+      "node": "LowerArm",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          0.04,
+          0.627492,
+          -0.785508
+        ],
+        "max": [
+          0.14,
+          1.037738,
+          -0.61861
+        ]
+      }
+    },
+    {
+      "node": "ProtectedModule",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.27,
+          0.62,
+          0.11
+        ],
+        "max": [
+          0.27,
+          0.74,
+          0.57
+        ]
+      }
+    },
+    {
+      "node": "RearFloor",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.37,
+          0.52,
+          -0.01
+        ],
+        "max": [
+          0.37,
+          0.62,
+          0.69
+        ]
+      }
+    },
+    {
+      "node": "RearWallBack",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.31,
+          0.62,
+          0.63
+        ],
+        "max": [
+          0.31,
+          0.76,
+          0.69
+        ]
+      }
+    },
+    {
+      "node": "RearWallFront",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.31,
+          0.62,
+          -0.01
+        ],
+        "max": [
+          0.31,
+          0.76,
+          0.05
+        ]
+      }
+    },
+    {
+      "node": "RearWallL",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.37,
+          0.62,
+          -0.01
+        ],
+        "max": [
+          -0.31,
+          0.76,
+          0.69
+        ]
+      }
+    },
+    {
+      "node": "RearWallR",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          0.31,
+          0.62,
+          -0.01
+        ],
+        "max": [
+          0.37,
+          0.76,
+          0.69
+        ]
+      }
+    },
+    {
+      "node": "Rocker_L",
+      "triangles": 208,
+      "roles": [
+        "frame_dark",
+        "rubber"
+      ],
+      "bounds": {
+        "min": [
+          -0.54,
+          0.173,
+          -0.592
+        ],
+        "max": [
+          -0.4,
+          0.385,
+          0.283017
+        ]
+      }
+    },
+    {
+      "node": "Rocker_R",
+      "triangles": 208,
+      "roles": [
+        "frame_dark",
+        "rubber"
+      ],
+      "bounds": {
+        "min": [
+          0.4,
+          0.173,
+          -0.592
+        ],
+        "max": [
+          0.54,
+          0.385,
+          0.283017
+        ]
+      }
+    },
+    {
+      "node": "ShoulderAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.17,
+          0.531367,
+          -0.538633
+        ],
+        "max": [
+          0.17,
+          0.708633,
+          -0.361367
+        ]
+      }
+    },
+    {
+      "node": "ShoulderMount",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.19,
+          0.52,
+          -0.54
+        ],
+        "max": [
+          0.19,
+          0.6,
+          -0.32
+        ]
+      }
+    },
+    {
+      "node": "SupportBeamL",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.74,
+          0.43,
+          -0.45
+        ],
+        "max": [
+          -0.43,
+          0.53,
+          -0.35
+        ]
+      }
+    },
+    {
+      "node": "SupportBeamR",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.43,
+          0.43,
+          -0.45
+        ],
+        "max": [
+          0.74,
+          0.53,
+          -0.35
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveL_Cap",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.82,
+          0.78,
+          -0.44
+        ],
+        "max": [
+          -0.74,
+          0.81,
+          -0.36
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveL_WallXNeg",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.82,
+          0.36,
+          -0.44
+        ],
+        "max": [
+          -0.808,
+          0.78,
+          -0.36
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveL_WallXPos",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.752,
+          0.36,
+          -0.44
+        ],
+        "max": [
+          -0.74,
+          0.78,
+          -0.36
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveL_WallZNeg",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.808,
+          0.36,
+          -0.44
+        ],
+        "max": [
+          -0.752,
+          0.78,
+          -0.428
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveL_WallZPos",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.808,
+          0.36,
+          -0.372
+        ],
+        "max": [
+          -0.752,
+          0.78,
+          -0.36
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveR_Cap",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.74,
+          0.78,
+          -0.44
+        ],
+        "max": [
+          0.82,
+          0.81,
+          -0.36
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveR_WallXNeg",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          0.74,
+          0.36,
+          -0.44
+        ],
+        "max": [
+          0.752,
+          0.78,
+          -0.36
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveR_WallXPos",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          0.808,
+          0.36,
+          -0.44
+        ],
+        "max": [
+          0.82,
+          0.78,
+          -0.36
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveR_WallZNeg",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          0.752,
+          0.36,
+          -0.44
+        ],
+        "max": [
+          0.808,
+          0.78,
+          -0.428
+        ]
+      }
+    },
+    {
+      "node": "SupportSleeveR_WallZPos",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          0.752,
+          0.36,
+          -0.372
+        ],
+        "max": [
+          0.808,
+          0.78,
+          -0.36
+        ]
+      }
+    },
+    {
+      "node": "SupportSlideL_Pad",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -0.87,
+          0.27,
+          -0.51
+        ],
+        "max": [
+          -0.69,
+          0.33,
+          -0.29
+        ]
+      }
+    },
+    {
+      "node": "SupportSlideL_Rod",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.8025,
+          0.33,
+          -0.4225
+        ],
+        "max": [
+          -0.7575,
+          0.73,
+          -0.3775
+        ]
+      }
+    },
+    {
+      "node": "SupportSlideR_Pad",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          0.69,
+          0.27,
+          -0.51
+        ],
+        "max": [
+          0.87,
+          0.33,
+          -0.29
+        ]
+      }
+    },
+    {
+      "node": "SupportSlideR_Rod",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.7575,
+          0.33,
+          -0.4225
+        ],
+        "max": [
+          0.8025,
+          0.73,
+          -0.3775
+        ]
+      }
+    },
+    {
+      "node": "TowFrontEar",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -0.1,
+          0.21,
+          -0.8
+        ],
+        "max": [
+          0.1,
+          0.27,
+          -0.72
+        ]
+      }
+    },
+    {
+      "node": "TowFrontMount",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.09,
+          0.22,
+          -0.72
+        ],
+        "max": [
+          0.09,
+          0.34,
+          -0.49
+        ]
+      }
+    },
+    {
+      "node": "TowRearMount",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.09,
+          0.22,
+          0.63
+        ],
+        "max": [
+          0.09,
+          0.34,
+          0.8
+        ]
+      }
+    },
+    {
+      "node": "UpperArm",
+      "triangles": 44,
+      "roles": [
+        "body_light"
+      ],
+      "bounds": {
+        "min": [
+          -0.14,
+          0.593042,
+          -0.776025
+        ],
+        "max": [
+          -0.04,
+          1.056534,
+          -0.410763
+        ]
+      }
+    },
+    {
+      "node": "Wheel_LF",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.63,
+          2.4e-05,
+          -0.764976
+        ],
+        "max": [
+          -0.47,
+          0.409976,
+          -0.355024
+        ]
+      }
+    },
+    {
+      "node": "Wheel_LM",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.63,
+          2.4e-05,
+          -0.204976
+        ],
+        "max": [
+          -0.47,
+          0.409976,
+          0.204976
+        ]
+      }
+    },
+    {
+      "node": "Wheel_LR",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.63,
+          2.4e-05,
+          0.355024
+        ],
+        "max": [
+          -0.47,
+          0.409976,
+          0.764976
+        ]
+      }
+    },
+    {
+      "node": "Wheel_RF",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.47,
+          2.4e-05,
+          -0.764976
+        ],
+        "max": [
+          0.63,
+          0.409976,
+          -0.355024
+        ]
+      }
+    },
+    {
+      "node": "Wheel_RM",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.47,
+          2.4e-05,
+          -0.204976
+        ],
+        "max": [
+          0.63,
+          0.409976,
+          0.204976
+        ]
+      }
+    },
+    {
+      "node": "Wheel_RR",
+      "triangles": 864,
+      "roles": [
+        "accent_warm",
+        "body_light",
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          0.47,
+          2.4e-05,
+          0.355024
+        ],
+        "max": [
+          0.63,
+          0.409976,
+          0.764976
+        ]
+      }
+    },
+    {
+      "node": "WorkPad",
+      "triangles": 44,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.17,
+          0.469922,
+          -0.716048
+        ],
+        "max": [
+          0.17,
+          0.643815,
+          -0.590826
+        ]
+      }
+    },
+    {
+      "node": "WorkPadMark",
+      "triangles": 44,
+      "roles": [
+        "accent_warm"
+      ],
+      "bounds": {
+        "min": [
+          -0.13,
+          0.498598,
+          -0.714952
+        ],
+        "max": [
+          0.13,
+          0.597079,
+          -0.694342
+        ]
+      }
+    },
+    {
+      "node": "WristAxle",
+      "triangles": 124,
+      "roles": [
+        "frame_dark"
+      ],
+      "bounds": {
+        "min": [
+          -0.17,
+          0.576565,
+          -0.726417
+        ],
+        "max": [
+          0.17,
+          0.694741,
+          -0.60824
+        ]
+      }
+    }
+  ],
+  "poses": {
+    "idle": {
+      "params": {
+        "shoulder": 55.0,
+        "elbow": -155.0,
+        "lid": 0.0,
+        "foot_y": 0.3
+      },
+      "envelope": {
+        "min": [
+          -0.87,
+          2.4e-05,
+          -0.810649
+        ],
+        "max": [
+          0.87,
+          1.103437,
+          0.8
+        ],
+        "candidate_min": [
+          -0.9,
+          0.0,
+          -0.84
+        ],
+        "candidate_max": [
+          0.9,
+          1.14,
+          0.84
+        ],
+        "within": true
+      },
+      "sockets": {
+        "Socket_Charge": {
+          "position": [
+            -0.48,
+            0.55,
+            0.34
+          ],
+          "forward": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_Service": {
+          "position": [
+            0.0,
+            0.69,
+            0.695
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_TowFront": {
+          "position": [
+            0.0,
+            0.24,
+            -0.8
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_TowRear": {
+          "position": [
+            0.0,
+            0.24,
+            0.8
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_Work": {
+          "position": [
+            0.0,
+            0.478084,
+            -0.639545
+          ],
+          "forward": [
+            0.0,
+            -0.984808,
+            0.173648
+          ],
+          "up": [
+            0.0,
+            -0.173648,
+            -0.984808
+          ]
+        }
+      },
+      "triangles": 8416
+    },
+    "work": {
+      "params": {
+        "shoulder": -20.0,
+        "elbow": 5.0,
+        "lid": 0.0,
+        "foot_y": 0.03
+      },
+      "envelope": {
+        "min": [
+          -0.87,
+          0.0,
+          -1.472929
+        ],
+        "max": [
+          0.87,
+          0.822,
+          0.8
+        ],
+        "candidate_min": [
+          -0.9,
+          0.0,
+          -1.6
+        ],
+        "candidate_max": [
+          0.9,
+          1.52,
+          0.84
+        ],
+        "within": true
+      },
+      "sockets": {
+        "Socket_Charge": {
+          "position": [
+            -0.48,
+            0.55,
+            0.34
+          ],
+          "forward": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_Service": {
+          "position": [
+            0.0,
+            0.69,
+            0.695
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_TowFront": {
+          "position": [
+            0.0,
+            0.24,
+            -0.8
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_TowRear": {
+          "position": [
+            0.0,
+            0.24,
+            0.8
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_Work": {
+          "position": [
+            0.0,
+            0.304051,
+            -1.460765
+          ],
+          "forward": [
+            0.0,
+            -0.258819,
+            -0.965926
+          ],
+          "up": [
+            0.0,
+            0.965926,
+            -0.258819
+          ]
+        }
+      },
+      "triangles": 8416
+    },
+    "maintenance": {
+      "params": {
+        "shoulder": 55.0,
+        "elbow": -155.0,
+        "lid": 70.0,
+        "foot_y": 0.3
+      },
+      "envelope": {
+        "min": [
+          -0.87,
+          2.4e-05,
+          -0.810649
+        ],
+        "max": [
+          0.87,
+          1.461889,
+          0.8
+        ],
+        "candidate_min": [
+          -0.9,
+          0.0,
+          -1.6
+        ],
+        "candidate_max": [
+          0.9,
+          1.52,
+          0.84
+        ],
+        "within": true
+      },
+      "sockets": {
+        "Socket_Charge": {
+          "position": [
+            -0.48,
+            0.55,
+            0.34
+          ],
+          "forward": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_Service": {
+          "position": [
+            0.0,
+            0.69,
+            0.695
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_TowFront": {
+          "position": [
+            0.0,
+            0.24,
+            -0.8
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_TowRear": {
+          "position": [
+            0.0,
+            0.24,
+            0.8
+          ],
+          "forward": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "up": [
+            0.0,
+            1.0,
+            -0.0
+          ]
+        },
+        "Socket_Work": {
+          "position": [
+            0.0,
+            0.478084,
+            -0.639545
+          ],
+          "forward": [
+            0.0,
+            -0.984808,
+            0.173648
+          ],
+          "up": [
+            0.0,
+            -0.173648,
+            -0.984808
+          ]
+        }
+      },
+      "triangles": 8416
+    }
+  },
+  "files": {
+    "zhulei-r1.blend": {
+      "bytes": 1307048,
+      "sha256": "6d985fe2db16e31889df94018f3005839fc57a0ca3e3f478ef5c5b19688f531a"
+    },
+    "zhulei-r1.glb": {
+      "bytes": 325992,
+      "sha256": "3f75fb7ebb2c2c29bc7296012bf4315c7f20857ba12aa86e2dd382891f520812"
+    },
+    "zhulei-work.glb": {
+      "bytes": 325972,
+      "sha256": "626fd98b6b5a7205a1696255b38de56402bf302710e999dce7ea064f644de2ea"
+    },
+    "zhulei-maintenance.glb": {
+      "bytes": 326048,
+      "sha256": "76e28c66ab9c8bceef0d8959b5060c4c7888bf75dc826fe3dc212e0e1ddffefc"
+    }
+  },
+  "checks": {
+    "missing_input": "PASS (build aborts; negative in --check suite)",
+    "missing_wheel_nodes": "PASS (six Wheel_ asserted in survey)",
+    "unknown_role": "PASS (roles subset asserted in survey)",
+    "non_finite": "PASS (finite coords asserted in survey)",
+    "empty_output": "PASS (GLB magic + size asserted)",
+    "negative_suite": {
+      "missing_input": "PASS",
+      "missing_wheel_nodes": "PASS",
+      "unknown_role": "PASS",
+      "non_finite": "PASS",
+      "empty_output": "PASS"
+    }
+  },
+  "not_run": [
+    "seven-state animation/reset",
+    "construction/repair/power gameplay",
+    "Godot import and socket/pose verification (master)",
+    "resampled demo clearances",
+    "LOD/UV/baking",
+    "full-scene performance",
+    "owner visual acceptance"
+  ],
+  "build_seconds": 0.399
+}

@@ -1,0 +1,12 @@
+{
+  "selftest.log": {
+    "raw_sha256": "78f02645093329f453abe4d3833d559cb9a8b459f1ba455a5fe68620e6da15ba",
+    "published_transform": "strip trailing whitespace per line; diagnostics unchanged",
+    "published_sha256": "78f02645093329f453abe4d3833d559cb9a8b459f1ba455a5fe68620e6da15ba"
+  },
+  "contract-audit.log": {
+    "raw_sha256": "a42e85f89e40eac7bbfaaa2604a453f39e200d61dab6b7ad27f3f7f379814081",
+    "published_transform": "strip trailing whitespace per line; diagnostics unchanged",
+    "published_sha256": "f55556e0f4f3ea98b2a2bca619bc49f157fb9776612c85e5adeb15dd91a35dd3"
+  }
+}

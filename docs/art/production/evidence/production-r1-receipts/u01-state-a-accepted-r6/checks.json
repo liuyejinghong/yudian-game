@@ -1,0 +1,51 @@
+[
+  {
+    "name": "import",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--editor",
+      "--import",
+      "--quit",
+      "--path",
+      "/private/tmp/yudian-u01-source-master-r6"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "error": false
+  },
+  {
+    "name": "mesh",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "/private/tmp/yudian-u01-source-master-r6",
+      "--script",
+      "res://audit.gd",
+      "--",
+      "res://tuoyun.glb",
+      "/private/tmp/yudian-u01-source-master-r6/mesh.json"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "error": false
+  },
+  {
+    "name": "clips",
+    "command": [
+      "<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "/private/tmp/yudian-u01-source-master-r6",
+      "--script",
+      "res://clips-audit.gd",
+      "--",
+      "res://tuoyun.glb",
+      "/private/tmp/yudian-u01-source-master-r6/clips.json"
+    ],
+    "exit": 0,
+    "script_error": false,
+    "error": false
+  }
+]

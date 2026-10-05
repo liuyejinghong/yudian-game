@@ -1,0 +1,77 @@
+{
+  "bounds_including_hidden": {
+    "max": [
+      0.319999992847443,
+      0.379999995231628,
+      0.349999994039536
+    ],
+    "min": [
+      -0.319999992847443,
+      0.0,
+      -0.349999994039536
+    ]
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "glb": "res://models/crate.glb",
+  "meshes": [
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          0.379999995231628,
+          0.349999994039536
+        ],
+        "min": [
+          -0.319999992847443,
+          0.0,
+          -0.349999994039536
+        ]
+      },
+      "path": "/root/crate/Crate",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 8
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 8
+        }
+      ],
+      "visible": true
+    }
+  ],
+  "sockets": [],
+  "triangles": 48
+}

@@ -1,0 +1,1257 @@
+{
+  "active_sampled": {
+    "max": [
+      1.70000004768372,
+      2.30999994277954,
+      1.60000002384186
+    ],
+    "min": [
+      -1.85000002384186,
+      0.0,
+      -1.85999989509583
+    ]
+  },
+  "asset": "repair",
+  "candidate_envelope_check": "PASS",
+  "clips": {
+    "disabled": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Repair/Model/ServiceCover",
+        "Repair/Model/StopGate",
+        "Repair/Model/ToolSlide"
+      ]
+    },
+    "maintenance": {
+      "duration_s": 1.0,
+      "tracks": [
+        "Repair/Model/ServiceCover",
+        "Repair/Model/StopGate",
+        "Repair/Model/ToolSlide"
+      ]
+    },
+    "work": {
+      "duration_s": 2.0,
+      "tracks": [
+        "Repair/Model/ServiceCover",
+        "Repair/Model/StopGate",
+        "Repair/Model/ToolSlide"
+      ]
+    }
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "frozen_socket_check": "PASS",
+  "glb": "res://assets/lowfi-batch-r1/models/repair.glb",
+  "glb_sha256": "5e80d480c8deaa7be29d043b3b010b2dc48bb7d8ab8302b715f0a07149e371a8",
+  "illegal_preserved": 10,
+  "loaded": {
+    "max": [
+      1.70000004768372,
+      2.30999994277954,
+      1.60000002384186
+    ],
+    "min": [
+      -1.85000002384186,
+      0.0,
+      -1.85999989509583
+    ]
+  },
+  "meshes": [
+    {
+      "node": "Model/Repair/Model/BayGuide-1",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/BayGuide1",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/CabinetBody",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/CabinetCap",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/CabinetFoot",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/CoverHingeAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/CoverHingeSeatFront",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/CoverHingeSeatRear",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/Foundation",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/PortalCrossbar-1",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/PortalCrossbar1",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/PortalPost-1-1",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/PortalPost-11",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/PortalPost1-1",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/PortalPost11",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/PowerInGuard",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/ServiceCover/ServiceCoverPanel",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/SideRail-1",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/SideRail1",
+      "surfaces": [
+        {
+          "role": "body_light",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/StopGate/StopGatePanel",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/StopGateAxle",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 124
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/StopGateSeatL",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/StopGateSeatR",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/ToolSlide/ToolBlock",
+      "surfaces": [
+        {
+          "role": "accent_warm",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/ToolSlide/ToolDropRod",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/ToolTrack",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    },
+    {
+      "node": "Model/Repair/Model/TrackHanger",
+      "surfaces": [
+        {
+          "role": "frame_dark",
+          "surface": 0,
+          "triangles": 44
+        }
+      ]
+    }
+  ],
+  "motion_comparison": {
+    "work": {
+      "different": true,
+      "times": [
+        0.25,
+        0.75
+      ]
+    }
+  },
+  "pose_cases": [
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "idle",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "move",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "work",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "charge",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.83966791629791
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.77066946029663
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.66513073444366
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "cargo": "empty",
+      "state": "disabled",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "towed",
+      "time_s": 2.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.25
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 0.75
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.0
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 1.5
+    },
+    {
+      "bounds": {
+        "max": [
+          1.70000004768372,
+          2.30999994277954,
+          1.60000002384186
+        ],
+        "min": [
+          -1.85000002384186,
+          0.0,
+          -1.85999989509583
+        ]
+      },
+      "cargo": "empty",
+      "state": "maintenance",
+      "time_s": 2.0
+    }
+  ],
+  "scope": "pure source-animation preview and candidate attachment; formal gameplay/owner acceptance NOT_RUN",
+  "sockets": [
+    {
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "node": "Model/Repair/Model/Socket_Bay",
+      "position": [
+        0.0,
+        0.0399999991059303,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        0.0000000874227765734759,
+        0.0,
+        1.0
+      ],
+      "node": "Model/Repair/Model/Socket_PowerIn",
+      "position": [
+        -1.60000002384186,
+        0.180000007152557,
+        1.25499999523163
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "forward": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "node": "Model/Repair/Model/Socket_Service",
+      "position": [
+        -1.38499999046326,
+        0.899999976158142,
+        0.899999976158142
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "source_endpoint_check": "PASS",
+  "source_faults_preserved": 2,
+  "static": {
+    "max": [
+      1.70000004768372,
+      2.30999994277954,
+      1.60000002384186
+    ],
+    "min": [
+      -1.85000002384186,
+      0.0,
+      -1.85999989509583
+    ]
+  },
+  "triangles_with_candidate_attachment": 1348
+}

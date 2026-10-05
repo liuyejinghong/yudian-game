@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+SCRIPT ERROR: Parse Error: Cannot infer the type of "values" variable because the value doesn't have a set type.
+          at: GDScript::reload (res://scenes/art_preview_r1/preview_r1.gd:956)
+ERROR: Failed to load script "res://scenes/art_preview_r1/preview_r1.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

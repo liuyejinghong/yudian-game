@@ -1,0 +1,1838 @@
+[
+  {
+    "asset": "tuoyun",
+    "case": "charge1-yaw0",
+    "png": "images/tuoyun/charge1-yaw0/blind_0001.png",
+    "png_sha256": "e27513d77584f4e2f4aa072ff149bef9d83d7f4921c93c774f28af6fca7575c7",
+    "raw_capture_json_sha256": "9d88db86db727f28d4b027f4bd5348080a11edd9b2fd7f0c45bdb2ec7427ae2d",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/charge1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "charge",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "charge1-yaw180",
+    "png": "images/tuoyun/charge1-yaw180/blind_0001.png",
+    "png_sha256": "d8f924bf0ec519f7b9b884e3f683db52eae885b6f5ef09f55c49d23119940ae0",
+    "raw_capture_json_sha256": "70bcf4c7388c3ee2fd74c60b4fa8f35817efae4cf7aa50593a67ee24737f9b44",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/charge1-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "charge",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "charge1-yaw90",
+    "png": "images/tuoyun/charge1-yaw90/blind_0001.png",
+    "png_sha256": "bc311e44679e3b1a5a11da718c46da5d25e508f9ed5b058a67ed5f0161326b8f",
+    "raw_capture_json_sha256": "c345ad0d24b27add7deb22db094943dc6a2c0851001a0517d6c1cb9d413ff827",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/charge1-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "charge",
+      "time_s": 1.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "close-charge",
+    "png": "images/tuoyun/close-charge/blind_0001.png",
+    "png_sha256": "2c8f15cbdbecc5da6cfa425b264ade916e6153c25f7a2d86dbe0c4b63ff41735",
+    "raw_capture_json_sha256": "6aed948ca5972f87312ca5c005d1facd661a3fbe628e614dfc2e840b66996bc6",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/close-charge/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "close",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "charge",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "close-maintenance",
+    "png": "images/tuoyun/close-maintenance/blind_0001.png",
+    "png_sha256": "24448d2be2645b572cde6e66023518e02fb02795f1b4d01aae0d04b15da858f8",
+    "raw_capture_json_sha256": "5a5b0e9acee65eb78d249764cc05c4a331e27b01ed1db06191498403beab662c",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/close-maintenance/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "close",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "close-work",
+    "png": "images/tuoyun/close-work/blind_0001.png",
+    "png_sha256": "84f5fd1142c4bac2141fbacb4eef732dfbda1f780f1f356adeef88c1a4a32e3a",
+    "raw_capture_json_sha256": "1b7c05cf3895dea354ff55e20749ef18bba1896eabf40647fdd005a8d6130fcf",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/close-work/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "close",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "disabled-loaded",
+    "png": "images/tuoyun/disabled-loaded/blind_0001.png",
+    "png_sha256": "8f6fe00b1e7738b2aa79b48ee6ecaee319e059a10b06590d9bd4571dcf9d32d6",
+    "raw_capture_json_sha256": "03f60c2c2b5a8004a01bc789e97fe10780a8473d97eaaf2b8da02f436ca9907a",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/disabled-loaded/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "loaded",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "disabled1-yaw0",
+    "png": "images/tuoyun/disabled1-yaw0/blind_0001.png",
+    "png_sha256": "d9d0dbe155f16dbe491ab8d7601bebc3d8519b9e3a754acfa7dbc106f0adb856",
+    "raw_capture_json_sha256": "b33918655130533691d0959b348ca86ce11cd9bb46221758af473a6839f74974",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/disabled1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "disabled1-yaw180",
+    "png": "images/tuoyun/disabled1-yaw180/blind_0001.png",
+    "png_sha256": "44292f5cf20c00de8fb68d8b9e8eb9846ec63e8eaf8bb5b81854e52abc868164",
+    "raw_capture_json_sha256": "01efe5aaacaa89725c1204383910c730949447f07de3f2af8b52863179987eee",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/disabled1-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "disabled1-yaw90",
+    "png": "images/tuoyun/disabled1-yaw90/blind_0001.png",
+    "png_sha256": "9178bc1f10661e260357220a6fe56ece440399e753f9b8d89189601c7d597c22",
+    "raw_capture_json_sha256": "732701632d6e96eba0f0bd48d7e81116dff414aed66e834c132c7dc297488a1d",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/disabled1-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "idle-loaded",
+    "png": "images/tuoyun/idle-loaded/blind_0001.png",
+    "png_sha256": "f732a16d6f64127afe3779d6dc76aa4543f98eadf22b39dbfe1e7f932d8a38d1",
+    "raw_capture_json_sha256": "8b4cbaceac320b8e9450e561c495387dca57d1f7f15f8439154d94f6cf8aa9ac",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/idle-loaded/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "loaded",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "idle-loaded-yaw180",
+    "png": "images/tuoyun/idle-loaded-yaw180/blind_0001.png",
+    "png_sha256": "3f0fe30fd7da7cd329c761e3eced82f176aae24c51d8dd6448f0ed31af4319ee",
+    "raw_capture_json_sha256": "0a2d1b1938630e4c08a5bf4fb525c4716ae7ee6968756f917838a1b3fed27dc2",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/idle-loaded-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "loaded",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "idle-loaded-yaw90",
+    "png": "images/tuoyun/idle-loaded-yaw90/blind_0001.png",
+    "png_sha256": "db6c4c45f82b99210320ef6fd8eec0b88d55abe91a1aaa47998e4546c80ff5d4",
+    "raw_capture_json_sha256": "5bb6d1d0ae48d3eb0d1d9eb4c1f2f6fc2241378b8936b1ce92b22e6e2db289bb",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/idle-loaded-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "loaded",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "idle0-yaw0",
+    "png": "images/tuoyun/idle0-yaw0/blind_0001.png",
+    "png_sha256": "4e9632f452d141e1bb8e19299b087cbd60f3a14dc9049fc279010759c2ac686a",
+    "raw_capture_json_sha256": "3e809c06b7f06d0f30a7eccc90106e50fe525e85ceca905acf02d1f63cd56fab",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/idle0-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "idle0-yaw180",
+    "png": "images/tuoyun/idle0-yaw180/blind_0001.png",
+    "png_sha256": "e0f4be67d0e2a95300c9e6e82f97351e07905693a59f9d97e9889c026dc794b7",
+    "raw_capture_json_sha256": "7cf38699007b32dccabcaaace4891820c1ede51e80780879bec14f0772212b46",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/idle0-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "idle0-yaw90",
+    "png": "images/tuoyun/idle0-yaw90/blind_0001.png",
+    "png_sha256": "2eda90e90d7b941952bc70bb83f6373e0b1461b9ddb0b8ab51e4c8916bb9d8eb",
+    "raw_capture_json_sha256": "9ca2145a4055a1d90acbc7f074f9f3e0b39e99bb193db45ea105e5aa4ae2de9c",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/idle0-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "maintenance1-yaw0",
+    "png": "images/tuoyun/maintenance1-yaw0/blind_0001.png",
+    "png_sha256": "9ba6ec52182f7be42e33a818b06c4579279ed921db54c800bdf14893dabd2e8e",
+    "raw_capture_json_sha256": "5acc5c2359236ccceaa53b8e01c4d00f741406a520458ae53a880cd7cabd46a9",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/maintenance1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "maintenance1-yaw180",
+    "png": "images/tuoyun/maintenance1-yaw180/blind_0001.png",
+    "png_sha256": "2c876c1da6090581b949863c6a460a4e72c0ff33d1645c1fd14a8e54a6711eda",
+    "raw_capture_json_sha256": "f940a4a90ccf8c4d356021d722071461851166e3a85302edc7b9b20d6e6c58ff",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/maintenance1-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "maintenance1-yaw90",
+    "png": "images/tuoyun/maintenance1-yaw90/blind_0001.png",
+    "png_sha256": "c6d01154e04b94c4c4fd0c8c36de875d9c1f0534061c683b345e0b73f950ae59",
+    "raw_capture_json_sha256": "5de469cd6536acaa2b8211e53a527f053266913de2a701da92568bcf8a3d6e07",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/maintenance1-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "move0.25-yaw0",
+    "png": "images/tuoyun/move0.25-yaw0/blind_0001.png",
+    "png_sha256": "157052b7c884d37fe6acae3dda1541c8a8b91c42930fb73f36e11428d9688c6d",
+    "raw_capture_json_sha256": "abcde7aa3df95ff9d12f590c8b2bc423d3eb668ea817e6ee1e7eb7d536c15ba3",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/move0.25-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.25,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "move0.75-yaw0",
+    "png": "images/tuoyun/move0.75-yaw0/blind_0001.png",
+    "png_sha256": "492d57068eb13bcd31b54df3b66e3c2c0b8bf95de0cbe183a7431fb47c5f2ad7",
+    "raw_capture_json_sha256": "f8adc6631eb1847e6cff767992044bbbd9a588a959540d8b8f5b905f039fd85f",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/move0.75-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "move",
+      "time_s": 0.75,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "reason-both",
+    "png": "images/tuoyun/reason-both/ART-U01_normal_yaw000_disabled_completed_pt0p000_empty_both_t1p000.png",
+    "png_sha256": "00faa21a61a437173f41a156ff225de3c1c3032912cd31a75639a073f6d33b4a",
+    "raw_capture_json_sha256": "efd932dfaf633925493f661b2b56397893e7b113cc7a67d5f50f6e2264760b0d",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/reason-both/ART-U01_normal_yaw000_disabled_completed_pt0p000_empty_both_t1p000.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "both",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "evidence",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "reason-mechanical",
+    "png": "images/tuoyun/reason-mechanical/ART-U01_normal_yaw000_disabled_completed_pt0p000_empty_mechanical_t1p000.png",
+    "png_sha256": "f4523be441a826ad0a349f42b4d2d05ee7bec988fcc29f6e64171235f916bb36",
+    "raw_capture_json_sha256": "a9cee0827e4b702ae26d8b6e12b8d3945b401677dae6e9578275e78cc16c2490",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/reason-mechanical/ART-U01_normal_yaw000_disabled_completed_pt0p000_empty_mechanical_t1p000.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "mechanical",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "evidence",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "reason-no_power",
+    "png": "images/tuoyun/reason-no_power/ART-U01_normal_yaw000_disabled_completed_pt0p000_empty_no_power_t1p000.png",
+    "png_sha256": "492956f72645ce773e862c8cb0688b3257ecb1e5f3824c2a905ec7994db07378",
+    "raw_capture_json_sha256": "2ee33fa18c7c78681ada045373486bdef935858eac2678c7498de61f12588ca4",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/reason-no_power/ART-U01_normal_yaw000_disabled_completed_pt0p000_empty_no_power_t1p000.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "no_power",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "evidence",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "towed1-yaw0",
+    "png": "images/tuoyun/towed1-yaw0/blind_0001.png",
+    "png_sha256": "0d1c49515a88547ca4f58e730b86735a8a6e3d150a92217b450ea932427df715",
+    "raw_capture_json_sha256": "e89f28d7acd687bf84538dc36ed0944a7a3471b8e452b79f19df2e99d319f39d",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/towed1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "towed",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "towed1-yaw180",
+    "png": "images/tuoyun/towed1-yaw180/blind_0001.png",
+    "png_sha256": "4ceddfcb55b73b7ecc86fe09db3928510cf2378aba2c3686bb33d3d40a91b3c6",
+    "raw_capture_json_sha256": "e4db9805a94616007a6d7f63ca9df69e1ef866e96547aadb0468a0589ed9d6c7",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/towed1-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "towed",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "towed1-yaw90",
+    "png": "images/tuoyun/towed1-yaw90/blind_0001.png",
+    "png_sha256": "28f8dc1f89b3c4101b4b272a181948d2b6c01b563440591af6cd48d8d5cf55c9",
+    "raw_capture_json_sha256": "1073d102e4e64eddc0f6cd36d61488bdf0199b05aa72680fce0ebd509adfcb99",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/towed1-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "towed",
+      "time_s": 1.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "work-loaded",
+    "png": "images/tuoyun/work-loaded/blind_0001.png",
+    "png_sha256": "53653b08c031ff4089e3e75945c552b83d8671c34b4d258eece94a591a737fd4",
+    "raw_capture_json_sha256": "9f5c68af22f4bf226d4d84cbcda365df20ce8493baf6d6c1597aff65f4e751cc",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/work-loaded/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "loaded",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "tuoyun",
+    "case": "work1-yaw0",
+    "png": "images/tuoyun/work1-yaw0/blind_0001.png",
+    "png_sha256": "3d5888b55a40c2bceb6dae0ef13ab4afee569acb8024fb414a869023b3caeea9",
+    "raw_capture_json_sha256": "6198dfe8dc303a7e7cde2e3953218699d30e9c2eee1c9667b299478be56fc32c",
+    "raw_capture_project_relative": "art-preview-evidence/u01-real-master-r9/work1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "preview.tscn_sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "close-completed",
+    "png": "images/solar/close-completed/blind_0001.png",
+    "png_sha256": "9665e656b1a865702138e25004d7c60aecbcd2b24e683a25e00c358fc1f4d2b9",
+    "raw_capture_json_sha256": "2ecae918228fe5e85ebc72d5f407bfd7923b501c2d564f3d03854cff540333e1",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/close-completed/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "close",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "close-maintenance-rear",
+    "png": "images/solar/close-maintenance-rear/blind_0001.png",
+    "png_sha256": "e0826c34261f7464866dcebe52cc84f8e0c8c76a656d423c2fce20afdc9091d5",
+    "raw_capture_json_sha256": "1d9c20a88765cd821eab1066923ec055c33fa458ad940671da9d839fdf892927",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/close-maintenance-rear/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "close",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "completed",
+    "png": "images/solar/completed/blind_0001.png",
+    "png_sha256": "b90b220aaada80f8ecb5646d9141c45ce200d783cb01301a4fb65b8c1e728fbe",
+    "raw_capture_json_sha256": "fe81b3b0d3954e7fb417e2ac726fc56efe5d57011bb553beec379c777fde944b",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/completed/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "completed-yaw180",
+    "png": "images/solar/completed-yaw180/blind_0001.png",
+    "png_sha256": "b72cef2be5f8e645808b5536cb7993e1705fd55acd665fbd005f93f48ab93543",
+    "raw_capture_json_sha256": "95efa09ff6b70ffbbad701817d26bf4d145e90299a47802f9fb68b03e20f48ba",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/completed-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "c13531c52d9642322ed44465a9c03a39fb3fb2e486d8870be1813f97491bf316",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "completed-yaw90",
+    "png": "images/solar/completed-yaw90/blind_0001.png",
+    "png_sha256": "9a6fec52e9ed2bc0361bab54d658cedae4ee9818449815bb23087fab1bc725ac",
+    "raw_capture_json_sha256": "e5235b4713412417704ac7c658fa4094f23099b03653300d4627efb70f98ee46",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/completed-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "c13531c52d9642322ed44465a9c03a39fb3fb2e486d8870be1813f97491bf316",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "deploy-0",
+    "png": "images/solar/deploy-0/blind_0001.png",
+    "png_sha256": "f9317be1798b3e9df2e27e7b3b86eaa9c616d8800a52971e414edf28c1c6da05",
+    "raw_capture_json_sha256": "9e20118761cdb7734f3318403f8e9db259dfd510eec798bf5ef01098866a78cb",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/deploy-0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "deploying",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "deploy-0.25",
+    "png": "images/solar/deploy-0.25/blind_0001.png",
+    "png_sha256": "92cff6f03010405284d1647f2ec8b76da462fe8010c716459055a3b1d7c07b8a",
+    "raw_capture_json_sha256": "c5c6e8b578b6494af86d82dda6a26b5eda488f28950a084257a46c6f620a3c89",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/deploy-0.25/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "deploying",
+      "phase_t": 0.25,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "deploy-0.5",
+    "png": "images/solar/deploy-0.5/blind_0001.png",
+    "png_sha256": "eb5c534d3fa3556c6eaaa220a4282d505bf7ddd5f0519679da1494741ff950e5",
+    "raw_capture_json_sha256": "d1150d34bbf1f6229ee9cf041aa73930a5dfcb47d9dd751c93b0bedd427a22ad",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/deploy-0.5/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "deploying",
+      "phase_t": 0.5,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "deploy-0.75",
+    "png": "images/solar/deploy-0.75/blind_0001.png",
+    "png_sha256": "c88c13c4df4bbea72a17bff3a944504dbdd7ac1e886fe3baa05d3ed035e338dc",
+    "raw_capture_json_sha256": "2137b9f5dffe3e572ea3d4326046f136899ca496e1866055806dc38a043f0410",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/deploy-0.75/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "deploying",
+      "phase_t": 0.75,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "deploy-1",
+    "png": "images/solar/deploy-1/blind_0001.png",
+    "png_sha256": "b90b220aaada80f8ecb5646d9141c45ce200d783cb01301a4fb65b8c1e728fbe",
+    "raw_capture_json_sha256": "15766b812e8af97914d4ce64e074f46e89bd4dcf7fba36f4ae0cd7c2817b9723",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/deploy-1/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "deploying",
+      "phase_t": 1.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "deploy-half-disabled",
+    "png": "images/solar/deploy-half-disabled/blind_0001.png",
+    "png_sha256": "0026e69c4f38711e22f951792089497d43ee188e2a2e09ffceb6cc376b2ea985",
+    "raw_capture_json_sha256": "fd4c074b11b4727cb0a7e681d45055a90716c14fa61145ac848d56fd34ba92cf",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/deploy-half-disabled/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "deploying",
+      "phase_t": 0.5,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "c13531c52d9642322ed44465a9c03a39fb3fb2e486d8870be1813f97491bf316",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "deploy-half-maintenance",
+    "png": "images/solar/deploy-half-maintenance/blind_0001.png",
+    "png_sha256": "6526e51e3be864f084ff5c16fce0ef197bc366d67cda72451c993f2110944e78",
+    "raw_capture_json_sha256": "a181040089f59ed758a30f983b7f5c899b516e322fe8bb7f969e2c45e7e1a824",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/deploy-half-maintenance/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "deploying",
+      "phase_t": 0.5,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "c13531c52d9642322ed44465a9c03a39fb3fb2e486d8870be1813f97491bf316",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "disabled1-yaw0",
+    "png": "images/solar/disabled1-yaw0/blind_0001.png",
+    "png_sha256": "755a720fd49cc1ff75651e74a7032299a2b26bbdb0232c8b6bd5544b6235546c",
+    "raw_capture_json_sha256": "b13188f6e6d8a6bc45100300f0dc723a8fc373c6e9da124177d858fac9030afc",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/disabled1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "disabled1-yaw180",
+    "png": "images/solar/disabled1-yaw180/blind_0001.png",
+    "png_sha256": "6032490a67d60c0e4049300cdf3132526781aa793353f2963d960f8bc18372ad",
+    "raw_capture_json_sha256": "9d5e7f82cfa30c64ed8faba9eee0d425128010794ff62e79aeb5b4b8b2a53009",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/disabled1-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "installed",
+    "png": "images/solar/installed/blind_0001.png",
+    "png_sha256": "f9317be1798b3e9df2e27e7b3b86eaa9c616d8800a52971e414edf28c1c6da05",
+    "raw_capture_json_sha256": "76460d4c65b7381429d6b2554c28768710b885d14debc70e504a8d413e96c9cd",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/installed/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "installed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "maintenance1-yaw0",
+    "png": "images/solar/maintenance1-yaw0/blind_0001.png",
+    "png_sha256": "df6658cf043d4fb3a86f5dda9ba56851f8a32b78b884298aab85235410f4da39",
+    "raw_capture_json_sha256": "32ad9457286c6d1c3a6c750428370d86b6b6aadc1de2722cc651e488e99b8abc",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/maintenance1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "maintenance1-yaw180",
+    "png": "images/solar/maintenance1-yaw180/blind_0001.png",
+    "png_sha256": "9fba043367e6bc9198a3f0e63b4d9ca44396aba8629341bf3fdabe4a3c66a42a",
+    "raw_capture_json_sha256": "785d338fc68f868e3507b6d3325de4db1e545ce27aa0bd7eab0a8660d72e4d12",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/maintenance1-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "packed",
+    "png": "images/solar/packed/blind_0001.png",
+    "png_sha256": "70c2fc8b44c87731af9254d05092e91756fa36de391d0c34151485da1c3592e9",
+    "raw_capture_json_sha256": "a5af5a43fba6269e25a13da6ea3fb7eaf17a8376c11c82d8f9b381d8437a1e1a",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/packed/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "packed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "packed-yaw180",
+    "png": "images/solar/packed-yaw180/blind_0001.png",
+    "png_sha256": "5e3f064ec31f85f5dfcdb943eea63ae90d8a9a2a828818c412a6b83436d1a2b8",
+    "raw_capture_json_sha256": "263c78edace2a2b397b28befe7609f823316fca1cb01394cdf7217c87238f6e7",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/packed-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "packed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "c13531c52d9642322ed44465a9c03a39fb3fb2e486d8870be1813f97491bf316",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "packed-yaw90",
+    "png": "images/solar/packed-yaw90/blind_0001.png",
+    "png_sha256": "7b656b15f7e12dc09cc800c5a632e225503f3b965dc1ac49e6545e20a0fe9c15",
+    "raw_capture_json_sha256": "e9a1e1ac5d9ccd3b879fd0cc57beb43f352e810a2210cf63470f937f62e0e6a5",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/packed-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "packed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "current",
+      "preview.gd_sha256": "c13531c52d9642322ed44465a9c03a39fb3fb2e486d8870be1813f97491bf316",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "work0.25-yaw0",
+    "png": "images/solar/work0.25-yaw0/blind_0001.png",
+    "png_sha256": "c96c51539cd7176f44caa1136cf013a06dedf4b4e5237029596fd948a58fa5a9",
+    "raw_capture_json_sha256": "5a9a6ce6116c4ac5ca8ec44a687b35c802910c79dd75cde140734474abe57fd9",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/work0.25-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.25,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "solar",
+    "case": "work0.75-yaw0",
+    "png": "images/solar/work0.75-yaw0/blind_0001.png",
+    "png_sha256": "12c8cc236d7a1f8475c2b15f96912e2a199dfeee9f65933b1bb6e39e38350c1d",
+    "raw_capture_json_sha256": "51f02dff305a765a94331f723f1115bcaf0d7d9add09ff274afa5c46d8389aee",
+    "raw_capture_project_relative": "art-preview-evidence/f01-real-master-r2/work0.75-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.75,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "ea651b334806c070fa1fdf4d3adc6e99bc6f58ed657b110671cc8170ddf8d42d",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "8028766abdf7f6877f11ec88d04e65b1cb28d5b5fe4f61a50bf8047b06e7e201",
+      "preview.tscn_sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "close-idle",
+    "png": "images/processor/close-idle/blind_0001.png",
+    "png_sha256": "d58d70518c7d20fe560b92f755291e28ed3d672d4909ccf840eabff741fa4dc0",
+    "raw_capture_json_sha256": "b411c424de3fee6662a059efe2a762e971752af00ef55f59629e5c40e16bfdd6",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/close-idle/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "close",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "close-maintenance",
+    "png": "images/processor/close-maintenance/blind_0001.png",
+    "png_sha256": "6a94ec4c039b40e078503df5fb8da1bfd1fc3d70183f37b020b04dc00e9d856c",
+    "raw_capture_json_sha256": "cff0024f0dccd962ece41081c31afeb7e1c6e5be4bfaaa89608c055062cec0d4",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/close-maintenance/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "close",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "disabled1-yaw0",
+    "png": "images/processor/disabled1-yaw0/blind_0001.png",
+    "png_sha256": "b42e30c9f09ea30851c67d62f6c6dfe1b46f9b5e74a49d98419d68dc24634688",
+    "raw_capture_json_sha256": "e24d059005020b5f889279116f662ad10ccace2f4a0081be0119889a6ded3266",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/disabled1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "disabled1-yaw180",
+    "png": "images/processor/disabled1-yaw180/blind_0001.png",
+    "png_sha256": "2ab913f6a3c07104a8bd3f7078af6d92b23c1e822a96278bcfb8aaf2fb9c9a1f",
+    "raw_capture_json_sha256": "2e8a702311a9caa6c7fb4ad3c6ee901a32322d47c932486c02b12e5d845a804b",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/disabled1-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "disabled1-yaw90",
+    "png": "images/processor/disabled1-yaw90/blind_0001.png",
+    "png_sha256": "758d29c7db4497b27972cded62ecace72d5b8b67445fa2e4a063ca43cde20a96",
+    "raw_capture_json_sha256": "70f4d77aedf6e7898ea67492edf0a2c7629fab0433f912843af684ab78c19c7a",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/disabled1-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "disabled",
+      "time_s": 1.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "idle0-yaw0",
+    "png": "images/processor/idle0-yaw0/blind_0001.png",
+    "png_sha256": "a88e37593c9ff260c3f300ce84bd58c149977de391d86a28c66e520e21566db5",
+    "raw_capture_json_sha256": "fce4f3e889868573aac57f51f0d1b8605049d6dab74dda774ff2c340e9e7300e",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/idle0-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "idle0-yaw180",
+    "png": "images/processor/idle0-yaw180/blind_0001.png",
+    "png_sha256": "5e1f923259062d9c410e9b9dfeaf4dc926bf842096a8e16043ff0e18ff434fa0",
+    "raw_capture_json_sha256": "6eece5d109941ea031a5e9c60b13dd39a8d960ee4ff8cdeb48888fdfc03c755c",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/idle0-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "idle0-yaw90",
+    "png": "images/processor/idle0-yaw90/blind_0001.png",
+    "png_sha256": "7c9862ba10e0cea8bb2134ca8f88494d29e7b9a1389de57329808b8ba03719df",
+    "raw_capture_json_sha256": "c9d69a6e0dc90bf0a8f6c7e2bfcfe76d381a305b9d8b56b3ef4e92eac630cf21",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/idle0-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "idle",
+      "time_s": 0.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "maintenance1-yaw0",
+    "png": "images/processor/maintenance1-yaw0/blind_0001.png",
+    "png_sha256": "7baea70c0870c1e691c5f18ca6751977dd09714ab962eea39f76d08efb1df0d5",
+    "raw_capture_json_sha256": "00fd0e159d1461553cb260a3d7e348beaf31775695014ec426acbbe2642cb7cf",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/maintenance1-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "maintenance1-yaw180",
+    "png": "images/processor/maintenance1-yaw180/blind_0001.png",
+    "png_sha256": "d2ba7671ac556b8917126773e273a99898aab8a12db8f63ed928f9b0a7947da9",
+    "raw_capture_json_sha256": "fe083d0dcf9ca636ba5de9014dfe63a615535ab8be7aac1a684533eaf8f6f113",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/maintenance1-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "maintenance1-yaw90",
+    "png": "images/processor/maintenance1-yaw90/blind_0001.png",
+    "png_sha256": "001192c001d569747a4efda325f40a9a7691d30fe8f12e11337792a807b5b026",
+    "raw_capture_json_sha256": "19405350d0341c082c804f0c7276b547e3fe6038c3232942bdea11291312d7c9",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/maintenance1-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "maintenance",
+      "time_s": 1.0,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "work0.5-yaw0",
+    "png": "images/processor/work0.5-yaw0/blind_0001.png",
+    "png_sha256": "228c8066b0a6ebf166d555c82f98abe0dbf7a4f6f83e3ca4098399241675f6a3",
+    "raw_capture_json_sha256": "400db800ad02cb69e9e29b2ea6673dda6425e48cea54ff0e4b70d6ff7de17a5c",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/work0.5-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.5,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "work0.5-yaw180",
+    "png": "images/processor/work0.5-yaw180/blind_0001.png",
+    "png_sha256": "55297c866810f3cfed6285371c3a4bd31364a9e6ae71a5226a90cbdb0ad6f9cc",
+    "raw_capture_json_sha256": "1b702a8b620030307061771d714c6bf6c48895c06b6c84a8f8f024f5b2b34bdd",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/work0.5-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.5,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "work0.5-yaw90",
+    "png": "images/processor/work0.5-yaw90/blind_0001.png",
+    "png_sha256": "1bfbbfc50dd109ddc4a8ed9a595fb1fe7adfc6610cb0f17247b16380435dcd9e",
+    "raw_capture_json_sha256": "1358fa7de89375067d1239edc74d7845a46312dd2f002dff775c01b6b64aa61d",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/work0.5-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 0.5,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "work1.5-yaw0",
+    "png": "images/processor/work1.5-yaw0/blind_0001.png",
+    "png_sha256": "e1170205bf6dfd3c674ece848253026aa04f971beae23efeaab655db9e32f552",
+    "raw_capture_json_sha256": "214e79f21e6f9fec28dc97a3596675016df0d753261d6f63ade94d250017d5f3",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/work1.5-yaw0/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 1.5,
+      "yaw": 0
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "work1.5-yaw180",
+    "png": "images/processor/work1.5-yaw180/blind_0001.png",
+    "png_sha256": "fe9f79fed47cab18a79a5010cc17165cdd68a8217ee7985a1184ac5eec27a894",
+    "raw_capture_json_sha256": "23f3b80e5b3fff4e146258034dff454b6685f6a40eada39dd7f7b77f106e9fc1",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/work1.5-yaw180/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 1.5,
+      "yaw": 180
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  },
+  {
+    "asset": "processor",
+    "case": "work1.5-yaw90",
+    "png": "images/processor/work1.5-yaw90/blind_0001.png",
+    "png_sha256": "1bfbbfc50dd109ddc4a8ed9a595fb1fe7adfc6610cb0f17247b16380435dcd9e",
+    "raw_capture_json_sha256": "e5d0afaad722ecd41718c98dbc6e8aa2763e39bae9beb4f5a0fe62926dea3a8f",
+    "raw_capture_project_relative": "art-preview-evidence/f02-real-master-r1/work1.5-yaw90/blind_0001.json",
+    "archived_json": "capture-record.json paths redacted; not raw-byte equivalent",
+    "requested": {
+      "camera": "normal",
+      "cargo": "empty",
+      "phase": "completed",
+      "phase_t": 0.0,
+      "reason": "none",
+      "state": "work",
+      "time_s": 1.5,
+      "yaw": 90
+    },
+    "labels": "blind",
+    "glb_sha256": "773575a5e7bcc946864680e5cbead04b53e3a815bebed2ab15519ed3de4ebc5a",
+    "actual_wrapper": {
+      "version": "before-clip-guard",
+      "preview.gd_sha256": "76df9bbe14011813397f3f2bf286c4eabbd60c3afa7884dcf0af451aba87f345",
+      "preview.tscn_sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac",
+      "provenance": "verified copy from actual temporary capture project; previous gd backed up before clip-guard-only edit"
+    }
+  }
+]

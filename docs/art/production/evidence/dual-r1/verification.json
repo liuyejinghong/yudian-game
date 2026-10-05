@@ -1,0 +1,43 @@
+{
+  "hf_revision": 2,
+  "hf_triangles": 16504,
+  "hf_meshes": 28,
+  "hf_surfaces": 51,
+  "socket_position_direction_checks": 4,
+  "crate_triangles": 48,
+  "crate_surfaces": 4,
+  "material_role_coverage": "PASS",
+  "real_images_r2_and_crate": 20,
+  "image_sha256": {
+    "u01-old_close_90_loaded.png": "7a29bc969ba85eaa186c5b36afc4eca2a1974453a604236d2faf02d04320d17f",
+    "crate_close_90_empty.png": "6e21105a06fd28ff310b88633136ec89556f5c97e30c14f9fb845f315fde6572",
+    "u01-hf_close_90_loaded.png": "761a308280ff0a268bfecfbe997987fd1dcfdcbe1aefb560ca41d9e08dfbb2ec",
+    "u01-hf_normal_90_loaded.png": "f10f76af73a7f73fc888a1fdda7a85127ac3b5a851713a52140ecb476095a6bf",
+    "crate_close_0_empty.png": "363740baf48a9b3cf971879e25da250e2f84964f37c246fc9f84744d1331803b",
+    "u01-hf_normal_0_empty.png": "8f80af864dbe49d10542a1ddb4f4e4ce2d56e92ec86bbe71779b6b06e92d0f8f",
+    "u01-old_close_0_loaded.png": "f72de5bfbdfe82b3a2d7ee90c463022b98e58da6000fdc13ec20910a7d6f34b1",
+    "u01-hf_close_0_empty.png": "30d9a3fc74ffdb107549b073d897b2c4b62d07701a7fd6b2e5d87712ae7b2864",
+    "u01-old_normal_0_loaded.png": "b8dcc8cad22597e9a9031f7be37bd547131ae9c0a4992d5c1d360968a901c6d7",
+    "u01-hf_close_0_loaded.png": "890c65ce384c99b64b6cd47dba6a841c6b1535735b14aa7d13f82c50ee141ca3",
+    "u01-hf_normal_0_loaded.png": "36a41cb3c4ba1e7dd47c0ad8fa864a5db491935f0ec1fd756946687c1bacd24c",
+    "u01-old_normal_0_empty.png": "6b969f9eaf3498145fb6453ef7a2b47f35e3324c6c12931bca10d534e797559d",
+    "crate_normal_90_empty.png": "130913cda66c5593c3e6baaf9cdd6b38fdf0e2c61da8206d9aad818904dab797",
+    "u01-old_close_0_empty.png": "ea3d88ff5c44f444bcace4263899e1cf9c2c65f33cf596e8e7c5ce51db2434f3",
+    "u01-hf_close_90_empty.png": "5b3a2fd6eb920fc08fd249ea0bbd599dc980f398ad704f8810034cbfaae9e111",
+    "u01-old_normal_90_empty.png": "a41bb91bdc234e8d61835c9234d83d80595ceeb4892629f3b3ef7e965e93a4d6",
+    "u01-hf_normal_90_empty.png": "155fad7acc921287d0ea3ccbe4e5908fcacc0d790c37fdc90da11cdd4fb59ea3",
+    "crate_normal_0_empty.png": "7efc17def7cbdead063b3c6964769f2970ba32337b07f76fd33e9ecbdfd7d827",
+    "u01-old_normal_90_loaded.png": "f5714c8bcfd35b83b515e118c17a63faeb8980c65bbd6469ace8ad1f52a7dbcc",
+    "u01-old_close_90_empty.png": "389d41af5901853ea00528e25c9e28ad67cf3f55502c534dac604e0032a1aced"
+  },
+  "scope": "idle geometry / normal+close / yaw0+90 / empty+loaded demo only",
+  "not_run": [
+    "full animation conversion",
+    "UV/baking",
+    "LOD",
+    "owner final high-fidelity acceptance",
+    "gameplay integration",
+    "full-scene performance",
+    "same-task Python vs Blender time comparison"
+  ]
+}

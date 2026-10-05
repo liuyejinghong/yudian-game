@@ -1,0 +1,387 @@
+{
+  "source_version": "8a9f13b",
+  "base_main": "f5ad71e",
+  "note": "Historical receipts keep original hashes; public copies remove machine paths. Active manifests identify public sources. Original production worktree remains unchanged.",
+  "redacted_files": [
+    {
+      "path": "art/source/lowfi-batch-r1/existing/charger/geometry-facts.json",
+      "original_sha256": "bb46d894e91148cfa0b17672969a1d04d06bb28e7e620b9a845ed3fa1576c7f2",
+      "public_sha256": "0f938b1166103beb99903914c3de1582b045ce7ddcedf2da3e386f27ba1ddeff",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/charger/geometry-report.md",
+      "original_sha256": "16fdb31eeaeb5fad1655ea349d5e311514fa5cddad0a88908614c273f1d6d6ce",
+      "public_sha256": "b698dce86fb51b98e00293398c8da8aa7f8d7ad73133d6c5e480eac44bc4a7ee",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/crate/geometry-facts.json",
+      "original_sha256": "050aac1f4fb5291ff8d181fdb9ad8c364333ae8a94c8f38cc6fd55cdb51cca5b",
+      "public_sha256": "dc9bda49faa973ec9047a3db5ae14cef4648305119fbc3aea2ccb2a8408f1e20",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/crate/geometry-report.md",
+      "original_sha256": "082b11896ead89c5a9ba2bd573ac4f0de379907ca1ce2f046bb785208dcbd0d9",
+      "public_sha256": "9b88d267a0ad89541bd1573f928bfe3a686072c3c51295c92ec8f11e1428a524",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/storage/geometry-facts.json",
+      "original_sha256": "1fd459e74339450ce36fd0e87dbf595c4f9059ad088ce66f40361d293180cca5",
+      "public_sha256": "7b907104adb5ac386b57d88cd6430bd749e53f34a42a97ecf8732835cd421077",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/storage/geometry-report.md",
+      "original_sha256": "8c333012f918c80f5d4fb87c67c51c4d71c389f880a6216d9ad48bdc26c666e0",
+      "public_sha256": "dc42f718dc5196c46dd9ddb918aacdfa11657360b3bbbe33dd997cad489432a0",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/zhulei/geometry-facts.json",
+      "original_sha256": "93a163801392973351e2c317560ecc5fc98456547f7eab368cdab09888cd9bc6",
+      "public_sha256": "5dca90dd13a9a43bb06fad050a7a47beefcd885cb330915f0de71f20154363d2",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/zhulei/geometry-report.md",
+      "original_sha256": "78119dd708ce00dee4b2cb7a49288c736a20cfbd839e29bb7c7751411dd7661f",
+      "public_sha256": "08871168140e4e70396a0a6a4638a6881371483e02feb21dded90652752aec19",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/units/tuoyun-r1/geometry-report.md",
+      "original_sha256": "3049afd2a6146587a13589df8d32e6b94da03db423bfe2ddae6b1d83e9bd73dc",
+      "public_sha256": "8d9ca6536c7910e7f5c5adbea476d19b7a446fb58831d128f53a383142fd95ce",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/units/tuoyun-r1/state-source-report.md",
+      "original_sha256": "2b40df7a88aba2ac2969e30c8a416eab2098ded6a1cc15a51eea99b0d2ffbed0",
+      "public_sha256": "77e8e4dd2b23a865e4df9f2add61d350bb4b6e5e02d1c45139ad54cfe8b41411",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/units/zhulei-r1/geometry-facts.json",
+      "original_sha256": "a5147a2bb9ed09899f8c0cd3968fdc65cfff5ba6f18948578a21601f90e800d0",
+      "public_sha256": "e1938bb8cc3850c6abed0439afa72139141505cdcf7fb31ff5a99d1400caf084",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/dual-r2/README.md",
+      "original_sha256": "8fedbda1370585e6c7f1e23104be5e7c7bf3c9f4c80110a766580822af37b0b0",
+      "public_sha256": "df17dd5ce49cbf0b0dc3e81d680b24780b2fb6fd13d5ac9184c5e394d20f4fe3",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/lowfi-batch-r1/README.md",
+      "original_sha256": "0101ecfc3c309dda254f3bc1a537ceadf922920240e46359ca4bb75d79769f55",
+      "public_sha256": "53c1592d72539da91624fee8bd8f14062951cfadf980a78f0f8c3a54ba505e61",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/lowfi-batch-r1/source-reopen.log",
+      "original_sha256": "6d6dff00cf658e661e58c5adc33dc0e5c71c8c236de6e55c15b910dccef7c058",
+      "public_sha256": "149a445fe9c7284e2898d3b2dc0327f223916c41abb1bd904c178cbb84cb96db",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/ART-M01-result.json",
+      "original_sha256": "8e1c3d2c085d68b054982cd6d2d534f4c45ae11342df227323e109f45df55db0",
+      "public_sha256": "aaaffd75c24eae6293516e22682b5faee8a44bca9a7c4e45ec295021c12cf01a",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/ART-PREVIEW-A-dispatch.json",
+      "original_sha256": "0ad3d458d03c3f0e09edb07cf23bb6e7651be2229dc279ed7ff9d6f3bfd40e28",
+      "public_sha256": "1ddb10dfebcf01f25cd8365c09163379189536345be348b62d18ea0a8e6d737a",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/ART-PREVIEW-B-fix-result.json",
+      "original_sha256": "d5a4f61a48117bce77220ed39db2a5cfd1e26ab34c25c91c0c61a6e14e681544",
+      "public_sha256": "6578a08da083a1ffa21aff475a21b1892df2c554b43484b4499dac2273ade040",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/ART-U01-GEO-real-result.json",
+      "original_sha256": "eb31a43e73c08b54fbc68dc59baae37b99f58b1a7ce191fc8df413fa7bf2896f",
+      "public_sha256": "c9a441e155d235437a32b507719f9bb91510b5b9873c51c8e2395450be2d8b62",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/m01-board/board.gd",
+      "original_sha256": "95b9aad01345a6dfee204ffe88c612b57167711793a0cd036e82a49ca94d2789",
+      "public_sha256": "fa2accf0cf7922e0b6e06335590f820a46f1688e15656d3efa7bd678eeed3a9a",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/m01-board/window-capture.log",
+      "original_sha256": "f6c691e18a03696d08ca4cb807935878202a0a08a6b16ce11090299552e28b45",
+      "public_sha256": "93796a6ff4e80d100a1947f92d4db7ced579772b0ed88cd57bd40071ed24af7b",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/preview-b-accepted/bad-source-files.log",
+      "original_sha256": "245621f4b2139ef992d2ff2408aaabe9dd0a3d10ef43bbabbc757c3ac329ed5f",
+      "public_sha256": "d26ebb321aa5f67bd0369f3b24d4a6e9ad85b102753c6f6b1b6c4f0f6dff41ce",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/preview-b-accepted/board.json",
+      "original_sha256": "d39756a0eb05932d33c522bb87eb2bc0d78ee7f55dab731ccce0ce4280e82998",
+      "public_sha256": "3aa4d74344c6f5854d83102017759f989e575d493714c93e5dd3acc704e05f57",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/preview-b-accepted/board.log",
+      "original_sha256": "30185bb451092f88d0c9940027c74491a023b6f3eff5343179f70a5a213d197c",
+      "public_sha256": "44f965bbf1942211b2213c56fffcb908d5ea90fe503997f1201469293760b922",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/preview-b-accepted/fixed-results.json",
+      "original_sha256": "3d49f59581808a6e519ea5cb4371aefa3099dafba25d17d14a480ec98e747b46",
+      "public_sha256": "d35ef5b120cb4afbf3981f916b95996ad4b2b982fe0e1245529ef052cc44e33d",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-accepted/checks.json",
+      "original_sha256": "eeddc2f85633a2b62347d7ab91b2f4180e25805742ed82ef0892d17cbc8adbb3",
+      "public_sha256": "0ed244ca508a729e6f5fd604ff944a1aabb39fed2abcfddc52c07f95c9019576",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-close-review/capture.log",
+      "original_sha256": "b98b6562ab26e13b29c3252361ed1da86edfb948d214cb626ac04aec51234862",
+      "public_sha256": "bd30104729441df1683bd14be558e06db9738fc9a2c56e7ad1daec5c6a5e7f9c",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-close-review/check.json",
+      "original_sha256": "4fd726fb899e886024b44d40b5e6040eea2816bad19a8e2e9af529782b64331e",
+      "public_sha256": "639f3208b77590268db68b434e12f378c2f08d3ecfc0df58669d119cccb9874b",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-static-proportion/checks.json",
+      "original_sha256": "8692868525e90c341b3a004bc298e9b27fb3265f94d19a14a219cfaf805efb43",
+      "public_sha256": "edc2b85ddb2c0520bbdc9b469e7d213ebc9bfc42e4e362e375e2e96952bf7d95",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-static-proportion/test-only-wrapper/manifest.json",
+      "original_sha256": "8fd90d3af7551e9d61152d0e03fe4a0ac6cf85dfecd682af4e678dc411b7c4f0",
+      "public_sha256": "32438c0d3203eecbd56906358061bc7ec4ee6f93a0694e87c9607657c163109e",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-static-proportion/yaw0-empty.log",
+      "original_sha256": "ea7d96b590c18c8fbc6791571d655d14140fbc436febe6cde2f2702870a3b32c",
+      "public_sha256": "c2fbe000f8f6ea1ac2eaf445a2e35d2d478db0fd586981716093b32934ef591b",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-static-proportion/yaw0-loaded.log",
+      "original_sha256": "bf7be225757ce0a7abb2ffbdba7373c4953f0ff2103aea0324407614dd000c82",
+      "public_sha256": "573d5abe97b22a940410f7f404740d0f7a6e4ca85fc9560612bec90a5cea26a1",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-static-proportion/yaw180-empty.log",
+      "original_sha256": "9a3e9f73b58b5ce59cfe2844196d842b601d5d35840dc74de7258afc54615bdd",
+      "public_sha256": "7c69da9e523c4ded37fb5eaf2d28a14ffa2bfeaabf4ad03224fd2b1786f93146",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-static-proportion/yaw180-loaded.log",
+      "original_sha256": "5e8e407bb2ec1c1de56e732bce7811b750e36968fea89d1d5c2858c7eb7d0a87",
+      "public_sha256": "5573c3e86f42a12e70f6e9cd03413289641b18b2a2639ca41c64cfb5b713cecd",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-static-proportion/yaw90-empty.log",
+      "original_sha256": "93af9e1e7f077b6184958968fda60741a7bc7964d4cac0a3c550c9c0b4adb2df",
+      "public_sha256": "828e0c222dc484fbffac28e05d35677e5596426d75a65bb76d739c6f7e0b45de",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-geo-static-proportion/yaw90-loaded.log",
+      "original_sha256": "c5d174b99adfaf33c7058b38b7649275ee706cae30f233d129dbb522cb844080",
+      "public_sha256": "ae5380bcf9616c69700f7e2a5f4463d3a256a74596cbab4583248360280000b1",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-state-a-accepted-r6/checks.json",
+      "original_sha256": "3fad449788c1b307d7957c34e8f6945dec5188ad1121072f39c0a22aa12c22ac",
+      "public_sha256": "0c9e98f7449ee34d8ab054fae1071651e38f72bf7a467dd659660afb421ec7a1",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-state-a-accepted-r6/static-close/checks.json",
+      "original_sha256": "599298764cd0cfbf5d1c8a89923e48e54db328b7591b8dc67003f897c4a465a8",
+      "public_sha256": "95db14ec00de888d9fa3e433fe19f2ef2c00155e3669f140f5b8e62d7925ca33",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-state-a-accepted-r6/static-close/close.log",
+      "original_sha256": "5646b7db7b70af4cbef166a9309edd81bd87dfb8f929dabf0b90f70d934f5a65",
+      "public_sha256": "ce95d21969bff8fd9f3f4e9385a6ad87b1b346e237ef93b85cecb552d30ee812",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-state-a-accepted-r6/static-close/close/blind_0001.json",
+      "original_sha256": "4116569064db38f0f83b1bb54a763397b2df5760ec275ae44f40962b181ade55",
+      "public_sha256": "cd2b3bc773aa3fbe29989a0e8e2bfe8724a3d7278a557cfaab568c3d94565cbf",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/production-r1-receipts/u01-state-a-accepted-r6/static-test-only-wrapper/manifest.json",
+      "original_sha256": "311b73fd8436378e71cab0bfc3c0ed29686edc99cfe426412e176cfe6dcdfc11",
+      "public_sha256": "dcee7cc0f9bf1ab4f5b6d064e48a163fb6f71a55af466d4e672ac81e2e42646b",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/u02-r1/README.md",
+      "original_sha256": "50bec9579421373b4d2e89f586c7a2077961598abbfd4d26d06e2d1897736418",
+      "public_sha256": "39f4113c054305c582935de5f88d5910e186e329c1fc3bfbf767e50684046952",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/u02-r1/build-hinge.log",
+      "original_sha256": "923e223a0cb442e6ca2d87bffeddbeaa07c7727aa2d2d3eec6b6a413f0f8ddf2",
+      "public_sha256": "5e7e355590d205c1c5d0ee352c9632bc02a039ce4f46e55f21c5d773bf326000",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "docs/art/production/evidence/u02-r1/source-check.log",
+      "original_sha256": "e528719a0ca7839829096d6f443e4b910c385e730286657ad2d46492bb2fc7d7",
+      "public_sha256": "5e18b9eb0e5b394b57f295e33dfee43ef2cc44746dad366a941f7c0aa3ae978b",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "prototype/assets/materials/art-r1/README.md",
+      "original_sha256": "1880db32279d402316a5663138cac620dbac66c01cf4050e1148987df3333d5f",
+      "public_sha256": "956cc59eac0200b251678f8ba503561517656635ebf1685fac208010ba347019",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "prototype/scenes/art_preview_r1/README.md",
+      "original_sha256": "b43f5201c93da7b3c99e8ad968a00c858350db009abfcf47d86bfaae23bd1068",
+      "public_sha256": "9fd7e58ab6c0ebab013d5e6ec5db00c13181647d2c769a6d75adb5dd53af084c",
+      "change": "local paths removed; board.gd output uses user data directory"
+    },
+    {
+      "path": "art/source/units/tuoyun-hf-r1/tuoyun-hf-r1.blend",
+      "original_sha256": "a3c03348b6d3bb5f421d69e38247cbfea90c37145bdc830e23dbcd63cd75ba5a",
+      "public_sha256": "408f7fdb7001c51ab1b0d9b4a5f45066c0abed68632e4608eedd67689110df52",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/units/zhulei-r1/zhulei-r1.blend",
+      "original_sha256": "6d985fe2db16e31889df94018f3005839fc57a0ca3e3f478ef5c5b19688f531a",
+      "public_sha256": "343444bc740791dd8eaa13e61bfcf46031007b223edc3cdbfec189978cc7192f",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/charger/charger.blend",
+      "original_sha256": "67d282b3d060c4e000cf333e4cc08a930d57bbad1f7257eccca14d9c48970d03",
+      "public_sha256": "13414d35072d6bd787c3dea1bad6a012a0961f721214f01e831bb2dc8093edb4",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/recovery/recovery.blend",
+      "original_sha256": "a6a1dd3b8964f880aa5ffcf6b7082370e29fbc164253fd7bae553f6bf494afe7",
+      "public_sha256": "ddabb848441564e08c67c3bdc477c249640bbe204e53c268c63ca5118a928ecc",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/terrain-dug/terrain-dug.blend",
+      "original_sha256": "643493444ac90bb24dda8c10f7bd50d0ba30b9425261e72d5ed2ce55bcd8a067",
+      "public_sha256": "781e68d4e4a8c8b0d3eefbdbbe19b8a703d2d730ad0779b9e0dc4fc581d4d5d5",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/zhulei/zhulei.blend",
+      "original_sha256": "e946d0b95d2f5eb0f9c6643a0734f53751b4642f94dcca55d458fc1a2a2bb375",
+      "public_sha256": "e785bbeaa1ac7338283a416ca3f3b33956b5b92dc05d4f7492d2ebe8b751b536",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/storage/storage.blend",
+      "original_sha256": "791871094c420a443254187718e6a0c877efe2d8687b6fb96a6534ab31fc5f15",
+      "public_sha256": "20c21c86a21acbf505b5fcff04142ddf344961f971ce01177ed976cdc595f9a2",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/crate/crate.blend",
+      "original_sha256": "3fd6ca65df45a921a99260b66ca1e605d8b66534fde6c88e8f50a703e9c0097c",
+      "public_sha256": "3af894286c3de0ff9d3796172634ac5bf5baef88406fe338d6b6d40a64ad51a2",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/terrain-flat/terrain-flat.blend",
+      "original_sha256": "536cd61dc2f1a3a1de9baf7be1a8adf3f49e449faba569e6fefe19c9abc0fd0c",
+      "public_sha256": "76039876a4b62838dc03b69cef9c09309df94b24d1824ef37bbe9d07f94d16ac",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/existing/terrain-original/terrain-original.blend",
+      "original_sha256": "8947e3801353334489d97556eb9ba6b598a5dca4478c6e31b49e85c8eb04cba8",
+      "public_sha256": "d74ba052c319f0eaf9ea8add94352e3db2e1baae0bad823bb75dceebc52041d1",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/new/lander/lander.blend",
+      "original_sha256": "ed8c8fbb40fc2acf64f066a2f88007cafef39b0763b41a3c0e0cd2cb3c71dc12",
+      "public_sha256": "6a1a9a880e097b564989bde72cf05dd6f7d95af57d3e646543e144dd4ff16602",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/new/wangshan/wangshan.blend",
+      "original_sha256": "3183816657a9110fc349c0f54127f96072fe80b003710aa2a53af55bf9e64a99",
+      "public_sha256": "ef88b3819f8caa110e8b110b4792395d4bcf256446dcdbe02a8a6d8146924127",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    },
+    {
+      "path": "art/source/lowfi-batch-r1/new/repair/repair.blend",
+      "original_sha256": "d16f64e670d98dacf636d05af0d84b581ffeda9b75784519c046c86455274401",
+      "public_sha256": "8e0a1f6f4697038894b6f0f994af73bed954cde111bbf563240b7f7e7e40dafb",
+      "change": "home path string replaced with equal-length placeholder; geometry and animation bytes unchanged"
+    }
+  ],
+  "active_manifests_updated": [
+    "art/manifests/lowfi-batch-r1/terrain-flat.json",
+    "art/manifests/lowfi-batch-r1/repair.json",
+    "art/manifests/lowfi-batch-r1/crate.json",
+    "art/manifests/lowfi-batch-r1/zhulei.json",
+    "art/manifests/lowfi-batch-r1/terrain-dug.json",
+    "art/manifests/lowfi-batch-r1/wangshan.json",
+    "art/manifests/lowfi-batch-r1/terrain-original.json",
+    "art/manifests/lowfi-batch-r1/lander.json",
+    "art/manifests/lowfi-batch-r1/recovery.json",
+    "art/manifests/lowfi-batch-r1/storage.json",
+    "art/manifests/lowfi-batch-r1/charger.json"
+  ],
+  "current_validation_files": {
+    "docs/art/production/evidence/lowfi-batch-r1/source-reopen.json": "394fb63837a3e18f379870ef39bcc1b17190a5126ee7594eae3989c603ba245a",
+    "docs/art/production/evidence/publication-r1/older-source-reopen.json": "2661387abdfd1ccc4822ea649211e40c0e85f53ebe90e2e486224bf4821cdc5f",
+    "docs/art/production/evidence/publication-r1/import.log": "bd8180cacbe950b8e2d801e3d0dbe254d100e05f5e92617e8ff28de07fc802d3",
+    "docs/art/production/evidence/publication-r1/selftest.log": "833f13b9fbebf2c9d8f154831592d782cf1da621afc0577df7236063f4f03659"
+  },
+  "current_manifest_sha256": {
+    "art/manifests/lowfi-batch-r1/terrain-flat.json": "7877c1423363778b6c2323af2148038963d18490d412fb8f69f0c15517d30941",
+    "art/manifests/lowfi-batch-r1/repair.json": "a93cc4e6809fe8cef0f06a1d6b3e76154bc0aa8d046ff2279aa6f69510b10998",
+    "art/manifests/lowfi-batch-r1/crate.json": "cabedc22341bb999b22e767539871b653b0b87a37cbbc7ac51f569dce76e20f2",
+    "art/manifests/lowfi-batch-r1/zhulei.json": "ac39cdb42f5cc2b6a8112b8b3fd0e4478f85d39a3cd73cc9c8f32a599af77aff",
+    "art/manifests/lowfi-batch-r1/terrain-dug.json": "915f557ed57858d65b26397af2234a4b652e0d830c9018b00f96093c91c663e4",
+    "art/manifests/lowfi-batch-r1/wangshan.json": "d1e18a4565f20fe9d5c080f1340499eb4ff088b2706c0984b34b23c4dfbb61f3",
+    "art/manifests/lowfi-batch-r1/terrain-original.json": "3690d5f0e6e96f71c235ab28ab47175eedb92039c697b2669ab501ef178c5230",
+    "art/manifests/lowfi-batch-r1/lander.json": "0a9a161745a2047b4730f43dc78f387d2f2991f9be3936ec4fde7671b489bf20",
+    "art/manifests/lowfi-batch-r1/recovery.json": "ff46f71c16d9d9c5a199c6b5933cf0f20c9fdce9d139efb19734f54a9279a757",
+    "art/manifests/lowfi-batch-r1/storage.json": "47b63fd2b328f857ccaffd45b9b23b697c0892609d57e1e2a06e28b9888da314",
+    "art/manifests/lowfi-batch-r1/charger.json": "ee8aa1919c2330d2d12e4c2fb17e54fea7b3b318261d59d68b34a84106a44d83"
+  }
+}

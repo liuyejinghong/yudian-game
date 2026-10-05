@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Parse Error: Parse error. [Resource file res://assets/lowfi-batch-r1/wangshan.tscn:10]
+   at: _parse_node_tag (scene/resources/resource_format_text.cpp:293)
+   GDScript backtrace (most recent call first):
+       [0] run (res://validate.gd:153)
+ERROR: Failed loading resource: res://assets/lowfi-batch-r1/wangshan.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] run (res://validate.gd:153)
+SCRIPT ERROR: Assertion failed.
+          at: run (res://validate.gd:153)
+          GDScript backtrace (most recent call first):
+              [0] run (res://validate.gd:153)
+
+TASK_TIMEOUT_55_SECONDS

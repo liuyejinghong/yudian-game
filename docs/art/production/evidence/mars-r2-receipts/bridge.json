@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-05",
+  "base": "c966a42",
+  "channel": "Agent Bridge / ZCode",
+  "model": "GLM-5.3-Flash",
+  "model_confirmation": "native /model responded ✓ model = GLM-5.3-Flash in each session",
+  "workers": [
+    {
+      "scope": "U01 private source",
+      "session": "sess_3ae670d03d",
+      "init_task": "task_5e3bfa7d37",
+      "task": "task_b9650de6ee",
+      "status": "CANCELLED",
+      "duration_seconds": 807,
+      "files_changed": [],
+      "commit": null,
+      "session_ended": true,
+      "usage": "unavailable",
+      "result": "only reads/planning; no deliverable; primary completed frozen source"
+    },
+    {
+      "scope": "F01/F02 private sources serial",
+      "session": "sess_2c732d9522",
+      "init_task": "task_beccba181f",
+      "task": "task_e26822198e",
+      "status": "CANCELLED",
+      "duration_seconds": 591,
+      "files_changed": [],
+      "commit": null,
+      "session_ended": true,
+      "usage": "unavailable",
+      "result": "only reads/planning; no deliverable; primary completed frozen source"
+    }
+  ],
+  "asset_execution": "Codex primary, all three Mars r2 sources and verification"
+}

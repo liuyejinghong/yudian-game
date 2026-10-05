@@ -1,0 +1,587 @@
+{
+  "id": "tuoyun",
+  "manifest": {
+    "id": "ART-U01",
+    "revision": 2,
+    "unit": "meter",
+    "up": "+Y",
+    "forward": "-Z",
+    "preview_scene": "res://assets/units/tuoyun-r1/preview.tscn",
+    "glb": "res://assets/units/tuoyun-r1/tuoyun-r1.glb",
+    "glb_sha256": "42bb11a76a1317a66919066371ca77dd47b0efc409a9b0446990bae0b1dd2391",
+    "bounds": {
+      "static": {
+        "min": [
+          -0.594,
+          0.0,
+          -0.8
+        ],
+        "max": [
+          0.594,
+          0.85,
+          0.8
+        ]
+      },
+      "loaded": {
+        "min": [
+          -0.594,
+          0.0,
+          -0.8
+        ],
+        "max": [
+          0.594,
+          0.86,
+          0.8
+        ]
+      },
+      "active": {
+        "min": [
+          -0.65,
+          0,
+          -1.15
+        ],
+        "max": [
+          0.65,
+          1.15,
+          0.9
+        ]
+      }
+    },
+    "material_bindings": [
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 1,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 2,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 3,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 4,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 5,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 6,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 7,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 8,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 9,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 10,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 11,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 12,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 13,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 14,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Chassis",
+        "surface": 15,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 1,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 2,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 3,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 4,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 5,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 6,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 7,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 8,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 9,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Head",
+        "surface": 10,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 1,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 2,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 3,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 4,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 5,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 6,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 7,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 8,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 9,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 10,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 11,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 12,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 13,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Body",
+        "surface": 14,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/HoodLid",
+        "surface": 0,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/HoodLid",
+        "surface": 1,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/RearLock",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/RearLock",
+        "surface": 1,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/RearLock",
+        "surface": 2,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/RearLock",
+        "surface": 3,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/ChargeCap",
+        "surface": 0,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LF",
+        "surface": 0,
+        "role": "rubber"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LF",
+        "surface": 1,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LF",
+        "surface": 2,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LF",
+        "surface": 3,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LR",
+        "surface": 0,
+        "role": "rubber"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LR",
+        "surface": 1,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LR",
+        "surface": 2,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_LR",
+        "surface": 3,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RF",
+        "surface": 0,
+        "role": "rubber"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RF",
+        "surface": 1,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RF",
+        "surface": 2,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RF",
+        "surface": 3,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RR",
+        "surface": 0,
+        "role": "rubber"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RR",
+        "surface": 1,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RR",
+        "surface": 2,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Wheels/Wheel_RR",
+        "surface": 3,
+        "role": "accent_warm"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/CargoBox",
+        "surface": 0,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/CargoBox",
+        "surface": 1,
+        "role": "body_light"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/CargoBox",
+        "surface": 2,
+        "role": "frame_dark"
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/TowRod",
+        "surface": 0,
+        "role": "frame_dark"
+      }
+    ],
+    "sockets": [
+      {
+        "node": "Model/tuoyun-r1/Model/Socket_Cargo",
+        "position": [
+          0.0,
+          0.479999989271164,
+          0.280000001192093
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Socket_TowFront",
+        "position": [
+          0.0,
+          0.239999994635582,
+          -0.800000011920929
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Socket_TowRear",
+        "position": [
+          0.0,
+          0.239999994635582,
+          0.800000011920929
+        ],
+        "forward": [
+          0,
+          0,
+          1
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "node": "Model/tuoyun-r1/Model/Socket_Charge",
+        "position": [
+          0.479999989271164,
+          0.550000011920929,
+          -0.349999994039536
+        ],
+        "forward": [
+          1,
+          0,
+          0
+        ],
+        "up": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "states": {
+      "idle": {
+        "mode": "static",
+        "reason": "源内局部表现；不计算游戏规则",
+        "clip": null,
+        "duration_s": 0,
+        "loop": false
+      },
+      "move": {
+        "mode": "animated",
+        "reason": "源内局部表现；不计算游戏规则",
+        "clip": "move",
+        "duration_s": 1,
+        "loop": true
+      },
+      "work": {
+        "mode": "animated",
+        "reason": "源内局部表现；不计算游戏规则",
+        "clip": "work",
+        "duration_s": 1,
+        "loop": false
+      },
+      "charge": {
+        "mode": "animated",
+        "reason": "源内局部表现；不计算游戏规则",
+        "clip": "charge",
+        "duration_s": 1,
+        "loop": false
+      },
+      "disabled": {
+        "mode": "animated",
+        "reason": "源内局部表现；不计算游戏规则",
+        "clip": "disabled",
+        "duration_s": 1,
+        "loop": false
+      },
+      "towed": {
+        "mode": "static",
+        "reason": "牵引杆+停机定格；不表示自主驱动",
+        "clip": "disabled",
+        "duration_s": 1,
+        "loop": false
+      },
+      "maintenance": {
+        "mode": "animated",
+        "reason": "源内局部表现；不计算游戏规则",
+        "clip": "maintenance",
+        "duration_s": 1,
+        "loop": false
+      }
+    },
+    "phases": [
+      "completed"
+    ],
+    "cargo_modes": [
+      "empty",
+      "loaded"
+    ],
+    "source": {
+      "generator": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+      "source_path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+      "tool_version": "Python 3.14.3 standard library",
+      "original": true,
+      "hash": "71aa74f54c85fa55dbd34a720cc64a0406bbaa58b0116cf51771cf63712633aa",
+      "files": [
+        {
+          "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+          "sha256": "4f8c8f8af2ff5e0dcdbe83ce53a3c28993d13badb40fb37706b222b79389a493"
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+          "sha256": "71aa74f54c85fa55dbd34a720cc64a0406bbaa58b0116cf51771cf63712633aa"
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
+          "sha256": "98bd7d0e6c1149f1ef499c0642bd5401722c189b20aaeb819e965950ed29c2f3"
+        }
+      ]
+    },
+    "triangles": 2040,
+    "textures": [],
+    "phase_state_modes": {
+      "completed": {
+        "idle": {
+          "mode": "static",
+          "reason": "源内局部表现；不计算游戏规则"
+        },
+        "move": {
+          "mode": "animated",
+          "reason": "源内局部表现；不计算游戏规则"
+        },
+        "work": {
+          "mode": "animated",
+          "reason": "源内局部表现；不计算游戏规则"
+        },
+        "charge": {
+          "mode": "animated",
+          "reason": "源内局部表现；不计算游戏规则"
+        },
+        "disabled": {
+          "mode": "animated",
+          "reason": "源内局部表现；不计算游戏规则"
+        },
+        "towed": {
+          "mode": "static",
+          "reason": "牵引杆+停机定格；不表示自主驱动"
+        },
+        "maintenance": {
+          "mode": "animated",
+          "reason": "源内局部表现；不计算游戏规则"
+        }
+      }
+    }
+  },
+  "original_matrix_script_sha256": "b95ebb29bf0c853a84cb6bf8e22ae82905bf13ba84b42bc82323c64d4a47aa44",
+  "archived_script_output_path": "user://actual.json (checks unchanged; output path made portable)"
+}

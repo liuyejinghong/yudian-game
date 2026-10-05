@@ -1,0 +1,23 @@
+{
+  "outer": {
+    "triangles": 48,
+    "correct_outward": 48,
+    "reversed": 0,
+    "min": 0.002004294685273918,
+    "max": 0.0020042946852739255
+  },
+  "inner": {
+    "triangles": 48,
+    "correct_outward": 0,
+    "reversed": 48,
+    "min": -0.0009949004093740923,
+    "max": -0.0009949004093740884
+  },
+  "caps": {
+    "triangles": 96,
+    "correct_outward": 0,
+    "reversed": 96,
+    "min": -0.003701112344966056,
+    "max": -0.0026076018794078926
+  }
+}

@@ -32,7 +32,7 @@
 
 - 六位小数序列化与字节/255 的最大浮点偏差 4.71e-07，在 1e-6 容差内；Godot 4.7.2 加载后 `roughness`/`metallic` 以 32 位浮点存储（如 0.65 → 0.64999997615814208984），与目标差 <3e-8。
 - `metallic = 0.0` 与默认值相同，为六个文件统一模式而显式写出；`roughness` 默认为 1.0，六个文件全部为非默认显式值。
-- 默认使用（未写入文件、加载实测确认）：`transparency = 0`（禁用，不透明）、`emission_enabled = false`（无发光）、全部 `*_texture` 属性无 Texture 实例（无外部纹理）、`shading_mode = 0`（逐像素）、无自定义 shader、无附加脚本。
+- 默认使用（未写入文件、加载实测确认）：`transparency = 0`（禁用，不透明）、`emission_enabled = false`（无发光）、全部 `*_texture` 属性无 Texture 实例（无外部纹理）、`shading_mode = 1`（逐像素，主控加载实录；0为不受光）、无自定义 shader、无附加脚本。
 
 SHA256（采样时点，以提交内容为准）：
 
@@ -48,7 +48,7 @@ SHA256（采样时点，以提交内容为准）：
 ## 来源与版本
 
 - 来源：本项目原创参数（需求方冻结的首样候选表），无第三方素材、无生成依赖。
-- 实测引擎：`/Users/ethan/yudian-game/tools-bin/Godot.app/Contents/MacOS/Godot` → `4.7.2.stable.mono.official.ed1daf0bf`；.NET SDK `10.0.401`（`/Users/ethan/.dotnet`）。
+- 实测引擎：`<project-root>/tools-bin/Godot.app/Contents/MacOS/Godot` → `4.7.2.stable.mono.official.ed1daf0bf`；.NET SDK `10.0.401`（`<user-home>/.dotnet`）。
 - 资源格式：Godot 4 文本资源 `format=3`；未在编辑器中打开过，故无引擎生成的 `uid`；若日后在编辑器保存，引擎可能补写 `uid` 并重排序列化，角色与参数不应变化。
 
 ## 检查记录
@@ -56,7 +56,7 @@ SHA256（采样时点，以提交内容为准）：
 命令（临时空工程 `/private/tmp/art-m01-matcheck.XdXIVF`，六资源复制为 `res://assets/materials/art-r1/`，仓库 project.godot 未动）：
 
 ```
-DOTNET_ROOT=/Users/ethan/.dotnet PATH="/Users/ethan/.dotnet:$PATH" \
+DOTNET_ROOT=<user-home>/.dotnet PATH="<user-home>/.dotnet:$PATH" \
   Godot --headless --path <临时工程> --log-file <可写log> --script res://check_materials.gd
 ```
 

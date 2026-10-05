@@ -1,0 +1,19 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"task_id\": \"task_d95aceed13\",\n  \"session_id\": \"sess_796e07dcb4\",\n  \"agent\": \"zcode\",\n  \"model\": null,\n  \"effort\": null,\n  \"request_id\": \"afe38231-0f82-43c5-91c3-13e0496c8ea9\",\n  \"reused\": false\n}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "task_id": "task_d95aceed13",
+    "session_id": "sess_796e07dcb4",
+    "agent": "zcode",
+    "model": null,
+    "effort": null,
+    "request_id": "afe38231-0f82-43c5-91c3-13e0496c8ea9",
+    "reused": false
+  },
+  "isError": false
+}

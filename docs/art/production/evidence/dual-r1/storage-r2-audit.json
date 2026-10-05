@@ -1,0 +1,710 @@
+{
+  "bounds_including_hidden": {
+    "max": [
+      2.25,
+      2.20000004768372,
+      1.60000002384186
+    ],
+    "min": [
+      -2.25,
+      0.0,
+      -1.60000002384186
+    ]
+  },
+  "engine": {
+    "build": "official",
+    "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+    "hex": 263938,
+    "major": 4,
+    "minor": 7,
+    "patch": 2,
+    "status": "stable",
+    "string": "4.7.2-stable (official)",
+    "timestamp": 0
+  },
+  "glb": "res://models/storage.glb",
+  "meshes": [
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.25,
+          2.20000004768372,
+          1.60000002384186
+        ],
+        "min": [
+          -2.25,
+          0.0,
+          -1.60000002384186
+        ]
+      },
+      "path": "/root/storage/Storage/Structure",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 132,
+          "vertices": 396
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.04999995231628,
+          1.97500002384186,
+          1.58000004291534
+        ],
+        "min": [
+          -2.04999995231628,
+          1.72500002384186,
+          1.5
+        ]
+      },
+      "path": "/root/storage/Storage/RearPanel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          2.04999995231628,
+          2.20000004768372,
+          1.38999998569489
+        ],
+        "min": [
+          -2.04999995231628,
+          2.14000010490417,
+          -1.38999998569489
+        ]
+      },
+      "path": "/root/storage/Storage/TopCanopy",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "body_light",
+          "surface": 0,
+          "triangles": 24,
+          "vertices": 72
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.449999988079071,
+          0.135000005364418,
+          -1.49000000953674
+        ],
+        "min": [
+          -0.449999988079071,
+          0.119999997317791,
+          -1.54999995231628
+        ]
+      },
+      "path": "/root/storage/Storage/FrontMark",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "accent_warm",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.02999997138977,
+          0.579999983310699,
+          -0.349999994039536
+        ],
+        "min": [
+          -1.67000007629395,
+          0.200000002980232,
+          -1.04999995231628
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_B01",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.02999997138977,
+          0.579999983310699,
+          0.950000047683716
+        ],
+        "min": [
+          -1.67000007629395,
+          0.200000002980232,
+          0.250000029802322
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_B02",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          0.579999983310699,
+          -0.349999994039536
+        ],
+        "min": [
+          -0.319999992847443,
+          0.200000002980232,
+          -1.04999995231628
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_B03",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          0.579999983310699,
+          0.950000047683716
+        ],
+        "min": [
+          -0.319999992847443,
+          0.200000002980232,
+          0.250000029802322
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_B04",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.67000007629395,
+          0.579999983310699,
+          -0.349999994039536
+        ],
+        "min": [
+          1.02999997138977,
+          0.200000002980232,
+          -1.04999995231628
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_B05",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.67000007629395,
+          0.579999983310699,
+          0.950000047683716
+        ],
+        "min": [
+          1.02999997138977,
+          0.200000002980232,
+          0.250000029802322
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_B06",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.02999997138977,
+          1.48000001907349,
+          -0.349999994039536
+        ],
+        "min": [
+          -1.67000007629395,
+          1.10000002384186,
+          -1.04999995231628
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_T01",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          -1.02999997138977,
+          1.48000001907349,
+          0.950000047683716
+        ],
+        "min": [
+          -1.67000007629395,
+          1.10000002384186,
+          0.250000029802322
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_T02",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          1.48000001907349,
+          -0.349999994039536
+        ],
+        "min": [
+          -0.319999992847443,
+          1.10000002384186,
+          -1.04999995231628
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_T03",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          0.319999992847443,
+          1.48000001907349,
+          0.950000047683716
+        ],
+        "min": [
+          -0.319999992847443,
+          1.10000002384186,
+          0.250000029802322
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_T04",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.67000007629395,
+          1.48000001907349,
+          -0.349999994039536
+        ],
+        "min": [
+          1.02999997138977,
+          1.10000002384186,
+          -1.04999995231628
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_T05",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    },
+    {
+      "actual_vertices_bounds": {
+        "max": [
+          1.67000007629395,
+          1.48000001907349,
+          0.950000047683716
+        ],
+        "min": [
+          1.02999997138977,
+          1.10000002384186,
+          0.250000029802322
+        ]
+      },
+      "path": "/root/storage/Storage/RackPayloadDemo/Crate_T06",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "surfaces": [
+        {
+          "material": "frame_dark",
+          "surface": 0,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "body_light",
+          "surface": 1,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "frame_dark",
+          "surface": 2,
+          "triangles": 12,
+          "vertices": 36
+        },
+        {
+          "material": "accent_warm",
+          "surface": 3,
+          "triangles": 12,
+          "vertices": 36
+        }
+      ],
+      "visible": true
+    }
+  ],
+  "sockets": [],
+  "triangles": 756
+}

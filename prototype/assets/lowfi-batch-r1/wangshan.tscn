@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3]
+[ext_resource type="Script" path="res://assets/lowfi-batch-r1/preview.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/lowfi-batch-r1/models/wangshan.glb" id="2"]
+[ext_resource type="PackedScene" path="res://assets/lowfi-batch-r1/models/recovery.glb" id="3"]
+[node name="SampleRoot" type="Node3D"]
+script=ExtResource("1")
+asset_key="wangshan"
+[node name="Model" parent="." instance=ExtResource("2")]
+[node name="TowDemo" parent="." instance=ExtResource("3")]
+position=Vector3(0, 0.24, -0.975)
+visible=false

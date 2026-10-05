@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+[ART_PREVIEW_R1] engine=4.7.2-stable (official) adapter=Apple M3 Pro (Apple9)
+[ART_PREVIEW_R1] CAPTURE_OK dir=<project-root>/art-preview-evidence/preview-b-independent-20261004/bad-source-files png=probe_r1_normal_yaw000_idle_completed_pt0p000_empty_none_t0p000.png json=probe_r1_normal_yaw000_idle_completed_pt0p000_empty_none_t0p000.json size=1920x1200 camera=normal yaw=0 state=idle phase=completed phase_t=0.0 cargo=empty reason=none time_s=0.0 labels=evidence mode=static
+SCRIPT ERROR: Trying to assign value of type 'float' to a variable of type 'Dictionary'.
+          at: hashes_record (res://scenes/art_preview_r1/preview_capture_r1.gd:166)
+          GDScript backtrace (most recent call first):
+              [0] hashes_record (res://scenes/art_preview_r1/preview_capture_r1.gd:166)
+              [1] build_record (res://scenes/art_preview_r1/preview_capture_r1.gd:130)
+              [2] _run_capture (res://scenes/art_preview_r1/preview_r1.gd:1119)

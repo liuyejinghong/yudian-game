@@ -1,0 +1,9 @@
+{
+  "max_float_diff": 5.960464477539063e-08,
+  "problems": [],
+  "reexport_sha256": "45184d8102f0699832f7d7cffd606286521c9b02f7b4ff26c20ac624b28d52ec",
+  "deliverable_sha256": "5e80d480c8deaa7be29d043b3b010b2dc48bb7d8ab8302b715f0a07149e371a8",
+  "identical_bytes": false,
+  "reopened_blend": "art/source/lowfi-batch-r1/new/repair/repair.blend",
+  "compared_glb": "art/source/lowfi-batch-r1/new/repair/repair.glb"
+}

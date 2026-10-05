@@ -1,0 +1,800 @@
+{
+  "minimum_separating_axis_gap_m": 0.00307023525238037,
+  "rows": [
+    {
+      "demo": "work",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.0
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -152.333326568201,
+      "shoulder_degrees": 53.7499995035915,
+      "t": 0.0166666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -149.666670452066,
+      "shoulder_degrees": 52.4999997533983,
+      "t": 0.0333333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -147.000000675553,
+      "shoulder_degrees": 51.2500000032051,
+      "t": 0.05
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -144.33333089904,
+      "shoulder_degrees": 50.0000002530119,
+      "t": 0.0666666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -141.666661122527,
+      "shoulder_degrees": 48.7500005028187,
+      "t": 0.0833333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -139.000005006392,
+      "shoulder_degrees": 47.5000007526255,
+      "t": 0.1
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -136.333335229879,
+      "shoulder_degrees": 46.2500010024323,
+      "t": 0.116666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -133.666665453366,
+      "shoulder_degrees": 45.0000012522391,
+      "t": 0.133333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -130.999995676853,
+      "shoulder_degrees": 43.7500015020459,
+      "t": 0.15
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -128.333339560718,
+      "shoulder_degrees": 42.4999983367581,
+      "t": 0.166666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -125.666669784205,
+      "shoulder_degrees": 41.2499985865649,
+      "t": 0.183333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -123.000000007692,
+      "shoulder_degrees": 39.9999988363717,
+      "t": 0.2
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -120.333330231179,
+      "shoulder_degrees": 38.7499990861785,
+      "t": 0.216666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -117.666660454666,
+      "shoulder_degrees": 37.4999993359853,
+      "t": 0.233333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -115.000004338531,
+      "shoulder_degrees": 36.2499995857921,
+      "t": 0.25
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -112.333334562018,
+      "shoulder_degrees": 34.9999998355989,
+      "t": 0.266666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -109.666664785505,
+      "shoulder_degrees": 33.7500000854057,
+      "t": 0.283333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -107.000001839181,
+      "shoulder_degrees": 32.5000003352125,
+      "t": 0.3
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -104.333332062668,
+      "shoulder_degrees": 31.2500005850193,
+      "t": 0.316666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -101.666669116344,
+      "shoulder_degrees": 30.0000008348261,
+      "t": 0.333333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -98.9999993398314,
+      "shoulder_degrees": 28.7500010846329,
+      "t": 0.35
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -96.3333363935075,
+      "shoulder_degrees": 27.4999996268924,
+      "t": 0.366666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -93.6666666169944,
+      "shoulder_degrees": 26.2499998766992,
+      "t": 0.383333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -90.9999968404814,
+      "shoulder_degrees": 25.0000001265059,
+      "t": 0.4
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -88.3333338941575,
+      "shoulder_degrees": 23.7500003763127,
+      "t": 0.416666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -85.6666641176444,
+      "shoulder_degrees": 22.5000006261195,
+      "t": 0.433333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -83.0000011713206,
+      "shoulder_degrees": 21.249999168379,
+      "t": 0.45
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -80.3333313948075,
+      "shoulder_degrees": 19.9999994181858,
+      "t": 0.466666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -77.6666684484836,
+      "shoulder_degrees": 18.7499996679926,
+      "t": 0.483333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -74.9999986719706,
+      "shoulder_degrees": 17.4999999177994,
+      "t": 0.5
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -72.3333357256467,
+      "shoulder_degrees": 16.2500001676062,
+      "t": 0.516666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -69.6666659491336,
+      "shoulder_degrees": 15.000000417413,
+      "t": 0.533333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -67.0000030028097,
+      "shoulder_degrees": 13.7499998134462,
+      "t": 0.55
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -64.3333332262967,
+      "shoulder_degrees": 12.500000063253,
+      "t": 0.566666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -61.6666634497836,
+      "shoulder_degrees": 11.2500003130598,
+      "t": 0.583333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -59.0000005034597,
+      "shoulder_degrees": 9.99999970909292,
+      "t": 0.6
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -56.3333341420412,
+      "shoulder_degrees": 8.74999995889972,
+      "t": 0.616666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -53.6666677806228,
+      "shoulder_degrees": 7.50000020870651,
+      "t": 0.633333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -51.0000014192043,
+      "shoulder_degrees": 6.25000003162649,
+      "t": 0.65
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -48.3333316426912,
+      "shoulder_degrees": 4.99999985454646,
+      "t": 0.666666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -45.6666652812728,
+      "shoulder_degrees": 3.75000010435326,
+      "t": 0.683333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -42.9999989198543,
+      "shoulder_degrees": 2.49999992727323,
+      "t": 0.7
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -40.3333325584358,
+      "shoulder_degrees": 1.24999996363662,
+      "t": 0.716666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -37.6666661970173,
+      "shoulder_degrees": 0.00000000000000710542730255976,
+      "t": 0.733333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -34.9999998355989,
+      "shoulder_degrees": -1.24999996363662,
+      "t": 0.75
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -32.3333334741804,
+      "shoulder_degrees": -2.49999992727323,
+      "t": 0.766666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -29.6666671127619,
+      "shoulder_degrees": -3.75000010435326,
+      "t": 0.783333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -27.0000007513434,
+      "shoulder_degrees": -4.99999985454646,
+      "t": 0.8
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -24.3333326823777,
+      "shoulder_degrees": -6.25000003162649,
+      "t": 0.816666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -21.6666663209592,
+      "shoulder_degrees": -7.50000020870651,
+      "t": 0.833333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -18.9999999595407,
+      "shoulder_degrees": -8.74999995889972,
+      "t": 0.85
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -16.3333335981223,
+      "shoulder_degrees": -9.99999970909292,
+      "t": 0.866666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -13.6666663829301,
+      "shoulder_degrees": -11.2500003130598,
+      "t": 0.883333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -11.0000000215117,
+      "shoulder_degrees": -12.500000063253,
+      "t": 0.9
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -8.3333336600932,
+      "shoulder_degrees": -13.7499998134462,
+      "t": 0.916666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -5.6666668717879,
+      "shoulder_degrees": -15.000000417413,
+      "t": 0.933333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -3.00000008348261,
+      "shoulder_degrees": -16.2500001676062,
+      "t": 0.95
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": -0.333333321857736,
+      "shoulder_degrees": -17.4999999177994,
+      "t": 0.966666666666667
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": 2.33333327968458,
+      "shoulder_degrees": -18.7499996679926,
+      "t": 0.983333333333333
+    },
+    {
+      "demo": "work",
+      "elbow_degrees": 4.99999985454646,
+      "shoulder_degrees": -19.9999994181858,
+      "t": 1.0
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.0
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.0142857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.0285714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.0428571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.0571428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.0714285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.0857142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.1
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.114285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.128571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.142857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.157142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.171428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.185714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.2
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.214285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.228571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.242857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.257142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.271428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.285714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.3
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.314285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.328571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.342857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.357142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.371428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.385714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.4
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.414285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.428571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.442857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.457142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.471428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.485714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.5
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.514285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.528571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.542857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.557142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.571428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.585714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.6
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.614285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.628571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.642857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.657142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.671428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.685714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.7
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.714285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.728571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.742857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.757142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.771428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.785714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.8
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.814285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.828571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.842857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.857142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.871428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.885714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.9
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.914285714285714
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.928571428571429
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.942857142857143
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.957142857142857
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.971428571428571
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 0.985714285714286
+    },
+    {
+      "demo": "maintenance",
+      "elbow_degrees": -154.999996344714,
+      "shoulder_degrees": 54.9999992537847,
+      "t": 1.0
+    }
+  ],
+  "samples": 132,
+  "scope": "candidate joint interpolation on imported geometry, sampled AABB for new parts vs wheels; OBB SAT resolves ambiguous shafts/pad/lid vs body and arm lanes; intentional assembly contact excluded; no source animation or continuous sweep proof",
+  "source_sha256": "3f75fb7ebb2c2c29bc7296012bf4315c7f20857ba12aa86e2dd382891f520812"
+}

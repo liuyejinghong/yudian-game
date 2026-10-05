@@ -1,0 +1,16 @@
+{
+  "board.tscn": "6088be696df4400fba527c94b4dcaad537c927e565a96c83de4f47c32fc5b7a9",
+  "window-capture.log": "f6c691e18a03696d08ca4cb807935878202a0a08a6b16ce11090299552e28b45",
+  "board.json": "8845f6e8977a200516ba9f6caafe1d2d74beab8e94d9940e4118e84bdb6eb5f4",
+  "board.png": "c3859bb8231e8a77b1ddcfb212db6b68c82009de6bb1264cff1ded94ccbb543b",
+  "board.gd": "95b9aad01345a6dfee204ffe88c612b57167711793a0cd036e82a49ca94d2789",
+  "project.godot": "b22d43c4ecd06cb25b9cd9a8c2396374daa255f6c87182395f8c428449c393f4",
+  "materials": {
+    "solar_face.tres": "1b1be352ed4d6694b2883a4a6392a60b15a8c31dcc386517dd7d94f52571c209",
+    "frame_dark.tres": "3d98442ab026c3ebaf73b98e397428e97c3185012a16bf1ace5917ddf6ad6936",
+    "accent_warm.tres": "fe01e258db57c387c7dbba6aa9b1febe67a8b24c6fbc479d1fc71a3824faa290",
+    "body_light.tres": "c42d893024832f054751605a3cbb672222c022a83825cfa8fb45a9d19af8ffa1",
+    "rubber.tres": "82c0f80a962402f8c204dbb73680062b1e2fcf80389895b3cce8bf243ffe246a",
+    "soil_mars.tres": "5f8aa3e483006e74e69cbda1385c2392c2f4f71f73b4129f957f2e15adf8a4f6"
+  }
+}

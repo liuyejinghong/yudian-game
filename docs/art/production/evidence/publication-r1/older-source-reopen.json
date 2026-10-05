@@ -1,0 +1,24 @@
+[
+  {
+    "blend_reopened": true,
+    "glb_structure_identical": true,
+    "topology_identical": true,
+    "max_float_attribute_delta": 1.7881393432617188e-07,
+    "tolerance": 1e-06,
+    "glb_byte_identical": false,
+    "asset": "zhulei-r1",
+    "blend_sha256": "343444bc740791dd8eaa13e61bfcf46031007b223edc3cdbfec189978cc7192f",
+    "blender": "4.5.14 LTS"
+  },
+  {
+    "blend_reopened": true,
+    "glb_structure_identical": true,
+    "topology_identical": true,
+    "max_float_attribute_delta": 1.1920928955078125e-07,
+    "tolerance": 1e-06,
+    "glb_byte_identical": false,
+    "asset": "tuoyun-hf-r1",
+    "blend_sha256": "408f7fdb7001c51ab1b0d9b4a5f45066c0abed68632e4608eedd67689110df52",
+    "blender": "4.5.14 LTS"
+  }
+]
