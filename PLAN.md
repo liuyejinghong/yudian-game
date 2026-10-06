@@ -303,8 +303,10 @@ APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入
 2. [x] 审查并合并 PR #38 精确提交。证明：文档验证、7 项验证器自测试、61 PNG/14 GLB 当前字节及包编号检查通过；merge 0662c12。未重新看图或运行游戏。
 3. [x] 更新根入口与两条权威 TODO：D1.0 子片、后续包归属、实际依赖与素材缺口；保留旧接受范围和证据。证明：逐 ID 状态/范围/链接比较，新增行均 DRAFT，无代码/模型变更。
 4. [x] 独立最终审查，运行文档/链接/档案与任务一致性检查。证明：实际输出、关键状态未扩签，未测游戏/视觉明确 NOT_RUN。
-5. [ ] 提交文档 PR 并核精确 head；合格按授权合并，主仓库快进同步。证明：GitHub 合并状态、来源提交、原未跟踪文件保留。
+5. [x] 发布文档 PR 并核精确 head、文件范围与可合并条件。证明：PR #39 已创建，发布 head 5749135 与远端一致、MERGEABLE/CLEAN、仅四文件，自动检查列表为空；不冒称 CI 通过。
 
 文件归属：主控 PLAN.md、TODO.md、docs/engineering/tasks/todo.md；worker 只写 docs/art/production/todo.md，主控最终验收。修改前四文件副本已保存在本机临时备份；不覆盖历史 PLAN 或运行证据。
 
 本轮文档验证：文档完整性/链接/六份原始档案hash/A01—A24与B01—B08编号通过；验证器7项自测试通过；六个工程与七个美术DRAFT行唯一，既有ACCEPTED/REVIEW原行与旧证据链接保留，差异仅四个Markdown。architect指出E03非法状态措辞需保持旧有效状态，已修正并独立复核关闭；reviewer未发现剩余实质问题。游戏/构建/新视觉验收NOT_RUN。
+
+发布入口：[PR #39](https://github.com/liuyejinghong/yudian-game/pull/39)。本节记录发布前／发布核验事实；发布后按所有者已有授权直接合并合格精确head，主仓库仅快进并保留未跟踪研究简报。最终merge提交与合并时间以该PR的GitHub状态为准，接手时先核对该状态，不重复派发本轮已交文档。
