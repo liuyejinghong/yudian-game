@@ -319,8 +319,10 @@ APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入
 1. [x] 核实际 HEAD、未跟踪主线、两条 TODO 和活动入口，architect 前置审查。证明：原主线将可重叠工作串行化、缺少 E12/E14 当批职责，周数无产能依据；当前 Bridge 实例旧会话均已退出，GitHub 无开放 PR，但不据此断言其他客户端没有活动。
 2. [x] 在原 DEVELOPMENT-ROADMAP.md 位置收敛近期编排，并接回根入口和工程 TODO。证明：C01/E02/E04 的真实输入、A01/A03 联调、C02 连续集成明确；D1.1 有增量保存和本地候选准备；已有接受行保留，新增执行子片仍 DRAFT。
 3. [x] 独立审查与相称文档核验。证明：当前内部链接、历史档案与需求编号检查通过，差异仅文档；没有游戏/构建/新视觉通过声明。
-4. [ ] 发布并合并合格文档 PR，同步 main。证明：核对精确 head、文件范围和合并状态；保留其他未跟踪研究简报，原 CC 文件字节未变后才替换为修订版。
+4. [x] 发布文档 PR 并核对精确 head、文件范围和可合并条件。证明：PR #40 已发布，六份 Markdown、MERGEABLE/CLEAN，自动检查列表为空；不冒称 CI 通过。合格修订按已有授权合并并同步 main，结果以 GitHub PR 状态为准；保留其他未跟踪研究简报，原 CC 文件字节未变后才替换为修订版。
 
 文件归属：主控仅改 DEVELOPMENT-ROADMAP.md、roadmap/README.md、根 TODO.md、工程 TODO.md、PLAN.md 和 AGENTS.md 的 Lessons；architect/reviewer 只读。美术 TODO 和历史证据原样保留，不派发或终止外部任务。
 
 本轮核验：architect 前置及收尾、独立 reviewer 均无剩余实质阻碍；文档验证和 diff 格式通过，旧接受/审查表格行保留、六个 D1.0 子片仍 DRAFT，美术 TODO 与 AGENTS 的 Lessons 以上字节未改。仅六份 Markdown；游戏、构建、新视觉验证 NOT_RUN。
+
+发布入口：[PR #40](https://github.com/liuyejinghong/yudian-game/pull/40)。本节是发布核验记录；后续接手先读该 PR 的实际合并状态，不重复派发本轮文档。
