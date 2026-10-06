@@ -8,6 +8,7 @@
 
 | 文档 | 使用者与用途 |
 |---|---|
+| [近期开发编排](DEVELOPMENT-ROADMAP.md) | 所有者、Codex：D1.0 实际输入与并行窗口，D1.1 同批保存／本地候选准备；不另维护状态或工期 |
 | [联合里程碑](milestones.md) | 所有者、Codex：每次默认应用中玩家能做什么，入口、退出门槛、双线依赖和并行窗口 |
 | [产研 D1 工作包](engineering-d1.md) | Codex、GLM：从工程场景到可持续经营的 DT-E01—E13，附 DT-C01/C02 主控责任 |
 | [产研 D2／D3 与发行工作包](engineering-d2-d3.md) | Codex、GLM：DT-E14—E22，本地委托、竞争、救援、保存、规模和发布 |
