@@ -1,42 +1,39 @@
 # 余电双线 TODO
 
-更新：2026-10-05。[GitHub总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17) / [文档PR #18](https://github.com/liuyejinghong/yudian-game/pull/18) / [数据PR #20](https://github.com/liuyejinghong/yudian-game/pull/20) / [网格PR #23](https://github.com/liuyejinghong/yudian-game/pull/23) / [显示PR #25](https://github.com/liuyejinghong/yudian-game/pull/25) / [碰撞PR #27](https://github.com/liuyejinghong/yudian-game/pull/27) / [PERF PR #28](https://github.com/liuyejinghong/yudian-game/pull/28) / [LIFE PR #29](https://github.com/liuyejinghong/yudian-game/pull/29)。本轮执行范围：**推进GLM产研子票，主控独立复验并按授权合并合格交付**。完整游戏功能未完成；首批美术制作已由所有者在美术会话启动。排入表格、指定拟执行槽或依赖齐备，都不等于已派单。后续由主控按所有者阶段指令排批，不逐项追问常规技术细节。
+更新：2026-10-06。[双线路线入口](docs/roadmap/README.md) / [联合里程碑](docs/roadmap/milestones.md) / [GitHub 总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17)。PR [#38](https://github.com/liuyejinghong/yudian-game/pull/38) 已审查并合并，整理基线 main `0662c12`。本轮完成范围是 **重新评估两条 TODO 与合并合格文档**；没有启动实现或素材制作，没有把规划包升级为 READY。
 
-| 线 | 权威任务表 | 当前事实 | 后续首要队列（未启动） |
+| 线 | 唯一权威任务表 | 当前事实 | 下一批建议（未启动） |
 |---|---|---|---|
-| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) / [模块框架](docs/engineering/module-roadmap.md) | 工程地形/运动/固定整平已限定接受；九个游戏模块已有职责划分，D1玩家经营基地未完成 | 围绕D1并行建设UI/资源/执行等模块并主场景集成；玩法短验证随建设推进，成果进入版本；正式素材按ART-LINK联调 |
-| 美术 | [美术 TODO](docs/art/production/todo.md) | ART-I00技术校准已验；[首批需求](docs/art/production/requirements/first-assets-r1.md)由主控编写；正式资产与视觉效果未验 | M01材质已由美术组技术接受，soil_mars工程逐surface联调通过；预览工具正在制作，正式模型/地形素材仍缺；工程缺口见ART-LINK各行 |
+| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | 单区域地形/原生运动/固定整平限定接受；现有双击应用是历史工程验证包；磁盘保存和普通玩家入口尚缺 | D1.0：本批合同及真实入口、镜头/选择/合法区、参数化整平、所需低保真、暂停/磁盘保存；Codex 同批集成/更新应用/验收 |
+| 美术 | [美术 TODO](docs/art/production/todo.md) | M01、预览工具及低保真模型子批已有技术证据；素材父票仍 REVIEW，正式游戏接入与所有者最终视觉未验；环境/资源/标记仍有缺口 | D1.0：实际相机/尺度、地表成果与操作标记；U01 载荷局部修正独立准备，随后按资源/施工/服务真实用途补齐，不重做整库 |
+
+当前最早未完成检查点为 **D1.0 可操作场地**，不称经营首玩。D1.1 自举建设与真实保障 → D1.2 可持续经营/后续选择 → D2.0 竞争/勘探 → D2.1 本地委托/恢复 → D2.2 G1 → D3.0 有限扩张。P1 高保真生产切片和 R1 发行另过门槛；详细包规格用路线文档，不在此维护第二套逐行状态。
+
+## 分工与开批
+
+Codex 持有本批合同、权威规则/权限/持久化、Main/注册/共享配置和实际应用集成；GLM 实现冻结的独占 UI、视觉适配或确定子件，美术交独占源/GLB/manifest/状态和视觉证据。两条工程槽加一条美术槽是初始在制建议，实际依赖与审查能力决定数量，不同时打开全部规划包。工人不自验收、不自动领取下一票；每个文件单写者。
+
+C01 只冻结当前检查点实际消费字段，并交真实消费端；C02 每个检查点都负责同批接入、默认应用和独立验收。首批 C01/E02/E04/C02 由 Codex，E01/E03 可在合同明确后并行，A01/A03 同批汇合；U01 当批未被使用时只记制作/检查，不冒称版本效果。当前没有新的实际实现派单。
+
+## 状态与证据
+
+- DRAFT：范围/输入/文件归属/fixtures 尚未冻结；READY：实际依赖、版本、独占路径、验收与集成者齐备。两者不等于开工授权或实际派单。完整模板见[Agent 交接](docs/roadmap/agent-entry.md)。
+- 有真实执行才记 IN_PROGRESS；SUBMITTED/REVIEW/REWORK/ACCEPTED 用独立证据推进。ACCEPTED 仅覆盖原票，已有技术接受和素材 REVIEW 保留；本轮纠正过期缺口，不重签历史。
+- 验证、实现/制作、主场景接入、版本内验收分别记录；真人理解/继续经营意愿、所有者视觉独立记录。main 有代码/素材不证明本机应用已更新，拟建测试规格仍 NOT_RUN。
+- P0：当前 D1.0 汇合所需；P1：随后 D1.1/D1.2 及相关留项；P2：后续/有条件开展。已交行中的历史优先级不产生重复派单。
+- 正式状态只在两条 TODO；根页和 GitHub 总索引只放入口/摘要。T3/T4/T5 沿用现有父 Issue；只在实际冻结时展开执行票，不一次创建全部远期 Issue。
+
+## 依赖与可继续的范围
+
+D1.0 复用既有地形/运动/整平，不等待全部导航、经济、本地模型或高保真。PERF 受控返工不证明稳定预算，也不阻塞本批功能；有实际回归/性能疑点再推进相应项。地表按本批区域/采样/阶段合同接权威高度场，参考 GLB 不替换世界；矿量与库存共归 RESOURCES，情报/空间归 WORLD。
+
+D1.1 基础供电/回充/维修必须与自举一起建设；E14 本地候选从 D1.1 提前试并接真实任务。零电恢复方式未定只阻塞相关救援子片，零耐久由其他机器人送回维修已经确认。Astra 高保真需正常视距/低保真与实际用途成立及所有者授权；弱配置、真实 API、Windows 和发行按各自条件取证。
+
+## 历史编排与交付摘要
+
+以下保留旧批次事实与当时建议；**当前优先顺序、活动状态与开工范围以上文及两条权威 TODO 为准**。
 
 2026-10-04所有者授权后，PR [#16](https://github.com/liuyejinghong/yudian-game/pull/16)、[#18](https://github.com/liuyejinghong/yudian-game/pull/18)及[#20](https://github.com/liuyejinghong/yudian-game/pull/20)已合并，本网格批次从main `3999d30`起步。PR [#13](https://github.com/liuyejinghong/yudian-game/pull/13)/[#14](https://github.com/liuyejinghong/yudian-game/pull/14)保留902a662历史评审/工单，已补后续权威入口，不重复派发其中旧任务；历史结果见[接管复验](docs/engineering/reports/2026-10-04-takeover-verification.md)。原Issue [#5](https://github.com/liuyejinghong/yudian-game/issues/5)/[#6](https://github.com/liuyejinghong/yudian-game/issues/6)/[#7](https://github.com/liuyejinghong/yudian-game/issues/7)/[#8](https://github.com/liuyejinghong/yudian-game/issues/8)分别关联T2/T3/T4/T5；旧ready-for-agent标签不能替代新子票的冻结接口和本轮范围。
-
-## 分工与外包默认
-
-| 角色/执行槽 | 工作 | 权限边界 |
-|---|---|---|
-| Codex主控 | 产品/技术合同、拆票、关键状态/持久化、实机调度、审查、验收、集成 | 公共合同、Main/项目/依赖、共用fixture和注册表唯一写者；可以冻结子票让GLM实现 |
-| GLM-Eng-A / GLM-Eng-B | 纯数据/网格候选、工具、测试、清单等已定接口子件 | 每次一张结果票，各自工作树和目录；不批准提交/取消语义或最终性能 |
-| GLM-Art-A / GLM-Art-B / GLM-Art-T | 单件机器人/设施/地形参考和确定边界下样件 | 独立源、GLB、manifest；不写库存/电量/通行/产矿规则 |
-| GLM-Material | 共享材质实现 | 主控冻结材质接口后，指定其为共享材质目录唯一写者；其他工人只引用 |
-| 独立reviewer / architect | 关键或跨模块变更只读审查 | 不编辑、不代替主控验收；按风险使用，不每张机械小票都调用 |
-| 所有者 | 视觉/产品效果与越界决定 | 不承担算法选型和逐工序技术审批 |
-
-这些GLM槽是拟执行角色，不是已启动会话；同一GLM渠道可以承担不同票。默认通过Agent Bridge调用ZCode原生GLM，先确认模型；渠道不可用则报告，不静默换模型。优先把重复实现/测试/清单/展示工作交给GLM，主控不因工人额度充足而放大票，也不重做已验收成果。记录真实耗时、返工、工具可见用量；未知成本写未知，不给虚构排名。
-
-## 状态、证据与更新
-
-- `DRAFT`：已入待办，未冻结可执行票；`READY`：依赖、范围、文件归属与验收方式齐备。设计票冻结问题/输入范围/验收案例，领域合同是其产出；下游实现票才要求领域接口已经冻结。两者均不自动开工。
-- `IN_PROGRESS`：实际派单后才设置，记录session/task和分支；`SUBMITTED`→`REVIEW`→`ACCEPTED`由主控独立证据推进。`REWORK`是具体不合格项；`BLOCKED`须写真实阻塞与解除条件。
-- `ACCEPTED`只覆盖任务行写明的验收范围；合并、图形验证、视觉确认分别记录。旧批次表是历史快照，当前状态只在对应线的TODO维护。
-- 每行有ID、优先级、状态、依赖、拟执行者、结果/验收及来源。P0=当前整理或证据留项；P1=首批底座/样件；P2=后续队列，不是日期承诺。
-- 只在派单时展开一张完整票：固定base/分支、最小资料、可写与禁写、冻结接口/单位/错误、正常异常例、释放/中断、实际检查命令、提交/限制与升级条件。实际示例：[QA-02](docs/engineering/tasks/QA-02.md)、[TODO-ART-01](docs/workflow/tasks/TODO-ART-01.md)。
-- 依赖就绪且当期执行范围覆盖，主控才将READY票派出；工人不自动领取下一张。独立提交→主控查看diff和检查→接受→PR集成，不自验自签。两轮同接口失败缩票/定位，保留失败材料。
-- 更新任务时只改本线权威行并附证据；根表和GitHub总索引只放入口与摘要，不维护第二套逐行状态。旧Issue保留讨论和原范围，需要执行时再创建/关联子票，不一次生成全部远期Issue。
-
-## 两线依赖与并行
-
-性能留项阻塞“将基线当作稳定对照”，不阻塞T3a合同讨论或独立美术造型。土坡/矿点正式接入必须等区域、边界高程、阶段/版本合同；图片和造型不能反推通行/矿物。共享材质只设一名写者；单位与设施可分别实现，但导入由主控串行核查公共接线。
-
-后续可并行：GLM-Eng-A实现冻结的网格候选子件，GLM-Art-A做驮运，GLM-Art-B做太阳能；文件不交叠。不能并行争写Main、共用fixture、公共材质或同一模型。新资产单独预览/基准，不混旧灰模成绩；正式验收仍需正常指挥距离效果、真实导入与实际成本。
 
 当前编排：美术需求由专门会话按美术权威TODO推进；产研继续由本会话握合同与集成。数据和两个CPU网格子件已经接受并合并PR #20/#23；本轮GLM完成T3-GODOT（含一次限定返工），主控完成独立T3-PROBE，真实Godot复验、reviewer与最终architect通过；仅接受资源适配/未提交候选预览。[本轮复验](docs/engineering/reports/2026-10-04-terrain-render-verification.md) / [子票#24](https://github.com/liuyejinghong/yudian-game/issues/24)。
 
