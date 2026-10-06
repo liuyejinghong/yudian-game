@@ -1,6 +1,6 @@
 # 余电双线 TODO
 
-更新：2026-10-06。[双线路线入口](docs/roadmap/README.md) / [联合里程碑](docs/roadmap/milestones.md) / [GitHub 总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17)。PR [#38](https://github.com/liuyejinghong/yudian-game/pull/38) 已审查并合并，整理基线 main `0662c12`。本轮完成范围是 **重新评估两条 TODO 与合并合格文档**；没有启动实现或素材制作，没有把规划包升级为 READY。
+更新：2026-10-06。[双线路线入口](docs/roadmap/README.md) / [近期编排](docs/roadmap/DEVELOPMENT-ROADMAP.md) / [联合里程碑](docs/roadmap/milestones.md) / [GitHub 总索引 #17](https://github.com/liuyejinghong/yudian-game/issues/17)。PR [#38](https://github.com/liuyejinghong/yudian-game/pull/38) 已审查并合并，PR [#39](https://github.com/liuyejinghong/yudian-game/pull/39) 已合并，当前重整基线 main `cacaa27`。本轮范围是 **按实际依赖重新整理近期编排**；没有启动实现或素材制作，没有把规划包升级为 READY。
 
 | 线 | 唯一权威任务表 | 当前事实 | 下一批建议（未启动） |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 
 Codex 持有本批合同、权威规则/权限/持久化、Main/注册/共享配置和实际应用集成；GLM 实现冻结的独占 UI、视觉适配或确定子件，美术交独占源/GLB/manifest/状态和视觉证据。两条工程槽加一条美术槽是初始在制建议，实际依赖与审查能力决定数量，不同时打开全部规划包。工人不自验收、不自动领取下一票；每个文件单写者。
 
-C01 只冻结当前检查点实际消费字段，并交真实消费端；C02 每个检查点都负责同批接入、默认应用和独立验收。首批 C01/E02/E04/C02 由 Codex，E01/E03 可在合同明确后并行，A01/A03 同批汇合；U01 当批未被使用时只记制作/检查，不冒称版本效果。当前没有新的实际实现派单。
+C01 只冻结当前检查点实际消费字段，并交真实消费端；C02 每个检查点都负责同批接入、默认应用和独立验收。首批 C01/E02/E04/C02 由 Codex 交错推进；E01/E03 消费明确合同并行，E04 在单任务快照边界明确后进入。A01 与初始实际视口校准，A03 得到区域/阶段样例后同批推进；C02 从开批持续接入。U01 当批未被使用时只记制作/检查，不冒称版本效果。当前没有新的实际实现派单。
 
 ## 状态与证据
 

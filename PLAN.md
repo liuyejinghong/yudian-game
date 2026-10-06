@@ -310,3 +310,19 @@ APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入
 本轮文档验证：文档完整性/链接/六份原始档案hash/A01—A24与B01—B08编号通过；验证器7项自测试通过；六个工程与七个美术DRAFT行唯一，既有ACCEPTED/REVIEW原行与旧证据链接保留，差异仅四个Markdown。architect指出E03非法状态措辞需保持旧有效状态，已修正并独立复核关闭；reviewer未发现剩余实质问题。游戏/构建/新视觉验收NOT_RUN。
 
 发布入口：[PR #39](https://github.com/liuyejinghong/yudian-game/pull/39)。本节记录发布前／发布核验事实；发布后按所有者已有授权直接合并合格精确head，主仓库仅快进并保留未跟踪研究简报。最终merge提交与合并时间以该PR的GitHub状态为准，接手时先核对该状态，不重复派发本轮已交文档。
+
+
+## cc-reorder · 2026-10-06 编排重整
+
+授权：所有者要求重新整理 Claude Code 的安排；此前合格文档直接合并授权继续有效。本轮只整理文档，不启动新游戏实现或素材制作。基线 main cacaa27；Claude 新增主线原件及将改文件已在本机临时目录备份。
+
+1. [x] 核实际 HEAD、未跟踪主线、两条 TODO 和活动入口，architect 前置审查。证明：原主线将可重叠工作串行化、缺少 E12/E14 当批职责，周数无产能依据；当前 Bridge 实例旧会话均已退出，GitHub 无开放 PR，但不据此断言其他客户端没有活动。
+2. [x] 在原 DEVELOPMENT-ROADMAP.md 位置收敛近期编排，并接回根入口和工程 TODO。证明：C01/E02/E04 的真实输入、A01/A03 联调、C02 连续集成明确；D1.1 有增量保存和本地候选准备；已有接受行保留，新增执行子片仍 DRAFT。
+3. [x] 独立审查与相称文档核验。证明：当前内部链接、历史档案与需求编号检查通过，差异仅文档；没有游戏/构建/新视觉通过声明。
+4. [x] 发布文档 PR 并核对精确 head、文件范围和可合并条件。证明：PR #40 已发布，六份 Markdown、MERGEABLE/CLEAN，自动检查列表为空；不冒称 CI 通过。合格修订按已有授权合并并同步 main，结果以 GitHub PR 状态为准；保留其他未跟踪研究简报，原 CC 文件字节未变后才替换为修订版。
+
+文件归属：主控仅改 DEVELOPMENT-ROADMAP.md、roadmap/README.md、根 TODO.md、工程 TODO.md、PLAN.md 和 AGENTS.md 的 Lessons；architect/reviewer 只读。美术 TODO 和历史证据原样保留，不派发或终止外部任务。
+
+本轮核验：architect 前置及收尾、独立 reviewer 均无剩余实质阻碍；文档验证和 diff 格式通过，旧接受/审查表格行保留、六个 D1.0 子片仍 DRAFT，美术 TODO 与 AGENTS 的 Lessons 以上字节未改。仅六份 Markdown；游戏、构建、新视觉验证 NOT_RUN。
+
+发布入口：[PR #40](https://github.com/liuyejinghong/yudian-game/pull/40)。本节是发布核验记录；后续接手先读该 PR 的实际合并状态，不重复派发本轮文档。
