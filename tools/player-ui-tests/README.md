@@ -8,7 +8,7 @@ E01 交付物 `Yudian.PlayerUI.PlayerController` 的自测入口说明。共享�
 ## 运行
 
 ```sh
-cd /Users/ethan/yudian-game/d1-player-ui-r1
+cd /path/to/yudian-game
 ./tools/player-ui-tests/run-selftest.sh
 ```
 
@@ -24,10 +24,10 @@ cd prototype
 ## 行为
 
 - 加载真实 `res://scenes/Main.tscn`（默认即玩家模式），等 `ReadPlayerState().Ready`。
-- `AddChild` 后调用 `Initialize(Main, Camera3D)`（与主控接入顺序一致）。
-- 断言：HUD 六按钮/标签建立；原点预览合法、设施重叠与场外非法、望山不能当筑垒；
+- 复用 Main 默认注册的 PlayerController；显式 GUI_TEST 和独立临时保存槽，不覆盖用户档。
+- 断言：HUD 六按钮/标签建立；动态寻找合法预览点、设施重叠与场外非法、望山不能当筑垒；
   地面点选→确认启用→按钮双击只产生一个 `level-1` 任务且执行者是筑垒；取消；
-  暂停时模拟时间冻结但 WASD/滚轮/UI 可用；未知命令被拒；保存可见成功；读取恢复；
+  暂停时模拟时间冻结但 WASD/滚轮/旋转/UI 可用；连续拖动不重复累计，Esc清除预览；未知命令被拒；保存可见成功；读取恢复；
   HUD 面板点击不穿透、空点清除选择且不下命令。
 - 每项输出 `PLAYER_UI_SELFTEST PASS/FAIL <描述>`，末行
   `PLAYER_UI_SELFTEST summary checks=N failures=M`；退出码 0=全过，1=有失败或超时。

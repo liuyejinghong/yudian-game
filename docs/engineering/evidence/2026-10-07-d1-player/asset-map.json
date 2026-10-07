@@ -1,0 +1,20 @@
+[
+  {
+    "source": "art/d1/camera.json",
+    "runtime": "prototype/assets/d1-art/camera.json",
+    "source_commit": "81d786b2019b7c73da05d6b3cc2c0488b64e0cc1",
+    "sha256": "b5e94bb12c7e1ff8e5627e02e3bf8d39d6d2a63696cdc57e2a89bb5cd948d248"
+  },
+  {
+    "source": "art/d1/markers.gd",
+    "runtime": "prototype/assets/d1-art/markers.gd",
+    "source_commit": "81d786b2019b7c73da05d6b3cc2c0488b64e0cc1",
+    "sha256": "1c2abcf796d9d864f60d2b515a44af9b7489c909d3a2d5270a02597876b4da78"
+  },
+  {
+    "source": "art/d1/surface.gdshader",
+    "runtime": "prototype/assets/d1-art/surface.gdshader",
+    "source_commit": "81d786b2019b7c73da05d6b3cc2c0488b64e0cc1",
+    "sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14"
+  }
+]
