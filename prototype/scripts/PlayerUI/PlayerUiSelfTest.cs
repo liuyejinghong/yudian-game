@@ -24,6 +24,8 @@ public partial class PlayerUiSelfTest : SceneTree
 
     public override void _Initialize()
     {
+        System.Environment.SetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST", "1");
+        System.Environment.SetEnvironmentVariable("YUDIAN_PLAYER_TEST_SAVE", System.IO.Path.Combine(System.IO.Path.GetTempPath(), "yudian-ui-test-" + Guid.NewGuid() + ".json"));
         GD.Print("PLAYER_UI_SELFTEST begin");
         var scene = ResourceLoader.Load<PackedScene>("res://scenes/Main.tscn")
             ?? throw new InvalidOperationException("无法加载 res://scenes/Main.tscn");
@@ -38,9 +40,7 @@ public partial class PlayerUiSelfTest : SceneTree
         {
             await WaitFor(() => _world.ReadPlayerState().Ready, 60, "世界就绪");
             _camera = Root.GetCamera3D() ?? throw new InvalidOperationException("主场景没有当前相机");
-            _ui = new PlayerController();
-            Root.AddChild(_ui);
-            _ui.Initialize(_world, _camera);
+            _ui = (PlayerController)_world.FindChild("PlayerController", true, false)!;
             await Frames(3);
 
             Check(_ui.FindChild("ConfirmButton", true, false) is Button, "HUD 建立确认按钮");
@@ -134,6 +134,25 @@ public partial class PlayerUiSelfTest : SceneTree
             Wheel(true);
             await Frames(2);
             Check(_camera.GlobalPosition.Length() < distBefore - 1e-4, "滚轮缩放可用");
+
+            var grab = Root.GetVisibleRect().Size / 2f;
+            Vector3 Plane(Vector2 pixel)
+            {
+                var origin = _camera.ProjectRayOrigin(pixel); var ray = _camera.ProjectRayNormal(pixel);
+                return origin - ray * (origin.Y / ray.Y);
+            }
+            var dragBefore = _camera.GlobalPosition;
+            var expectedDrag = Plane(grab) - Plane(grab + new Vector2(30, 0));
+            Root.PushInput(new InputEventMouseButton { ButtonIndex = MouseButton.Right, Pressed = true, Position = grab });
+            for (int i = 1; i <= 3; i++) Root.PushInput(new InputEventMouseMotion { Position = grab + new Vector2(i * 10, 0), Relative = new Vector2(10, 0), ButtonMask = MouseButtonMask.Right });
+            await Frames(2);
+            Root.PushInput(new InputEventMouseButton { ButtonIndex = MouseButton.Right, Pressed = false, Position = grab + new Vector2(30, 0) });
+            Check((_camera.GlobalPosition - dragBefore).DistanceTo(expectedDrag) < .001, "连续拖动只累计实际总位移");
+            var beforeBasis = _camera.GlobalBasis;
+            PressKey(Key.Q, true); await RealSeconds(.2); PressKey(Key.Q, false); await Frames(2);
+            Check(_camera.GlobalBasis.Z.DistanceTo(beforeBasis.Z) > .05, "暂停期间镜头旋转可用");
+            PressKey(Key.Escape, true); PressKey(Key.Escape, false); await Frames(2);
+            Check(!selection.Text.Contains("已选") && confirm.Disabled, "Esc 清除预览而不重建旧选区");
 
             await CommandClick(pause);
             await WaitFor(() => !_world.ReadPlayerState().Paused, 10, "继续生效");

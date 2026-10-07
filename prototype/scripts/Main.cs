@@ -67,6 +67,8 @@ public partial class Main : Node3D
     private string _runId = "";
     private double _animTime;
     private bool _captured;
+    private string? _guiCaptureKey;
+    private string? _guiCapturePending;
 
     public override void _Ready()
     {
@@ -96,6 +98,10 @@ public partial class Main : Node3D
             if (_liveMode) BuildLiveTerrain();
             else { BuildTerrain(); BuildFacilities(); SpawnRobots(); }
             BuildCamera();
+            if (_playerMode)
+            {
+                var controller = new Yudian.PlayerUI.PlayerController { Name = "PlayerController" }; AddChild(controller); controller.Initialize(this, _camera);
+            }
             if (_benchmark) StartBenchmark();
             if (_liveMode) GD.Print($"MAIN_GROUND_IDENTITY build_sha256={AssemblyHash()} loaded_mvid={typeof(Main).Assembly.ManifestModule.ModuleVersionId} CLR={System.Environment.Version} display={DisplayServer.GetName()}");
             GD.Print($"[Yudian] fixture={_cfg.Name} seed={_cfg.Seed} facilities={_facilityPositions.Count} robots={_robots.Count} benchmark={_benchmark}");
@@ -111,6 +117,22 @@ public partial class Main : Node3D
             _captured = true;
             var error = GetViewport().GetTexture().GetImage().SavePng(capture);
             if (error != Error.Ok) { Fail(new IOException("截图保存失败: " + error)); return; }
+        }
+        var captureDirectory = System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_CAPTURE_DIR");
+        if (_playerMode && _groundReady && captureDirectory != null && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
+        {
+            string key = $"{_liveTerrain!.Current.Version}-{_levelJob?.Id ?? "none"}-{_levelJob?.Stage.ToString() ?? "Idle"}-{_userPaused}";
+            if (key != _guiCaptureKey)
+            {
+                if (_guiCapturePending == key)
+                {
+                    Directory.CreateDirectory(captureDirectory);
+                    var result = GetViewport().GetTexture().GetImage().SavePng(Path.Combine(captureDirectory, $"{Engine.GetProcessFrames()}-{key}.png"));
+                    if (result != Error.Ok) { Fail(new IOException("图形测试截图保存失败: " + result)); return; }
+                    _guiCaptureKey = key;
+                }
+                _guiCapturePending = key;
+            }
         }
         float dt = _playerMode && (_userPaused || _loadPending != null) ? 0 : (float)delta;
         _animTime += dt;
@@ -184,7 +206,13 @@ public partial class Main : Node3D
 
     private void ApplyWindowAndQuality()
     {
-        GetWindow().Size = new Vector2I(_cfg.TargetResolution.Width, _cfg.TargetResolution.Height);
+        var size = new Vector2I(_cfg.TargetResolution.Width, _cfg.TargetResolution.Height);
+        if (_playerMode && DisplayServer.GetName() != "headless")
+        {
+            var available = DisplayServer.ScreenGetUsableRect().Size - new Vector2I(60, 100);
+            size = new Vector2I(Math.Min(size.X, available.X), Math.Min(size.Y, available.Y));
+        }
+        GetWindow().Size = size;
         var vp = GetViewport();
         vp.Msaa3D = _cfg.Quality.Msaa3d switch
         {
@@ -263,10 +291,18 @@ public partial class Main : Node3D
         {
             float ang = MathF.Tau * i / n;
             float x = MathF.Cos(ang) * ring, z = MathF.Sin(ang) * ring;
+            if (_playerMode && i % 6 == 5) { x = 7; z = -22; }
             float y = TerrainHeight(x, z);
             _facilityPositions.Add(new Vector3(x, y, z));
             var root = new Node3D { Position = new Vector3(x, y, z), Name = $"Facility_{i}" };
             AddChild(root);
+            if (_playerMode)
+            {
+                string[] paths = ["facilities/solar-r1/solar-r1.glb", "facilities/processor-r1/processor-r1.glb",
+                    "lowfi-batch-r1/models/storage.glb", "lowfi-batch-r1/models/charger.glb", "lowfi-batch-r1/models/repair.glb", "lowfi-batch-r1/models/lander.glb"];
+                root.AddChild(GD.Load<PackedScene>("res://assets/" + paths[i % 6]).Instantiate<Node3D>());
+                continue;
+            }
             switch (i % 6)
             {
                 case 0: // 太阳能阵列：板 + 柱，慢速自转
@@ -334,7 +370,7 @@ public partial class Main : Node3D
                 Node3D root = _liveMode ? new GroundPatrol() : new Node3D();
                 root.Name = $"Robot_{types[t].Name}_{k + 1}";
                 AddChild(root);
-                MeshPart(root, types[t].Mesh(), types[t].Color, _liveMode ? new Vector3(0, .55f, 0) : Vector3.Zero);
+                if (!(_playerMode && t == 1)) MeshPart(root, types[t].Mesh(), types[t].Color, _liveMode ? new Vector3(0, .55f, 0) : Vector3.Zero);
                 if (t == 0)
                     MeshPart(root, new SphereMesh { Radius = 0.12f, Height = 0.24f }, new Color(0.9f, 0.9f, 0.9f), new Vector3(0, _liveMode ? 1.27f : .72f, 0));
 
@@ -360,11 +396,17 @@ public partial class Main : Node3D
                 {
                     int i = 0; while (i < 3 && cum[i + 1] < dist) i++;
                     Vector3 p = pts[i].Lerp(pts[(i + 1) % 4], (dist - cum[i]) / (cum[i + 1] - cum[i]));
+                    if (_playerMode)
+                    {
+                        p = t == 1 ? new Vector3(20, 0, -22 + k * 6)
+                            : new Vector3(-22 + k * 3, 0, t == 0 ? -22 : -6);
+                    }
                     p.Y = GroundHeight(p.X, p.Z) + .02f;
                     ground.Position = p;
                     if (_playerMode) { ground.PatrolEnabled = false; ground.BodyRadius = t == 1 ? .9f : .55f; }
                     ground.Initialize(pts, types[t].Speed);
                     _groundRobots.Add(ground);
+                    if (_playerMode && t == 1) AttachPlayerVisual(ground);
                 }
                 else _robots.Add(new Patrol { Node = root, Points = pts, Cum = cum, Speed = types[t].Speed, Dist = dist });
             }
@@ -377,7 +419,18 @@ public partial class Main : Node3D
         _cameraCenter = new Vector3(_cfg.CameraPath.Center[0], _cfg.CameraPath.Center[1], _cfg.CameraPath.Center[2]);
         AddChild(_camera);
 
-        if (!_benchmark)
+        if (_playerMode)
+        {
+            using var cameraFile = Godot.FileAccess.Open("res://assets/d1-art/camera.json", Godot.FileAccess.ModeFlags.Read);
+            using var config = JsonDocument.Parse(cameraFile.GetAsText());
+            var normal = config.RootElement.GetProperty("cameras").GetProperty("normal");
+            var pos = normal.GetProperty("position"); var aim = normal.GetProperty("target");
+            _camera.Position = new Vector3(pos[0].GetSingle(), pos[1].GetSingle(), pos[2].GetSingle());
+            _camera.Fov = normal.GetProperty("fov").GetSingle();
+            _camera.Near = .05f; _camera.Far = 200;
+            _camera.LookAt(new Vector3(aim[0].GetSingle(), aim[1].GetSingle(), aim[2].GetSingle()));
+        }
+        else if (!_benchmark)
         {
             // 非基准模式：静态斜俯视取景，便于人工查看灰模。
             _camera.Position = _cameraCenter + new Vector3(_cfg.CameraPath.Radius * 0.55f, _cfg.CameraPath.Height, _cfg.CameraPath.Radius * 0.75f);
@@ -497,6 +550,7 @@ public partial class Main : Node3D
 
     public override void _ExitTree()
     {
+        _playerSurface?.Dispose(); _committedMask?.Dispose();
         if (_recorder == null) return;
         try { _recorder.Finish(Summary(), "interrupted"); }
         catch (Exception e) { GD.PushError($"benchmark 中断记录失败: {e.Message}"); GetTree().Quit(1); return; }

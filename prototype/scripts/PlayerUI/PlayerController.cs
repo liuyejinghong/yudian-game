@@ -5,16 +5,9 @@ using Godot;
 
 namespace Yudian.PlayerUI;
 
-/// <summary>
-/// E01 玩家界面（D1.0）：RTS 斜俯视镜头（WASD/拖动平移、滚轮缩放）、鼠标选择机器人/地面、
-/// 固定半径 2m 选区预览与现场范围标记、真实目标卡与指令按钮。
-/// 只经 Main 公开合同读取事实与下达命令（ReadPlayerState / ReadPlayerRobots /
-/// PreviewLevel / QueueLevel / QueuePlayerAction），不持有任务或地形事实、不本地推进进度。
-/// 世界点击走 _UnhandledInput，UI 点击不穿透；命令按钮带冷却，双击不重复提交。
-/// </summary>
+// Player input queues commands; terrain and job facts remain in Main.
 public partial class PlayerController : Node
 {
-    // 未来美术消费点：颜色、半径与阈值集中在此，A01/A03 接手时整体替换。
     private static class Palette
     {
         public static readonly Color PanelBg = Color.FromHtml("f2eee7");
@@ -23,12 +16,6 @@ public partial class PlayerController : Node
         public static readonly Color TextDim = Color.FromHtml("6b6258");
         public static readonly Color Accent = Color.FromHtml("c96f2e");
         public static readonly Color AccentText = Color.FromHtml("fff8f0");
-        public static readonly Color Legal = Color.FromHtml("3e7c4f");
-        public static readonly Color Illegal = Color.FromHtml("b0392e");
-        public static readonly Color Site = Color.FromHtml("c96f2e");
-        public static readonly Color JobActive = Color.FromHtml("e0972e");
-        public static readonly Color JobDone = Color.FromHtml("8a8378");
-        public static readonly Color Select = Color.FromHtml("efe3c2");
     }
 
     private const float SiteRadiusM = 2f;
@@ -50,7 +37,7 @@ public partial class PlayerController : Node
     private Vector2? _panGrab;
     private bool _rightDragged;
     private Vector2 _leftPress;
-    private bool _leftTracking;
+    private bool _leftTracking, _aimCleared;
 
     // 选择与预览：只存选择指针与最近一次预览结果，不存世界事实。
     private Vector3? _selectedSite;
@@ -62,13 +49,20 @@ public partial class PlayerController : Node
     private PlayerRobotView[] _robots = [];
 
     private Node3D _markers = null!;
-    private Mesh _ringMesh = null!, _discMesh = null!;
+    private GodotObject _markerFactory = null!;
     private Marker _previewMarker = null!, _siteMarker = null!, _jobMarker = null!, _selectMarker = null!;
     private Label _statusLabel = null!, _jobLabel = null!, _selectionLabel = null!, _worldLabel = null!;
     private Button _confirmButton = null!, _cancelButton = null!, _pauseButton = null!,
         _saveButton = null!, _loadButton = null!, _recoverButton = null!;
 
-    private sealed record Marker(Node3D Root, MeshInstance3D Ring, MeshInstance3D? Disc);
+    private sealed class Marker
+    {
+        public MeshInstance3D? Node;
+        public Vector3? Center;
+        public string Kind = "";
+        public float Radius;
+        public long Version = -1;
+    }
 
     public void Initialize(Main world, Camera3D camera)
     {
@@ -107,11 +101,18 @@ public partial class PlayerController : Node
         if (!_initialized) return;
         switch (@event)
         {
+            case InputEventKey key when key.Pressed && !key.Echo && key.Keycode == Key.Escape:
+                ClearSelection(); break;
+            case InputEventKey key when key.Pressed && !key.Echo && key.Keycode == Key.F:
+                var target = _selectedSite ?? Array.Find(_robots, r => r.Id == _selectedRobotId)?.Position ?? _world.ReadPlayerState().Job?.Center;
+                if (target is { } p) _focus = new Vector3(p.X, 0, p.Z);
+                break;
             case InputEventMouseMotion motion:
-                _mousePos = motion.Position;
+                _mousePos = motion.Position; _aimCleared = false;
                 if (_panGrab is { } grab && MousePlanePoint(grab) is { } grabPoint && MousePlanePoint(motion.Position) is { } now)
                 {
                     _focus += grabPoint - now;
+                    _panGrab = motion.Position;
                     if (motion.Relative.LengthSquared() > 0.25f) _rightDragged = true;
                 }
                 break;
@@ -166,6 +167,7 @@ public partial class PlayerController : Node
 
     private void HandleClick(Vector2 screenPos)
     {
+        _aimCleared = false;
         string? robot = PickRobot(screenPos);
         if (robot != null)
         {
@@ -177,7 +179,6 @@ public partial class PlayerController : Node
         if (GroundHit(screenPos, out var point))
         {
             _selectedSite = point;
-            _selectedRobotId = null;
             _preview = null;
             return;
         }
@@ -187,6 +188,7 @@ public partial class PlayerController : Node
 
     private void ClearSelection()
     {
+        _hoverPoint = null; _aimCleared = true;
         _selectedRobotId = null;
         _selectedSite = null;
         _preview = null;
@@ -196,6 +198,8 @@ public partial class PlayerController : Node
 
     private void UpdateCamera(float focusLimit, float dt)
     {
+        float rotation = (Input.IsKeyPressed(Key.Q) ? 1 : 0) - (Input.IsKeyPressed(Key.E) ? 1 : 0);
+        _cameraBasis = _cameraBasis.Rotated(Vector3.Up, rotation * dt).Orthonormalized();
         var flatForward = -_cameraBasis.Z;
         flatForward.Y = 0f;
         flatForward = flatForward.Normalized();
@@ -239,13 +243,6 @@ public partial class PlayerController : Node
         return true;
     }
 
-    private float? GroundY(float x, float z)
-    {
-        using var query = PhysicsRayQueryParameters3D.Create(new Vector3(x, 60f, z), new Vector3(x, -60f, z), 1);
-        using var hit = _markers.GetWorld3D().DirectSpaceState.IntersectRay(query);
-        return hit.Count == 0 ? null : hit["position"].AsVector3().Y;
-    }
-
     private string? PickRobot(Vector2 screenPos)
     {
         var origin = _camera.ProjectRayOrigin(screenPos);
@@ -276,7 +273,7 @@ public partial class PlayerController : Node
     private void UpdateAimAndPreview(PlayerReadModel state, float dt)
     {
         bool jobActive = state.Job is { Active: true };
-        if (_selectedSite == null && !jobActive)
+        if (_selectedSite == null && !jobActive && !_aimCleared)
             _hoverPoint = MousePlanePoint(_mousePos);
         var aim = _selectedSite ?? _hoverPoint;
         if (jobActive || aim is not { } target)
@@ -315,23 +312,29 @@ public partial class PlayerController : Node
         box.AddChild(NewLabel("余电 · 整平作业", 20, Palette.Text));
         _statusLabel = NewLabel("", 16, Palette.Accent);
         _statusLabel.Name = "StatusLabel";
-        _statusLabel.CustomMinimumSize = new Vector2(430, 0);
+        _statusLabel.CustomMinimumSize = new Vector2(270, 0);
         _statusLabel.AutowrapMode = TextServer.AutowrapMode.Arbitrary;
         box.AddChild(_statusLabel);
         _jobLabel = NewLabel("", 17, Palette.Text);
         _jobLabel.Name = "JobLabel";
-        _jobLabel.CustomMinimumSize = new Vector2(430, 0);
+        _jobLabel.CustomMinimumSize = new Vector2(270, 0);
         _jobLabel.AutowrapMode = TextServer.AutowrapMode.Arbitrary;
         box.AddChild(_jobLabel);
         _selectionLabel = NewLabel("", 15, Palette.TextDim);
         _selectionLabel.Name = "SelectionLabel";
-        _selectionLabel.CustomMinimumSize = new Vector2(430, 0);
+        _selectionLabel.CustomMinimumSize = new Vector2(270, 0);
         _selectionLabel.AutowrapMode = TextServer.AutowrapMode.Arbitrary;
         box.AddChild(_selectionLabel);
         _worldLabel = NewLabel("", 14, Palette.TextDim);
         _worldLabel.Name = "WorldLabel";
+        _worldLabel.CustomMinimumSize = new Vector2(270, 0);
+        _worldLabel.AutowrapMode = TextServer.AutowrapMode.Arbitrary;
         box.AddChild(_worldLabel);
 
+        var hints = new Label { Text = "WASD／方向键平移 · 右键拖动 · 滚轮缩放 · Q/E 旋转 · F 定位 · Esc 清除选区",
+            AnchorLeft = 0, AnchorRight = 1, AnchorTop = 1, AnchorBottom = 1, OffsetTop = -105, OffsetBottom = -83,
+            HorizontalAlignment = HorizontalAlignment.Center, MouseFilter = Control.MouseFilterEnum.Ignore };
+        hints.AddThemeFontSizeOverride("font_size", 14); hud.AddChild(hints);
         var bar = new CenterContainer
         {
             Name = "CommandBar",
@@ -427,22 +430,18 @@ public partial class PlayerController : Node
             ? "当前没有任务；点击地面选择整平位置，确认后筑垒自动前往"
             : string.Format(Inv,
                 "任务 {0} · {1} · 执行者 {2} · 进度 {3:P0}\n中心 ({4:F1}, {5:F1}){6}",
-                job.Id, job.Stage, WorkerDisplay(job.WorkerId), job.Progress,
+                job.Id, StageDisplay(job.Stage), WorkerDisplay(job.WorkerId), job.Progress,
                 job.Center.X, job.Center.Z, job.Active ? "" : " · 非活动");
 
-        _selectionLabel.Text =
-            _selectedRobotId is { } id
-                ? Array.Find(_robots, r => r.Id == id) is { } robot
-                    ? $"已选 {robot.Name}（{id}）" + (id.StartsWith("Robot_Zhulei_", StringComparison.Ordinal)
-                        ? " · 确认时由该筑垒执行"
-                        : " · 望山/驮运不执行整平，确认时自动选择可达筑垒")
-                    : "已选机器人（等待世界状态）"
-                : _selectedSite is { } site
-                    ? string.Format(Inv, "已选位置 ({0:F1}, {1:F1}) · {2}", site.X, site.Z, _preview?.Reason ?? "预览中…")
-                    : "左键点选机器人或地面；右键取消选择";
+        string worker = SelectedWorkerId() is { } selectedWorker ? WorkerDisplay(selectedWorker) : "自动分配筑垒";
+        _selectionLabel.Text = _selectedSite is { } site
+            ? string.Format(Inv, "已选位置 ({0:F1}, {1:F1}) · {2}\n{3}", site.X, site.Z, _preview?.Reason ?? "预览中…", worker)
+            : _selectedRobotId is { } id && Array.Find(_robots, r => r.Id == id) is { } robot
+                ? $"已选 {robot.Name} · " + (SelectedWorkerId() != null ? "再点地面指定整平位置" : "本批仅筑垒执行整平")
+                : "左键点选机器人或地面；右键取消选择";
 
         _worldLabel.Text = string.Format(Inv,
-            "权威 v{0} · 模拟 {1:F0}s · 存档 {2} · {3}{4}",
+            "地表 v{0} · {1:F0}s · 存档 {2} · {3}{4}",
             state.Version, state.TimeSeconds, state.SaveExists ? "已有" : "无",
             state.Paused ? "已暂停" : "运行中", state.Ready ? "" : " · 世界恢复中");
 
@@ -458,102 +457,37 @@ public partial class PlayerController : Node
         => workerId == null ? "未分配"
             : Array.Find(_robots, r => r.Id == workerId) is { } robot ? robot.Name : workerId;
 
-    // ---- 标记 ----
+    private static string StageDisplay(string stage) => stage switch
+    {
+        "Travelling" => "前往工位", "Working" => "整平中", "WaitingForSpace" => "等待场地腾空",
+        "AwaitingPhysics" => "确认地表", "Completed" => "已完成", "Cancelled" => "已取消",
+        "Failed" => "无法继续", _ => stage
+    };
 
     private void BuildMarkers()
     {
-        _markers = new Node3D { Name = "Markers" };
-        AddChild(_markers);
-        _ringMesh = FlatRingMesh(0.92f, 1f, 48);
-        _discMesh = FlatDiscMesh(1f, 48);
-        _previewMarker = MakeMarker(withDisc: true);
-        _siteMarker = MakeMarker(false);
-        _jobMarker = MakeMarker(false);
-        _selectMarker = MakeMarker(false);
+        _markers = new Node3D { Name = "Markers" }; AddChild(_markers);
+        _markerFactory = ResourceLoader.Load<GDScript>("res://assets/d1-art/markers.gd").New().AsGodotObject();
+        _previewMarker = new Marker(); _siteMarker = new Marker(); _jobMarker = new Marker(); _selectMarker = new Marker();
     }
-
-    private Marker MakeMarker(bool withDisc)
-    {
-        var root = new Node3D { Visible = false };
-        var ring = new MeshInstance3D { Mesh = _ringMesh, MaterialOverride = MarkerMaterial(Palette.Site, 1f) };
-        root.AddChild(ring);
-        MeshInstance3D? disc = null;
-        if (withDisc)
-        {
-            disc = new MeshInstance3D { Mesh = _discMesh, MaterialOverride = MarkerMaterial(Palette.Site, 0.14f) };
-            root.AddChild(disc);
-        }
-        _markers.AddChild(root);
-        return new Marker(root, ring, disc);
-    }
-
-    private static StandardMaterial3D MarkerMaterial(Color color, float alpha)
-        => new()
-        {
-            ShadingMode = BaseMaterial3D.ShadingModeEnum.Unshaded,
-            AlbedoColor = new Color(color.R, color.G, color.B, alpha),
-            Transparency = alpha < 1f ? BaseMaterial3D.TransparencyEnum.Alpha : BaseMaterial3D.TransparencyEnum.Disabled,
-            CullMode = BaseMaterial3D.CullModeEnum.Disabled,
-            RenderPriority = 20,
-        };
-
     private void UpdateMarkers(PlayerReadModel state)
     {
-        var job = state.Job;
-        Color previewColor = _preview is { Legal: true } ? Palette.Legal : Palette.Illegal;
-        PlaceMarker(_previewMarker, _preview?.Center, previewColor, SiteRadiusM, showDisc: _preview != null);
-        PlaceMarker(_siteMarker, _selectedSite, Palette.Site, SiteRadiusM);
-        PlaceMarker(_jobMarker, job?.Center, job is { Active: true } ? Palette.JobActive : Palette.JobDone, SiteRadiusM);
+        PlaceMarker(_previewMarker, _preview?.Center, _preview is { Legal: true } ? "legal" : "illegal", SiteRadiusM, state);
+        PlaceMarker(_siteMarker, _preview == null ? _selectedSite : null, "hover", SiteRadiusM, state);
+        PlaceMarker(_jobMarker, state.Job?.Center, _world.PlayerJobApplied ? "committed" : "hover", SiteRadiusM, state);
         var selected = Array.Find(_robots, r => r.Id == _selectedRobotId);
-        PlaceMarker(_selectMarker, selected?.Position, Palette.Select, (selected?.Radius ?? 1f) + 0.35f);
+        PlaceMarker(_selectMarker, selected?.Position, "selected", (selected?.Radius ?? 1f) + .35f, state);
     }
-
-    private void PlaceMarker(Marker marker, Vector3? pos, Color color, float radius, bool showDisc = true)
+    private void PlaceMarker(Marker marker, Vector3? center, string kind, float radius, PlayerReadModel state)
     {
-        if (pos is not { } p || GroundY(p.X, p.Z) is not { } y)
-        {
-            marker.Root.Visible = false;
-            return;
-        }
-        marker.Root.Visible = true;
-        marker.Root.Position = new Vector3(p.X, y + 0.07f, p.Z);
-        marker.Root.Scale = new Vector3(radius, 1f, radius);
-        ((StandardMaterial3D)marker.Ring.MaterialOverride).AlbedoColor = new Color(color.R, color.G, color.B, 1f);
-        if (marker.Disc != null)
-        {
-            marker.Disc.Visible = showDisc;
-            ((StandardMaterial3D)marker.Disc.MaterialOverride).AlbedoColor = new Color(color.R, color.G, color.B, 0.14f);
-        }
+        if (!state.Ready) center = null;
+        if (marker.Center == center && marker.Kind == kind && marker.Radius == radius && marker.Version == state.Version) return;
+        if (marker.Node != null) { _markers.RemoveChild(marker.Node); marker.Node.QueueFree(); marker.Node = null; }
+        marker.Center = center; marker.Kind = kind; marker.Radius = radius; marker.Version = state.Version;
+        if (center is not { } p) return;
+        marker.Node = _markerFactory.Call("build", new Vector2(p.X, p.Z), radius, kind,
+            Callable.From<float, float, float>(_world.SamplePlayerGround)).AsGodotObject() as MeshInstance3D;
+        if (marker.Node != null) _markers.AddChild(marker.Node);
     }
-
-    private static Mesh FlatRingMesh(float inner, float outer, int segments)
-    {
-        var st = new SurfaceTool();
-        st.Begin(Mesh.PrimitiveType.Triangles);
-        for (int i = 0; i < segments; i++)
-        {
-            float a0 = MathF.Tau * i / segments, a1 = MathF.Tau * (i + 1) / segments;
-            Vector3 i0 = At(inner, a0), i1 = At(inner, a1), o0 = At(outer, a0), o1 = At(outer, a1);
-            st.AddVertex(i0); st.AddVertex(i1); st.AddVertex(o0);
-            st.AddVertex(o0); st.AddVertex(i1); st.AddVertex(o1);
-        }
-        return st.Commit();
-    }
-
-    private static Mesh FlatDiscMesh(float radius, int segments)
-    {
-        var st = new SurfaceTool();
-        st.Begin(Mesh.PrimitiveType.Triangles);
-        for (int i = 0; i < segments; i++)
-        {
-            float a0 = MathF.Tau * i / segments, a1 = MathF.Tau * (i + 1) / segments;
-            st.AddVertex(Vector3.Zero);
-            st.AddVertex(At(radius, a0));
-            st.AddVertex(At(radius, a1));
-        }
-        return st.Commit();
-    }
-
-    private static Vector3 At(float radius, float angle)
-        => new(MathF.Cos(angle) * radius, 0f, MathF.Sin(angle) * radius);
+    public override void _ExitTree() => _markerFactory?.Dispose();
 }

@@ -14,9 +14,15 @@ public partial class Main
     private string _playerNotice = "选择筑垒或地面，预览后下达整平";
     public PlayerReadModel ReadPlayerState() => new(
         _groundReady && !_groundFault && _groundVerified == _liveTerrain?.Current.Version && _loadPending == null,
-        _userPaused, _playerNotice, _levelJob == null ? null : new(_levelJob.Id, LevelStageText(_levelJob.Stage),
+        _userPaused, PlayerNotice(), _levelJob == null ? null : new(_levelJob.Id, LevelStageText(_levelJob.Stage),
             _levelJob.Worker?.Name.ToString() ?? "", _levelJob.Work.Fraction, _levelJob.Center, _levelJob.Active),
         _playerTime, _liveTerrain?.Current.Version ?? 0, _cfg.Terrain.Size / 2, System.IO.File.Exists(PlayerSavePath));
+    private string PlayerNotice()
+    {
+        if (_groundFault) return _groundMessage;
+        if (_loadPending != null || _userPaused || _levelJob?.Active != true || _levelJob.Message == _playerNotice) return _playerNotice;
+        return _levelJob.Message + "\n" + _playerNotice;
+    }
     public PlayerRobotView[] ReadPlayerRobots() => _groundRobots.Select(x => new PlayerRobotView(
         x.Name.ToString(), x.Name.ToString().Replace("Robot_Zhulei_", "筑垒 ").Replace("Robot_Wangshan_", "望山 ").Replace("Robot_Tuoyun_", "驮运 "),
         x.GlobalPosition, x.BodyRadius)).ToArray();
@@ -39,7 +45,7 @@ public partial class Main
             else
             {
                 var patch = GroundPatch(center.X, center.Z, 0, "preview");
-                if (_facilityPositions.Select((p, i) => XzDistance(p, center) <= FacilityRadii[i % 6] + (float)margin).Any(x => x)) reason = "选区与设施范围重叠";
+                if (_facilityPositions.Select((p, i) => XzDistance(p, center) <= FacilityRadius(i) + (float)margin).Any(x => x)) reason = "选区与设施范围重叠";
                 else if (_groundRobots.Any(x => XzDistance(x.GlobalPosition, center) <= x.BodyRadius + (float)margin)) reason = "选区内有机器人，请换位置";
                 else if (FindLevelWorker(patch, center, workerId).Worker == null) reason = "没有可直达施工站的筑垒；本版不支持绕障";
             }
@@ -81,7 +87,8 @@ public partial class Main
                 else { StartLevelJob(command.Center.X, command.Center.Z, command.Worker); _playerNotice = _levelJob?.Message ?? _levelNotice; }
             }
         }
-        catch (Exception ex) { _playerNotice = "操作失败：" + ex.Message; GD.Print("PLAYER_COMMAND_REJECTED " + ex.Message); }
+        catch (Exception ex) { _playerNotice = command.Action == "load" ? "读取失败：存档损坏、不支持或无法访问；当前世界与原档保留"
+                : command.Action == "save" ? "保存失败；此前存档保留，请检查可用空间与访问权限" : "操作未执行：" + ex.Message; GD.Print("PLAYER_COMMAND_REJECTED " + ex.Message); }
     }
 
     private (GroundPatrol? Worker, Vector3 Station) FindLevelWorker(TerrainPatch patch, Vector3 center, string? workerId)
@@ -106,21 +113,19 @@ public partial class Main
         return (bestWorker, bestStation);
     }
     private bool PlayerLineClear(GroundPatrol actor, Vector3 destination)
+        => PlayerLineClear(actor.GlobalPosition, actor.BodyRadius, destination,
+            _groundRobots.Where(x => x != actor).Select(x => (x.GlobalPosition, x.BodyRadius)).ToArray());
+    private bool PlayerLineClear(Vector3 origin, float radius, Vector3 destination, (Vector3 Position, float Radius)[] obstacles)
     {
-        var from = new Vector2(actor.GlobalPosition.X, actor.GlobalPosition.Z);
+        var from = new Vector2(origin.X, origin.Z);
         var to = new Vector2(destination.X, destination.Z); var segment = to - from;
-        foreach (var (p, i) in _facilityPositions.Select((p, i) => (p, i)))
+        float Distance(Vector3 p)
         {
             var point = new Vector2(p.X, p.Z);
             float t = segment.LengthSquared() == 0 ? 0 : Mathf.Clamp((point - from).Dot(segment) / segment.LengthSquared(), 0, 1);
-            if (point.DistanceTo(from + segment * t) <= FacilityRadii[i % 6] + actor.BodyRadius) return false;
+            return point.DistanceTo(from + segment * t);
         }
-        foreach (var other in _groundRobots.Where(x => x != actor))
-        {
-            var point = new Vector2(other.GlobalPosition.X, other.GlobalPosition.Z);
-            float t = segment.LengthSquared() == 0 ? 0 : Mathf.Clamp((point - from).Dot(segment) / segment.LengthSquared(), 0, 1);
-            if (point.DistanceTo(from + segment * t) <= other.BodyRadius + actor.BodyRadius) return false;
-        }
-        return true;
+        return !_facilityPositions.Select((p, i) => Distance(p) <= FacilityRadius(i) + radius).Any(x => x)
+            && !obstacles.Any(x => Distance(x.Position) <= x.Radius + radius);
     }
 }

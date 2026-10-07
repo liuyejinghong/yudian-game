@@ -11,18 +11,15 @@ D1.0 E03（GLM-B，筑垒视觉适配）的实际引擎测试入口与说明。
 ## 运行（在仓库工作树根目录执行；tools-bin 取协调项目根）
 
 ```sh
-mkdir -p /private/tmp/yudian-empty-nuget
-DOTNET_ROOT="$HOME/.dotnet" "$HOME/.dotnet/dotnet" restore prototype/Yudian.csproj \
-  --source /private/tmp/yudian-empty-nuget -p:NuGetAudit=false
-DOTNET_ROOT="$HOME/.dotnet" "$HOME/.dotnet/dotnet" build prototype/Yudian.csproj \
-  -c Debug --no-restore -m:1 -p:UseSharedCompilation=false -nodeReuse:false
-DOTNET_ROOT="$HOME/.dotnet" "$PWD/../tools-bin/Godot.app/Contents/MacOS/Godot" --headless \
-  --path prototype --import > /tmp/player-visual-import.log 2>&1
-DOTNET_ROOT="$HOME/.dotnet" "$PWD/../tools-bin/Godot.app/Contents/MacOS/Godot" --headless \
-  --path prototype \
-  res://scripts/Presentation/Tests/ZhuleiVisualTests.tscn \
-  > /tmp/player-visual-native.log 2>&1
-echo "exit=$?"
+set -e
+export DOTNET_ROOT="$HOME/.dotnet"
+export PATH="$DOTNET_ROOT:$PATH"
+export NUGET_HTTP_CACHE_PATH="/private/tmp/yudian-nuget-http"
+"$DOTNET_ROOT/dotnet" restore prototype/Yudian.csproj
+"$DOTNET_ROOT/dotnet" build prototype/Yudian.csproj --no-restore
+"$PWD/../tools-bin/Godot.app/Contents/MacOS/Godot" --headless --path prototype --import
+"$PWD/../tools-bin/Godot.app/Contents/MacOS/Godot" --headless --path prototype \
+  res://scripts/Presentation/Tests/ZhuleiVisualTests.tscn > /tmp/player-visual-native.log 2>&1
 ```
 
 （`--import` 只需在 .godot 缓存不存在时执行一次，用于 canonical GLB 的既有导入；
