@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=1a0c334f3786a9616905ac8e92567da6c53c2430c970cadbad11e92854f899b5 loaded_mvid=72c9a8c6-d728-48c0-92c1-d21cb38397b5 CLR=8.0.31 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=7 query_frame=8 rays=4225
+PLAYER_LOAD_READY version=7 stage= paused=True time=601.0333333333095
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=11 query_frame=12 rays=4225
+PLAYER_LOAD_READY version=7 stage= paused=True time=601.0333333333095
+D12_PROGRESS step=93 time=679.2 goal=Supplying prod=prod-6:haul/iron_ore/Delivering reason=真实载货运输：铁矿8 build=/
+D12_PROGRESS step=93 time=759.2 goal=Supplying prod=prod-12:recipe/parts/Working reason=加工设施实际用电生产：结构件 build=/
+D12_PROGRESS step=93 time=839.2 goal=Building prod=:// reason=重试原目标；已结算不重放 build=LevelTravel/筑垒前往整平施工站
+MAIN_GROUND_COMMIT authority=8 bound=8 paused=True
+MAIN_GROUND_SYNC authority=8 bound=8 verified=8 assigned_frame=1826 query_frame=1827 rays=81
+D12_TEST RESTORED phase=resume-input

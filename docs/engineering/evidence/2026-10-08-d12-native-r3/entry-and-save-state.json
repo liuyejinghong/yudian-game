@@ -1,0 +1,18 @@
+{
+  "original_save_hashes_before": {
+    "d11-player-v2.json": "b017d5a017a8bb484ea6bae01c00825d06c3d7fb7de186bc31f41cdb161985c3",
+    "d1-player-v1.json": "4ac66aa46497c663c5173522ab7e9263e79571f42338dc921b84acc53c72744b"
+  },
+  "original_save_hashes_after": {
+    "d11-player-v2.json": "b017d5a017a8bb484ea6bae01c00825d06c3d7fb7de186bc31f41cdb161985c3",
+    "d1-player-v1.json": "4ac66aa46497c663c5173522ab7e9263e79571f42338dc921b84acc53c72744b"
+  },
+  "unchanged": true,
+  "default": "D1.1 2026-10-07 r5",
+  "candidate": "D1.2 2026-10-08 r3",
+  "default_switched": false,
+  "gui": "NOT_RUN: Mac locked; CUA automatic unlock failed",
+  "u01_glb_sha256": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+  "u01_art_revision": 4,
+  "u01_source_pr": "https://github.com/liuyejinghong/yudian-game/pull/50"
+}

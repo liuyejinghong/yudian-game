@@ -1,0 +1,14 @@
+PASS: full
+PASS: mine-prepare
+PASS: mine-resume
+PASS: cargo-prepare
+PASS: cargo-resume
+PASS: input-prepare
+PASS: input-resume
+PASS: output-prepare
+PASS: output-resume
+PASS: depot-prepare
+PASS: depot-resume
+PASS: clearance-prepare
+PASS: clearance-resume
+D12_WORLD_TESTS PASS processes=13
