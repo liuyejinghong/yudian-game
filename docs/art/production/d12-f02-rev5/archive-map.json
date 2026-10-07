@@ -1,0 +1,1627 @@
+{
+  "schema": "d12-public-evidence-archive/1",
+  "date": "2026-10-08",
+  "note": "Only this new public directory written. PNG/GLB original bytes preserved. Every text change listed per file. Public capture_hashes.files hashes normalized public JSON; raw_files stores original evidence hashes. Independent identity raw_* records historical raw inputs; public_* references published copies. Source remains existing frozen variant and is verified by copied checks. No failed source or terrain copied.",
+  "files": [
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.png",
+      "original_sha256": "6ac30ac1f92b6df637045266b5d00508e78aa0cf184835bcd018046ddaa6da80",
+      "archive_sha256": "6ac30ac1f92b6df637045266b5d00508e78aa0cf184835bcd018046ddaa6da80",
+      "original_bytes": 265803,
+      "archive_bytes": 265803,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.json",
+      "original_sha256": "4383421b823ed2d961df673782de59c804a7c88cec59800c5144f3560fbaaef6",
+      "archive_sha256": "57f728717b467c6edcfd42ea6a64b659a5ebef86cb0a054af3433065f32ff6ef",
+      "original_bytes": 7798,
+      "archive_bytes": 7801,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.png",
+      "original_sha256": "4cbbe96673081997633ccc5fc6d4ed15692660c293b29b81d80ec94ab51a5fba",
+      "archive_sha256": "4cbbe96673081997633ccc5fc6d4ed15692660c293b29b81d80ec94ab51a5fba",
+      "original_bytes": 32076,
+      "archive_bytes": 32076,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.json",
+      "original_sha256": "25b7ca22cdc8750181a862bd0be2dfafa96ede099b5556adb411fe4d3dbaf7ee",
+      "archive_sha256": "03a6b96f88abcb4cb84d6347ae9d3f30f2385829f938d44d3866a324dd4d65e0",
+      "original_bytes": 7825,
+      "archive_bytes": 7828,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.png",
+      "original_sha256": "e6f7d19c9de04b5a78a110dfbaa1d972677a01542869851382499e06114a1dfe",
+      "archive_sha256": "e6f7d19c9de04b5a78a110dfbaa1d972677a01542869851382499e06114a1dfe",
+      "original_bytes": 45512,
+      "archive_bytes": 45512,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.json",
+      "original_sha256": "a335dc014183d9b120ab195a99777e6f883019a4c1fd45a75b464f772c87b5b5",
+      "archive_sha256": "c1c18fe04ed2a780a0240f4bd90186875dc68304670a77a14af1130f6e36bae1",
+      "original_bytes": 7832,
+      "archive_bytes": 7835,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.png",
+      "original_sha256": "cef3ce27d36e93e4c0609107809f97804dcd10d624fa128df6e6833303c4db00",
+      "archive_sha256": "cef3ce27d36e93e4c0609107809f97804dcd10d624fa128df6e6833303c4db00",
+      "original_bytes": 32022,
+      "archive_bytes": 32022,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.json",
+      "original_sha256": "e21f53a7ed34490821fba8645226a3d027f781f1e75578b3e4611b6504c10d3d",
+      "archive_sha256": "f575e024b124e5729f66f2737cba514b04e52fd05ac771db6a0d759641e605a8",
+      "original_bytes": 7825,
+      "archive_bytes": 7828,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.png",
+      "original_sha256": "9a21789430c7dca2ddb9b5cc17bf0e8754b5f7d2dae8b8822ff76e110aa43e41",
+      "archive_sha256": "9a21789430c7dca2ddb9b5cc17bf0e8754b5f7d2dae8b8822ff76e110aa43e41",
+      "original_bytes": 45534,
+      "archive_bytes": 45534,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.json",
+      "original_sha256": "2aff421c84be353ff70a00154c5387c4c23d0b8e001eb6a84ea3e9ff2d73a891",
+      "archive_sha256": "757617a0a74876b803623af50c3f5efad6dc600a9cfdba9310dab34a632df88a",
+      "original_bytes": 7832,
+      "archive_bytes": 7835,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.png",
+      "original_sha256": "e85a1fc9726199345927bff7bda597ff787bbfda3a8590e8b192c14b7836cbab",
+      "archive_sha256": "e85a1fc9726199345927bff7bda597ff787bbfda3a8590e8b192c14b7836cbab",
+      "original_bytes": 31933,
+      "archive_bytes": 31933,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.json",
+      "original_sha256": "b18cb52b1e5efbe613b69566b008e606f2237f1e3e1f26affac5d6dcd72c0af4",
+      "archive_sha256": "73dbedbaa4a510a3d0b2800262dc67344d6c1f42538388401b8cbacd5b5810c2",
+      "original_bytes": 7825,
+      "archive_bytes": 7828,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.png",
+      "original_sha256": "cb81e0badfa6f59e8f2c64f65e9189e89e2babb87bc4641ca53b0cdd30e92da2",
+      "archive_sha256": "cb81e0badfa6f59e8f2c64f65e9189e89e2babb87bc4641ca53b0cdd30e92da2",
+      "original_bytes": 45452,
+      "archive_bytes": 45452,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.json",
+      "original_sha256": "f60399ee2bf4a4abbcd8321dc4c80685017966109df74b6490a2eaaa17a67402",
+      "archive_sha256": "a1af5bc2a5a93ca0b1af7e3b9f0f8095a93de42f1be9c7ce538e916050d5128c",
+      "original_bytes": 7832,
+      "archive_bytes": 7835,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-0-work-0.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-0-work-0.5/blind_0001.png",
+      "original_sha256": "dace1ba63862f1f6b22785ed46484587c848002d0c1d7979df0618e6ef4c1150",
+      "archive_sha256": "dace1ba63862f1f6b22785ed46484587c848002d0c1d7979df0618e6ef4c1150",
+      "original_bytes": 239449,
+      "archive_bytes": 239449,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-0-work-0.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-0-work-0.5/blind_0001.json",
+      "original_sha256": "f5b07deb3857cd58d3006d8120f2b057a1cea20a0705e1a8b2ff2791842bb8fe",
+      "archive_sha256": "38e1410a7522eabc65a5046ed2d315c453195e3d73f4db5580a2c217b19c36f0",
+      "original_bytes": 7784,
+      "archive_bytes": 7787,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-maintenance-1.0/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-maintenance-1.0/blind_0001.png",
+      "original_sha256": "4c7466c118c2b1e95af441e07998495fbf7acd1da455633f823a3eb177091dbe",
+      "archive_sha256": "4c7466c118c2b1e95af441e07998495fbf7acd1da455633f823a3eb177091dbe",
+      "original_bytes": 292749,
+      "archive_bytes": 292749,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-maintenance-1.0/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-maintenance-1.0/blind_0001.json",
+      "original_sha256": "17913c3512485ca7d01cd5cff98f11be04167925d9a7321ffef9ad8315be8c47",
+      "archive_sha256": "bf699ea71cc475405b78e2a318f4e7dbb2b3e233c5498c060fb7b646a6b9b833",
+      "original_bytes": 7806,
+      "archive_bytes": 7809,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-work-0.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-work-0.5/blind_0001.png",
+      "original_sha256": "6e56ef75bee39811297147a3e8068f429e78eb66cd3853a51b3c2ea8c3004317",
+      "archive_sha256": "6e56ef75bee39811297147a3e8068f429e78eb66cd3853a51b3c2ea8c3004317",
+      "original_bytes": 273003,
+      "archive_bytes": 273003,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-work-0.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-work-0.5/blind_0001.json",
+      "original_sha256": "eb45999ee086a0c28f01956f3b88a86f7a5265b3b193ec45b68b93c08a2691d0",
+      "archive_sha256": "da2c4dd694038760cd6e0fd41fc942350bd4510ab746d169365c0ed3cbbd78e7",
+      "original_bytes": 7799,
+      "archive_bytes": 7802,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.0/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.0/blind_0001.png",
+      "original_sha256": "dbf5ca4a2546857d3cbd1adfac06a036113a5417cfa824e04c75bdef540dab7f",
+      "archive_sha256": "dbf5ca4a2546857d3cbd1adfac06a036113a5417cfa824e04c75bdef540dab7f",
+      "original_bytes": 32889,
+      "archive_bytes": 32889,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.0/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.0/blind_0001.json",
+      "original_sha256": "74549e50c17575edc7cdacf1423aee854b59ff7da90716133f3e67a76c204acb",
+      "archive_sha256": "695596680298081f5e56718f7e0bcb0e4eb2595a9740340ddca53eb8b359b4f1",
+      "original_bytes": 7811,
+      "archive_bytes": 7814,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.5/blind_0001.png",
+      "original_sha256": "d0b22e8b8d252ba4397c3d18a31d4a536f33540dc880469470d4772f5be88c78",
+      "archive_sha256": "d0b22e8b8d252ba4397c3d18a31d4a536f33540dc880469470d4772f5be88c78",
+      "original_bytes": 32700,
+      "archive_bytes": 32700,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.5/blind_0001.json",
+      "original_sha256": "f0d3adf36ba4b9340329960e0a010cfb6403895e456031285cab6018ed4eb33f",
+      "archive_sha256": "20b7c24851011f41542e9016e976a72e82defbb289e10b5e7c66b20dbb51437b",
+      "original_bytes": 7811,
+      "archive_bytes": 7814,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-1.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-1.5/blind_0001.png",
+      "original_sha256": "def6e56057c63d7d7dc8f863c8e0fdffebf189aa5778035955f830cbff37c90d",
+      "archive_sha256": "def6e56057c63d7d7dc8f863c8e0fdffebf189aa5778035955f830cbff37c90d",
+      "original_bytes": 32759,
+      "archive_bytes": 32759,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-1.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-1.5/blind_0001.json",
+      "original_sha256": "c1d1fd562df11cd1a914fcd5459b2e3cccfa82ee7d8439f3b7089bd10e94b01c",
+      "archive_sha256": "5195d270394da2e61d60b883debefc00d019b70159ae46318b13e774c4bc18c3",
+      "original_bytes": 7811,
+      "archive_bytes": 7814,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.0/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.0/blind_0001.png",
+      "original_sha256": "69f8470614287e3792ca6bb4dd00dd892f84c8f6b996060d47152e2226c74f29",
+      "archive_sha256": "69f8470614287e3792ca6bb4dd00dd892f84c8f6b996060d47152e2226c74f29",
+      "original_bytes": 30056,
+      "archive_bytes": 30056,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.0/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.0/blind_0001.json",
+      "original_sha256": "cfe227d60b525f48c3d8f8d5f6012f1b1e09df9b27c9c9f4aa17ffe2d96211dd",
+      "archive_sha256": "429e4ce942264d024598ae706139f5b16a8b83d7d2379c3e7afc248ccfa99b9c",
+      "original_bytes": 7826,
+      "archive_bytes": 7829,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.5/blind_0001.png",
+      "original_sha256": "9568e87eaa35ec8d9c4ef7f01879e8a47620a8ebd6b34e3c0d87de6672317d1b",
+      "archive_sha256": "9568e87eaa35ec8d9c4ef7f01879e8a47620a8ebd6b34e3c0d87de6672317d1b",
+      "original_bytes": 29932,
+      "archive_bytes": 29932,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.5/blind_0001.json",
+      "original_sha256": "2f61968a183fbb1726c86937f6d5d8891a8645455925b3c29eacc8fd5d3fac4d",
+      "archive_sha256": "69e421a5947487fdfa6aec5ae4a1ec4755883dfcb62285ca74448396a42af292",
+      "original_bytes": 7826,
+      "archive_bytes": 7829,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-1.5/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-1.5/blind_0001.png",
+      "original_sha256": "aa74826c246e7eebb50b7da715eb2e7ee34b7828bcac862f4447e920054e2b21",
+      "archive_sha256": "aa74826c246e7eebb50b7da715eb2e7ee34b7828bcac862f4447e920054e2b21",
+      "original_bytes": 29903,
+      "archive_bytes": 29903,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-1.5/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-1.5/blind_0001.json",
+      "original_sha256": "2d98a43178751cdec234c07b325389131b1b719160f255069da7876922b3bd89",
+      "archive_sha256": "acaf80e8b9d1d5e8ae741824eddba948d7d06fb42db03cad3c83c2ebdb2c9eea",
+      "original_bytes": 7826,
+      "archive_bytes": 7829,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0/blind_0001.png",
+      "original_sha256": "2654d455c0cd004d9718e802a5e012ae8cf76dff350a98f45d500427eab8affa",
+      "archive_sha256": "2654d455c0cd004d9718e802a5e012ae8cf76dff350a98f45d500427eab8affa",
+      "original_bytes": 32257,
+      "archive_bytes": 32257,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0/blind_0001.json",
+      "original_sha256": "1cca0b12bc788d5c0fb53ba3da5bbdfd50c988b1135a175b504bb335414f03cd",
+      "archive_sha256": "cef0991c973e0f634da8655d01132b7dcd4613726c781f6bc064644755fa91be",
+      "original_bytes": 7829,
+      "archive_bytes": 7832,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0-low/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0-low/blind_0001.png",
+      "original_sha256": "dd7ce2c0f4b513cbaf8b81e689298d2dc7de0d35b3985d26a6f2b2647965f91e",
+      "archive_sha256": "dd7ce2c0f4b513cbaf8b81e689298d2dc7de0d35b3985d26a6f2b2647965f91e",
+      "original_bytes": 45692,
+      "archive_bytes": 45692,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0-low/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0-low/blind_0001.json",
+      "original_sha256": "c9b83068cc4897abb63c7aa424d4ce225444376dc3166be11db71656f85936f5",
+      "archive_sha256": "bddaefccedc8d93b3c7515d8e237c7b6f46a5972f22cf491e1bdcde4f83bdcf3",
+      "original_bytes": 7836,
+      "archive_bytes": 7839,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-maintenance-1.0/blind_0001.png",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-maintenance-1.0/blind_0001.png",
+      "original_sha256": "06f04537be99c25443ca38f4b73eac7ed13d6ec2cf073cb133a192513a399fa7",
+      "archive_sha256": "06f04537be99c25443ca38f4b73eac7ed13d6ec2cf073cb133a192513a399fa7",
+      "original_bytes": 32504,
+      "archive_bytes": 32504,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-maintenance-1.0/blind_0001.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-maintenance-1.0/blind_0001.json",
+      "original_sha256": "b07605dec53c85e6b4db8c7f218bc16bf49d03cda94fbecd90ab406bab005432",
+      "archive_sha256": "d0d7ca2ecd5e1541b51b4ac3e5ce502466fcda24ea8092d95cb74ea6bcde6aeb",
+      "original_bytes": 7832,
+      "archive_bytes": 7835,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/author/rev5/candidate-check.json",
+      "archive": "docs/art/production/d12-f02-rev5/author/candidate-check.json",
+      "original_sha256": "422e5107b5b7983fc246a84b594497bc28b91bd842f8ecfba0e6b1a8940f03e9",
+      "archive_sha256": "422e5107b5b7983fc246a84b594497bc28b91bd842f8ecfba0e6b1a8940f03e9",
+      "original_bytes": 40096,
+      "archive_bytes": 40096,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/author/rev5/glb-parts-check.json",
+      "archive": "docs/art/production/d12-f02-rev5/author/glb-parts-check.json",
+      "original_sha256": "20a8e129b5a948825d61d8e568641406036aa3f276fab38e361d1126fe6ad555",
+      "archive_sha256": "20a8e129b5a948825d61d8e568641406036aa3f276fab38e361d1126fe6ad555",
+      "original_bytes": 52106,
+      "archive_bytes": 52106,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/author/rev5/native-check.json",
+      "archive": "docs/art/production/d12-f02-rev5/author/native-check.json",
+      "original_sha256": "05b95651a89362ed090339a67cdd99bf5e30b168e9ba6d5e62ea5a5a46453acf",
+      "archive_sha256": "05b95651a89362ed090339a67cdd99bf5e30b168e9ba6d5e62ea5a5a46453acf",
+      "original_bytes": 1500,
+      "archive_bytes": 1500,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/author/rev5/delivery-hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/author/delivery-hashes.json",
+      "original_sha256": "6f4bfc4c42530c520862e42f414cabe1db0f986f69f7d969f546e17e830b6a31",
+      "archive_sha256": "6f4bfc4c42530c520862e42f414cabe1db0f986f69f7d969f546e17e830b6a31",
+      "original_bytes": 611,
+      "archive_bytes": 611,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/author/rev5/build-r1.log",
+      "archive": "docs/art/production/d12-f02-rev5/author/build-r1.log",
+      "original_sha256": "bdc9d2381b8a0d24c63b1024a1524919aa174631f4caefee49f1e319adec66a4",
+      "archive_sha256": "bdc9d2381b8a0d24c63b1024a1524919aa174631f4caefee49f1e319adec66a4",
+      "original_bytes": 2677,
+      "archive_bytes": 2677,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/author/rev5/native-readback-r1.log",
+      "archive": "docs/art/production/d12-f02-rev5/author/native-readback-r1.log",
+      "original_sha256": "4c71d83c0c8abfc35526a43bcb50890ddc829fcee2d828a14a305e8c9a6ead8b",
+      "archive_sha256": "f5351ef6a066b1b4924547f2bf7411cadc8dac74c814bb254bf7c66525812560",
+      "original_bytes": 2355,
+      "archive_bytes": 2313,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/author/rev5/before-rev4/processor-r1.glb",
+      "archive": "docs/art/production/d12-f02-rev5/before-rev4/processor-r1.glb",
+      "original_sha256": "1fdb11e64ad3c8641e9d67066e140587b8c5e37c2a4597ab4e7097d5c2ab753e",
+      "archive_sha256": "1fdb11e64ad3c8641e9d67066e140587b8c5e37c2a4597ab4e7097d5c2ab753e",
+      "original_bytes": 107496,
+      "archive_bytes": 107496,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "native-check-original/yudian-f02-portability.json",
+      "archive": "docs/art/production/d12-f02-rev5/author/source-portability.json",
+      "original_sha256": "b4e96d2e5fbdc6db9649ed8696c879498c47b77d8e126fbc67bfbb3380f660ca",
+      "archive_sha256": "b4e96d2e5fbdc6db9649ed8696c879498c47b77d8e126fbc67bfbb3380f660ca",
+      "original_bytes": 183,
+      "archive_bytes": 183,
+      "byte_preserved": true,
+      "text_changes": []
+    },
+    {
+      "original": "independent-review-20261008/A02b-F02-rev5-sample-REVIEW.md",
+      "archive": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-sample-REVIEW.md",
+      "original_sha256": "75550f6b00c665c44488bd6985240327b59b50e5f9376e7f3783be7897a0ea12",
+      "archive_sha256": "9cf8d009c74d3849aeaf10f4c61a3191d0809ef913c3384046e2cf6885d9d06d",
+      "original_bytes": 5300,
+      "archive_bytes": 5303,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "original": "independent-review-20261008/A02b-F02-rev5-regression-REVIEW.md",
+      "archive": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-regression-REVIEW.md",
+      "original_sha256": "4401693232992a24d53ff2e54e8b604650f31d7abb4590b6a8d03f0c237eafb4",
+      "archive_sha256": "eb0bda36e4728d51bc921c9fb7f95a8e6c6a21bf9a988d0f24695596e5f3c175",
+      "original_bytes": 5518,
+      "archive_bytes": 5461,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "relocate_copied_path",
+          "from": "independent-review-20261008/A02b-F02-rev5-sample-REVIEW.md",
+          "to": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-sample-REVIEW.md",
+          "occurrences": 1
+        },
+        {
+          "operation": "relative_markdown_peer_link",
+          "target": "A02b-F02-rev5-sample-REVIEW.md"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/fixture/check-rev5-sample.py",
+      "archive": "docs/art/production/d12-f02-rev5/check-rev5-sample.py",
+      "original_sha256": "0617640e7d350d4295a62c18278629a5a808e254d37af63afec139b450a6319d",
+      "archive_sha256": "ffc74d17f40fbfd7065c82debc4112eb4ae46d9ab9ebde0cbac8d4ea9e15a898",
+      "original_bytes": 3500,
+      "archive_bytes": 3641,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "runnable_check_path_only",
+          "from": "parents[6]",
+          "to": "parents[4]"
+        },
+        {
+          "operation": "runnable_check_path_only",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample"
+        },
+        {
+          "operation": "runnable_check_path_only",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/before-rev4/processor-r1.glb",
+          "to": "docs/art/production/d12-f02-rev5/before-rev4/processor-r1.glb"
+        },
+        {
+          "operation": "assert_actual_candidate_glb_sha256",
+          "reason": "Bind accepted capture identity to the current candidate bytes, including the two intentionally changed meshes."
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/fixture/check-rev5-regression.py",
+      "archive": "docs/art/production/d12-f02-rev5/check-rev5-regression.py",
+      "original_sha256": "ec994e80a797b2eab380e02457d37f98ce2183a56d4b721dff8d710654fe256e",
+      "archive_sha256": "9af740cc6a46824798be7e7e226e88e4b35630b4d4cf653dde53def2d77d4743",
+      "original_bytes": 1703,
+      "archive_bytes": 1696,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "runnable_check_path_only",
+          "from": "HERE.parent / 'godot-rev5-regression'",
+          "to": "HERE / 'godot-rev5-regression'"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/capture_hashes.json",
+      "original_sha256": "e490828cc9b27ce68476343ca3ee409b47407a03af654f056ca7f521ab1ab106",
+      "archive_sha256": "d1c844dae4cc8847cfafa70c41d97b95af8301940dc6a8841e823f423010b39c",
+      "original_bytes": 419,
+      "archive_bytes": 838,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/capture_hashes.json",
+      "original_sha256": "5d0cbb045813d929bf2f0f0b4085c82a2f4e8e301688d8b4f26acb66a4860b7f",
+      "archive_sha256": "0ecddc9c05f76b355744bcbb6190f7aaf19b77ec27a080b6e2a3f7a613b99cc6",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/capture_hashes.json",
+      "original_sha256": "a34b1ebb2e331450791794482523e32dfe1333780fe3d2427950ac93f89d1859",
+      "archive_sha256": "7f8bf27c21b37698b5ae927c02c030b526d2ba31bc8eb1fed81509ab5087b59b",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/capture_hashes.json",
+      "original_sha256": "ea61f59b27b780c668aaa9158ea0048d2011a282ffcda5d170ff05bba9285d6b",
+      "archive_sha256": "5b6bbc1c7053976cab9deb162e63eda3de1be1107be58b46e13ae766028894be",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/capture_hashes.json",
+      "original_sha256": "bcc772e2f91e274118b75f455845bed39ec607de0669f9e066d141ff660173dc",
+      "archive_sha256": "53db1c37b5f304387883af91daa4e5ceebb8959de2d4bc6f8e4a84a41603fbc3",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/capture_hashes.json",
+      "original_sha256": "4c65706073f31dd22d4fcc2a50d8438f62efed4fd50614661cd27b5b6d10c91f",
+      "archive_sha256": "48b051c940d0ab383f83e7fd447ab907255b33b4273ac4a832f983e34ec80030",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/capture_hashes.json",
+      "original_sha256": "97a73ed0886d3580d8abe897e4b8b517282a3c4b8e31d5fd1d101299643f7573",
+      "archive_sha256": "e2beec2bfd60d4d07877b262a6601bf470dcac2803a6c7b340acbffcc13d762d",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-0-work-0.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-0-work-0.5/capture_hashes.json",
+      "original_sha256": "326a3fadc6a3a915920fc01e7a37444fe89b51b74e67ce1e38d7ac614426ac6e",
+      "archive_sha256": "7fb4e3dc0477f3bf2225fe7d9667b9516f62b687c1b5104d61681d3886dc1019",
+      "original_bytes": 419,
+      "archive_bytes": 838,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-maintenance-1.0/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-maintenance-1.0/capture_hashes.json",
+      "original_sha256": "89bda8081b465cb09c5a576aed4daac2f9a35d608800bf799ce3f108867ab696",
+      "archive_sha256": "7666b1956dc4870dec92f5d5e33cca552a410c32d6c77ea863e75101f0ec8d3d",
+      "original_bytes": 419,
+      "archive_bytes": 838,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-work-0.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-work-0.5/capture_hashes.json",
+      "original_sha256": "fbc8efbdc084e25a7e2d9d4a3f35728c1df5922de6943ea598faaf94ae4e58db",
+      "archive_sha256": "d2c7c0c57666f335669886cfd3d72442ed807f64c09043839bb04475254c2585",
+      "original_bytes": 419,
+      "archive_bytes": 838,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.0/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.0/capture_hashes.json",
+      "original_sha256": "1fee26232f042d74a81239c69da7bfe0408ff0d49e25593dac0edb9b22a85c39",
+      "archive_sha256": "2a51264ba43288cc65cbf0b758162cb83e3d26c88333dd9c7dacff546380c018",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.5/capture_hashes.json",
+      "original_sha256": "f47fa2fd3b057f4234f828df530f38797e99e442f0abb151653ff7e2d2b2a849",
+      "archive_sha256": "18d7ceacb18441be3b092c9e88c56f210a0f08a129e90ce590434ae59613bf6b",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-1.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-1.5/capture_hashes.json",
+      "original_sha256": "3f4d21fae0e27a2a84c66ef4a1c86ccecb65f446ad48bb4d82b1b30478dc5b48",
+      "archive_sha256": "757653690ad013acea20366fc54324b7c16546dc2cb5e30b7c087cce64417d23",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.0/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.0/capture_hashes.json",
+      "original_sha256": "39a6268d644b7ae6bf1e622d20fdbfa9c0f6802c1a390616f1ea6dd97ee4a9f9",
+      "archive_sha256": "ed5c49cd455076198a59777daf5ee70f1255f0f00b90728192a07e0b6d8f0272",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.5/capture_hashes.json",
+      "original_sha256": "b9b6a016b42983a5f55acf196c3727430127991c6da14daf051f9c9d276dc516",
+      "archive_sha256": "bf427166efb994da7031818c799f005b71d7ca4923f2d768e6f3ab7313778c0a",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-1.5/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-1.5/capture_hashes.json",
+      "original_sha256": "d6cca70ec29a244aca7b83629de5ad82cbbdbbce828fd64e2bab8c415e13381b",
+      "archive_sha256": "c32c943d617e70956f2ac3f275f4956aa86e729de26d1993deac330a595cac1a",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0/capture_hashes.json",
+      "original_sha256": "507b3438f526e5de24c1806a84218474cd8d58df9f154f6c9f81e699104b1810",
+      "archive_sha256": "6264af06e339a1a6f2b28be8353e019a4fff329fd966e338c6f8964eed84533b",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0-low/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0-low/capture_hashes.json",
+      "original_sha256": "0e20ccae1582f0a2e79d1b5ee3b173b3bc96fba164fd306df6725610246a231f",
+      "archive_sha256": "8ec5585a8ea3163992e73fd17de62fd9b24178ff5e078502aceed540327729e7",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-maintenance-1.0/capture_hashes.json",
+      "archive": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-maintenance-1.0/capture_hashes.json",
+      "original_sha256": "400feaa1d6680e728bec65240cea97f687feaa130a4d8841ab38409a73db5c43",
+      "archive_sha256": "3155f10894a23bef25fe36f7ca4c5a9c4ae50db08c79885a28847f7eae9dd1bf",
+      "original_bytes": 418,
+      "archive_bytes": 836,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "public_capture_hash_binding",
+          "fields": "files now hashes public PNG/JSON; raw_files retains original capture records; note clarified"
+        }
+      ]
+    },
+    {
+      "original": "independent-review-20261008/A02b-F02-rev5-sample-identity.json",
+      "archive": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-sample-identity.json",
+      "original_sha256": "dc874da7a90cb46f6bccdabd74fb1ffe450694a593b507688eedd8ca012e0899",
+      "archive_sha256": "9414dbc1ca8c4f126af6374e1ba00c1992829128662f1ecc7c1587374b7a30f7",
+      "original_bytes": 39237,
+      "archive_bytes": 41256,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/before-rev4/processor-r1.glb",
+          "to": "docs/art/production/d12-f02-rev5/before-rev4/processor-r1.glb",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/native-readback-r1.log",
+          "to": "docs/art/production/d12-f02-rev5/author/native-readback-r1.log",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/candidate-check.json",
+          "to": "docs/art/production/d12-f02-rev5/author/candidate-check.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/glb-parts-check.json",
+          "to": "docs/art/production/d12-f02-rev5/author/glb-parts-check.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/delivery-hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/author/delivery-hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/native-check.json",
+          "to": "docs/art/production/d12-f02-rev5/author/native-check.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/fixture/check-rev5-sample.py",
+          "to": "docs/art/production/d12-f02-rev5/check-rev5-sample.py",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/build-r1.log",
+          "to": "docs/art/production/d12-f02-rev5/author/build-r1.log",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "independent-review-20261008/A02b-F02-rev5-sample-REVIEW.md",
+          "to": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-sample-REVIEW.md",
+          "occurrences": 1
+        },
+        {
+          "operation": "normalize_private_path",
+          "replacement": "",
+          "occurrences": 26
+        },
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 16
+        },
+        {
+          "operation": "identity_hash_semantics",
+          "fields": "files sha256/bytes renamed raw_sha256/raw_bytes; public_sha256/public_bytes for archived counterparts; report raw/public SHA; archive_hash_semantics added"
+        },
+        {
+          "operation": "raw_checker_update_semantics",
+          "fields": "checker_update renamed raw_independent_checker_update; previous/current_sha256 renamed raw_previous/raw_current_sha256; original update history preserved"
+        },
+        {
+          "operation": "refresh_public_bindings_after_GLBSHA_guard",
+          "fields": "public_* binds public checker with actual candidate GLB SHA assertion; regression peer sample identity refreshed; all raw_* unchanged"
+        }
+      ]
+    },
+    {
+      "original": "independent-review-20261008/A02b-F02-rev5-regression-identity.json",
+      "archive": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-regression-identity.json",
+      "original_sha256": "0fd039350ce16778ec077bf984af8f3d2fd794c9c17719b1dc4db867bc53786a",
+      "archive_sha256": "b0fffed46c739b0e0d017e032f51162d2ecc1c09398606bae7d00d3096b6e45d",
+      "original_bytes": 86590,
+      "archive_bytes": 91044,
+      "byte_preserved": false,
+      "text_changes": [
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0-low/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0-low/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-maintenance-1.0/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-maintenance-1.0/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-maintenance-1.0/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-maintenance-1.0/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0-low/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0-low/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-maintenance-1.0/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-maintenance-1.0/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0-low/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0-low/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-maintenance-1.0/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-maintenance-1.0/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-maintenance-1.0/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-maintenance-1.0/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-maintenance-1.0/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-maintenance-1.0/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.0/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.0/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-1.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-1.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-work-0.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-work-0.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.0/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.0/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-1.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-1.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-90-disabled-1.0/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-90-disabled-1.0/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-0-work-0.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-0-work-0.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.0/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.0/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-1.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-1.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-work-0.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-work-0.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.0/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.0/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-0.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-0.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-180-work-1.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-180-work-1.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/capture_hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/capture_hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-180-work-0.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-180-work-0.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.0/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.0/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-1.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-1.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-0-work-0.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-0-work-0.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.0/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.0/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-0.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-0.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/normal-0-work-1.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/normal-0-work-1.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-regression/close-0-work-0.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-regression/close-0-work-0.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/blind_0001.json",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.0/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-0.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/normal-90-work-1.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/godot-rev5-sample/close-90-work-0.5/blind_0001.png",
+          "to": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.png",
+          "occurrences": 2
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/before-rev4/processor-r1.glb",
+          "to": "docs/art/production/d12-f02-rev5/before-rev4/processor-r1.glb",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/native-readback-r1.log",
+          "to": "docs/art/production/d12-f02-rev5/author/native-readback-r1.log",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/candidate-check.json",
+          "to": "docs/art/production/d12-f02-rev5/author/candidate-check.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/glb-parts-check.json",
+          "to": "docs/art/production/d12-f02-rev5/author/glb-parts-check.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/delivery-hashes.json",
+          "to": "docs/art/production/d12-f02-rev5/author/delivery-hashes.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/fixture/check-rev5-regression.py",
+          "to": "docs/art/production/d12-f02-rev5/check-rev5-regression.py",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/native-check.json",
+          "to": "docs/art/production/d12-f02-rev5/author/native-check.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/fixture/check-rev5-sample.py",
+          "to": "docs/art/production/d12-f02-rev5/check-rev5-sample.py",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "docs/art/production/d12-r1/f02/author/rev5/build-r1.log",
+          "to": "docs/art/production/d12-f02-rev5/author/build-r1.log",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "independent-review-20261008/A02b-F02-rev5-sample-identity.json",
+          "to": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-sample-identity.json",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "independent-review-20261008/A02b-F02-rev5-regression-REVIEW.md",
+          "to": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-regression-REVIEW.md",
+          "occurrences": 1
+        },
+        {
+          "operation": "relocate_copied_path",
+          "from": "independent-review-20261008/A02b-F02-rev5-sample-REVIEW.md",
+          "to": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-sample-REVIEW.md",
+          "occurrences": 1
+        },
+        {
+          "operation": "normalize_private_path",
+          "replacement": "",
+          "occurrences": 39
+        },
+        {
+          "operation": "normalize_private_path",
+          "replacement": "capture-fixture/",
+          "occurrences": 16
+        },
+        {
+          "operation": "identity_hash_semantics",
+          "fields": "files sha256/bytes renamed raw_sha256/raw_bytes; public_sha256/public_bytes for archived counterparts; report raw/public SHA; archive_hash_semantics added"
+        },
+        {
+          "operation": "peer_identity_public_binding",
+          "fields": "public_sha256/public_bytes added for normalized sample identity; archive_hash_semantics clarified"
+        },
+        {
+          "operation": "refresh_public_bindings_after_GLBSHA_guard",
+          "fields": "public_* binds public checker with actual candidate GLB SHA assertion; regression peer sample identity refreshed; all raw_* unchanged"
+        }
+      ]
+    }
+  ],
+  "created_files": [
+    {
+      "archive": "docs/art/production/d12-f02-rev5/README.md",
+      "sha256": "a45c05cdb992e1499a461c5e8e10d249b1065dc7db4ca6a8d1dd97b8962d85ab",
+      "note": "new public archive summary/check record, no original text overwritten"
+    },
+    {
+      "archive": "docs/art/production/d12-f02-rev5/public-check.json",
+      "sha256": "7c46bf895f05822ea22c3c78491917ba9de198d729f06ffe9bd92a5376b651b6",
+      "note": "new public archive summary/check record, no original text overwritten"
+    }
+  ]
+}

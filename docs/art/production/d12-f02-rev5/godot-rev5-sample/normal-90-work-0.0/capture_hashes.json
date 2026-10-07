@@ -1,0 +1,24 @@
+{
+  "files": {
+    "blind_0001.json": {
+      "bytes": 7828,
+      "sha256": "03a6b96f88abcb4cb84d6347ae9d3f30f2385829f938d44d3866a324dd4d65e0"
+    },
+    "blind_0001.png": {
+      "bytes": 32076,
+      "sha256": "4cbbe96673081997633ccc5fc6d4ed15692660c293b29b81d80ec94ab51a5fba"
+    }
+  },
+  "note": "files validates these public copies; raw_files records unchanged original capture hashes. Private paths in JSON normalized; PNG bytes unchanged. archive-map.json binds original/public bytes.",
+  "schema": "art-preview-r1-capture-hashes/1",
+  "raw_files": {
+    "blind_0001.json": {
+      "bytes": 7825,
+      "sha256": "25b7ca22cdc8750181a862bd0be2dfafa96ede099b5556adb411fe4d3dbaf7ee"
+    },
+    "blind_0001.png": {
+      "bytes": 32076,
+      "sha256": "4cbbe96673081997633ccc5fc6d4ed15692660c293b29b81d80ec94ab51a5fba"
+    }
+  }
+}

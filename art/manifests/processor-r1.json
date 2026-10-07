@@ -1,12 +1,12 @@
 {
   "id": "ART-F02",
-  "revision": 2,
+  "revision": 5,
   "unit": "meter",
   "up": "+Y",
   "forward": "-Z",
   "preview_scene": "res://assets/facilities/processor-r1/preview.tscn",
   "glb": "res://assets/facilities/processor-r1/processor-r1.glb",
-  "glb_sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157",
+  "glb_sha256": "b439ab57f4c23fc9868fcb8c0d313ebbdb2956942f1ff3eac7f74080a5bd51e2",
   "bounds": {
     "static": {
       "min": [
@@ -376,26 +376,46 @@
     }
   },
   "source": {
-    "generator": "art/source/facilities/processor-r1/generate_processor_r1.py",
-    "source_path": "art/source/facilities/processor-r1/processor-r1.gltf",
-    "tool_version": "Python 3.14.3 standard library",
+    "generator": "art/source/facilities/processor-d12-rev5-sample/generate_processor_rev5.py",
+    "source_path": "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.gltf",
+    "tool_version": "Blender 5.2.2 LTS / Python standard library and built-in bmesh",
     "original": true,
-    "hash": "95f884fb17a0dac25711095a4cbb7bb85406442277625fc30beb486511efb3ba",
+    "hash": "6a1c97d2ffe63090f6cfc2f6f6ba12f9a376bcae74c2a85fdff0d528000d6f32",
     "files": [
       {
-        "path": "art/source/facilities/processor-r1/generate_processor_r1.py",
-        "sha256": "a2109b127868fbd2e2f1c57f290beb0d9dd82974dc6dc3b29405c0492ae65904"
+        "path": "art/source/facilities/processor-d12-rev5-sample/generate_processor_rev5.py",
+        "sha256": "e33f8a0da7da47151c4a72bf8811c1cd19b5223dae84ade56f6a9932f7c6738d"
       },
       {
-        "path": "art/source/facilities/processor-r1/processor-r1.gltf",
-        "sha256": "95f884fb17a0dac25711095a4cbb7bb85406442277625fc30beb486511efb3ba"
+        "path": "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.gltf",
+        "sha256": "6a1c97d2ffe63090f6cfc2f6f6ba12f9a376bcae74c2a85fdff0d528000d6f32"
       },
       {
-        "path": "art/source/facilities/processor-r1/processor-r1.bin",
-        "sha256": "32cbabcd8dc5f4387da9e3f7896a5dbb89bc735eadd5fd314f322ec854e522c0"
+        "path": "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.bin",
+        "sha256": "08122a6745d65ae88766b2c870aa85570e38d1262b90674729d270f6db5669be"
+      },
+      {
+        "path": "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.blend",
+        "sha256": "e4c1883a4c2e2f47af010c58f1ac0d97928d9a40893e268762fbdb24b2c87f50"
       }
     ]
   },
-  "triangles": 1224,
-  "textures": []
+  "triangles": 1988,
+  "textures": [],
+  "acceptance": {
+    "status": "PASS_LIMITED_STATIC",
+    "independent_reports": [
+      "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-sample-REVIEW.md",
+      "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-regression-REVIEW.md"
+    ],
+    "scope": "19 source-bound Godot static frames; yaw90 press readability and affected static regressions; existing interfaces and animation keys preserved",
+    "not_assessed": [
+      "actual Main integration",
+      "continuous animated readability",
+      "all-angle press readability",
+      "scene performance",
+      "owner final acceptance"
+    ],
+    "runtime_copy": "engineering-owned; res paths remain runtime destinations, not proof that prototype already has this GLB"
+  }
 }
