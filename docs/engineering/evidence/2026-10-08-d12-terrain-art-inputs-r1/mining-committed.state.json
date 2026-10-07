@@ -1,0 +1,47 @@
+{
+  "sample": "mining-committed",
+  "FixtureHash": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+  "Schema": 3,
+  "ConfigVersion": "d12-firstplay-1",
+  "Time": 540.233333333313,
+  "Paused": true,
+  "TerrainVersion": 5,
+  "LevelJob": null,
+  "BuildJob": null,
+  "DevelopmentGoal": {
+    "Id": "goal-8",
+    "Type": "storage",
+    "Stage": "Supplying",
+    "Center": [
+      9,
+      0,
+      9
+    ]
+  },
+  "ProductionTask": {
+    "Id": "prod-1",
+    "Goal": "goal-8",
+    "Kind": "mine",
+    "Material": "iron_ore",
+    "Stage": "Completed",
+    "Work": 6,
+    "Paid": true,
+    "Source": "mine-iron",
+    "Destination": "mine-iron"
+  },
+  "MiningSiteCenter": [
+    -14,
+    0,
+    10
+  ],
+  "MiningAppliedVersionFromReceipt": 5,
+  "MiningReceipt": {
+    "Operation": "prod-1-mine",
+    "Site": "mine-iron",
+    "Material": "iron_ore",
+    "Quantity": 8,
+    "BaseVersion": 4,
+    "AppliedVersion": 5
+  },
+  "changed_cells_from_initial": 197
+}

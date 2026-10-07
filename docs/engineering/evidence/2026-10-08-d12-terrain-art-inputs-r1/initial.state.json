@@ -1,0 +1,37 @@
+{
+  "sample": "initial",
+  "FixtureHash": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+  "Schema": 3,
+  "ConfigVersion": "d12-firstplay-1",
+  "Time": 8.266666666666657,
+  "Paused": false,
+  "TerrainVersion": 0,
+  "LevelJob": null,
+  "BuildJob": {
+    "Id": "build-1",
+    "Type": "charger",
+    "Stage": "Cancelled",
+    "Center": [
+      -20.35665,
+      0,
+      -16.18699
+    ],
+    "Work": 0,
+    "Reason": "已取消；地形、现场物料与在途货物保留"
+  },
+  "DevelopmentGoal": {
+    "Id": "goal-1",
+    "Type": "charger",
+    "Stage": "Cancelled",
+    "Center": [
+      -20.35665,
+      0,
+      -16.18699
+    ]
+  },
+  "ProductionTask": null,
+  "MiningSiteCenter": null,
+  "MiningAppliedVersionFromReceipt": null,
+  "MiningReceipt": null,
+  "changed_cells_from_initial": 0
+}

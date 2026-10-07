@@ -1,0 +1,40 @@
+{
+  "schema": "d12-terrain-art-inputs-r1",
+  "FixtureHash": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+  "samples": {
+    "initial": {
+      "source_save_sha256": "c2149e6561cbd686b77be39b4c700ce50456aebbb0c9854ef9795206641ff0a9",
+      "terrain_sha256": "85d3e95b179b4429743f60103308409f1a1e49e86bdf577e612b440ce12cfe50",
+      "source_save_name": "yudian-ui-test-de35cc3c-f484-414b-abec-e9bca41c5654.json",
+      "source_kind": "D1.2 source UI isolated save",
+      "source_identity": "source build identity not recorded in this save"
+    },
+    "mining-working": {
+      "source_save_sha256": "75118ba83a00abfbd92fe8b657428b040e7d614b41840b4766136f69a5bd7791",
+      "terrain_sha256": "ee0c2888e5b1cd9631dc765bc7ef178bbf22a8230df2a4b3cbdfe927bc4aaf8d",
+      "source_save_name": "mine.json.bak",
+      "source_kind": "fixed r3 native isolated test save",
+      "source_identity": "source=5add887d991c12ae5ad7606119fcd1a8bda85a74; CLR8.0.31; MVID72c9a8c6-d728-48c0-92c1-d21cb38397b5"
+    },
+    "mining-committed": {
+      "source_save_sha256": "ee308aa8b7051f5ac715d1420ff647b055de7dbc637a89ae2c734a3ad48d0246",
+      "terrain_sha256": "ec4cad3d7219e62bae0b49fdab7db82806aab25f0464b7fd475b585e9b2a988a",
+      "source_save_name": "mine.json",
+      "source_kind": "fixed r3 native isolated test save",
+      "source_identity": "source=5add887d991c12ae5ad7606119fcd1a8bda85a74; CLR8.0.31; MVID72c9a8c6-d728-48c0-92c1-d21cb38397b5"
+    },
+    "current-terminal": {
+      "source_save_sha256": "11db92321338c2bb84dfec6a32e8cc9bbf6b532a9a3c7772b09bd504f8b808a6",
+      "terrain_sha256": "dcdbcdd9206a97679090ed4dd707dd7f92dae9d1135b10cad7b2fb3466122495",
+      "source_save_name": "full.json",
+      "source_kind": "fixed r3 native isolated test save",
+      "source_identity": "source=5add887d991c12ae5ad7606119fcd1a8bda85a74; CLR8.0.31; MVID72c9a8c6-d728-48c0-92c1-d21cb38397b5"
+    }
+  },
+  "missing": {
+    "post_commit_cancelled": "NOT_SAMPLED: no independent D1.2 committed-then-cancelled save in retained test artifacts; no state was synthesized"
+  },
+  "authority_unchanged": true,
+  "runtime_assets_unchanged": true,
+  "snapshots_are_copies_not_reconstruction": true
+}

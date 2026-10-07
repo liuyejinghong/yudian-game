@@ -39,3 +39,5 @@ MaterialLedger新增显式MiningReceipt（稳定operation/site/material/quantity
 真实消费样本：首套后lander{kit:3}，维修现场{parts:4}；首次采铁8后mine-iron{iron_ore:8}；取货后cargo{iron_ore:8}且矿现场0；加工4批铁投入batch{iron_ore:8}→完成batch{iron:4}，再实运回库；4批parts投入iron8→parts4；铜1批投入2矿→copper1，再cable1批→cable2。任何资源都有同ID但不同物理归属，不以外观猜地点。
 
 建设集料点：每个新目标选最近的已建仓储；“现货＋尚缺目标材料＋驮运现有退货”能容纳才选，否则回退到着陆器。goal/Build保存Supply，运输、预约、取消重试、取货工位与读档均沿用它；旧档缺省lander。库存面板合计已建库，不把在途/现场误报成可用库货。仓储不预装材料。
+
+A03只读地表输入已从保留的同FixtureHash隔离存档导出：[65×65真实样本](../evidence/2026-10-08-d12-terrain-art-inputs-r1/README.md)。initial来自schema3源码UI新档，矿工作/提交/终态来自固定r3原生存档；任务与矿点中心分开，不重建高度或合成取消状态。提交后取消独立样本NOT_SAMPLED，独立视觉仍待美术核验；不改变Main或占用GUI。
