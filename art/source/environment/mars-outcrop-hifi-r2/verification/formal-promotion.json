@@ -1,0 +1,59 @@
+{
+  "status": "BYTE_IDENTICAL_PROMOTION_PENDING_FORMAL_REOPEN",
+  "from_stage": "stages/19-complete-face-4k",
+  "old_formal_files": {
+    "mars-outcrop-hifi-r2.blend": {
+      "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+      "bytes": 52451110
+    },
+    "mars-outcrop-hifi-r2.glb": {
+      "sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+      "bytes": 27662108
+    },
+    "textures/base_color.png": {
+      "sha256": "e222bb427de34bec53c0e7d7e0102f1713930379164b789a83d931f2e379765e",
+      "bytes": 4402001
+    },
+    "textures/normal.png": {
+      "sha256": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316",
+      "bytes": 9874807
+    },
+    "textures/roughness.png": {
+      "sha256": "aeccc6b8aeaf356e7478395d47d4f0e1c7e18e105f799851d2fbe19c5682f1ec",
+      "bytes": 4060101
+    },
+    "manifest.json": {
+      "sha256": "9d078d40fda26690a5d57d61be4be4eaaca1b2e5b6aabd443a1193d6d4de5464",
+      "bytes": 333182
+    }
+  },
+  "new_formal_files": {
+    "mars-outcrop-hifi-r2.blend": {
+      "sha256": "94ff01a08b6ef25a30dafeb2db2cb56c93589aeee280b23cf151ca705fa42ea0",
+      "bytes": 102824670
+    },
+    "mars-outcrop-hifi-r2.glb": {
+      "sha256": "ae5722b19aa99a1e3a0e5333d41eb5544ac9c2295c35685be9f41f5b05df4e78",
+      "bytes": 53028780
+    },
+    "textures/base_color.png": {
+      "sha256": "779c64e034d830f7d9d226172c3294975c273a5531ae3f8d633cc7e55ad0bc5e",
+      "bytes": 4395262
+    },
+    "textures/normal.png": {
+      "sha256": "5b4668182886e575d833efcc64da5b0b1aa3e534cb66fb89d561d950d4e55f6d",
+      "bytes": 10077240
+    },
+    "textures/roughness.png": {
+      "sha256": "c7a62c355f21ad939fb90bfc03562217087a3b950292e5a8cc2f1f6bf29c5ecd",
+      "bytes": 3927765
+    }
+  },
+  "source_resaved": true,
+  "glb_reexported": false,
+  "glb_json_and_bin_changed": false,
+  "texture_bytes_changed": false,
+  "source_relative_texture_paths": "//textures/ (unchanged; packed images retained)",
+  "old_renders": "Historical stage12 evidence; preserved in local ignored history before new actual renders",
+  "source_metadata_proof": "verification/source-portability.json"
+}

@@ -1,0 +1,4508 @@
+{
+  "status": "PASS",
+  "source": {
+    "sha256": "94ff01a08b6ef25a30dafeb2db2cb56c93589aeee280b23cf151ca705fa42ea0",
+    "bytes": 102824670
+  },
+  "glb": {
+    "sha256": "ae5722b19aa99a1e3a0e5333d41eb5544ac9c2295c35685be9f41f5b05df4e78",
+    "bytes": 53028780
+  },
+  "high": {
+    "vertices": 640604,
+    "polygons": 674160,
+    "triangles": 1281204,
+    "position_sha256": "56be7d3e0ef1ae4f17f8154b6e90dcb223ce242c1674958fc1442a9be03776f5",
+    "corner_vertices_sha256": "c420da7c801382407182199fc39aff94cbb4f5d625c8aa450ff8c9a666badda6",
+    "polygon_sizes_sha256": "bc3271a3c4fd510f4b4571ac5acd36d50672abc1ce6c6f96ef5cc841c76d9ab7",
+    "corner_normal_sha256": "70846afedf10f90f49ff5df2f975b0825b331b18787f276af813c3a88757e2fb",
+    "smooth_sha256": "06e4b08b27d6ce69ea9743acced0bb3556b803b0c5e924dd2c26debf8e187c83",
+    "sharp_edge_sha256": "bcf9dc9c3e591af5d5a809d23e88cc21c7c048b1f3d961b896b21123e618c1cf",
+    "bounds_min": [
+      -3.017899990081787,
+      -2.2795393466949463,
+      -0.1599999964237213
+    ],
+    "bounds_max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "uv": {},
+    "color_attributes": {
+      "DustMask": {
+        "domain": "POINT",
+        "data_type": "FLOAT_COLOR",
+        "sha256": "e922a4e611b7de8153a6b17fc24c99477abf4828faa93aefc53924850ba7d5f7"
+      },
+      "FreshFractureMask": {
+        "domain": "POINT",
+        "data_type": "FLOAT_COLOR",
+        "sha256": "7a4f08d68b0098d0c5fe2ab1b51e3eb4f1215434dcebeffea5e74d9ee3ec0ec5"
+      },
+      "RoughnessSource": {
+        "domain": "POINT",
+        "data_type": "FLOAT_COLOR",
+        "sha256": "1b3bb321f38af0a6f053ebb25acce5c3df75f6260c9c2b878ad49248d21cd51d"
+      },
+      "BaseColorSource": {
+        "domain": "POINT",
+        "data_type": "FLOAT_COLOR",
+        "sha256": "f9dc6e543bbfafe2df321b57034da3ab4d692ae63d478d0044cc1899a7557709"
+      },
+      "FaceIntrinsicReflectance": {
+        "domain": "POINT",
+        "data_type": "FLOAT_COLOR",
+        "sha256": "4d347f7d37dc26062d8167e90699512f2da2381d49f6c31dd729acd50e1b765a"
+      }
+    }
+  },
+  "game": {
+    "vertices": 464565,
+    "polygons": 929126,
+    "triangles": 929126,
+    "position_sha256": "46fec6e2ee3e6277c993bf1aeb4eb5d0963100571908f49a0c7aed0fffdd8f8e",
+    "corner_vertices_sha256": "2fcefc54165e390e83db9e898d4e88cc0deaa2b2c0c5340d77a80bb02188d4d0",
+    "polygon_sizes_sha256": "9c0c4ed0ed22d8d0c1855f78bd67c3f61a003bc69be54c763bf7ddac8b74389b",
+    "corner_normal_sha256": "3cfdce430247f2f4c77128fe9dff32699d5829d6bee174ec0880bb6564ad0976",
+    "smooth_sha256": "5b8a058eff6e86a15e824c68362c0d70922ea53894ae95751e4ee87e80b2f4bc",
+    "sharp_edge_sha256": "f1fc9686626ef542a1764373aaabaf53b07f9817a2821da11114922db1300d92",
+    "bounds_min": [
+      -3.017899990081787,
+      -2.2795398235321045,
+      -0.16000327467918396
+    ],
+    "bounds_max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "uv": {
+      "UVMap": "4e332b9381ab442e50bd3211df28f4ee12cf9151dbce3b3fb2d27a1fdb45bc73"
+    },
+    "color_attributes": {}
+  },
+  "high_material": {
+    "sha256": "1c212c321442c0e1819624bb6433766eb892525a7706804a7e9494cf9f200bce",
+    "graph": {
+      "nodes": [
+        {
+          "name": "ActualFaceIntrinsicVariation",
+          "type": "ShaderNodeMixRGB",
+          "parameters": {
+            "blend_type": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 1.0
+            },
+            {
+              "identifier": "Color1",
+              "value": [
+                0.5,
+                0.5,
+                0.5,
+                1.0
+              ]
+            },
+            {
+              "identifier": "Color2",
+              "value": [
+                0.5,
+                0.5,
+                0.5,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CoarseWeatheredPatches",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Color Attribute",
+          "type": "ShaderNodeVertexColor",
+          "parameters": {
+            "layer_name": "BaseColorSource"
+          },
+          "inputs": []
+        },
+        {
+          "name": "Color Attribute.001",
+          "type": "ShaderNodeVertexColor",
+          "parameters": {
+            "layer_name": "RoughnessSource"
+          },
+          "inputs": []
+        },
+        {
+          "name": "Color Attribute.002",
+          "type": "ShaderNodeVertexColor",
+          "parameters": {
+            "layer_name": "DustMask"
+          },
+          "inputs": []
+        },
+        {
+          "name": "Color Attribute.003",
+          "type": "ShaderNodeVertexColor",
+          "parameters": {
+            "layer_name": "FreshFractureMask"
+          },
+          "inputs": []
+        },
+        {
+          "name": "Combine XYZ",
+          "type": "ShaderNodeCombineXYZ",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "X",
+              "value": 0.0
+            },
+            {
+              "identifier": "Y",
+              "value": 0.0
+            },
+            {
+              "identifier": "Z",
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "ExposedSandstoneGrains",
+          "type": "ShaderNodeTexNoise",
+          "parameters": {
+            "noise_dimensions": "3D",
+            "noise_type": "FBM",
+            "normalize": true
+          },
+          "inputs": [
+            {
+              "identifier": "Vector",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "identifier": "W",
+              "value": 0.0
+            },
+            {
+              "identifier": "Scale",
+              "value": 62.0
+            },
+            {
+              "identifier": "Detail",
+              "value": 2.5
+            },
+            {
+              "identifier": "Roughness",
+              "value": 0.6700000166893005
+            },
+            {
+              "identifier": "Lacunarity",
+              "value": 2.0
+            },
+            {
+              "identifier": "Offset",
+              "value": 0.0
+            },
+            {
+              "identifier": "Gain",
+              "value": 1.0
+            },
+            {
+              "identifier": "Distortion",
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "ExposureControlledGrainAndLamina",
+          "type": "ShaderNodeBump",
+          "parameters": {
+            "invert": false
+          },
+          "inputs": [
+            {
+              "identifier": "Strength",
+              "value": 1.0
+            },
+            {
+              "identifier": "Distance",
+              "value": 0.002199999988079071
+            },
+            {
+              "identifier": "Filter Width",
+              "value": 0.10000000149011612
+            },
+            {
+              "identifier": "Height",
+              "value": 1.0
+            },
+            {
+              "identifier": "Normal",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "FineMineralGrains",
+          "type": "ShaderNodeTexNoise",
+          "parameters": {
+            "noise_dimensions": "3D",
+            "noise_type": "FBM",
+            "normalize": true
+          },
+          "inputs": [
+            {
+              "identifier": "Vector",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "identifier": "W",
+              "value": 0.0
+            },
+            {
+              "identifier": "Scale",
+              "value": 190.0
+            },
+            {
+              "identifier": "Detail",
+              "value": 2.0
+            },
+            {
+              "identifier": "Roughness",
+              "value": 0.6700000166893005
+            },
+            {
+              "identifier": "Lacunarity",
+              "value": 2.0
+            },
+            {
+              "identifier": "Offset",
+              "value": 0.0
+            },
+            {
+              "identifier": "Gain",
+              "value": 1.0
+            },
+            {
+              "identifier": "Distortion",
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "FreshRearFaceTone",
+          "type": "ShaderNodeMixRGB",
+          "parameters": {
+            "blend_type": "MIX",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            },
+            {
+              "identifier": "Color1",
+              "value": [
+                0.5,
+                0.5,
+                0.5,
+                1.0
+              ]
+            },
+            {
+              "identifier": "Color2",
+              "value": [
+                0.18000000715255737,
+                0.17100000381469727,
+                0.15800000727176666,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Geometry",
+          "type": "ShaderNodeNewGeometry",
+          "parameters": {},
+          "inputs": []
+        },
+        {
+          "name": "LaminaTermination",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "LowContrastActualFaceMinerals",
+          "type": "ShaderNodeVertexColor",
+          "parameters": {
+            "layer_name": "FaceIntrinsicReflectance"
+          },
+          "inputs": []
+        },
+        {
+          "name": "LowerBedEnd",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "LowerBedStart",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "LowerRunEnd",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "LowerRunStart",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Material Output",
+          "type": "ShaderNodeOutputMaterial",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Displacement",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "identifier": "Thickness",
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "Math",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 1.0
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.001",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.550000011920929
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.002",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.33000001311302185
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.003",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.6000000238418579
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.004",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.41999998688697815
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.005",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": -0.550000011920929
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.006",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.7300000190734863
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.007",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.008",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.009",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.010",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MAXIMUM",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.011",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 1.0
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.012",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.013",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": -1.0
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.014",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MAXIMUM",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.0
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.015",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 1.2000000476837158
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.016",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.12999999523162842
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.017",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.018",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 1.2999999523162842
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.019",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.07500000298023224
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.020",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 1.625
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.021",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.07500000298023224
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.022",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 1.0
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.023",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.024",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": -2.380000114440918
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.025",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.1599999964237213
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.026",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": -0.7599999904632568
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.027",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.1599999964237213
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.028",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 1.0
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.029",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.030",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.031",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 1.2000000476837158
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.032",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.1599999964237213
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.033",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.034",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.30000001192092896
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.035",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.03500000014901161
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.036",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.4350000023841858
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.037",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.03500000014901161
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.038",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 1.0
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.039",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.040",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": -2.630000114440918
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.041",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.1899999976158142
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.042",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": -0.9900000095367432
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.043",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.1899999976158142
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.044",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 1.0
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.045",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.046",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.047",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MAXIMUM",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.048",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "LESS_THAN",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": -0.41999998688697815
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.049",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.050",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.051",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 1.0
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.052",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.053",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.054",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.055",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.023000000044703484
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.056",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.057",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 2.5999999046325684
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.058",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.75
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.059",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 72.0
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.060",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.41999998688697815
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.061",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.20999999344348907
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.062",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.2800000011920929
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.063",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.28999999165534973
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.064",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.065",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY_ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.20000000298023224
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.8799999952316284
+            }
+          ]
+        },
+        {
+          "name": "Math.066",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY_ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.2199999988079071
+            },
+            {
+              "identifier": "Value_002",
+              "value": -0.07500000298023224
+            }
+          ]
+        },
+        {
+          "name": "Math.067",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.068",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.069",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.3400000035762787
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.070",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "DIVIDE",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.2800000011920929
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.071",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.072",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.8399999737739563
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.073",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "SUBTRACT",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 1.0
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.074",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.075",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY_ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.11999999731779099
+            },
+            {
+              "identifier": "Value_002",
+              "value": -0.05999999865889549
+            }
+          ]
+        },
+        {
+          "name": "Math.076",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.077",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.078",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.2800000011920929
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.079",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.20000000298023224
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.080",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.1599999964237213
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.081",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.082",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY_ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.07999999821186066
+            },
+            {
+              "identifier": "Value_002",
+              "value": -0.03999999910593033
+            }
+          ]
+        },
+        {
+          "name": "Math.083",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY_ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.07000000029802322
+            },
+            {
+              "identifier": "Value_002",
+              "value": -0.03500000014901161
+            }
+          ]
+        },
+        {
+          "name": "Math.084",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.085",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY_ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.04500000178813934
+            },
+            {
+              "identifier": "Value_002",
+              "value": -0.02250000089406967
+            }
+          ]
+        },
+        {
+          "name": "Math.086",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.087",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.088",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.089",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY_ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.03500000014901161
+            },
+            {
+              "identifier": "Value_002",
+              "value": -0.012000000104308128
+            }
+          ]
+        },
+        {
+          "name": "Math.090",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.091",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.092",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.093",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY_ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.8500000238418579
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.02500000037252903
+            }
+          ]
+        },
+        {
+          "name": "Math.094",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.095",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.096",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.097",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.098",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.6200000047683716
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Math.099",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "ADD",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "Mix (Legacy)",
+          "type": "ShaderNodeMixRGB",
+          "parameters": {
+            "blend_type": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 1.0
+            },
+            {
+              "identifier": "Color1",
+              "value": [
+                0.5,
+                0.5,
+                0.5,
+                1.0
+              ]
+            },
+            {
+              "identifier": "Color2",
+              "value": [
+                0.5,
+                0.5,
+                0.5,
+                1.0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Principled BSDF",
+          "type": "ShaderNodeBsdfPrincipled",
+          "parameters": {
+            "distribution": "MULTI_GGX",
+            "subsurface_method": "RANDOM_WALK"
+          },
+          "inputs": [
+            {
+              "identifier": "Base Color",
+              "value": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                1.0
+              ]
+            },
+            {
+              "identifier": "Metallic",
+              "value": 0.0
+            },
+            {
+              "identifier": "Roughness",
+              "value": 0.5
+            },
+            {
+              "identifier": "IOR",
+              "value": 1.5
+            },
+            {
+              "identifier": "Alpha",
+              "value": 1.0
+            },
+            {
+              "identifier": "Thin Wall",
+              "value": false
+            },
+            {
+              "identifier": "Normal",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "identifier": "Weight",
+              "value": 0.0
+            },
+            {
+              "identifier": "Diffuse Roughness",
+              "value": 0.0
+            },
+            {
+              "identifier": "Subsurface Weight",
+              "value": 0.0
+            },
+            {
+              "identifier": "Subsurface Radius",
+              "value": [
+                1.0,
+                0.20000000298023224,
+                0.10000000149011612
+              ]
+            },
+            {
+              "identifier": "Subsurface Scale",
+              "value": 0.004999999888241291
+            },
+            {
+              "identifier": "Subsurface IOR",
+              "value": 1.399999976158142
+            },
+            {
+              "identifier": "Subsurface Anisotropy",
+              "value": 0.0
+            },
+            {
+              "identifier": "Specular IOR Level",
+              "value": 0.5
+            },
+            {
+              "identifier": "Specular Tint",
+              "value": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "identifier": "Anisotropic",
+              "value": 0.0
+            },
+            {
+              "identifier": "Anisotropic Rotation",
+              "value": 0.0
+            },
+            {
+              "identifier": "Tangent",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "identifier": "Transmission Weight",
+              "value": 0.0
+            },
+            {
+              "identifier": "Coat Weight",
+              "value": 0.0
+            },
+            {
+              "identifier": "Coat Roughness",
+              "value": 0.029999999329447746
+            },
+            {
+              "identifier": "Coat IOR",
+              "value": 1.5
+            },
+            {
+              "identifier": "Coat Tint",
+              "value": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "identifier": "Coat Normal",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "identifier": "Sheen Weight",
+              "value": 0.0
+            },
+            {
+              "identifier": "Sheen Roughness",
+              "value": 0.5
+            },
+            {
+              "identifier": "Sheen Tint",
+              "value": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "identifier": "Emission Color",
+              "value": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "identifier": "Emission Strength",
+              "value": 0.0
+            },
+            {
+              "identifier": "Thin Film Thickness",
+              "value": 0.0
+            },
+            {
+              "identifier": "Thin Film IOR",
+              "value": 1.3300000429153442
+            }
+          ]
+        },
+        {
+          "name": "ReadableUnequalLenses",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "RearOnly",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "RearPlane",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "RearRightFracture",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Separate XYZ",
+          "type": "ShaderNodeSeparateXYZ",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Vector",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Separate XYZ.001",
+          "type": "ShaderNodeSeparateXYZ",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Vector",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TwoExposedBedFaces",
+          "type": "ShaderNodeMath",
+          "parameters": {
+            "operation": "MULTIPLY",
+            "use_clamp": false
+          },
+          "inputs": [
+            {
+              "identifier": "Value",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_001",
+              "value": 0.5
+            },
+            {
+              "identifier": "Value_002",
+              "value": 0.5
+            }
+          ]
+        },
+        {
+          "name": "UnequalSedimentLenses",
+          "type": "ShaderNodeTexNoise",
+          "parameters": {
+            "noise_dimensions": "3D",
+            "noise_type": "FBM",
+            "normalize": true
+          },
+          "inputs": [
+            {
+              "identifier": "Vector",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "identifier": "W",
+              "value": 0.0
+            },
+            {
+              "identifier": "Scale",
+              "value": 1.0
+            },
+            {
+              "identifier": "Detail",
+              "value": 1.399999976158142
+            },
+            {
+              "identifier": "Roughness",
+              "value": 0.6600000262260437
+            },
+            {
+              "identifier": "Lacunarity",
+              "value": 2.0
+            },
+            {
+              "identifier": "Offset",
+              "value": 0.0
+            },
+            {
+              "identifier": "Gain",
+              "value": 1.0
+            },
+            {
+              "identifier": "Distortion",
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "name": "UpperBedEnd",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "UpperBedStart",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "UpperRunEnd",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "UpperRunStart",
+          "type": "ShaderNodeValToRGB",
+          "parameters": {},
+          "inputs": [
+            {
+              "identifier": "Fac",
+              "value": 0.5
+            }
+          ],
+          "ramp": {
+            "interpolation": "EASE",
+            "color_mode": "RGB",
+            "hue_interpolation": "NEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "WeatheringPatches",
+          "type": "ShaderNodeTexNoise",
+          "parameters": {
+            "noise_dimensions": "3D",
+            "noise_type": "FBM",
+            "normalize": true
+          },
+          "inputs": [
+            {
+              "identifier": "Vector",
+              "value": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "identifier": "W",
+              "value": 0.0
+            },
+            {
+              "identifier": "Scale",
+              "value": 3.700000047683716
+            },
+            {
+              "identifier": "Detail",
+              "value": 2.0
+            },
+            {
+              "identifier": "Roughness",
+              "value": 0.6700000166893005
+            },
+            {
+              "identifier": "Lacunarity",
+              "value": 2.0
+            },
+            {
+              "identifier": "Offset",
+              "value": 0.0
+            },
+            {
+              "identifier": "Gain",
+              "value": 1.0
+            },
+            {
+              "identifier": "Distortion",
+              "value": 0.0
+            }
+          ]
+        }
+      ],
+      "links": [
+        [
+          "ActualFaceIntrinsicVariation",
+          "Color",
+          "Principled BSDF",
+          "Base Color"
+        ],
+        [
+          "CoarseWeatheredPatches",
+          "Color",
+          "Math.071",
+          "Value_001"
+        ],
+        [
+          "Color Attribute",
+          "Color",
+          "Mix (Legacy)",
+          "Color1"
+        ],
+        [
+          "Color Attribute.001",
+          "Color",
+          "Math.092",
+          "Value"
+        ],
+        [
+          "Color Attribute.002",
+          "Color",
+          "Math",
+          "Value_001"
+        ],
+        [
+          "Color Attribute.003",
+          "Color",
+          "Math.010",
+          "Value"
+        ],
+        [
+          "Combine XYZ",
+          "Vector",
+          "UnequalSedimentLenses",
+          "Vector"
+        ],
+        [
+          "ExposedSandstoneGrains",
+          "Fac",
+          "Math.075",
+          "Value"
+        ],
+        [
+          "ExposedSandstoneGrains",
+          "Fac",
+          "Math.083",
+          "Value"
+        ],
+        [
+          "ExposedSandstoneGrains",
+          "Fac",
+          "Math.094",
+          "Value"
+        ],
+        [
+          "ExposureControlledGrainAndLamina",
+          "Normal",
+          "Principled BSDF",
+          "Normal"
+        ],
+        [
+          "FineMineralGrains",
+          "Fac",
+          "Math.085",
+          "Value"
+        ],
+        [
+          "FineMineralGrains",
+          "Fac",
+          "Math.095",
+          "Value"
+        ],
+        [
+          "FreshRearFaceTone",
+          "Color",
+          "ActualFaceIntrinsicVariation",
+          "Color1"
+        ],
+        [
+          "Geometry",
+          "Normal",
+          "Separate XYZ.001",
+          "Vector"
+        ],
+        [
+          "Geometry",
+          "Position",
+          "ExposedSandstoneGrains",
+          "Vector"
+        ],
+        [
+          "Geometry",
+          "Position",
+          "FineMineralGrains",
+          "Vector"
+        ],
+        [
+          "Geometry",
+          "Position",
+          "Separate XYZ",
+          "Vector"
+        ],
+        [
+          "Geometry",
+          "Position",
+          "WeatheringPatches",
+          "Vector"
+        ],
+        [
+          "LaminaTermination",
+          "Color",
+          "Math.064",
+          "Value_001"
+        ],
+        [
+          "LowContrastActualFaceMinerals",
+          "Color",
+          "ActualFaceIntrinsicVariation",
+          "Color2"
+        ],
+        [
+          "LowerBedEnd",
+          "Color",
+          "Math.038",
+          "Value_001"
+        ],
+        [
+          "LowerBedStart",
+          "Color",
+          "Math.039",
+          "Value"
+        ],
+        [
+          "LowerRunEnd",
+          "Color",
+          "Math.044",
+          "Value_001"
+        ],
+        [
+          "LowerRunStart",
+          "Color",
+          "Math.045",
+          "Value"
+        ],
+        [
+          "Math",
+          "Value",
+          "Math.009",
+          "Value_001"
+        ],
+        [
+          "Math",
+          "Value",
+          "Math.012",
+          "Value"
+        ],
+        [
+          "Math",
+          "Value",
+          "Math.093",
+          "Value"
+        ],
+        [
+          "Math.001",
+          "Value",
+          "Math.002",
+          "Value"
+        ],
+        [
+          "Math.002",
+          "Value",
+          "RearPlane",
+          "Fac"
+        ],
+        [
+          "Math.003",
+          "Value",
+          "Math.004",
+          "Value"
+        ],
+        [
+          "Math.004",
+          "Value",
+          "RearOnly",
+          "Fac"
+        ],
+        [
+          "Math.005",
+          "Value",
+          "Math.006",
+          "Value"
+        ],
+        [
+          "Math.006",
+          "Value",
+          "RearRightFracture",
+          "Fac"
+        ],
+        [
+          "Math.007",
+          "Value",
+          "Math.008",
+          "Value_001"
+        ],
+        [
+          "Math.008",
+          "Value",
+          "Math.009",
+          "Value"
+        ],
+        [
+          "Math.009",
+          "Value",
+          "Math.010",
+          "Value_001"
+        ],
+        [
+          "Math.010",
+          "Value",
+          "Math.011",
+          "Value_001"
+        ],
+        [
+          "Math.010",
+          "Value",
+          "Math.078",
+          "Value"
+        ],
+        [
+          "Math.010",
+          "Value",
+          "Math.079",
+          "Value"
+        ],
+        [
+          "Math.011",
+          "Value",
+          "Math.012",
+          "Value_001"
+        ],
+        [
+          "Math.012",
+          "Value",
+          "Math.050",
+          "Value"
+        ],
+        [
+          "Math.012",
+          "Value",
+          "Math.071",
+          "Value"
+        ],
+        [
+          "Math.012",
+          "Value",
+          "Math.080",
+          "Value"
+        ],
+        [
+          "Math.013",
+          "Value",
+          "Math.014",
+          "Value"
+        ],
+        [
+          "Math.014",
+          "Value",
+          "Math.050",
+          "Value_001"
+        ],
+        [
+          "Math.015",
+          "Value",
+          "Math.016",
+          "Value"
+        ],
+        [
+          "Math.016",
+          "Value",
+          "Math.017",
+          "Value_001"
+        ],
+        [
+          "Math.017",
+          "Value",
+          "Math.018",
+          "Value"
+        ],
+        [
+          "Math.017",
+          "Value",
+          "Math.020",
+          "Value"
+        ],
+        [
+          "Math.017",
+          "Value",
+          "Math.052",
+          "Value"
+        ],
+        [
+          "Math.018",
+          "Value",
+          "Math.019",
+          "Value"
+        ],
+        [
+          "Math.019",
+          "Value",
+          "UpperBedStart",
+          "Fac"
+        ],
+        [
+          "Math.020",
+          "Value",
+          "Math.021",
+          "Value"
+        ],
+        [
+          "Math.021",
+          "Value",
+          "UpperBedEnd",
+          "Fac"
+        ],
+        [
+          "Math.022",
+          "Value",
+          "Math.023",
+          "Value_001"
+        ],
+        [
+          "Math.023",
+          "Value",
+          "Math.030",
+          "Value"
+        ],
+        [
+          "Math.024",
+          "Value",
+          "Math.025",
+          "Value"
+        ],
+        [
+          "Math.025",
+          "Value",
+          "UpperRunStart",
+          "Fac"
+        ],
+        [
+          "Math.026",
+          "Value",
+          "Math.027",
+          "Value"
+        ],
+        [
+          "Math.027",
+          "Value",
+          "UpperRunEnd",
+          "Fac"
+        ],
+        [
+          "Math.028",
+          "Value",
+          "Math.029",
+          "Value_001"
+        ],
+        [
+          "Math.029",
+          "Value",
+          "Math.030",
+          "Value_001"
+        ],
+        [
+          "Math.030",
+          "Value",
+          "Math.047",
+          "Value"
+        ],
+        [
+          "Math.031",
+          "Value",
+          "Math.032",
+          "Value"
+        ],
+        [
+          "Math.032",
+          "Value",
+          "Math.033",
+          "Value_001"
+        ],
+        [
+          "Math.033",
+          "Value",
+          "Math.034",
+          "Value"
+        ],
+        [
+          "Math.033",
+          "Value",
+          "Math.036",
+          "Value"
+        ],
+        [
+          "Math.033",
+          "Value",
+          "Math.053",
+          "Value"
+        ],
+        [
+          "Math.034",
+          "Value",
+          "Math.035",
+          "Value"
+        ],
+        [
+          "Math.035",
+          "Value",
+          "LowerBedStart",
+          "Fac"
+        ],
+        [
+          "Math.036",
+          "Value",
+          "Math.037",
+          "Value"
+        ],
+        [
+          "Math.037",
+          "Value",
+          "LowerBedEnd",
+          "Fac"
+        ],
+        [
+          "Math.038",
+          "Value",
+          "Math.039",
+          "Value_001"
+        ],
+        [
+          "Math.039",
+          "Value",
+          "Math.046",
+          "Value"
+        ],
+        [
+          "Math.040",
+          "Value",
+          "Math.041",
+          "Value"
+        ],
+        [
+          "Math.041",
+          "Value",
+          "LowerRunStart",
+          "Fac"
+        ],
+        [
+          "Math.042",
+          "Value",
+          "Math.043",
+          "Value"
+        ],
+        [
+          "Math.043",
+          "Value",
+          "LowerRunEnd",
+          "Fac"
+        ],
+        [
+          "Math.044",
+          "Value",
+          "Math.045",
+          "Value_001"
+        ],
+        [
+          "Math.045",
+          "Value",
+          "Math.046",
+          "Value_001"
+        ],
+        [
+          "Math.046",
+          "Value",
+          "Math.047",
+          "Value_001"
+        ],
+        [
+          "Math.046",
+          "Value",
+          "Math.051",
+          "Value_001"
+        ],
+        [
+          "Math.046",
+          "Value",
+          "Math.053",
+          "Value_001"
+        ],
+        [
+          "Math.047",
+          "Value",
+          "Math.049",
+          "Value"
+        ],
+        [
+          "Math.048",
+          "Value",
+          "Math.049",
+          "Value_001"
+        ],
+        [
+          "Math.049",
+          "Value",
+          "Math.072",
+          "Value"
+        ],
+        [
+          "Math.049",
+          "Value",
+          "TwoExposedBedFaces",
+          "Value_001"
+        ],
+        [
+          "Math.050",
+          "Value",
+          "TwoExposedBedFaces",
+          "Value"
+        ],
+        [
+          "Math.051",
+          "Value",
+          "Math.052",
+          "Value_001"
+        ],
+        [
+          "Math.052",
+          "Value",
+          "Math.054",
+          "Value"
+        ],
+        [
+          "Math.053",
+          "Value",
+          "Math.054",
+          "Value_001"
+        ],
+        [
+          "Math.054",
+          "Value",
+          "Math.056",
+          "Value"
+        ],
+        [
+          "Math.055",
+          "Value",
+          "Math.056",
+          "Value_001"
+        ],
+        [
+          "Math.056",
+          "Value",
+          "Math.059",
+          "Value"
+        ],
+        [
+          "Math.057",
+          "Value",
+          "Combine XYZ",
+          "X"
+        ],
+        [
+          "Math.058",
+          "Value",
+          "Combine XYZ",
+          "Y"
+        ],
+        [
+          "Math.059",
+          "Value",
+          "Combine XYZ",
+          "Z"
+        ],
+        [
+          "Math.060",
+          "Value",
+          "Math.061",
+          "Value"
+        ],
+        [
+          "Math.061",
+          "Value",
+          "ReadableUnequalLenses",
+          "Fac"
+        ],
+        [
+          "Math.062",
+          "Value",
+          "Math.063",
+          "Value"
+        ],
+        [
+          "Math.063",
+          "Value",
+          "LaminaTermination",
+          "Fac"
+        ],
+        [
+          "Math.064",
+          "Value",
+          "Math.066",
+          "Value"
+        ],
+        [
+          "Math.064",
+          "Value",
+          "Math.089",
+          "Value"
+        ],
+        [
+          "Math.064",
+          "Value",
+          "Math.097",
+          "Value"
+        ],
+        [
+          "Math.065",
+          "Value",
+          "Math.068",
+          "Value"
+        ],
+        [
+          "Math.066",
+          "Value",
+          "Math.067",
+          "Value"
+        ],
+        [
+          "Math.067",
+          "Value",
+          "Math.068",
+          "Value_001"
+        ],
+        [
+          "Math.068",
+          "Value",
+          "Math.077",
+          "Value"
+        ],
+        [
+          "Math.069",
+          "Value",
+          "Math.070",
+          "Value"
+        ],
+        [
+          "Math.070",
+          "Value",
+          "CoarseWeatheredPatches",
+          "Fac"
+        ],
+        [
+          "Math.071",
+          "Value",
+          "Math.074",
+          "Value"
+        ],
+        [
+          "Math.072",
+          "Value",
+          "Math.073",
+          "Value_001"
+        ],
+        [
+          "Math.073",
+          "Value",
+          "Math.074",
+          "Value_001"
+        ],
+        [
+          "Math.074",
+          "Value",
+          "Math.076",
+          "Value_001"
+        ],
+        [
+          "Math.074",
+          "Value",
+          "Math.084",
+          "Value_001"
+        ],
+        [
+          "Math.074",
+          "Value",
+          "Math.094",
+          "Value_001"
+        ],
+        [
+          "Math.075",
+          "Value",
+          "Math.076",
+          "Value"
+        ],
+        [
+          "Math.076",
+          "Value",
+          "Math.077",
+          "Value_001"
+        ],
+        [
+          "Math.077",
+          "Value",
+          "Mix (Legacy)",
+          "Color2"
+        ],
+        [
+          "Math.078",
+          "Value",
+          "FreshRearFaceTone",
+          "Fac"
+        ],
+        [
+          "Math.079",
+          "Value",
+          "Math.081",
+          "Value"
+        ],
+        [
+          "Math.080",
+          "Value",
+          "Math.081",
+          "Value_001"
+        ],
+        [
+          "Math.081",
+          "Value",
+          "Math.086",
+          "Value_001"
+        ],
+        [
+          "Math.081",
+          "Value",
+          "Math.095",
+          "Value_001"
+        ],
+        [
+          "Math.082",
+          "Value",
+          "Math.088",
+          "Value"
+        ],
+        [
+          "Math.083",
+          "Value",
+          "Math.084",
+          "Value"
+        ],
+        [
+          "Math.084",
+          "Value",
+          "Math.087",
+          "Value"
+        ],
+        [
+          "Math.085",
+          "Value",
+          "Math.086",
+          "Value"
+        ],
+        [
+          "Math.086",
+          "Value",
+          "Math.087",
+          "Value_001"
+        ],
+        [
+          "Math.087",
+          "Value",
+          "Math.088",
+          "Value_001"
+        ],
+        [
+          "Math.088",
+          "Value",
+          "Math.091",
+          "Value"
+        ],
+        [
+          "Math.089",
+          "Value",
+          "Math.090",
+          "Value"
+        ],
+        [
+          "Math.090",
+          "Value",
+          "Math.091",
+          "Value_001"
+        ],
+        [
+          "Math.091",
+          "Value",
+          "Math.092",
+          "Value_001"
+        ],
+        [
+          "Math.092",
+          "Value",
+          "Principled BSDF",
+          "Roughness"
+        ],
+        [
+          "Math.093",
+          "Value",
+          "ExposureControlledGrainAndLamina",
+          "Strength"
+        ],
+        [
+          "Math.094",
+          "Value",
+          "Math.096",
+          "Value"
+        ],
+        [
+          "Math.095",
+          "Value",
+          "Math.096",
+          "Value_001"
+        ],
+        [
+          "Math.096",
+          "Value",
+          "Math.099",
+          "Value"
+        ],
+        [
+          "Math.097",
+          "Value",
+          "Math.098",
+          "Value"
+        ],
+        [
+          "Math.098",
+          "Value",
+          "Math.099",
+          "Value_001"
+        ],
+        [
+          "Math.099",
+          "Value",
+          "ExposureControlledGrainAndLamina",
+          "Height"
+        ],
+        [
+          "Mix (Legacy)",
+          "Color",
+          "FreshRearFaceTone",
+          "Color1"
+        ],
+        [
+          "Principled BSDF",
+          "BSDF",
+          "Material Output",
+          "Surface"
+        ],
+        [
+          "ReadableUnequalLenses",
+          "Color",
+          "Math.064",
+          "Value"
+        ],
+        [
+          "RearOnly",
+          "Color",
+          "Math.007",
+          "Value"
+        ],
+        [
+          "RearPlane",
+          "Color",
+          "Math.008",
+          "Value"
+        ],
+        [
+          "RearRightFracture",
+          "Color",
+          "Math.007",
+          "Value_001"
+        ],
+        [
+          "Separate XYZ",
+          "X",
+          "Math.005",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "X",
+          "Math.015",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "X",
+          "Math.024",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "X",
+          "Math.026",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "X",
+          "Math.031",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "X",
+          "Math.040",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "X",
+          "Math.042",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "X",
+          "Math.057",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "Y",
+          "Math.003",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "Y",
+          "Math.048",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "Y",
+          "Math.058",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "Z",
+          "Math.017",
+          "Value"
+        ],
+        [
+          "Separate XYZ",
+          "Z",
+          "Math.033",
+          "Value"
+        ],
+        [
+          "Separate XYZ.001",
+          "Y",
+          "Math.001",
+          "Value"
+        ],
+        [
+          "Separate XYZ.001",
+          "Y",
+          "Math.013",
+          "Value"
+        ],
+        [
+          "TwoExposedBedFaces",
+          "Value",
+          "Math.067",
+          "Value_001"
+        ],
+        [
+          "TwoExposedBedFaces",
+          "Value",
+          "Math.090",
+          "Value_001"
+        ],
+        [
+          "TwoExposedBedFaces",
+          "Value",
+          "Math.097",
+          "Value_001"
+        ],
+        [
+          "UnequalSedimentLenses",
+          "Fac",
+          "Math.060",
+          "Value"
+        ],
+        [
+          "UpperBedEnd",
+          "Color",
+          "Math.022",
+          "Value_001"
+        ],
+        [
+          "UpperBedStart",
+          "Color",
+          "Math.023",
+          "Value"
+        ],
+        [
+          "UpperRunEnd",
+          "Color",
+          "Math.028",
+          "Value_001"
+        ],
+        [
+          "UpperRunStart",
+          "Color",
+          "Math.029",
+          "Value"
+        ],
+        [
+          "WeatheringPatches",
+          "Fac",
+          "Math.055",
+          "Value"
+        ],
+        [
+          "WeatheringPatches",
+          "Fac",
+          "Math.062",
+          "Value"
+        ],
+        [
+          "WeatheringPatches",
+          "Fac",
+          "Math.065",
+          "Value"
+        ],
+        [
+          "WeatheringPatches",
+          "Fac",
+          "Math.069",
+          "Value"
+        ],
+        [
+          "WeatheringPatches",
+          "Fac",
+          "Math.082",
+          "Value"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,468 @@
+{
+  "status": "NATIVE_VALIDATED_4K_CANDIDATE_PENDING_FIXED_GODOT_AND_SOL",
+  "input": {
+    "path": "art/source/environment/mars-outcrop-hifi-r2/stages/15-local-shallow-spalls/source-candidate.blend",
+    "sha256": "5a2dc14c0b8ec60dfb89121689158ba0d0fb6fd904f104f955416a46cf7684c5",
+    "bytes": 100005817
+  },
+  "accepted_source_preview": "Root actually reviewed the current four stage15 images and authorized 4K; final Godot/Sol visual is still pending",
+  "high_triangles": 1294746,
+  "game_triangles": 659908,
+  "normal_control": {
+    "baseline_uv_negative": 0,
+    "baseline_normal_roundtrip_max_delta": 0.0007672744104638696,
+    "negative_triangles": [],
+    "untouched_original_vertex_corner_normal": {
+      "count": 681912,
+      "max_delta": 0.0007672744518574452,
+      "p99_delta": 0.00047706891661084233,
+      "max_center_m": [
+        -1.9592485427856445,
+        -0.13364028930664062,
+        1.0105007886886597
+      ],
+      "source_face": 6793,
+      "compared_to_native_roundtrip_max_delta": 0.00027483647575658103,
+      "compared_to_native_roundtrip_p99_delta": 0.0
+    }
+  },
+  "uv_local_preservation": {
+    "max_corner_uv_interpolation_error": 2.625847721482444e-07,
+    "max_uv_area_partition_error": 9.057945504764575e-10,
+    "outside_exposure_corner_normal_max_delta": 0.0007672744285571649,
+    "outside_exposure_corner_normal_p99_delta": 0.0004774241293036566,
+    "uv_negative_area_triangles": 0,
+    "uv_effectively_zero_area_triangles": 0,
+    "non_triangular_polygons": 0,
+    "triangles": 659908,
+    "max_vertex_displacement_m": 0.00670609762892127,
+    "macro_bounds_max_delta": 0.0,
+    "status": "REWORK"
+  },
+  "legacy_absolute_normal_verdict_retained": "REWORK",
+  "normal_control_gate": {
+    "same_version": "5.2.2 LTS",
+    "original_corner_index_matched": true,
+    "threshold": 0.0003,
+    "status": "PASS"
+  },
+  "local_reduction": {
+    "input": {
+      "sha256": "5a2dc14c0b8ec60dfb89121689158ba0d0fb6fd904f104f955416a46cf7684c5",
+      "bytes": 100005817
+    },
+    "angle_limit_degrees": 0.35,
+    "scope": "Only within the two prepared charts and within a single original triangle; original face and UV boundaries protected",
+    "candidate_edges": 627475,
+    "candidate_vertices": 195755,
+    "triangles_before": 659908,
+    "acceptance_max_surface_deviation_m": 0.0005,
+    "acceptance_p99_surface_deviation_m": 0.00015,
+    "acceptance_native_roundtrip_corner_normal_delta": 0.0003,
+    "status": "REJECTED_KEEP_DENSE",
+    "reason": "No in-source-face diagonal repair for 111008"
+  },
+  "protected_files": {
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend": {
+      "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+      "bytes": 52451110
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb": {
+      "sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+      "bytes": 27662108
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/base_color.png": {
+      "sha256": "e222bb427de34bec53c0e7d7e0102f1713930379164b789a83d931f2e379765e",
+      "bytes": 4402001
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/normal.png": {
+      "sha256": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316",
+      "bytes": 9874807
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/roughness.png": {
+      "sha256": "aeccc6b8aeaf356e7478395d47d4f0e1c7e18e105f799851d2fbe19c5682f1ec",
+      "bytes": 4060101
+    },
+    "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.blend": {
+      "sha256": "fa48f2e488f7c05103f3d65a918279bcae0b79c78ef849d86b9283d4cca908cd",
+      "bytes": 56226430
+    },
+    "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.glb": {
+      "sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+      "bytes": 50018792
+    }
+  },
+  "uv": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 659908,
+    "islands": 2993,
+    "td_px_per_m": 286.7,
+    "td_face_spread_p95_p05": 1.06,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      286.4,
+      286.7
+    ],
+    "angle_err_mean_deg": 1.08,
+    "angle_err_p95_deg": 5.06,
+    "area_stretch_p95_log2": 0.12,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.3586,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 38.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 38.0,
+    "gap_required_px": 16,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 2589,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.8133,
+          0.9938,
+          0.8135
+        ]
+      },
+      {
+        "island": 17,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.4893,
+          0.8392,
+          0.4893,
+          0.8409
+        ]
+      },
+      {
+        "island": 2179,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7214,
+          0.9941,
+          0.7215
+        ]
+      },
+      {
+        "island": 853,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.552,
+          0.9723,
+          0.5522,
+          0.9729
+        ]
+      },
+      {
+        "island": 37,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9289,
+          0.5855,
+          0.9298,
+          0.5856
+        ]
+      },
+      {
+        "island": 0,
+        "faces": 1,
+        "td": 286.5,
+        "area_m2": 2e-05,
+        "uv_px": 2,
+        "flipped": 0,
+        "bbox": [
+          0.983,
+          0.9085,
+          0.9835,
+          0.9089
+        ]
+      },
+      {
+        "island": 859,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.1098,
+          0.9942,
+          0.1099
+        ]
+      },
+      {
+        "island": 2813,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.691,
+          0.9941,
+          0.6911
+        ]
+      },
+      {
+        "island": 1753,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.6091,
+          0.9941,
+          0.6092
+        ]
+      },
+      {
+        "island": 611,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9722,
+          0.5008,
+          0.9729,
+          0.501
+        ]
+      },
+      {
+        "island": 2922,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.8731,
+          0.9507,
+          0.8732,
+          0.9515
+        ]
+      },
+      {
+        "island": 1898,
+        "faces": 2,
+        "td": 286.7,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7931,
+          0.994,
+          0.7931
+        ]
+      }
+    ]
+  },
+  "projection": {
+    "measured": {
+      "samples": 3511,
+      "outward_q": 0.00113,
+      "inward_q": 0.00131,
+      "outward_max": 0.00119,
+      "inward_max": 0.00141,
+      "cage_extrusion": 0.00201,
+      "max_ray_distance": 0.00421,
+      "miss_pct": 0.0,
+      "uncovered_pct": 0.0,
+      "wrong_part_pct": 0.0,
+      "search": 0.06,
+      "quantile": 0.999
+    },
+    "baseline": {
+      "samples": 3513,
+      "outward_q": 0.00149,
+      "inward_q": 0.00184,
+      "outward_max": 0.00179,
+      "inward_max": 0.00218,
+      "cage_extrusion": 0.00241,
+      "max_ray_distance": 0.0052,
+      "miss_pct": 0.0,
+      "uncovered_pct": 0.0,
+      "wrong_part_pct": 0.03,
+      "search": 0.06,
+      "quantile": 0.999
+    },
+    "used": {
+      "samples": 3511,
+      "outward_q": 0.00113,
+      "inward_q": 0.00131,
+      "outward_max": 0.00119,
+      "inward_max": 0.00141,
+      "cage_extrusion": 0.00241,
+      "max_ray_distance": 0.0052,
+      "miss_pct": 0.0,
+      "uncovered_pct": 0.0,
+      "wrong_part_pct": 0.0,
+      "search": 0.06,
+      "quantile": 0.999
+    },
+    "method": "Measured changed pair; do not reduce the already validated baseline ray envelope on unchanged thin beds"
+  },
+  "game_geometry_uv_normal_sha256": "ebd57d8c7e1f5b21e4ca51b68987d4c6b4f1615bba8f59bf8da549368cc7e131",
+  "maps": {
+    "normal": {
+      "path": "art/source/environment/mars-outcrop-hifi-r2/stages/16-local-surface-4k/textures/normal.png",
+      "sha256": "28e4149f7823926244e539f5ad87024dec51a831a287e32db543e4f31edbf9eb",
+      "bytes": 9880050,
+      "size": [
+        4096,
+        4096
+      ],
+      "png_bit_depth": 8,
+      "neutral_border_pixel": [
+        128,
+        128,
+        255
+      ]
+    },
+    "base_color": {
+      "path": "art/source/environment/mars-outcrop-hifi-r2/stages/16-local-surface-4k/textures/base_color.png",
+      "sha256": "70b408cecf48b541acf2eea152432dec6c3902007fe1380563ef839b5478b393",
+      "bytes": 4334592,
+      "size": [
+        4096,
+        4096
+      ],
+      "png_bit_depth": 8,
+      "neutral_border_pixel": [
+        129,
+        122,
+        115
+      ]
+    },
+    "roughness": {
+      "path": "art/source/environment/mars-outcrop-hifi-r2/stages/16-local-surface-4k/textures/roughness.png",
+      "sha256": "b3fa100da83c8085b6307e8421f105eef309643db7581483e74fc648c06bf9cf",
+      "bytes": 3921357,
+      "size": [
+        4096,
+        4096
+      ],
+      "png_bit_depth": 8,
+      "neutral_border_pixel": [
+        217,
+        217,
+        217
+      ]
+    }
+  },
+  "normal_sanity": {
+    "pixels": 6016566,
+    "inverted_pct": 0.001,
+    "flat_exact_pct": 16.79,
+    "bad_length_pct": 0.0,
+    "steep_pct": 0.002,
+    "mean": [
+      0.5,
+      0.5,
+      1.0
+    ],
+    "std": [
+      0.015,
+      0.012,
+      0.004
+    ],
+    "nan": 0,
+    "problems": [],
+    "notes": []
+  },
+  "material_audit": [],
+  "removed_stage_attributes": [
+    "HIGH_ParentSandstone:stage15_original_vertex",
+    "HIGH_ParentSandstone:stage15_original_position",
+    "HIGH_ParentSandstone:stage15_original_face",
+    "MarsOutcrop:stage15_original_vertex",
+    "MarsOutcrop:stage15_original_position",
+    "MarsOutcrop:stage15_original_face"
+  ],
+  "files": {
+    "candidate.blend": {
+      "sha256": "0c1aa0b36ace114b4460f7cccf6e46951cbb9a949b098d8d43146af2d92b513c",
+      "bytes": 87623481
+    },
+    "candidate.glb": {
+      "sha256": "02755e2750e34a88864ab248b3b01c013165590e3d65221ff65610bee2fd9635",
+      "bytes": 43071496
+    }
+  },
+  "formal_files_changed": false,
+  "source_material": "Original stage11 graph and masks adjusted only for the accepted true local erosion; stage14 cloud graph not present",
+  "runtime_lighting_changed": false,
+  "native_validation": "native-import.json",
+  "author_opened_current_baked_images": [
+    "baked-detail.png",
+    "baked-rear.png",
+    "baked-bed-close.png",
+    "baked-rear-close.png"
+  ]
+}

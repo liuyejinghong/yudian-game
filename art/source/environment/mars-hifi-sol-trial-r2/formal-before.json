@@ -1,0 +1,18 @@
+{
+  "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend": {
+    "sha256": "94ff01a08b6ef25a30dafeb2db2cb56c93589aeee280b23cf151ca705fa42ea0",
+    "bytes": 102824670
+  },
+  "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb": {
+    "sha256": "ae5722b19aa99a1e3a0e5333d41eb5544ac9c2295c35685be9f41f5b05df4e78",
+    "bytes": 53028780
+  },
+  "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.blend": {
+    "sha256": "fa48f2e488f7c05103f3d65a918279bcae0b79c78ef849d86b9283d4cca908cd",
+    "bytes": 56226430
+  },
+  "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.glb": {
+    "sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+    "bytes": 50018792
+  }
+}

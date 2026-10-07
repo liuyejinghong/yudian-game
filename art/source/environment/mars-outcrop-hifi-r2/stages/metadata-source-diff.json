@@ -1,0 +1,24 @@
+{
+  "meshes": {
+    "missing": [],
+    "added": [],
+    "changed": {}
+  },
+  "objects": {
+    "missing": [],
+    "added": [],
+    "changed": {}
+  },
+  "material_graphs": {
+    "missing": [
+      "REVIEW_Neutral_Clay"
+    ],
+    "added": [],
+    "changed": {}
+  },
+  "packed_images": {
+    "missing": [],
+    "added": [],
+    "changed": {}
+  }
+}

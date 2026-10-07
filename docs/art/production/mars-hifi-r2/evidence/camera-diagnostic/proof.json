@@ -1,0 +1,22 @@
+{
+  "gpu_format": 4,
+  "gpu_size": [
+    4096,
+    4096
+  ],
+  "method": "same Blender camera eye/target/lens and 1500x1100 viewport; lighting comparison is approximate across engines",
+  "normal_scale": 1.0,
+  "sampled_pixels": 2048,
+  "sampled_rgb_max_error": 0.0,
+  "source_format": 4,
+  "source_unchanged": true,
+  "camera_script_sha256": "807f3ce9c7dda235a061fb81e8750b3e1e080f4b1a90ac247b91989a7d3a50da",
+  "asset_sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+  "frames_sha256": {
+    "bed-camera.png": "e371734e452af00c9e1ccc6590c78441bb8d0818cda05faa5d21cf9554ac841b",
+    "rear-camera.png": "316d248406c83aa5832212de539057c66249798b91c3ba6d693187251833206c",
+    "bed-normal.png": "ab2ab6b382f2ee3566dfca83fd2bbc84a227b1e03cc8b55ceff2d30e61c23baa",
+    "bed-camera-light-axis.png": "2ba5d31fa7893e2c9bcd8bf4dd6b7c7fb25a3e6037bdf0e6e6222ed271f622bd",
+    "rear-camera-light-axis.png": "89b75a1aa9c98139ad31641deb8fad5f551452d43e81b0a413a88317520677b1"
+  }
+}

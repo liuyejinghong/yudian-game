@@ -1,0 +1,193 @@
+{
+  "method": "architect continuous shallow-surface re-plan",
+  "field_statistics": [
+    {
+      "region": "right_cut_exposure",
+      "sampling_step_m": 0.001,
+      "interior_definition": "envelope > 0.8",
+      "interior_depth_quantiles_m": [
+        0.00048321430152937817,
+        0.001915461796093069,
+        0.0038164516341491817,
+        0.005593534719595417,
+        0.007347734881856258
+      ],
+      "interior_slope_degrees_quantiles": [
+        1.5661082720302464,
+        4.666289430703379,
+        9.131229303602025,
+        13.596091031508927
+      ],
+      "interior_slope_below_1_degree_fraction": 0.0499752229128138,
+      "highest_10pct_interior_area_slope_energy_fraction": 0.375099947943096
+    },
+    {
+      "region": "rear_old_exposure",
+      "sampling_step_m": 0.001,
+      "interior_definition": "envelope > 0.8",
+      "interior_depth_quantiles_m": [
+        0.0005415206527532875,
+        0.002006463018325771,
+        0.003936098705239014,
+        0.005695165430651787,
+        0.00753422706158598
+      ],
+      "interior_slope_degrees_quantiles": [
+        1.716189037080196,
+        4.932888002999684,
+        10.126324477147993,
+        14.344212141071765
+      ],
+      "interior_slope_below_1_degree_fraction": 0.03979703181854014,
+      "highest_10pct_interior_area_slope_energy_fraction": 0.3670577685557198
+    }
+  ],
+  "high": {
+    "triangles_before": 1294756,
+    "triangles_after": 1294746,
+    "new_subdivision": false,
+    "local_degenerate_tolerance_m": 1e-05,
+    "micro_sliver_diagonal_repairs": [],
+    "exposures": [
+      {
+        "name": "right_cut_exposure",
+        "definition": {
+          "type": "continuous connected shallow erosion",
+          "nominal_scales_m": [
+            0.02,
+            0.08
+          ],
+          "nominal_depth_m": [
+            0.002,
+            0.006
+          ],
+          "maximum_depth_m": 0.008,
+          "edge_fade_width_m": [
+            0.125,
+            0.145
+          ],
+          "direction": "weak layer alignment; warped non-periodic fields; no contour cut"
+        },
+        "changed_vertices": 72571,
+        "max_depth_m": 0.007349043543626354
+      },
+      {
+        "name": "rear_old_exposure",
+        "definition": {
+          "type": "continuous connected shallow erosion",
+          "nominal_scales_m": [
+            0.02,
+            0.08
+          ],
+          "nominal_depth_m": [
+            0.002,
+            0.006
+          ],
+          "maximum_depth_m": 0.008,
+          "edge_fade_width_m": [
+            0.125,
+            0.145
+          ],
+          "direction": "weak layer alignment; warped non-periodic fields; no contour cut"
+        },
+        "changed_vertices": 70237,
+        "max_depth_m": 0.0075319473266625605
+      }
+    ],
+    "max_depth_m": 0.0075319473266625605
+  },
+  "game": {
+    "triangles_before": 660004,
+    "triangles_after": 659908,
+    "new_subdivision": false,
+    "local_degenerate_tolerance_m": 1e-05,
+    "micro_sliver_diagonal_repairs": [
+      {
+        "original_face": 19462,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 20861,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 110498,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 22509,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 122984,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 110543,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 22076,
+        "area_error": 0.0
+      }
+    ],
+    "exposures": [
+      {
+        "name": "right_cut_exposure",
+        "definition": {
+          "type": "continuous connected shallow erosion",
+          "nominal_scales_m": [
+            0.02,
+            0.08
+          ],
+          "nominal_depth_m": [
+            0.002,
+            0.006
+          ],
+          "maximum_depth_m": 0.008,
+          "edge_fade_width_m": [
+            0.125,
+            0.145
+          ],
+          "direction": "weak layer alignment; warped non-periodic fields; no contour cut"
+        },
+        "changed_vertices": 43389,
+        "max_depth_m": 0.007347527800465993
+      },
+      {
+        "name": "rear_old_exposure",
+        "definition": {
+          "type": "continuous connected shallow erosion",
+          "nominal_scales_m": [
+            0.02,
+            0.08
+          ],
+          "nominal_depth_m": [
+            0.002,
+            0.006
+          ],
+          "maximum_depth_m": 0.008,
+          "edge_fade_width_m": [
+            0.125,
+            0.145
+          ],
+          "direction": "weak layer alignment; warped non-periodic fields; no contour cut"
+        },
+        "changed_vertices": 127014,
+        "max_depth_m": 0.0075327223448523935
+      }
+    ],
+    "max_depth_m": 0.0075327223448523935
+  },
+  "status": "PENDING_ACTUAL_GRAY_AND_SOURCE_REVIEW_BEFORE_4K_BAKE",
+  "formal_identities": {
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend": {
+      "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+      "bytes": 52451110
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb": {
+      "sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+      "bytes": 27662108
+    }
+  }
+}

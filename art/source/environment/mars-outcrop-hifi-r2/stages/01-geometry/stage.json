@@ -1,0 +1,73 @@
+{
+  "blender": "5.2.2 LTS",
+  "stage": "geometry-before-material",
+  "objects": [
+    {
+      "name": "HIGH_WestCrown",
+      "vertices": 96322,
+      "polygons": 96664,
+      "dimensions": [
+        2.322547197341919,
+        2.2930970191955566,
+        2.1951472759246826
+      ]
+    },
+    {
+      "name": "HIGH_CentralJoint",
+      "vertices": 88234,
+      "polygons": 88560,
+      "dimensions": [
+        1.9362130165100098,
+        2.527925491333008,
+        2.0762627124786377
+      ]
+    },
+    {
+      "name": "HIGH_EastWedge",
+      "vertices": 69312,
+      "polygons": 69600,
+      "dimensions": [
+        1.8124446868896484,
+        2.1939477920532227,
+        1.7772102355957031
+      ]
+    },
+    {
+      "name": "HIGH_FrontTalus",
+      "vertices": 33442,
+      "polygons": 33660,
+      "dimensions": [
+        2.0685667991638184,
+        0.9498957991600037,
+        1.032523512840271
+      ]
+    },
+    {
+      "name": "HIGH_ForeButtress",
+      "vertices": 43122,
+      "polygons": 43365,
+      "dimensions": [
+        2.1310486793518066,
+        1.2763457298278809,
+        1.2802631855010986
+      ]
+    },
+    {
+      "name": "HIGH_RearHeel",
+      "vertices": 34346,
+      "polygons": 34556,
+      "dimensions": [
+        2.0992465019226074,
+        0.9053531885147095,
+        1.0927603244781494
+      ]
+    }
+  ],
+  "sources_read": [
+    "stimson-close.jpg",
+    "murray-buttes-shape.jpg",
+    "color-processing.jpg"
+  ],
+  "visual_gate": "PENDING_ROOT_AND_OPEN_IMAGE",
+  "old_generator_used": false
+}

@@ -1,0 +1,470 @@
+{
+  "method": "40 degree orientation charts restricted to measured winding branch",
+  "affected_faces": 7228,
+  "geometry_changed": false,
+  "geometry_vertex_sha256": "f94a58f29ba6d83f32261321e5b740db6f3fcd428a25f39611a4f8736b2b0d8c",
+  "outside_uv_delta_before_pack": 0.0,
+  "qa": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 227160,
+    "islands": 2993,
+    "td_px_per_m": 286.7,
+    "td_face_spread_p95_p05": 1.06,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      286.4,
+      286.7
+    ],
+    "angle_err_mean_deg": 2.23,
+    "angle_err_p95_deg": 9.28,
+    "area_stretch_p95_log2": 0.23,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.3585,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 36.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 36.0,
+    "gap_required_px": 16,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 2591,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.8133,
+          0.9938,
+          0.8135
+        ]
+      },
+      {
+        "island": 17,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.4893,
+          0.8392,
+          0.4893,
+          0.8409
+        ]
+      },
+      {
+        "island": 2181,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7214,
+          0.9941,
+          0.7215
+        ]
+      },
+      {
+        "island": 854,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.552,
+          0.9723,
+          0.5522,
+          0.9729
+        ]
+      },
+      {
+        "island": 37,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9289,
+          0.5855,
+          0.9298,
+          0.5856
+        ]
+      },
+      {
+        "island": 1990,
+        "faces": 5,
+        "td": 286.5,
+        "area_m2": 0.00035,
+        "uv_px": 29,
+        "flipped": 0,
+        "bbox": [
+          0.1149,
+          0.8142,
+          0.1157,
+          0.8171
+        ]
+      },
+      {
+        "island": 860,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.1098,
+          0.9942,
+          0.1099
+        ]
+      },
+      {
+        "island": 1755,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.6091,
+          0.9941,
+          0.6092
+        ]
+      },
+      {
+        "island": 2924,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.8731,
+          0.9507,
+          0.8732,
+          0.9515
+        ]
+      },
+      {
+        "island": 611,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9722,
+          0.5008,
+          0.9729,
+          0.501
+        ]
+      },
+      {
+        "island": 2815,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.691,
+          0.9941,
+          0.6911
+        ]
+      },
+      {
+        "island": 1900,
+        "faces": 2,
+        "td": 286.7,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7931,
+          0.994,
+          0.7931
+        ]
+      }
+    ]
+  },
+  "qa_2048": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 227160,
+    "islands": 2993,
+    "td_px_per_m": 286.7,
+    "td_face_spread_p95_p05": 1.06,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      286.4,
+      286.7
+    ],
+    "angle_err_mean_deg": 2.23,
+    "angle_err_p95_deg": 9.28,
+    "area_stretch_p95_log2": 0.23,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.3586,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 38.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 38.0,
+    "gap_required_px": 16,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 2591,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.8133,
+          0.9938,
+          0.8135
+        ]
+      },
+      {
+        "island": 17,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.4893,
+          0.8392,
+          0.4893,
+          0.8409
+        ]
+      },
+      {
+        "island": 2181,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7214,
+          0.9941,
+          0.7215
+        ]
+      },
+      {
+        "island": 854,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.552,
+          0.9723,
+          0.5522,
+          0.9729
+        ]
+      },
+      {
+        "island": 37,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9289,
+          0.5855,
+          0.9298,
+          0.5856
+        ]
+      },
+      {
+        "island": 1990,
+        "faces": 5,
+        "td": 286.5,
+        "area_m2": 0.00035,
+        "uv_px": 29,
+        "flipped": 0,
+        "bbox": [
+          0.1149,
+          0.8142,
+          0.1157,
+          0.8171
+        ]
+      },
+      {
+        "island": 860,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.1098,
+          0.9942,
+          0.1099
+        ]
+      },
+      {
+        "island": 1755,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.6091,
+          0.9941,
+          0.6092
+        ]
+      },
+      {
+        "island": 2924,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.8731,
+          0.9507,
+          0.8732,
+          0.9515
+        ]
+      },
+      {
+        "island": 611,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9722,
+          0.5008,
+          0.9729,
+          0.501
+        ]
+      },
+      {
+        "island": 2815,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.691,
+          0.9941,
+          0.6911
+        ]
+      },
+      {
+        "island": 1900,
+        "faces": 2,
+        "td": 286.7,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7931,
+          0.994,
+          0.7931
+        ]
+      }
+    ]
+  },
+  "remaining": []
+}

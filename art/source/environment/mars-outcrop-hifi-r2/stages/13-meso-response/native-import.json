@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "independent_blender_import": true,
+  "triangles": 227160,
+  "images": [
+    [
+      512,
+      512
+    ],
+    [
+      512,
+      512
+    ],
+    [
+      4096,
+      4096
+    ]
+  ],
+  "candidate_glb_sha256": "cbbd27adf23e96c8aeae44cbe03b3c368a618396bbd9924bce3857a8b356b0ba"
+}

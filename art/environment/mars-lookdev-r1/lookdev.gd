@@ -4,7 +4,9 @@ const VIEWS := {
 	"normal": [Vector3(25.12,28.8,26.3),Vector3(4,0,-2.5),50.0],
 	"near": [Vector3(12,4.2,9),Vector3(6,.8,0),50.0],
 	"reverse": [Vector3(-1,3.4,-8),Vector3(6,.8,0),50.0],
-	"horizon": [Vector3(20,3,22),Vector3(-25,2,-80),62.0]
+	"horizon": [Vector3(20,3,22),Vector3(-25,2,-80),62.0],
+	"detail": [Vector3(8.5,2.4,3.7),Vector3(6.4,1,0),50.0],
+	"ground": [Vector3(12,1.2,7),Vector3(9.2,.15,3.5),50.0]
 }
 var camera: Camera3D
 var note: Label
@@ -12,9 +14,11 @@ var low := false
 var view := "normal"
 var ground: Node3D
 var hero: Node3D
+var patch: Node3D
 var sources: Array[Dictionary] = []
 var output := ""
 var dragging := false
+var hifi := OS.get_environment("YUDIAN_MARS_HIFI") == "1"
 
 func _ready() -> void:
 	output = OS.get_environment("YUDIAN_MARS_OUTPUT")
@@ -22,10 +26,15 @@ func _ready() -> void:
 		_fail("capture directory must be new")
 		return
 	_light()
-	ground = _asset("res://ground/mars-ground-r1.glb",Vector3.ZERO)
-	hero = _asset("res://hero/mars-outcrop-r1.glb",Vector3(6,0,0))
+	ground = _asset("res://hifi/ground-with-patch-hole.glb" if hifi else "res://ground/mars-ground-r1.glb",Vector3.ZERO)
+	hero = _asset("res://hifi/mars-outcrop-hifi-r2.glb" if hifi else "res://hero/mars-outcrop-r1.glb",Vector3(6,0,0))
 	if ground == null or hero == null:
 		return
+	if hifi:
+		patch = _asset("res://hifi/mars-ground-patch-hifi-r2.glb",Vector3(6,0,0))
+		if patch == null:
+			return
+		DisplayServer.window_set_title("余电 · 火星高保真看样 r2")
 	_ground_materials()
 	_asset("res://anchors/tuoyun.glb",Vector3(-5,0,5))
 	_asset("res://anchors/solar.glb",Vector3(0,0,-6))
@@ -73,8 +82,18 @@ func _mesh_bounds(mesh: MeshInstance3D, ancestor: Node3D) -> AABB:
 	return relative * mesh.get_aabb()
 
 func _ground_materials() -> void:
-	var soil := ShaderMaterial.new()
-	soil.shader = load("res://ground.gdshader")
+	var soil: Material
+	if hifi:
+		for mesh in patch.find_children("*","MeshInstance3D",true,false):
+			if "SandApron" in str(mesh.name):
+				soil = mesh.mesh.surface_get_material(0)
+		if soil == null:
+			_fail("patch sand material missing")
+			return
+	else:
+		var original_soil := ShaderMaterial.new()
+		original_soil.shader = load("res://ground.gdshader")
+		soil = original_soil
 	var changed := 0
 	for mesh in ground.find_children("*","MeshInstance3D",true,false):
 		for surface in range(mesh.mesh.get_surface_count()):
@@ -147,7 +166,9 @@ func _set_view(id: String) -> void:
 	_note()
 
 func _note() -> void:
-	note.text = "余电 · 火星环境看样 r1  |  "+view+(" / LOW" if low else "")+"\nGale / Stimson 砂岩参考 · 原创场景 · 设备为现役尺度参照\n1 正常   2 近景   3 地平线   4 反向   L 低画质   H 隐藏说明   右键拖动   Esc 退出"
+	note.text = ("余电 · 火星高保真看样 r2  |  " if hifi else "余电 · 火星环境看样 r1  |  ")+view+(" / LOW" if low else "")+"\nGale / Stimson 砂岩参考 · 原创场景 · 设备为现役尺度参照\n1 正常   2 近景   3 地平线   4 反向   L 低画质   H 隐藏说明   右键拖动   Esc 退出"
+	if hifi:
+		note.text += "   5 岩面细节   6 地表细节"
 
 func _quality(value: bool) -> void:
 	low = value
@@ -165,6 +186,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_2: _set_view("near")
 			KEY_3: _set_view("horizon")
 			KEY_4: _set_view("reverse")
+			KEY_5:
+				if hifi: _set_view("detail")
+			KEY_6:
+				if hifi: _set_view("ground")
 			KEY_L: _quality(not low)
 			KEY_H: note.visible = not note.visible
 			KEY_ESCAPE: get_tree().quit()
@@ -181,7 +206,10 @@ func _capture() -> void:
 	var frames := {}
 	for i in range(40):
 		await get_tree().process_frame
-	for id in ["normal","near","reverse","horizon","normal-low"]:
+	var ids := ["normal","near","reverse","horizon","normal-low"]
+	if hifi:
+		ids.append_array(["detail","ground"])
+	for id in ids:
 		_quality(id == "normal-low")
 		_set_view("normal" if low else id)
 		for i in range(5):
@@ -199,10 +227,10 @@ func _capture() -> void:
 		if FileAccess.get_sha256("res://"+row.file) != row.sha256:
 			_fail("source changed during capture")
 			return
-	var record := {"scope":"independent original Mars art lookdev; no Main or simulation", "engine":Engine.get_version_info().string,"driver":RenderingServer.get_current_rendering_driver_name(),"viewport_px":[get_viewport().size.x,get_viewport().size.y],"assets":sources,"sources":files,"frames":frames,"source_unchanged":true,"owner_visual_acceptance":"NOT_RUN","scene_performance":"NOT_RUN"}
+	var record := {"scope":"independent original Mars art lookdev; no Main or simulation", "candidate":"hifi-r2" if hifi else "r1", "engine":Engine.get_version_info().string,"driver":RenderingServer.get_current_rendering_driver_name(),"viewport_px":[get_viewport().size.x,get_viewport().size.y],"assets":sources,"sources":files,"frames":frames,"source_unchanged":true,"owner_visual_acceptance":"NOT_RUN","scene_performance":"NOT_RUN"}
 	var file := FileAccess.open(output.path_join("capture.json"),FileAccess.WRITE)
 	file.store_string(JSON.stringify(record,"\t")+"\n")
-	print("MARS_LOOKDEV_CAPTURE_OK frames=5 sources_unchanged=true")
+	print("MARS_LOOKDEV_CAPTURE_OK frames=",frames.size()," sources_unchanged=true")
 	get_tree().quit()
 
 func _fail(message: String) -> void:

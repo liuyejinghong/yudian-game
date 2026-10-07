@@ -1,0 +1,21 @@
+{
+  "blender": "5.2.2 LTS",
+  "r1_source_unchanged": true,
+  "r1_source_sha256": "ac8473937a3ab2dc15c8125f62ab74e4e06451209a851a5da7fb4e98d30a0fbb",
+  "hole_world_xz_m": [
+    0,
+    12,
+    -6,
+    6
+  ],
+  "patch_sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+  "matching_edge_vertices": 600,
+  "edge_normals": "copied from delivered patch",
+  "support_uv": "mirrored 12 m world UV, continuous at all four patch edges",
+  "removed": {
+    "Regolith_Continuous": 36,
+    "Bedrock_BrokenSlabs": 0,
+    "Clast_BrokenSlabs": 3000
+  },
+  "output_glb_sha256": "2493622470df2a0c4194bb35357c0b856d6e77fe595cc63c046528a784cf0791"
+}

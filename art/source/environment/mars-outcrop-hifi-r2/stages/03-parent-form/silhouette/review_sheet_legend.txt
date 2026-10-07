@@ -1,0 +1,5 @@
+rows x cols (top-left first):
+silhouette / front
+silhouette / back
+silhouette / top
+silhouette / threequarter

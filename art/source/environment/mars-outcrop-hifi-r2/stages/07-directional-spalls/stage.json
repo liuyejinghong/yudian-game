@@ -1,0 +1,14 @@
+{
+  "version": "5.2.2 LTS",
+  "stage": "07-directional-spalls",
+  "voxel_m": 0.014,
+  "triangles": 934920,
+  "dimensions": [
+    6.145660400390625,
+    3.929037570953369,
+    2.3209521770477295
+  ],
+  "micrograin": false,
+  "midscale_erosion": "local 2\u201320 cm bed/rim losses",
+  "visual_gate": "PENDING_OPEN_IMAGES_AND_INDEPENDENT_REVIEW"
+}

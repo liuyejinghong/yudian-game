@@ -1,0 +1,9 @@
+{
+  "version": "5.2.2 LTS",
+  "boundary_max_error_m": 6.120716076335464e-09,
+  "boundary_contract": "r1 height(x+6,-y)",
+  "source_triangles": 2170080,
+  "high_objects": 315,
+  "visual": "PENDING_OPEN_IMAGE",
+  "status": "SHAPE_BUILT"
+}

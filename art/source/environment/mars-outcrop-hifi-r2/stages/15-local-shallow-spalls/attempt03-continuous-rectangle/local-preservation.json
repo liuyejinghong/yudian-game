@@ -1,0 +1,13 @@
+{
+  "max_corner_uv_interpolation_error": 2.625847721482444e-07,
+  "max_uv_area_partition_error": 9.057945504764575e-10,
+  "outside_exposure_corner_normal_max_delta": 0.0007672744285571649,
+  "outside_exposure_corner_normal_p99_delta": 0.0004774958482809748,
+  "uv_negative_area_triangles": 7,
+  "uv_effectively_zero_area_triangles": 0,
+  "non_triangular_polygons": 0,
+  "triangles": 659908,
+  "max_vertex_displacement_m": 0.007532772142440081,
+  "macro_bounds_max_delta": 0.0,
+  "status": "REWORK"
+}

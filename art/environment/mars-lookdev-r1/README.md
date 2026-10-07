@@ -18,3 +18,11 @@ Godot --headless --path art/environment/mars-lookdev-r1 --script res://check_inp
 ```
 
 输出目录须不存在，防止覆盖证据；生成5张PNG与capture.json。capture记录实际引擎/driver/viewport、相机/画质、导入AABB/triangles、源与帧hash，并确认源未变。主控另做保存blend重开再导出。截图/技术检查不能代替所有者审美接受或Main集成、模拟/保存/导航、整场性能与真人交互测试。
+
+## 高保真候选 r2
+
+`open-hifi.command` 切换到两件高保真素材，共用上述场景、光照和四个镜头；增加 `5` 岩面细节、`6` 地表细节。它需要 `hifi/` 中露头与地表候选GLB；制作状态见 [r2计划](../../../docs/art/production/mars-hifi-r2/PLAN.md)。默认入口仍打开r1。
+
+高保真捕获使用 `YUDIAN_MARS_HIFI=1 YUDIAN_MARS_OUTPUT=/new/output/dir`，输出七张PNG；输入检查也需设置 `YUDIAN_MARS_HIFI=1`。`verify.py`核对实际源身份、镜头与画质、GLB内嵌贴图与Godot提取PNG的字节一致性。地表放在世界 `(6,0,0)`，支撑地面挖出真实12m方孔；`check_join.py`在Blender内读取两个交付GLB，检查实际边界插值与间隙，不能以解析函数相等代替。
+
+返工候选尚未进入正式源时，校验可显式传 `--outcrop-candidate /path/to/candidate.glb`；其SHA必须与当前runtime完全一致。默认仍严格核对正式源，不能凭候选检查通过声称已交付。

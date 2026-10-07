@@ -1,0 +1,39 @@
+{
+  "before": {
+    "GAME_MarsOutcrop": {
+      "users": 1,
+      "fake_user": false,
+      "objects": [
+        "MarsOutcrop"
+      ]
+    },
+    "REVIEW_Neutral_Clay": {
+      "users": 0,
+      "fake_user": false,
+      "objects": []
+    },
+    "SOURCE_rock_HIGH_ParentSandstone": {
+      "users": 1,
+      "fake_user": false,
+      "objects": [
+        "HIGH_ParentSandstone"
+      ]
+    }
+  },
+  "after": {
+    "GAME_MarsOutcrop": {
+      "users": 1,
+      "fake_user": false,
+      "objects": [
+        "MarsOutcrop"
+      ]
+    },
+    "SOURCE_rock_HIGH_ParentSandstone": {
+      "users": 1,
+      "fake_user": false,
+      "objects": [
+        "HIGH_ParentSandstone"
+      ]
+    }
+  }
+}

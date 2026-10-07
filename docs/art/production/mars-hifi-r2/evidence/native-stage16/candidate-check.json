@@ -1,0 +1,21 @@
+{
+  "status": "TECHNICAL_PASS_VISUAL_REWORK",
+  "candidate_glb_sha256": "02755e2750e34a88864ab248b3b01c013165590e3d65221ff65610bee2fd9635",
+  "candidate_source_sha256": "0c1aa0b36ace114b4460f7cccf6e46951cbb9a949b098d8d43146af2d92b513c",
+  "native_capture_sha256": "ea52c5c26097bd46317ac056bb7dc9cabc2636a5a6ddf5db658ebf4bcfe4e434",
+  "verifier_sha256": "64089573fe68bdbfaaa3e3c9e5f9a739ab4685a8973bd5b6586d480aacce9034",
+  "command": "python3 art/environment/mars-lookdev-r1/verify.py docs/art/production/mars-hifi-r2/evidence/native-stage16 --outcrop-candidate art/source/environment/mars-outcrop-hifi-r2/stages/16-local-surface-4k/candidate.glb",
+  "actual_native_frames": 7,
+  "embedded_vs_imported_png_equal": true,
+  "formal_files_unchanged": true,
+  "final_formal_source": "not promoted yet",
+  "root_pixel_viewed_frames": [
+    "normal",
+    "near",
+    "reverse",
+    "horizon",
+    "normal-low",
+    "detail",
+    "ground"
+  ]
+}

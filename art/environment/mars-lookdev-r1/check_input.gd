@@ -11,9 +11,13 @@ func _check() -> void:
 	var scene: Node3D = load("res://lookdev.tscn").instantiate()
 	root.add_child(scene)
 	await process_frame
-	for row in [[KEY_3,"horizon"],[KEY_2,"near"],[KEY_4,"reverse"],[KEY_1,"normal"]]:
+	var views := [[KEY_3,"horizon"],[KEY_2,"near"],[KEY_4,"reverse"],[KEY_1,"normal"]]
+	if scene.hifi:
+		views.append_array([[KEY_5,"detail"],[KEY_6,"ground"]])
+	for row in views:
 		_key(scene,row[0])
 		assert(scene.view == row[1])
+	_key(scene,KEY_1)
 	_key(scene,KEY_L)
 	assert(scene.low and root.scaling_3d_scale < 1.0)
 	_key(scene,KEY_L)
@@ -37,7 +41,7 @@ func _check() -> void:
 	scene._unhandled_input(button)
 	_key(scene,KEY_1)
 	assert(scene.camera.transform.is_equal_approx(pose))
-	print("MARS_LOOKDEV_INPUT_OK views=4 low_toggle=true label_toggle=true drag_reset=true")
+	print("MARS_LOOKDEV_INPUT_OK views=",views.size()," low_toggle=true label_toggle=true drag_reset=true")
 	quit()
 
 func _key(scene: Node3D, code: int) -> void:

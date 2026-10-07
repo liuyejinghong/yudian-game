@@ -1,0 +1,91 @@
+{
+  "version": "5.2.2 LTS",
+  "version_tuple": [
+    5,
+    2,
+    2
+  ],
+  "device": "CPU",
+  "threads": 6,
+  "projection": {
+    "samples": 794,
+    "outward_q": 0.01322,
+    "inward_q": 0.03108,
+    "outward_max": 0.01718,
+    "inward_max": 0.03222,
+    "cage_extrusion": 0.01489,
+    "max_ray_distance": 0.04942,
+    "miss_pct": 0.0,
+    "uncovered_pct": 0.13,
+    "wrong_part_pct": 0.0,
+    "search": 0.2771,
+    "quantile": 0.995
+  },
+  "bake": [
+    "FINISHED"
+  ],
+  "low_audit": {
+    "object": "COMPAT_Low",
+    "verts": 266,
+    "edges": 552,
+    "faces": 288,
+    "tris_equivalent": 528,
+    "tris": 48,
+    "quads": 240,
+    "ngons": 0,
+    "quads_pct": 83.33,
+    "valence_hist_interior": {
+      "4": 264,
+      "24": 2
+    },
+    "poles_e3": 0,
+    "poles_e5plus": 2,
+    "valence_6plus": 2,
+    "non_manifold_edges": 0,
+    "boundary_loops": [],
+    "loose_verts": 0,
+    "loose_edges": 0,
+    "zero_area_faces": 0,
+    "duplicate_verts": 0,
+    "flipped_faces": 0,
+    "self_intersections": 0,
+    "edge_len_mean": 0.222414,
+    "edge_len_cv": 0.28,
+    "symmetry_pct": 100.0,
+    "dimensions": [
+      2.0,
+      2.0,
+      2.0
+    ],
+    "ngon_faces_sample": [],
+    "pole_e5_sample": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    ],
+    "pole_e3_sample": []
+  },
+  "material_audit": [
+    [
+      "info",
+      "constant Roughness 0.50: roughness variation is what sells a surface"
+    ]
+  ],
+  "skill_functions": [
+    "bx_audit.audit",
+    "bx_review.review",
+    "bx_uvbake.prepare_low",
+    "bx_uvbake.measure_projection",
+    "bx_materials.pbr_from_textures",
+    "bx_materials.audit_material"
+  ],
+  "review": "verification/compat-review/review_sheet.png",
+  "status": "PASS"
+}

@@ -1,0 +1,540 @@
+{
+  "formal": {
+    "graph": [
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL",
+        "image": null,
+        "color_space": null,
+        "uv_map": null,
+        "defaults": {
+          "Displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Thickness": 0.0
+        }
+      },
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED",
+        "image": null,
+        "color_space": null,
+        "uv_map": null,
+        "defaults": {
+          "Metallic": 0.0,
+          "IOR": 1.5,
+          "Alpha": 1.0,
+          "Thin Wall": false,
+          "Weight": 0.0,
+          "Diffuse Roughness": 0.0,
+          "Subsurface Weight": 0.0,
+          "Subsurface Radius": [
+            1.0,
+            0.20000000298023224,
+            0.10000000149011612
+          ],
+          "Subsurface Scale": 0.004999999888241291,
+          "Subsurface IOR": 1.399999976158142,
+          "Subsurface Anisotropy": 0.0,
+          "Specular IOR Level": 0.5,
+          "Specular Tint": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Anisotropic": 0.0,
+          "Anisotropic Rotation": 0.0,
+          "Tangent": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Transmission Weight": 0.0,
+          "Coat Weight": 0.0,
+          "Coat Roughness": 0.029999999329447746,
+          "Coat IOR": 1.5,
+          "Coat Tint": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Coat Normal": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Sheen Weight": 0.0,
+          "Sheen Roughness": 0.5,
+          "Sheen Tint": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Emission Color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Emission Strength": 0.0,
+          "Thin Film Thickness": 0.0,
+          "Thin Film IOR": 1.3300000429153442
+        }
+      },
+      {
+        "name": "UV Map",
+        "type": "UVMAP",
+        "image": null,
+        "color_space": null,
+        "uv_map": "UVMap",
+        "defaults": {}
+      },
+      {
+        "name": "Mapping",
+        "type": "MAPPING",
+        "image": null,
+        "color_space": null,
+        "uv_map": null,
+        "defaults": {
+          "Location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "name": "Image Texture",
+        "type": "TEX_IMAGE",
+        "image": "outcrop-base_color",
+        "color_space": "sRGB",
+        "uv_map": null,
+        "defaults": {}
+      },
+      {
+        "name": "Image Texture.001",
+        "type": "TEX_IMAGE",
+        "image": "outcrop-roughness",
+        "color_space": "Non-Color",
+        "uv_map": null,
+        "defaults": {}
+      },
+      {
+        "name": "Image Texture.002",
+        "type": "TEX_IMAGE",
+        "image": "outcrop-normal",
+        "color_space": "Non-Color",
+        "uv_map": null,
+        "defaults": {}
+      },
+      {
+        "name": "Normal Map",
+        "type": "NORMAL_MAP",
+        "image": null,
+        "color_space": null,
+        "uv_map": "UVMap",
+        "defaults": {
+          "Strength": 1.0
+        }
+      }
+    ],
+    "links": [
+      [
+        "Principled BSDF",
+        "BSDF",
+        "Material Output",
+        "Surface"
+      ],
+      [
+        "UV Map",
+        "UV",
+        "Mapping",
+        "Vector"
+      ],
+      [
+        "Mapping",
+        "Vector",
+        "Image Texture",
+        "Vector"
+      ],
+      [
+        "Mapping",
+        "Vector",
+        "Image Texture.001",
+        "Vector"
+      ],
+      [
+        "Image Texture.001",
+        "Color",
+        "Principled BSDF",
+        "Roughness"
+      ],
+      [
+        "Image Texture",
+        "Color",
+        "Principled BSDF",
+        "Base Color"
+      ],
+      [
+        "Mapping",
+        "Vector",
+        "Image Texture.002",
+        "Vector"
+      ],
+      [
+        "Image Texture.002",
+        "Color",
+        "Normal Map",
+        "Color"
+      ],
+      [
+        "Normal Map",
+        "Normal",
+        "Principled BSDF",
+        "Normal"
+      ]
+    ],
+    "smooth_hash": "5c00abb0836afed1ef8362449b2dfc5cdc31234b67eafa2fd16ae45f1fc40404",
+    "corner_normals_hash": "1855ca9c88df52bd62f738665082496f5e47e6db18b085b9511b0a97c23d649c",
+    "maps": {
+      "outcrop-base_color": {
+        "size": [
+          4096,
+          4096
+        ],
+        "min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max": [
+          0.5803921818733215,
+          0.5333333611488342,
+          0.4901961088180542
+        ],
+        "black_pixels": 9443540,
+        "nan": 0
+      },
+      "outcrop-roughness": {
+        "size": [
+          4096,
+          4096
+        ],
+        "min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max": [
+          0.9411765336990356,
+          0.9411765336990356,
+          0.9411765336990356
+        ],
+        "black_pixels": 9443540,
+        "nan": 0
+      },
+      "outcrop-normal": {
+        "size": [
+          4096,
+          4096
+        ],
+        "min": [
+          0.003921568859368563,
+          0.0,
+          0.003921568859368563
+        ],
+        "max": [
+          0.988235354423523,
+          0.9960784912109375,
+          1.0
+        ],
+        "black_pixels": 0,
+        "nan": 0
+      }
+    }
+  },
+  "candidate": {
+    "graph": [
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL",
+        "image": null,
+        "color_space": null,
+        "uv_map": null,
+        "defaults": {
+          "Displacement": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Thickness": 0.0
+        }
+      },
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED",
+        "image": null,
+        "color_space": null,
+        "uv_map": null,
+        "defaults": {
+          "Metallic": 0.0,
+          "IOR": 1.5,
+          "Alpha": 1.0,
+          "Thin Wall": false,
+          "Weight": 0.0,
+          "Diffuse Roughness": 0.0,
+          "Subsurface Weight": 0.0,
+          "Subsurface Radius": [
+            1.0,
+            0.20000000298023224,
+            0.10000000149011612
+          ],
+          "Subsurface Scale": 0.004999999888241291,
+          "Subsurface IOR": 1.399999976158142,
+          "Subsurface Anisotropy": 0.0,
+          "Specular IOR Level": 0.5,
+          "Specular Tint": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Anisotropic": 0.0,
+          "Anisotropic Rotation": 0.0,
+          "Tangent": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Transmission Weight": 0.0,
+          "Coat Weight": 0.0,
+          "Coat Roughness": 0.029999999329447746,
+          "Coat IOR": 1.5,
+          "Coat Tint": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Coat Normal": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Sheen Weight": 0.0,
+          "Sheen Roughness": 0.5,
+          "Sheen Tint": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Emission Color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "Emission Strength": 0.0,
+          "Thin Film Thickness": 0.0,
+          "Thin Film IOR": 1.3300000429153442
+        }
+      },
+      {
+        "name": "UV Map",
+        "type": "UVMAP",
+        "image": null,
+        "color_space": null,
+        "uv_map": "UVMap",
+        "defaults": {}
+      },
+      {
+        "name": "Mapping",
+        "type": "MAPPING",
+        "image": null,
+        "color_space": null,
+        "uv_map": null,
+        "defaults": {
+          "Location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "Scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      {
+        "name": "Image Texture",
+        "type": "TEX_IMAGE",
+        "image": "meso-response-base_color",
+        "color_space": "sRGB",
+        "uv_map": null,
+        "defaults": {}
+      },
+      {
+        "name": "Image Texture.001",
+        "type": "TEX_IMAGE",
+        "image": "meso-response-roughness",
+        "color_space": "Non-Color",
+        "uv_map": null,
+        "defaults": {}
+      },
+      {
+        "name": "Image Texture.002",
+        "type": "TEX_IMAGE",
+        "image": "outcrop-normal",
+        "color_space": "Non-Color",
+        "uv_map": null,
+        "defaults": {}
+      },
+      {
+        "name": "Normal Map",
+        "type": "NORMAL_MAP",
+        "image": null,
+        "color_space": null,
+        "uv_map": "UVMap",
+        "defaults": {
+          "Strength": 1.0
+        }
+      }
+    ],
+    "links": [
+      [
+        "Principled BSDF",
+        "BSDF",
+        "Material Output",
+        "Surface"
+      ],
+      [
+        "UV Map",
+        "UV",
+        "Mapping",
+        "Vector"
+      ],
+      [
+        "Mapping",
+        "Vector",
+        "Image Texture",
+        "Vector"
+      ],
+      [
+        "Mapping",
+        "Vector",
+        "Image Texture.001",
+        "Vector"
+      ],
+      [
+        "Image Texture.001",
+        "Color",
+        "Principled BSDF",
+        "Roughness"
+      ],
+      [
+        "Image Texture",
+        "Color",
+        "Principled BSDF",
+        "Base Color"
+      ],
+      [
+        "Mapping",
+        "Vector",
+        "Image Texture.002",
+        "Vector"
+      ],
+      [
+        "Image Texture.002",
+        "Color",
+        "Normal Map",
+        "Color"
+      ],
+      [
+        "Normal Map",
+        "Normal",
+        "Principled BSDF",
+        "Normal"
+      ]
+    ],
+    "smooth_hash": "5c00abb0836afed1ef8362449b2dfc5cdc31234b67eafa2fd16ae45f1fc40404",
+    "corner_normals_hash": "1855ca9c88df52bd62f738665082496f5e47e6db18b085b9511b0a97c23d649c",
+    "maps": {
+      "meso-response-base_color": {
+        "size": [
+          512,
+          512
+        ],
+        "min": [
+          0.039682868868112564,
+          0.03156623616814613,
+          0.024775829166173935
+        ],
+        "max": [
+          0.29843705892562866,
+          0.25449544191360474,
+          0.21806272864341736
+        ],
+        "black_pixels": 0,
+        "nan": 0
+      },
+      "meso-response-roughness": {
+        "size": [
+          512,
+          512
+        ],
+        "min": [
+          0.6274662613868713,
+          0.6274662613868713,
+          0.6274662613868713
+        ],
+        "max": [
+          0.9418783783912659,
+          0.9418783783912659,
+          0.9418783783912659
+        ],
+        "black_pixels": 0,
+        "nan": 0
+      },
+      "outcrop-normal": {
+        "size": [
+          4096,
+          4096
+        ],
+        "min": [
+          0.003921568859368563,
+          0.0,
+          0.003921568859368563
+        ],
+        "max": [
+          0.988235354423523,
+          0.9960784912109375,
+          1.0
+        ],
+        "black_pixels": 0,
+        "nan": 0
+      }
+    }
+  }
+}

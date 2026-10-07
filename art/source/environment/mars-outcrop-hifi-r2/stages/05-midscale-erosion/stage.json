@@ -1,0 +1,13 @@
+{
+  "version": "5.2.2 LTS",
+  "stage": "05-midscale-erosion",
+  "voxel_m": 0.012,
+  "triangles": 1254616,
+  "dimensions": [
+    6.146280288696289,
+    4.002144813537598,
+    2.3214845657348633
+  ],
+  "grain_or_noise": false,
+  "visual_gate": "PENDING_OPEN_IMAGES_AND_INDEPENDENT_REVIEW"
+}

@@ -1,0 +1,9 @@
+{
+  "version": "5.2.2 LTS",
+  "boundary_max_error_m": 4.070737677497327e-09,
+  "boundary_contract": "r1 actual 2m grid edge linear interpolation at world (x+6,-y)",
+  "source_triangles": 1822392,
+  "high_objects": 315,
+  "visual": "PENDING_OPEN_IMAGE",
+  "status": "SHAPE_BUILT"
+}

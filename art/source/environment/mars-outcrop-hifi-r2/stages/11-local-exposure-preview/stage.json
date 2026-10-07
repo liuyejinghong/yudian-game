@@ -1,0 +1,8 @@
+{
+  "stage": "11-material-only",
+  "geometry_source": "stages/09-exposed-bed-material/source-high.blend",
+  "geometry_source_sha256": "7f3c801c8cac8231661e3fba16f44deb770fc7f8019067d55c87a5f79a782a34",
+  "triangles": 946516,
+  "source_shader": "Two old front bed faces: nonperiodic unequal centimetre sediment lenses, local slope and tapered endings; old bare rock has patchy coarse grains, rear-right fresh planar fracture has weak fine grains, dust suppresses coverage. Mask-matched roughness, no AO or image-derived normals.",
+  "status": "PENDING_OPEN_IMAGE_AND_VISUAL_REVIEW"
+}

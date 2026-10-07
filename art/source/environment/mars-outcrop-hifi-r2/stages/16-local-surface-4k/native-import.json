@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "version": "5.2.2 LTS",
+  "source": {
+    "path": "art/source/environment/mars-outcrop-hifi-r2/stages/16-local-surface-4k/candidate.blend",
+    "sha256": "0c1aa0b36ace114b4460f7cccf6e46951cbb9a949b098d8d43146af2d92b513c",
+    "bytes": 87623481
+  },
+  "glb": {
+    "path": "art/source/environment/mars-outcrop-hifi-r2/stages/16-local-surface-4k/candidate.glb",
+    "sha256": "02755e2750e34a88864ab248b3b01c013165590e3d65221ff65610bee2fd9635",
+    "bytes": 43071496
+  },
+  "source_reopen": {
+    "objects": 1,
+    "triangles": 659908,
+    "min": [
+      -3.017899990081787,
+      -2.2795398235321045,
+      -0.16000327467918396
+    ],
+    "max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "finite": true,
+    "uv_missing": [],
+    "editable_high_triangles": 1294746
+  },
+  "source_maps": [
+    {
+      "name": "stage16-base_color",
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true,
+      "colorspace": "sRGB",
+      "png_bit_depth": 8
+    },
+    {
+      "name": "stage16-normal",
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true,
+      "colorspace": "Non-Color",
+      "png_bit_depth": 8
+    },
+    {
+      "name": "stage16-roughness",
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true,
+      "colorspace": "Non-Color",
+      "png_bit_depth": 8
+    }
+  ],
+  "independent_glb_import": {
+    "objects": 1,
+    "triangles": 659908,
+    "min": [
+      -3.017899990081787,
+      -2.2795398235321045,
+      -0.16000327467918396
+    ],
+    "max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "finite": true,
+    "uv_missing": []
+  },
+  "embedded_4k_rgb8_pngs": 3,
+  "pbr_and_tangents": true,
+  "stage_attributes_removed": true,
+  "formal_files_changed": false,
+  "fixed_Godot_and_Sol": "PENDING_ROOT"
+}

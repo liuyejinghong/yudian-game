@@ -1,0 +1,14 @@
+{
+  "patch_stage": "04-broken-clasts",
+  "check": "actual boundary vertices against support mesh linear edge segments",
+  "boundary_vertices": 1200,
+  "maximum_separation_m": 0.009662779995704973,
+  "worst_sample": [
+    0.009662779995704973,
+    "front",
+    11.039999961853027,
+    -0.009662779995704973
+  ],
+  "support_edge_segments": 6,
+  "status": "MEASURED_NOT_FINAL_GLB"
+}

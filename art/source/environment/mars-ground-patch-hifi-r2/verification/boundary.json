@@ -1,0 +1,64 @@
+{
+  "support_source": "art/environment/mars-lookdev-r1/hifi/ground-with-patch-hole.blend",
+  "support_sha256": "0a3ab37e6dba5e16523913733d7f4b01a0e117bbda1d8a2e743a01bf5453e60b",
+  "method": "actual supporting mesh edge segments; native patch vertices at shared world transform",
+  "tolerance_m": 1e-05,
+  "checks": [
+    {
+      "source": "stages/05-boundary-calibrated/ground-high.blend",
+      "sha256": "9535bcd59bec906f63384be248a985e8decd6a3c97de54e13807d5810e7880b5",
+      "boundary_vertices": 1200,
+      "max_separation_m": 4.558829758138927e-09,
+      "worst_sample": [
+        4.558829758138927e-09,
+        "front",
+        11.760000228881836,
+        -4.558829758138927e-09
+      ],
+      "upward_face_min_z": 0.9555780291557312,
+      "status": "PASS"
+    },
+    {
+      "source": "stages/05-bake-test/prepared.blend",
+      "sha256": "5a3ab81c6d63d658e4d37ec51c1ba2a404ed9e5f867b296cc0d6b6529286efe7",
+      "boundary_vertices": 600,
+      "max_separation_m": 4.558829758138927e-09,
+      "worst_sample": [
+        4.558829758138927e-09,
+        "front",
+        11.760000228881836,
+        -4.558829758138927e-09
+      ],
+      "upward_face_min_z": 0.956902027130127,
+      "status": "PASS"
+    },
+    {
+      "source": "mars-ground-patch-hifi-r2.blend",
+      "sha256": "b8d3a0052f831d729ca8119f989b4f136f147192a702aaf5c7e1eefbcf56a437",
+      "boundary_vertices": 600,
+      "max_separation_m": 4.558829758138927e-09,
+      "worst_sample": [
+        4.558829758138927e-09,
+        "front",
+        11.760000228881836,
+        -4.558829758138927e-09
+      ],
+      "upward_face_min_z": 0.956902027130127,
+      "status": "PASS"
+    },
+    {
+      "source": "mars-ground-patch-hifi-r2.glb",
+      "sha256": "7a9c4ee8aaeab977f0e06ebd70cd505042e35c6206985e92bf93b445a9be2ff7",
+      "boundary_vertices": 600,
+      "max_separation_m": 4.558829758138927e-09,
+      "worst_sample": [
+        4.558829758138927e-09,
+        "front",
+        11.760000228881836,
+        -4.558829758138927e-09
+      ],
+      "upward_face_min_z": 0.956902027130127,
+      "status": "PASS"
+    }
+  ]
+}

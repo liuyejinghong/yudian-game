@@ -4,3 +4,5 @@
 __pycache__/
 hero/mars-outcrop-r1_*.png
 hero/mars-outcrop-r1_*.png.import
+hifi/*_*.png
+hifi/*_*.png.import

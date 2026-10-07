@@ -1,0 +1,277 @@
+{
+  "version": "5.2.2 LTS",
+  "stage": "10-real-selected-to-active-test",
+  "high_triangles": 946516,
+  "game_triangles": 227162,
+  "uv": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 227162,
+    "islands": 2527,
+    "td_px_per_m": 306.8,
+    "td_face_spread_p95_p05": 1.09,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      0.0,
+      317.8
+    ],
+    "angle_err_mean_deg": 2.44,
+    "angle_err_p95_deg": 9.64,
+    "area_stretch_p95_log2": 0.24,
+    "flipped_faces": 9,
+    "zero_area_faces": 7,
+    "overlap_px_pct": 0.146,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [
+      1227,
+      2521
+    ],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.4086,
+        "overlap_px_pct": 0.146,
+        "min_gap_px": 40.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 40.0,
+    "gap_required_px": 12,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 1933,
+        "faces": 1,
+        "td": 0.0,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8559,
+          0.1071,
+          0.8583,
+          0.1071
+        ]
+      },
+      {
+        "island": 610,
+        "faces": 1,
+        "td": 0.0,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8683,
+          0.7616,
+          0.8701,
+          0.7616
+        ]
+      },
+      {
+        "island": 1501,
+        "faces": 1,
+        "td": 0.0,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.7145,
+          0.8443,
+          0.7145,
+          0.847
+        ]
+      },
+      {
+        "island": 1502,
+        "faces": 1,
+        "td": 0.0,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.7245,
+          0.8443,
+          0.7245,
+          0.847
+        ]
+      },
+      {
+        "island": 1906,
+        "faces": 1,
+        "td": 0.0,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8559,
+          0.1171,
+          0.8583,
+          0.1171
+        ]
+      },
+      {
+        "island": 2506,
+        "faces": 1,
+        "td": 0.0,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8916,
+          0.5522,
+          0.8929,
+          0.5522
+        ]
+      },
+      {
+        "island": 2509,
+        "faces": 1,
+        "td": 307.0,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8802,
+          0.1317,
+          0.8816,
+          0.1317
+        ]
+      },
+      {
+        "island": 119,
+        "faces": 1,
+        "td": 307.2,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8559,
+          0.2206,
+          0.8582,
+          0.2206
+        ]
+      },
+      {
+        "island": 1518,
+        "faces": 1,
+        "td": 307.2,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8916,
+          0.4059,
+          0.8929,
+          0.4059
+        ]
+      },
+      {
+        "island": 869,
+        "faces": 1,
+        "td": 308.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.2167,
+          0.9152,
+          0.2167,
+          0.9163
+        ]
+      },
+      {
+        "island": 1177,
+        "faces": 1,
+        "td": 312.5,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8239,
+          0.8578,
+          0.8239,
+          0.8596
+        ]
+      },
+      {
+        "island": 759,
+        "faces": 1,
+        "td": 317.8,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.8683,
+          0.741,
+          0.8701,
+          0.741
+        ]
+      }
+    ]
+  },
+  "projection": {
+    "samples": 3513,
+    "outward_q": 0.00132,
+    "inward_q": 0.00156,
+    "outward_max": 0.00187,
+    "inward_max": 0.00164,
+    "cage_extrusion": 0.00222,
+    "max_ray_distance": 0.0047,
+    "miss_pct": 0.0,
+    "uncovered_pct": 0.0,
+    "wrong_part_pct": 0.03,
+    "search": 0.06,
+    "quantile": 0.999
+  },
+  "normal_source": "Independent approved high geometry only; no image-derived or shader normal in this geometry probe",
+  "normal": {
+    "pixels": 107123,
+    "inverted_pct": 0.0,
+    "flat_exact_pct": 61.59,
+    "bad_length_pct": 0.0,
+    "steep_pct": 0.0,
+    "mean": [
+      0.499,
+      0.5,
+      1.0
+    ],
+    "std": [
+      0.01,
+      0.008,
+      0.001
+    ],
+    "nan": 0,
+    "problems": [
+      "61.59% exactly flat: rays missing the high (max_ray_distance too short, wrong selection) or no detail there"
+    ],
+    "notes": []
+  }
+}

@@ -1,0 +1,1387 @@
+{
+  "initial_qa": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 227160,
+    "islands": 2509,
+    "td_px_per_m": 305.8,
+    "td_face_spread_p95_p05": 1.09,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      305.3,
+      305.7
+    ],
+    "angle_err_mean_deg": 2.44,
+    "angle_err_p95_deg": 9.64,
+    "area_stretch_p95_log2": 0.24,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.142,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [
+      1222,
+      2282
+    ],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.4061,
+        "overlap_px_pct": 0.142,
+        "min_gap_px": 40.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 40.0,
+    "gap_required_px": 12,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 2366,
+        "faces": 1,
+        "td": 305.3,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9933,
+          0.2946,
+          0.9938,
+          0.2947
+        ]
+      },
+      {
+        "island": 1762,
+        "faces": 2,
+        "td": 305.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9933,
+          0.4073,
+          0.9937,
+          0.4073
+        ]
+      },
+      {
+        "island": 1617,
+        "faces": 1,
+        "td": 305.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9933,
+          0.2126,
+          0.9938,
+          0.2126
+        ]
+      },
+      {
+        "island": 103,
+        "faces": 1,
+        "td": 305.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9933,
+          0.2226,
+          0.9938,
+          0.2227
+        ]
+      },
+      {
+        "island": 17,
+        "faces": 2,
+        "td": 305.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.4666,
+          0.8691,
+          0.4666,
+          0.8709
+        ]
+      },
+      {
+        "island": 1391,
+        "faces": 2,
+        "td": 305.4,
+        "area_m2": 3e-05,
+        "uv_px": 2,
+        "flipped": 0,
+        "bbox": [
+          0.9609,
+          0.9696,
+          0.9612,
+          0.9704
+        ]
+      },
+      {
+        "island": 839,
+        "faces": 1,
+        "td": 305.5,
+        "area_m2": 5e-05,
+        "uv_px": 4,
+        "flipped": 0,
+        "bbox": [
+          0.9718,
+          0.249,
+          0.9725,
+          0.2497
+        ]
+      },
+      {
+        "island": 834,
+        "faces": 1,
+        "td": 305.5,
+        "area_m2": 5e-05,
+        "uv_px": 5,
+        "flipped": 0,
+        "bbox": [
+          0.9501,
+          0.452,
+          0.9509,
+          0.4527
+        ]
+      },
+      {
+        "island": 2508,
+        "faces": 1,
+        "td": 305.5,
+        "area_m2": 3e-05,
+        "uv_px": 3,
+        "flipped": 0,
+        "bbox": [
+          0.906,
+          0.068,
+          0.9072,
+          0.0683
+        ]
+      },
+      {
+        "island": 2479,
+        "faces": 1,
+        "td": 305.6,
+        "area_m2": 4e-05,
+        "uv_px": 4,
+        "flipped": 0,
+        "bbox": [
+          0.9718,
+          0.9593,
+          0.9725,
+          0.9599
+        ]
+      },
+      {
+        "island": 1709,
+        "faces": 2,
+        "td": 305.6,
+        "area_m2": 2e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.6682,
+          0.9912,
+          0.6684,
+          0.9918
+        ]
+      },
+      {
+        "island": 1711,
+        "faces": 5,
+        "td": 305.7,
+        "area_m2": 2e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.8464,
+          0.8051,
+          0.8489,
+          0.8051
+        ]
+      }
+    ]
+  },
+  "geometry_vertex_sha256": "f94a58f29ba6d83f32261321e5b740db6f3fcd428a25f39611a4f8736b2b0d8c",
+  "local_solvers": {
+    "1222": {
+      "method": "MINIMUM_STRETCH",
+      "islands": 1,
+      "chosen": {
+        "MINIMUM_STRETCH": 1
+      },
+      "unsolved_faces": {
+        "MINIMUM_STRETCH": 0
+      },
+      "folding_islands": [],
+      "folding_faces": [],
+      "per_island": {
+        "1222": {
+          "MINIMUM_STRETCH": {
+            "score": 0.653,
+            "spread": 1.12,
+            "angle_err_deg": 2.45,
+            "self_overlap": 0.0
+          },
+          "chosen": "MINIMUM_STRETCH"
+        }
+      }
+    },
+    "2282": {
+      "method": "CONFORMAL",
+      "islands": 1,
+      "chosen": {
+        "CONFORMAL": 1
+      },
+      "unsolved_faces": {
+        "CONFORMAL": 0
+      },
+      "folding_islands": [],
+      "folding_faces": [],
+      "per_island": {
+        "2282": {
+          "CONFORMAL": {
+            "score": 0.224,
+            "spread": 1.13,
+            "angle_err_deg": 0.16,
+            "self_overlap": 0.0002
+          },
+          "chosen": "CONFORMAL"
+        }
+      }
+    }
+  },
+  "boundary_splits": {
+    "2013": {
+      "cuts": {
+        "seams_added": 68,
+        "groups": 2
+      },
+      "solver": {
+        "method": "BEST",
+        "islands": 3,
+        "chosen": {
+          "ANGLE_BASED": 1,
+          "CONFORMAL": 2
+        },
+        "unsolved_faces": {
+          "ANGLE_BASED": 0,
+          "CONFORMAL": 0,
+          "MINIMUM_STRETCH": 0
+        },
+        "folding_islands": [],
+        "folding_faces": [],
+        "per_island": {
+          "1915": {
+            "ANGLE_BASED": {
+              "score": 0.037,
+              "spread": 1.01,
+              "angle_err_deg": 0.09,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.104,
+              "spread": 1.06,
+              "angle_err_deg": 0.09,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.432,
+              "spread": 1.07,
+              "angle_err_deg": 1.52,
+              "self_overlap": 0.0003
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "1918": {
+            "ANGLE_BASED": {
+              "score": 0.024,
+              "spread": 1.01,
+              "angle_err_deg": 0.06,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.024,
+              "spread": 1.01,
+              "angle_err_deg": 0.06,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.256,
+              "spread": 1.05,
+              "angle_err_deg": 0.95,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2015": {
+            "ANGLE_BASED": {
+              "score": 0.065,
+              "spread": 1.03,
+              "angle_err_deg": 0.08,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.055,
+              "spread": 1.02,
+              "angle_err_deg": 0.12,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.2,
+              "spread": 1.02,
+              "angle_err_deg": 0.83,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          }
+        }
+      }
+    },
+    "2282": {
+      "cuts": {
+        "seams_added": 220,
+        "groups": 2
+      },
+      "solver": {
+        "method": "BEST",
+        "islands": 25,
+        "chosen": {
+          "MINIMUM_STRETCH": 2,
+          "CONFORMAL": 13,
+          "ANGLE_BASED": 10
+        },
+        "unsolved_faces": {
+          "ANGLE_BASED": 0,
+          "CONFORMAL": 0,
+          "MINIMUM_STRETCH": 0
+        },
+        "folding_islands": [],
+        "folding_faces": [],
+        "per_island": {
+          "645": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "chosen": "MINIMUM_STRETCH"
+          },
+          "660": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "663": {
+            "ANGLE_BASED": {
+              "score": 0.012,
+              "spread": 1.0,
+              "angle_err_deg": 0.04,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.013,
+              "spread": 1.0,
+              "angle_err_deg": 0.04,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.32,
+              "spread": 1.03,
+              "angle_err_deg": 1.4,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "675": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "681": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "683": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "718": {
+            "ANGLE_BASED": {
+              "score": 0.031,
+              "spread": 1.01,
+              "angle_err_deg": 0.08,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.028,
+              "spread": 1.01,
+              "angle_err_deg": 0.08,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.233,
+              "spread": 1.03,
+              "angle_err_deg": 0.94,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2230": {
+            "ANGLE_BASED": {
+              "score": 0.171,
+              "spread": 1.01,
+              "angle_err_deg": 0.12,
+              "self_overlap": 0.0013
+            },
+            "CONFORMAL": {
+              "score": 0.197,
+              "spread": 1.08,
+              "angle_err_deg": 0.14,
+              "self_overlap": 0.0006
+            },
+            "MINIMUM_STRETCH": {
+              "score": 12.868,
+              "spread": 9.15,
+              "angle_err_deg": 48.37,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "2233": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.537,
+              "spread": 1.05,
+              "angle_err_deg": 2.32,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "2235": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.122,
+              "spread": 1.01,
+              "angle_err_deg": 0.53,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2244": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.549,
+              "spread": 1.05,
+              "angle_err_deg": 2.36,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2246": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.017,
+              "spread": 1.0,
+              "angle_err_deg": 0.08,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "2251": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.25,
+              "spread": 1.03,
+              "angle_err_deg": 1.06,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2252": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.395,
+              "spread": 1.03,
+              "angle_err_deg": 1.74,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "2264": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.006,
+              "spread": 1.0,
+              "angle_err_deg": 0.03,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2265": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.007,
+              "spread": 1.0,
+              "angle_err_deg": 0.03,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2267": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.004,
+              "spread": 1.0,
+              "angle_err_deg": 0.02,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "2268": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.372,
+              "spread": 1.04,
+              "angle_err_deg": 1.61,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "2269": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.107,
+              "spread": 1.01,
+              "angle_err_deg": 0.47,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "2270": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.003,
+              "spread": 1.0,
+              "angle_err_deg": 0.01,
+              "self_overlap": 0.0
+            },
+            "chosen": "ANGLE_BASED"
+          },
+          "2271": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "chosen": "MINIMUM_STRETCH"
+          },
+          "2276": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.132,
+              "spread": 1.01,
+              "angle_err_deg": 0.58,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2293": {
+            "ANGLE_BASED": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.0,
+              "spread": 1.0,
+              "angle_err_deg": 0.0,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.156,
+              "spread": 1.01,
+              "angle_err_deg": 0.68,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2307": {
+            "ANGLE_BASED": {
+              "score": 0.044,
+              "spread": 1.01,
+              "angle_err_deg": 0.12,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.031,
+              "spread": 1.0,
+              "angle_err_deg": 0.13,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.724,
+              "spread": 1.12,
+              "angle_err_deg": 2.79,
+              "self_overlap": 0.0001
+            },
+            "chosen": "CONFORMAL"
+          },
+          "2388": {
+            "ANGLE_BASED": {
+              "score": 0.075,
+              "spread": 1.03,
+              "angle_err_deg": 0.19,
+              "self_overlap": 0.0
+            },
+            "CONFORMAL": {
+              "score": 0.074,
+              "spread": 1.02,
+              "angle_err_deg": 0.2,
+              "self_overlap": 0.0
+            },
+            "MINIMUM_STRETCH": {
+              "score": 0.21,
+              "spread": 1.03,
+              "angle_err_deg": 0.83,
+              "self_overlap": 0.0
+            },
+            "chosen": "CONFORMAL"
+          }
+        }
+      }
+    }
+  },
+  "planar_branch_faces": 7228,
+  "planar_projection_angle_degrees": 40,
+  "outside_uv_delta_before_final_pack": 0.0,
+  "qa_1024": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 227160,
+    "islands": 2993,
+    "td_px_per_m": 286.7,
+    "td_face_spread_p95_p05": 1.06,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      286.4,
+      286.7
+    ],
+    "angle_err_mean_deg": 2.23,
+    "angle_err_p95_deg": 9.28,
+    "area_stretch_p95_log2": 0.23,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.3585,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 36.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 36.0,
+    "gap_required_px": 16,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 2591,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.8133,
+          0.9938,
+          0.8135
+        ]
+      },
+      {
+        "island": 17,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.4893,
+          0.8392,
+          0.4893,
+          0.8409
+        ]
+      },
+      {
+        "island": 2181,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7214,
+          0.9941,
+          0.7215
+        ]
+      },
+      {
+        "island": 854,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.552,
+          0.9723,
+          0.5522,
+          0.9729
+        ]
+      },
+      {
+        "island": 37,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9289,
+          0.5855,
+          0.9298,
+          0.5856
+        ]
+      },
+      {
+        "island": 1990,
+        "faces": 5,
+        "td": 286.5,
+        "area_m2": 0.00035,
+        "uv_px": 29,
+        "flipped": 0,
+        "bbox": [
+          0.1149,
+          0.8142,
+          0.1157,
+          0.8171
+        ]
+      },
+      {
+        "island": 860,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.1098,
+          0.9942,
+          0.1099
+        ]
+      },
+      {
+        "island": 1755,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.6091,
+          0.9941,
+          0.6092
+        ]
+      },
+      {
+        "island": 2924,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.8731,
+          0.9507,
+          0.8732,
+          0.9515
+        ]
+      },
+      {
+        "island": 611,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9722,
+          0.5008,
+          0.9729,
+          0.501
+        ]
+      },
+      {
+        "island": 2815,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.691,
+          0.9941,
+          0.6911
+        ]
+      },
+      {
+        "island": 1900,
+        "faces": 2,
+        "td": 286.7,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7931,
+          0.994,
+          0.7931
+        ]
+      }
+    ]
+  },
+  "qa_2048": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 227160,
+    "islands": 2993,
+    "td_px_per_m": 286.7,
+    "td_face_spread_p95_p05": 1.06,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      286.4,
+      286.7
+    ],
+    "angle_err_mean_deg": 2.23,
+    "angle_err_p95_deg": 9.28,
+    "area_stretch_p95_log2": 0.23,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.3586,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 38.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 38.0,
+    "gap_required_px": 16,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 2591,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.8133,
+          0.9938,
+          0.8135
+        ]
+      },
+      {
+        "island": 17,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.4893,
+          0.8392,
+          0.4893,
+          0.8409
+        ]
+      },
+      {
+        "island": 2181,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7214,
+          0.9941,
+          0.7215
+        ]
+      },
+      {
+        "island": 854,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.552,
+          0.9723,
+          0.5522,
+          0.9729
+        ]
+      },
+      {
+        "island": 37,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9289,
+          0.5855,
+          0.9298,
+          0.5856
+        ]
+      },
+      {
+        "island": 1990,
+        "faces": 5,
+        "td": 286.5,
+        "area_m2": 0.00035,
+        "uv_px": 29,
+        "flipped": 0,
+        "bbox": [
+          0.1149,
+          0.8142,
+          0.1157,
+          0.8171
+        ]
+      },
+      {
+        "island": 860,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.1098,
+          0.9942,
+          0.1099
+        ]
+      },
+      {
+        "island": 1755,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.6091,
+          0.9941,
+          0.6092
+        ]
+      },
+      {
+        "island": 2924,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.8731,
+          0.9507,
+          0.8732,
+          0.9515
+        ]
+      },
+      {
+        "island": 611,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9722,
+          0.5008,
+          0.9729,
+          0.501
+        ]
+      },
+      {
+        "island": 2815,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.691,
+          0.9941,
+          0.6911
+        ]
+      },
+      {
+        "island": 1900,
+        "faces": 2,
+        "td": 286.7,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7931,
+          0.994,
+          0.7931
+        ]
+      }
+    ]
+  }
+}

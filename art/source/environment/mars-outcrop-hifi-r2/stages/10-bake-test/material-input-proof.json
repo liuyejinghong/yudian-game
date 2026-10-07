@@ -1,0 +1,15 @@
+{
+  "base_color": {
+    "pixels": 94041,
+    "mean_absolute_difference": 0.005836149211972952,
+    "maximum_absolute_difference": 0.030963420867919922,
+    "changed_pixel_fraction": 0.9943428929934816
+  },
+  "roughness": {
+    "pixels": 94041,
+    "mean_absolute_difference": 0.005359326489269733,
+    "maximum_absolute_difference": 0.030798017978668213,
+    "changed_pixel_fraction": 0.9885156474303761
+  },
+  "method": "Actual selected-to-active EMIT baking of current Principled input from_socket; same UV/projection, before and after geologic_finish; Surface link restored after each bake."
+}

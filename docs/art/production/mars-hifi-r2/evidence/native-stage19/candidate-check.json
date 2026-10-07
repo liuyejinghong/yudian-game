@@ -1,0 +1,26 @@
+{
+  "status": "TECHNICAL_PASS_INTERNAL_FINAL_VISUAL_PASS",
+  "candidate_glb_sha256": "ae5722b19aa99a1e3a0e5333d41eb5544ac9c2295c35685be9f41f5b05df4e78",
+  "candidate_source_sha256": "7e50eb0d33bb0a6cd8c06a55ddd7fc6848a9860c9f027721bc89a6ad8e870306",
+  "native_capture_sha256": "3449138995757870812ad736486fdf0b28bd1626a4a1ff11c45826b5956a8ae9",
+  "verifier_sha256": "64089573fe68bdbfaaa3e3c9e5f9a739ab4685a8973bd5b6586d480aacce9034",
+  "actual_native_frames": 7,
+  "root_pixel_viewed_frames": [
+    "normal",
+    "near",
+    "reverse",
+    "horizon",
+    "normal-low",
+    "detail",
+    "ground"
+  ],
+  "embedded_vs_imported_png_equal": true,
+  "resolution_px": 4096,
+  "source_bytes": 102825957,
+  "formal_source": "19 promoted; then render output path made relative without visual changes",
+  "visual_thread": "01a11623-f7ab-7d83-8824-33b9ba00654f",
+  "visual_cursor": "6ea7facc-8ffc-4583-9339-2442b692bc33:6",
+  "formal_source_sha256": "94ff01a08b6ef25a30dafeb2db2cb56c93589aeee280b23cf151ca705fa42ea0",
+  "formal_source_bytes": 102824670,
+  "candidate_source_note": "candidate SHA identifies the visual-reviewed pre-portability source; formal-promotion and source-portability records prove preserved visual inputs"
+}

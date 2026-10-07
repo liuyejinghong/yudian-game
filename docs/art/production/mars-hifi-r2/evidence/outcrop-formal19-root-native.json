@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "native": "5.2.2 LTS",
+  "source_sha256": "94ff01a08b6ef25a30dafeb2db2cb56c93589aeee280b23cf151ca705fa42ea0",
+  "glb_sha256": "ae5722b19aa99a1e3a0e5333d41eb5544ac9c2295c35685be9f41f5b05df4e78",
+  "source_reopen": {
+    "objects": 1,
+    "triangles": 929126,
+    "min": [
+      -3.017899990081787,
+      -2.2795398235321045,
+      -0.16000327467918396
+    ],
+    "max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "finite": true
+  },
+  "editable_high": {
+    "objects": 1,
+    "triangles": 1281204,
+    "min": [
+      -3.017899990081787,
+      -2.2795393466949463,
+      -0.1599999964237213
+    ],
+    "max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "finite": true
+  },
+  "packed_maps": [
+    {
+      "role": "base_color",
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true,
+      "colorspace": "sRGB"
+    },
+    {
+      "role": "normal",
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true,
+      "colorspace": "Non-Color"
+    },
+    {
+      "role": "roughness",
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true,
+      "colorspace": "Non-Color"
+    }
+  ],
+  "independent_glb_import": {
+    "objects": 1,
+    "triangles": 929126,
+    "min": [
+      -3.017899990081787,
+      -2.2795398235321045,
+      -0.16000327467918396
+    ],
+    "max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "finite": true
+  },
+  "source_unchanged": true,
+  "root_actual_native_check": true
+}

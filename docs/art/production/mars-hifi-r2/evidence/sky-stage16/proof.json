@@ -1,0 +1,12 @@
+{
+  "status": "DIAGNOSTIC_ONLY_NOT_VISUAL_PASS",
+  "native_exit_code": 0,
+  "candidate_glb_sha256": "02755e2750e34a88864ab248b3b01c013165590e3d65221ff65610bee2fd9635",
+  "script_sha256": "8def601ea53b2e241130719546af1a36285c665d5709ccb4e2890c0c77e029a6",
+  "single_changed_variable": "ambient source COLOR to SKY; camera, Sun, exposure, meshes and maps unchanged",
+  "formal_lighting_changed": false,
+  "frames": {
+    "detail": "3774c7374a6fb9e8f9f26b0218e4551744afc08cb451fbd5d2d0a1335a3a638e",
+    "reverse": "c0d9b3dcf6d4d1a58319359eb36db4046f422aa16c6bf823542415ce9eabebcd"
+  }
+}

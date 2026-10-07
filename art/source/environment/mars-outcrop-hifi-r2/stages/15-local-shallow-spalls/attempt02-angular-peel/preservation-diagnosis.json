@@ -1,0 +1,95 @@
+{
+  "baseline_uv_negative": 0,
+  "baseline_normal_roundtrip_max_delta": 0.0007672744104638696,
+  "negative_triangles": [
+    {
+      "triangle": 19466,
+      "source_face": 19462,
+      "uv_signed_area": -4.226397010143046e-12,
+      "physical_area_m2": 2.873853759815179e-10,
+      "source_normal_dot": 0.30188190294448075,
+      "center_m": [
+        -0.7421427965164185,
+        1.5910553534825642,
+        0.3427574634552002
+      ],
+      "polygon_corners": 4
+    },
+    {
+      "triangle": 20872,
+      "source_face": 20861,
+      "uv_signed_area": -4.9536375001935085e-11,
+      "physical_area_m2": 2.1040791014288033e-09,
+      "source_normal_dot": 0.09844369667785519,
+      "center_m": [
+        1.0771660208702087,
+        -1.0572417974472046,
+        0.33332569400469464
+      ],
+      "polygon_corners": 4
+    },
+    {
+      "triangle": 22089,
+      "source_face": 22076,
+      "uv_signed_area": -4.849898260772534e-11,
+      "physical_area_m2": 2.779411858967789e-09,
+      "source_normal_dot": 0.9022104965371427,
+      "center_m": [
+        0.880977471669515,
+        -0.42989010612169903,
+        0.932654619216919
+      ],
+      "polygon_corners": 4
+    },
+    {
+      "triangle": 110513,
+      "source_face": 110498,
+      "uv_signed_area": -7.814859870336477e-11,
+      "physical_area_m2": 2.6234912274613656e-09,
+      "source_normal_dot": 0.0360307833095186,
+      "center_m": [
+        -1.3687455256779988,
+        1.468269149462382,
+        0.36580634117126465
+      ],
+      "polygon_corners": 4
+    },
+    {
+      "triangle": 110559,
+      "source_face": 110543,
+      "uv_signed_area": -1.035358465628633e-10,
+      "physical_area_m2": 9.720254280222757e-09,
+      "source_normal_dot": 0.534952776521559,
+      "center_m": [
+        -1.3646698792775471,
+        1.4088495175043743,
+        1.2945669889450073
+      ],
+      "polygon_corners": 4
+    },
+    {
+      "triangle": 227724,
+      "source_face": 22509,
+      "uv_signed_area": -4.636468986518594e-11,
+      "physical_area_m2": 8.902729763377194e-10,
+      "source_normal_dot": -0.994266958959899,
+      "center_m": [
+        1.6180473168690999,
+        -0.0832070807615916,
+        0.909660816192627
+      ],
+      "polygon_corners": 3
+    }
+  ],
+  "untouched_original_vertex_corner_normal": {
+    "count": 683117,
+    "max_delta": 0.0007672744518574452,
+    "p99_delta": 0.00047701991189903726,
+    "max_center_m": [
+      -1.9592485427856445,
+      -0.13364028930664062,
+      1.0105007886886597
+    ],
+    "source_face": 6793
+  }
+}

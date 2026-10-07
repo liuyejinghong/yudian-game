@@ -1,0 +1,16 @@
+{
+  "input": {
+    "sha256": "5a2dc14c0b8ec60dfb89121689158ba0d0fb6fd904f104f955416a46cf7684c5",
+    "bytes": 100005817
+  },
+  "angle_limit_degrees": 0.35,
+  "scope": "Only within the two prepared charts and within a single original triangle; original face and UV boundaries protected",
+  "candidate_edges": 627475,
+  "candidate_vertices": 195755,
+  "triangles_before": 659908,
+  "acceptance_max_surface_deviation_m": 0.0005,
+  "acceptance_p99_surface_deviation_m": 0.00015,
+  "acceptance_native_roundtrip_corner_normal_delta": 0.0003,
+  "status": "REJECTED_KEEP_DENSE",
+  "reason": "No in-source-face diagonal repair for 111008"
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-07",
+  "status": "PASS",
+  "blender": "5.2.2 LTS",
+  "blender_build_hash": "d13f752e3b9c",
+  "cpu_threads": 4,
+  "commands": [
+    "\"$TASK_BLENDER\" --background --factory-startup --threads 4 --python-exit-code 1 --python art/source/environment/mars-hifi-sol-trial-r2/trial.py",
+    "\"$TASK_BLENDER\" --background --factory-startup --threads 4 --python-exit-code 1 --python art/source/environment/mars-hifi-sol-trial-r2/trial.py -- --verify"
+  ],
+  "exit_codes": {
+    "build": 0,
+    "verify": 0
+  },
+  "helper_identity": {
+    "art/source/environment/mars-outcrop-hifi-r2/build.py": "45b8fe944ab60c44f0a291aca2024fc70123ea01d98787e1f141f6cdd138801f",
+    "art/source/environment/mars-outcrop-hifi-r2/pipeline.py": "94afdef7c7e96a6f9a099b981599bfaa226934c980846899f39b50de42a9cc2e",
+    ".agents/skills/scenario-blender-uv-baking/scripts/bx_uvbake.py": "fea0c2ebaf3a82897e28750afdea613d96949ca0dc018db8c3f88bb023a04451",
+    ".agents/skills/scenario-blender-texturing-shading/scripts/bx_materials.py": "15877d81bea8d2c95e1393b7c6ce8c96182fdb1a8d26dfa6bfbaf2d88886e72b"
+  },
+  "visual_read": [
+    "renders/high.png",
+    "renders/mapped-low.png"
+  ],
+  "visual_observation": "same-light small fragment comparison readable; unbaked background dark triangles corrected through encoded neutral fill and real use_clear=False rebake; not formal high-fidelity art acceptance",
+  "scope": "only art/source/environment/mars-hifi-sol-trial-r2/**",
+  "formal_assets_untouched": true
+}

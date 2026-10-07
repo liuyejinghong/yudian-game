@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "version": "5.2.2 LTS",
+  "source": "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.blend",
+  "source_sha256": "fa48f2e488f7c05103f3d65a918279bcae0b79c78ef849d86b9283d4cca908cd",
+  "glb": "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.glb",
+  "glb_sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+  "source_reopen": {
+    "objects": 315,
+    "triangles": 374280,
+    "bounds_min": [
+      -6.0,
+      -6.0,
+      -0.03925097733736038
+    ],
+    "bounds_max": [
+      6.0,
+      6.0,
+      0.351167231798172
+    ],
+    "dimensions": [
+      12.0,
+      12.0,
+      0.3904182016849518
+    ],
+    "uv_missing": [],
+    "finite": true,
+    "high_editable_collection_present": true,
+    "editable_high_triangles": 1822392,
+    "textures": [
+      {
+        "name": "ground-clast-base_color",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "sRGB",
+        "png_bit_depth": 8
+      },
+      {
+        "name": "ground-clast-normal",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color",
+        "png_bit_depth": 8
+      },
+      {
+        "name": "ground-clast-roughness",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color",
+        "png_bit_depth": 8
+      },
+      {
+        "name": "ground-sand-base_color",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "sRGB",
+        "png_bit_depth": 8
+      },
+      {
+        "name": "ground-sand-normal",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color",
+        "png_bit_depth": 8
+      },
+      {
+        "name": "ground-sand-roughness",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color",
+        "png_bit_depth": 8
+      }
+    ]
+  },
+  "independent_glb_import": {
+    "objects": 315,
+    "triangles": 374280,
+    "bounds_min": [
+      -6.0,
+      -6.0,
+      -0.03925097733736038
+    ],
+    "bounds_max": [
+      6.0,
+      6.0,
+      0.351167231798172
+    ],
+    "dimensions": [
+      12.0,
+      12.0,
+      0.3904182016849518
+    ],
+    "uv_missing": [],
+    "finite": true
+  },
+  "embedded_images": 6,
+  "materials": [
+    {
+      "name": "Mars_clast_PBR",
+      "base_color_texture": true,
+      "normal_texture": true,
+      "roughness_texture": true,
+      "metallicFactor": 0
+    },
+    {
+      "name": "Mars_sand_PBR",
+      "base_color_texture": true,
+      "normal_texture": true,
+      "roughness_texture": true,
+      "metallicFactor": 0
+    }
+  ],
+  "owner_final_visual": "NOT_RUN",
+  "Main_integration": "NOT_RUN",
+  "scene_performance": "NOT_RUN",
+  "file_bytes": {
+    "mars-ground-patch-hifi-r2.blend": 56226430,
+    "mars-ground-patch-hifi-r2.glb": 50018792
+  }
+}

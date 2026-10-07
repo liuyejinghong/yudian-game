@@ -3,3 +3,19 @@ tools/**/obj/
 .zcode/
 __pycache__/
 *.pyc
+# Keep local bake/intermediate sources; final editable assets remain versioned.
+art/source/environment/*-hifi-r2/stages/**/*.blend*
+art/source/environment/*-hifi-r2/stages/**/*.glb
+art/source/environment/*-hifi-r2/**/*.log
+art/source/environment/*-hifi-r2/**/*.blend1
+art/source/environment/*-hifi-r2/stages/06-16bit-package/**
+!art/source/environment/*-hifi-r2/stages/06-16bit-package/*.json
+# Stage textures and independent full rebuild output are local caches; formal maps and review evidence are versioned.
+art/source/environment/*-hifi-r2/stages/**/textures/**
+art/source/environment/*-hifi-r2/stages/formal-history/**
+art/source/environment/*-hifi-r2/stages/metadata-before-portable-paths/**
+art/source/environment/*-hifi-r2/stages/20-production-rebuild/**
+art/source/environment/mars-hifi-sol-trial-r2/backups/**
+art/source/environment/mars-hifi-sol-trial-r2/*.log
+art/source/environment/mars-hifi-sol-trial-r2/*.blend1
+art/source/environment/*-hifi-r2/stages/rebuild/**

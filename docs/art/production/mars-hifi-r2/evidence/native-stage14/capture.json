@@ -1,0 +1,275 @@
+{
+	"assets": [
+		{
+			"bounds_min_m": [
+				-250.0,
+				-0.379933148622513,
+				-250.0
+			],
+			"bounds_size_m": [
+				500.0,
+				20.4830875396729,
+				500.0
+			],
+			"file": "hifi/ground-with-patch-hole.glb",
+			"position_m": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"scale": 1,
+			"sha256": "2493622470df2a0c4194bb35357c0b856d6e77fe595cc63c046528a784cf0791",
+			"triangles": 144618
+		},
+		{
+			"bounds_min_m": [
+				-3.01789999008179,
+				-0.160003274679184,
+				-1.64949834346771
+			],
+			"bounds_size_m": [
+				6.14566040039062,
+				2.32095527648926,
+				3.92903804779053
+			],
+			"file": "hifi/mars-outcrop-hifi-r2.glb",
+			"position_m": [
+				6.0,
+				0.0,
+				0.0
+			],
+			"scale": 1,
+			"sha256": "6bc4c9e9262edf503ba885d50a98b53f8ba2a247e81c1a5b21ef6102fad3895e",
+			"triangles": 227160
+		},
+		{
+			"bounds_min_m": [
+				-6.0,
+				-0.0583501383662224,
+				-6.0
+			],
+			"bounds_size_m": [
+				12.0,
+				0.423942863941193,
+				12.0
+			],
+			"file": "hifi/mars-ground-patch-hifi-r2.glb",
+			"position_m": [
+				6.0,
+				0.0,
+				0.0
+			],
+			"scale": 1,
+			"sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+			"triangles": 374280
+		},
+		{
+			"bounds_min_m": [
+				-0.630000174045563,
+				0.0000000149011611938477,
+				-1.14999997615814
+			],
+			"bounds_size_m": [
+				1.26000034809113,
+				0.860000014305115,
+				1.95000004768372
+			],
+			"file": "anchors/tuoyun.glb",
+			"position_m": [
+				-5.0,
+				0.0,
+				5.0
+			],
+			"scale": 1,
+			"sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+			"triangles": 7312
+		},
+		{
+			"bounds_min_m": [
+				-2.38540291786194,
+				0.0,
+				-1.46000003814697
+			],
+			"bounds_size_m": [
+				4.77080583572388,
+				1.89000010490417,
+				3.05999994277954
+			],
+			"file": "anchors/solar.glb",
+			"position_m": [
+				0.0,
+				0.0,
+				-6.0
+			],
+			"scale": 1,
+			"sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73",
+			"triangles": 888
+		},
+		{
+			"bounds_min_m": [
+				-1.79999995231628,
+				0.0,
+				-2.40000009536743
+			],
+			"bounds_size_m": [
+				3.59999990463257,
+				2.40000009536743,
+				4.80000019073486
+			],
+			"file": "anchors/processor.glb",
+			"position_m": [
+				-6.0,
+				0.0,
+				-2.0
+			],
+			"scale": 1,
+			"sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157",
+			"triangles": 1224
+		}
+	],
+	"candidate": "hifi-r2",
+	"driver": "metal",
+	"engine": "4.7.2-stable (official)",
+	"frames": {
+		"detail": {
+			"fov": 50.0,
+			"mesh_lod_threshold": 0.0,
+			"msaa": 2,
+			"png_sha256": "62729cad3be09d747534f01a5e94cd38abbfafba75557a5687b5e75831dc17ed",
+			"position_m": [
+				8.5,
+				2.40000009536743,
+				3.70000004768372
+			],
+			"render_scale": 1.0,
+			"ssao": true,
+			"target_m": [
+				6.40000009536743,
+				1.0,
+				0.0
+			]
+		},
+		"ground": {
+			"fov": 50.0,
+			"mesh_lod_threshold": 0.0,
+			"msaa": 2,
+			"png_sha256": "06e8f032b0edb86241e3ccdb4e84c85ebab8e8cd9d530829d8c0b899921596ec",
+			"position_m": [
+				12.0,
+				1.20000004768372,
+				7.0
+			],
+			"render_scale": 1.0,
+			"ssao": true,
+			"target_m": [
+				9.19999980926514,
+				0.150000005960464,
+				3.5
+			]
+		},
+		"horizon": {
+			"fov": 62.0,
+			"mesh_lod_threshold": 0.0,
+			"msaa": 2,
+			"png_sha256": "e9132ec3ee391a196eade58ce555efbd91f26c6ce7ea9d630b494cf9970432fc",
+			"position_m": [
+				20.0,
+				3.0,
+				22.0
+			],
+			"render_scale": 1.0,
+			"ssao": true,
+			"target_m": [
+				-25.0,
+				2.0,
+				-80.0
+			]
+		},
+		"near": {
+			"fov": 50.0,
+			"mesh_lod_threshold": 0.0,
+			"msaa": 2,
+			"png_sha256": "aa13c2568863f67455e4f39b206b9c1d463db488c0636615b4695156424c5f8a",
+			"position_m": [
+				12.0,
+				4.19999980926514,
+				9.0
+			],
+			"render_scale": 1.0,
+			"ssao": true,
+			"target_m": [
+				6.0,
+				0.800000011920929,
+				0.0
+			]
+		},
+		"normal": {
+			"fov": 50.0,
+			"mesh_lod_threshold": 0.0,
+			"msaa": 2,
+			"png_sha256": "2b3e30de48d4ff6d8b8499f12753cc6261c83b35a651d548b663f271a6aa60b5",
+			"position_m": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"render_scale": 1.0,
+			"ssao": true,
+			"target_m": [
+				4.0,
+				0.0,
+				-2.5
+			]
+		},
+		"normal-low": {
+			"fov": 50.0,
+			"mesh_lod_threshold": 0.0,
+			"msaa": 0,
+			"png_sha256": "df6a153a332730e5297cfc8530a69702805ac81349930ce0cc20c0303fa27247",
+			"position_m": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"render_scale": 0.649999976158142,
+			"ssao": false,
+			"target_m": [
+				4.0,
+				0.0,
+				-2.5
+			]
+		},
+		"reverse": {
+			"fov": 50.0,
+			"mesh_lod_threshold": 0.0,
+			"msaa": 2,
+			"png_sha256": "fc6ca8df810e0a25d0b6461314f3db6e40c7ac1656e4bc4359571cb33da58898",
+			"position_m": [
+				-1.0,
+				3.40000009536743,
+				-8.0
+			],
+			"render_scale": 1.0,
+			"ssao": true,
+			"target_m": [
+				6.0,
+				0.800000011920929,
+				0.0
+			]
+		}
+	},
+	"owner_visual_acceptance": "NOT_RUN",
+	"scene_performance": "NOT_RUN",
+	"scope": "independent original Mars art lookdev; no Main or simulation",
+	"source_unchanged": true,
+	"sources": {
+		"ground.gdshader": "fb29f51bb9f3da5d7c40cc419101ea9f5c0da770fc20959b8f68e6ed431e3d26",
+		"lookdev.gd": "0b73ec3ec98c93ad6c4bbd51db07671357f0964057c8e2635c6a7b33a08d7408",
+		"project.godot": "732be721d9122cdd424f74f506f700867be93c77a744dec618d1affbbc889472",
+		"stone.gdshader": "1841d3c6d415a6703a9368f09cb6fae4be612eeed0483952b8c09188a70e8817"
+	},
+	"viewport_px": [
+		1600,
+		1000
+	]
+}

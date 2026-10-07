@@ -1,0 +1,181 @@
+{
+  "method": "architect continuous shallow-surface re-plan",
+  "field_statistics": [
+    {
+      "region": "right_cut_exposure",
+      "sampling_step_m": 0.001,
+      "interior_definition": "envelope > 0.8",
+      "interior_depth_quantiles_m": [
+        0.00048396205853740826,
+        0.0015870333867583281,
+        0.0031523135233691713,
+        0.004892503585702411,
+        0.0067367050455075335
+      ],
+      "interior_slope_degrees_quantiles": [
+        1.658890024712709,
+        4.466531409912178,
+        8.703392531538269,
+        12.233866886059058
+      ],
+      "interior_slope_below_1_degree_fraction": 0.04235881537976159,
+      "highest_10pct_interior_area_slope_energy_fraction": 0.3519784948502369
+    },
+    {
+      "region": "rear_old_exposure",
+      "sampling_step_m": 0.001,
+      "interior_definition": "envelope > 0.8",
+      "interior_depth_quantiles_m": [
+        0.0004890729746639063,
+        0.001728721593974213,
+        0.0034885593062376694,
+        0.005034103906095582,
+        0.0061387501424527
+      ],
+      "interior_slope_degrees_quantiles": [
+        1.5898675219339877,
+        4.91412434885247,
+        9.40716160860201,
+        12.720073729441857
+      ],
+      "interior_slope_below_1_degree_fraction": 0.04587866998966628,
+      "highest_10pct_interior_area_slope_energy_fraction": 0.33975830902821963
+    }
+  ],
+  "high": {
+    "triangles_before": 1294756,
+    "triangles_after": 1294746,
+    "new_subdivision": false,
+    "local_degenerate_tolerance_m": 1e-05,
+    "micro_sliver_diagonal_repairs": [],
+    "exposures": [
+      {
+        "name": "right_cut_exposure",
+        "definition": {
+          "type": "continuous connected shallow erosion",
+          "nominal_scales_m": [
+            0.02,
+            0.08
+          ],
+          "nominal_depth_m": [
+            0.002,
+            0.006
+          ],
+          "maximum_depth_m": 0.008,
+          "coverage": "warped, overlapping broad tails of unequal extent; no rectangular plateau or contour ring",
+          "direction": "weak layer alignment; original accepted interior field unchanged"
+        },
+        "changed_vertices": 72445,
+        "max_depth_m": 0.006709927396921793
+      },
+      {
+        "name": "rear_old_exposure",
+        "definition": {
+          "type": "continuous connected shallow erosion",
+          "nominal_scales_m": [
+            0.02,
+            0.08
+          ],
+          "nominal_depth_m": [
+            0.002,
+            0.006
+          ],
+          "maximum_depth_m": 0.008,
+          "coverage": "warped, overlapping broad tails of unequal extent; no rectangular plateau or contour ring",
+          "direction": "weak layer alignment; original accepted interior field unchanged"
+        },
+        "changed_vertices": 70109,
+        "max_depth_m": 0.006130792637769582
+      }
+    ],
+    "max_depth_m": 0.006709927396921793
+  },
+  "game": {
+    "triangles_before": 660004,
+    "triangles_after": 659908,
+    "new_subdivision": false,
+    "local_degenerate_tolerance_m": 1e-05,
+    "micro_sliver_diagonal_repairs": [
+      {
+        "original_face": 19462,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 20861,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 110498,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 22509,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 122984,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 110543,
+        "area_error": 0.0
+      },
+      {
+        "original_face": 22076,
+        "area_error": 0.0
+      }
+    ],
+    "exposures": [
+      {
+        "name": "right_cut_exposure",
+        "definition": {
+          "type": "continuous connected shallow erosion",
+          "nominal_scales_m": [
+            0.02,
+            0.08
+          ],
+          "nominal_depth_m": [
+            0.002,
+            0.006
+          ],
+          "maximum_depth_m": 0.008,
+          "coverage": "warped, overlapping broad tails of unequal extent; no rectangular plateau or contour ring",
+          "direction": "weak layer alignment; original accepted interior field unchanged"
+        },
+        "changed_vertices": 43323,
+        "max_depth_m": 0.006706089940066438
+      },
+      {
+        "name": "rear_old_exposure",
+        "definition": {
+          "type": "continuous connected shallow erosion",
+          "nominal_scales_m": [
+            0.02,
+            0.08
+          ],
+          "nominal_depth_m": [
+            0.002,
+            0.006
+          ],
+          "maximum_depth_m": 0.008,
+          "coverage": "warped, overlapping broad tails of unequal extent; no rectangular plateau or contour ring",
+          "direction": "weak layer alignment; original accepted interior field unchanged"
+        },
+        "changed_vertices": 126781,
+        "max_depth_m": 0.006134501360542249
+      }
+    ],
+    "max_depth_m": 0.006706089940066438
+  },
+  "status": "PENDING_ACTUAL_GRAY_AND_SOURCE_REVIEW_BEFORE_4K_BAKE",
+  "formal_identities": {
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend": {
+      "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+      "bytes": 52451110
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb": {
+      "sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+      "bytes": 27662108
+    }
+  }
+}
