@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/scenario-labs/skills",
+  "commit": "91caa011e13774a220aba7136309b49964104040",
+  "license": "MIT",
+  "purpose": "hard-surface and lighting visual critique; project RTS and owner instructions override portrait/film defaults",
+  "files": [
+    {
+      "file": ".agents/skills/scenario-blender-hard-surface/SKILL.md",
+      "sha256": "f14733f37d3f0ee2654fcac4f9f0bb3c1bc3112854a38848f71736eb155a525d"
+    },
+    {
+      "file": ".agents/skills/scenario-blender-hard-surface/references/critique.md",
+      "sha256": "32fae7dc8e3759556aa4571b868d5fcb783217ce9270c9802aa8b380ca24ee4d"
+    },
+    {
+      "file": ".agents/skills/scenario-blender-hard-surface/references/sources.md",
+      "sha256": "71d90f1effa9477abdfe4bd77bea4d6b0fb8c21ae2ec449168d9b7d972ba77eb"
+    },
+    {
+      "file": ".agents/skills/scenario-blender-lighting-rendering/SKILL.md",
+      "sha256": "93a3bea574312104922feba0884afa05332a2a7e12720995b9fabb948e0d297e"
+    },
+    {
+      "file": ".agents/skills/scenario-blender-lighting-rendering/references/critique.md",
+      "sha256": "04c4b949a62019d4cfe70cbe536dc96b2411fdd0c82980b750004e0f04ce38db"
+    },
+    {
+      "file": ".agents/skills/scenario-blender-lighting-rendering/references/sources.md",
+      "sha256": "8beafcf59b2822a81ce09f255ef81cc333d12a464f0a58e6f6ac5e37c3679999"
+    }
+  ]
+}
