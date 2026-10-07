@@ -1,0 +1,105 @@
+{
+  "status": "lookdev candidate; owner visual acceptance pending",
+  "units": "meters",
+  "source_up": "+Z",
+  "export_up": "+Y",
+  "export_forward": "-Z",
+  "seed": 7102026,
+  "materials": [
+    "Regolith",
+    "Bedrock",
+    "Clast"
+  ],
+  "terrain_grid_m": 2,
+  "terrain_bounds_xz_m": [
+    -250,
+    250
+  ],
+  "central_flat_radius_m": 12,
+  "placements_y_m": {
+    "hero [6,0]": 0.0,
+    "carrier [-5,5]": 0.0,
+    "solar [0,-6]": -0.0,
+    "processor [-6,-2]": -0.0
+  },
+  "clast_instances": 763,
+  "bedrock_slabs": 108,
+  "objects": [
+    {
+      "name": "Regolith_Continuous",
+      "vertices": 63001,
+      "triangles": 125000
+    },
+    {
+      "name": "Bedrock_BrokenSlabs",
+      "vertices": 1730,
+      "triangles": 3028
+    },
+    {
+      "name": "Clast_BrokenSlabs",
+      "vertices": 12193,
+      "triangles": 21334
+    }
+  ],
+  "references": [
+    "PIA21042 shape only; processing unspecified",
+    "PIA16800 middle natural-color column"
+  ],
+  "original_geometry": true,
+  "photo_textures": false,
+  "collision_or_simulation": false,
+  "glb_sha256": "2693c1b6f576c0529c2fc56d0da0a349d21281bb182d7284c09582ef2f181a52",
+  "glb_bounds": [
+    {
+      "mesh": "Regolith_Continuous",
+      "min": [
+        -250,
+        -0.3799331486225128,
+        -250
+      ],
+      "max": [
+        250,
+        20.1031551361084,
+        250
+      ],
+      "vertices": 63001
+    },
+    {
+      "mesh": "Bedrock_BrokenSlabs",
+      "min": [
+        -184.52610778808594,
+        0.578070878982544,
+        -193.54124450683594
+      ],
+      "max": [
+        130.37428283691406,
+        17.697715759277344,
+        -19.743194580078125
+      ],
+      "vertices": 4979
+    },
+    {
+      "mesh": "Clast_BrokenSlabs",
+      "min": [
+        -104.4343490600586,
+        -0.24950918555259705,
+        -81.51000213623047
+      ],
+      "max": [
+        113.56476593017578,
+        3.0502188205718994,
+        65.6944351196289
+      ],
+      "vertices": 35519
+    }
+  ],
+  "glb_bytes": 3382996,
+  "checks": {
+    "glb_axis_bounds": "PASS",
+    "materials_no_textures": "PASS",
+    "flat_anchor_heights": "PASS",
+    "finite_vertices": "PASS",
+    "blender_preview": "PASS; integration visual acceptance pending",
+    "source_reopen": "PASS; 3 meshes, material names, upward ground normals, shading"
+  }
+}

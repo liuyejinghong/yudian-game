@@ -1,0 +1,7 @@
+{
+  "hero_sha256": "031a6e12551cdfed95b528539d6717e3e30b0f89eb10a9db774a61fe6e75d893",
+  "scene_scope": "independent lookdev, AgX05",
+  "status": "visual REWORK",
+  "issue": "near broad rounded layer edges; reverse lacks thin fractured edges; compare PIA21044; root and architect agree",
+  "scope_kept": "research, full matrix, frame, stable UV/PBR export"
+}

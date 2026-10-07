@@ -1,0 +1,6 @@
+.godot/
+*.log
+*.blend1
+__pycache__/
+hero/mars-outcrop-r1_*.png
+hero/mars-outcrop-r1_*.png.import

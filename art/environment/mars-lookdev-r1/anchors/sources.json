@@ -1,0 +1,41 @@
+[
+  {
+    "id": "tuoyun",
+    "source": "prototype/assets/units/tuoyun-r1/tuoyun-r1.glb",
+    "file": "tuoyun.glb",
+    "sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+    "position_m": [
+      -5,
+      0,
+      5
+    ],
+    "scale": 1,
+    "scope": "existing unchanged scale anchor; not restyled/accepted by this work"
+  },
+  {
+    "id": "solar",
+    "source": "prototype/assets/facilities/solar-r1/solar-r1.glb",
+    "file": "solar.glb",
+    "sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73",
+    "position_m": [
+      0,
+      0,
+      -6
+    ],
+    "scale": 1,
+    "scope": "existing unchanged scale anchor; not restyled/accepted by this work"
+  },
+  {
+    "id": "processor",
+    "source": "prototype/assets/facilities/processor-r1/processor-r1.glb",
+    "file": "processor.glb",
+    "sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157",
+    "position_m": [
+      -6,
+      0,
+      -2
+    ],
+    "scale": 1,
+    "scope": "existing unchanged scale anchor; not restyled/accepted by this work"
+  }
+]

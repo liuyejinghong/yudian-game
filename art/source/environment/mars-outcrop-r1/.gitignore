@@ -1,0 +1,10 @@
+*.log
+*.blend1
+__pycache__/
+verification/reopened.glb
+iterations/previous/
+iterations/candidate-r2/
+iterations/**/*.blend
+iterations/**/*.glb
+iterations/**/textures/
+iterations/**/*.py

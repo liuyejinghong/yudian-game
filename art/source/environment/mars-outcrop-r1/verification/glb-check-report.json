@@ -1,0 +1,51 @@
+{
+  "triangles": 27374,
+  "export_vertices": 17224,
+  "normals": 17224,
+  "bounds_gltf": {
+    "min": [
+      -3.0764918327331543,
+      -0.14000000059604645,
+      -2.070430278778076
+    ],
+    "max": [
+      3.0764918327331543,
+      2.2099995613098145,
+      2.070430278778076
+    ],
+    "size": [
+      6.152983665466309,
+      2.349999561905861,
+      4.140860557556152
+    ]
+  },
+  "embedded_images": [
+    {
+      "name": "normal",
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 5765953
+    },
+    {
+      "name": "basecolor",
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 2335702
+    },
+    {
+      "name": "roughness",
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 2243217
+    }
+  ],
+  "sha256": "031a6e12551cdfed95b528539d6717e3e30b0f89eb10a9db774a61fe6e75d893",
+  "blend_reopen": "Not run by this Python invocation; run through Blender.",
+  "pass": true
+}
