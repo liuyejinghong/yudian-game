@@ -1,0 +1,1259 @@
+{
+  "candidate": "A02a-U01-cargo-rev4",
+  "review_date": "2026-10-08",
+  "visual_verdict": "PASS",
+  "scope": "coplanar cargo-top fix and no visible local regression in supplied static views only",
+  "candidate_files": [
+    {
+      "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+      "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+      "expected": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+      "match": true
+    },
+    {
+      "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+      "sha256": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
+      "expected": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
+      "match": true
+    },
+    {
+      "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
+      "sha256": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+      "expected": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+      "match": true
+    },
+    {
+      "path": "art/source/units/tuoyun-r1/tuoyun-r1.glb",
+      "sha256": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "expected": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "match": true
+    },
+    {
+      "path": "art/manifests/tuoyun-r1.json",
+      "sha256": "e1eb09a2c0d058c84320466f5b55befc05664baa389b47e2c3abca5618f368b8",
+      "expected": "e1eb09a2c0d058c84320466f5b55befc05664baa389b47e2c3abca5618f368b8",
+      "match": true
+    }
+  ],
+  "frames": [
+    {
+      "name": "before-close90",
+      "pixel_viewed_original": true,
+      "files": [
+        {
+          "path": "docs/art/production/d12-r1/u01/before-close90/blind_0001.json",
+          "sha256": "f520ebec1042a6b6a1ac1274a4117662af28d8fdc696cc3f17c428ae6f4fb1ae",
+          "expected": "f520ebec1042a6b6a1ac1274a4117662af28d8fdc696cc3f17c428ae6f4fb1ae",
+          "match": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/before-close90/blind_0001.png",
+          "sha256": "7a29bc969ba85eaa186c5b36afc4eca2a1974453a604236d2faf02d04320d17f",
+          "expected": "7a29bc969ba85eaa186c5b36afc4eca2a1974453a604236d2faf02d04320d17f",
+          "match": true
+        }
+      ],
+      "glb_sha": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+      "source_checks": [
+        {
+          "path": "docs/art/production/d12-r1/u01/before/generate_tuoyun_r1.py",
+          "sha256": "7017f0df22e88da8f036dc88fb99433d29fc620419fb74279c90ad2d5115b385",
+          "match": true,
+          "capture_resolved": false
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/before/tuoyun-r1.gltf",
+          "sha256": "615d20d863eeef650566dabbbb88f10730171e663d411b02cb73fa9b13476807",
+          "match": true,
+          "capture_resolved": false
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/before/tuoyun-r1.bin",
+          "sha256": "370f078e4fd326a3a29f4d9ba7b239c237a3fc1ba09076d624e1e38516101a42",
+          "match": true,
+          "capture_resolved": false
+        }
+      ],
+      "requested": {
+        "camera": "close",
+        "cargo": "loaded",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "idle",
+        "time_s": 0.0,
+        "yaw": 90
+      },
+      "view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 50.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "close",
+          "near": 0.0500000007450581,
+          "position": [
+            3.0,
+            3.0,
+            4.0
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -27.4744281768799,
+            36.8698997497559,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.400000005960464,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      }
+    },
+    {
+      "name": "before-close180",
+      "pixel_viewed_original": true,
+      "files": [
+        {
+          "path": "docs/art/production/d12-r1/u01/before-close180/blind_0001.json",
+          "sha256": "1ca951ed6bea0cf520d324028f2fd3bc2d5ce858c70a0ed24f17f7d86fceba7b",
+          "expected": "1ca951ed6bea0cf520d324028f2fd3bc2d5ce858c70a0ed24f17f7d86fceba7b",
+          "match": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/before-close180/blind_0001.png",
+          "sha256": "a6e40c8aa0e255ab4b6e33f877e5dc68768cad5db377db74e7c9bb1c1c90d03e",
+          "expected": "a6e40c8aa0e255ab4b6e33f877e5dc68768cad5db377db74e7c9bb1c1c90d03e",
+          "match": true
+        }
+      ],
+      "glb_sha": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+      "source_checks": [
+        {
+          "path": "docs/art/production/d12-r1/u01/before/generate_tuoyun_r1.py",
+          "sha256": "7017f0df22e88da8f036dc88fb99433d29fc620419fb74279c90ad2d5115b385",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/before/tuoyun-r1.gltf",
+          "sha256": "615d20d863eeef650566dabbbb88f10730171e663d411b02cb73fa9b13476807",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/before/tuoyun-r1.bin",
+          "sha256": "370f078e4fd326a3a29f4d9ba7b239c237a3fc1ba09076d624e1e38516101a42",
+          "match": true,
+          "capture_resolved": true
+        }
+      ],
+      "requested": {
+        "camera": "close",
+        "cargo": "loaded",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "idle",
+        "time_s": 0.0,
+        "yaw": 180
+      },
+      "view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 50.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "close",
+          "near": 0.0500000007450581,
+          "position": [
+            3.0,
+            3.0,
+            4.0
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -27.4744281768799,
+            36.8698997497559,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.400000005960464,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      }
+    },
+    {
+      "name": "current-close90",
+      "pixel_viewed_original": true,
+      "files": [
+        {
+          "path": "docs/art/production/d12-r1/u01/current-close90/blind_0001.json",
+          "sha256": "04e0b0cf1618bde90f2abb7a312957f9fa2ba340198c9db90275a4574af4c772",
+          "expected": "04e0b0cf1618bde90f2abb7a312957f9fa2ba340198c9db90275a4574af4c772",
+          "match": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/current-close90/blind_0001.png",
+          "sha256": "35cb5518aa8921f655be4fb3bbb3794984132690f75f427e8dac066e519adbf2",
+          "expected": "35cb5518aa8921f655be4fb3bbb3794984132690f75f427e8dac066e519adbf2",
+          "match": true
+        }
+      ],
+      "glb_sha": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "source_checks": [
+        {
+          "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+          "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+          "sha256": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
+          "sha256": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+          "match": true,
+          "capture_resolved": true
+        }
+      ],
+      "requested": {
+        "camera": "close",
+        "cargo": "loaded",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "idle",
+        "time_s": 0.0,
+        "yaw": 90
+      },
+      "view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 50.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "close",
+          "near": 0.0500000007450581,
+          "position": [
+            3.0,
+            3.0,
+            4.0
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -27.4744281768799,
+            36.8698997497559,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.400000005960464,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      }
+    },
+    {
+      "name": "current-close180",
+      "pixel_viewed_original": true,
+      "files": [
+        {
+          "path": "docs/art/production/d12-r1/u01/current-close180/blind_0001.json",
+          "sha256": "4fe8a12f3c3d5208d50963fcaab10bed465f30bd31a1ce14a123ac64d8afe438",
+          "expected": "4fe8a12f3c3d5208d50963fcaab10bed465f30bd31a1ce14a123ac64d8afe438",
+          "match": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/current-close180/blind_0001.png",
+          "sha256": "fd88a91560521124bd6470d013b5ee970bc2861393765dc805da48f680eadb85",
+          "expected": "fd88a91560521124bd6470d013b5ee970bc2861393765dc805da48f680eadb85",
+          "match": true
+        }
+      ],
+      "glb_sha": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "source_checks": [
+        {
+          "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+          "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+          "sha256": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
+          "sha256": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+          "match": true,
+          "capture_resolved": true
+        }
+      ],
+      "requested": {
+        "camera": "close",
+        "cargo": "loaded",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "idle",
+        "time_s": 0.0,
+        "yaw": 180
+      },
+      "view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 50.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "close",
+          "near": 0.0500000007450581,
+          "position": [
+            3.0,
+            3.0,
+            4.0
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -27.4744281768799,
+            36.8698997497559,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.400000005960464,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      }
+    },
+    {
+      "name": "current-normal-loaded",
+      "pixel_viewed_original": true,
+      "files": [
+        {
+          "path": "docs/art/production/d12-r1/u01/current-normal-loaded/blind_0001.json",
+          "sha256": "e39147fb40bd0f22a966e46c6d163f2677fc1468bb90558e8db495f4298637b1",
+          "expected": "e39147fb40bd0f22a966e46c6d163f2677fc1468bb90558e8db495f4298637b1",
+          "match": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/current-normal-loaded/blind_0001.png",
+          "sha256": "c513dc80d38a238274513caaa6bf21b4df5218e568ab5940b81adab9a504e241",
+          "expected": "c513dc80d38a238274513caaa6bf21b4df5218e568ab5940b81adab9a504e241",
+          "match": true
+        }
+      ],
+      "glb_sha": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "source_checks": [
+        {
+          "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+          "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+          "sha256": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
+          "sha256": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+          "match": true,
+          "capture_resolved": true
+        }
+      ],
+      "requested": {
+        "camera": "normal",
+        "cargo": "loaded",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "idle",
+        "time_s": 0.0,
+        "yaw": 0
+      },
+      "view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 60.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "normal",
+          "near": 0.0500000007450581,
+          "position": [
+            18.3847999572754,
+            28.0,
+            18.3847999572754
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -47.1210594177246,
+            45.0,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      }
+    },
+    {
+      "name": "current-normal-empty",
+      "pixel_viewed_original": true,
+      "files": [
+        {
+          "path": "docs/art/production/d12-r1/u01/current-normal-empty/blind_0001.json",
+          "sha256": "b92c71f5add1cb7d89b2685a1056b4d41d56c85726e90cff70912aa0f80190e2",
+          "expected": "b92c71f5add1cb7d89b2685a1056b4d41d56c85726e90cff70912aa0f80190e2",
+          "match": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/current-normal-empty/blind_0001.png",
+          "sha256": "6b969f9eaf3498145fb6453ef7a2b47f35e3324c6c12931bca10d534e797559d",
+          "expected": "6b969f9eaf3498145fb6453ef7a2b47f35e3324c6c12931bca10d534e797559d",
+          "match": true
+        }
+      ],
+      "glb_sha": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "source_checks": [
+        {
+          "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+          "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+          "sha256": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
+          "sha256": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+          "match": true,
+          "capture_resolved": true
+        }
+      ],
+      "requested": {
+        "camera": "normal",
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "idle",
+        "time_s": 0.0,
+        "yaw": 0
+      },
+      "view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 60.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "normal",
+          "near": 0.0500000007450581,
+          "position": [
+            18.3847999572754,
+            28.0,
+            18.3847999572754
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -47.1210594177246,
+            45.0,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      }
+    },
+    {
+      "name": "current-maintenance180",
+      "pixel_viewed_original": true,
+      "files": [
+        {
+          "path": "docs/art/production/d12-r1/u01/current-maintenance180/blind_0001.json",
+          "sha256": "75adbdd577e244b92492369c3b80d2f2b0097b58e275a1e6528819d4c00b8219",
+          "expected": "75adbdd577e244b92492369c3b80d2f2b0097b58e275a1e6528819d4c00b8219",
+          "match": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/current-maintenance180/blind_0001.png",
+          "sha256": "467b9a3c7468a215aea81b986979bb299503a31c966a1320ed94d61bd7fda03f",
+          "expected": "467b9a3c7468a215aea81b986979bb299503a31c966a1320ed94d61bd7fda03f",
+          "match": true
+        }
+      ],
+      "glb_sha": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "source_checks": [
+        {
+          "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+          "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+          "sha256": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
+          "sha256": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+          "match": true,
+          "capture_resolved": true
+        }
+      ],
+      "requested": {
+        "camera": "close",
+        "cargo": "loaded",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "maintenance",
+        "time_s": 1.0,
+        "yaw": 180
+      },
+      "view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 50.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "close",
+          "near": 0.0500000007450581,
+          "position": [
+            3.0,
+            3.0,
+            4.0
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -27.4744281768799,
+            36.8698997497559,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.400000005960464,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "4x",
+          "msaa_3d_raw": 2,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 1.0,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      }
+    },
+    {
+      "name": "current-normal-low",
+      "pixel_viewed_original": true,
+      "files": [
+        {
+          "path": "docs/art/production/d12-r1/u01/current-normal-low/blind_0001.json",
+          "sha256": "f2168f039ed5d57a61291ba73a945a7a7cbd7729d3b12cebdbad160b6ab5c46b",
+          "expected": "f2168f039ed5d57a61291ba73a945a7a7cbd7729d3b12cebdbad160b6ab5c46b",
+          "match": true
+        },
+        {
+          "path": "docs/art/production/d12-r1/u01/current-normal-low/blind_0001.png",
+          "sha256": "aafa7fe4df4fcccc1d0864f9b0170b0b5e2ccc4b21ee15f66446c3ab609a7d60",
+          "expected": "aafa7fe4df4fcccc1d0864f9b0170b0b5e2ccc4b21ee15f66446c3ab609a7d60",
+          "match": true
+        }
+      ],
+      "glb_sha": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "source_checks": [
+        {
+          "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
+          "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
+          "sha256": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
+          "match": true,
+          "capture_resolved": true
+        },
+        {
+          "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
+          "sha256": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+          "match": true,
+          "capture_resolved": true
+        }
+      ],
+      "requested": {
+        "camera": "normal",
+        "cargo": "loaded",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "idle",
+        "time_s": 0.0,
+        "yaw": 0
+      },
+      "view": {
+        "camera": {
+          "attributes": "none",
+          "far": 200.0,
+          "fov": 60.0,
+          "keep_aspect": "keep_height",
+          "mode_requested": "normal",
+          "near": 0.0500000007450581,
+          "position": [
+            18.3847999572754,
+            28.0,
+            18.3847999572754
+          ],
+          "projection": "perspective",
+          "rotation_degrees": [
+            -47.1210594177246,
+            45.0,
+            0.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "environment": {
+          "ambient_light_color": "d5dbdf",
+          "ambient_light_energy": 0.600000023841858,
+          "ambient_light_sky_contribution": 0.0,
+          "ambient_light_source": "color",
+          "background_color": "aeb8bc",
+          "background_energy_multiplier": 1.0,
+          "background_mode": "color",
+          "fog_enabled": false,
+          "glow_enabled": false,
+          "reflected_light_source": "disabled",
+          "sdfgi_enabled": false,
+          "ssao_enabled": false,
+          "ssil_enabled": false,
+          "ssr_enabled": false,
+          "tonemap_exposure": 1.0,
+          "tonemap_mode": "linear",
+          "volumetric_fog_enabled": false
+        },
+        "light": {
+          "directional_shadow_max_distance": 80.0,
+          "light_color": "ffffff",
+          "light_energy": 1.0,
+          "rotation_degrees": [
+            -54.9999961853027,
+            -30.0,
+            0.0
+          ],
+          "shadow_enabled": true,
+          "soft_shadow_filter_quality": {
+            "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+            "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+            "value": 2
+          }
+        },
+        "render": {
+          "adapter_name": "Apple M3 Pro (Apple9)",
+          "adapter_vendor": "Apple",
+          "display_server": "macOS",
+          "engine_build": "official",
+          "engine_version": "4.7.2-stable (official)",
+          "rendering_driver_actual": "metal",
+          "rendering_method_actual": "forward_plus",
+          "video_adapter_api_version": "4.0"
+        },
+        "shadow_atlas": {
+          "readback": "unavailable (RenderingServer has no directional shadow atlas getter); requested value recorded",
+          "requested_size": 4096
+        },
+        "viewport": {
+          "height": 1200,
+          "msaa_3d": "disabled",
+          "msaa_3d_raw": 0,
+          "own_world_3d": true,
+          "render_target_update_mode": 4,
+          "scaling_3d_scale": 0.75,
+          "screen_space_aa": "disabled",
+          "transparent_bg": false,
+          "use_taa": false,
+          "width": 1920
+        },
+        "world_environment": {
+          "camera_attributes": "none"
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "pair": [
+        "before-close90",
+        "current-close90"
+      ],
+      "view_equal": {
+        "camera": true,
+        "environment": true,
+        "light": true,
+        "render": true,
+        "shadow_atlas": true,
+        "viewport": true,
+        "world_environment": true
+      },
+      "material_hashes_equal": true
+    },
+    {
+      "pair": [
+        "before-close180",
+        "current-close180"
+      ],
+      "view_equal": {
+        "camera": true,
+        "environment": true,
+        "light": true,
+        "render": true,
+        "shadow_atlas": true,
+        "viewport": true,
+        "world_environment": true
+      },
+      "material_hashes_equal": true
+    },
+    {
+      "pair": [
+        "current-normal-loaded",
+        "current-normal-empty"
+      ],
+      "view_equal": {
+        "camera": true,
+        "environment": true,
+        "light": true,
+        "render": true,
+        "shadow_atlas": true,
+        "viewport": true,
+        "world_environment": true
+      },
+      "material_hashes_equal": true
+    },
+    {
+      "pair": [
+        "current-normal-loaded",
+        "current-normal-low"
+      ],
+      "view_equal": {
+        "camera": true,
+        "environment": true,
+        "light": true,
+        "render": true,
+        "shadow_atlas": true,
+        "viewport": false,
+        "world_environment": true
+      },
+      "material_hashes_equal": true
+    }
+  ],
+  "independent_check_cargo_result": {
+    "result": "PASS",
+    "baseline_top": 0.86,
+    "body_top": 0.8,
+    "lid_top": 0.86,
+    "unchanged_nodes": 21,
+    "sockets": "unchanged",
+    "animation_tracks": "unchanged"
+  },
+  "independent_glb_position_read": {
+    "before_local_surface_tops": [
+      0.14000000059604645,
+      0.3799999952316284,
+      0.3799999952316284
+    ],
+    "current_local_surface_tops": [
+      0.14000000059604645,
+      0.3199999928474426,
+      0.3799999952316284
+    ],
+    "cargo_translation": [
+      0,
+      0.48,
+      0.28
+    ],
+    "separation_m": 0.06
+  },
+  "excluded": "all after-* stale-cache images",
+  "not_run": [
+    "new Godot capture",
+    "dynamic rotation/flicker check",
+    "new Blender reopen/import",
+    "Main",
+    "performance",
+    "owner acceptance"
+  ],
+  "not_assessed": [
+    "whole vehicle high fidelity",
+    "Main cargo readability",
+    "all animation poses"
+  ]
+}

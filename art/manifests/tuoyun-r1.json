@@ -1,12 +1,12 @@
 {
   "id": "ART-U01",
-  "revision": 3,
+  "revision": 4,
   "unit": "meter",
   "up": "+Y",
   "forward": "-Z",
   "preview_scene": "res://assets/units/tuoyun-r1/preview.tscn",
   "glb": "res://assets/units/tuoyun-r1/tuoyun-r1.glb",
-  "glb_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+  "glb_sha256": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
   "bounds": {
     "static": {
       "min": [
@@ -729,19 +729,19 @@
     "source_path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
     "tool_version": "Python 3.14.3 standard library",
     "original": true,
-    "hash": "615d20d863eeef650566dabbbb88f10730171e663d411b02cb73fa9b13476807",
+    "hash": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336",
     "files": [
       {
         "path": "art/source/units/tuoyun-r1/generate_tuoyun_r1.py",
-        "sha256": "7017f0df22e88da8f036dc88fb99433d29fc620419fb74279c90ad2d5115b385"
+        "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f"
       },
       {
         "path": "art/source/units/tuoyun-r1/tuoyun-r1.gltf",
-        "sha256": "615d20d863eeef650566dabbbb88f10730171e663d411b02cb73fa9b13476807"
+        "sha256": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336"
       },
       {
         "path": "art/source/units/tuoyun-r1/tuoyun-r1.bin",
-        "sha256": "370f078e4fd326a3a29f4d9ba7b239c237a3fc1ba09076d624e1e38516101a42"
+        "sha256": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9"
       }
     ]
   },
