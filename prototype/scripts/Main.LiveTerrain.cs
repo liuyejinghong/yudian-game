@@ -97,6 +97,7 @@ public partial class Main
             }
             if (_playerMode)
             {
+                if (BootstrapEnabled && _groundReady) SettleBaseMovement();
                 ProcessPlayerCommand();
                 FinishPlayerLoad();
                 if (!_userPaused && _loadPending == null && !_groundFault && _groundVerified == _liveTerrain.Current.Version)
@@ -108,6 +109,16 @@ public partial class Main
             if (System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1") BootstrapTestStep();
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") LevelTestStep(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1") GroundTestStep();
+            if (BootstrapEnabled && _groundReady)
+            {
+                // Apply final health and pause facts after all transactions, before child bodies move.
+                PauseGround(_projectionPaused);
+                foreach(var actor in _groundRobots)
+                {
+                    var health=_health[actor.Name.ToString()];
+                    actor.SetMovementBudget((float)Math.Min(health.Energy/_bootstrapConfig.MoveEnergyPerM,health.Durability/_bootstrapConfig.MoveWearPerM));
+                }
+            }
             if (_groundStatus != null) _groundStatus.Text = $"权威 v{_liveTerrain.Current.Version} · 绑定 v{_liveTerrain.ProjectionVersion?.ToString() ?? "未知"} · 物理 v{_groundVerified?.ToString() ?? "待验"}\n" +
                 $"机器人 {_groundRobots.Count} · 贴地 {_groundRobots.Count(x => x.IsOnFloor())} · 停滞 {_groundRobots.Count(x => x.Blocked)}\n" +
                 _groundMessage + "\n完整导航、设施建设、经济、保存尚未接入";

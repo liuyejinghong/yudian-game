@@ -80,12 +80,18 @@ public partial class Main
         if(s.Services.Length>saved.Robots.Length||s.Services.Select(x=>x.Robot).Distinct().Count()!=s.Services.Length||s.Services.Select(x=>x.Id).Distinct().Count()!=s.Services.Length)throw new InvalidDataException("重复服务关系");
         foreach(var service in s.Services)
         {
-            if(service==null||!s.Health.ContainsKey(service.Robot)||!service.Id.StartsWith("service-")||!int.TryParse(service.Id[8..],out int id)||id<1||id>s.ServiceSequence||service.Kind is not ("charge" or "repair")||!s.Facilities.Any(f=>f.Id==service.Facility&&f.Built&&f.Type==(service.Kind=="charge"?"charger":"repair"))||!s.Stations.TryGetValue(service.Facility,out var owner)||owner!=service.Robot||!FiniteRange(service.Progress,_bootstrapConfig.RepairSeconds)||!FiniteRange(service.Waiting,1e12))throw new InvalidDataException("服务身份或预约不一致");
+            if(service==null||!s.Health.ContainsKey(service.Robot)||!service.Id.StartsWith("service-")||!int.TryParse(service.Id[8..],out int id)||id<1||id>s.ServiceSequence||service.Kind is not ("charge" or "repair")||!s.Facilities.Any(f=>f.Id==service.Facility&&f.Built&&f.Type==(service.Kind=="charge"?"charger":"repair"))||(!service.Returning&&(!s.Stations.TryGetValue(service.Facility,out var owner)||owner!=service.Robot))||!FiniteRange(service.Progress,_bootstrapConfig.RepairSeconds)||!FiniteRange(service.Waiting,1e12))throw new InvalidDataException("服务身份或预约不一致");
             var servicePosition=LoadVector(service.Station);var facility=s.Facilities.Single(f=>f.Id==service.Facility);
             var actor=_groundRobots.Single(a=>a.Name.ToString()==service.Robot);var fpos=LoadVector(facility.Position);float reach=BaseRadius(facility)+actor.BodyRadius+1.2f;
             bool station=(Math.Abs(Math.Abs(servicePosition.X-fpos.X)-reach)<.0001 && servicePosition.Z==fpos.Z)||(Math.Abs(Math.Abs(servicePosition.Z-fpos.Z)-reach)<.0001 && servicePosition.X==fpos.X);
-            if(!station||Math.Abs(servicePosition.Y-SavedGroundHeight(terrain,servicePosition.X,servicePosition.Z))>.0001||!s.Destinations.TryGetValue(service.Robot,out var destination)||LoadVector(destination)!=servicePosition)throw new InvalidDataException("服务站位或路线不一致");
-            if(service.ReturnTo!=null)LoadVector(service.ReturnTo);
+            if(!station||Math.Abs(servicePosition.Y-SavedGroundHeight(terrain,servicePosition.X,servicePosition.Z))>.0001||!s.Destinations.TryGetValue(service.Robot,out var destination)||LoadVector(destination)!=(service.Returning&&service.ReturnTo!=null?LoadVector(service.ReturnTo):servicePosition))throw new InvalidDataException("服务站位或路线不一致");
+            if(service.ReturnTo!=null)
+            {
+                var back=LoadVector(service.ReturnTo);
+                if(Math.Abs(back.X)>=_cfg.Terrain.Size/2||Math.Abs(back.Z)>=_cfg.Terrain.Size/2)throw new InvalidDataException("保障返程目的地越界");
+            }
+            if(saved.Job is {} level&&level.Worker==service.Robot&&Enum.TryParse<LevelStage>(level.Stage,out var levelStage)&&levelStage is not (LevelStage.Completed or LevelStage.Cancelled or LevelStage.Failed)&& (service.ReturnTo==null||LoadVector(service.ReturnTo)!=LoadVector(level.Station)))throw new InvalidDataException("整平保障返程与原工作站不一致");
+            if(service.Returning&&(service.ReturnTo==null||s.Stations.Any(x=>x.Value==service.Robot)||service.Kind=="repair"&&(!service.Paid||service.Progress!=_bootstrapConfig.RepairSeconds)))throw new InvalidDataException("保障返程状态无效");
             if(service.Kind=="charge"&&(service.Paid||service.Progress!=0)||service.Paid&&!s.Ledger.Operations.ContainsKey(service.Id+"-parts")||!service.Paid&&service.Progress!=0)throw new InvalidDataException("服务扣料与进度不一致");
             if(service.Paid)
             {
@@ -107,6 +113,7 @@ public partial class Main
             string[] stages=["Preparing","LevelTravel","Levelling","LevelPhysics","Fetching","Pickup","CargoWaiting","Delivering","BuilderTravel","Building","Completed","Cancelled","Blocked"];
             if(!stages.Contains(b.Stage)||!b.Id.StartsWith("build-")||!int.TryParse(b.Id[6..],out int id)||id<1||id>s.BuildSequence||!s.Health.ContainsKey(b.Builder)||!b.Builder.StartsWith("Robot_Zhulei_")||!s.Health.ContainsKey(b.Hauler)||!b.Hauler.StartsWith("Robot_Tuoyun_")||b.Builder==b.Hauler||b.Type!="connection"&&!_bootstrapConfig.Buildings.Any(x=>x.Id==b.Type)||!s.Facilities.Any(x=>x.Id==b.Facility)||!FiniteRange(b.Work,b.Type=="connection"?3:Math.Max(3,Definition(b.Type).WorkSeconds))||!FiniteRange(b.Waiting,181)||b.Trip<0||b.Trip>10000||b.Reason==null||b.Reason.Length>1000)
                 throw new InvalidDataException("工程身份、阶段或时间无效");
+            if(b.Stage=="Levelling"&&b.Work>3)throw new InvalidDataException("整平进度越过阶段上限");
             foreach(var operation in s.Ledger.Operations.Keys.Where(k=>k.StartsWith(b.Id+"-")))
             {
                 var pieces=operation[(b.Id.Length+1)..].Split('-');
@@ -116,6 +123,36 @@ public partial class Main
             var expectedCost=BuildCost(b.Type);
             if(b.Cost==null||b.Cost.Count!=expectedCost.Count||!expectedCost.All(x=>b.Cost.GetValueOrDefault(x.Key)==x.Value)||!float.IsFinite(b.Yaw)||Math.Abs(b.Yaw)>MathF.PI)throw new InvalidDataException("工程成本或朝向无效");
             var f=s.Facilities.Single(x=>x.Id==b.Facility);
+            string buffer=b.Type=="connection"?b.Id:b.Facility;
+            if(!s.Ledger.Containers.Any(c=>c.Id==buffer&&c.Capacity==100))throw new InvalidDataException("当前工程现场容器缺失");
+            bool AtPort(BaseFacility facility,string robot,Vector3 position,double offset)
+            {
+                var origin=LoadVector(facility.Position);double d=BaseRadius(facility)+_groundRobots.Single(a=>a.Name.ToString()==robot).BodyRadius+offset;
+                bool cardinal=(Math.Abs(Math.Abs(position.X-origin.X)-d)<.0001&&position.Z==origin.Z)||(Math.Abs(Math.Abs(position.Z-origin.Z)-d)<.0001&&position.X==origin.X);
+                return cardinal&&Math.Abs(position.X)<_cfg.Terrain.Size/2&&Math.Abs(position.Z)<_cfg.Terrain.Size/2&&Math.Abs(position.Y-SavedGroundHeight(terrain,position.X,position.Z))<.0001;
+            }
+            Vector3? TaskDestination(string robot)
+            {
+                var service=s.Services.FirstOrDefault(x=>x.Robot==robot);
+                if(service!=null)return service.ReturnTo==null?null:LoadVector(service.ReturnTo);
+                return s.Destinations.TryGetValue(robot,out var destination)?LoadVector(destination):null;
+            }
+            var builderStation=LoadVector(b.Station);
+            // Builder standoff includes the patch's changed cells and an extra 1.4m beyond the body.
+            double builderOffset=patch.Base.SpacingM*2+1.4-_groundRobots.Single(a=>a.Name.ToString()==b.Builder).BodyRadius;
+            if(!AtPort(f,b.Builder,builderStation,builderOffset)||TouchesFootprint(patch,builderStation.X,builderStation.Z,Actor(b.Builder).BodyRadius))throw new InvalidDataException("施工站不属于当前工程");
+            if(b.HaulStation!=null&&!AtPort(f,b.Hauler,LoadVector(b.HaulStation),1.2))throw new InvalidDataException("卸货站不属于当前工程");
+            if(b.Active)
+            {
+                if(b.Stage is "LevelTravel" or "Levelling" or "Building" && TaskDestination(b.Builder)!=builderStation)throw new InvalidDataException("筑垒目的地与施工站不一致");
+                if(b.Stage=="Pickup")
+                {
+                    var dock=TaskDestination(b.Hauler);if(dock==null||!AtPort(s.Facilities.Single(x=>x.Id=="lander"),b.Hauler,dock.Value,1.2))throw new InvalidDataException("取货目的地不属于着陆器");
+                }
+                if(b.Stage=="Delivering"&&(b.HaulStation==null||TaskDestination(b.Hauler)!=LoadVector(b.HaulStation)))throw new InvalidDataException("驮运目的地与交货站不一致");
+                if(b.Stage is "BuilderTravel" or "Building" && b.Cost.Any(x=>ledger.Count(buffer,x.Key)<x.Value))throw new InvalidDataException("施工阶段物料未齐备");
+                if(b.Cost.Any(x=>ledger.Count(buffer,x.Key)+ledger.Count(CargoContainer(b.Hauler),x.Key)+ledger.Reserved(b.Id,"lander",x.Key)<x.Value))throw new InvalidDataException("工程物料没有实际归属或预约");
+            }
             if(center!=LoadVector(f.Position)||b.Type!="connection"&&(b.Type!=f.Type||b.Yaw!=f.Yaw||b.Id!=f.Id)||b.Type=="connection"&&(!f.Built||b.Source==null||!s.Facilities.Any(x=>x.Id==b.Source&&x.Built&&x.Type=="solar"&&XzDistance(LoadVector(x.Position),center)<=_bootstrapConfig.ConnectionRangeM)))throw new InvalidDataException("工程设施关系无效");
             if(patch.PatchId!=b.Id||patch.Base.RegionId!=terrain.RegionId||patch.Base.Rows!=terrain.Rows||patch.Base.Columns!=terrain.Columns||patch.Base.SpacingM!=terrain.SpacingM||patch.Base.OriginXM!=terrain.OriginXM||patch.Base.OriginZM!=terrain.OriginZM)throw new InvalidDataException("工程地形不一致");
             var expected=b.Type=="connection"?GroundPatchFromHeights(patch.Base,patch.Base.HeightsM.ToArray(),b.Id):BuildPatch(patch.Base,center,BaseRadius(f),b.Id);
@@ -148,6 +185,11 @@ public partial class Main
     }
     private void RestoreBaseOrders(BootstrapSave s)
     {
-        foreach(var d in s.Destinations){var actor=Actor(d.Key);if(Operational(actor)&&!OrderBase(actor,LoadVector(d.Value)))_health[d.Key].Reason="读档后路线受阻；事实保留等待";}
+        foreach(var d in s.Destinations){var actor=Actor(d.Key);var destination=LoadVector(d.Value);
+            if(!Operational(actor)||!OrderBase(actor,destination))
+            {
+                _routes[d.Key]=new(){Destination=destination,WorldVersion=-1,FacilityRevision=-1};
+                _health[d.Key].Reason="读档后停机或路线受阻；目的地与事实保留";
+            }}
     }
 }

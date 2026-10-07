@@ -124,8 +124,9 @@ public partial class Main
                     break;
                 case LevelStage.Working:
                     bool eligible = WorkerAtStation(job);
-                    job.Work.Advance(delta, eligible);
-                    if (BootstrapEnabled && eligible) SpendWork(job.Worker!, delta);
+                    double beforeWork=job.Work.ElapsedSeconds;
+                    job.Work.Advance(BootstrapEnabled ? WorkBudget(job.Worker!,delta) : delta, eligible);
+                    if (BootstrapEnabled && eligible) SpendWork(job.Worker!, job.Work.ElapsedSeconds-beforeWork);
                     job.Message = eligible ? "连续整平作业中" : "工人未停驻贴地；作业计时清零";
                     if (!eligible && (job.TravelSeconds += delta) >= 60)
                         FinishLevelJob(LevelStage.Failed, "工人无法保持施工站");
@@ -175,7 +176,7 @@ public partial class Main
 
     private void FinishLevelJob(LevelStage stage, string message)
     {
-        var job = _levelJob!; job.Stage = stage; job.Message = message; if (job.Worker != null) { if(BootstrapEnabled && _services.TryGetValue(job.Worker.Name.ToString(),out var service)) service.ReturnTo=null; else if(BootstrapEnabled) StopBase(job.Worker); else job.Worker.ClearOrder(); } _levelNotice = "";
+        var job = _levelJob!; job.Stage = stage; job.Message = message; if (job.Worker != null) { if(BootstrapEnabled) ClearBaseWorkOrder(job.Worker.Name.ToString()); else job.Worker.ClearOrder(); } _levelNotice = "";
         GD.Print($"LEVEL_JOB_END id={job.Id} stage={stage} base={job.Patch.Base.Version} applied={job.AppliedVersion?.ToString() ?? "none"} current={_liveTerrain!.Current.Version} message={message}");
     }
 }

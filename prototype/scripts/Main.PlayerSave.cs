@@ -59,8 +59,11 @@ public partial class Main
             throw new InvalidDataException("存档坐标无效");
         return new(p[0], p[1], p[2]);
     }
-    private PlayerSave CapturePlayer() => new()
+    private PlayerSave CapturePlayer()
     {
+        if (BootstrapEnabled) SettleBaseMovement();
+        return new()
+        {
         Schema = BootstrapEnabled ? 2 : 1, Bootstrap = BootstrapEnabled ? CaptureBootstrap() : null, FixtureHash = _fixtureHash, Terrain = TerrainDataCodec.Serialize(_liveTerrain!.Current),
         Time = _playerTime, Paused = _userPaused, Permission = _liveTerrain.PermissionGranted, Cancelled = _liveTerrain.CancellationRequested, Sequence = _levelSequence,
         Robots = _groundRobots.Select(x => new RobotSave { Id = x.Name.ToString(), Position = SavedVector(x.GlobalPosition), Velocity = SavedVector(x.Velocity), Yaw = x.Rotation.Y }).ToArray(),
@@ -70,7 +73,8 @@ public partial class Main
             Center = SavedVector(j.Center), Station = SavedVector(j.Station), Work = j.Work.ElapsedSeconds,
             Travel = j.TravelSeconds, Space = j.SpaceSeconds, AppliedVersion = j.AppliedVersion, Message = j.Message
         }
-    };
+        };
+    }
     private void SavePlayer()
     {
         if (!_groundReady || _loadPending != null) { _playerNotice = "等待世界恢复后保存"; return; }

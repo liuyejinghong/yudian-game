@@ -25,6 +25,7 @@ public partial class GroundPatrol : CharacterBody3D
     private bool _hasOrder;
     private Vector3[] _route = [];
     private int _routeIndex;
+    private float _movementBudgetM = float.PositiveInfinity;
 
     /// <summary>暂停时不推水平运动与航点，仍处理重力/地面。</summary>
     public bool Paused { get; set; }
@@ -78,6 +79,12 @@ public partial class GroundPatrol : CharacterBody3D
         _route = []; _routeIndex = 0;
         _orderTarget = target;
         _hasOrder = true;
+    }
+
+    public void SetMovementBudget(float metres)
+    {
+        if (float.IsNaN(metres) || metres < 0) throw new ArgumentException("movement budget must be nonnegative");
+        _movementBudgetM = metres;
     }
 
     public void SetRoute(Vector3[] points)
@@ -141,7 +148,7 @@ public partial class GroundPatrol : CharacterBody3D
             }
             else if (chase)
             {
-                horizontal = toTarget * (MathF.Min(_speed, distance / dt) / distance);
+                horizontal = toTarget * (MathF.Min(_speed, MathF.Min(distance, _movementBudgetM) / dt) / distance);
             }
             // 订单到点（<=.25）：原地保持，不推进航点、不恢复巡逻。
         }

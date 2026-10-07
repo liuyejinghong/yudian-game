@@ -25,3 +25,7 @@ namespace Yudian.Navigation；public readonly record struct NavPoint(double X,do
 建设与整平同时间只有一项当前工程；切换时退役旧终态job，已提交地形/设施/物料仍保留。单份cargo始终是物理容器，不另加在途库存。取消不撤销独立服务的工位/路线，只清原工程恢复目的；运输重试退货也须实际返回，新取货尝试使用新operation_id。保存schema2校验配置hash、固定/现场/cargo容器、建成与精确消耗记录、spent对账、工程阶段/地形、交接序号、服务/站位/目的地引用，再重建原生场景与地形屏障；上一有效档.bak保留。路径重算不重放交易。
 
 公开只读消费者：ReadBootstrap()、PreviewBuild(type,center,yaw)、QueueBuild(type,center,yaw,observedVersion)，QueuePlayerAction("connect"/"retry")；PlayerSitePreview.Radius可选默认2。GLM界面只发命令/展示事实，不计算成本或改变库存/健康。
+
+移动成本按实际位移结算，在玩家暂停/保存/加载命令之前结算上一物理帧，Capture复用同一幂等结算。健康与运动预算在父帧最后采纳，零电/零耐久不得多走一帧。有效工段最多扣剩余工时和剩余健康预算，Levelling档内进度上限3秒。保障Returning至真实返抵原站才恢复工作，并保存其返程路线；途中取消停该回程，赴服务/服务中的取消保独立保障且只清原工作目的。
+
+原生回归入口：tools/bootstrap-world-tests/run.py（要求先成功构建；支持源project或导出engine），五独立进程覆盖全流、在途取消和已扣维修材料恢复。所有日志保留加载MVID/hash；未运行不得据入口宣称通过。

@@ -57,6 +57,7 @@ public partial class Main
         public double Progress { get; set; }
         public double Waiting { get; set; }
         public bool Paid { get; set; }
+        public bool Returning { get; set; }
     }
     private sealed class BuildJob
     {
@@ -237,8 +238,13 @@ public partial class Main
         if(_buildJob?.Active!=true)return;
         var j=_buildJob;j.Stage="Cancelled";j.Reason="已取消；地形、现场物料与在途货物保留";_ledger.Release(j.Id);
         foreach(var id in new[]{j.Builder,j.Hauler})
-        { if(_services.TryGetValue(id,out var service))service.ReturnTo=null;else{StopBase(Actor(id));ReleaseStations(id);} }
+        ClearBaseWorkOrder(id);
         _playerNotice=j.Reason;
+    }
+    private void ClearBaseWorkOrder(string id)
+    {
+        if(_services.TryGetValue(id,out var service)&&!service.Returning){service.ReturnTo=null;return;}
+        _services.Remove(id);StopBase(Actor(id));ReleaseStations(id);
     }
     private bool OrderDelivery(BuildJob j,GroundPatrol hauler)
     {
@@ -279,7 +285,8 @@ public partial class Main
     private bool TickBuildWork(GroundPatrol actor,BuildJob j,double delta,double duration)
     {
         if(!Arrived(actor,LoadVector(j.Station)))return false;
-        j.Work=Math.Min(duration,j.Work+delta);SpendWork(actor,delta);return j.Work>=duration;
+        double step=Math.Min(Math.Max(0,duration-j.Work),WorkBudget(actor,delta));
+        j.Work+=step;SpendWork(actor,step);return j.Work>=duration;
     }
     private void TickBaseBuild(double delta)
     {
@@ -311,6 +318,7 @@ public partial class Main
                 if(dock==null||!TakeStation("lander",j.Hauler))break;
                 if(OrderBase(hauler,dock.Value)){j.Stage="Pickup";j.Reason="驮运前往着陆器取货";}break;
             case "Pickup":
+                if(!TakeStation("lander",j.Hauler))break;
                 if(!_routes.TryGetValue(j.Hauler,out var pickup)||!Arrived(hauler,pickup.Destination))break;
                 if(_ledger.Load(cargo)>0)_ledger.Transfer(j.Id+"-return-"+j.Trip,j.Id,cargo,"lander",new(_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value)));
                 var need=j.Cost.ToDictionary(x=>x.Key,x=>Math.Max(0,x.Value-_ledger.Count(buffer,x.Key)));int remaining=_bootstrapConfig.CargoCapacity;
@@ -325,12 +333,14 @@ public partial class Main
                 break;
             case "CargoWaiting":if(OrderDelivery(j,hauler))j.Stage="Delivering";break;
             case "Delivering":
+                if(!TakeStation(j.Facility,j.Hauler))break;
                 if(j.HaulStation==null||!Arrived(hauler,LoadVector(j.HaulStation)))break;
                 var items=_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value);
                 _ledger.Transfer(j.Id+"-unload-"+j.Trip,j.Id,cargo,buffer,items);j.Trip++;ReleaseStations(j.Hauler);j.Stage="Fetching";j.Reason="物料已在现场交接；继续补足余料";break;
             case "BuilderTravel":
                 if(TakeStation(j.Facility,j.Builder)&&OrderBase(builder,station)){j.Stage="Building";j.Work=0;j.Reason="物料齐备，筑垒前往并实际施工";}break;
             case "Building":
+                if(!TakeStation(j.Facility,j.Builder))break;
                 double seconds=j.Type=="connection"?3:Definition(j.Type).WorkSeconds;
                 if(!TickBuildWork(builder,j,delta,seconds))break;
                 var f=_baseFacilities.Single(f=>f.Id==j.Facility);
@@ -341,16 +351,23 @@ public partial class Main
         }
         if(j.Stage!=previous)j.Waiting=0;
     }
+    private double WorkBudget(GroundPatrol actor,double delta)
+    {
+        var h=_health[actor.Name.ToString()];
+        return Math.Min(delta,Math.Min(h.Energy/_bootstrapConfig.WorkEnergyPerSecond,h.Durability/_bootstrapConfig.WorkWearPerSecond));
+    }
     private void SpendWork(GroundPatrol actor,double delta)
     {var h=_health[actor.Name.ToString()];h.Energy=Math.Max(0,h.Energy-_bootstrapConfig.WorkEnergyPerSecond*delta);h.Durability=Math.Max(0,h.Durability-_bootstrapConfig.WorkWearPerSecond*delta);}
-    private void TickBootstrap(double delta)
+    private void SettleBaseMovement()
     {
         foreach(var actor in _groundRobots)
         {
             var h=_health[actor.Name.ToString()];double moved=Math.Max(0,actor.TravelledM-h.Travel);h.Travel=actor.TravelledM;
             h.Energy=Math.Max(0,h.Energy-moved*_bootstrapConfig.MoveEnergyPerM);h.Durability=Math.Max(0,h.Durability-moved*_bootstrapConfig.MoveWearPerM);
-            actor.Paused=!Operational(actor)||_userPaused||_projectionPaused||_loadPending!=null;
-        }
+            }
+    }
+    private void TickBootstrap(double delta)
+    {
         TickBaseRoutes(delta);TickBaseServices(delta);TickBaseBuild(delta);
     }
     private void TickBaseRoutes(double delta)
@@ -368,7 +385,8 @@ public partial class Main
     {
         foreach(var actor in _groundRobots)
         {
-            string id=actor.Name.ToString();var h=_health[id];if(!Operational(actor)||_services.ContainsKey(id)||h.Energy>40&&h.Durability>40)continue;
+            string id=actor.Name.ToString();var h=_health[id];
+            if(!Operational(actor)||_services.TryGetValue(id,out var pending)&&!pending.Returning||h.Energy>40&&h.Durability>40)continue;
             string? kind=h.Durability<=40?"repair":null;
             var charger=_baseFacilities.Where(f=>f.Built&&f.Type=="charger"&&ServiceConnected(f)).Select(f=>(Facility:f,Station:FreeStation(f,actor))).Where(x=>x.Station!=null).OrderBy(x=>XzDistance(actor.GlobalPosition,x.Station!.Value)).FirstOrDefault();
             double budget=charger.Facility==null?10:Math.Max(10,FindRoute(actor,charger.Station!.Value).LengthM*_bootstrapConfig.MoveEnergyPerM+5);
@@ -384,7 +402,7 @@ public partial class Main
                 Vector3? back=_routes.TryGetValue(id,out var original)?original.Destination:null;
                 ReleaseStations(id);TakeStation(f.Id,id);
                 var service=new ServiceJob{Id="service-"+(++_serviceSequence),Robot=id,Facility=f.Id,Kind=kind,Station=SavedVector(station.Value),ReturnTo=back.HasValue?SavedVector(back.Value):null};
-                _services.Add(id,service);OrderBase(actor,station.Value);h.Reason=kind=="repair"?"低耐久，真实前往维修位":"按10%或已知返程预算回充";break;
+                _services[id]=service;OrderBase(actor,station.Value);h.Reason=kind=="repair"?"低耐久，真实前往维修位":"按10%或已知返程预算回充";break;
             }
             if(!_services.ContainsKey(id))h.Reason=kind=="repair"?"低耐久；没有可达且有电的维修位":"低电量；没有可达且有电的充电位";
         }
@@ -393,6 +411,11 @@ public partial class Main
         {
             var actor=Actor(s.Robot);var h=_health[s.Robot];var f=_baseFacilities.Single(f=>f.Id==s.Facility);
             s.Waiting+=delta;
+            if(s.Returning)
+            {
+                if(Arrived(actor,LoadVector(s.ReturnTo!))){_services.Remove(s.Robot);h.Reason="已回到原工作站";}
+                continue;
+            }
             if(!Arrived(actor,LoadVector(s.Station)))continue;
             if(!Powered(f)||f.Source==null){h.Reason="工位无电；未恢复";continue;}
             double rate=s.Kind=="charge"?_bootstrapConfig.ChargePerSecond:_bootstrapConfig.RepairPerSecond;
@@ -405,8 +428,11 @@ public partial class Main
                 h.Durability=_bootstrapConfig.Capacity;
             }
             else {h.Energy=Math.Min(_bootstrapConfig.Capacity,h.Energy+rate*delta);if(h.Energy<_bootstrapConfig.Capacity)continue;}
-            StopBase(actor);ReleaseStations(s.Robot);_services.Remove(s.Robot);h.Reason="保障已完成；恢复原工作";
-            if(s.ReturnTo!=null)OrderBase(actor,LoadVector(s.ReturnTo));
+            StopBase(actor);ReleaseStations(s.Robot);h.Reason="保障完成；返回原工作站";
+            if(s.ReturnTo==null){_services.Remove(s.Robot);continue;}
+            s.Returning=true;
+            var destination=LoadVector(s.ReturnTo);
+            if(!OrderBase(actor,destination))_routes[s.Robot]=new(){Destination=destination,WorldVersion=-1,FacilityRevision=-1};
         }
     }
 }

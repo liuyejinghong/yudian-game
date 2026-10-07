@@ -121,7 +121,9 @@ public partial class Main : Node3D
         var captureDirectory = System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_CAPTURE_DIR");
         if (_playerMode && _groundReady && captureDirectory != null && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
         {
-            string key = $"{_liveTerrain!.Current.Version}-{_levelJob?.Id ?? "none"}-{_levelJob?.Stage.ToString() ?? "Idle"}-{_userPaused}";
+            string id = BootstrapEnabled && _buildJob != null ? _buildJob.Id : _levelJob?.Id ?? "none";
+            string stage = BootstrapEnabled && _buildJob != null ? _buildJob.Stage : _levelJob?.Stage.ToString() ?? "Idle";
+            string key = $"{_liveTerrain!.Current.Version}-{id}-{stage}-{_userPaused}";
             if (key != _guiCaptureKey)
             {
                 if (_guiCapturePending == key)
