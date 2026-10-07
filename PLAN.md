@@ -335,8 +335,8 @@ APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入
 1. [x] 主控冻结最小命令/只读状态/快照/区域接口并接真实入口；architect已前置审查。证明：有限范围/版本/权限重验，用户暂停和加载屏障分别保留，旧模式隔离。
 2. [x] 冻结基线与单写者后，两GLM包并行交UI/输入与筑垒状态适配；美术交候选视口/表面/标记。证明：原生模型确认、独占diff、实际原型消费与必要自测。
 3. [x] 主控参数化整平、最小磁盘保存/完整校验/加载物理屏障与分步集成。证明：两合法位置、非法/重复无副作用、暂停保工作进度、保存中断/提交/完成/取消重开不重复世界效果、坏档/写失败保有效档。
-4. [ ] reviewer独立审查关键状态与恢复；主控跑受影响native/兼容和真实GUI；architect收尾。证明：实际输出/截图与真实交互，默认应用操作完整；未测的真人意愿与所有者最终视觉不代签。
-5. [ ] 以精确source/hash更新双击应用、交付PR并按既有授权合并、同步TODO。证明：同包跨进程恢复、主线与包身份；D1.0不扩签经营/G1。
+4. [x] reviewer独立审查关键状态与恢复；主控跑受影响native/兼容和真实GUI；architect收尾。证明：实际输出/截图与真实交互，默认应用操作完整；未测的真人意愿与所有者最终视觉不代签。
+5. [x] 以精确source/hash更新双击应用、交付PR并按既有授权合并、同步TODO。证明：同包跨进程恢复、主线与包身份；D1.0不扩签经营/G1。
 
 工程主控独占Main*.cs、PlayerContracts.cs、GroundPatrol最小模式边界、保存/加载、Main注册及build launcher、根PLAN/TODO及工程任务表；GLM-A独占PlayerUI/**与tools/player-ui-tests；GLM-B独占Presentation/**与tools/player-visual-tests。无新依赖/大量模型下载/API支出。原有运行与失败日志保留，新轮目录独立。
 
@@ -345,3 +345,5 @@ APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入
 第三轮可达检查确认矩形停驻阵列右后筑垒被其他闲置机器人封住候选直线。修复仅player：筑垒改东侧间距6m一列，所有筑垒应能接土坡；保留直线拒绝，未通过不得宣称可达。任务坏档已增加stage/work/applied/no-change及按base+center复算候选、合法站位校验。
 
 2026-10-07集成复验：world-r10五独立进程通过（含暂停取消档覆盖旧work姿态）；UI28项通过，新增连续拖动/Q旋转/Esc负例。真实Metal窗口已核筑垒选择/坡地/重复点击/施工/暂停保存/完成后跨进程读取/改派取消保先前地形。reviewer指出拖动累计与读档旧姿态，均已修。默认normal裁切实际布局，美术正在核正常方向1.6倍距离与overview，待最终候选、导出同包及architect。
+
+2026-10-07收口：新包来源d631a24、PCK120ec750…c2cef0，干净导入/签名/arm64与同包五独立进程全部通过；实际访达双击/暂停保存/关闭/重开读取/继续完成已核。Mac随后锁屏，停止GUI，包第二轮完成态额外保存/关窗回执未补，报告明确；原生同包completed/awaiting检查通过。reviewer无剩余功能问题，最终architect两处现役状态/原件合流问题修正后复核通过。美术PR41 merge b93ea17已合流；六工程子片限定ACCEPTED，父模块IN_PROGRESS，美术三行REVIEW/所有者视觉NOT_RUN。原始stdout尾部空白按证据原件保留，source/docs diff格式检查通过。工程PR42准备精确合并，D1.1未派工。

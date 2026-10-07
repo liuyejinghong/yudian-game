@@ -1,8 +1,8 @@
 # 产研 TODO
 
-更新：2026-10-06；主控Codex。PR33已合并：单区域权威地形、真正Main原生通行与手动改造限定接受。PR34已合并，单机器人整平任务闭环限定接受；完整导航、建设/经济、保存与稳定性能仍未完成，正式素材按ART-LINK跟踪。
+更新：2026-10-07；主控Codex。历史PR33/34的Main地形与固定整平接受保留；本批以main259a8bf冻结D1.0，普通镜头/选择/真实整平/低保真与最小磁盘保存已在新默认包接通。完整导航、设施建设/经济、经营状态保存与稳定性能继续未完成。
 
-当前按[联合里程碑](../../roadmap/milestones.md)细化既有[九模块与 D1—D3](../module-roadmap.md)。PR [#38](https://github.com/liuyejinghong/yudian-game/pull/38) 已合并，文档整理基线 main `0662c12`；本轮授权仅重评 TODO 和合并合格文档，未启动游戏实现。工程底座保留，默认双击包仍只有历史工程整平验收；本轮未运行或更新应用。
+按[联合里程碑](../../roadmap/milestones.md)细化[九模块与D1—D3](../module-roadmap.md)。PR38/39/40是此前文档/TODO/编排整理；随后所有者明确批准D1.0实施和新美术项目会话，本轮已运行、重新导出并更新本机应用。实际证据及边界见[D1.0复验](../reports/2026-10-07-d1-player-verification.md)。
 
 本批已实现并集成 **D1.0 可操作场地**：普通镜头/选择/合法区域预览、真实整平与取消、所需低保真接入、统一暂停和最小磁盘保存，最后由 Codex 在同一默认应用验收。GAME-* 仍是完整模块父票；下列 C01/C02/E01—E04 的 D1.0 行是其已执行子片，不代表整包 READY。路线 DT-* 是规划 ID，正式状态只在本表；后续包映射见表后。
 
@@ -18,12 +18,12 @@
 | GAME-GOALS | P1 | DRAFT | D1.2 E11 有界真实目标链；E14 本地候选从 D1.1 合同试验起步 | Codex计划/权限；GLM纯适配/harness | 净缺口/合法前置/保护与授权同源；本地候选实际参与解释/选择/重规划，采用后接真实任务；D2 正式本地入口和晚到结果重验 | [模块框架](../module-roadmap.md) / [T4 #7](https://github.com/liuyejinghong/yudian-game/issues/7) |
 | GAME-SAVE | P0 | IN_PROGRESS | C01-D1.0/E02-D1.0 的权威事实与暂停/恢复边界 | Codex持久化契约；GLM冻结codec/工具 | E04 从 D1.0 实际磁盘保存/跨进程恢复；E12 每批保存新增经营事实，E19 故障恢复；加载/投影屏障不解除用户暂停，无离线收益 | [模块框架](../module-roadmap.md) |
 | GAME-DELIVERY | P0 | IN_PROGRESS | 复用APP-START/QA/LIFE；C02 每个检查点具名集成 | Codex实机/默认包；GLM适配/工具；美术供资产 | 每批更新 Main/默认应用并核包身份、实际玩家行为与保存重开；E20 D2.2 联合性能，E22 R1 独立发行门槛；旧包不会随源码更新 | [模块框架](../module-roadmap.md) / ART-LINK/PERF |
-| C01-D1.0 | P0 | REVIEW | 本批运行源d631a24；合同71cd485；已提交实现/原生检查/默认应用，待最终architect收口 | Codex | 本批合同与真实接入一起交；重复/非法命令无副作用，UI/模型不拥有事实；下一检查点另冻 C01 子片 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
-| E01-D1.0 | P0 | REVIEW | 本批运行源d631a24；合同71cd485；已提交实现/原生检查/默认应用，待最终architect收口 | GLM-Eng-A；Codex接入 | 普通镜头、对象选择、固定尺寸合法位置预览、下达/取消及真实目标卡；点击不穿透/重复不重提交/暂停仍可操作 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
-| E02-D1.0 | P0 | REVIEW | 本批运行源d631a24；合同71cd485；已提交实现/原生检查/默认应用，待最终architect收口 | Codex | 固定整平改为有限可选区域，真实到场/有效工作/版本重验/物理确认；取消保留已改造，无效位置不提交；绕障未支持须明示拒绝 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
-| E03-D1.0 | P0 | REVIEW | 本批运行源d631a24；合同71cd485；已提交实现/原生检查/默认应用，待最终architect收口 | GLM-Eng-B；Codex代理/注册 | 模型置于实体视觉子节点，六键由真实位移/工段驱动；保持根 identity/动作极值；合法切换先校验再复位，非法输入保留旧有效状态；未用 U01 不强行接运输 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
-| E04-D1.0 | P0 | REVIEW | 本批运行源d631a24；合同71cd485；已提交实现/原生检查/默认应用，待最终architect收口 | Codex；GLM可做冻结codec | 版本化磁盘快照保存地形/实体/时间/单任务；工作中及完成后退出重开一致，不重复完成；坏档/写失败保原档，物理屏障后恢复执行 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
-| C02-D1.0 | P0 | REVIEW | 本批运行源d631a24；合同71cd485；已提交实现/原生检查/默认应用，待最终architect收口 | Codex集成/独立验收 | 同一普通应用完成选择→真实整平→取消/完成→保存重开；来源commit/包hash/素材/设备证据齐全；只验可操作场地，不签 D1/G1；后续 C02 重复执行 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
+| C01-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex | 本批合同与真实接入一起交；重复/非法命令无副作用，UI/模型不拥有事实；下一检查点另冻 C01 子片 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
+| E01-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | GLM-Eng-A；Codex接入 | 普通镜头、对象选择、固定尺寸合法位置预览、下达/取消及真实目标卡；点击不穿透/重复不重提交/暂停仍可操作 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
+| E02-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex | 固定整平改为有限可选区域，真实到场/有效工作/版本重验/物理确认；取消保留已改造，无效位置不提交；绕障未支持须明示拒绝 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
+| E03-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | GLM-Eng-B；Codex代理/注册 | 模型置于实体视觉子节点，六键由真实位移/工段驱动；保持根 identity/动作极值；合法切换先校验再复位，非法输入保留旧有效状态；未用 U01 不强行接运输 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
+| E04-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex；GLM可做冻结codec | 版本化磁盘快照保存地形/实体/时间/单任务；工作中及完成后退出重开一致，不重复完成；坏档/写失败保原档，物理屏障后恢复执行 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
+| C02-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex集成/独立验收 | 同一普通应用完成选择→真实整平→取消/完成→保存重开；来源commit/包hash/素材/设备证据齐全；只验可操作场地，不签 D1/G1；后续 C02 重复执行 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
 | QA-01 | P0 | ACCEPTED | QA-03/QA-04/QA-05本轮底座 | Codex（上批实际） | 旧原件复算、新三轮Metal/有效内存可获取；性能稳定性转PERF-01 | [复验](../reports/2026-10-04-takeover-verification.md) / [#15](https://github.com/liuyejinghong/yudian-game/issues/15) |
 | QA-02 | P0 | ACCEPTED | 冻结输入合同 | GLM（上批实际） | 109合同用例+实际Godot异常矩阵；限定commit已集成并随PR16合并 | [交付票](QA-02.md) |
 | QA-03 | P0 | ACCEPTED | QA-02 | Codex（上批实际） | 只读移包/不同cwd/默认输出/引擎中断/失败；GUI关窗另列LIFE-01 | [复验](../reports/2026-10-04-takeover-verification.md) |
@@ -47,7 +47,7 @@
 | T3-COLLISION-PROBE | P1 | ACCEPTED | T3-COLLISION实现；主控独占TerrainProbe | Codex | 118条分帧检查+36条默认回归、自身PASS/exit0；Metal真实GUI/冷开/三态PNG；实际GodotPhysicsDirectSpaceState3D，reviewer无剩缺陷；只接受候选 | [复验](../reports/2026-10-04-terrain-collision-verification.md) / [#26](https://github.com/liuyejinghong/yudian-game/issues/26) / [合同](../contracts/terrain-collision-r1.md) |
 | ART-LINK-M01 | P1 | ACCEPTED | 美术主控2401b6b技术接受；原1b91467限定材质，soil SHA5f8aa3e4 | Codex联调；美术组材质所有者 | soil_mars两网格surface0绑定，MaterialOverride为空；缺资源/错类型/双面透明拒绝，同镜头三态实机PNG；不签最终视觉 | [美术TODO](../../art/production/todo.md) / [首批需求](../../art/production/requirements/first-assets-r1.md) |
 | ART-LINK-U01 | P1 | BLOCKED | U01 rev3 源/GLB/canonical manifest 已交；待局部载荷修正及 E03/E07 实际消费/代理合同 | 美术局部返修；Codex联调 | 正式 Godot 状态包装已具独立证据，Main 真实运输/货物驱动未接；不重复索要源，不阻塞只消费筑垒的 D1.0 子片 | [美术TODO](../../art/production/todo.md) |
-| ART-LINK-T01-T02 | P0 | BLOCKED | D1.0 等 C01/E02/A03 整平区域/采样/阶段/表面映射；E10 开挖子片另等矿量—地形提交接缝 | 美术表面/标记；Codex权威地形接入 | 三版 GLB 是已有参考；按本批实际消费边界接权威高度场表现、碰撞和保存，不等整个 T3，也不直接用参考 GLB 替换世界 | [美术TODO](../../art/production/todo.md) |
+| ART-LINK-T01-T02 | P0 | BLOCKED | D1.0 A03整平表面已按权威高度/mask接入并核保存；正式T01所有者视觉与E10开挖/矿量接缝仍待验 | 美术表面/标记；Codex权威地形接入 | 三版 GLB 是已有参考；按本批实际消费边界接权威高度场表现、碰撞和保存，不等整个 T3，也不直接用参考 GLB 替换世界 | [美术TODO](../../art/production/todo.md) |
 | T3d-MEM | P1 | ACCEPTED | 单区域单写者内存入口；28主控独立例PASS，双TFM及实际Godot项目编译通过；reviewer无剩余问题 | Codex | 内存版本/取消保留/语义去重，失败与NoChange不消费请求；不签渲染/物理同步或存档 | [复验](../reports/2026-10-04-terrain-commit-verification.md) / [合同](../contracts/terrain-commit-r1.md) / [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3d-COMMIT-POLICY | P1 | ACCEPTED | base6554495；Bridge sess_7697b4c358/task_76fc5bf2a2；原bf6da0a，原生GLM-5.3-Flash已确认，主控集成验证/reviewer完成 | GLM-Eng-A | 37例×2文化=74检查；仅纯判定；费用未知，net8仅编译、net10执行 | [复验](../reports/2026-10-04-terrain-commit-verification.md) / [任务包](../packages/T3d-COMMIT-POLICY.md) |
 | LIFE-01-GUI | P0 | ACCEPTED | 主控自行启动固定包，Cua真实关闭自有窗口 | Codex | 默认user://三轮审计PASS、exit0/130/0、重开新目录；不签游戏保存 | [实机复验](../reports/2026-10-05-runtime-verification.md) / [用例](../contracts/runtime-controlled-r1.md) |
@@ -61,7 +61,7 @@
 | WORK-METER | P1 | ACCEPTED | 冻结4cbdf3c；session sess_54983ddecd，原生GLM-5.3-Flash确认 | GLM-Eng-B | 纯计时两文化36PASS；累计/中断清零/封顶/非法无副作用，不签任务状态 | [合同](../contracts/level-job-r1.md) |
 | LEVEL-JOB | P1 | ACCEPTED | GROUND-ORDER/WORK-METER；主控合同与集成 | Codex | 一名筑垒真实到场与连续作业；Main15/旧七步/Metal取消与完成通过，取消/重复/过期/占用/故障复验，限定接受 | [合同](../contracts/level-job-r1.md) |
 | APP-START | P1 | ACCEPTED | 既有离线导出/自包含runtime | Codex | 本机双击进入整平；签名/路径移动/实际GUI，非发行验收 | [启动说明](../../../prototype/README.md) / [复验](../reports/2026-10-05-desktop-start-verification.md) |
-| T3d | P1 | DRAFT | T3d-MEM/VIEW与MAIN-GROUND限定接受；灰模Main原生通行已接，完整导航/保存/建设未完成 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
+| T3d | P1 | DRAFT | T3d-MEM/VIEW与MAIN-GROUND限定接受；灰模Main原生通行已接，完整导航/经营状态保存/建设未完成 | Codex合同/集成；GLM确定适配子件 | 几何/碰撞/导航/重载与取消同源；邻工程并发、无过期提交/重复收益，跨模块独立reviewer | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T3e | P2 | BLOCKED | PERF-01可用对照；T3d；ART-T01/T02仅为视觉对照需接口与样件；按真实接入/性能疑点再冻结，不作 D1.0 总门禁 | GLM-Eng-B采集工具/复算；Codex实机/选择 | 两候选同条件更新范围/主线程峰值/导航耗时/保存增长/视觉成本对比；所有者签视觉，主控选技术 | [#6](https://github.com/liuyejinghong/yudian-game/issues/6) |
 | T4a | P1 | DRAFT | D1.1 C01 受限动作/授权与 E05 归属样本；E14 后续需 E11 真实任务 | Codex | T4 输入合同沿用并按 E14 冻结当前子片；规则参考加至多两种合适本地候选，真实完成/拦截/回退分计，不另造旁路规划器 | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |
 | T4-HARNESS | P1 | BLOCKED | T4a 输入/合法动作与提供者合同待冻结；E14 D1.1 先合同试验、D1.2 接真实任务 | GLM冻结评估工具/适配；Codex采纳与验收 | 复用受限世界输入，保留非法/超时/晚到结果；不自动下载权重或调用付费 API；独立 harness 不结清 T4/G1 | [#7](https://github.com/liuyejinghong/yudian-game/issues/7) |
@@ -69,7 +69,7 @@
 
 ## 2026-10-06 重评结果与后续归属
 
-2026-10-07 所有者批准D1.0后，六子片已在同一普通应用实现并独立复验，状态REVIEW待最终收口；完整模块父票只进IN_PROGRESS。两GLM交独占UI/筑垒适配，Codex交真实规则/保存/应用；美术专门会话交A01/A03候选，实际消费在本批应用。原生UI28、视觉12、Main22步和同包5独立进程通过，真实Metal鼠标与访达双击保存/重开/续接已核；来源及未测项见[D1.0复验](../reports/2026-10-07-d1-player-verification.md)。下一批仅按D1.1冻结资源/导航/运输/建设/保障及增量保存，本轮未派发。
+2026-10-07 所有者批准D1.0后，六子片已在同一普通应用实现并独立复验，六子片限定ACCEPTED；最终architect通过；完整模块父票只进IN_PROGRESS。两GLM交独占UI/筑垒适配，Codex交真实规则/保存/应用；美术专门会话交A01/A03候选，实际消费在本批应用。原生UI28、视觉12、Main22步和同包5独立进程通过，真实Metal鼠标与访达双击保存/重开/续接已核；来源及未测项见[D1.0复验](../reports/2026-10-07-d1-player-verification.md)。下一批仅按D1.1冻结资源/导航/运输/建设/保障及增量保存，本轮未派发。
 
 旧探针的 ACCEPTED 范围与证据原样保留；T3b/T3c/T3e 远期比较和 PERF 受控返工不作为 D1.0 整体门禁。有真实投影/运动回归或联合负载疑点时再推进相应留项，不为改变路线重跑旧底座。ART-LINK-U01 的“源未交付”已纠正为局部修正/实际运输接入缺口；地表接缝分别按整平和开挖消费冻结。
 
