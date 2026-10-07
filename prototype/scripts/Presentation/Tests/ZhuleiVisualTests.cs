@@ -10,13 +10,10 @@ using Godot;
 namespace Yudian.Presentation;
 
 /// <summary>
-/// D1.0 E03 ZhuleiVisual 实机测试（headless，Godot 进程内跑真资产 zhulei.glb）。
-/// _Ready 一次跑完全部检查：启动身份核对（CLR/物理后端/MVID==刚构建 PE）、生命周期、
-/// canonical 资产与 manifest 时长核对、根 identity/脚底原点/静态包络、六键消费路由、
-/// move/work 循环回绕、单次动作定格、paused 冻结不伪造、切换复位防串扰（按 manifest
-/// changed_targets 逐名核验）、非法键/非法 delta 先验后拒保旧态、delta 极值与父节点不动。
-/// 逐条 PASS/FAIL（Console.WriteLine 走 stdout，验收须捕获完整 stdout+stderr 与退出码），
-/// 全过 SUMMARY 后退出 0，任一失败退出 1。不做渲染判定，不伪造充电/维修能力。
+/// E03 ZhuleiVisual 实机测试（headless，Godot 进程内跑真资产 zhulei.glb）：_Ready 一次跑完
+/// 全部检查（无物理帧依赖），逐条 PASS/FAIL 经 Console.WriteLine 走 stdout（不进
+/// --log-file），全过 SUMMARY 后退出 0，任一失败退出 1；验收须捕获完整 stdout+stderr 与
+/// 退出码。含与 ground-patrol-tests 相同的启动身份核对。不做渲染判定，不伪造充电/维修能力。
 /// </summary>
 public partial class ZhuleiVisualTests : Node3D
 {
@@ -162,20 +159,29 @@ public partial class ZhuleiVisualTests : Node3D
             Expect(Diff(model.Transform, Transform3D.Identity) <= 1e-4,
                 $"model root should be identity, got {model.Transform}");
 
-            // 1m 单位与脚底原点意图：manifest bounds.static 是美术参考面（bounds_scope 明示
-            // 不作包络认证），Godot 导入 rest pose 与参考面有厘米级差，故用 ±0.05 容差档。
-            Vector3 min = new(float.MaxValue, float.MaxValue, float.MaxValue);
-            Vector3 max = new(float.MinValue, float.MinValue, float.MinValue);
-            int meshCount = 0;
-            CollectMeshes(model, ref min, ref max, ref meshCount);
-            Expect(meshCount > 0, "no MeshInstance3D found under model");
-            Console.WriteLine($"static AABB min={min} max={max} meshes={meshCount}");
-            Expect(Math.Abs(min.Y) <= 0.05f, $"foot origin: AABB min.Y {min.Y} must be ~0");
-            Expect(min.X > -0.97f && min.X < -0.77f, $"AABB min.X {min.X} vs manifest -0.87");
-            Expect(max.X > 0.77f && max.X < 0.97f, $"AABB max.X {max.X} vs manifest 0.87");
-            Expect(max.Y > 1.0f && max.Y < 1.2f, $"AABB max.Y {max.Y} vs manifest 1.1034 (1m unit scale)");
-            Expect(min.Z > -0.91f && min.Z < -0.71f, $"AABB min.Z {min.Z} vs manifest -0.8106");
-            Expect(max.Z > 0.70f && max.Z < 0.90f, $"AABB max.Z {max.Z} vs manifest 0.80");
+            // 静态包络按实际顶点测（manifest bounds 的"实际顶点"口径）：每 Mesh 全部 surface
+            // 的顶点经链式 transform 变到 Model 根坐标；不用 GetAabb 八角——旋转轮等局部
+            // AABB 空角会虚假扩大包络。逐轴记录来源 mesh 作证据。
+            VertexBounds bounds = MeasureVertexBounds(model);
+            Console.WriteLine(
+                "static vertex bounds meshes=" + bounds.Meshes
+                + $" min=({bounds.Min[0]:F4},{bounds.Min[1]:F4},{bounds.Min[2]:F4})"
+                + $" max=({bounds.Max[0]:F4},{bounds.Max[1]:F4},{bounds.Max[2]:F4})");
+            Console.WriteLine($"extremes minAt=[{string.Join(",", bounds.MinAt)}]"
+                + $" maxAt=[{string.Join(",", bounds.MaxAt)}]");
+            Expect(bounds.Meshes > 0, "no MeshInstance3D found under model");
+            Expect(Math.Abs(bounds.Min[1]) <= 0.01f,
+                $"foot origin: vertex min.Y {bounds.Min[1]} at {bounds.MinAt[1]} vs manifest 2.12e-05");
+            Expect(Math.Abs(bounds.Min[0] + 0.87f) <= 0.01f,
+                $"vertex min.X {bounds.Min[0]} at {bounds.MinAt[0]} vs manifest -0.87");
+            Expect(Math.Abs(bounds.Max[0] - 0.87f) <= 0.01f,
+                $"vertex max.X {bounds.Max[0]} at {bounds.MaxAt[0]} vs manifest 0.87");
+            Expect(Math.Abs(bounds.Max[1] - 1.1034f) <= 0.01f,
+                $"vertex max.Y {bounds.Max[1]} at {bounds.MaxAt[1]} vs manifest 1.1034");
+            Expect(Math.Abs(bounds.Min[2] + 0.8106f) <= 0.01f,
+                $"vertex min.Z {bounds.Min[2]} at {bounds.MinAt[2]} vs manifest -0.8106");
+            Expect(Math.Abs(bounds.Max[2] - 0.80f) <= 0.01f,
+                $"vertex max.Z {bounds.Max[2]} at {bounds.MaxAt[2]} vs manifest 0.80");
         }
         finally
         {
@@ -183,23 +189,60 @@ public partial class ZhuleiVisualTests : Node3D
         }
     }
 
-    private static void CollectMeshes(Node node, ref Vector3 min, ref Vector3 max, ref int meshCount)
+    /// <summary>manifest bounds 的"实际顶点"口径：逐 Mesh 全 surface 顶点变换到 root 坐标。</summary>
+    private static VertexBounds MeasureVertexBounds(Node3D root)
     {
-        if (node is MeshInstance3D mesh)
+        var bounds = new VertexBounds();
+        Walk(root, Transform3D.Identity);
+        return bounds;
+
+        void Walk(Node parent, Transform3D toRoot)
         {
-            meshCount++;
-            Aabb local = mesh.GetAabb();
-            for (int i = 0; i < 8; i++)
+            foreach (Node child in parent.GetChildren())
             {
-                var corner = local.Position
-                    + new Vector3(local.Size.X * (i & 1), local.Size.Y * ((i >> 1) & 1), local.Size.Z * ((i >> 2) & 1));
-                Vector3 world = mesh.GlobalTransform * corner;
-                min = min.Min(world);
-                max = max.Max(world);
+                if (child is not Node3D node)
+                    continue;
+                Transform3D nodeToRoot = toRoot * node.Transform;
+                if (node is MeshInstance3D { Mesh: not null } mesh)
+                {
+                    bounds.Meshes++;
+                    for (int surface = 0; surface < mesh.Mesh.GetSurfaceCount(); surface++)
+                    {
+                        Vector3[] vertices = mesh.Mesh.SurfaceGetArrays(surface)
+                            [(int)Mesh.ArrayType.Vertex].AsVector3Array();
+                        foreach (Vector3 local in vertices)
+                            bounds.Add(nodeToRoot * local, node.Name);
+                    }
+                }
+                Walk(node, nodeToRoot);
             }
         }
-        foreach (Node child in node.GetChildren())
-            CollectMeshes(child, ref min, ref max, ref meshCount);
+    }
+
+    private sealed class VertexBounds
+    {
+        public readonly float[] Min = { float.MaxValue, float.MaxValue, float.MaxValue };
+        public readonly float[] Max = { float.MinValue, float.MinValue, float.MinValue };
+        public readonly string[] MinAt = new string[3];
+        public readonly string[] MaxAt = new string[3];
+        public int Meshes;
+
+        public void Add(Vector3 world, string at)
+        {
+            for (int axis = 0; axis < 3; axis++)
+            {
+                if (world[axis] < Min[axis])
+                {
+                    Min[axis] = world[axis];
+                    MinAt[axis] = at;
+                }
+                if (world[axis] > Max[axis])
+                {
+                    Max[axis] = world[axis];
+                    MaxAt[axis] = at;
+                }
+            }
+        }
     }
 
     private void SixKeys()
@@ -250,7 +293,7 @@ public partial class ZhuleiVisualTests : Node3D
             Expect(visual.Apply("work", 0.5, false), "work first apply must be accepted");
             Transform3D atHalf = TrackNode(player, "work", 0).Transform;
             Expect(visual.Apply("work", 2.0, false), "work second apply must be accepted");
-            // 切换键时 _time 归零：0.5 + 2.0 = 2.5，position = 2.5 % 2.0 = 0.5。
+            // 切换键时 StateTime 归零再累加：0.5 + 2.0 = 2.5，position = 2.5 % 2.0 = 0.5。
             Expect(Math.Abs(visual.StateTime - 2.5) <= 1e-9, "work StateTime must be 2.5 (reset on switch)");
             Expect(Math.Abs(player.CurrentAnimationPosition - 0.5) <= 1e-9,
                 "work playback position must wrap to 0.5");

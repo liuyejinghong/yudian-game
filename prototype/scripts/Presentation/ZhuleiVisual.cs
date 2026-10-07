@@ -6,16 +6,12 @@ using Godot;
 namespace Yudian.Presentation;
 
 /// <summary>
-/// D1.0 E03 筑垒视觉适配（现役 canonical 资产 res://assets/lowfi-batch-r1/models/zhulei.glb，
-/// ART-U02 manifest rev1）。由主控挂到物理 actor（如 GroundPatrol）下作视觉子节点：本节点根
-/// 保持 identity、1m 单位、脚底原点；Initialize() 实例化并校验 canonical 模型、唯一
-/// AnimationPlayer 与五个源 clip；Apply(state,delta,paused) 只驱动本子树内的局部节点，消费六键
-/// idle/move/work/charge/disabled/maintenance（manifest states；towed 不在 D1.0 合同，按非法键
-/// 拒绝）。动画位置由主控传入的 delta 累加并 seek，不依赖引擎帧时序，也不改变物理 actor 的
-/// root/GlobalPosition 或任何游戏事实。paused 只定格当前键、不推进时间、不伪造动作；合法切换
-/// 先复位基线 pose 再起新动作，防工作/盖板/充电串扰；非法键/非法 delta 先完整校验再拒绝并保旧
-/// 有效状态。move 的时间推进来自主控真实位移节拍，work 来自真实工段，服务状态只测适配，
-/// 不在 D1.0 伪造充电维修能力。
+/// E03 筑垒视觉适配：把主控给的状态键映射到现役 canonical
+/// res://assets/lowfi-batch-r1/models/zhulei.glb（ART-U02 rev1）的源动作。挂到物理 actor
+/// 下作视觉子节点，根保持 identity/1m/脚底原点，只动本子树局部节点，不动 actor 与游戏事实。
+/// 动画时间由 Apply 的 delta 累加驱动（Play→Seek→Pause，引擎不自行推进）；合法切换先复位
+/// 基线 pose 防上一个动作的关节串扰；非法键（含 manifest 有而合同没有的 towed）与非法
+/// delta 先验后拒、保旧有效状态；idle 是 manifest 静态轮廓，无 clip。
 /// </summary>
 public partial class ZhuleiVisual : Node3D
 {
@@ -25,8 +21,7 @@ public partial class ZhuleiVisual : Node3D
     private const string ModelPath = "res://assets/lowfi-batch-r1/models/zhulei.glb";
     private const string ModelNodeName = "Model";
 
-    /// <summary>状态键 → (源 clip, 是否循环)；idle 是静态基线轮廓，无 clip。对照
-    /// art/manifests/lowfi-batch-r1/zhulei.json 的 states（rev1）。</summary>
+    /// <summary>键→(clip,循环) 映射，来源 manifest zhulei.json states（rev1）；idle 静态无 clip。</summary>
     private static readonly Dictionary<string, (string Clip, bool Loop)> States = new()
     {
         ["idle"] = ("", false),
@@ -50,11 +45,8 @@ public partial class ZhuleiVisual : Node3D
     /// 该累计值本身继续累加（可诊断过长停留）。</summary>
     public double StateTime => _time;
 
-    /// <summary>
-    /// 实例化现役 canonical 模型并完整校验：资源存在、根是 Node3D、唯一 AnimationPlayer、
-    /// 五个源 clip 存在且时长为正、子树可缓存基线。节点/clip 缺失直接抛异常，不静默降级；
-    /// 校验全部通过才落子节点，失败不残留半成品。成功后重复调用抛 InvalidOperationException。
-    /// </summary>
+    /// <summary>实例化 canonical 模型并硬校验（唯一 AnimationPlayer、五 clip 时长为正，
+    /// 缺失即抛不静默降级）；校验全过才落子节点，失败不残留半成品；仅成功一次。</summary>
     public void Initialize()
     {
         if (_baseline != null)
@@ -94,12 +86,9 @@ public partial class ZhuleiVisual : Node3D
         }
     }
 
-    /// <summary>
-    /// 消费主控给出的真实状态键。返回 true=接受；false=非法输入被拒绝且视觉保持原有效状态
-    /// （键不在六键内含 null/大小写不符，或 delta 不为 [0, DeltaLimit] 内有限值）。
-    /// paused=true 只呈现当前键的定格 pose、不推进时间；期间的状态切换仍立即生效
-    /// （新动作从 0 定格，不伪造运动）。须先成功 Initialize。
-    /// </summary>
+    /// <summary>true=接受；false=非法输入（键不在六键内，或 delta 非有限/[0,DeltaLimit] 外）
+    /// 被拒且保旧有效状态。paused=true 定格当前键不推进时间，但状态切换仍立即生效
+    /// （新动作定格在 t0，不伪造运动）。须先成功 Initialize。</summary>
     public bool Apply(string? state, double delta, bool paused)
     {
         if (_baseline == null || _player == null)

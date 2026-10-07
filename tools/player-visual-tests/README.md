@@ -48,7 +48,11 @@ Godot 4.7 内存加载下 Assembly.Location 为空，如实记录。不一致或
 - canonical 资产：模型实例化为子节点 Model；子树内恰一个 AnimationPlayer；五个源 clip
   齐全且时长等于 manifest rev1（move 1.0s、work 2.0s、charge/disabled/maintenance 1.0s）。
 - 根 identity/单位/脚底原点：适配器根 transform 恒 identity；模型根 ≈ identity；
-  静态 AABB 对照 manifest bounds.static（±0.01，minY≈0 脚底原点，maxY≈1.1034）。
+  静态包络按每个 Mesh `SurfaceGetArrays` 实际顶点经链式 transform 变到 Model 根坐标
+  （manifest bounds 的"实际顶点"口径，逐轴记录来源 mesh），对照 manifest bounds.static
+  ±0.01——实测逐轴吻合到 1e-4：min=(-0.87, 0.0000, -0.8106) max=(0.87, 1.1034, 0.80)。
+  不用 `Mesh.GetAabb` 八角变换：旋转轮等局部 AABB 空角会虚假扩大包络（曾把 minY 虚降到
+  -0.044，属测量算法假偏差，非导入差异）。
 - 六键路由：idle/move/work/charge/disabled/maintenance 全部接受并路由到 manifest clip；
   manifest 有而 D1.0 合同没有的 `towed` 按非法键拒绝且不改 State。
 - 循环回绕：move 轮子真实转动，t=1.25 pose == t=0.25（1.0s 回绕）；work t=2.5 == t=0.5
