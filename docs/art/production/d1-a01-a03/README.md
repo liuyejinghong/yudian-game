@@ -64,3 +64,10 @@ YUDIAN_ART_OUTPUT="/tmp/yudian-art-capture-$(date +%Y%m%dT%H%M%S)" "$YUDIAN_GODO
 ```sh
 YUDIAN_MASK_OUTPUT="/tmp/yudian-mask-check-$(date +%Y%m%dT%H%M%S)" "$YUDIAN_GODOT" --log-file /tmp/art-mask-check.log --path prototype --rendering-driver metal --script "$PWD/art/d1/check_mask.gd"
 ```
+
+
+## 实际默认场景取景复核
+
+工程实际消费后，其6设施／4筑垒布局超出r1局部校准范围；原normal裁切4对象。已只读加载工程现有Main与完整HUD，对比既有overview及normal距离×1.6，推荐后者（pos25.12/28.8/26.3、focus4/0/-2.5、FOV50、距45.8796m）；10核心对象完整，四筑垒宽53.2–66.6px。工程已决定运行Main采用倍率，canonical camera.json保留。
+
+[实际场景对照与低保真阶段边界](PLAYER-CAMERA.md)、机器参数art/d1/camera-player.json、`python3 art/d1/verify_player_camera.py`与独立审查已完成；图是真实工程场景的相机候选，不是校准overlay或最终打包入口验收。取消示例来自工程，只说明先前v1结果与level-2在0%取消并存，不代签当前任务部分施工／保存操作。所有者视觉继续未验。

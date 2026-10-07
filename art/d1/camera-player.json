@@ -1,0 +1,29 @@
+{
+  "id": "D1-A01-player-default-r1",
+  "status": "actual-scene recommendation; coordinator adopted runtime distance scale; packaged default and owner visual acceptance pending",
+  "basis": "current normal direction, focus and FOV retained",
+  "distance_scale": 1.6,
+  "distance_m": 45.879565901228425,
+  "cameras": {
+    "normal": {
+      "position": [
+        25.12,
+        28.8,
+        26.3
+      ],
+      "target": [
+        4,
+        0,
+        -2.5
+      ],
+      "fov": 50
+    }
+  },
+  "projection": "perspective",
+  "keep_aspect": "keep_height",
+  "near_m": 0.05,
+  "far_m": 200,
+  "source_camera": "art/d1/camera.json cameras.normal",
+  "application": "engineering runtime scales normal camera position-target vector; canonical camera.json unchanged",
+  "evidence": "docs/art/production/d1-a01-a03/evidence/player-camera/player-camera.json"
+}

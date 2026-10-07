@@ -172,3 +172,6 @@
 正式接入／版本内验收／所有者视觉：均NOT_RUN。表面图是同一v0几何的样式输入，未假冒原始→施工→提交→取消成果；工程已确定从权威高度差异派生committed mask，美术shader已扩展消费；真实默认场景阶段／取消／重载对照仍待工程，详见[接缝](d1-a01-a03/INTERFACE.md)。T01正式阶段仍BLOCKED，T02/E10、U01局部返修及高保真未进入本批。
 
 2026-10-07同批mask续接：shader可选committed_mask/use_committed_mask/world_origin/world_span，默认false兼容原小样；mask压实优先于当前作业碎石，未标点不因stage2冒称提交。工程负责height差异生成/版本刷新/重载派生，不新增美术账本。扩展源与参数提交同PR，独立合成检查不代签实际接入或所有者视觉；正式表面行仍IN_PROGRESS。
+
+
+2026-10-07默认取景续接：工程实际接入后，原normal在真实设施环／筑垒布局中裁切4对象；已只读实际Main/HUD取3图，推荐normal方向/FOV50保留、距×1.6至45.8796m，pos(25.12,28.8,26.3)，10核心对象完整。主控已决定运行Main采用；源camera.json不改，参数与独立复核见[实际镜头](d1-a01-a03/PLAYER-CAMERA.md)。本会话未改工程、未合并PR；打包默认入口、真实交互／保存与所有者视觉不据此代签，第10节来源候选仍REVIEW。
