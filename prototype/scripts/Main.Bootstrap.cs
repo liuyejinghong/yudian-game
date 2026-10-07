@@ -177,7 +177,7 @@ public partial class Main
     {
         var p=LoadVector(f.Position);float d=BaseRadius(f)+a.BodyRadius+1.2f;
         foreach(var offset in new[]{new Vector3(d,0,0),new Vector3(-d,0,0),new Vector3(0,0,d),new Vector3(0,0,-d)})
-        {var station=p+offset;if(excluded!=null&&TouchesFootprint(excluded,station.X,station.Z,a.BodyRadius))continue;if(FindRoute(a,station).Found){station.Y=(float)SavedGroundHeight(_liveTerrain!.Current,station.X,station.Z);return station;}}
+        {var station=p+offset;if(excluded!=null&&(TouchesFootprint(excluded,station.X,station.Z,a.BodyRadius)||_buildJob!.Clearance.Any(x=>x.Key!=a.Name.ToString()&&XzDistance(station,LoadVector(x.Value))<=a.BodyRadius+Actor(x.Key).BodyRadius+.5f)))continue;if(FindRoute(a,station).Found){station.Y=(float)SavedGroundHeight(_liveTerrain!.Current,station.X,station.Z);return station;}}
         return null;
     }
     private bool TakeStation(string facility,string robot)=>!_stations.TryGetValue(facility,out var owner)?_stations.TryAdd(facility,robot):owner==robot;

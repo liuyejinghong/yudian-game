@@ -163,6 +163,7 @@ public partial class Main
             {
                 if(!s.Health.ContainsKey(clear.Key)||!clear.Key.StartsWith("Robot_Tuoyun_")||clear.Key!=b.Hauler&&!(s.Development?.Tasks.Any(t=>t.Goal==s.Development.Goal?.Id&&t.Kind=="haul"&&t.Robot==clear.Key)??false))throw new InvalidDataException("让位机器人没有本目标授权");
                 var point=LoadVector(clear.Value);
+                if(b.Clearance.Any(other=>other.Key!=clear.Key&&XzDistance(point,LoadVector(other.Value))<=Actor(clear.Key).BodyRadius+Actor(other.Key).BodyRadius+.5f))throw new InvalidDataException("工程让位站相互重叠");
                 if(!AtPort(s.Facilities.Single(x=>x.Id==b.Supply),clear.Key,point,1.2)||TouchesFootprint(patch,point.X,point.Z,Actor(clear.Key).BodyRadius)||b.Stage is not ("Preparing" or "Cancelled" or "Blocked")||b.Active&&TaskDestination(clear.Key) is {} currentDestination&&currentDestination!=point)throw new InvalidDataException("让位站或路线不一致");
             }
             var builderStation=LoadVector(b.Station);

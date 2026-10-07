@@ -451,3 +451,5 @@ source-r6实测仓储运输改变停车位置，新charger前选中驮运留在�
 source-r7只检查已选hauler的让位仍Preparing超时，同一步第二次失败，停止全量重复，改用既有产出边界副本获取让位前完整事实。architect指出须覆盖本目标所有实际运输者、固定安全dock等停稳，并保存/取消；先核实际路线拒绝原因，再恢复全量。
 
 让位现场副本已取：驮运(15.474,8.782)、cargo空、energy24.98、无service/route，Clearance空。新增未建charger的导航规划圆(radius1.9+hauler1.4)把现有停车点含入，FindRoute从起点拒绝所有dock；不是实体卡住。只在Preparing让位时对本目标运输者排除本工程尚未建成的规划圆，现有设施/机器人/实际MoveAndSlide碰撞与Occupied提交检查不变。移除临时旧output→让位探针分支，正式resume均完成原目标。
+
+原让位现场源码绿replay已完成charger且重复读取不推进；reviewer再发现两台本目标驮运可被分配同安全dock。FreeStation过滤已有Clearance空间占用，坏档拒绝重叠，新增第二驮运dock检查；r2导出只保留候选身份未执行最终矩阵，本修复另导r3。

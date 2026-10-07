@@ -166,6 +166,9 @@ public partial class Main
                 if(_buildJob?.Clearance.Count>0&&!_d12ClearanceSeen)
                 {
                     _d12ClearanceSeen=true;ValidatePlayerSave(CapturePlayer());
+                    var firstClear=_buildJob!.Clearance.First();var otherHauler=Actor("Robot_Tuoyun_2");
+                    var otherDock=FreeStation(_baseFacilities.Single(f=>f.Id==_buildJob.Supply),otherHauler,Yudian.Terrain.TerrainDataCodec.ParsePatch(_buildJob.Patch));
+                    GroundRequire(otherDock!=null&&XzDistance(otherDock.Value,LoadVector(firstClear.Value))>otherHauler.BodyRadius+Actor(firstClear.Key).BodyRadius+.5f,"separate clearance dock allocated for second hauler");
                     if(DevelopmentPhase=="prepare-clearance"){QueuePlayerAction("pause");_developmentTestStep=80;break;}
                     QueuePlayerAction("cancel");_developmentTestStep=207;break;
                 }
