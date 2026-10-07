@@ -161,8 +161,13 @@ public partial class Main
         {
             float x = (float)(s.OriginXM + i % s.Columns * s.SpacingM);
             float z = (float)(s.OriginZM + i / s.Columns * s.SpacingM);
+            // Exact outer edges can miss native triangle rays after the vertical span changes.
+            float inset=(float)s.SpacingM*.001f;
+            x=Math.Clamp(x,(float)s.OriginXM+inset,(float)(s.OriginXM+(s.Columns-1)*s.SpacingM)-inset);
+            z=Math.Clamp(z,(float)s.OriginZM+inset,(float)(s.OriginZM+(s.Rows-1)*s.SpacingM)-inset);
             float observed = GroundHeight(x, z);
-            GroundRequire(Math.Abs(observed - s.HeightsM[i]) <= .0001, $"changed vertex native ray index={i} expected={s.HeightsM[i]:R} observed={observed:R}");
+            double expected=SavedGroundHeight(s,x,z);
+            GroundRequire(Math.Abs(observed - expected) <= .0001, $"terrain sample native ray index={i} expected={expected:R} observed={observed:R}");
         }
         _groundVerified = s.Version; PauseGround(false);
         _groundMessage = "当前物理已验证，继续巡逻";
