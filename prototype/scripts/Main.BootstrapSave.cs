@@ -143,6 +143,7 @@ public partial class Main
             var expectedCost=Cost(b.Type);
             if(b.Cost==null||b.Cost.Count!=expectedCost.Count||!expectedCost.All(x=>b.Cost.GetValueOrDefault(x.Key)==x.Value)||!float.IsFinite(b.Yaw)||Math.Abs(b.Yaw)>MathF.PI)throw new InvalidDataException("工程成本或朝向无效");
             var f=s.Facilities.Single(x=>x.Id==b.Facility);
+            if(!s.Facilities.Any(x=>x.Id==b.Supply&&x.Built&&x.Type is "lander" or "storage"))throw new InvalidDataException("工程取货源无效");
             string buffer=b.Type=="connection"?b.Id:b.Facility;
             if(!s.Ledger.Containers.Any(c=>c.Id==buffer&&c.Capacity==100))throw new InvalidDataException("当前工程现场容器缺失");
             bool AtPort(BaseFacility facility,string robot,Vector3 position,double offset)
@@ -157,6 +158,13 @@ public partial class Main
                 if(service!=null)return service.ReturnTo==null?null:LoadVector(service.ReturnTo);
                 return s.Destinations.TryGetValue(robot,out var destination)?LoadVector(destination):null;
             }
+            if(b.Clearance==null||b.Clearance.Count>saved.Robots.Length)throw new InvalidDataException("工程让位集合无效");
+            foreach(var clear in b.Clearance)
+            {
+                if(!s.Health.ContainsKey(clear.Key)||!clear.Key.StartsWith("Robot_Tuoyun_")||clear.Key!=b.Hauler&&!(s.Development?.Tasks.Any(t=>t.Goal==s.Development.Goal?.Id&&t.Kind=="haul"&&t.Robot==clear.Key)??false))throw new InvalidDataException("让位机器人没有本目标授权");
+                var point=LoadVector(clear.Value);
+                if(!AtPort(s.Facilities.Single(x=>x.Id==b.Supply),clear.Key,point,1.2)||TouchesFootprint(patch,point.X,point.Z,Actor(clear.Key).BodyRadius)||b.Stage is not ("Preparing" or "Cancelled" or "Blocked")||b.Active&&TaskDestination(clear.Key) is {} currentDestination&&currentDestination!=point)throw new InvalidDataException("让位站或路线不一致");
+            }
             var builderStation=LoadVector(b.Station);
             // Builder standoff includes the patch's changed cells and an extra 1.4m beyond the body.
             double builderOffset=patch.Base.SpacingM*2+1.4-_groundRobots.Single(a=>a.Name.ToString()==b.Builder).BodyRadius;
@@ -167,11 +175,11 @@ public partial class Main
                 if(b.Stage is "LevelTravel" or "Levelling" or "Building" && TaskDestination(b.Builder)!=builderStation)throw new InvalidDataException("筑垒目的地与施工站不一致");
                 if(b.Stage=="Pickup")
                 {
-                    var dock=TaskDestination(b.Hauler);if(dock==null||!AtPort(s.Facilities.Single(x=>x.Id=="lander"),b.Hauler,dock.Value,1.2))throw new InvalidDataException("取货目的地不属于着陆器");
+                    var dock=TaskDestination(b.Hauler);if(dock==null||!AtPort(s.Facilities.Single(x=>x.Id==b.Supply),b.Hauler,dock.Value,1.2))throw new InvalidDataException("取货目的地不属于保存的仓库");
                 }
                 if(b.Stage=="Delivering"&&(b.HaulStation==null||TaskDestination(b.Hauler)!=LoadVector(b.HaulStation)))throw new InvalidDataException("驮运目的地与交货站不一致");
                 if(b.Stage is "BuilderTravel" or "Building" && b.Cost.Any(x=>ledger.Count(buffer,x.Key)<x.Value))throw new InvalidDataException("施工阶段物料未齐备");
-                if(b.Cost.Any(x=>ledger.Count(buffer,x.Key)+ledger.Count(CargoContainer(b.Hauler),x.Key)+ledger.Reserved(b.Id,"lander",x.Key)<x.Value))throw new InvalidDataException("工程物料没有实际归属或预约");
+                if(b.Cost.Any(x=>ledger.Count(buffer,x.Key)+ledger.Count(CargoContainer(b.Hauler),x.Key)+ledger.Reserved(b.Id,b.Supply,x.Key)<x.Value))throw new InvalidDataException("工程物料没有实际归属或预约");
             }
             if(center!=LoadVector(f.Position)||b.Type!="connection"&&(b.Type!=f.Type||b.Yaw!=f.Yaw||b.Id!=f.Id)||b.Type=="connection"&&(!f.Built||b.Source==null||!s.Facilities.Any(x=>x.Id==b.Source&&x.Built&&x.Type=="solar"&&XzDistance(LoadVector(x.Position),center)<=config.ConnectionRangeM)))throw new InvalidDataException("工程设施关系无效");
             if(patch.PatchId!=b.Id||patch.Base.RegionId!=terrain.RegionId||patch.Base.Rows!=terrain.Rows||patch.Base.Columns!=terrain.Columns||patch.Base.SpacingM!=terrain.SpacingM||patch.Base.OriginXM!=terrain.OriginXM||patch.Base.OriginZM!=terrain.OriginZM)throw new InvalidDataException("工程地形不一致");
@@ -189,13 +197,13 @@ public partial class Main
             if(s.Services.Any(service=>service.Facility==slot.Key&&service.Robot==slot.Value))continue;
             var current=s.Build;
             bool builder=current?.Active==true&&slot.Key==current.Facility&&slot.Value==current.Builder&&current.Stage is "LevelTravel" or "Levelling" or "LevelPhysics" or "BuilderTravel" or "Building";
-            bool hauler=current?.Active==true&&slot.Value==current.Hauler&&(slot.Key=="lander"&&current.Stage is "Fetching" or "Pickup"||slot.Key==current.Facility&&current.Stage is "CargoWaiting" or "Delivering");
+            bool hauler=current?.Active==true&&slot.Value==current.Hauler&&(slot.Key==current.Supply&&current.Stage is "Fetching" or "Pickup"||slot.Key==current.Facility&&current.Stage is "CargoWaiting" or "Delivering");
             if(s.Development!=null&&ValidProductionStation(s.Development,slot.Key,slot.Value))continue;
             if(!builder&&!hauler)throw new InvalidDataException("工位预约没有当前执行者");
         }
         ValidateDevelopment(saved,terrain,config,ledger);
         foreach(var reservation in s.Ledger.Reservations)
-            if(s.Build==null||reservation.Goal!=s.Build.Id||!s.Build.Active||reservation.Container!="lander")throw new InvalidDataException("预约没有有效所属目标");
+            if(s.Build==null||reservation.Goal!=s.Build.Id||!s.Build.Active||reservation.Container!=s.Build.Supply)throw new InvalidDataException("预约没有有效所属目标");
     }
     private void ApplyBootstrap(BootstrapSave s)
     {

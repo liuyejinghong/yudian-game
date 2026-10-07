@@ -441,3 +441,13 @@ D1.2预检（只读，未派实施）：architect核出Ledger仅同料Transfer�
 D1.2已核：GLM-A原生Flash sess_bf11ef5df9交有限缺口81项；GLM-B sess_6424188cf2交只读UI/旧档/补料，主控78项通过，主控仅把经营事实移至信息区前部。source-r2九进程过矿提交/实运/投入/产出恢复，legacy-source-r1九进程通过，schema2测试副本迁移schema3通过，原用户两档hash留存。独立reviewer发现完成目标绑定旧current Build、自举保护释放过早、超时重试路由、任意端点、补料净缺口、阻塞义务替代及restock引用，均局部修复并补反例。
 
 source-r3负例首次失败：Blocked运输取消时ResumeStage被覆盖为Blocked，保存拒绝“生产重试阶段无效”；保留原件，修为Cancelled保原恢复阶段，source-r4同一步继续复验。后续接线不能绕生产：连接目标保存真实facility/source，并共用生产前置/延后patch。增加第二阵列→新充电桩真实供电检查，不增加设施类型。U01 rev4源/GLB/node/clips身份独立核后仅消费prototype GLB；六资源素材未齐可用明确临时表示，工程不等待美术。
+
+2026-10-08 r1最终原生9进程、迁移/保护通过；GUI因Mac锁屏尚未运行。补查发现仓储始终不被正常建设使用，不能签“有后果”的方向：architect确认补保存Supply贯穿目标集料/建设取货/预约/取消重试，并测满仓回退、仓储取货跨进程与旧缺省lander；另导出r2保留r1身份与证据。
+
+仓储reviewer发现取消/阻塞建设档可单改Goal.Supply，再重试后保存才拒绝；改为当前Build存在即校验双方仓库一致，并加取消档反例。source-r5缺显式SDK环境启动失败保留；r6显式DOTNET_ROOT/PATH复跑，后续新增反例由最终r2执行。
+
+source-r6实测仓储运输改变停车位置，新charger前选中驮运留在目标patch包络，连续Occupied正确拒绝后超时Blocked（失败原件保留）。最小修复Preparing让该工程驮运实际走至Supply安全dock、离开后才整平；保留占用/地形安全边界，新增FreeStation过滤参数，不做泛化避让。
+
+source-r7只检查已选hauler的让位仍Preparing超时，同一步第二次失败，停止全量重复，改用既有产出边界副本获取让位前完整事实。architect指出须覆盖本目标所有实际运输者、固定安全dock等停稳，并保存/取消；先核实际路线拒绝原因，再恢复全量。
+
+让位现场副本已取：驮运(15.474,8.782)、cargo空、energy24.98、无service/route，Clearance空。新增未建charger的导航规划圆(radius1.9+hauler1.4)把现有停车点含入，FindRoute从起点拒绝所有dock；不是实体卡住。只在Preparing让位时对本目标运输者排除本工程尚未建成的规划圆，现有设施/机器人/实际MoveAndSlide碰撞与Occupied提交检查不变。移除临时旧output→让位探针分支，正式resume均完成原目标。

@@ -4,7 +4,7 @@
 
 | 线 | 唯一权威任务表 | 当前事实 | 下一待办 |
 |---|---|---|---|
-| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | D1.1自举与镜头鼠标入口已收口，默认包r5；完整模块继续未完成 | D1.2采集加工/后续发展选择；物理触控板与真人键盘手感留验；[镜头证据](docs/engineering/reports/2026-10-07-camera-verification.md) |
+| 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | D1.1自举与镜头鼠标入口已收口，默认包r5；完整模块继续未完成 | D1.2最终原生/仓储取货恢复检查中，实际窗口待解锁；通过后切入口并精确集成；物理触控板与真人键盘手感留验；[镜头证据](docs/engineering/reports/2026-10-07-camera-verification.md) |
 | 美术 | [美术 TODO](docs/art/production/todo.md) | A01/A03已在默认应用消费；PR43地表外观返工；PR44两件高保真核心样板内部视觉通过，Sol实际试跑流程；Main/整场性能/所有者终审未验 | 六资源与U01/F02局部问题按D1.2用途补齐；核心高保真先核游戏预算和接入，不自动批量生产 |
 
 2026-10-07镜头返修：[CAMERA-01](docs/engineering/tasks/CAMERA-01.md)已限定ACCEPTED，GLM实现、1280×800 UI62项、r5实际鼠标缩放/旋转/平移及保存关闭重开后操作通过；根入口已更新，原两份存档字节保持。物理触控板与所有者原输入根因未签。[复验与留项](docs/engineering/reports/2026-10-07-camera-verification.md)。

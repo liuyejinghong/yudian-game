@@ -66,6 +66,7 @@ public partial class Main
         public required string Type { get; init; }
         public required string Facility { get; init; }
         public string? Source { get; init; }
+        public string Supply { get; init; } = "lander";
         public required float[] Center { get; init; }
         public float Yaw { get; init; }
         public required Dictionary<string,int> Cost { get; init; }
@@ -73,6 +74,7 @@ public partial class Main
         public required string Hauler { get; init; }
         public required float[] Station { get; init; }
         public float[]? HaulStation { get; set; }
+        public Dictionary<string,float[]> Clearance { get; init; } = new();
         public required string Patch { get; init; }
         public string Stage { get; set; } = "Preparing";
         public double Work { get; set; }
@@ -143,7 +145,8 @@ public partial class Main
     public BootstrapReadModel ReadBootstrap()
     {
         if(!BootstrapEnabled || _bootstrapConfig==null || !_groundReady) return new(false,"","",[],[],[],0);
-        string stock=string.Join(" · ",MaterialLedger.Materials.Where(m=>_ledger.Count("lander",m)>0||_bootstrapConfig.Initial[m]>0).Select(m=>$"{MaterialName(m)} {_ledger.Count("lander",m)}（可用{_ledger.Available("lander",m)}）"));
+        var depots=_baseFacilities.Where(f=>f.Built&&f.Type is "lander" or "storage").Select(f=>f.Id).ToArray();
+        string stock=string.Join(" · ",MaterialLedger.Materials.Where(m=>depots.Sum(c=>_ledger.Count(c,m))>0||_bootstrapConfig.Initial[m]>0).Select(m=>$"{MaterialName(m)} {depots.Sum(c=>_ledger.Count(c,m))}（可用{depots.Sum(c=>_ledger.Available(c,m))}）"));
         return new(true,stock,$"{(Daylight?"日照":"夜间")} · 发电 {_baseFacilities.Count(f=>f.Type=="solar"&&Powered(f))*_bootstrapConfig.SolarOutput:0.#} /s · 电缆连接 ≤{_bootstrapConfig.ConnectionRangeM:0}m，每段{_bootstrapConfig.ConnectionCables}线缆",
             _bootstrapConfig.Buildings.Select(b=>new BuildBlueprintView(b.Id,b.Name,(float)b.Radius,FormatMaterials(BuildCost(b.Id)))).ToArray(),
             _baseFacilities.Select(f=>new FacilityView(f.Id,f.Type,BaseName(f.Type),LoadVector(f.Position),BaseRadius(f),f.Built,Powered(f),f.Source)).ToArray(),
@@ -160,7 +163,8 @@ public partial class Main
         {double x=t.OriginXM+c*t.SpacingM-center.X,z=t.OriginZM+r*t.SpacingM-center.Z;if(x*x+z*z<=reach*reach)heights[r*t.Columns+c]=0;}
         return GroundPatchFromHeights(t,heights,id);
     }
-    private NavObstacle[] RouteObstacles(string actor, bool includeSites=true)=>_baseFacilities.Where(f=>f.Built||includeSites).Select(f=>new NavObstacle(new(LoadVector(f.Position).X,LoadVector(f.Position).Z),BaseRadius(f)))
+    private bool BuildClearingActor(string actor)=>_buildJob is {} j&&(actor==j.Hauler||DevelopmentEnabled&&_productionTasks.Any(t=>t.Goal==_development?.Id&&t.Kind=="haul"&&t.Robot==actor));
+    private NavObstacle[] RouteObstacles(string actor, bool includeSites=true)=>_baseFacilities.Where(f=>(f.Built||includeSites)&&!(!f.Built&&f.Id==_buildJob?.Facility&&_buildJob.Stage=="Preparing"&&BuildClearingActor(actor))).Select(f=>new NavObstacle(new(LoadVector(f.Position).X,LoadVector(f.Position).Z),BaseRadius(f)))
         .Concat(_groundRobots.Where(a=>a.Name.ToString()!=actor).Select(a=>new NavObstacle(new(a.GlobalPosition.X,a.GlobalPosition.Z),a.BodyRadius))).ToArray();
     private RouteResult FindRoute(GroundPatrol a, Vector3 to)=>BoundedRoute.Find(_liveTerrain!.Current,new(a.GlobalPosition.X,a.GlobalPosition.Z),new(to.X,to.Z),a.BodyRadius,RouteObstacles(a.Name.ToString()));
     private bool OrderBase(GroundPatrol actor,Vector3 destination)
@@ -169,11 +173,11 @@ public partial class Main
         actor.SetRoute(route.Points.Select(p=>new Vector3((float)p.X,(float)SavedGroundHeight(_liveTerrain!.Current,(float)p.X,(float)p.Z),(float)p.Z)).ToArray());
         _routes[actor.Name.ToString()]=new(){Destination=destination,WorldVersion=route.WorldVersion,FacilityRevision=_baseRevision};return true;
     }
-    private Vector3? FreeStation(BaseFacility f,GroundPatrol a)
+    private Vector3? FreeStation(BaseFacility f,GroundPatrol a,TerrainPatch? excluded=null)
     {
         var p=LoadVector(f.Position);float d=BaseRadius(f)+a.BodyRadius+1.2f;
         foreach(var offset in new[]{new Vector3(d,0,0),new Vector3(-d,0,0),new Vector3(0,0,d),new Vector3(0,0,-d)})
-        {var station=p+offset;if(FindRoute(a,station).Found){station.Y=(float)SavedGroundHeight(_liveTerrain!.Current,station.X,station.Z);return station;}}
+        {var station=p+offset;if(excluded!=null&&TouchesFootprint(excluded,station.X,station.Z,a.BodyRadius))continue;if(FindRoute(a,station).Found){station.Y=(float)SavedGroundHeight(_liveTerrain!.Current,station.X,station.Z);return station;}}
         return null;
     }
     private bool TakeStation(string facility,string robot)=>!_stations.TryGetValue(facility,out var owner)?_stations.TryAdd(facility,robot):owner==robot;
@@ -200,7 +204,7 @@ public partial class Main
     }
     public void QueueBuild(string type,Vector3 center,float yaw,long observedVersion)
         =>QueuePlayer(new("build:"+type,center,observedVersion,null,yaw));
-    private void StartBaseBuild(string type,Vector3 center,float yaw,string? connectionTarget=null,string? source=null)
+    private void StartBaseBuild(string type,Vector3 center,float yaw,string? connectionTarget=null,string? source=null,string supply="lander")
     {
         if(_buildSequence==int.MaxValue)throw new InvalidOperationException("工程编号已达上限");
         bool wire=type=="connection";
@@ -214,9 +218,9 @@ public partial class Main
         if(station==null)throw new InvalidOperationException("没有可达且不触及整平范围的施工站");
         if(!wire)_ledger.AddContainer(f.Id,100);
         else _ledger.AddContainer(id,100);
-        _ledger.Reserve(id,"lander",cost);
+        _ledger.Reserve(id,supply,cost);
         _levelJob=null;
-        _buildJob=new(){Id=id,Type=type,Facility=f.Id,Source=source,Center=SavedVector(new(center.X,0,center.Z)),Yaw=yaw,Cost=cost,Builder=builder.Name.ToString(),Hauler=hauler.Name.ToString(),Station=SavedVector(station.Value),Patch=TerrainDataCodec.Serialize(patch)};
+        _buildJob=new(){Id=id,Type=type,Facility=f.Id,Source=source,Supply=supply,Center=SavedVector(new(center.X,0,center.Z)),Yaw=yaw,Cost=cost,Builder=builder.Name.ToString(),Hauler=hauler.Name.ToString(),Station=SavedVector(station.Value),Patch=TerrainDataCodec.Serialize(patch)};
         if(!wire){_baseFacilities.Add(f);_baseRevision++;RebuildBaseFacilities();}
         _playerNotice="已登记工程；运输和实际工段后落成";
     }
@@ -242,7 +246,7 @@ public partial class Main
     {
         if(_buildJob?.Active!=true)return;
         var j=_buildJob;j.Stage="Cancelled";j.Reason="已取消；地形、现场物料与在途货物保留";_ledger.Release(j.Id);
-        foreach(var id in new[]{j.Builder,j.Hauler})
+        foreach(var id in new[]{j.Builder,j.Hauler}.Concat(j.Clearance.Keys).Distinct())
         ClearBaseWorkOrder(id);
         _playerNotice=j.Reason;
     }
@@ -292,7 +296,7 @@ public partial class Main
         string buffer=j.Type=="connection"?j.Id:j.Facility;
         var missing=j.Cost.Where(x=>x.Value>_ledger.Count(buffer,x.Key)+_ledger.Count(CargoContainer(j.Hauler),x.Key))
             .ToDictionary(x=>x.Key,x=>x.Value-_ledger.Count(buffer,x.Key)-_ledger.Count(CargoContainer(j.Hauler),x.Key));
-        if(missing.Count>0)_ledger.Reserve(j.Id,"lander",missing);
+        if(missing.Count>0)_ledger.Reserve(j.Id,j.Supply,missing);
         var patch=TerrainDataCodec.ParsePatch(j.Patch);
         j.Stage=patch.HeightsM.SequenceEqual(_liveTerrain!.Current.HeightsM)||j.Type=="connection"?"Fetching":"Preparing";
         if(j.Stage=="Preparing"&&patch.Base.Version!=_liveTerrain.Current.Version)throw new InvalidOperationException("地形已变化，保留工程；需另选位置");
@@ -311,13 +315,33 @@ public partial class Main
         var builder=Actor(j.Builder);var hauler=Actor(j.Hauler);var station=LoadVector(j.Station);var center=LoadVector(j.Center);var cargo=CargoContainer(j.Hauler);string buffer=j.Type=="connection"?j.Id:j.Facility;
         if(Servicing(builder)||Servicing(hauler)){j.Reason="保障中，原工程、载荷与进度保留";return;}
         if(!Operational(builder)||!Operational(hauler)){j.Reason="执行者停机；货物与工程保留，救援尚待D2";return;}
-        j.Waiting+=delta;if(j.Waiting>180){j.Stage="Blocked";_ledger.Release(j.Id);j.Reason="180秒未完成当前阶段；事实保留，可重试";StopBase(builder);StopBase(hauler);ReleaseStations(j.Builder);ReleaseStations(j.Hauler);return;}
+        j.Waiting+=delta;if(j.Waiting>180){j.Stage="Blocked";_ledger.Release(j.Id);j.Reason="180秒未完成当前阶段；事实保留，可重试";foreach(var id in new[]{j.Builder,j.Hauler}.Concat(j.Clearance.Keys).Distinct())ClearBaseWorkOrder(id);return;}
         string previous=j.Stage;
         switch(j.Stage)
         {
             case "Preparing":
                 var patch=TerrainDataCodec.ParsePatch(j.Patch);
                 if(patch.HeightsM.SequenceEqual(patch.Base.HeightsM)){j.Stage="Fetching";break;}
+                var clearing=_groundRobots.Where(a=>BuildClearingActor(a.Name.ToString()));
+                bool waiting=false;
+                foreach(var actor in clearing)
+                {
+                    string actorId=actor.Name.ToString();
+                    if(!j.Clearance.ContainsKey(actorId)&&TouchesFootprint(patch,actor.GlobalPosition.X,actor.GlobalPosition.Z,actor.BodyRadius))
+                    {
+                        if(!Operational(actor)||Servicing(actor)){waiting=true;continue;}
+                        var safeDock=FreeStation(_baseFacilities.Single(f=>f.Id==j.Supply),actor,patch);
+                        if(safeDock==null||!OrderBase(actor,safeDock.Value)){waiting=true;continue;}
+                        j.Clearance.Add(actorId,SavedVector(safeDock.Value));
+                    }
+                    if(!j.Clearance.TryGetValue(actorId,out var safePoint))continue;
+                    var safe=LoadVector(safePoint);
+                    if(!Operational(actor)||Servicing(actor)){waiting=true;continue;}
+                    if(!_routes.TryGetValue(actorId,out var escape)||escape.Destination!=safe)OrderBase(actor,safe);
+                    if(!Arrived(actor,safe))waiting=true;
+                }
+                if(waiting){j.Reason="驮运先到范围外取货位停稳，再整平";break;}
+                foreach(var id in j.Clearance.Keys)StopBase(Actor(id));j.Clearance.Clear();
                 if(TakeStation(j.Facility,j.Builder)&&OrderBase(builder,station)){j.Stage="LevelTravel";j.Reason="筑垒前往整平施工站";}break;
             case "LevelTravel":if(Arrived(builder,station)){j.Stage="Levelling";j.Work=0;}break;
             case "Levelling":
@@ -331,20 +355,20 @@ public partial class Main
                 break;
             case "Fetching":
                 StopBase(builder);ReleaseStations(j.Builder);
-                var lander=_baseFacilities.Single(f=>f.Id=="lander");var dock=FreeStation(lander,hauler);
-                if(dock==null||!TakeStation("lander",j.Hauler))break;
-                if(OrderBase(hauler,dock.Value)){j.Stage="Pickup";j.Reason="驮运前往着陆器取货";}break;
+                var depot=_baseFacilities.Single(f=>f.Id==j.Supply);var dock=FreeStation(depot,hauler);
+                if(dock==null||!TakeStation(j.Supply,j.Hauler))break;
+                if(OrderBase(hauler,dock.Value)){j.Stage="Pickup";j.Reason="驮运前往"+BaseName(depot.Type)+"取货";}break;
             case "Pickup":
-                if(!TakeStation("lander",j.Hauler))break;
+                if(!TakeStation(j.Supply,j.Hauler))break;
                 if(!_routes.TryGetValue(j.Hauler,out var pickup)||!Arrived(hauler,pickup.Destination))break;
-                if(_ledger.Load(cargo)>0)TransferMaterials(j.Id+"-return-"+j.Trip,j.Id,cargo,"lander",new(_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value)));
+                if(_ledger.Load(cargo)>0)TransferMaterials(j.Id+"-return-"+j.Trip,j.Id,cargo,j.Supply,new(_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value)));
                 var need=j.Cost.ToDictionary(x=>x.Key,x=>Math.Max(0,x.Value-_ledger.Count(buffer,x.Key)));int remaining=_bootstrapConfig.CargoCapacity;
                 var load=new Dictionary<string,int>();foreach(var pair in need){int n=Math.Min(remaining,pair.Value);if(n>0){load.Add(pair.Key,n);remaining-=n;}}
                 if(load.Count==0){ReleaseStations(j.Hauler);j.Stage="BuilderTravel";OrderBase(hauler,hauler.GlobalPosition+new Vector3(0,0,3));break;}
                 _ledger.Release(j.Id); var outstanding=need.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value);
-                _ledger.Reserve(j.Id,"lander",outstanding);
+                _ledger.Reserve(j.Id,j.Supply,outstanding);
                 j.Trip++;
-                TransferMaterials(j.Id+"-take-"+j.Trip,j.Id,"lander",cargo,load);ReleaseStations(j.Hauler);
+                TransferMaterials(j.Id+"-take-"+j.Trip,j.Id,j.Supply,cargo,load);ReleaseStations(j.Hauler);
                 if(OrderDelivery(j,hauler)){j.Stage="Delivering";j.Reason="已真实取货，驮运载货前往工地";}
                 else j.Stage="CargoWaiting";
                 break;

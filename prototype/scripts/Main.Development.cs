@@ -32,6 +32,7 @@ public partial class Main
         public float Yaw { get; init; }
         public string? Facility { get; init; }
         public string? Source { get; init; }
+        public string Supply { get; init; } = "lander";
         public string Stage { get; set; } = "Supplying";
         public string Reason { get; set; } = "";
         public bool Active => Stage is "Supplying" or "Building";
@@ -127,8 +128,9 @@ public partial class Main
     {
         if(HasCurrentWork)throw new InvalidOperationException("先完成或取消当前目标");
         string refusal=DevelopmentFeasibility(type);if(refusal.Length>0)throw new InvalidOperationException(refusal);
+        string supply=ChooseBuildSupply(DevelopmentDemand(type),center);
         RetireTerminalJobs();
-        _development=new(){Id="goal-"+(++_developmentSequence),Type=type,Center=SavedVector(center),Yaw=yaw,Facility=facility,Source=source};
+        _development=new(){Id="goal-"+(++_developmentSequence),Type=type,Center=SavedVector(center),Yaw=yaw,Facility=facility,Source=source,Supply=supply};
         _playerNotice="已授权此目标的有限采集、运输、加工和建设；可暂停或取消";
     }
     private void StartRestock()
@@ -160,6 +162,14 @@ public partial class Main
         return null;
     }
     private string? StockSource(string material,string? except=null) => ProductionSources.FirstOrDefault(c=>c!=except&&_ledger.Available(c,material)>0);
+    private string ChooseBuildSupply(Dictionary<string,int> demand,Vector3 center)
+    {
+        var snapshot=_ledger.Snapshot();
+        int returns=_groundRobots.Where(a=>a.Name.ToString().StartsWith("Robot_Tuoyun_")).Sum(a=>_ledger.Load(CargoContainer(a.Name.ToString())));
+        return Warehouses.OrderBy(c=>c=="lander"?1:0).ThenBy(c=>XzDistance(PhysicalEndpoint(c),center)).FirstOrDefault(c=>
+            _ledger.Load(c)+demand.Sum(x=>Math.Max(0,x.Value-_ledger.Available(c,x.Key)))+returns<=snapshot.Containers.Single(x=>x.Id==c).Capacity)
+            ??throw new InvalidOperationException("现有仓库没有容纳目标物料及退货的空间");
+    }
     private string? OutputStore(int quantity) => Warehouses.FirstOrDefault(c=>_ledger.Load(c)+quantity<=_ledger.Snapshot().Containers.Single(x=>x.Id==c).Capacity);
     private void StartHaul(string source,string destination,string material,int quantity)
     {
@@ -218,10 +228,10 @@ public partial class Main
         var stock=UsableStock();
         if(demand.All(x=>stock[x.Key]>=x.Value))
         {
-            string destination=goal.Type=="restock"?_baseFacilities.First(f=>f.Built&&f.Type=="repair").Id:"lander";
+            string destination=goal.Type=="restock"?_baseFacilities.First(f=>f.Built&&f.Type=="repair").Id:goal.Supply;
             if(!SupplyInputs(goal.Type=="restock"?new(){{"parts",4}}:demand,destination))return;
             if(goal.Type=="restock"){goal.Stage="Completed";goal.Reason="维修耗材已真实送达；等待保障可重试";return;}
-            StartBaseBuild(goal.Type,LoadVector(goal.Center),goal.Yaw,goal.Facility,goal.Source);goal.Stage="Building";return;
+            StartBaseBuild(goal.Type,LoadVector(goal.Center),goal.Yaw,goal.Facility,goal.Source,goal.Supply);goal.Stage="Building";return;
         }
         var plan=ProductionPlan.Create(demand,stock,_bootstrapConfig.Recipes,OreRemaining());
         if(!plan.Feasible){goal.Stage="Blocked";goal.Reason=plan.Reason;return;}
@@ -340,6 +350,7 @@ public partial class Main
             var preset=new Godot.Collections.Dictionary{{"state",state},{"phase","completed"},{"phase_t",0.0},{"cargo","empty"},{"reason",powered?"none":"no_power"},{"time_s",task?.Work??0}};
             string error=node.Call("apply_preview",preset).AsString();
             if(error.Length>0)throw new InvalidOperationException("加工状态适配失败："+error);
+            var oldCrate=node.GetNodeOrNull<Node3D>("Model/processor-r1/Model/OutputCrate");if(oldCrate!=null)oldCrate.Visible=false;
         }
     }
     private void TransferMaterials(string operation,string goal,string source,string destination,Dictionary<string,int> amounts)
@@ -364,6 +375,7 @@ public partial class Main
             var point=parent==this?PhysicalEndpoint(c.Id):new Vector3(0,.55f,.28f);
             if(parent==this){var batch=_productionTasks.FirstOrDefault(t=>t.Kind=="recipe"&&t.Destination==c.Id);
                 if(batch!=null)point=_facilityNodes[batch.Source].ToGlobal(new Vector3(0,0,batch.Stage=="Completed"?2.2f:-2.2f));
+                else if(_baseFacilities.Any(f=>f.Id==c.Id&&f.Type=="storage"))point=_facilityNodes[c.Id].ToGlobal(new Vector3(2.4f,0,1));
                 point.Y=(float)SavedGroundHeight(_liveTerrain!.Current,point.X,point.Z)+.3f;}
             var items=c.Items.Where(x=>x.Value>0).Take(4).ToArray();
             for(int i=0;i<items.Length;i++)

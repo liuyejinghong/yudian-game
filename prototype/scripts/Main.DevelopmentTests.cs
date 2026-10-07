@@ -9,6 +9,7 @@ namespace Yudian;
 public partial class Main
 {
     private int _developmentTestStep;
+    private bool _d12ClearanceSeen;
     private string _d12ServiceRobot="Robot_Zhulei_2";
     private double _developmentTestTime;
     private string DevelopmentPhase=>System.Environment.GetEnvironmentVariable("YUDIAN_DEVELOPMENT_TEST_PHASE")??"full";
@@ -118,7 +119,27 @@ public partial class Main
                 if(!DevelopmentComplete)break;
                 GroundRequire(_baseFacilities.Count(f=>f.Built&&f.Type=="storage")==1,"gap target built via actual production");
                 GroundRequire(_ledger.Snapshot().Recipes!.Any(r=>r.Recipe=="parts"),"ore to parts recipe chain");
-                ValidatePlayerSave(CapturePlayer());D12Build("solar",new(13,0,-1));_developmentTestStep=21;break;
+                ValidatePlayerSave(CapturePlayer());
+                var store=_baseFacilities.Single(f=>f.Built&&f.Type=="storage");
+                GroundRequire(ChooseBuildSupply(BuildCost("solar"),new(13,0,-1))==store.Id,"new warehouse chosen for real goal staging");
+                var realLedger=_ledger;var fullSnapshot=_ledger.Snapshot();
+                try
+                {
+                    _ledger=new(fullSnapshot with {Containers=fullSnapshot.Containers.Select(c=>c.Id==store.Id?c with {Items=new(){{"kit",100}}}:c).ToArray()});
+                    GroundRequire(ChooseBuildSupply(BuildCost("solar"),new(13,0,-1))=="lander","full warehouse falls back before hauling");
+                }
+                finally{_ledger=realLedger;}
+                D12Build("solar",new(13,0,-1));_developmentTestStep=205;break;
+            case 205:
+                if(_buildJob is not {Stage:"Delivering"} depotBuild)break;
+                GroundRequire(_baseFacilities.Single(f=>f.Id==depotBuild.Supply).Type=="storage"&&_ledger.Snapshot().Operations[depotBuild.Id+"-take-"+depotBuild.Trip].Contains("|"+depotBuild.Supply+"|cargo:"),"warehouse actually ships construction cargo");
+                ValidatePlayerSave(CapturePlayer());
+                if(DevelopmentPhase=="prepare-depot"){QueuePlayerAction("pause");_developmentTestStep=80;break;}
+                QueuePlayerAction("cancel");_developmentTestStep=206;break;
+            case 206:
+                if(_development?.Stage!="Cancelled")break;
+                TestBadSave(j=>j["Bootstrap"]!["Development"]!["Goal"]!["Supply"]="lander");
+                ValidatePlayerSave(CapturePlayer());QueuePlayerAction("retry");_developmentTestStep=21;break;
             case 21:
                 if(!DevelopmentComplete)break;
                 GroundRequire(_ledger.Snapshot().Mining!.Any(r=>r.Material=="copper_ore")&&_ledger.Snapshot().Recipes!.Any(r=>r.Recipe=="cable"),"second goal has distinct copper/cable consequences");
@@ -142,8 +163,17 @@ public partial class Main
                 GroundRequire(_ledger.Count(_baseFacilities.Single(f=>f.Type=="repair").Id,"parts")==2,"third repair paid from newly produced material");
                 ValidatePlayerSave(CapturePlayer());D12Build("charger",new(18,0,9));_developmentTestStep=27;break;
             case 27:
+                if(_buildJob?.Clearance.Count>0&&!_d12ClearanceSeen)
+                {
+                    _d12ClearanceSeen=true;ValidatePlayerSave(CapturePlayer());
+                    if(DevelopmentPhase=="prepare-clearance"){QueuePlayerAction("pause");_developmentTestStep=80;break;}
+                    QueuePlayerAction("cancel");_developmentTestStep=207;break;
+                }
                 if(!DevelopmentComplete||_development!.Type!="charger")break;
+                GroundRequire(_d12ClearanceSeen,"warehouse hauler actually clears later construction footprint");
                 QueuePlayerAction("connect");_developmentTestStep=28;break;
+            case 207:
+                if(_development?.Stage!="Cancelled")break;ValidatePlayerSave(CapturePlayer());QueuePlayerAction("retry");_developmentTestStep=27;break;
             case 28:
                 if(_buildJob?.Stage!="Completed"||_buildJob.Type!="connection")break;
                 var secondCharger=_baseFacilities.Single(f=>f.Type=="charger"&&f.Position[0]==18);
@@ -168,7 +198,8 @@ public partial class Main
                 GroundRequire(_playerTime==_developmentTestTime,"repeat load does not advance or settle");
                 ValidatePlayerSave(CapturePlayer());QueuePlayerAction("pause");_developmentTestStep=93;break;
             case 93:
-                if(_userPaused||!DevelopmentComplete)break;ValidatePlayerSave(CapturePlayer());GD.Print("D12_TEST RESTORED phase="+DevelopmentPhase);GetTree().Quit();break;
+                if(_userPaused||!DevelopmentComplete)break;
+                ValidatePlayerSave(CapturePlayer());GD.Print("D12_TEST RESTORED phase="+DevelopmentPhase);GetTree().Quit();break;
             case 200:
                 if(!DevelopmentComplete)break;
                 GroundRequire(!PreviewBuild("storage",new(9,0,9)).Legal,"processor first does not release remaining support reserves");

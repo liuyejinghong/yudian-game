@@ -1,5 +1,7 @@
 # 余电 · Yudian
 
+2026-10-08：D1.2源码已接入有限采矿、四配方、真实运输、补维修耗材与两个发展方向，正在隔离包验收；Mac锁屏使实际窗口操作暂未运行，默认入口继续使用D1.1 r5。[D1.2合同](docs/engineering/contracts/d12-firstplay-r1.md)。
+
 2026-10-07：本机「余电.app」已切换到通过真实鼠标保存/关闭/重开验收的D1.1自举建设包；真实运料、施工、付费供电与充电维修已接通。[试玩操作](prototype/README.md) / [D1.1证据与范围](docs/engineering/reports/2026-10-07-d11-bootstrap-verification.md)。
 
 镜头鼠标入口已验，默认应用已更新为r5；底栏提供平移、缩放、旋转和复位，暂停及保存重开后仍可操作。物理触控板另验。[镜头复验与留项](docs/engineering/reports/2026-10-07-camera-verification.md)。

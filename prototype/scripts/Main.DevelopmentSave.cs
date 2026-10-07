@@ -59,6 +59,8 @@ public partial class Main
         if(d.Goal is {} g)
         {
             if(g.Id!="goal-"+d.GoalSequence||g.Type is not ("restock" or "connection")&&!config.Buildings.Any(x=>x.Id==g.Type)||g.Stage is not ("Supplying" or "Building" or "Completed" or "Cancelled" or "Blocked")||g.Reason==null||g.Reason.Length>1000||!float.IsFinite(g.Yaw)||Math.Abs(g.Yaw)>MathF.PI)throw new InvalidDataException("目标身份、授权或状态无效");
+            if(b.Build!=null&&b.Build.Supply!=g.Supply)throw new InvalidDataException("目标与工程仓库不一致");
+            if(!b.Facilities.Any(f=>f.Id==g.Supply&&f.Built&&f.Type is "lander" or "storage"))throw new InvalidDataException("目标仓库引用无效");
             var p=LoadVector(g.Center);
             if(p.Y!=0||Math.Abs(p.X)>=_cfg.Terrain.Size/2||Math.Abs(p.Z)>=_cfg.Terrain.Size/2)throw new InvalidDataException("目标位置无效");
             if(g.Type=="connection")

@@ -26,8 +26,8 @@ def run(name, phase, save, marker):
     print('PASS:', name, flush=True)
 
 run('full', 'full', a.output / 'full.json', 'D12_TEST PASS')
-for boundary in ('mine', 'cargo', 'input', 'output'):
+for boundary in ('mine', 'cargo', 'input', 'output', 'depot', 'clearance'):
     save = a.output / (boundary + '.json')
     run(boundary + '-prepare', 'prepare-' + boundary, save, 'D12_TEST PREPARED')
     run(boundary + '-resume', 'resume-' + boundary, save, 'D12_TEST RESTORED')
-print('D12_WORLD_TESTS PASS processes=9', flush=True)
+print('D12_WORLD_TESTS PASS processes=13', flush=True)

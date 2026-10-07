@@ -37,3 +37,5 @@ MaterialLedger新增显式MiningReceipt（稳定operation/site/material/quantity
 - 矿点：已知mine-iron(-14,10)、mine-copper(1,17)，各初始96单位；开挖半径2m，每最多8单位有效6秒，深度随累计数量从当前初始高度下降最多1.2m。机器人施工站在改动包络外；现场产物同矿容器100。完整枯竭/阶段/产物据权威receipt；不能只换贴花。
 
 真实消费样本：首套后lander{kit:3}，维修现场{parts:4}；首次采铁8后mine-iron{iron_ore:8}；取货后cargo{iron_ore:8}且矿现场0；加工4批铁投入batch{iron_ore:8}→完成batch{iron:4}，再实运回库；4批parts投入iron8→parts4；铜1批投入2矿→copper1，再cable1批→cable2。任何资源都有同ID但不同物理归属，不以外观猜地点。
+
+建设集料点：每个新目标选最近的已建仓储；“现货＋尚缺目标材料＋驮运现有退货”能容纳才选，否则回退到着陆器。goal/Build保存Supply，运输、预约、取消重试、取货工位与读档均沿用它；旧档缺省lander。库存面板合计已建库，不把在途/现场误报成可用库货。仓储不预装材料。
