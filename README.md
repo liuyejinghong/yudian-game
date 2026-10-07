@@ -2,7 +2,7 @@
 
 2026-10-07：本机「余电.app」已切换到通过真实鼠标保存/关闭/重开验收的D1.1自举建设包；真实运料、施工、付费供电与充电维修已接通。[试玩操作](prototype/README.md) / [D1.1证据与范围](docs/engineering/reports/2026-10-07-d11-bootstrap-verification.md)。
 
-镜头返修候选已实现按钮与原生手势；最终鼠标验收受锁屏阻止，默认入口尚未切换。[镜头复验与留项](docs/engineering/reports/2026-10-07-camera-verification.md)。
+镜头鼠标入口已验，默认应用已更新为r5；底栏提供平移、缩放、旋转和复位，暂停及保存重开后仍可操作。物理触控板另验。[镜头复验与留项](docs/engineering/reports/2026-10-07-camera-verification.md)。
 
 **目标委托式的单人 3D 火星基地经营与生存游戏。**
 

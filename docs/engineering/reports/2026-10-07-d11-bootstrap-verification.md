@@ -6,6 +6,8 @@
 
 ## 固定来源与应用
 
+本报告固定D1.1规则与r3历史验收。后续镜头鼠标入口已通过，当前默认包为r5，来源/保存原档保持与留项见[镜头复验](2026-10-07-camera-verification.md)；下文r3九进程不改成r5结果。
+
 起点main718905d；导航GLM e68df8c/1f75fe9，UI GLM85dc0b6，权威规则/集成由Codex实现。PR45实现源码为 `39309d27bfa89a954f383799c2c92e496fd57432`；解锁后实际窗口发现读档角点误拒绝，最终修复源码为 `975916deef138360114cc15c8e2fb28634c4c934`，其后仅证据/文档。两GLM均先在原生ZCode新会话确认GLM-5.3-Flash，再领独占文件；不以Bridge全目录扫描噪声代替Git提交范围。
 
 当前包 `<PROJECT_ROOT>/试玩包/D1.1 2026-10-07 r3/Yudian.app` 从该固定提交的空缓存目录导入，arm64/ad-hoc签名通过。Godot4.7.2、SDK10.0.401、TFMnet8.0；开发CLR10.0.12，导出自包含与实际九进程均CLR8.0.31。manifest如实dirty=true，仅生成未跟踪.uid/.import，tracked源码无差异；消费资源逐文件hash在[manifest](../evidence/2026-10-07-d11-window-r3/build-manifest.json)。
