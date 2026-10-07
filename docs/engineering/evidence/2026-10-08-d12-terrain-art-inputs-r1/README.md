@@ -14,3 +14,11 @@
 美术用同一initial对每个current逐高度比较：`mask[i] = current.heights_m[i] != initial.heights_m[i]`，origin/span/spacing沿网格元数据消费。Working样本仍有此前建设痕迹，不能解释为正在施工的矿点已经变化；v4→v5的相邻样本可用于辨识首次采矿提交。current-terminal全局mask包含多次动作。
 
 提交后取消：**NOT_SAMPLED**。现有D1.2产物回执可以证明已提交阶段，但未找到独立committed-then-cancelled存档，未把旧D1.1或修改JSON伪作新样本。美术视觉结论仍由独立fixture和实际图判定，本数据交付不签地表边缘或GUI；默认包仍D1.1 r5。
+
+## 补充LevelJob样本与消费语义
+
+`level-working-legacy-r3`来自已有同r3原生包的D1.1回归模式隔离存档：schema2、d11-bootstrap-1、同FixtureHash、Current版本6；真实LevelJob.Stage=Working、AppliedVersion=null、Center=(14,0,-8)、Work=0.2666666667。此帧已暂停并有保障返程，保留的Working阶段不等于当前连续有效施工；不是D1.2默认配置采样，没有重跑或修改世界。
+
+UpdatePlayerSurface只看LevelJob Working/WaitingForSpace设置stage1；此前四份样本LevelJob为空，采矿ProductionTask.Working应stage0。补充帧依此消费为stage1，派生值明确写在state中，不假称它是存档保存字段。
+
+committed_mask表达**高度已改变**：包含施工整平与矿点开挖，不能一概标“压实”。独立fixture按实际动作/样本解释；working→commit的矿样本v4→v5有15个高度变化格。D1.2默认模式LevelJob Working与提交后取消仍未有独立保存，不以这份旧规则辅助帧替签。

@@ -459,3 +459,5 @@ source-r7只检查已选hauler的让位仍Preparing超时，同一步第二次�
 Draft PR52已创建并attach（创建head68c5996ee2bf4fcc7e7ff246b49f4b5c08591533），Issue17已同步REVIEW；main未合并，默认未切。后续仅解锁后同r3真实窗口验收→必要局部修复/独立审→合格入口/PR精确集成，继续保旧档。
 
 2026-10-08 A03只读数据交接：保留同FixtureHash的D1.2 initial/source-UI v0、r3矿工作v4/矿提交v5/终态v21四份65×65 TerrainDataCodec原样快照及真实阶段/回执/中心。四网格元数据/4225有限高度/Working未付和Completed回执v5核验；提交后取消无独立保存，明记NOT_SAMPLED，不合成。只加工程证据/合同链接，不重跑引擎、不改权威或runtime，不占GUI。
+
+A03消费复核补充：已有r3 legacy-world/full.json.bak实际LevelJob Working v6同FixtureHash，导出辅助数据，明标schema2/d11配置及暂停/保障返程，不冒称D1.2默认模式。初始四帧LevelJob空应shader stage0，新增LevelJob帧按消费者派生stage1；committed mask语义改造高度，非一概压实。高度快照字节未改，取消和D1.2默认Working缺样继续保留。

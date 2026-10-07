@@ -41,3 +41,5 @@ MaterialLedger新增显式MiningReceipt（稳定operation/site/material/quantity
 建设集料点：每个新目标选最近的已建仓储；“现货＋尚缺目标材料＋驮运现有退货”能容纳才选，否则回退到着陆器。goal/Build保存Supply，运输、预约、取消重试、取货工位与读档均沿用它；旧档缺省lander。库存面板合计已建库，不把在途/现场误报成可用库货。仓储不预装材料。
 
 A03只读地表输入已从保留的同FixtureHash隔离存档导出：[65×65真实样本](../evidence/2026-10-08-d12-terrain-art-inputs-r1/README.md)。initial来自schema3源码UI新档，矿工作/提交/终态来自固定r3原生存档；任务与矿点中心分开，不重建高度或合成取消状态。提交后取消独立样本NOT_SAMPLED，独立视觉仍待美术核验；不改变Main或占用GUI。
+
+地表消费者语义：`committed_mask`只表示Current高度不等于initial，包含整平/开挖，不能统一解释为压实。`stage1`只由LevelJob Working/WaitingForSpace派生，ProductionTask矿采Working仍stage0。只读输入现另有同r3旧规则回归模式LevelJob.Working辅助帧（schema2，非D1.2默认配置；暂停/保障返程，不代签持续有效工段）。

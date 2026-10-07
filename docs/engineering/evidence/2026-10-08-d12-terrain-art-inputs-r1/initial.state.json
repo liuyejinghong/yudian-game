@@ -33,5 +33,7 @@
   "MiningSiteCenter": null,
   "MiningAppliedVersionFromReceipt": null,
   "MiningReceipt": null,
-  "changed_cells_from_initial": 0
+  "changed_cells_from_initial": 0,
+  "shader_stage_derived_from_UpdatePlayerSurface": 0,
+  "derivation_note": "No LevelJob Working/WaitingForSpace; ProductionTask Working does not select levelling shader stage1."
 }

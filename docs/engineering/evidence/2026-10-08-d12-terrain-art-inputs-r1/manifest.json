@@ -29,12 +29,27 @@
       "source_save_name": "full.json",
       "source_kind": "fixed r3 native isolated test save",
       "source_identity": "source=5add887d991c12ae5ad7606119fcd1a8bda85a74; CLR8.0.31; MVID72c9a8c6-d728-48c0-92c1-d21cb38397b5"
+    },
+    "level-working-legacy-r3": {
+      "source_save_sha256": "791b15e17080c87366bab336d149ac682aa0eafac6cd56bed06d97038ed14d6b",
+      "terrain_sha256": "dc3095f504d19daee67c42ed4e89d9dd6700d25ce663c2c7057cf0404b2ac7a7",
+      "source_save_name": "full.json.bak",
+      "source_kind": "fixed r3 native D1.1 regression mode isolated test save, schema2; auxiliary sample only",
+      "source_identity": "source=5add887d991c12ae5ad7606119fcd1a8bda85a74; CLR8.0.31; MVID72c9a8c6-d728-48c0-92c1-d21cb38397b5"
     }
   },
   "missing": {
-    "post_commit_cancelled": "NOT_SAMPLED: no independent D1.2 committed-then-cancelled save in retained test artifacts; no state was synthesized"
+    "post_commit_cancelled": "NOT_SAMPLED: no independent D1.2 committed-then-cancelled save in retained test artifacts; no state was synthesized",
+    "default_d12_leveljob_working": "NOT_SAMPLED: provided LevelJob Working is same r3 package legacy regression mode; not default D1.2 configuration"
   },
   "authority_unchanged": true,
   "runtime_assets_unchanged": true,
-  "snapshots_are_copies_not_reconstruction": true
+  "snapshots_are_copies_not_reconstruction": true,
+  "consumer_semantics": {
+    "shader_stage": {
+      "0": "no LevelJob Working/WaitingForSpace; mining ProductionTask Working stays0",
+      "1": "LevelJob Working/WaitingForSpace (can be paused/service-interrupted)"
+    },
+    "committed_mask": "Current.heights_m != initial.heights_m; means height changed, includes mining excavation and construction levelling, not universally compaction"
+  }
 }
