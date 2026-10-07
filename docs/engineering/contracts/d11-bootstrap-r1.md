@@ -28,4 +28,6 @@ namespace Yudian.Navigation；public readonly record struct NavPoint(double X,do
 
 移动成本按实际位移结算，在玩家暂停/保存/加载命令之前结算上一物理帧，Capture复用同一幂等结算。健康与运动预算在父帧最后采纳，零电/零耐久不得多走一帧。有效工段最多扣剩余工时和剩余健康预算，Levelling档内进度上限3秒。保障Returning至真实返抵原站才恢复工作，并保存其返程路线；途中取消停该回程，赴服务/服务中的取消保独立保障且只清原工作目的。
 
-原生回归入口：tools/bootstrap-world-tests/run.py（要求先成功构建；支持源project或导出engine），五独立进程覆盖全流、在途取消和已扣维修材料恢复。所有日志保留加载MVID/hash；未运行不得据入口宣称通过。
+原生回归入口：tools/bootstrap-world-tests/run.py（要求先成功构建；支持源project或导出engine），九独立进程覆盖全流、在途取消、活动运输、已扣维修材料和充电中恢复。所有日志保留加载MVID/hash；未运行不得据入口宣称通过。
+
+保障路线临时受阻以.6秒间隔重寻路；120秒未到站进入显式阻塞、释放工位，保留服务进度/原任务/扣料事实。既有重试按钮重新核电量、实际路线和可用工位后重派，阻塞状态保存/加载不自动抢站或重放维修。

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run D1.1 in five actual engine processes, using an isolated save per boundary."""
+"""Run D1.1 in nine actual engine processes, using an isolated save per boundary."""
 import argparse
 import os
 from pathlib import Path
@@ -31,8 +31,10 @@ run('full', 'full', a.output / 'full.json', 'BOOTSTRAP_TEST PASS')
 for boundary, phase, marker in [
     ('cargo', '', 'CROSS_PROCESS_RESTORED'),
     ('service', '-service', 'CROSS_PROCESS_SERVICE_RESTORED'),
+    ('active', '-active', 'CROSS_PROCESS_ACTIVE_RESTORED'),
+    ('charge', '-charge', 'CROSS_PROCESS_CHARGE_RESTORED'),
 ]:
     save = a.output / (boundary + '.json')
     run(boundary + '-prepare', 'prepare' + phase, save, 'BOOTSTRAP_TEST PREPARED')
     run(boundary + '-resume', 'resume' + phase, save, 'BOOTSTRAP_TEST ' + marker)
-print('BOOTSTRAP_WORLD_TESTS PASS processes=5', flush=True)
+print('BOOTSTRAP_WORLD_TESTS PASS processes=9', flush=True)

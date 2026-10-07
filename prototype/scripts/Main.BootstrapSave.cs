@@ -80,7 +80,7 @@ public partial class Main
         if(s.Services.Length>saved.Robots.Length||s.Services.Select(x=>x.Robot).Distinct().Count()!=s.Services.Length||s.Services.Select(x=>x.Id).Distinct().Count()!=s.Services.Length)throw new InvalidDataException("重复服务关系");
         foreach(var service in s.Services)
         {
-            if(service==null||!s.Health.ContainsKey(service.Robot)||!service.Id.StartsWith("service-")||!int.TryParse(service.Id[8..],out int id)||id<1||id>s.ServiceSequence||service.Kind is not ("charge" or "repair")||!s.Facilities.Any(f=>f.Id==service.Facility&&f.Built&&f.Type==(service.Kind=="charge"?"charger":"repair"))||(!service.Returning&&(!s.Stations.TryGetValue(service.Facility,out var owner)||owner!=service.Robot))||!FiniteRange(service.Progress,_bootstrapConfig.RepairSeconds)||!FiniteRange(service.Waiting,1e12))throw new InvalidDataException("服务身份或预约不一致");
+            if(service==null||!s.Health.ContainsKey(service.Robot)||!service.Id.StartsWith("service-")||!int.TryParse(service.Id[8..],out int id)||id<1||id>s.ServiceSequence||service.Kind is not ("charge" or "repair")||!s.Facilities.Any(f=>f.Id==service.Facility&&f.Built&&f.Type==(service.Kind=="charge"?"charger":"repair"))||(!service.Returning&&!service.Blocked&&(!s.Stations.TryGetValue(service.Facility,out var owner)||owner!=service.Robot))||!FiniteRange(service.Progress,_bootstrapConfig.RepairSeconds)||!FiniteRange(service.Waiting,1e12))throw new InvalidDataException("服务身份或预约不一致");
             var servicePosition=LoadVector(service.Station);var facility=s.Facilities.Single(f=>f.Id==service.Facility);
             var actor=_groundRobots.Single(a=>a.Name.ToString()==service.Robot);var fpos=LoadVector(facility.Position);float reach=BaseRadius(facility)+actor.BodyRadius+1.2f;
             bool station=(Math.Abs(Math.Abs(servicePosition.X-fpos.X)-reach)<.0001 && servicePosition.Z==fpos.Z)||(Math.Abs(Math.Abs(servicePosition.Z-fpos.Z)-reach)<.0001 && servicePosition.X==fpos.X);
@@ -91,6 +91,7 @@ public partial class Main
                 if(Math.Abs(back.X)>=_cfg.Terrain.Size/2||Math.Abs(back.Z)>=_cfg.Terrain.Size/2)throw new InvalidDataException("保障返程目的地越界");
             }
             if(saved.Job is {} level&&level.Worker==service.Robot&&Enum.TryParse<LevelStage>(level.Stage,out var levelStage)&&levelStage is not (LevelStage.Completed or LevelStage.Cancelled or LevelStage.Failed)&& (service.ReturnTo==null||LoadVector(service.ReturnTo)!=LoadVector(level.Station)))throw new InvalidDataException("整平保障返程与原工作站不一致");
+            if(service.Blocked&&s.Stations.Any(x=>x.Value==service.Robot))throw new InvalidDataException("阻塞保障仍占预约");
             if(service.Returning&&(service.ReturnTo==null||s.Stations.Any(x=>x.Value==service.Robot)||service.Kind=="repair"&&(!service.Paid||service.Progress!=_bootstrapConfig.RepairSeconds)))throw new InvalidDataException("保障返程状态无效");
             if(service.Kind=="charge"&&(service.Paid||service.Progress!=0)||service.Paid&&!s.Ledger.Operations.ContainsKey(service.Id+"-parts")||!service.Paid&&service.Progress!=0)throw new InvalidDataException("服务扣料与进度不一致");
             if(service.Paid)
@@ -186,7 +187,7 @@ public partial class Main
     private void RestoreBaseOrders(BootstrapSave s)
     {
         foreach(var d in s.Destinations){var actor=Actor(d.Key);var destination=LoadVector(d.Value);
-            if(!Operational(actor)||!OrderBase(actor,destination))
+            if(s.Services.Any(service=>service.Robot==d.Key&&service.Blocked)||!Operational(actor)||!OrderBase(actor,destination))
             {
                 _routes[d.Key]=new(){Destination=destination,WorldVersion=-1,FacilityRevision=-1};
                 _health[d.Key].Reason="读档后停机或路线受阻；目的地与事实保留";

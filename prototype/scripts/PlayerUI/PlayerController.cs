@@ -450,7 +450,7 @@ public partial class PlayerController : Node
         _loadButton = MakeButton("LoadButton", "读取", () => _world.QueuePlayerAction("load"));
         _recoverButton = MakeButton("RecoverButton", "故障恢复", () => _world.QueuePlayerAction("recover"));
         _connectButton = MakeButton("ConnectButton", "连接电缆", () => _world.QueuePlayerAction("connect"));
-        _retryButton = MakeButton("RetryButton", "重试工程", () => _world.QueuePlayerAction("retry"));
+        _retryButton = MakeButton("RetryButton", "重试工程/保障", () => _world.QueuePlayerAction("retry"));
         row.AddChild(_confirmButton);
         row.AddChild(_cancelButton);
         row.AddChild(_pauseButton);

@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -204,6 +205,12 @@ public partial class Main
                     throw new InvalidDataException("任务施工站无法安全恢复");
                 if (active && j.AppliedVersion == null)
                 {
+                    if (BootstrapEnabled)
+                    {
+                        var service=saved.Bootstrap!.Services.FirstOrDefault(s=>s.Robot==j.Worker);
+                        float[]? target=service==null?saved.Bootstrap.Destinations.GetValueOrDefault(j.Worker):service.ReturnTo;
+                        if(target==null||LoadVector(target)!=station)throw new InvalidDataException("整平路线与原工作站不一致");
+                    }
                     var worker = saved.Robots.Single(x => x.Id == j.Worker);
                     var obstacles = saved.Robots.Where(x => x.Id != j.Worker).Select(x => (LoadVector(x.Position), _groundRobots.Single(a => a.Name.ToString() == x.Id).BodyRadius)).ToArray();
                     if (BootstrapEnabled ? !Yudian.Navigation.BoundedRoute.Find(terrain,new(worker.Position[0],worker.Position[2]),new(station.X,station.Z),radius,saved.Bootstrap!.Facilities.Select(f=>new Yudian.Navigation.NavObstacle(new(f.Position[0],f.Position[2]),BaseRadius(f))).Concat(obstacles.Select(o=>new Yudian.Navigation.NavObstacle(new(o.Item1.X,o.Item1.Z),o.Item2))).ToArray()).Found : !PlayerLineClear(LoadVector(worker.Position), radius, station, obstacles)) throw new InvalidDataException("存档施工路线受阻");
@@ -250,7 +257,7 @@ public partial class Main
                 AppliedVersion = j.AppliedVersion, Message = j.Message, Work = new WorkMeter(3) };
             job.Work.Advance(j.Work, true);
             job.Worker = j.Worker == null ? null : _groundRobots.Single(x => x.Name.ToString() == j.Worker);
-            if (job.Active && job.AppliedVersion == null) { if (BootstrapEnabled) OrderBase(job.Worker!, job.Station); else job.Worker!.SetOrder(job.Station); }
+            if (job.Active && job.AppliedVersion == null && !BootstrapEnabled) job.Worker!.SetOrder(job.Station);
             _levelJob = job;
         }
         if (BootstrapEnabled) RestoreBaseOrders(saved.Bootstrap!);

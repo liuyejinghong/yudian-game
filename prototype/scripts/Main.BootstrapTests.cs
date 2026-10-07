@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using Godot;
+using Yudian.Terrain;
 namespace Yudian;
 public partial class Main
 {
@@ -19,6 +20,8 @@ public partial class Main
     private Vector3 _bootstrapZeroPower, _bootstrapZeroDurability;
     private double _bootstrapTestSavedTime;
     private bool _bootstrapLevelLimitChecked, _bootstrapReturnCancel;
+    private Node3D? _bootstrapTestBlocker;
+    private bool _bootstrapBlockedSeen;
     private float _bootstrapMoveStart;
     private double _bootstrapMoveEnergy, _bootstrapMoveDurability, _bootstrapLevelWork;
     private string BootstrapPhase=>System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_TEST_PHASE")??"full";
@@ -47,6 +50,15 @@ public partial class Main
         }
         finally{File.WriteAllBytes(PlayerSavePath,original);}
     }
+    private void TestServiceBlocker(GroundPatrol actor)
+    {
+        _bootstrapTestBlocker=new Node3D{Position=actor.GlobalPosition};AddChild(_bootstrapTestBlocker);
+        foreach(var offset in new[]{new Vector3(2,1.5f,0),new Vector3(-2,1.5f,0),new Vector3(0,1.5f,2),new Vector3(0,1.5f,-2)})
+        {
+            var wall=new StaticBody3D{Position=offset,CollisionLayer=2,CollisionMask=0};_bootstrapTestBlocker.AddChild(wall);
+            wall.AddChild(new CollisionShape3D{Shape=new BoxShape3D{Size=offset.X!=0?new(.5f,3,5):new(5,3,.5f)}});
+        }
+    }
     private bool TestCompleted=>_buildJob?.Stage=="Completed";
     private void BootstrapTestStep()
     {
@@ -61,11 +73,12 @@ public partial class Main
                 Engine.TimeScale=8;_bootstrapTestStart=_playerTime;
                 GroundRequire(_baseFacilities.Count==1&&_baseFacilities[0].Type=="lander"&&_groundRobots.Count==12,"formal new game only lander/finite kits");
                 GroundRequire(!PreviewBuild("solar",new(7,0,-22)).Legal,"facility overlap rejects without mutation");
-                if(BootstrapPhase is "resume" or "resume-service"){QueuePlayerAction("load");_bootstrapTestStep=BootstrapPhase=="resume"?100:101;break;}
+                if(BootstrapPhase.StartsWith("resume")){QueuePlayerAction("load");_bootstrapTestStep=BootstrapPhase switch{"resume-service"=>101,"resume-active"=>103,"resume-charge"=>105,_=>100};break;}
                 TestBuild("solar",new(-3,0,-14));_bootstrapTestStep=1;break;
             case 1:
                 if(_buildJob?.Stage=="Levelling"&&!_bootstrapLevelLimitChecked){TestBadSave(j=>j["Bootstrap"]!["Build"]!["Work"]=4);_bootstrapLevelLimitChecked=true;}
                 if(_buildJob?.Stage!="Delivering"||_ledger.Load(CargoContainer(_buildJob.Hauler))==0)break;
+                if(BootstrapPhase=="prepare-active"){QueuePlayerAction("pause");_bootstrapTestStep=102;break;}
                 QueuePlayerAction("cancel");_bootstrapTestStep=2;break;
             case 2:
                 if(_buildJob?.Stage!="Cancelled")break;
@@ -126,7 +139,11 @@ public partial class Main
                 if(!_bootstrapTestRepairSeen||!_services.TryGetValue(_bootstrapTestBuilder,out var repaired)||!repaired.Returning||_health[_bootstrapTestBuilder].Durability<90)break;
                 GroundRequire(_health[_bootstrapTestBuilder].Energy<=25,"repair does not recharge");_health[_bootstrapTestBuilder].Energy=8;_bootstrapTestStep=15;break;
             case 15:
-                if(_services.TryGetValue(_bootstrapTestBuilder,out var charge)&&charge.Kind=="charge")_bootstrapTestChargeSeen=true;
+                if(_services.TryGetValue(_bootstrapTestBuilder,out var charge)&&charge.Kind=="charge")
+                {
+                    _bootstrapTestChargeSeen=true;
+                    if(BootstrapPhase=="prepare-charge"&&Arrived(Actor(charge.Robot),LoadVector(charge.Station))&&_health[charge.Robot].Energy>8&&!charge.Returning){QueuePlayerAction("pause");_bootstrapTestStep=104;break;}
+                }
                 if(!_bootstrapTestChargeSeen||_services.ContainsKey(_bootstrapTestBuilder)||_health[_bootstrapTestBuilder].Energy<90||!TestCompleted)break;
                 GroundRequire(_health[_bootstrapTestBuilder].Durability<100,"charge does not erase wear");_bootstrapTestCycles++;
                 if(_bootstrapTestCycles==1){TestBuild("storage",new(-16,0,2));_bootstrapTestStep=13;break;}
@@ -167,8 +184,18 @@ public partial class Main
                 GroundRequire(levelPreview.Legal,"level service fixture legal: "+levelPreview.Reason);QueueLevel(site,levelPreview.Version);_bootstrapTestStep=23;break;
             case 23:
                 if(_levelJob?.Stage!=LevelStage.Working||_levelJob.Work.ElapsedSeconds<.2)break;
-                _bootstrapTestBuilder=_levelJob.Worker!.Name;_bootstrapLevelWork=_levelJob.Work.ElapsedSeconds;_health[_bootstrapTestBuilder].Energy=8;_bootstrapTestStep=24;break;
+                _bootstrapTestBuilder=_levelJob.Worker!.Name;
+                TestBadSave(j=>j["Bootstrap"]!["Destinations"]!.AsObject().Remove(_bootstrapTestBuilder));
+                _bootstrapLevelWork=_levelJob.Work.ElapsedSeconds;_health[_bootstrapTestBuilder].Energy=8;_bootstrapTestStep=24;break;
             case 24:
+                if(!_bootstrapBlockedSeen&&_services.TryGetValue(_bootstrapTestBuilder,out var blockedCharge)&&blockedCharge.Kind=="charge"&&!blockedCharge.Returning)
+                {
+                    if(_bootstrapTestBlocker==null)TestServiceBlocker(Actor(blockedCharge.Robot));
+                    if(!blockedCharge.Blocked)break;
+                    GroundRequire(!Actor(blockedCharge.Robot).HasOrder&&!_stations.Any(x=>x.Value==blockedCharge.Robot)&&_levelJob!.Work.ElapsedSeconds==_bootstrapLevelWork,"actual physical blocker times out with progress retained and station released");
+                    SavePlayer();ValidatePlayerSave(CapturePlayer());RemoveChild(_bootstrapTestBlocker!);_bootstrapTestBlocker!.QueueFree();_bootstrapBlockedSeen=true;
+                    QueuePlayerAction("load");_bootstrapTestStep=106;break;
+                }
                 if(!_services.TryGetValue(_bootstrapTestBuilder,out var returning)||!returning.Returning)break;
                 if(_bootstrapReturnCancel){QueuePlayerAction("cancel");_bootstrapTestStep=28;break;}
                 GroundRequire(_levelJob!.Work.ElapsedSeconds==_bootstrapLevelWork&&_levelJob.Stage==LevelStage.Working,"level progress preserved through service and return journey");
@@ -191,6 +218,23 @@ public partial class Main
                 GroundRequire(!_services.ContainsKey(_bootstrapTestBuilder)&&!Actor(_bootstrapTestBuilder).HasOrder&&!_groundFault,"cancel during service return stops only original journey");
                 SavePlayer();ValidatePlayerSave(CapturePlayer());
                 GD.Print($"BOOTSTRAP_TEST PASS cycles={_bootstrapTestCycles} built={_baseFacilities.Count(f=>f.Built)} levelReturn=true time={_playerTime:0.0} elapsed={_playerTime-_bootstrapTestStart:0.0} source={AssemblyHash()}");GetTree().Quit();break;
+            case 106:
+                if(_loadPending!=null||!_playerNotice.StartsWith("读取完成"))break;
+                GroundRequire(_services[_bootstrapTestBuilder].Blocked&&!Actor(_bootstrapTestBuilder).HasOrder&&_levelJob!.Work.ElapsedSeconds==_bootstrapLevelWork,"blocked service load cannot autonomously restore old level order");
+                QueuePlayerAction("retry");_bootstrapTestStep=24;break;
+            case 102:
+                if(!_userPaused)break;SavePlayer();ValidatePlayerSave(CapturePlayer());GD.Print("BOOTSTRAP_TEST PREPARED_ACTIVE");GetTree().Quit();break;
+            case 103:
+                if(_loadPending!=null||!_playerNotice.StartsWith("读取完成"))break;
+                GroundRequire(_userPaused&&_buildJob!.Stage=="Delivering"&&_ledger.Load(CargoContainer(_buildJob.Hauler))>0,"active cargo restores exact delivery phase");
+                GD.Print("BOOTSTRAP_TEST CROSS_PROCESS_ACTIVE_RESTORED");QueuePlayerAction("pause");_bootstrapTestStep=1;break;
+            case 104:
+                if(!_userPaused)break;SavePlayer();ValidatePlayerSave(CapturePlayer());GD.Print("BOOTSTRAP_TEST PREPARED_CHARGE");GetTree().Quit();break;
+            case 105:
+                if(_loadPending!=null||!_playerNotice.StartsWith("读取完成"))break;
+                _bootstrapTestBuilder=_buildJob!.Builder;
+                GroundRequire(_userPaused&&_services[_bootstrapTestBuilder].Kind=="charge"&&!_services[_bootstrapTestBuilder].Returning&&_health[_bootstrapTestBuilder].Energy>8&&_health[_bootstrapTestBuilder].Energy<100,"charging saves actual partial energy without refill");
+                GD.Print("BOOTSTRAP_TEST CROSS_PROCESS_CHARGE_RESTORED");_bootstrapTestChargeSeen=true;QueuePlayerAction("pause");_bootstrapTestStep=15;break;
             case 101:
                 if(_loadPending!=null||!_playerNotice.StartsWith("读取完成"))break;
                 _bootstrapTestBuilder=_buildJob!.Builder;

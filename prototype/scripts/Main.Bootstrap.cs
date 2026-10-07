@@ -58,6 +58,7 @@ public partial class Main
         public double Waiting { get; set; }
         public bool Paid { get; set; }
         public bool Returning { get; set; }
+        public bool Blocked { get; set; }
     }
     private sealed class BuildJob
     {
@@ -147,7 +148,7 @@ public partial class Main
             _bootstrapConfig.Buildings.Select(b=>new BuildBlueprintView(b.Id,b.Name,(float)b.Radius,FormatMaterials(BuildCost(b.Id)))).ToArray(),
             _baseFacilities.Select(f=>new FacilityView(f.Id,f.Type,BaseName(f.Type),LoadVector(f.Position),BaseRadius(f),f.Built,Powered(f),f.Source)).ToArray(),
             _health.Select(x=>new RobotSupportView(x.Key,x.Value.Energy,x.Value.Durability,_bootstrapConfig.Capacity,_ledger.Load(CargoContainer(x.Key)),
-                x.Value.Energy<=0&&x.Value.Durability<=0?"零电且机械停机":x.Value.Energy<=0?"零电停机":x.Value.Durability<=0?"机械停机":_services.TryGetValue(x.Key,out var s)?s.Kind=="repair"?"维修保障":"回充保障":"可用",x.Value.Reason)).ToArray(),_baseRevision);
+                x.Value.Energy<=0&&x.Value.Durability<=0?"零电且机械停机":x.Value.Energy<=0?"零电停机":x.Value.Durability<=0?"机械停机":_services.TryGetValue(x.Key,out var s)?s.Blocked?"保障阻塞，可重试":s.Returning?"保障返程":s.Kind=="repair"?"维修保障":"回充保障":"可用",x.Value.Reason)).ToArray(),_baseRevision);
     }
     private static string MaterialName(string m)=>m switch {"iron_ore"=>"铁矿","copper_ore"=>"铜矿","iron"=>"铁料","copper"=>"铜料","parts"=>"结构件","cable"=>"线缆",_=>"组件套件"};
     private static string FormatMaterials(Dictionary<string,int> amounts)=>string.Join("、",amounts.Select(x=>$"{MaterialName(x.Key)}{x.Value}"));
@@ -269,6 +270,18 @@ public partial class Main
     private void StopBase(GroundPatrol actor){actor.ClearOrder();_routes.Remove(actor.Name.ToString());}
     private void RetryBaseBuild()
     {
+        var blocked=_services.Values.Where(s=>s.Blocked).ToArray();
+        if(blocked.Length>0)
+        {
+            foreach(var service in blocked)
+            {
+                var actor=Actor(service.Robot);var destination=LoadVector(service.Returning?service.ReturnTo!:service.Station);
+                if(!Operational(actor)||service.Kind=="repair"&&!service.Returning&&!service.Paid&&_ledger.Available(service.Facility,"parts")<_bootstrapConfig.RepairParts||!service.Returning&&!TakeStation(service.Facility,service.Robot))continue;
+                if(OrderBase(actor,destination)){service.Blocked=false;_health[service.Robot].Reason="重新前往保障或原工作站";}
+                else ReleaseStations(service.Robot);
+            }
+            _playerNotice=blocked.Any(s=>s.Blocked)?"保障路线或工位仍受阻；原事实保留":"保障路线已重试；原工程继续";return;
+        }
         if(_buildJob is not {} j || j.Stage is not ("Blocked" or "Cancelled") || _levelJob?.Active==true)
             throw new InvalidOperationException("没有可重试的当前工程");
         _ledger.Release(j.Id);
@@ -374,11 +387,16 @@ public partial class Main
     {
         foreach(var pair in _routes.ToArray())
         {
-            var a=Actor(pair.Key);var r=pair.Value;if(!Operational(a)||a.Paused||Arrived(a,r.Destination))continue;
-            r.Seconds+=delta;r.Stalled=a.Blocked?r.Stalled+delta:0;
+            var a=Actor(pair.Key);var r=pair.Value;if(_services.TryGetValue(pair.Key,out var waiting)&&waiting.Blocked)continue;
+            if(!Operational(a)||a.Paused||Arrived(a,r.Destination))continue;
+            r.Seconds+=delta;r.Stalled=a.Blocked||!a.HasOrder?r.Stalled+delta:0;
             if(r.WorldVersion!=_liveTerrain!.Current.Version||r.FacilityRevision!=_baseRevision||r.Stalled>.6)
             {double elapsed=r.Seconds;if(OrderBase(a,r.Destination))_routes[pair.Key].Seconds=elapsed;else{a.ClearOrder();r.Stalled=0;}}
-            if(r.Seconds>120){a.ClearOrder();_health[pair.Key].Reason="路线120秒未到达；等待重新派单";}
+            if(r.Seconds>120)
+            {
+                a.ClearOrder();_health[pair.Key].Reason="路线120秒未到达；可重试，原进度保留";
+                if(_services.TryGetValue(pair.Key,out var service)){service.Blocked=true;ReleaseStations(pair.Key);}
+            }
         }
     }
     private void TickBaseServices(double delta)
@@ -386,7 +404,7 @@ public partial class Main
         foreach(var actor in _groundRobots)
         {
             string id=actor.Name.ToString();var h=_health[id];
-            if(!Operational(actor)||_services.TryGetValue(id,out var pending)&&!pending.Returning||h.Energy>40&&h.Durability>40)continue;
+            if(!Operational(actor)||_services.TryGetValue(id,out var pending)&&(!pending.Returning||pending.Blocked)||h.Energy>40&&h.Durability>40)continue;
             string? kind=h.Durability<=40?"repair":null;
             var charger=_baseFacilities.Where(f=>f.Built&&f.Type=="charger"&&ServiceConnected(f)).Select(f=>(Facility:f,Station:FreeStation(f,actor))).Where(x=>x.Station!=null).OrderBy(x=>XzDistance(actor.GlobalPosition,x.Station!.Value)).FirstOrDefault();
             double budget=charger.Facility==null?10:Math.Max(10,FindRoute(actor,charger.Station!.Value).LengthM*_bootstrapConfig.MoveEnergyPerM+5);
@@ -410,6 +428,7 @@ public partial class Main
         foreach(var s in _services.Values.OrderBy(s=>int.Parse(s.Id[8..])).ToArray())
         {
             var actor=Actor(s.Robot);var h=_health[s.Robot];var f=_baseFacilities.Single(f=>f.Id==s.Facility);
+            if(s.Blocked)continue;
             s.Waiting+=delta;
             if(s.Returning)
             {
@@ -422,6 +441,10 @@ public partial class Main
             if(power[f.Source]<rate){h.Reason="等待有限发电分配";continue;}power[f.Source]-=rate;
             if(s.Kind=="repair")
             {
+                if(!s.Paid&&_ledger.Available(s.Facility,"parts")<_bootstrapConfig.RepairParts)
+                {
+                    s.Blocked=true;actor.ClearOrder();ReleaseStations(s.Robot);h.Reason="维修耗材不足；保留任务，可补料后重试";continue;
+                }
                 if(!s.Paid){_ledger.Transfer(s.Id+"-parts",s.Id,s.Facility,"spent",new(){{"parts",_bootstrapConfig.RepairParts}});s.Paid=true;}
                 s.Progress=Math.Min(_bootstrapConfig.RepairSeconds,s.Progress+delta);
                 if(s.Progress<_bootstrapConfig.RepairSeconds)continue;
