@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-07",
+  "authority": "engineering derives 65x65 mask from current vs same-fixture initial heights by world version; art only renders supplied mask",
+  "scope": "synthetic plane/mask native renderer check; no default application, true task, save replay, or owner visual acceptance",
+  "inputs": [
+    {
+      "path": "art/d1/surface.gdshader",
+      "sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14"
+    },
+    {
+      "path": "art/d1/palette.json",
+      "sha256": "b33683173de79552f422c9c0c6f29d2aa4b9fb04ef0c93cdfc20cb90511a3e9f"
+    },
+    {
+      "path": "art/d1/check_mask.gd",
+      "sha256": "339776c0c10c5503183d91ba636b17e9542669e8185b40fb3c410e0f47f942e2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/mask-extension/mask-check.json",
+      "sha256": "6e04ea61e8ae8611d37b04ad5edb8285babbc3558ef3b4b94da4e52f07724e2e"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/mask-extension/render.log",
+      "sha256": "680d7eb00429fc76ef7f7a47391a6c8786b2bf11ddb95c86ecf77300ffa0576b"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/mask-extension/synthetic-mask-working.png",
+      "sha256": "c43afad50a0da9a1e52f40fa30c86aa4571f1688f1b9278d3fde3e53900968f1"
+    }
+  ],
+  "ordinary_application_consumption": "NOT_RUN",
+  "owner_visual_acceptance": "NOT_RUN"
+}

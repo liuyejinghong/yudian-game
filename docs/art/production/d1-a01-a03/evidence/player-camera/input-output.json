@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-07",
+  "scope": "read-only engineering runtime Main/HUD; temporary camera overrides; no gameplay commands or engineering source edits",
+  "loaded_engineering_assembly_sha256": "7a2cbd085d76420a795331b55ca3bce36c04fcd8bb6f98427c443ea598bc67ad",
+  "loaded_engineering_mvid": "15aa8fb3-bc3c-4559-a928-761a5f3a17c5",
+  "inputs": [
+    {
+      "path": "art/d1/check_player_camera.gd",
+      "sha256": "17de2c916987ebcbfd9c679a62da89a4835223de9733df6ecd0dff9ea57f55ea"
+    },
+    {
+      "path": "art/d1/camera-player.json",
+      "sha256": "5abe4c21237797828ffa10cb9410af864845106630386814b3787a9549aff6bc"
+    },
+    {
+      "path": "art/d1/camera.json",
+      "sha256": "b5e94bb12c7e1ff8e5627e02e3bf8d39d6d2a63696cdc57e2a89bb5cd948d248"
+    },
+    {
+      "path": "art/d1/verify_player_camera.py",
+      "sha256": "8adecde033941421678855f4b7b3f210785a28ad33041b7ef0b2f838f89aa106"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/player-camera/actual-normal.png",
+      "sha256": "cf2a7a10daf84ddd0e0bfc0629f40a5d0dc77b8ff69fb90927c42e5a01be9cd6"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/player-camera/engineering-cancel-v1.png",
+      "sha256": "e347673f408d09e5aaf0a2f30bb4797f28fb0b58705e9231faa9778dd3e24c60"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/player-camera/engineering-initial-normal.png",
+      "sha256": "572b56f4ddaf5d0265820134171851aacc7ba53445a13e0b8e9f8f36661a8d93"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/player-camera/existing-overview.png",
+      "sha256": "9a8962878289a54e9ab70d30b5a65d2d67eec74a53f01f6ec4f52e24d6b2d674"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/player-camera/normal-distance-1.6.png",
+      "sha256": "e0aeab576558e02c3a273b4f54c109581ec5477a0627e464d6a829cd00d2abb1"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/player-camera/player-camera.json",
+      "sha256": "16f34041ab2342204088f55ff635d7aa8e8003c586547907e9a88e06e86ce4e2"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/player-camera/render.log",
+      "sha256": "bc234a51424ba91af7d95093e3078eacde6cd6ffaec2f977df4278bfa66944e6"
+    }
+  ],
+  "coordinator_provided_images": [
+    "engineering-initial-normal.png",
+    "engineering-cancel-v1.png"
+  ],
+  "camera_result": "6 facilities and 4 Zhulei fully in frame, no actual HUD overlaps; normal distance1.6 preferred over overview for 53-67px vs43-53px width",
+  "owner_visual_acceptance": "NOT_RUN",
+  "gameplay_and_save_acceptance": "engineering owned, not run by this art camera check"
+}
