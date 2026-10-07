@@ -1,0 +1,265 @@
+{
+  "note": "Original evidence remains locally unchanged. Public copies normalize only private paths; original capture_hashes/identity refer to raw JSON. Archive SHA below proves published copies, PNG and asset SHA unchanged. check_cargo root depth adjusted for standalone delivery.",
+  "files": [
+    {
+      "original": "docs/art/production/d12-r1/u01/check_cargo.py",
+      "archive": "docs/art/production/d12-u01-rev4/check_cargo.py",
+      "original_sha256": "9efc2241f14f4ee1798fdf08b46902aac5ffd6f6b855c6578ce91631171edc15",
+      "archive_sha256": "5c6ed68a4b02bd549cb5827a42ee893a6e6a9167c4ca7aea984789292bb04dd5",
+      "private_paths_normalized": false,
+      "runnable_check_path_adjusted": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/reopen.py",
+      "archive": "docs/art/production/d12-u01-rev4/reopen.py",
+      "original_sha256": "7b9cd83f284a1a6318f2b23a7a6fa4913e3361a16df2d3607c4a31d5ba122bcf",
+      "archive_sha256": "33a5f37302553de690bf534ae4c8034ad8d4f552ea9e2ea7ed4ebdac72f12dde",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/candidate-hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/candidate-hashes.json",
+      "original_sha256": "87d7020fc58f48fa33c53eb620557392a089776c2c491237c82e379d8863c43a",
+      "archive_sha256": "87d7020fc58f48fa33c53eb620557392a089776c2c491237c82e379d8863c43a",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/source-reopen.json",
+      "archive": "docs/art/production/d12-u01-rev4/source-reopen.json",
+      "original_sha256": "72b1dbfe54d17324374402a3eb7ae9519dc82c366ef9b949d86d1941dfd6ec71",
+      "archive_sha256": "72b1dbfe54d17324374402a3eb7ae9519dc82c366ef9b949d86d1941dfd6ec71",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/godot-mesh-audit.json",
+      "archive": "docs/art/production/d12-u01-rev4/godot-mesh-audit.json",
+      "original_sha256": "373dfd6ff5a62d9a97a9888fcd29193f726c99aac45db66665671638218c1df5",
+      "archive_sha256": "373dfd6ff5a62d9a97a9888fcd29193f726c99aac45db66665671638218c1df5",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/actual-matrix.json",
+      "archive": "docs/art/production/d12-u01-rev4/actual-matrix.json",
+      "original_sha256": "72963315a6cb47611c0df071c190294ec4ae0ed840d06c1506beebeb000f36bc",
+      "archive_sha256": "72963315a6cb47611c0df071c190294ec4ae0ed840d06c1506beebeb000f36bc",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before/tuoyun-r1.bin",
+      "archive": "docs/art/production/d12-u01-rev4/before/tuoyun-r1.bin",
+      "original_sha256": "370f078e4fd326a3a29f4d9ba7b239c237a3fc1ba09076d624e1e38516101a42",
+      "archive_sha256": "370f078e4fd326a3a29f4d9ba7b239c237a3fc1ba09076d624e1e38516101a42",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before/generate_tuoyun_r1.py",
+      "archive": "docs/art/production/d12-u01-rev4/before/generate_tuoyun_r1.py",
+      "original_sha256": "7017f0df22e88da8f036dc88fb99433d29fc620419fb74279c90ad2d5115b385",
+      "archive_sha256": "7017f0df22e88da8f036dc88fb99433d29fc620419fb74279c90ad2d5115b385",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before/geometry-facts.json",
+      "archive": "docs/art/production/d12-u01-rev4/before/geometry-facts.json",
+      "original_sha256": "451ae02b8514cff53fd872c2aed590b1cb8000d776e49c2d66f68ee407df3734",
+      "archive_sha256": "451ae02b8514cff53fd872c2aed590b1cb8000d776e49c2d66f68ee407df3734",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before/tuoyun-r1.glb",
+      "archive": "docs/art/production/d12-u01-rev4/before/tuoyun-r1.glb",
+      "original_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+      "archive_sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before/tuoyun-r1.gltf",
+      "archive": "docs/art/production/d12-u01-rev4/before/tuoyun-r1.gltf",
+      "original_sha256": "615d20d863eeef650566dabbbb88f10730171e663d411b02cb73fa9b13476807",
+      "archive_sha256": "615d20d863eeef650566dabbbb88f10730171e663d411b02cb73fa9b13476807",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/independent/A02a-U01-cargo-rev4-REVIEW.md",
+      "archive": "docs/art/production/d12-u01-rev4/independent/A02a-U01-cargo-rev4-REVIEW.md",
+      "original_sha256": "e7b50a280c7af3769dc5a21ede76f6437a631885ee1a527e2573a3f7c10f3b1e",
+      "archive_sha256": "44676ba443ee5ffb57c6ac7fd0ecdb67eab246066d5293690b6de20f5a1eea0e",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/independent/A02a-U01-cargo-rev4-identity.json",
+      "archive": "docs/art/production/d12-u01-rev4/independent/A02a-U01-cargo-rev4-identity.json",
+      "original_sha256": "f323a156d51a015462f2230ee20e7c49ae12bb7ff8fba9fc50f2f07943b50010",
+      "archive_sha256": "cc6576d9c6c0c5c5f5092e6740ecc104a3ae6b3520069b0b26066fd21d1d994c",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before-close90/blind_0001.json",
+      "archive": "docs/art/production/d12-u01-rev4/before-close90/blind_0001.json",
+      "original_sha256": "f520ebec1042a6b6a1ac1274a4117662af28d8fdc696cc3f17c428ae6f4fb1ae",
+      "archive_sha256": "aaefe11890ba78da7ec545361fc746597dbc9caea2d486c129b19636a2b5c342",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before-close90/capture_hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/before-close90/capture_hashes.json",
+      "original_sha256": "42b003c7346092823ee5bb11d9ceb6768fe8d69e7005a1f24b84979d67ca5d1f",
+      "archive_sha256": "42b003c7346092823ee5bb11d9ceb6768fe8d69e7005a1f24b84979d67ca5d1f",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before-close90/blind_0001.png",
+      "archive": "docs/art/production/d12-u01-rev4/before-close90/blind_0001.png",
+      "original_sha256": "7a29bc969ba85eaa186c5b36afc4eca2a1974453a604236d2faf02d04320d17f",
+      "archive_sha256": "7a29bc969ba85eaa186c5b36afc4eca2a1974453a604236d2faf02d04320d17f",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before-close180/blind_0001.json",
+      "archive": "docs/art/production/d12-u01-rev4/before-close180/blind_0001.json",
+      "original_sha256": "1ca951ed6bea0cf520d324028f2fd3bc2d5ce858c70a0ed24f17f7d86fceba7b",
+      "archive_sha256": "8de5b85b47bdb06943a848d04ce530784937b0765a497d864071fbd5d1e96fb6",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before-close180/capture_hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/before-close180/capture_hashes.json",
+      "original_sha256": "8a977f40c21c60b530346991a197b51fd4ad3d026ad7139a9b0bd8757a3d99db",
+      "archive_sha256": "8a977f40c21c60b530346991a197b51fd4ad3d026ad7139a9b0bd8757a3d99db",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/before-close180/blind_0001.png",
+      "archive": "docs/art/production/d12-u01-rev4/before-close180/blind_0001.png",
+      "original_sha256": "a6e40c8aa0e255ab4b6e33f877e5dc68768cad5db377db74e7c9bb1c1c90d03e",
+      "archive_sha256": "a6e40c8aa0e255ab4b6e33f877e5dc68768cad5db377db74e7c9bb1c1c90d03e",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-close90/blind_0001.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-close90/blind_0001.json",
+      "original_sha256": "04e0b0cf1618bde90f2abb7a312957f9fa2ba340198c9db90275a4574af4c772",
+      "archive_sha256": "e2b6c16bbc84b94fd744289e93b51968544f60605f97980adf29058098cd378b",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-close90/capture_hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-close90/capture_hashes.json",
+      "original_sha256": "128fa753b9dde79dda2102865f4fe429491b599a81886f138fbf4b375b5739cf",
+      "archive_sha256": "128fa753b9dde79dda2102865f4fe429491b599a81886f138fbf4b375b5739cf",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-close90/blind_0001.png",
+      "archive": "docs/art/production/d12-u01-rev4/current-close90/blind_0001.png",
+      "original_sha256": "35cb5518aa8921f655be4fb3bbb3794984132690f75f427e8dac066e519adbf2",
+      "archive_sha256": "35cb5518aa8921f655be4fb3bbb3794984132690f75f427e8dac066e519adbf2",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-close180/blind_0001.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-close180/blind_0001.json",
+      "original_sha256": "4fe8a12f3c3d5208d50963fcaab10bed465f30bd31a1ce14a123ac64d8afe438",
+      "archive_sha256": "7f2618f9d576b4fc60f5526754e19443a5422ff3a98041e2c579c63108a79e3e",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-close180/capture_hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-close180/capture_hashes.json",
+      "original_sha256": "ab6453791190414e936bee811bf135e50a0e62de822a59e7d0623bcd6693ba17",
+      "archive_sha256": "ab6453791190414e936bee811bf135e50a0e62de822a59e7d0623bcd6693ba17",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-close180/blind_0001.png",
+      "archive": "docs/art/production/d12-u01-rev4/current-close180/blind_0001.png",
+      "original_sha256": "fd88a91560521124bd6470d013b5ee970bc2861393765dc805da48f680eadb85",
+      "archive_sha256": "fd88a91560521124bd6470d013b5ee970bc2861393765dc805da48f680eadb85",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-loaded/blind_0001.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-loaded/blind_0001.json",
+      "original_sha256": "e39147fb40bd0f22a966e46c6d163f2677fc1468bb90558e8db495f4298637b1",
+      "archive_sha256": "8dac6137f9b50eb6485581db306b65e7e0ea93fb49cf4d5c6c26b87bc2455453",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-loaded/capture_hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-loaded/capture_hashes.json",
+      "original_sha256": "f868c6bc5320b02cef525275b41581dab3b45725356b7587f30b7ebc0813a5ba",
+      "archive_sha256": "f868c6bc5320b02cef525275b41581dab3b45725356b7587f30b7ebc0813a5ba",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-loaded/blind_0001.png",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-loaded/blind_0001.png",
+      "original_sha256": "c513dc80d38a238274513caaa6bf21b4df5218e568ab5940b81adab9a504e241",
+      "archive_sha256": "c513dc80d38a238274513caaa6bf21b4df5218e568ab5940b81adab9a504e241",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-empty/blind_0001.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-empty/blind_0001.json",
+      "original_sha256": "b92c71f5add1cb7d89b2685a1056b4d41d56c85726e90cff70912aa0f80190e2",
+      "archive_sha256": "d6b7d38630d5f93a3d7cbb490cac8f4c7bf683ea155d9cb58e61823b6efc0dfa",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-empty/capture_hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-empty/capture_hashes.json",
+      "original_sha256": "bbceeef4d20bcff4d93c739ac55c4995a31d96eb39d363ea25e3b2ba5ce069ab",
+      "archive_sha256": "bbceeef4d20bcff4d93c739ac55c4995a31d96eb39d363ea25e3b2ba5ce069ab",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-empty/blind_0001.png",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-empty/blind_0001.png",
+      "original_sha256": "6b969f9eaf3498145fb6453ef7a2b47f35e3324c6c12931bca10d534e797559d",
+      "archive_sha256": "6b969f9eaf3498145fb6453ef7a2b47f35e3324c6c12931bca10d534e797559d",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-maintenance180/blind_0001.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-maintenance180/blind_0001.json",
+      "original_sha256": "75adbdd577e244b92492369c3b80d2f2b0097b58e275a1e6528819d4c00b8219",
+      "archive_sha256": "bf18e62c9f5c1792be5ed54d7a9725cc32115c38734084df220a4c992200649a",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-maintenance180/capture_hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-maintenance180/capture_hashes.json",
+      "original_sha256": "3e9419934b0152534d11591f598306bb362adfabc4532437a736b73905072013",
+      "archive_sha256": "3e9419934b0152534d11591f598306bb362adfabc4532437a736b73905072013",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-maintenance180/blind_0001.png",
+      "archive": "docs/art/production/d12-u01-rev4/current-maintenance180/blind_0001.png",
+      "original_sha256": "467b9a3c7468a215aea81b986979bb299503a31c966a1320ed94d61bd7fda03f",
+      "archive_sha256": "467b9a3c7468a215aea81b986979bb299503a31c966a1320ed94d61bd7fda03f",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-low/blind_0001.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-low/blind_0001.json",
+      "original_sha256": "f2168f039ed5d57a61291ba73a945a7a7cbd7729d3b12cebdbad160b6ab5c46b",
+      "archive_sha256": "38e7de1fb0e02c95649add06549f12576084d95a70ae07877c9eddea21ac6813",
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-low/capture_hashes.json",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-low/capture_hashes.json",
+      "original_sha256": "493687a0ce358aa41d097f3c3a4db3540b4ee4271d1e0445bd4a315913e9e07c",
+      "archive_sha256": "493687a0ce358aa41d097f3c3a4db3540b4ee4271d1e0445bd4a315913e9e07c",
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01/current-normal-low/blind_0001.png",
+      "archive": "docs/art/production/d12-u01-rev4/current-normal-low/blind_0001.png",
+      "original_sha256": "aafa7fe4df4fcccc1d0864f9b0170b0b5e2ccc4b21ee15f66446c3ab609a7d60",
+      "archive_sha256": "aafa7fe4df4fcccc1d0864f9b0170b0b5e2ccc4b21ee15f66446c3ab609a7d60",
+      "private_paths_normalized": false
+    }
+  ]
+}

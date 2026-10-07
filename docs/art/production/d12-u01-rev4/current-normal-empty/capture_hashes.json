@@ -1,0 +1,14 @@
+{
+  "files": {
+    "blind_0001.json": {
+      "bytes": 7322,
+      "sha256": "b92c71f5add1cb7d89b2685a1056b4d41d56c85726e90cff70912aa0f80190e2"
+    },
+    "blind_0001.png": {
+      "bytes": 20953,
+      "sha256": "6b969f9eaf3498145fb6453ef7a2b47f35e3324c6c12931bca10d534e797559d"
+    }
+  },
+  "note": "capture-side hash manifest; this file cannot contain its own hash",
+  "schema": "art-preview-r1-capture-hashes/1"
+}

@@ -1,0 +1,1849 @@
+{
+ "generator": "generate_tuoyun_r1.py",
+ "origin": "original python-stdlib procedural geometry for yudian ART-U01-GEO",
+ "coordinate": "meter, +Y up, forward -Z, ground Y=0, translations only",
+ "static_bbox": [
+  [
+   -0.63,
+   0.0,
+   -0.8
+  ],
+  [
+   0.63,
+   0.85,
+   0.8
+  ]
+ ],
+ "loaded_bbox": [
+  [
+   -0.63,
+   0.0,
+   -0.8
+  ],
+  [
+   0.63,
+   0.86,
+   0.8
+  ]
+ ],
+ "sockets": {
+  "Socket_Cargo": {
+   "t": [
+    0.0,
+    0.48,
+    0.28
+   ],
+   "rotation": null,
+   "forward": [
+    0.0,
+    0.0,
+    -1.0
+   ]
+  },
+  "Socket_TowFront": {
+   "t": [
+    0.0,
+    0.24,
+    -0.8
+   ],
+   "rotation": null,
+   "forward": [
+    0.0,
+    0.0,
+    -1.0
+   ]
+  },
+  "Socket_TowRear": {
+   "t": [
+    0.0,
+    0.24,
+    0.8
+   ],
+   "rotation": [
+    0.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "forward": [
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  "Socket_Charge": {
+   "t": [
+    0.48,
+    0.55,
+    -0.35
+   ],
+   "rotation": [
+    0.0,
+    -0.70710678,
+    0.0,
+    0.70710678
+   ],
+   "forward": [
+    1.0,
+    0.0,
+    0.0
+   ]
+  }
+ },
+ "animations": [
+  {
+   "name": "move",
+   "duration_s": 1.0,
+   "loop_intent": true,
+   "gltf_name": "move-loop",
+   "note": "六轮绕局部X 1s整圈，1/4圈分段quat keyframe保证实际转动",
+   "channels": [
+    {
+     "node": "Wheel_LF",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       0.70710678
+      ],
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       -0.70710678
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       -1.0
+      ]
+     ]
+    },
+    {
+     "node": "Wheel_LM",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       0.70710678
+      ],
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       -0.70710678
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       -1.0
+      ]
+     ]
+    },
+    {
+     "node": "Wheel_LR",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       0.70710678
+      ],
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       -0.70710678
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       -1.0
+      ]
+     ]
+    },
+    {
+     "node": "Wheel_RF",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       0.70710678
+      ],
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       -0.70710678
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       -1.0
+      ]
+     ]
+    },
+    {
+     "node": "Wheel_RM",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       0.70710678
+      ],
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       -0.70710678
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       -1.0
+      ]
+     ]
+    },
+    {
+     "node": "Wheel_RR",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       0.70710678
+      ],
+      [
+       1.0,
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.70710678,
+       0.0,
+       0.0,
+       -0.70710678
+      ],
+      [
+       0.0,
+       0.0,
+       0.0,
+       -1.0
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "work",
+   "duration_s": 1.0,
+   "loop_intent": false,
+   "gltf_name": "work",
+   "note": "后锁横杆绕局部X +25°，1s非loop t=1定格；支撑耳已移静态",
+   "channels": [
+    {
+     "node": "RearLock",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.21643961,
+       0.0,
+       0.0,
+       0.97629601
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "charge",
+   "duration_s": 1.0,
+   "loop_intent": false,
+   "gltf_name": "charge",
+   "note": "充电侧盖绕局部Z +60°朝+X开（顶铰链pivot .48,.58,-.35），1s非loop",
+   "channels": [
+    {
+     "node": "ChargeCap",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.5,
+       0.8660254
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "disabled",
+   "duration_s": 1.0,
+   "loop_intent": false,
+   "gltf_name": "disabled",
+   "note": "前顶盖绕局部X -35°下折遮鼻标，1s非loop；towed复用本clip",
+   "channels": [
+    {
+     "node": "HoodLid",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       -0.3007058,
+       0.0,
+       0.0,
+       0.95371695
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "maintenance",
+   "duration_s": 1.0,
+   "loop_intent": false,
+   "gltf_name": "maintenance",
+   "note": "前顶盖绕局部X +70°上开露检修腔，1s非loop",
+   "channels": [
+    {
+     "node": "HoodLid",
+     "path": "rotation",
+     "key_times": [
+      0.0,
+      1.0
+     ],
+     "key_quats": [
+      [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      [
+       0.57357644,
+       0.0,
+       0.0,
+       0.81915204
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "towed_note": "towed reuses the disabled clip; TowRod visibility is owned by the STATE-B wrapper",
+ "tow_rod": {
+  "y": 0.24,
+  "z0": -0.8,
+  "z1": -1.15,
+  "s": 0.03,
+  "default_extras_visible": false,
+  "parent": "Model"
+ },
+ "lock_ears_static": {
+  "node": "Body",
+  "x": 0.23,
+  "y": 0.565,
+  "z": 0.78,
+  "size": [
+   0.04,
+   0.13,
+   0.04
+  ],
+  "top": 0.6299999999999999
+ },
+ "wheel": {
+  "radius": 0.205,
+  "width": 0.16,
+  "centers": [
+   [
+    0.55,
+    0.205,
+    -0.56
+   ],
+   [
+    0.55,
+    0.205,
+    0.0
+   ],
+   [
+    0.55,
+    0.205,
+    0.56
+   ],
+   [
+    -0.55,
+    0.205,
+    -0.56
+   ],
+   [
+    -0.55,
+    0.205,
+    0.0
+   ],
+   [
+    -0.55,
+    0.205,
+    0.56
+   ]
+  ]
+ },
+ "hinge_pivots": {
+  "HoodLid": [
+   0.0,
+   0.64,
+   -0.25
+  ],
+  "RearLock": [
+   0.0,
+   0.65,
+   0.78
+  ],
+  "ChargeCap": [
+   0.48,
+   0.58,
+   -0.35
+  ]
+ },
+ "sat_selftest_separate_touch_overlap": [
+  2.0,
+  0.0,
+  -0.5
+ ],
+ "sat_cargo_vs_rail_side_front": 0.1,
+ "sat_cargo_vs_rail_side_rear": 0.1,
+ "sat_cargo_vs_rail_front": 0.03,
+ "sat_cargo_vs_rail_rear": 0.07,
+ "sat_cargo_vs_lock": 0.13,
+ "sat_cargo_vs_head_rear": 0.18,
+ "sat_lid_vs_deckblock": 0.01,
+ "sat_lid_vs_nose": 0.065,
+ "sat_lid_vs_liner": 0.050836,
+ "sat_wheelFL_vs_pod": 0.130359,
+ "sat_wheelFL_vs_plinth": 0.06,
+ "sat_wheelFL_vs_slab": 0.124807,
+ "sat_wheelFL_vs_bumper": 0.062904,
+ "sat_wheelRL_vs_railR": 0.108621,
+ "sat_wheelRL_vs_slab": 0.07,
+ "sat_wheelRL_vs_tab": 0.130359,
+ "sat_rod_vs_bumper_front": 0.095,
+ "sat_rod_vs_wheel_front": 0.456372,
+ "sat_bar_closed_gap_vs_earL": 0.16,
+ "sat_bar_closed_gap_vs_earR": 0.16,
+ "sat_bar_open25_vs_earL": 0.149674,
+ "sat_bar_open25_vs_earR": 0.149674,
+ "sat_bar_open25_vs_beam_mid": 0.193768,
+ "sat_bar_open25_vs_rear_rail": 0.097689,
+ "sat_lid_seated_on_walls": 0.045,
+ "sat_earL_seated_on_beam": 0.0,
+ "sat_earR_seated_on_beam": 0.0,
+ "sat_rod_seated_on_towbar_front": 0.0,
+ "sat_cap_closed_seated_on_pod": 0.0,
+ "sat_cap_open60_hinge_corner_seated": -0.0,
+ "readability_r8_discrete_min_gaps": {
+  "bar_cargo": 0.13,
+  "bar_earL": 0.14967379050568175,
+  "bar_earR": 0.14967379050568175,
+  "bar_beam": 0.18999999999999984,
+  "bar_rail": 0.06999999999999995,
+  "armL_cargo": 0.13750000000000007,
+  "armL_earL": 0.018864297744818792,
+  "armL_earR": 0.375,
+  "armL_beam": 0.04999999999999993,
+  "armL_rail": 0.03750000000000009,
+  "armR_cargo": 0.13750000000000007,
+  "armR_earL": 0.375,
+  "armR_earR": 0.018864297744818792,
+  "armR_beam": 0.04999999999999993,
+  "armR_rail": 0.03750000000000009
+ },
+ "bearing_radial_clearance_all_x_rotations": 0.005540854144370017,
+ "axle_support_clearance_all_x_rotations": 0.008686291501015408,
+ "readability_bearing": "static 24-sided ring inner radius .017; axle square .016; support top .63",
+ "lid_sample_fold_1deg": [
+  [
+   0,
+   0.01
+  ],
+  [
+   -1,
+   0.009997
+  ],
+  [
+   -2,
+   0.009988
+  ],
+  [
+   -3,
+   0.009973
+  ],
+  [
+   -4,
+   0.009951
+  ],
+  [
+   -5,
+   0.009924
+  ],
+  [
+   -6,
+   0.00989
+  ],
+  [
+   -7,
+   0.009851
+  ],
+  [
+   -8,
+   0.009805
+  ],
+  [
+   -9,
+   0.009754
+  ],
+  [
+   -10,
+   0.009696
+  ],
+  [
+   -11,
+   0.009633
+  ],
+  [
+   -12,
+   0.009563
+  ],
+  [
+   -13,
+   0.009487
+  ],
+  [
+   -14,
+   0.009406
+  ],
+  [
+   -15,
+   0.009319
+  ],
+  [
+   -16,
+   0.009225
+  ],
+  [
+   -17,
+   0.009126
+  ],
+  [
+   -18,
+   0.009021
+  ],
+  [
+   -19,
+   0.00891
+  ],
+  [
+   -20,
+   0.008794
+  ],
+  [
+   -21,
+   0.008672
+  ],
+  [
+   -22,
+   0.008544
+  ],
+  [
+   -23,
+   0.00841
+  ],
+  [
+   -24,
+   0.008271
+  ],
+  [
+   -25,
+   0.008126
+  ],
+  [
+   -26,
+   0.007976
+  ],
+  [
+   -27,
+   0.00782
+  ],
+  [
+   -28,
+   0.007659
+  ],
+  [
+   -29,
+   0.007492
+  ],
+  [
+   -30,
+   0.007141
+  ],
+  [
+   -31,
+   0.00626
+  ],
+  [
+   -32,
+   0.005375
+  ],
+  [
+   -33,
+   0.004484
+  ],
+  [
+   -34,
+   0.00359
+  ],
+  [
+   -35,
+   0.002691
+  ]
+ ],
+ "lid_sample_fold_1deg_end_bbox": [
+  -0.35,
+  0.345,
+  -0.6653,
+  0.35,
+  0.6482,
+  -0.2443
+ ],
+ "lid_sample_open_1deg": [
+  [
+   0,
+   0.01
+  ],
+  [
+   1,
+   0.010003
+  ],
+  [
+   2,
+   0.010008
+  ],
+  [
+   3,
+   0.010014
+  ],
+  [
+   4,
+   0.010024
+  ],
+  [
+   5,
+   0.010038
+  ],
+  [
+   6,
+   0.010055
+  ],
+  [
+   7,
+   0.010075
+  ],
+  [
+   8,
+   0.010097
+  ],
+  [
+   9,
+   0.010123
+  ],
+  [
+   10,
+   0.010152
+  ],
+  [
+   11,
+   0.010184
+  ],
+  [
+   12,
+   0.010219
+  ],
+  [
+   13,
+   0.010256
+  ],
+  [
+   14,
+   0.010297
+  ],
+  [
+   15,
+   0.010341
+  ],
+  [
+   16,
+   0.010387
+  ],
+  [
+   17,
+   0.010437
+  ],
+  [
+   18,
+   0.010489
+  ],
+  [
+   19,
+   0.010545
+  ],
+  [
+   20,
+   0.010603
+  ],
+  [
+   21,
+   0.010664
+  ],
+  [
+   22,
+   0.010728
+  ],
+  [
+   23,
+   0.010795
+  ],
+  [
+   24,
+   0.010865
+  ],
+  [
+   25,
+   0.010937
+  ],
+  [
+   26,
+   0.011012
+  ],
+  [
+   27,
+   0.01109
+  ],
+  [
+   28,
+   0.011171
+  ],
+  [
+   29,
+   0.011254
+  ],
+  [
+   30,
+   0.011403
+  ],
+  [
+   31,
+   0.011574
+  ],
+  [
+   32,
+   0.011745
+  ],
+  [
+   33,
+   0.011916
+  ],
+  [
+   34,
+   0.012088
+  ],
+  [
+   35,
+   0.012261
+  ],
+  [
+   36,
+   0.012434
+  ],
+  [
+   37,
+   0.012607
+  ],
+  [
+   38,
+   0.012781
+  ],
+  [
+   39,
+   0.012955
+  ],
+  [
+   40,
+   0.013129
+  ],
+  [
+   41,
+   0.013303
+  ],
+  [
+   42,
+   0.013478
+  ],
+  [
+   43,
+   0.013652
+  ],
+  [
+   44,
+   0.013893
+  ],
+  [
+   45,
+   0.014142
+  ],
+  [
+   46,
+   0.014387
+  ],
+  [
+   47,
+   0.014627
+  ],
+  [
+   48,
+   0.014863
+  ],
+  [
+   49,
+   0.015094
+  ],
+  [
+   50,
+   0.015321
+  ],
+  [
+   51,
+   0.015543
+  ],
+  [
+   52,
+   0.01576
+  ],
+  [
+   53,
+   0.015973
+  ],
+  [
+   54,
+   0.01618
+  ],
+  [
+   55,
+   0.016383
+  ],
+  [
+   56,
+   0.016581
+  ],
+  [
+   57,
+   0.016773
+  ],
+  [
+   58,
+   0.016961
+  ],
+  [
+   59,
+   0.017143
+  ],
+  [
+   60,
+   0.017321
+  ],
+  [
+   61,
+   0.017492
+  ],
+  [
+   62,
+   0.017659
+  ],
+  [
+   63,
+   0.01782
+  ],
+  [
+   64,
+   0.017976
+  ],
+  [
+   65,
+   0.018126
+  ],
+  [
+   66,
+   0.018271
+  ],
+  [
+   67,
+   0.01841
+  ],
+  [
+   68,
+   0.018544
+  ],
+  [
+   69,
+   0.018672
+  ],
+  [
+   70,
+   0.018794
+  ]
+ ],
+ "lid_sample_open_1deg_end_bbox": [
+  -0.35,
+  0.6366,
+  -0.4304,
+  0.35,
+  1.1133,
+  -0.2406
+ ],
+ "mars_r2": {
+  "wheel_count": 6,
+  "move_tracks": [
+   "Wheel_LF",
+   "Wheel_LM",
+   "Wheel_LR",
+   "Wheel_RF",
+   "Wheel_RM",
+   "Wheel_RR"
+  ],
+  "min_roll_envelope_vs_body_gap": 0.04999999999999999,
+  "module_cover_gap_106_angles": 0.022732080663480203,
+  "shaft_radius": 0.016,
+  "hub_bore_radius": 0.026,
+  "shaft_bore_radial_gap": 0.01,
+  "suspension": "rocker front + bogie middle/rear; visual pivots, no terrain solver"
+ },
+ "surface_table": [
+  {
+   "node": "Chassis",
+   "surface": 0,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 4,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 5,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 6,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 7,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 8,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 9,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 10,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Chassis",
+   "surface": 11,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 1,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 2,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 3,
+   "role": "body_light",
+   "tris": 16,
+   "verts": 10
+  },
+  {
+   "node": "Head",
+   "surface": 4,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 5,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 6,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 7,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 8,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 9,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Head",
+   "surface": 10,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 1,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 2,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 3,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 4,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 5,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 6,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 7,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 8,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 9,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 10,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 11,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 12,
+   "role": "frame_dark",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Body",
+   "surface": 13,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Body",
+   "surface": 14,
+   "role": "frame_dark",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "ProtectedElectronics",
+   "surface": 0,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "ProtectedElectronics",
+   "surface": 1,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "HoodLid",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "HoodLid",
+   "surface": 1,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "RearLock",
+   "surface": 0,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "RearLock",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "RearLock",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "RearLock",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "ChargeCap",
+   "surface": 0,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Rocker_L",
+   "surface": 0,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Rocker_L",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Rocker_L",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 44,
+   "verts": 24
+  },
+  {
+   "node": "Rocker_L",
+   "surface": 3,
+   "role": "rubber",
+   "tris": 128,
+   "verts": 256
+  },
+  {
+   "node": "Rocker_L",
+   "surface": 4,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Bogie_L",
+   "surface": 0,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Bogie_L",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 44,
+   "verts": 24
+  },
+  {
+   "node": "Bogie_L",
+   "surface": 2,
+   "role": "rubber",
+   "tris": 128,
+   "verts": 256
+  },
+  {
+   "node": "Bogie_L",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Bogie_L",
+   "surface": 4,
+   "role": "frame_dark",
+   "tris": 44,
+   "verts": 24
+  },
+  {
+   "node": "Bogie_L",
+   "surface": 5,
+   "role": "rubber",
+   "tris": 128,
+   "verts": 256
+  },
+  {
+   "node": "Wheel_LM",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_LM",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_LM",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 384,
+   "verts": 240
+  },
+  {
+   "node": "Wheel_LM",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 72,
+   "verts": 48
+  },
+  {
+   "node": "Wheel_LM",
+   "surface": 4,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_LM",
+   "surface": 5,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_LR",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_LR",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_LR",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 384,
+   "verts": 240
+  },
+  {
+   "node": "Wheel_LR",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 72,
+   "verts": 48
+  },
+  {
+   "node": "Wheel_LR",
+   "surface": 4,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_LR",
+   "surface": 5,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_LF",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_LF",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_LF",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 384,
+   "verts": 240
+  },
+  {
+   "node": "Wheel_LF",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 72,
+   "verts": 48
+  },
+  {
+   "node": "Wheel_LF",
+   "surface": 4,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_LF",
+   "surface": 5,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Rocker_R",
+   "surface": 0,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Rocker_R",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Rocker_R",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 44,
+   "verts": 24
+  },
+  {
+   "node": "Rocker_R",
+   "surface": 3,
+   "role": "rubber",
+   "tris": 128,
+   "verts": 256
+  },
+  {
+   "node": "Rocker_R",
+   "surface": 4,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Bogie_R",
+   "surface": 0,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Bogie_R",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 44,
+   "verts": 24
+  },
+  {
+   "node": "Bogie_R",
+   "surface": 2,
+   "role": "rubber",
+   "tris": 128,
+   "verts": 256
+  },
+  {
+   "node": "Bogie_R",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Bogie_R",
+   "surface": 4,
+   "role": "frame_dark",
+   "tris": 44,
+   "verts": 24
+  },
+  {
+   "node": "Bogie_R",
+   "surface": 5,
+   "role": "rubber",
+   "tris": 128,
+   "verts": 256
+  },
+  {
+   "node": "Wheel_RM",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_RM",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_RM",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 384,
+   "verts": 240
+  },
+  {
+   "node": "Wheel_RM",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 72,
+   "verts": 48
+  },
+  {
+   "node": "Wheel_RM",
+   "surface": 4,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_RM",
+   "surface": 5,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_RR",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_RR",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_RR",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 384,
+   "verts": 240
+  },
+  {
+   "node": "Wheel_RR",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 72,
+   "verts": 48
+  },
+  {
+   "node": "Wheel_RR",
+   "surface": 4,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_RR",
+   "surface": 5,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_RF",
+   "surface": 0,
+   "role": "body_light",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_RF",
+   "surface": 1,
+   "role": "frame_dark",
+   "tris": 192,
+   "verts": 384
+  },
+  {
+   "node": "Wheel_RF",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 384,
+   "verts": 240
+  },
+  {
+   "node": "Wheel_RF",
+   "surface": 3,
+   "role": "frame_dark",
+   "tris": 72,
+   "verts": 48
+  },
+  {
+   "node": "Wheel_RF",
+   "surface": 4,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "Wheel_RF",
+   "surface": 5,
+   "role": "accent_warm",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "CargoBox",
+   "surface": 0,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "CargoBox",
+   "surface": 1,
+   "role": "body_light",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "CargoBox",
+   "surface": 2,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  },
+  {
+   "node": "TowRod",
+   "surface": 0,
+   "role": "frame_dark",
+   "tris": 12,
+   "verts": 8
+  }
+ ],
+ "bin_bytes": 313000,
+ "triangles_total": 7312,
+ "materials_count": 4,
+ "textures_count": 0
+}

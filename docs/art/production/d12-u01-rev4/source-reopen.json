@@ -1,0 +1,15 @@
+{
+  "blender": "5.2.2 LTS",
+  "checks": {
+    "gltf": {
+      "triangles": 7312,
+      "mesh_nodes": 19,
+      "clips": 5
+    },
+    "glb": {
+      "triangles": 7312,
+      "mesh_nodes": 19,
+      "clips": 5
+    }
+  }
+}

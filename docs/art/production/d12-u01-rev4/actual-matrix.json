@@ -1,0 +1,48 @@
+{
+  "active_measured": {
+    "max": [
+      0.629999995231628,
+      1.11480391025543,
+      0.882649779319763
+    ],
+    "min": [
+      -0.629999995231628,
+      0.0000000149011611938477,
+      -1.14999997615814
+    ]
+  },
+  "cases": 98,
+  "failures": [],
+  "imported_static_reset_tracks": [
+    "tuoyun-r1/Model/RearLock",
+    "tuoyun-r1/Model/ChargeCap",
+    "tuoyun-r1/Model/HoodLid"
+  ],
+  "missing_clip_holds": true,
+  "move_tracks": [
+    "tuoyun-r1/Model/Wheels/Rocker_L/Wheel_LF",
+    "tuoyun-r1/Model/Wheels/Rocker_L/Bogie_L/Wheel_LM",
+    "tuoyun-r1/Model/Wheels/Rocker_L/Bogie_L/Wheel_LR",
+    "tuoyun-r1/Model/Wheels/Rocker_R/Wheel_RF",
+    "tuoyun-r1/Model/Wheels/Rocker_R/Bogie_R/Wheel_RM",
+    "tuoyun-r1/Model/Wheels/Rocker_R/Bogie_R/Wheel_RR"
+  ],
+  "negative_hold": 10,
+  "phases": {
+    "completed0.0": {
+      "max": [
+        0.629999995231628,
+        0.860000014305115,
+        0.800000011920929
+      ],
+      "min": [
+        -0.629999995231628,
+        0.0000000149011611938477,
+        -0.800000011920929
+      ]
+    }
+  },
+  "reason_pose": 9,
+  "reverse_time": 4,
+  "wheel_pose_checks": 24
+}
