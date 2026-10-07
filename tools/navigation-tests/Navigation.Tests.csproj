@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NuGetAudit>false</NuGetAudit>
+    <UseAppHost>false</UseAppHost>
+    <AssemblyName>Navigation.Tests</AssemblyName>
+    <RootNamespace>Navigation.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- D1.1 导航子票：被测实现为冻结的 BoundedRoute.cs；快照只能经 TerrainDataCodec 解析构造，
+         故同时链接现有 TerrainData 源。不建类库工程、不引包、不依赖 Godot。 -->
+    <Compile Include="../../prototype/scripts/TerrainData/*.cs" Link="TerrainData/%(Filename)%(Extension)" />
+    <Compile Include="../../prototype/scripts/Navigation/*.cs" Link="Navigation/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

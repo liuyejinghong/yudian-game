@@ -1,0 +1,35 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+CLR 10.0.12
+physics/3d/physics_engine = DEFAULT
+Assembly.FullName Yudian, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Assembly.Location 
+Fresh Debug Yudian.dll SHA256 81A9BBA6515580A006F873A4EB17DF8AFC68207429C5D28C1F68C2861730E723
+Loaded MVID  3551f434-ec49-4b7c-97fa-00a2f56e8790
+Fresh  MVID  3551f434-ec49-4b7c-97fa-00a2f56e8790
+PASS identity: CLR version, physics backend, loaded MVID == fresh Debug PE MVID, SHA256
+PASS lifecycle: Apply before Initialize throws, Initialize succeeds once then locked
+clip move length=1
+clip work length=2
+clip charge length=1
+clip disabled length=1
+clip maintenance length=1
+PASS contract: canonical model, exactly one AnimationPlayer, five clips at manifest durations
+model root transform [X: (1, 0, 0), Y: (0, 1, 0), Z: (0, 0, 1), O: (0, 0, 0)]
+static vertex bounds meshes=52 min=(-0.8700,0.0000,-0.8106) max=(0.8700,1.1034,0.8000)
+extremes minAt=[SupportSlideL_Pad,Wheel_LM,ElbowAxle] maxAt=[SupportSlideR_Pad,ElbowAxle,TowRearMount]
+PASS units: adapter root identity, model root foot origin, static bounds per manifest
+PASS keys: six keys accepted with manifest clip routing, unknown key rejected
+PASS loops: move wraps at clip length, work wraps at clip length
+PASS oneshot: charge/disabled/maintenance hold at clip end
+PASS pause: time frozen, pose frozen, no faked motion, resumes from frozen time
+PASS pause switch: new key shown frozen at t0, advances only after unpause
+PASS rejections: bad key / bad delta fully validated before mutation, old state+pose kept
+baseline nodes=71
+crosstalk work->charge Shoulder diff=1.192E-007
+crosstalk work->charge Elbow diff=5.960E-008
+crosstalk work->charge SupportSlideL diff=0.000E+000
+crosstalk work->charge SupportSlideR diff=0.000E+000
+PASS crosstalk: every legal switch restores previous clip's changed targets to baseline
+PASS boundary: delta 0 and DeltaLimit accepted, parent transform untouched
+SUMMARY pass=12 fail=0

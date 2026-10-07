@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Godot;
 
 namespace Yudian.PlayerUI;
@@ -50,7 +51,7 @@ public partial class PlayerUiSelfTest : SceneTree
             // 预览：合法点（动态寻找，机器人停驻位随种子变化）/ 设施重叠 / 场外 / 望山不能当筑垒
             var legal = FindLegalSite();
             Check(legal.Legal, "找到合法预览点：" + legal.Reason);
-            Check(!_world.PreviewLevel(new Vector3(14, 0, 0)).Legal, "设施重叠预览非法");
+            Check(!_world.PreviewLevel(_world.ReadBootstrap().Facilities.FirstOrDefault()?.Position ?? new Vector3(14, 0, 0)).Legal, "设施重叠预览非法");
             Check(!_world.PreviewLevel(new Vector3(28, 0, 28)).Legal, "场外预览非法");
             Check(!_world.PreviewLevel(legal.Center, "Robot_Wangshan_1").Legal, "望山不能当筑垒执行");
 
@@ -172,6 +173,52 @@ public partial class PlayerUiSelfTest : SceneTree
             await Frames(5);
             Check(_ui.FindChild("ConfirmButton", true, false) is Button, "读取完成后 UI 仍可用");
 
+            // —— D1.1 建设菜单：仅 bootstrap 启用时检查（Enabled=false 时界面与 D1.0 一致）——
+            var boot = _world.ReadBootstrap();
+            if (boot.Enabled)
+            {
+                Check(_ui.FindChild("ModeLevelButton", true, false) is Button, "整平模式按钮建立");
+                Check(boot.Blueprints.Length == 5 && boot.Blueprints.All(b => _ui.FindChild("ModeButton_" + b.Id, true, false) is Button),
+                    "五种建设模式按钮建立（来自真实蓝图）");
+                Check(((Label)_ui.FindChild("StockLabel", true, false)!).Text.Contains("铁料"),
+                    "库存与电力显示真实着陆器数据：" + ((Label)_ui.FindChild("StockLabel", true, false)!).Text);
+                Check(_ui.FindChild("ConnectButton", true, false) is Button && _ui.FindChild("RetryButton", true, false) is Button,
+                    "铺电缆与重试入口建立");
+
+                var rotate = (Button)_ui.FindChild("RotateButton", true, false)!;
+                await CommandClick(rotate);
+                await Frames(2);
+                Check(rotate.Text.Contains("90"), "90度朝向控件生效：" + rotate.Text);
+                await CommandClick(rotate);
+                await CommandClick(rotate);
+                await CommandClick(rotate);
+                await Frames(2);
+                Check(rotate.Text.Contains("0"), "朝向 270° 回绕到 0°：" + rotate.Text);
+
+                // 真实下单：选充电桩 → 扫描合法建设点 → 点地面 → 确认 → 建设任务 → 取消
+                var charger = (Button)_ui.FindChild("ModeButton_charger", true, false)!;
+                await CommandClick(charger);
+                await Frames(3);
+                var buildSite = FindLegalBuildSite("charger");
+                Check(buildSite.Legal, "建设模式找到合法预览点：" + buildSite.Reason);
+                Click(_camera.UnprojectPosition(new Vector3(buildSite.Center.X, 0.2f, buildSite.Center.Z)));
+                await Frames(3);
+                Check(selection.Text.Contains("已选位置"), "建设模式点选地面显示已选位置");
+                Check(selection.Text.Contains("成本"), "已选位置显示材料成本：" + selection.Text);
+                await WaitFor(() => !confirm.Disabled, 5, "建设确认按钮启用");
+                await CommandClick(confirm);
+                await WaitFor(() => _world.ReadPlayerState().Job is { Active: true }, 10, "建设任务活动");
+                var buildJob = _world.ReadPlayerState().Job;
+                Check(buildJob?.Id.StartsWith("build-", StringComparison.Ordinal) == true,
+                    "确认建设产生真实建设任务：" + buildJob?.Id + " · " + buildJob?.Stage);
+                await CommandClick(cancel);
+                await WaitFor(() => _world.ReadPlayerState().Job is not { Active: true }, 10, "取消建设生效");
+            }
+            else
+            {
+                NotRun("D1.1 建设菜单（bootstrap 未启用）");
+            }
+
             Report();
             Quit(_failures == 0 ? 0 : 1);
         }
@@ -194,6 +241,18 @@ public partial class PlayerUiSelfTest : SceneTree
                 if (preview.Legal) return preview;
             }
         throw new InvalidOperationException("全场扫描不到合法整平点");
+    }
+
+    // 网格扫描一个合法建设点（走真实 PreviewBuild 合同）。
+    private PlayerSitePreview FindLegalBuildSite(string type)
+    {
+        for (float x = -20f; x <= 20f; x += 4f)
+            for (float z = -20f; z <= 20f; z += 4f)
+            {
+                var preview = _world.PreviewBuild(type, new Vector3(x, 0, z));
+                if (preview.Legal) return preview;
+            }
+        throw new InvalidOperationException("全场扫描不到合法建设点");
     }
 
     private void Check(bool condition, string label)

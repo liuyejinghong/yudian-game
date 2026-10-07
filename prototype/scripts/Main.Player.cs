@@ -9,17 +9,18 @@ public partial class Main
 {
     private bool _playerMode, _userPaused, _projectionPaused;
     private double _playerTime;
-    private sealed record PlayerCommand(string Action, Vector3 Center, long Version, string? Worker);
+    private sealed record PlayerCommand(string Action, Vector3 Center, long Version, string? Worker, float Yaw = 0);
     private PlayerCommand? _playerCommand;
     private string _playerNotice = "选择筑垒或地面，预览后下达整平";
     public PlayerReadModel ReadPlayerState() => new(
         _groundReady && !_groundFault && _groundVerified == _liveTerrain?.Current.Version && _loadPending == null,
-        _userPaused, PlayerNotice(), _levelJob == null ? null : new(_levelJob.Id, LevelStageText(_levelJob.Stage),
+        _userPaused, PlayerNotice(), BootstrapEnabled && _buildJob is {} b ? new(b.Id, BaseStageText(b.Stage), b.Builder, Math.Min(1,b.Work/(b.Type=="connection"?3:Definition(b.Type).WorkSeconds)), LoadVector(b.Center), b.Active) : _levelJob == null ? null : new(_levelJob.Id, LevelStageText(_levelJob.Stage),
             _levelJob.Worker?.Name.ToString() ?? "", _levelJob.Work.Fraction, _levelJob.Center, _levelJob.Active),
         _playerTime, _liveTerrain?.Current.Version ?? 0, _cfg.Terrain.Size / 2, System.IO.File.Exists(PlayerSavePath));
     private string PlayerNotice()
     {
         if (_groundFault) return _groundMessage;
+        if (BootstrapEnabled && _buildJob is {} b && (_levelJob?.Active != true)) return b.Reason + "\n" + _playerNotice;
         if (_loadPending != null || _userPaused || _levelJob?.Active != true || _levelJob.Message == _playerNotice) return _playerNotice;
         return _levelJob.Message + "\n" + _playerNotice;
     }
@@ -32,7 +33,7 @@ public partial class Main
         string reason = "";
         var region = _liveTerrain;
         if (!_playerMode || !ReadPlayerState().Ready) reason = "等待世界与物理准备";
-        else if (_levelJob?.Active == true) reason = "先完成或取消当前任务";
+        else if (_levelJob?.Active == true || (BootstrapEnabled && _buildJob?.Active == true)) reason = "先完成或取消当前任务";
         else if (!float.IsFinite(center.X) || !float.IsFinite(center.Y) || !float.IsFinite(center.Z)) reason = "选区坐标无效";
         else if (!region!.PermissionGranted || region.CancellationRequested) reason = "尚未获改造权限";
         else
@@ -47,7 +48,7 @@ public partial class Main
                 var patch = GroundPatch(center.X, center.Z, 0, "preview");
                 if (_facilityPositions.Select((p, i) => XzDistance(p, center) <= FacilityRadius(i) + (float)margin).Any(x => x)) reason = "选区与设施范围重叠";
                 else if (_groundRobots.Any(x => XzDistance(x.GlobalPosition, center) <= x.BodyRadius + (float)margin)) reason = "选区内有机器人，请换位置";
-                else if (FindLevelWorker(patch, center, workerId).Worker == null) reason = "没有可直达施工站的筑垒；本版不支持绕障";
+                else if (FindLevelWorker(patch, center, workerId).Worker == null) reason = "没有可达施工站的筑垒";
             }
         }
         return new(reason.Length == 0, reason.Length == 0 ? "可整平 · 半径 2m，目标高度 0m" : reason,
@@ -58,7 +59,8 @@ public partial class Main
         => QueuePlayer(new("level", center, observedVersion, workerId));
     public void QueuePlayerAction(string action)
     {
-        if (action is not ("cancel" or "pause" or "save" or "load" or "recover")) { _playerNotice = "未知操作，未执行"; return; }
+        if ((action is "connect" or "retry") && !BootstrapEnabled) { _playerNotice="本模式没有此经营操作"; return; }
+        if (action is not ("cancel" or "pause" or "save" or "load" or "recover" or "connect" or "retry")) { _playerNotice = "未知操作，未执行"; return; }
         QueuePlayer(new(action, Vector3.Zero, -1, null));
     }
     private void QueuePlayer(PlayerCommand command)
@@ -78,7 +80,16 @@ public partial class Main
             else if (command.Action == "load") LoadPlayer();
             else if (command.Action == "save") SavePlayer();
             else if (!ReadPlayerState().Ready) _playerNotice = "等待世界恢复后再操作";
-            else if (command.Action == "cancel") { CancelLevelJob(); _playerNotice = _levelJob?.Message ?? _levelNotice; }
+            else if (command.Action == "connect" && BootstrapEnabled) ConnectNextFacility();
+            else if (command.Action == "retry" && BootstrapEnabled) RetryBaseBuild();
+            else if (command.Action.StartsWith("build:") && BootstrapEnabled)
+            {
+                string type = command.Action[6..]; var preview = PreviewBuild(type,command.Center,command.Yaw);
+                if (!preview.Legal) _playerNotice=preview.Reason;
+                else if(command.Version != _liveTerrain!.Current.Version) _playerNotice="世界已变化，请重预览";
+                else StartBaseBuild(type,preview.Center,command.Yaw);
+            }
+            else if (command.Action == "cancel") { if(BootstrapEnabled && _buildJob?.Active == true) { CancelBaseBuild(); return; } CancelLevelJob(); _playerNotice = _levelJob?.Message ?? _levelNotice; }
             else
             {
                 var preview = PreviewLevel(command.Center, command.Worker);
@@ -99,13 +110,13 @@ public partial class Main
             center + new Vector3(0, 0, -offset), center + new Vector3(0, 0, offset)];
         GroundPatrol? bestWorker = null; Vector3 bestStation = default; float best = float.PositiveInfinity;
         foreach (var actor in _groundRobots.Where(x => x.Name.ToString().StartsWith("Robot_Zhulei_", StringComparison.Ordinal) &&
-            (workerId == null || x.Name.ToString() == workerId)))
+            (workerId == null || x.Name.ToString() == workerId) && (!BootstrapEnabled || Operational(x) && !Servicing(x))))
             foreach (var station in stations)
             {
                 float radius = actor.BodyRadius;
                 if (station.X - radius <= s.OriginXM || station.Z - radius <= s.OriginZM ||
                     station.X + radius >= s.OriginXM + (s.Columns - 1) * s.SpacingM || station.Z + radius >= s.OriginZM + (s.Rows - 1) * s.SpacingM ||
-                    TouchesFootprint(patch, station.X, station.Z, radius) || !PlayerLineClear(actor, station)) continue;
+                    TouchesFootprint(patch, station.X, station.Z, radius) || !(BootstrapEnabled ? FindRoute(actor,station).Found : PlayerLineClear(actor, station))) continue;
                 float distance = XzDistance(actor.GlobalPosition, station);
                 if (distance >= best) continue;
                 bestWorker = actor; bestStation = station; best = distance;
