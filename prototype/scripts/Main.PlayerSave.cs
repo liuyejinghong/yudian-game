@@ -43,11 +43,12 @@ public partial class Main
         public required int Sequence { get; init; }
         public required RobotSave[] Robots { get; init; }
         public required JobSave? Job { get; init; }
+        public BootstrapSave? Bootstrap { get; init; }
     }
     private static readonly JsonSerializerOptions SaveOptions = new() { UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow };
-    private string PlayerSavePath => (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
+    private string PlayerSavePath => (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1")
         ? System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_TEST_SAVE") ?? "/private/tmp/yudian-player-test.json"
-        : ProjectSettings.GlobalizePath("user://saves/d1-player-v1.json");
+        : ProjectSettings.GlobalizePath(BootstrapEnabled ? "user://saves/d11-player-v2.json" : "user://saves/d1-player-v1.json");
     private PlayerSave? _loadPending, _loadRollback;
     private bool _loadRecovered;
     private int _loadStarted;
@@ -60,7 +61,7 @@ public partial class Main
     }
     private PlayerSave CapturePlayer() => new()
     {
-        Schema = 1, FixtureHash = _fixtureHash, Terrain = TerrainDataCodec.Serialize(_liveTerrain!.Current),
+        Schema = BootstrapEnabled ? 2 : 1, Bootstrap = BootstrapEnabled ? CaptureBootstrap() : null, FixtureHash = _fixtureHash, Terrain = TerrainDataCodec.Serialize(_liveTerrain!.Current),
         Time = _playerTime, Paused = _userPaused, Permission = _liveTerrain.PermissionGranted, Cancelled = _liveTerrain.CancellationRequested, Sequence = _levelSequence,
         Robots = _groundRobots.Select(x => new RobotSave { Id = x.Name.ToString(), Position = SavedVector(x.GlobalPosition), Velocity = SavedVector(x.Velocity), Yaw = x.Rotation.Y }).ToArray(),
         Job = _levelJob is not {} j ? null : new JobSave
@@ -84,6 +85,7 @@ public partial class Main
             {
                 byte[] bytes = System.Text.Encoding.UTF8.GetBytes(text); stream.Write(bytes); stream.Flush(true);
             }
+            if (File.Exists(path)) File.Copy(path, path + ".bak", true);
             File.Move(temporary, path, true);
             _playerNotice = "已保存；退出后点击读取可继续";
             GD.Print($"PLAYER_SAVE_OK version={_liveTerrain!.Current.Version} stage={_levelJob?.Stage} time={_playerTime:R}");
@@ -131,11 +133,12 @@ public partial class Main
             var actor = _groundRobots.Single(x => x.Name.ToString() == saved.Id);
             actor.ClearOrder(); actor.GlobalPosition = LoadVector(saved.Position); actor.Velocity = LoadVector(saved.Velocity); actor.Rotation = new Vector3(0, saved.Yaw, 0);
         }
+        if (BootstrapEnabled) ApplyBootstrap(snapshot.Bootstrap!);
         PauseGround(true); _playerNotice = "存档已读取，等待地形和实体物理验证";
     }
     private TerrainSnapshot ValidatePlayerSave(PlayerSave saved)
     {
-        if (saved.Schema != 1 || saved.FixtureHash != _fixtureHash) throw new InvalidDataException("存档版本或场景配置不匹配，原档保留");
+        if (saved.Schema != (BootstrapEnabled ? 2 : 1) || (saved.Schema == 1 && saved.Bootstrap != null) || saved.FixtureHash != _fixtureHash) throw new InvalidDataException("存档版本或场景配置不匹配，原档保留");
         if (!double.IsFinite(saved.Time) || saved.Time < 0 || saved.Time > 1e12 || saved.Sequence < 0)
             throw new InvalidDataException("存档时间或任务序号无效");
         var terrain = TerrainDataCodec.ParseSnapshot(saved.Terrain);
@@ -144,6 +147,7 @@ public partial class Main
             throw new InvalidDataException("存档区域不匹配");
         if (saved.Robots == null || saved.Robots.Length != _groundRobots.Count || saved.Robots.Select(x => x?.Id).Distinct().Count() != _groundRobots.Count)
             throw new InvalidDataException("存档机器人集合无效");
+        if (BootstrapEnabled) ValidateBootstrap(saved, terrain);
         foreach (var robot in saved.Robots)
         {
             if (robot == null || !_groundRobots.Any(x => x.Name.ToString() == robot.Id)) throw new InvalidDataException("未知机器人身份");
@@ -154,7 +158,7 @@ public partial class Main
             double height = SavedGroundHeight(terrain, p.X, p.Z);
             if (p.Y < height - .03 || p.Y > height + .5) throw new InvalidDataException("机器人落点无法安全恢复");
             float radius = _groundRobots.Single(x => x.Name.ToString() == robot.Id).BodyRadius;
-            if (_facilityPositions.Select((f, i) => XzDistance(f, p) <= FacilityRadius(i) + radius).Any(x => x))
+            if (BootstrapEnabled ? saved.Bootstrap!.Facilities.Where(f=>f.Built).Any(f=>XzDistance(LoadVector(f.Position),p)<=BaseRadius(f)+radius) : _facilityPositions.Select((f, i) => XzDistance(f, p) <= FacilityRadius(i) + radius).Any(x => x))
                 throw new InvalidDataException("机器人落点与设施重叠");
             if (saved.Robots.Any(x => x != robot && XzDistance(LoadVector(x.Position), p) < radius + _groundRobots.Single(a => a.Name.ToString() == x.Id).BodyRadius))
                 throw new InvalidDataException("机器人落点重叠");
@@ -198,7 +202,7 @@ public partial class Main
                 {
                     var worker = saved.Robots.Single(x => x.Id == j.Worker);
                     var obstacles = saved.Robots.Where(x => x.Id != j.Worker).Select(x => (LoadVector(x.Position), _groundRobots.Single(a => a.Name.ToString() == x.Id).BodyRadius)).ToArray();
-                    if (!PlayerLineClear(LoadVector(worker.Position), radius, station, obstacles)) throw new InvalidDataException("存档施工路线受阻");
+                    if (BootstrapEnabled ? !Yudian.Navigation.BoundedRoute.Find(terrain,new(worker.Position[0],worker.Position[2]),new(station.X,station.Z),radius,saved.Bootstrap!.Facilities.Select(f=>new Yudian.Navigation.NavObstacle(new(f.Position[0],f.Position[2]),BaseRadius(f))).Concat(obstacles.Select(o=>new Yudian.Navigation.NavObstacle(new(o.Item1.X,o.Item1.Z),o.Item2))).ToArray()).Found : !PlayerLineClear(LoadVector(worker.Position), radius, station, obstacles)) throw new InvalidDataException("存档施工路线受阻");
                 }
             }
             if (j.AppliedVersion is {} applied)
@@ -242,9 +246,10 @@ public partial class Main
                 AppliedVersion = j.AppliedVersion, Message = j.Message, Work = new WorkMeter(3) };
             job.Work.Advance(j.Work, true);
             job.Worker = j.Worker == null ? null : _groundRobots.Single(x => x.Name.ToString() == j.Worker);
-            if (job.Active && job.AppliedVersion == null) job.Worker!.SetOrder(job.Station);
+            if (job.Active && job.AppliedVersion == null) { if (BootstrapEnabled) OrderBase(job.Worker!, job.Station); else job.Worker!.SetOrder(job.Station); }
             _levelJob = job;
         }
+        if (BootstrapEnabled) RestoreBaseOrders(saved.Bootstrap!);
         _loadPending = null; _loadRollback = null; RestorePlayerVisuals(); PauseGround(false); _playerNotice = _loadRecovered ? "读取失败；已恢复原世界与任务，原档保留" : _userPaused ? "读取完成；保持用户暂停" : "读取完成；继续原任务";
         GD.Print($"PLAYER_LOAD_READY version={_liveTerrain.Current.Version} stage={_levelJob?.Stage} paused={_userPaused} time={_playerTime:R}");
     }

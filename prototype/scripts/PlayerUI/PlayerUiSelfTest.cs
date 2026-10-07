@@ -51,7 +51,7 @@ public partial class PlayerUiSelfTest : SceneTree
             // 预览：合法点（动态寻找，机器人停驻位随种子变化）/ 设施重叠 / 场外 / 望山不能当筑垒
             var legal = FindLegalSite();
             Check(legal.Legal, "找到合法预览点：" + legal.Reason);
-            Check(!_world.PreviewLevel(new Vector3(14, 0, 0)).Legal, "设施重叠预览非法");
+            Check(!_world.PreviewLevel(_world.ReadBootstrap().Facilities.FirstOrDefault()?.Position ?? new Vector3(14, 0, 0)).Legal, "设施重叠预览非法");
             Check(!_world.PreviewLevel(new Vector3(28, 0, 28)).Legal, "场外预览非法");
             Check(!_world.PreviewLevel(legal.Center, "Robot_Wangshan_1").Legal, "望山不能当筑垒执行");
 

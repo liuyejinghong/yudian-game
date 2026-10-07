@@ -25,7 +25,7 @@ public partial class Main
     private static readonly float[] FacilityRadii = [2.5f, 2f, 2.8f, 1.7f, 1.9f, 1.1f];
     // Static canonical XZ bounds, rounded outward; service animation remains unavailable in D1.0.
     private static readonly float[] PlayerFacilityRadii = [2.9f, 3f, 3.8f, 1.9f, 2.7f, 2.3f];
-    private float FacilityRadius(int i) => (_playerMode ? PlayerFacilityRadii : FacilityRadii)[i % 6];
+    private float FacilityRadius(int i) => BootstrapEnabled ? BaseRadius(_baseFacilities[i]) : (_playerMode ? PlayerFacilityRadii : FacilityRadii)[i % 6];
 
     private void PrepareLiveTerrain()
     {
@@ -100,11 +100,12 @@ public partial class Main
                 ProcessPlayerCommand();
                 FinishPlayerLoad();
                 if (!_userPaused && _loadPending == null && !_groundFault && _groundVerified == _liveTerrain.Current.Version)
-                { _playerTime += delta; TickLevelJob(delta); }
+                { _playerTime += delta; if (BootstrapEnabled) TickBootstrap(delta); TickLevelJob(delta); }
             }
             else TickLevelJob(delta);
             if (_playerMode) TickPlayerVisuals(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1") PlayerTestStep();
+            if (System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1") BootstrapTestStep();
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") LevelTestStep(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1") GroundTestStep();
             if (_groundStatus != null) _groundStatus.Text = $"权威 v{_liveTerrain.Current.Version} · 绑定 v{_liveTerrain.ProjectionVersion?.ToString() ?? "未知"} · 物理 v{_groundVerified?.ToString() ?? "待验"}\n" +
@@ -115,7 +116,7 @@ public partial class Main
         {
             GroundFault(ex);
             if (_playerMode && _loadPending != null && _loadRollback != null) { FinishPlayerLoad(); return; }
-            if (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" ||
+            if (System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" ||
                 System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1" ||
                 System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") Fail(ex);
         }
@@ -207,8 +208,11 @@ public partial class Main
         if (_groundFault || _groundVerified != region.Current.Version || region.ProjectionVersion != region.Current.Version)
         { _groundMessage = "物理尚未验证，拒绝改造"; return null; }
         for (int i = 0; i < _facilityPositions.Count; i++)
+        {
+            if (BootstrapEnabled && !_baseFacilities[i].Built && _buildJob?.Facility == _baseFacilities[i].Id && _buildJob.Id == patch.PatchId) continue;
             if (TouchesFootprint(patch, _facilityPositions[i].X, _facilityPositions[i].Z, FacilityRadius(i)))
                 { RejectOccupied("设施 " + i); return null; }
+        }
         foreach (var actor in _groundRobots)
             if (TouchesFootprint(patch, actor.GlobalPosition.X, actor.GlobalPosition.Z, actor.BodyRadius))
                 { RejectOccupied(actor.Name.ToString()); return null; }
@@ -237,7 +241,7 @@ public partial class Main
         _projectionPaused = value;
         foreach (var actor in _groundRobots)
         {
-            actor.Paused = value || (_playerMode && (_userPaused || _loadPending != null));
+            actor.Paused = value || (_playerMode && (_userPaused || _loadPending != null)) || (BootstrapEnabled && !Operational(actor));
             actor.SetPhysicsProcess(!(_playerMode && _userPaused && _loadPending == null));
         }
     }

@@ -347,3 +347,20 @@ APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入
 2026-10-07集成复验：world-r10五独立进程通过（含暂停取消档覆盖旧work姿态）；UI28项通过，新增连续拖动/Q旋转/Esc负例。真实Metal窗口已核筑垒选择/坡地/重复点击/施工/暂停保存/完成后跨进程读取/改派取消保先前地形。reviewer指出拖动累计与读档旧姿态，均已修。默认normal裁切实际布局，美术正在核正常方向1.6倍距离与overview，待最终候选、导出同包及architect。
 
 2026-10-07收口：新包来源d631a24、PCK120ec750…c2cef0，干净导入/签名/arm64与同包五独立进程全部通过；实际访达双击/暂停保存/关闭/重开读取/继续完成已核。Mac随后锁屏，停止GUI，包第二轮完成态额外保存/关窗回执未补，报告明确；原生同包completed/awaiting检查通过。reviewer无剩余功能问题，最终architect两处现役状态/原件合流问题修正后复核通过。美术PR41 merge b93ea17已合流；六工程子片限定ACCEPTED，父模块IN_PROGRESS，美术三行REVIEW/所有者视觉NOT_RUN。原始stdout尾部空白按证据原件保留，source/docs diff格式检查通过。工程PR42准备精确合并，D1.1未派工。
+
+
+## d11-bootstrap-r1 · 2026-10-07 自举建设
+
+授权：所有者继续推进，并要求处理合格PR。当前main718905d、PR41/42已合并、无开放PR。D1.1进入实施，D1.2采矿加工、D2救援、本地模型效果和高保真不随本批扩签。
+
+1. [ ] C01冻结自举配置/设施实例与账本/健康/保存接缝；architect已指出单设施启动、运动碰撞、保障打断和旧存档路线校验风险。证明：仅着陆器新档正常启动、首套设施投入预算、离散库存/预留/稳定operation_id守恒。
+2. [ ] GLM独占Navigation路径计算；Codex原生航点、路线版本、单工位预约与有界冲突。证明：绕障、窄口/超坡拒绝、失效重算、双机有界等待，真实MoveAndSlide抵达。
+3. [ ] Codex真实取货/载货/交付、单活动建设目标和两类以上设施共用流程；GLM独占PlayerUI消费只读DTO。证明：运输中取消保货、重试不重复、非法选址拒绝、落成改变能力、正式新档无预建主要设施。
+4. [ ] Codex有限有成本供电、能量/耐久、正常充电维修和中断续接；schema2单独槽复用加载屏障。证明：两轮工作-保障-工作、无电不补、维修不充电、零值停机、暂停不耗损、取货后/落成前/服务中跨进程恢复、坏档保原世界和原档。
+5. [ ] reviewer独立审查持久化/关键状态；实际默认应用自举，干净构建新包与同包复验；architect收口。合格后建PR并按既有授权合并，同步TODO/应用入口；未跑GUI和所有者视觉不代签。
+
+主控独占Main*.cs、PlayerContracts.cs、GroundPatrol.cs、Resources/Core、共享自举配置、PLAN和产研TODO/集成/保存；GLM导航仅Navigation及tools/navigation-tests；GLM UI仅PlayerUI及tools/player-ui-tests。美术继续既有独立会话，当前只领取U01货舱共面问题局部修复，待接口后逐张冻结A04/A05/A06。原D1.0包及用户schema1档保留。两次失败停止该步重计划。
+
+账本自检前两次启动分别遇到NuGet缓存写权限和机器仅安装.NET10：停止原命令路径，重计划为UseAppHost=false并显式DOTNET_ROLL_FORWARD=Major，在既有SDK/CLR10运行纯逻辑测试；Godot/新包继续net8.0且导出CLR8验证，不安装新运行时。失败输出保留。
+
+2026-10-07早期审查与native-r1：仅着陆器12机启动通过，首次真实整平/运输中取消/保存读取/重试、太阳能/充电/维修/加工与三段付费电缆已走通。r1后续夜间排除充电目的地导致驮运耗到零，真实退出1，日志/private/tmp/yudian-d11-native-r1.log保留。修复为连接有效性与实际发电分离，低电可保真实路线前往工位等待日照，等待不补电。reviewer另指出自己的工地占用/同交货站/重试ID/取消服务/阻塞预约及坏档built/容器/Trip/孤儿站位，均已逐项修入；阶段/消耗/服务路线完整性继续复核。导航原提交e68df8c/1f75fe9共78检查、Main消费者集成42bb7b1/4139f33，不代表E06整包接受。UI原生session sess_5ed49c66a9，独占树d11-player-ui-r1实施中。

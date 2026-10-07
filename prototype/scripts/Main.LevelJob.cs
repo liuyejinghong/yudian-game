@@ -41,13 +41,14 @@ public partial class Main
 
     private void StartLevelJob(float? centerX = null, float? centerZ = null, string? workerId = null)
     {
-        if (_levelJob?.Active == true)
-        { _levelNotice = "已有活动任务：" + _levelJob.Id; return; }
+        if (_levelJob?.Active == true || (BootstrapEnabled && _buildJob?.Active == true))
+        { _levelNotice = "已有活动任务：" + (_levelJob?.Id ?? _buildJob?.Id); return; }
         if (!_groundReady || _groundFault || _groundVerified != _liveTerrain!.Current.Version)
         { _levelNotice = "等待地形物理恢复后下单"; return; }
         float[] site = [centerX ?? _cfg.Terrain.Mound.Position[0], centerZ ?? _cfg.Terrain.Mound.Position[1]];
         if (_levelSequence == int.MaxValue) { _levelNotice = "任务编号达到上限，未下单"; return; }
         string id = "level-" + ++_levelSequence;
+        if (BootstrapEnabled) _buildJob = null;
         var job = new LevelJob { Id = id, Patch = GroundPatch(site[0], site[1], 0, id), Center = new Vector3(site[0], 0, site[1]) };
         _levelJob = job; _levelNotice = "";
         if (!_liveTerrain.PermissionGranted || _liveTerrain.CancellationRequested)
@@ -76,7 +77,7 @@ public partial class Main
         { var selected = FindLevelWorker(job.Patch, job.Center, workerId); job.Worker = selected.Worker; job.Station = selected.Station; if (job.Worker != null) best = XzDistance(job.Worker.GlobalPosition, job.Station); }
         if (job.Worker == null) { FinishLevelJob(LevelStage.Failed, "没有筑垒或安全施工站"); return; }
         job.Station.Y = GroundHeight(job.Station.X, job.Station.Z);
-        job.Worker.SetOrder(job.Station);
+        if (BootstrapEnabled) { if(!OrderBase(job.Worker,job.Station)) { FinishLevelJob(LevelStage.Failed,"无法到达施工站"); return; } } else job.Worker.SetOrder(job.Station);
         job.Message = "前往施工区边缘；直线受阻会失败";
         GD.Print($"LEVEL_JOB_START id={job.Id} worker={job.Worker.Name} base={job.Patch.Base.Version} station={job.Station} distance={best:F3}");
     }
@@ -94,6 +95,7 @@ public partial class Main
         var job = _levelJob;
         if (job?.Active == true)
         {
+            if (BootstrapEnabled && job.Worker is {} actor && (Servicing(actor) || !Operational(actor))) { job.Message = "保障或停机中；原任务进度保留"; return; }
             var region = _liveTerrain!;
             if (job.Stage == LevelStage.AwaitingPhysics)
             {
@@ -123,6 +125,7 @@ public partial class Main
                 case LevelStage.Working:
                     bool eligible = WorkerAtStation(job);
                     job.Work.Advance(delta, eligible);
+                    if (BootstrapEnabled && eligible) SpendWork(job.Worker!, delta);
                     job.Message = eligible ? "连续整平作业中" : "工人未停驻贴地；作业计时清零";
                     if (!eligible && (job.TravelSeconds += delta) >= 60)
                         FinishLevelJob(LevelStage.Failed, "工人无法保持施工站");
@@ -172,7 +175,7 @@ public partial class Main
 
     private void FinishLevelJob(LevelStage stage, string message)
     {
-        var job = _levelJob!; job.Stage = stage; job.Message = message; job.Worker?.ClearOrder(); _levelNotice = "";
+        var job = _levelJob!; job.Stage = stage; job.Message = message; if (job.Worker != null) { if(BootstrapEnabled && _services.TryGetValue(job.Worker.Name.ToString(),out var service)) service.ReturnTo=null; else if(BootstrapEnabled) StopBase(job.Worker); else job.Worker.ClearOrder(); } _levelNotice = "";
         GD.Print($"LEVEL_JOB_END id={job.Id} stage={stage} base={job.Patch.Base.Version} applied={job.AppliedVersion?.ToString() ?? "none"} current={_liveTerrain!.Current.Version} message={message}");
     }
 }
