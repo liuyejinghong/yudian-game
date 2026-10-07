@@ -428,7 +428,10 @@ public partial class Main : Node3D
             _camera.Position = new Vector3(pos[0].GetSingle(), pos[1].GetSingle(), pos[2].GetSingle());
             _camera.Fov = normal.GetProperty("fov").GetSingle();
             _camera.Near = .05f; _camera.Far = 200;
-            _camera.LookAt(new Vector3(aim[0].GetSingle(), aim[1].GetSingle(), aim[2].GetSingle()));
+            var target = new Vector3(aim[0].GetSingle(), aim[1].GetSingle(), aim[2].GetSingle());
+            // Actual base layout needs 1.6× the art overlay's normal distance.
+            _camera.Position = target + (_camera.Position - target) * 1.6f;
+            _camera.LookAt(target);
         }
         else if (!_benchmark)
         {
