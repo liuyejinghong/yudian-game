@@ -1,0 +1,65 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=81a9bba6515580a006f873a4eb17df8afc68207429c5d28c1f68c2861730e723 loaded_mvid=3551f434-ec49-4b7c-97fa-00a2f56e8790 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=7 query_frame=8 rays=4225
+PLAYER_LOAD_READY version=1 stage= paused=True time=34.36666666666659
+BOOTSTRAP_TEST CROSS_PROCESS_ACTIVE_RESTORED
+PLAYER_SAVE_OK version=1 stage= time=34.633333333333255
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=14 query_frame=15 rays=4225
+PLAYER_LOAD_READY version=1 stage= paused=True time=34.633333333333255
+BOOTSTRAP_TEST_PROGRESS step=7 stage=Levelling time=99.0 cargo=0 reason=筑垒前往整平施工站
+MAIN_GROUND_COMMIT authority=2 bound=2 paused=True
+MAIN_GROUND_SYNC authority=2 bound=2 verified=2 assigned_frame=508 query_frame=509 rays=28
+BOOTSTRAP_TEST_PROGRESS step=8 stage=Delivering time=165.7 cargo=4 reason=已真实取货，驮运载货前往工地
+MAIN_GROUND_COMMIT authority=3 bound=3 paused=True
+MAIN_GROUND_SYNC authority=3 bound=3 verified=3 assigned_frame=1309 query_frame=1310 rays=46
+BOOTSTRAP_TEST_PROGRESS step=9 stage=Delivering time=232.4 cargo=7 reason=已真实取货，驮运载货前往工地
+BOOTSTRAP_TEST_PROGRESS step=10 stage=Delivering time=299.0 cargo=4 reason=保障中，原工程、载荷与进度保留
+MAIN_GROUND_COMMIT authority=4 bound=4 paused=True
+MAIN_GROUND_SYNC authority=4 bound=4 verified=4 assigned_frame=2338 query_frame=2339 rays=56
+BOOTSTRAP_TEST_PROGRESS step=11 stage=Pickup time=365.7 cargo=0 reason=驮运前往着陆器取货
+BOOTSTRAP_TEST_PROGRESS step=11 stage=Delivering time=432.4 cargo=3 reason=已真实取货，驮运载货前往工地
+BOOTSTRAP_TEST_PROGRESS step=12 stage=Pickup time=499.0 cargo=0 reason=驮运前往着陆器取货
+PLAYER_SAVE_OK version=4 stage= time=505.9666666666482
+MAIN_GROUND_COMMIT authority=5 bound=5 paused=True
+MAIN_GROUND_SYNC authority=5 bound=5 verified=5 assigned_frame=3643 query_frame=3644 rays=81
+BOOTSTRAP_TEST_PROGRESS step=13 stage=Delivering time=565.7 cargo=1 reason=保障中，原工程、载荷与进度保留
+BOOTSTRAP_TEST_PROGRESS step=13 stage=Delivering time=632.4 cargo=1 reason=保障中，原工程、载荷与进度保留
+PLAYER_SAVE_OK version=5 stage= time=670.7666666666389
+BOOTSTRAP_TEST_PROGRESS step=15 stage=Building time=699.0 cargo=0 reason=保障中，原工程、载荷与进度保留
+MAIN_GROUND_COMMIT authority=6 bound=6 paused=True
+MAIN_GROUND_SYNC authority=6 bound=6 verified=6 assigned_frame=5391 query_frame=5392 rays=79
+BOOTSTRAP_TEST_PROGRESS step=13 stage=Delivering time=765.7 cargo=8 reason=已真实取货，驮运载货前往工地
+BOOTSTRAP_TEST_PROGRESS step=13 stage=Pickup time=832.4 cargo=0 reason=驮运前往着陆器取货
+PLAYER_SAVE_OK version=6 stage= time=876.4999999999606
+BOOTSTRAP_TEST_PROGRESS step=15 stage=Building time=899.0 cargo=0 reason=保障中，原工程、载荷与进度保留
+PLAYER_SAVE_OK version=6 stage= time=939.9666666666236
+MAIN_GROUND_SYNC authority=6 bound=6 verified=6 assigned_frame=6809 query_frame=6810 rays=4225
+PLAYER_LOAD_READY version=6 stage= paused=True time=939.9666666666236
+PLAYER_SAVE_OK version=6 stage= time=940.3666666666236
+PLAYER_SAVE_OK version=6 stage= time=940.3666666666236
+MAIN_GROUND_SYNC authority=6 bound=6 verified=6 assigned_frame=6817 query_frame=6818 rays=4225
+PLAYER_LOAD_READY version=6 stage= paused=True time=940.3666666666236
+LEVEL_JOB_START id=level-1 worker=Robot_Zhulei_3 base=6 station=(19.475, 0.3441453, -8) distance=2.068
+LEVEL_JOB_ARRIVED id=level-1 seconds=1.467 position=(19.508268, 0.35818383, -8.188686)
+BOOTSTRAP_TEST_PROGRESS step=24 stage= time=964.4 cargo=0 reason=
+BOOTSTRAP_TEST_PROGRESS step=24 stage= time=1031.0 cargo=0 reason=
+PLAYER_SAVE_OK version=6 stage=Working time=1062.3666666666493
+BOOTSTRAP_TEST_PROGRESS step=24 stage= time=1097.7 cargo=0 reason=
+BOOTSTRAP_TEST_PROGRESS step=24 stage= time=1164.4 cargo=0 reason=
+BOOTSTRAP_TEST_PROGRESS step=24 stage= time=1231.0 cargo=0 reason=
+PLAYER_SAVE_OK version=6 stage=Working time=1232.1000000001177
+MAIN_GROUND_SYNC authority=6 bound=6 verified=6 assigned_frame=9010 query_frame=9011 rays=4225
+PLAYER_LOAD_READY version=6 stage=Working paused=True time=1232.1000000001177
+MAIN_GROUND_COMMIT authority=7 bound=7 paused=True
+LEVEL_JOB_COMMIT id=level-1 status=Committed applied=7 verified=none
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=9131 query_frame=9132 rays=15
+LEVEL_JOB_END id=level-1 stage=Completed base=6 applied=7 current=7 message=整平已提交，物理验证完成
+LEVEL_JOB_START id=level-2 worker=Robot_Zhulei_3 base=7 station=(19.475, 0.14529657, -4) distance=3.948
+LEVEL_JOB_ARRIVED id=level-2 seconds=2.667 position=(19.481625, 0.15164885, -4.055238)
+LEVEL_JOB_END id=level-2 stage=Cancelled base=7 applied=none current=7 message=已取消；未改造地形
+PLAYER_SAVE_OK version=7 stage=Cancelled time=1294.7666666668342
+BOOTSTRAP_TEST PASS cycles=2 built=7 levelReturn=true time=1294.8 elapsed=1294.7 source=81a9bba6515580a006f873a4eb17df8afc68207429c5d28c1f68c2861730e723
