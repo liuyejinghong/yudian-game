@@ -225,7 +225,7 @@ public partial class PlayerController : Node
 
     // ---- 相机 ----
 
-    // 当前朝向的水平前/右方向（手势与按钮平移共用；拖动平移走鼠标射线投点，不经此）。
+    // 水平视轴供键盘、手势和按钮共用。
     private (Vector3 Forward, Vector3 Right) FlatAxes()
     {
         var forward = -_cameraBasis.Z;
@@ -253,7 +253,7 @@ public partial class PlayerController : Node
         _camera.GlobalTransform = new Transform3D(_cameraBasis, _focus + _cameraBasis.Z * _distance);
     }
 
-    // ---- 镜头按钮动作：只改相机字段，焦点限幅由每帧 UpdateCamera 收口，不碰选择/资源/任务 ----
+    // ---- 镜头按钮 ----
     private void PanCamera(float side, float forward)
     {
         var axes = FlatAxes();
@@ -451,7 +451,7 @@ public partial class PlayerController : Node
         info.AddChild(_supportLabel);
         info.AddChild(_facilityLabel);
 
-        var hints = new Label { Text = "WASD／方向键或双指平移 · 右键拖动 · 滚轮或捏合缩放 · Q/E 旋转 · F 定位 · Esc 清除选区 · 底栏镜头按钮",
+        var hints = new Label { Text = "按住 WASD／方向键平移 · 右键拖动或双指平移 · 滚轮／捏合缩放 · 按住 Q/E 旋转 · F 定位 · Esc 清除选区",
             AnchorLeft = 0, AnchorRight = 1, AnchorTop = 1, AnchorBottom = 1, OffsetTop = -160, OffsetBottom = -138,
             HorizontalAlignment = HorizontalAlignment.Center, MouseFilter = Control.MouseFilterEnum.Ignore };
         hints.AddThemeFontSizeOverride("font_size", 14); hud.AddChild(hints);
@@ -540,8 +540,7 @@ public partial class PlayerController : Node
         ContentMarginLeft = 12, ContentMarginRight = 12, ContentMarginTop = 6, ContentMarginBottom = 6,
     };
 
-    // 所有命令按钮统一走冷却包装：双击的第二下被丢弃，不重复提交。镜头按钮只复用样式，
-    // 传 commandCooldown=false：既不消费也不受工程冷却，连点每次生效。
+    // 工程命令防双击；镜头操作不占用命令冷却。
     private Button MakeButton(string name, string text, Action command, bool accent = false, bool commandCooldown = true)
     {
         var button = new Button

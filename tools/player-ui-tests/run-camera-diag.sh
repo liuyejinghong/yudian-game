@@ -8,7 +8,8 @@ DOTNET="${YUDIAN_DOTNET:-$HOME/.dotnet/dotnet}"
 GODOT="${YUDIAN_GODOT:-$HOME/Applications/Godot.app/Contents/MacOS/Godot}"
 export DOTNET_ROOT="${DOTNET_ROOT:-$(dirname "$DOTNET")}"
 export PATH="$(dirname "$DOTNET"):$PATH"
+"$DOTNET" build
 export YUDIAN_CAMERA_DIAG_ONLY=1
 exec "$GODOT" --headless --path . \
   --script res://scripts/PlayerUI/PlayerUiSelfTest.cs \
-  --log-file "/private/tmp/yudian-camera-01-diag-engine-$(date +%Y%m%d%H%M%S).log"
+  --log-file "${TMPDIR:-/tmp}/yudian-camera-diag-$(date +%Y%m%d%H%M%S)-$$.log"

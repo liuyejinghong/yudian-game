@@ -51,7 +51,8 @@ cd /path/to/yudian-game
 ```
 
 输出行前缀 `PLAYER_UI_SELFTEST CAMUI`（按钮验收）与 `PLAYER_UI_SELFTEST CAMERADIAG`
-（输入诊断），在真实 Main 场景 + 现有 PlayerController 上驱动真实 GUI/输入事件：
+（输入诊断），在 Main 场景和现有 PlayerController 上驱动合成点击/输入事件。
+两个入口均先构建，避免验证旧程序集。
 
 - 相机按钮验收（CAMUI）：九按钮（前/后/左/右、拉近/拉远、左转/右转、复位）建立与
   视口内不裁切；单次点击沿当前朝向明显平移/约15度旋转；连点不受工程冷却且镜头按钮
@@ -59,7 +60,7 @@ cd /path/to/yudian-game
   镜头操作不下达任务；保留键盘焦点。
 - REQUIRE_GESTURES：`MagnifyGesture`（捏合缩放）与 `PanGesture`（双指平移）必须驱动
   相机（合成手势只作接缝验证，不替代物理触控板验收）。
-- 同帧 press+release 短按 Q/Right：自动化边界（真人按键必跨帧），只记录前后
+- 同帧 press+release 短按 Q/Right：自动化边界，只记录前后
   origin/basis 与 `Input.IsKeyPressed` 采样，不判红。
 - 跨帧短按（press → 2帧 → release）与人级短按 Q（60ms）、跨帧短按 Right：轮询路径
   （`UpdateCamera` 逐帧 `Input.IsKeyPressed`），丢失则红。

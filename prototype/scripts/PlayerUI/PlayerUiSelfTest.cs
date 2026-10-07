@@ -302,7 +302,7 @@ public partial class PlayerUiSelfTest : SceneTree
             GD.Print("PLAYER_UI_SELFTEST result " + line);
     }
 
-    // ---- CAMERA-01 相机按钮验收：全部经真实 GUI 点击驱动真实控制器，断言可见相机/世界状态 ----
+    // 合成点击驱动主场景控制器；最终包真实鼠标另验。
     private async System.Threading.Tasks.Task CameraUiChecks()
     {
         GD.Print("PLAYER_UI_SELFTEST CAMUI begin");
@@ -362,8 +362,8 @@ public partial class PlayerUiSelfTest : SceneTree
         var b0 = _camera.GlobalBasis.Z;
         Click(rotR!.GetGlobalRect().GetCenter());
         await Frames(2);
-        float rot = b0.AngleTo(_camera.GlobalBasis.Z);
-        Check(rot > 0.15f && rot < 0.38f, "『右转』单次约15度: " + F(rot) + "rad");
+        float rot = MathF.Abs(Xz(b0).AngleTo(Xz(_camera.GlobalBasis.Z)));
+        Check(MathF.Abs(rot - Mathf.Pi / 12f) < 0.01f, "『右转』单次15度: " + F(rot) + "rad");
 
         // 旋转后『前』沿新朝向平移
         want = Xz(FlatForward()).Normalized();
@@ -377,8 +377,8 @@ public partial class PlayerUiSelfTest : SceneTree
         b0 = _camera.GlobalBasis.Z;
         for (int i = 0; i < 3; i++) Click(rotR.GetGlobalRect().GetCenter());
         await Frames(2);
-        rot = b0.AngleTo(_camera.GlobalBasis.Z);
-        Check(rot > 0.6f && rot < 0.95f, "连点三次『右转』约45度不受工程冷却: " + F(rot) + "rad");
+        rot = MathF.Abs(Xz(b0).AngleTo(Xz(_camera.GlobalBasis.Z)));
+        Check(MathF.Abs(rot - Mathf.Pi / 4f) < 0.01f, "连点三次『右转』45度不受工程冷却: " + F(rot) + "rad");
 
         // 缩放两侧边界
         Click(reset.GetGlobalRect().GetCenter());
@@ -386,13 +386,13 @@ public partial class PlayerUiSelfTest : SceneTree
         for (int i = 0; i < 22; i++) Click(zoomIn!.GetGlobalRect().GetCenter());
         await Frames(2);
         o = _camera.GlobalPosition;
-        Click(zoomIn.GetGlobalRect().GetCenter());
+        Click(zoomIn!.GetGlobalRect().GetCenter());
         await Frames(2);
         Check(o.DistanceTo(_camera.GlobalPosition) < 0.05f, "连续拉近到下限后不再变化");
         for (int i = 0; i < 30; i++) Click(zoomOut!.GetGlobalRect().GetCenter());
         await Frames(2);
         o = _camera.GlobalPosition;
-        Click(zoomOut.GetGlobalRect().GetCenter());
+        Click(zoomOut!.GetGlobalRect().GetCenter());
         await Frames(2);
         Check(o.DistanceTo(_camera.GlobalPosition) < 0.05f, "连续拉远到上限后不再变化");
 
@@ -408,7 +408,7 @@ public partial class PlayerUiSelfTest : SceneTree
         for (int i = 0; i < 80; i++) Click(back!.GetGlobalRect().GetCenter());
         await Frames(2);
         o = _camera.GlobalPosition;
-        Click(back.GetGlobalRect().GetCenter());
+        Click(back!.GetGlobalRect().GetCenter());
         await Frames(2);
         Check(Xz(o - _camera.GlobalPosition).Length() < 0.05f, "平移到后限后不再变化");
 
@@ -436,11 +436,7 @@ public partial class PlayerUiSelfTest : SceneTree
         GD.Print("PLAYER_UI_SELFTEST CAMUI end");
     }
 
-    // ---- CAMERA-01 镜头输入诊断 ----
-    // 只测真实场景+PlayerController 的输入接缝，不改实现：Q/E/WASD/方向键走 UpdateCamera
-    // 逐帧轮询 Input.IsKeyPressed；鼠标按钮/滚轮走 _UnhandledInput 事件（PushInput 同步传播）；
-    // 触控板 PanGesture/MagnifyGesture 源码无处理。同帧 press+release 是自动化边界（真人按键
-    // 必跨帧），只记录不判红；红断言只留给跨帧短按轮询丢失。
+    // 同帧按下/释放用于诊断自动化边界，不作为玩家失效证据。
     private async System.Threading.Tasks.Task CameraDiag()
     {
         GD.Print("PLAYER_UI_SELFTEST CAMERADIAG begin accumulated_input=" + Input.UseAccumulatedInput);
