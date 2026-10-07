@@ -40,6 +40,8 @@ public partial class PlayerUiSelfTest : SceneTree
         try
         {
             await WaitFor(() => _world.ReadPlayerState().Ready, 60, "世界就绪");
+            Root.Size = new Vector2I(1280, 800);
+            GD.Print("PLAYER_UI_SELFTEST viewport=" + Root.Size);
             _camera = Root.GetCamera3D() ?? throw new InvalidOperationException("主场景没有当前相机");
             _ui = (PlayerController)_world.FindChild("PlayerController", true, false)!;
             await Frames(3);
@@ -331,7 +333,7 @@ public partial class PlayerUiSelfTest : SceneTree
         var baseOrigin = _camera.GlobalPosition;
         var baseBasisZ = _camera.GlobalBasis.Z;
 
-        // 布局：整行与每个按钮都在视口内（1280x800 不裁切）
+        // 布局：镜头行与按钮在1280x800测试窗口内。
         var view = Root.GetVisibleRect().Size;
         bool InView(Control c)
         {
