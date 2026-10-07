@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PLAYER_UI_SELFTEST begin
+MAIN_GROUND_IDENTITY build_sha256=0dba3649823112362f439c0018cc7170e57cb8aa5bb92ff41226af8cd3405a82 loaded_mvid=a049adf0-0f58-4cac-bb48-1e26e06a796b CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_UI_SELFTEST mode=camera-diag-only
+PLAYER_UI_SELFTEST CAMUI begin
+PLAYER_UI_SELFTEST FAIL 九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）
+PLAYER_UI_SELFTEST NOT_RUN 镜头按钮操作（按钮未建立）
+PLAYER_UI_SELFTEST CAMERADIAG begin accumulated_input=True
+PLAYER_UI_SELFTEST CAMERADIAG initial origin=25.12,28.80,26.30 basisZ=0.46,0.63,0.63
+PLAYER_UI_SELFTEST CAMERADIAG same-frame Q rotation=0rad originBefore=25.12,28.80,26.30 originAfter=25.12,28.80,26.30 IsKeyPressed(preParse/afterPress/afterRelease/postFlush)=False/False/False/False
+PLAYER_UI_SELFTEST CAMERADIAG same-frame Right move=0m originAfter=25.12,28.80,26.30 IsKeyPressed(preParse/afterPress/afterRelease)=False/False/False
+PLAYER_UI_SELFTEST CAMERADIAG frame-span Q(2帧) rotation=0.01356rad polledDuringPress=True
+PLAYER_UI_SELFTEST PASS 跨帧短按Q被轮询到(旋转非零): 0.01356rad polled=True
+PLAYER_UI_SELFTEST CAMERADIAG frame-span Right(2帧) move=0.9282m polledDuringPress=True
+PLAYER_UI_SELFTEST PASS 跨帧短按Right被轮询到(平移非零): 0.9282m polled=True
+PLAYER_UI_SELFTEST CAMERADIAG short Q(60ms) rotation=0.04408rad polled=True
+PLAYER_UI_SELFTEST PASS 人级短按Q(60ms)旋转可见(期望约0.06rad): 0.04408
+PLAYER_UI_SELFTEST PASS 长按Q(0.3s)旋转显著
+PLAYER_UI_SELFTEST PASS 长按Right(0.3s)平移显著
+PLAYER_UI_SELFTEST CAMERADIAG wheel-up x1 originΔ=5.506m
+PLAYER_UI_SELFTEST PASS 滚轮上滚拉近可见: 5.506m
+PLAYER_UI_SELFTEST CAMERADIAG MagnifyGesture factor=1.25 originΔ=0m basisΔ=0rad
+PLAYER_UI_SELFTEST CAMERADIAG PanGesture delta=(240,0) originΔ=0m basisΔ=0rad
+PLAYER_UI_SELFTEST FAIL MagnifyGesture 捏合缩放驱动相机: Δ=0m
+PLAYER_UI_SELFTEST FAIL PanGesture 双指平移驱动相机: Δ=0m
+PLAYER_UI_SELFTEST PASS 右键拖动平移可见: 0.9413m
+PLAYER_UI_SELFTEST CAMERADIAG 右键拖动=0.9413m HUD面板释放后无键移动Δ=0m → 无残留
+PLAYER_UI_SELFTEST CAMERADIAG end
+PLAYER_UI_SELFTEST summary checks=11 failures=3
+PLAYER_UI_SELFTEST result FAIL 九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）
+PLAYER_UI_SELFTEST result NOT_RUN 镜头按钮操作（按钮未建立）
+PLAYER_UI_SELFTEST result PASS 跨帧短按Q被轮询到(旋转非零): 0.01356rad polled=True
+PLAYER_UI_SELFTEST result PASS 跨帧短按Right被轮询到(平移非零): 0.9282m polled=True
+PLAYER_UI_SELFTEST result PASS 人级短按Q(60ms)旋转可见(期望约0.06rad): 0.04408
+PLAYER_UI_SELFTEST result PASS 长按Q(0.3s)旋转显著
+PLAYER_UI_SELFTEST result PASS 长按Right(0.3s)平移显著
+PLAYER_UI_SELFTEST result PASS 滚轮上滚拉近可见: 5.506m
+PLAYER_UI_SELFTEST result FAIL MagnifyGesture 捏合缩放驱动相机: Δ=0m
+PLAYER_UI_SELFTEST result FAIL PanGesture 双指平移驱动相机: Δ=0m
+PLAYER_UI_SELFTEST result PASS 右键拖动平移可见: 0.9413m

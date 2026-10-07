@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+ERROR: [Yudian] InvalidOperationException: MAIN_GROUND_CHECK replay retains time, pause and terrain
+   at: void Yudian.Main.Fail(System.Exception) (<PROJECT_ROOT>/camera-release-r2/prototype/scripts/Main.cs:541)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string)
+       [1] void Yudian.Main.Fail(System.Exception) (<PROJECT_ROOT>/camera-release-r2/prototype/scripts/Main.cs:541)
+       [2] void Yudian.Main._PhysicsProcess(double) (<PROJECT_ROOT>/camera-release-r2/prototype/scripts/Main.LiveTerrain.cs:109)
+       [3] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [4] bool Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&)
+       [5] bool Yudian.Main.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (<PROJECT_ROOT>/camera-release-r2/prototype/.godot/mono/temp/obj/ExportRelease/osx-arm64/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Main_ScriptMethods.generated.cs:940)
+       [6] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*)
+MAIN_GROUND_IDENTITY build_sha256=35f475adf8a0e25094e76cb5774c021611ae5b17fa633f2eb024919e563f7a14 loaded_mvid=bf9eddae-d0af-4132-9e01-c15d58acb1c0 CLR=8.0.31 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=7 query_frame=8 rays=4225
+PLAYER_LOAD_READY version=7 stage=Cancelled paused=False time=1294.7666666668342
+MAIN_GROUND_PAUSED MAIN_GROUND_CHECK replay retains time, pause and terrain

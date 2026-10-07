@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-07",
+  "camera_status": "REVIEW",
+  "default_entry": "<PROJECT_ROOT>/\u8bd5\u73a9\u5305/D1.1 2026-10-07 r3/Yudian.app",
+  "candidate_git_head": "880d04d860713f686aa43e4c186b433aa9338a4e",
+  "candidate_player_controller_sha256": "45f8f5c1898e2370c4cacf87f07b7f0b80f144c160e61e84adb09fa99b953bc4",
+  "candidate_dll_sha256": "35f475adf8a0e25094e76cb5774c021611ae5b17fa633f2eb024919e563f7a14",
+  "candidate_loaded_mvid": "bf9eddae-d0af-4132-9e01-c15d58acb1c0",
+  "user_save_count": 2,
+  "user_save_bytes_unchanged": true,
+  "final_gui_mouse": "NOT_RUN_MAC_LOCKED",
+  "physical_trackpad": "NOT_RUN",
+  "r4_gui_shutdown": "TERM_requested_engine_exit_134_not_normal_close"
+}

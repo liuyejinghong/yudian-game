@@ -7,7 +7,7 @@
 | 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | D1.0普通玩家场地/选址/真实整平/暂停/保存已集成新双击包，技术验收已收口；完整模块继续未完成 | 先P0镜头返修CAMERA-01，再D1.2采集加工/后续发展选择；D1.1自举证据保留；[本批证据](docs/engineering/reports/2026-10-07-d11-bootstrap-verification.md) |
 | 美术 | [美术 TODO](docs/art/production/todo.md) | A01实际取景/A03标记与表面候选已制作并在D1.0消费；素材父票REVIEW，所有者最终视觉未验 | 依据本批实际画面局部修正；D1.1按运输/建设/服务用途制作，U01独立局部修正；高保真仍需门槛 |
 
-2026-10-07所有者试玩反馈：镜头缩放、旋转和移动不可用。已在产研GAME-UX下重开[CAMERA-01镜头返修](docs/engineering/tasks/CAMERA-01.md)，P0、REWORK，排D1.2新玩法前；本轮登记未复现，不据已有合成输入自测宣称实际可用。
+2026-10-07所有者试玩反馈：镜头缩放、旋转和移动不可用。[CAMERA-01](docs/engineering/tasks/CAMERA-01.md)优先于D1.2，当前REVIEW：GLM已交镜头按钮/原生手势，1280×800 UI62项及原生候选恢复通过；最终鼠标验收受Mac锁屏阻止，根入口仍r3，未结票。[复验与留项](docs/engineering/reports/2026-10-07-camera-verification.md)。
 
 D1.1工程自举建设已收口，镜头可操作性返修优先处理；仍不称持续经营首玩。下一检查点为 **D1.2 可持续经营首玩**。D1.1 自举建设与真实保障 → D1.2 可持续经营/后续选择 → D2.0 竞争/勘探 → D2.1 本地委托/恢复 → D2.2 G1 → D3.0 有限扩张。P1 高保真生产切片和 R1 发行另过门槛；详细包规格用路线文档，不在此维护第二套逐行状态。
 
