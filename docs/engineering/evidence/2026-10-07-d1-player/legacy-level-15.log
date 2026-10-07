@@ -1,0 +1,127 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=b0ba4c04172ac8e2d44ec4ce6ba3c7b61d06a2c862e7d40d56ef16469d1c3a1c loaded_mvid=fe1a48c2-d023-4e95-9902-60edd01936a3 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+LEVEL_JOB_START id=level-1 worker=Robot_Zhulei_3 base=0 station=(12, 1.0912201, -5.775) distance=3.232
+LEVEL_JOB_TEST_STEP PASS 0
+LEVEL_JOB_ARRIVED id=level-1 seconds=2.000 position=(11.837152, 1.0612245, -5.6191688)
+LEVEL_JOB_TEST_STEP PASS 1
+LEVEL_JOB_TEST_STEP PASS 2
+LEVEL_JOB_END id=level-1 stage=Cancelled base=0 applied=none current=0 message=已取消；未改造地形
+LEVEL_JOB_START id=level-2 worker=Robot_Zhulei_3 base=0 station=(12, 1.0912201, -5.775) distance=0.225
+LEVEL_JOB_TEST_STEP PASS 3
+LEVEL_JOB_END id=level-2 stage=Failed base=0 applied=none current=0 message=60秒内未实际到场
+LEVEL_JOB_START id=level-3 worker=Robot_Zhulei_3 base=0 station=(12, 1.0912201, -5.775) distance=0.252
+LEVEL_JOB_TEST_STEP PASS 4
+LEVEL_JOB_END id=level-3 stage=Failed base=0 applied=none current=0 message=改造权限失效或已取消
+LEVEL_JOB_START id=level-4 worker=Robot_Zhulei_3 base=0 station=(12, 1.0912201, -5.775) distance=0.227
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+LEVEL_JOB_TEST_STEP PASS 5
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=303 query_frame=304 rays=13
+LEVEL_JOB_END id=level-4 stage=Failed base=0 applied=none current=1 message=地形版本已变化；原任务不自动改写范围
+LEVEL_JOB_START id=level-5 worker=Robot_Zhulei_3 base=1 station=(12, 1.0912201, -5.775) distance=0.227
+LEVEL_JOB_TEST_STEP PASS 6
+LEVEL_JOB_TEST_STEP PASS 7
+LEVEL_JOB_ARRIVED id=level-5 seconds=4.067 position=(11.835008, 1.061298, -5.61959)
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+LEVEL_JOB_TEST_STEP PASS 8
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Wangshan_4
+MAIN_GROUND_OCCUPIED Robot_Wangshan_4
+MAIN_GROUND_OCCUPIED Robot_Wangshan_4
+MAIN_GROUND_OCCUPIED Robot_Wangshan_4
+MAIN_GROUND_OCCUPIED Robot_Wangshan_4
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_OCCUPIED Robot_Tuoyun_3
+MAIN_GROUND_PAUSED synthetic level bind failure
+MAIN_GROUND_COMMIT authority=2 bound= paused=True
+LEVEL_JOB_COMMIT id=level-5 status=Committed applied=2 verified=none
+LEVEL_JOB_TEST_STEP PASS 9
+MAIN_GROUND_SYNC authority=2 bound=2 verified=2 assigned_frame=808 query_frame=809 rays=4225
+LEVEL_JOB_END id=level-5 stage=Completed base=1 applied=2 current=2 message=整平已提交，物理验证完成
+LEVEL_JOB_END id=level-6 stage=Completed base=2 applied=none current=2 message=无需改造；地形未增加版本
+LEVEL_JOB_TEST_STEP PASS 10
+MAIN_GROUND_COMMIT authority=3 bound=3 paused=True
+LEVEL_JOB_TEST_STEP PASS 11
+MAIN_GROUND_SYNC authority=3 bound=3 verified=3 assigned_frame=821 query_frame=822 rays=14
+LEVEL_JOB_START id=level-7 worker=Robot_Zhulei_3 base=3 station=(12, 1.0912199, -5.775) distance=0.527
+LEVEL_JOB_TEST_STEP PASS 12
+LEVEL_JOB_ARRIVED id=level-7 seconds=0.217 position=(11.892185, 1.0501374, -5.571252)
+MAIN_GROUND_COMMIT authority=4 bound=4 paused=True
+LEVEL_JOB_COMMIT id=level-7 status=Committed applied=4 verified=none
+LEVEL_JOB_END id=level-7 stage=Cancelled base=3 applied=4 current=4 message=已取消后续工作；已提交地形保留
+LEVEL_JOB_TEST_STEP PASS 13
+MAIN_GROUND_SYNC authority=4 bound=4 verified=4 assigned_frame=1017 query_frame=1018 rays=14
+LEVEL_JOB_SELF_TEST PASS steps=15 version=4 robots=12 grounded=12 continuous_seconds=3
+LEVEL_JOB_TEST_STEP PASS 14

@@ -14,7 +14,7 @@ int main(void) {
     if (!name) return 126;
     size_t available = sizeof(resolved) - (size_t)(++name - resolved);
     if (snprintf(name, available, "Yudian") >= (int)available) return 126;
-    execl(resolved, resolved, "--", "--live-terrain", (char *)NULL);
+    execl(resolved, resolved, (char *)NULL);
     perror("余电启动失败");
     return 126;
 }

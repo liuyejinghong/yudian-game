@@ -14,6 +14,7 @@ public partial class Main
     {
         public required string Id;
         public required TerrainPatch Patch;
+        public Vector3 Center;
         public GroundPatrol? Worker;
         public Vector3 Station;
         public WorkMeter Work = new(3);
@@ -38,15 +39,16 @@ public partial class Main
         _levelStatus = new Label(); panel.AddChild(_levelStatus);
     }
 
-    private void StartLevelJob()
+    private void StartLevelJob(float? centerX = null, float? centerZ = null, string? workerId = null)
     {
         if (_levelJob?.Active == true)
         { _levelNotice = "已有活动任务：" + _levelJob.Id; return; }
         if (!_groundReady || _groundFault || _groundVerified != _liveTerrain!.Current.Version)
         { _levelNotice = "等待地形物理恢复后下单"; return; }
-        var site = _cfg.Terrain.Mound.Position;
+        float[] site = [centerX ?? _cfg.Terrain.Mound.Position[0], centerZ ?? _cfg.Terrain.Mound.Position[1]];
+        if (_levelSequence == int.MaxValue) { _levelNotice = "任务编号达到上限，未下单"; return; }
         string id = "level-" + ++_levelSequence;
-        var job = new LevelJob { Id = id, Patch = GroundPatch(site[0], site[1], 0, id) };
+        var job = new LevelJob { Id = id, Patch = GroundPatch(site[0], site[1], 0, id), Center = new Vector3(site[0], 0, site[1]) };
         _levelJob = job; _levelNotice = "";
         if (!_liveTerrain.PermissionGranted || _liveTerrain.CancellationRequested)
         { FinishLevelJob(LevelStage.Failed, "未获改造权限或已取消"); return; }
@@ -57,6 +59,7 @@ public partial class Main
         Vector3[] candidates = [new(site[0] - offset, 0, site[1]), new(site[0] + offset, 0, site[1]),
             new(site[0], 0, site[1] - offset), new(site[0], 0, site[1] + offset)];
         float best = float.PositiveInfinity;
+        if (!_playerMode)
         foreach (var actor in _groundRobots.Where(x => x.Name.ToString().StartsWith("Robot_Zhulei_", StringComparison.Ordinal)))
             foreach (var station in candidates)
             {
@@ -64,11 +67,13 @@ public partial class Main
                     station.X + .35f >= s.OriginXM + (s.Columns - 1) * s.SpacingM ||
                     station.Z + .35f >= s.OriginZM + (s.Rows - 1) * s.SpacingM ||
                     TouchesFootprint(job.Patch, station.X, station.Z, .35f)) continue;
-                if (_facilityPositions.Select((p, i) => XzDistance(p, station) <= FacilityRadii[i % 6] + .35f).Any(x => x)) continue;
+                if (_facilityPositions.Select((p, i) => XzDistance(p, station) <= FacilityRadius(i) + .35f).Any(x => x)) continue;
                 float distance = XzDistance(actor.GlobalPosition, station);
                 if (distance >= best) continue;
                 job.Worker = actor; job.Station = station; best = distance;
             }
+        if (_playerMode)
+        { var selected = FindLevelWorker(job.Patch, job.Center, workerId); job.Worker = selected.Worker; job.Station = selected.Station; if (job.Worker != null) best = XzDistance(job.Worker.GlobalPosition, job.Station); }
         if (job.Worker == null) { FinishLevelJob(LevelStage.Failed, "没有筑垒或安全施工站"); return; }
         job.Station.Y = GroundHeight(job.Station.X, job.Station.Z);
         job.Worker.SetOrder(job.Station);

@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+MAIN_GROUND_IDENTITY build_sha256=fa52e0675e9292757e2323c7719d89a518c70f41f48ec19d8a4cf351d3eb2423 loaded_mvid=7af09742-a293-49f8-bdda-cc2e60725b9a CLR=10.0.12 display=macOS
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=2653 query_frame=2654 rays=4225
+PLAYER_LOAD_READY version=1 stage=Completed paused=True time=93.7333333333293
+LEVEL_JOB_START id=level-2 worker=Robot_Zhulei_1 base=1 station=(8.427248, 0.34952903, -16.8066) distance=4.646
+LEVEL_JOB_END id=level-2 stage=Cancelled base=1 applied=none current=1 message=已取消；未改造地形
+PLAYER_SAVE_OK version=1 stage=Cancelled time=93.7333333333293

@@ -23,6 +23,9 @@ public partial class Main
     private int[] _groundRayIndices = [];
     private float _groundRayTop, _groundRayBottom;
     private static readonly float[] FacilityRadii = [2.5f, 2f, 2.8f, 1.7f, 1.9f, 1.1f];
+    // Static canonical XZ bounds, rounded outward; service animation remains unavailable in D1.0.
+    private static readonly float[] PlayerFacilityRadii = [2.9f, 3f, 3.8f, 1.9f, 2.7f, 2.3f];
+    private float FacilityRadius(int i) => (_playerMode ? PlayerFacilityRadii : FacilityRadii)[i % 6];
 
     private void PrepareLiveTerrain()
     {
@@ -52,6 +55,7 @@ public partial class Main
     {
         _liveTerrain = new TerrainRegionView(); AddChild(_liveTerrain); _liveTerrain.Initialize(_liveInitial);
         _groundRayIndices = Enumerable.Range(0, _liveInitial.HeightsM.Count).ToArray();
+        if (_playerMode) return;
         var ui = new CanvasLayer(); AddChild(ui);
         var panel = new VBoxContainer { Position = new Vector2(20, 20) }; ui.AddChild(panel);
         panel.AddChild(new Label { Text = "余电 · 整平任务\n工程灰模；一名筑垒执行整平" });
@@ -91,17 +95,28 @@ public partial class Main
                 }
                 else _groundMessage = "等待物理同步或先恢复投影";
             }
-            TickLevelJob(delta);
+            if (_playerMode)
+            {
+                ProcessPlayerCommand();
+                FinishPlayerLoad();
+                if (!_userPaused && _loadPending == null && !_groundFault && _groundVerified == _liveTerrain.Current.Version)
+                { _playerTime += delta; TickLevelJob(delta); }
+            }
+            else TickLevelJob(delta);
+            if (_playerMode) TickPlayerVisuals(delta);
+            if (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1") PlayerTestStep();
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") LevelTestStep(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1") GroundTestStep();
-            _groundStatus!.Text = $"权威 v{_liveTerrain.Current.Version} · 绑定 v{_liveTerrain.ProjectionVersion?.ToString() ?? "未知"} · 物理 v{_groundVerified?.ToString() ?? "待验"}\n" +
+            if (_groundStatus != null) _groundStatus.Text = $"权威 v{_liveTerrain.Current.Version} · 绑定 v{_liveTerrain.ProjectionVersion?.ToString() ?? "未知"} · 物理 v{_groundVerified?.ToString() ?? "待验"}\n" +
                 $"机器人 {_groundRobots.Count} · 贴地 {_groundRobots.Count(x => x.IsOnFloor())} · 停滞 {_groundRobots.Count(x => x.Blocked)}\n" +
                 _groundMessage + "\n完整导航、设施建设、经济、保存尚未接入";
         }
         catch (Exception ex)
         {
             GroundFault(ex);
-            if (System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1" ||
+            if (_playerMode && _loadPending != null && _loadRollback != null) { FinishPlayerLoad(); return; }
+            if (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" ||
+                System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1" ||
                 System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") Fail(ex);
         }
     }
@@ -144,14 +159,18 @@ public partial class Main
 
     private TerrainPatch GroundPatch(float x, float z, double height, string? id = null)
     {
-        var s = _liveTerrain!.Current; var heights = s.HeightsM.ToArray();
+        return GroundPatch(_liveTerrain!.Current, x, z, height, id ?? "main-edit-" + ++_groundRequest);
+    }
+    private static TerrainPatch GroundPatch(TerrainSnapshot s, float x, float z, double height, string id)
+    {
+        var heights = s.HeightsM.ToArray();
         for (int r = 1; r < s.Rows - 1; r++)
             for (int c = 1; c < s.Columns - 1; c++)
             {
                 double dx = s.OriginXM + c * s.SpacingM - x, dz = s.OriginZM + r * s.SpacingM - z;
                 if (dx * dx + dz * dz <= 4) heights[r * s.Columns + c] = height;
             }
-        return GroundPatchFromHeights(s, heights, id ?? "main-edit-" + ++_groundRequest);
+        return GroundPatchFromHeights(s, heights, id);
     }
 
     private static TerrainPatch GroundPatchFromHeights(TerrainSnapshot s, double[] heights, string id)
@@ -188,10 +207,10 @@ public partial class Main
         if (_groundFault || _groundVerified != region.Current.Version || region.ProjectionVersion != region.Current.Version)
         { _groundMessage = "物理尚未验证，拒绝改造"; return null; }
         for (int i = 0; i < _facilityPositions.Count; i++)
-            if (TouchesFootprint(patch, _facilityPositions[i].X, _facilityPositions[i].Z, FacilityRadii[i % 6]))
+            if (TouchesFootprint(patch, _facilityPositions[i].X, _facilityPositions[i].Z, FacilityRadius(i)))
                 { RejectOccupied("设施 " + i); return null; }
         foreach (var actor in _groundRobots)
-            if (TouchesFootprint(patch, actor.GlobalPosition.X, actor.GlobalPosition.Z, .35f))
+            if (TouchesFootprint(patch, actor.GlobalPosition.X, actor.GlobalPosition.Z, actor.BodyRadius))
                 { RejectOccupied(actor.Name.ToString()); return null; }
         _groundRayIndices = Enumerable.Range(0, patch.HeightsM.Count).Where(i => patch.HeightsM[i] != patch.Base.HeightsM[i]).ToArray();
         try
@@ -213,7 +232,15 @@ public partial class Main
         _groundMessage = "占用拒绝：" + name + "；巡逻继续，可待离开后重试"; PauseGround(false);
         GD.Print("MAIN_GROUND_OCCUPIED " + name); return false;
     }
-    private void PauseGround(bool value) { foreach (var actor in _groundRobots) actor.Paused = value; }
+    private void PauseGround(bool value)
+    {
+        _projectionPaused = value;
+        foreach (var actor in _groundRobots)
+        {
+            actor.Paused = value || (_playerMode && (_userPaused || _loadPending != null));
+            actor.SetPhysicsProcess(!(_playerMode && _userPaused && _loadPending == null));
+        }
+    }
     private void GroundFault(Exception ex)
     {
         _groundFault = true; _groundVerified = null; PauseGround(true); _groundMessage = "投影故障，巡逻暂停：" + ex.Message;

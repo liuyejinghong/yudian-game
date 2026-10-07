@@ -2,6 +2,7 @@
 import hashlib
 import json
 import struct
+import subprocess
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[2]
@@ -47,7 +48,13 @@ for marker in capture['marker_native_height_checks']:
 for section in ('inputs', 'outputs'):
     for item in identity[section]:
         path = root / item['path']
-        assert path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == item['sha256'], item['path']
+        if section == 'inputs' and (item['path'].startswith('prototype/') or item['path'] == 'art/d1/verify.py'):
+            # R1 captured the old Main; verify its recorded input, not today's player code.
+            commit = identity['baseline_commit'] if item['path'].startswith('prototype/') else '81d786b2019b7c73da05d6b3cc2c0488b64e0cc1'
+            data = subprocess.check_output(['git', 'show', f"{commit}:{item['path']}"], cwd=root)
+        else:
+            data = path.read_bytes()
+        assert hashlib.sha256(data).hexdigest() == item['sha256'], item['path']
 assert 'A03_MARKERS_PASS 138/138' in (evidence / 'marker-check.log').read_text()
 log = (evidence / 'capture.log').read_text()
 assert 'A01_A03_CAPTURE_OK' in log and 'ERROR:' not in log and 'FAIL' not in log

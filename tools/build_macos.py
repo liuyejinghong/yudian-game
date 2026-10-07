@@ -67,7 +67,7 @@ def main():
     p.add_argument('--dotnet', type=Path, required=True)
     p.add_argument('--templates', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True, help='新的输出目录；不覆盖旧导出')
-    p.add_argument('--playable', action='store_true', help='双击进入当前整平试玩场景；原引擎入口保留')
+    p.add_argument('--playable', action='store_true', help='双击进入默认玩家场景；原引擎命令行入口保留')
     a = p.parse_args()
     a.output = a.output.resolve()
     a.output.mkdir(parents=True, exist_ok=True)
@@ -90,7 +90,7 @@ def main():
     for f in sorted(PROJECT.rglob('*')):
         rel = f.relative_to(PROJECT)
         if f.is_file() and rel.parts[0] not in ('.godot', 'export', 'benchmarks') and f.name != 'build-info.json':
-            if f.suffix in ('.cs', '.tscn', '.json', '.glb', '.gltf', '.bin', '.cfg', '.godot', '.csproj', '.import'):
+            if f.suffix in ('.cs', '.tscn', '.json', '.glb', '.gltf', '.bin', '.cfg', '.godot', '.csproj', '.import', '.gd', '.gdshader', '.tres'):
                 source[str(rel)] = sha(f)
                 if rel.parts[0] == 'assets': assets[str(rel)] = sha(f)
     identity = {
@@ -119,7 +119,7 @@ def main():
             info = plistlib.loads(plist.read_bytes())
             info.update(CFBundleExecutable='YudianLauncher', CFBundleDisplayName='余电')
             plist.write_bytes(plistlib.dumps(info))
-            identity['double_click_mode'] = 'live-terrain'
+            identity['double_click_mode'] = 'd1-player'
             identity['launcher_source_sha256'] = sha(ROOT / 'tools/macos_launcher.c')
         run(['/usr/bin/codesign', '--force', '--deep', '-s', '-', app])
         run(['/usr/bin/codesign', '--verify', '--deep', '--strict', '-v', app])
