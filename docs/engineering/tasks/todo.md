@@ -8,6 +8,7 @@
 
 | ID | 优先级 | 状态 | 依赖/解除条件 | 拟执行槽 | 交付与接受条件 | 来源/证据 |
 |---|---|---|---|---|---|---|
+| CAMERA-01 | P0 | REWORK | 2026-10-07所有者实际体验镜头缩放/旋转/移动不可用；现有代码有入口，原因未复现；排D1.2新玩法前 | GLM UI；Codex复现/集成/实际输入验收 | 复用现有镜头局部修复；最终默认包真实缩放/旋转/平移，新档/暂停/读档后可用；不误下工程命令，操作可发现 | [返修票](CAMERA-01.md) / GAME-UX / DT-E01 |
 | C01-D1.1 | P0 | ACCEPTED | 975916d规则与恢复独立审查；原生与最终包真实窗口通过 | Codex | 冻结有限自举账、设施实例、路径/共享预约、分离健康、schema2；首套投入安全证明，数值为可调探针 | [执行合同](../contracts/d11-bootstrap-r1.md) |
 | C02-D1.1 | P0 | ACCEPTED | r3同包九进程/签名与真实鼠标保存/重开/继续通过；默认入口已更新，仅签工程子片 | Codex | 从仅着陆器实建首套保障/加工，真实运输/两轮工作保障/保存重开；未测项明确，不以子件通过结项 | [本批证据](../reports/2026-10-07-d11-bootstrap-verification.md) |
 | E05-D1.1 | P1 | ACCEPTED | 14项账本、真实运输守恒与同包中断恢复通过；C02工程收口 | Codex账本 | 离散库存/载荷/现场/消耗守恒，预约不扣料，自己取消，坏档拒绝；当批保存 | [执行合同](../contracts/d11-bootstrap-r1.md) |
@@ -25,7 +26,7 @@
 | GAME-SAVE | P0 | IN_PROGRESS | C01-D1.0/E02-D1.0 的权威事实与暂停/恢复边界 | Codex持久化契约；GLM冻结codec/工具 | E04 从 D1.0 实际磁盘保存/跨进程恢复；E12 每批保存新增经营事实，E19 故障恢复；加载/投影屏障不解除用户暂停，无离线收益 | [模块框架](../module-roadmap.md) |
 | GAME-DELIVERY | P0 | IN_PROGRESS | 复用APP-START/QA/LIFE；C02 每个检查点具名集成 | Codex实机/默认包；GLM适配/工具；美术供资产 | 每批更新 Main/默认应用并核包身份、实际玩家行为与保存重开；E20 D2.2 联合性能，E22 R1 独立发行门槛；旧包不会随源码更新 | [模块框架](../module-roadmap.md) / ART-LINK/PERF |
 | C01-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex | 本批合同与真实接入一起交；重复/非法命令无副作用，UI/模型不拥有事实；下一检查点另冻 C01 子片 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
-| E01-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | GLM-Eng-A；Codex接入 | 普通镜头、对象选择、固定尺寸合法位置预览、下达/取消及真实目标卡；点击不穿透/重复不重提交/暂停仍可操作 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
+| E01-D1.0 | P0 | ACCEPTED | 历史d631a24/合同71cd485的限定接受保留；现役镜头实际操作验收重开为CAMERA-01，其他有效成果保留 | GLM-Eng-A；Codex接入 | 普通镜头、对象选择、固定尺寸合法位置预览、下达/取消及真实目标卡；点击不穿透/重复不重提交/暂停仍可操作 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) / [镜头返修](CAMERA-01.md) |
 | E02-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex | 固定整平改为有限可选区域，真实到场/有效工作/版本重验/物理确认；取消保留已改造，无效位置不提交；绕障未支持须明示拒绝 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
 | E03-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | GLM-Eng-B；Codex代理/注册 | 模型置于实体视觉子节点，六键由真实位移/工段驱动；保持根 identity/动作极值；合法切换先校验再复位，非法输入保留旧有效状态；未用 U01 不强行接运输 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
 | E04-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex；GLM可做冻结codec | 版本化磁盘快照保存地形/实体/时间/单任务；工作中及完成后退出重开一致，不重复完成；坏档/写失败保原档，物理屏障后恢复执行 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
