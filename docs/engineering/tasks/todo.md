@@ -1,6 +1,6 @@
 # 产研 TODO
 
-更新：2026-10-07；主控Codex。历史PR33/34的Main地形与固定整平接受保留；本批以main259a8bf冻结D1.0，普通镜头/选择/真实整平/低保真与最小磁盘保存已在新默认包接通。完整导航、设施建设/经济、经营状态保存与稳定性能继续未完成。
+更新：2026-10-08；主控Codex。历史PR33/34的Main地形与固定整平接受保留；本批以main259a8bf冻结D1.0，普通镜头/选择/真实整平/低保真与最小磁盘保存已在新默认包接通。D1.1自举建设现从main718905d进入隔离实施；导航/账本/建设/保障与schema2已实现并独立复验；975916d修复包九进程、同一真实存档的鼠标保存/重开/继续和正常入口通过；根应用已更新为D1.1。当前默认r5已完成镜头鼠标/按钮/滚轮入口复验；物理触控板与持续按键手感未签。D1.2仅做接缝预检，未派实施；真实采矿/加工/有后果的后续选择与本地候选尚未交付。稳定性能继续未完成。
 
 按[联合里程碑](../../roadmap/milestones.md)细化[九模块与D1—D3](../module-roadmap.md)。PR38/39/40是此前文档/TODO/编排整理；随后所有者明确批准D1.0实施和新美术项目会话，本轮已运行、重新导出并更新本机应用。实际证据及边界见[D1.0复验](../reports/2026-10-07-d1-player-verification.md)。
 
@@ -8,18 +8,25 @@
 
 | ID | 优先级 | 状态 | 依赖/解除条件 | 拟执行槽 | 交付与接受条件 | 来源/证据 |
 |---|---|---|---|---|---|---|
+| CAMERA-01 | P0 | ACCEPTED | r5实际鼠标按钮/滚动、暂停/边界复位、保存关窗重开后镜头通过；正常入口已切r5，原档不变；仅接受鼠标入口，触控板/真人按住键盘手感未签 | GLM UI；Codex复现/集成/实际输入验收 | 缩放/旋转/平移可见，新档/暂停/读档后可用；不误下工程命令，操作可发现；原设备根因不因合成手势通过而结论化 | [返修票](CAMERA-01.md) / [复验](../reports/2026-10-07-camera-verification.md) / GAME-UX / DT-E01 |
+| C01-D1.1 | P0 | ACCEPTED | 975916d规则与恢复独立审查；原生与最终包真实窗口通过 | Codex | 冻结有限自举账、设施实例、路径/共享预约、分离健康、schema2；首套投入安全证明，数值为可调探针 | [执行合同](../contracts/d11-bootstrap-r1.md) |
+| C02-D1.1 | P0 | ACCEPTED | r3同包九进程/签名与真实鼠标保存/重开/继续通过；默认入口已更新，仅签工程子片 | Codex | 从仅着陆器实建首套保障/加工，真实运输/两轮工作保障/保存重开；未测项明确，不以子件通过结项 | [本批证据](../reports/2026-10-07-d11-bootstrap-verification.md) |
+| E05-D1.1 | P1 | ACCEPTED | 14项账本、真实运输守恒与同包中断恢复通过；C02工程收口 | Codex账本 | 离散库存/载荷/现场/消耗守恒，预约不扣料，自己取消，坏档拒绝；当批保存 | [执行合同](../contracts/d11-bootstrap-r1.md) |
+| E06-D1.1 | P1 | ACCEPTED | GLM78项纯检查；Main绕行/围挡阻塞释放、读档与撤障重试通过；双机竞争另验 | GLM导航；Codex原生/占用 | 代理在场内、绕障/窄口/坡度拒绝、地形/设施版本失效，真实到站，共用工位及有界冲突 | [导航检查](../../../tools/navigation-tests/README.md) |
+| E07-E09-D1.1 | P0 | ACCEPTED | 单活动工程/有限出力/真实供电保障与两轮阈值样本通过；未签自然平衡 | Codex规则；GLM UI | 实取卸货/设施能力/付费电缆/能量耐久分离；取消重试、夜间安全等待、两轮保障、坏档不破坏当前世界 | [执行合同](../contracts/d11-bootstrap-r1.md) |
+| E12-D1.1 | P0 | ACCEPTED | 同包四类跨进程恢复及真实窗口通过；角点误拒绝修复，禁用碰撞体反例仍拒绝 | Codex | 取货后/落成前/维修中跨进程恢复，无重复交接/耗料，保存保上一有效档；所有新增事实同批交付 | [执行合同](../contracts/d11-bootstrap-r1.md) |
 | PLAYER-SLICE | P0 | IN_PROGRESS | 先 C01-D1.0 与本批应用范围；保留 LEVEL-JOB/MAIN-GROUND/APP-START | Codex集成/实机；GLM模块实现 | D1.0 先交可操作场地；D1.1 自举建设，D1.2 缺料经营与至少两种有后果的发展选择；D1/D2 按版本单独验收，不以固定整平签经营首玩 | [模块/版本框架](../module-roadmap.md) / [产品§14](../../product/product-definition.md#144-内部验证顺序) |
 | GAME-UX | P0 | IN_PROGRESS | D1玩家命令/世界查询与资源/目标反馈合同 | GLM UI/输入；Codex接入 | 镜头/选择/预览/目标看板与干预，显示真实原因；主场景与实际应用可操作，不只UI样板 | [模块框架](../module-roadmap.md) |
 | GAME-WORLD | P0 | IN_PROGRESS | D1.0 复用已接受单区域；C01/E02 冻结合法范围与已知视图 | Codex权威状态；GLM确定子件 | D1.0 有限选区，D1.2 已知矿源；D2 获准实际勘探，D3 有限区域扩张；矿点空间/情报归 WORLD，矿量归 RESOURCES | [模块框架](../module-roadmap.md) / [产品§5](../../product/product-definition.md) |
-| GAME-RESOURCES | P1 | DRAFT | D1.1 C01 物料/归属/交易合同；D1.0 不需先实现账本 | Codex账/提交；GLM冻结规则子件 | E05/E07/E10 真实库存/载荷/预留/在途与净缺口；建造/维修同账结算，幂等守恒；D1.1 起新增事实当批保存 | [模块框架](../module-roadmap.md) |
+| GAME-RESOURCES | P1 | IN_PROGRESS | D1.1 C01 物料/归属/交易合同；D1.0 不需先实现账本 | Codex账/提交；GLM冻结规则子件 | E05/E07/E10 真实库存/载荷/预留/在途与净缺口；建造/维修同账结算，幂等守恒；D1.1 起新增事实当批保存 | [模块框架](../module-roadmap.md) |
 | GAME-BUILD | P0 | IN_PROGRESS | D1选址/成本/目标/执行接缝，已有LEVEL-JOB | Codex工程状态；GLM适配 | 玩家设施建设、必要整平、材料与工序、建成能力真实改变；取消保留已发生结果 | [模块框架](../module-roadmap.md) |
 | GAME-ROBOTS | P1 | IN_PROGRESS | D1.0 原生订单/到场复用；D1.1 E06 有限路线/工位合同 | GLM执行子件；Codex协作/接入 | D1.0 有限合法站位与直线受阻拒绝；D1.1 路线、运输和服务位共用真实运动；D2 竞争/变化，不以固定巡逻代替调度 | [模块框架](../module-roadmap.md) |
-| GAME-SUPPORT | P1 | DRAFT | D1.1 物料/供能/服务位接缝；v0.4；救援未定只停对应子片 | Codex关键状态；GLM确定子件 | E09 从自举即纳入耗电/磨损/供电/回充/维修；D2 E17 动态预算与真实送回；充电不修耐久，维修不赠电 | [模块框架](../module-roadmap.md) / [保障](../../product/energy-return-and-rescue.md) |
+| GAME-SUPPORT | P1 | IN_PROGRESS | D1.1 物料/供能/服务位接缝；v0.4；救援未定只停对应子片 | Codex关键状态；GLM确定子件 | E09 从自举即纳入耗电/磨损/供电/回充/维修；D2 E17 动态预算与真实送回；充电不修耐久，维修不赠电 | [模块框架](../module-roadmap.md) / [保障](../../product/energy-return-and-rescue.md) |
 | GAME-GOALS | P1 | DRAFT | D1.2 E11 有界真实目标链；E14 本地候选从 D1.1 合同试验起步 | Codex计划/权限；GLM纯适配/harness | 净缺口/合法前置/保护与授权同源；本地候选实际参与解释/选择/重规划，采用后接真实任务；D2 正式本地入口和晚到结果重验 | [模块框架](../module-roadmap.md) / [T4 #7](https://github.com/liuyejinghong/yudian-game/issues/7) |
 | GAME-SAVE | P0 | IN_PROGRESS | C01-D1.0/E02-D1.0 的权威事实与暂停/恢复边界 | Codex持久化契约；GLM冻结codec/工具 | E04 从 D1.0 实际磁盘保存/跨进程恢复；E12 每批保存新增经营事实，E19 故障恢复；加载/投影屏障不解除用户暂停，无离线收益 | [模块框架](../module-roadmap.md) |
 | GAME-DELIVERY | P0 | IN_PROGRESS | 复用APP-START/QA/LIFE；C02 每个检查点具名集成 | Codex实机/默认包；GLM适配/工具；美术供资产 | 每批更新 Main/默认应用并核包身份、实际玩家行为与保存重开；E20 D2.2 联合性能，E22 R1 独立发行门槛；旧包不会随源码更新 | [模块框架](../module-roadmap.md) / ART-LINK/PERF |
 | C01-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex | 本批合同与真实接入一起交；重复/非法命令无副作用，UI/模型不拥有事实；下一检查点另冻 C01 子片 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
-| E01-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | GLM-Eng-A；Codex接入 | 普通镜头、对象选择、固定尺寸合法位置预览、下达/取消及真实目标卡；点击不穿透/重复不重提交/暂停仍可操作 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
+| E01-D1.0 | P0 | ACCEPTED | 历史d631a24/合同71cd485的限定接受保留；现役镜头实际操作验收重开为CAMERA-01，其他有效成果保留 | GLM-Eng-A；Codex接入 | 普通镜头、对象选择、固定尺寸合法位置预览、下达/取消及真实目标卡；点击不穿透/重复不重提交/暂停仍可操作 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) / [镜头返修](CAMERA-01.md) |
 | E02-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex | 固定整平改为有限可选区域，真实到场/有效工作/版本重验/物理确认；取消保留已改造，无效位置不提交；绕障未支持须明示拒绝 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
 | E03-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | GLM-Eng-B；Codex代理/注册 | 模型置于实体视觉子节点，六键由真实位移/工段驱动；保持根 identity/动作极值；合法切换先校验再复位，非法输入保留旧有效状态；未用 U01 不强行接运输 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
 | E04-D1.0 | P0 | ACCEPTED | 本批运行源d631a24；合同71cd485；真实应用/原生检查/reviewer与最终architect通过，限定D1.0 | Codex；GLM可做冻结codec | 版本化磁盘快照保存地形/实体/时间/单任务；工作中及完成后退出重开一致，不重复完成；坏档/写失败保原档，物理屏障后恢复执行 | [D1.0复验](../reports/2026-10-07-d1-player-verification.md) / [合同](../contracts/d1-player-r1.md) |
@@ -93,3 +100,5 @@ MAIN-GROUND本波已合并[PR33](https://github.com/liuyejinghong/yudian-game/pu
 PR34本波已合并，精确head b79860a、merge 8bcefb1；主工作树重新编译0警告0错误与15步窄烟测exit0/12贴地，GLM两会话已结束。父#6与PERF-01保持未完成。
 
 APP-START已合并[PR35](https://github.com/liuyejinghong/yudian-game/pull/35)：head8a2c986、merge115f1c7，main同步；本机余电.app入口可双击，固定试玩包保留。
+
+2026-10-07 D1.1工程、同包原生与实际窗口复验已完成；六工程子片限定ACCEPTED，根入口已切到975916d修复包。下一批D1.2缺料生产与有后果的发展选择；详细限定与失败修复见[D1.1复验](../reports/2026-10-07-d11-bootstrap-verification.md)。不扩签全部模块、自然平衡或联合视觉。

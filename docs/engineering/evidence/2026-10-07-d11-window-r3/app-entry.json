@@ -1,0 +1,37 @@
+{
+  "source_commit": "975916deef138360114cc15c8e2fb28634c4c934",
+  "final_app": "<PROJECT_ROOT>/\u8bd5\u73a9\u5305/D1.1 2026-10-07 r3/Yudian.app",
+  "root_entry": "<PROJECT_ROOT>/\u4f59\u7535.app",
+  "entry_switch": "PASS",
+  "old_app_preserved": "<PROJECT_ROOT>/\u8bd5\u73a9\u5305/D1.0 2026-10-07/Yudian.app",
+  "old_entry_preserved": "<PROJECT_ROOT>/\u4f59\u7535-D1.0-2026-10-07.app",
+  "original_save_bytes_unchanged": true,
+  "original_save_sha256": {
+    "d11-player-v2.json": "b017d5a017a8bb484ea6bae01c00825d06c3d7fb7de186bc31f41cdb161985c3",
+    "d1-player-v1.json": "4ac66aa46497c663c5173522ab7e9263e79571f42338dc921b84acc53c72744b"
+  },
+  "schema2_slot": "user://saves/d11-player-v2.json",
+  "final_package_gui": {
+    "status": "PASS",
+    "tested_inputs": true,
+    "actions": "CUA: load real interrupted repair cable save; continue cable completion; pause/save/close; reopen/load completed state; normal root entry start/load original solar save/close without save",
+    "private_interrupted_save_sha256": "a6489bcdc43e386d4b2397254a2c85ddfa8b69710a92268c86f79ea8c3a4c4d5",
+    "dll_sha256": "8627a3608be32bf79a5bbe6c989158c9b33e53048c357a15e51c2a105a779ccb",
+    "loaded_mvid": "d1b85c2b-2774-42f0-9dae-f2d337e9b483",
+    "clr": "8.0.31",
+    "observed_stock_iron_copper_parts_cable_kit": [
+      29,
+      18,
+      33,
+      50,
+      9
+    ],
+    "restored_interrupted_time": 1441.4333333323511,
+    "saved_completed_time": 1474.5999999989876,
+    "closed_sessions_exit": [
+      0,
+      0
+    ],
+    "normal_entry_original_save_time": 580.3333333331342
+  }
+}

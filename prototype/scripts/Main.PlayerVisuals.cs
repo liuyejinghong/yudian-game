@@ -31,11 +31,12 @@ public partial class Main
                 if (direction.X * direction.X + direction.Z * direction.Z > .0001f)
                     actor.Rotation = new Vector3(0, Mathf.Atan2(-direction.X, -direction.Z), 0);
             }
-            string state = frozen ? visual.State : working ? "work" : moving ? "move" : "idle";
+            string state = BootstrapEnabled ? BaseVisualState(actor,moving) : frozen ? visual.State : working ? "work" : moving ? "move" : "idle";
             double step = state == "move" ? moved.Length() / 1.6 : delta;
             visual.Apply(state, step, frozen);
             _playerVisuals[actor] = (visual, actor.GlobalPosition);
         }
+        if (BootstrapEnabled) TickHaulerVisuals(delta, frozen);
     }
     private void RestorePlayerVisuals()
     {
@@ -43,10 +44,11 @@ public partial class Main
         {
             if (!_playerVisuals.TryGetValue(actor, out var item)) continue;
             var job = _levelJob?.Worker == actor ? _levelJob : null;
-            string state = job?.Stage == LevelStage.Working ? "work" : job?.Stage == LevelStage.Travelling ? "move" : "idle";
+            string state = BootstrapEnabled ? BaseVisualState(actor,actor.HasOrder&&!actor.OrderReached) : job?.Stage == LevelStage.Working ? "work" : job?.Stage == LevelStage.Travelling ? "move" : "idle";
             item.Visual.Apply("idle", 0, false); item.Visual.Apply(state, job?.Stage == LevelStage.Working ? job.Work.ElapsedSeconds : 0, false);
             _playerVisuals[actor] = (item.Visual, actor.GlobalPosition);
         }
+        if (BootstrapEnabled) RestoreHaulerVisuals();
     }
     private ShaderMaterial? _playerSurface;
     private ImageTexture? _committedMask;

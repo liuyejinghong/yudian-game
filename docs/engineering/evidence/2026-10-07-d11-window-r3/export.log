@@ -1,0 +1,554 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 项目初始化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 正在扫描文件结构……[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 正在加载全局类名……[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | 正在校验 GDExtension……[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 正在创建自动加载脚本……[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 正在初始化插件……[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 正在启动文件扫描……[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started 正在注册全局类…… (63 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started 正在扫描动作…… (23 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | art_i00.glb[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | charger-r1.glb[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | processor-r1.glb[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | solar-r1.glb[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | storage-r1.glb[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | charger.glb[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | crate.glb[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | lander.glb[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | recovery.glb[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | repair.glb[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | storage.glb[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | terrain-dug.glb[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | terrain-flat.glb[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | terrain-original.glb[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | wangshan.glb[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | zhulei.glb[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | crate-r1.glb[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | tuoyun-hf-r1.glb[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | tuoyun-r1.glb[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | zhulei-maintenance.glb[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | zhulei-r1.glb[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | zhulei-work.glb[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | probe_model_r1.glb[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 正在导入或重新导入资产 (23 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   4% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   8% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  12% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  16% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  20% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  25% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  29% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  33% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  37% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  41% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  45% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  50% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  54% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  58% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  62% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  66% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  70% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  75% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  79% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  83% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  87% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  91% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在执行重新导入的前置操作……[39m[0m
+[   0% ] [90m[1mpreload_reimporting_scene[22m | Started 正在准备重新加载场景 (1 steps)[39m[0m
+[   0% ] [90m[1mpreload_reimporting_scene[22m | 正在分析场景 [空][39m[0m
+[  50% ] [90m[1mpreload_reimporting_scene[22m | 准备完成。[39m[0m
+[92m[ DONE ][39m [1mpreload_reimporting_scene[22m
+[0m
+[   0% ] [90m[1mreimport[22m | probe_model_r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   4% ] [90m[1mreimport[22m | zhulei-work.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[   8% ] [90m[1mreimport[22m | zhulei-r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  12% ] [90m[1mreimport[22m | zhulei-maintenance.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  16% ] [90m[1mreimport[22m | tuoyun-r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  20% ] [90m[1mreimport[22m | tuoyun-hf-r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  25% ] [90m[1mreimport[22m | crate-r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  29% ] [90m[1mreimport[22m | zhulei.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  33% ] [90m[1mreimport[22m | wangshan.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  37% ] [90m[1mreimport[22m | terrain-original.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  41% ] [90m[1mreimport[22m | terrain-flat.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  45% ] [90m[1mreimport[22m | terrain-dug.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  50% ] [90m[1mreimport[22m | storage.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  54% ] [90m[1mreimport[22m | repair.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  58% ] [90m[1mreimport[22m | recovery.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  62% ] [90m[1mreimport[22m | lander.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  66% ] [90m[1mreimport[22m | crate.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  70% ] [90m[1mreimport[22m | charger.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  75% ] [90m[1mreimport[22m | storage-r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  79% ] [90m[1mreimport[22m | solar-r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  83% ] [90m[1mreimport[22m | processor-r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  87% ] [90m[1mreimport[22m | charger-r1.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  91% ] [90m[1mreimport[22m | art_i00.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started 导入场景 (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | 导入场景中...[39m[0m
+[   1% ] [90m[1mimport[22m | 执行自定义脚本...[39m[0m
+[  99% ] [90m[1mimport[22m | 保存中...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  95% ] [90m[1mreimport[22m | 正在结束资产导入……[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 正在导入或重新导入资产 (23 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在执行重新导入的后置操作……[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started 正在加载编辑器 (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | 正在加载编辑器布局……[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | 正在加载停靠面板……[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 项目初始化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 正在扫描文件结构……[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 正在加载全局类名……[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | 正在校验 GDExtension……[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 正在创建自动加载脚本……[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 正在初始化插件……[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 正在启动文件扫描……[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mdotnet_build_project[22m | Started Building .NET project... (1 steps)[39m[0m
+[   0% ] [90m[1mdotnet_build_project[22m | Building project[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started 正在加载编辑器 (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | 正在加载编辑器布局……[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | 正在加载停靠面板……[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+[92m[ DONE ][39m [1mdotnet_build_project[22m
+[0m
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 项目初始化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 正在扫描文件结构……[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 正在加载全局类名……[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | 正在校验 GDExtension……[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 正在创建自动加载脚本……[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 正在初始化插件……[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 正在启动文件扫描……[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mdotnet_publish_project[22m | Started Publishing .NET project... (1 steps)[39m[0m
+[   0% ] [90m[1mdotnet_publish_project[22m | Running dotnet publish[39m[0m
+[92m[ DONE ][39m [1mdotnet_publish_project[22m
+[0m
+[   0% ] [90m[1mexport[22m | Started 正在为 macOS 导出 (3 steps)[39m[0m
+[   0% ] [90m[1mexport[22m | 正在创建应用捆绑包[39m[0m
+[  25% ] [90m[1mexport[22m | 正在制作 PKG[39m[0m
+[   0% ] [90m[1msavepack[22m | Started 打包中 (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/art_i00.glb-d2b379c4fde182f4932bfd96a67f6d2f.scn[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://assets/calibration/art_i00.glb.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://assets/d1-art/camera.json[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://assets/d1-art/markers.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://assets/d1-art/surface.gdshader[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/charger-r1.glb-cda5c9e5df3317781567ded397f4a67c.scn[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/charger-r1/charger-r1.glb.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/processor-r1/preview.gdc[39m[0m
+[   5% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-68a4127c463afd53edec1d00726bf9ad-preview.scn[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/processor-r1.glb-0b1e96e563af5ed9a251162d5c29a4cc.scn[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/processor-r1/processor-r1.glb.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/solar-r1/preview.gdc[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a56c7e9414718e4582b3b774eff4ec8b-preview.scn[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/solar-r1.glb-191a08374ffbd3f940718a32de786acf.scn[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/solar-r1/solar-r1.glb.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/storage-r1.glb-397008958633bbf39cd67e740570281f.scn[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/storage-r1/storage-r1.glb.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/charger.glb-2fec6d49f7622a6eec65bfe8f1444359.scn[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/charger.glb.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/crate.glb-d77ec9fba99eefc9b3c9bc190f83f650.scn[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/crate.glb.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/lander.glb-3c1f651b1895cd170a34d338b9d56e14.scn[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/lander.glb.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/recovery.glb-b82294fd2d3896f9ec776bc8f342d08a.scn[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/recovery.glb.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/repair.glb-636ffdfe89c1109845d95e595e51522a.scn[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/repair.glb.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/storage.glb-3a060fdef16db597abb4c40f99add95b.scn[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/storage.glb.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/terrain-dug.glb-77e3d09b692a035049dd48ad8633bcb3.scn[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/terrain-dug.glb.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/terrain-flat.glb-d699cdfe6f3a7383f60bfe350ac69d22.scn[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/terrain-flat.glb.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/terrain-original.glb-a050d3a24c885a1d3c530ce20a1bbb14.scn[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/terrain-original.glb.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/wangshan.glb-0efd3a1ed013deb0f47baacbde7e5347.scn[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/wangshan.glb.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/zhulei.glb-dff118b4a68c648b17575627d8dfa775.scn[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/models/zhulei.glb.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d3e7e66baad9094b57e6f29d7f766862-charger.scn[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3b3e7bea2d9f837042283c5e36b4d7a5-crate.scn[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-572fc6a9429e9e7d741eb8358e3e9624-lander.scn[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/preview.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3fd93d13a5b8c728dd2a2eea9e8147c6-recovery.scn[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4ef11cd5363239d66fa47d77bf53ef8b-repair.scn[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1309c27453a121c64532a282fadbf341-storage.scn[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-0b71ec7dffed8d39985b43ad99ea4f83-terrain-dug.scn[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8effda928127f1fd0f05541f2729be43-terrain-flat.scn[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-316b32c1d3e8645d587c63808a5479ad-terrain-original.scn[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-caed5ae716903549bf0e212f7dfb4299-wangshan.scn[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-393b7679076efba3c11f2a0a7e82d280-zhulei.scn[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-91c5d15d5e298d6d4c2b78a9293509b8-accent_warm.res[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8bb7037825ac319605248cbc5a2954d4-body_light.res[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-6e463a9baaaf1eaac60417b7fa67b951-frame_dark.res[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1370c39c20bcc037e432f7e97eb63a35-rubber.res[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-b4594def14c75a44d196390b95afa4c2-soil_mars.res[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-be1267f41139868d05207af255540ad1-solar_face.res[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/crate-r1.glb-434d79e03766202621d29cbc2a6704c2.scn[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://assets/props/crate-r1/crate-r1.glb.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/tuoyun-hf-r1.glb-f072902fb54ea8b90033f981f131bf71.scn[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/units/tuoyun-hf-r1/tuoyun-hf-r1.glb.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/units/tuoyun-r1/preview.gdc[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-9c60d21b122332928b2988c8e511d27d-preview.scn[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/tuoyun-r1.glb-86f4c1a418340e20e741fce8118c02e5.scn[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://assets/units/tuoyun-r1/tuoyun-r1.glb.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/zhulei-maintenance.glb-ed1791d3050326caf70c33a1f320458e.scn[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://assets/units/zhulei-r1/zhulei-maintenance.glb.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/zhulei-r1.glb-25bd825455386ec5b3e46e30acb489fb.scn[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://assets/units/zhulei-r1/zhulei-r1.glb.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/zhulei-work.glb-ab814d4891447bc1a358be93a51129cf.scn[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://assets/units/zhulei-r1/zhulei-work.glb.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://config/bootstrap-v1.json[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://fixtures/terrain-probe-r1/base.json[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://fixtures/terrain-probe-r1/dig.json[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://fixtures/terrain-probe-r1/invalid-perimeter.json[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://fixtures/terrain-probe-r1/level.json[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://fixtures/terrain-probe-r1/stale-current.json[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://fixtures/s_small.json[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/gui_probe_r1.gdc[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-185a8102cdf6aaaca5f8af8f9790f324-gui_probe_r1.scn[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1bebc654b282b28101895aa5748cdd4d-PreviewR1.scn[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_capture_r1.gdc[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_overlay_r1.gdc[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_panel_r1.gdc[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_r1.gdc[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_view_r1.gdc[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/probe_manifest_r1.json[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/probe_model_r1.glb-32ba27d5a594c8caf117130e7c5dfbec.scn[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/probe_model_r1.glb.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3b3f52f0be7057892bd2edd0257ef5cf-probe_sample_r1.scn[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/sample_wrapper.gdc[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-bc10fbb4959c5ecffa6c2ed72cbfd495-ArtI00.scn[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8b8b8821a0cfd035a75c9c25f6fe4fad-GroundOrderTests.scn[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-cfd011a9a0a7159a9e11170162468c7b-GroundPatrolTests.scn[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-63a00336635603a98e9570789771213a-CollisionTests.scn[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-07d58597c117d7faa3f2eaf60427b589-TerrainProbe.scn[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-95f23d3359a4e29e5a017f4ff46cbcb9-ProjectionResourcesTests.scn[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-b621b01acf1039d4a4fdb5afe0696f57-AdapterTests.scn[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-6866375e13248a73530538a1aead0970-TerrainWorldDemo.scn[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4a24720ee5e787dbe30abc634fa3679d-Main.scn[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Art/AssetPreview.cs[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Art/VisualStateBridge.cs[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Benchmark/BenchmarkRecorder.cs[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Configuration/BenchmarkOptions.cs[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Configuration/FixtureConfig.cs[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Construction/WorkMeter.cs[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Navigation/BoundedRoute.cs[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/PlayerUI/PlayerController.cs[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/PlayerUI/PlayerUiSelfTest.cs[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Presentation/Tests/ZhuleiVisualTests.cs[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4bfc663325c3dcc4d64dfb71bc90e19a-ZhuleiVisualTests.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Presentation/ZhuleiVisual.cs[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Resources/Core/BootstrapConfig.cs[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Resources/Core/MaterialLedger.cs[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainCandidates/Heightfield/HeightfieldMeshBuilder.cs[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainCandidates/StageGrid/StageMeshBuilder.cs[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainCollision/Tests/CollisionTests.cs[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainCollision/TerrainCollisionAdapter.cs[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainCommit/Validation/TerrainCommitPolicy.cs[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainCommit/Validation/TerrainCommitStatus.cs[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainCommit/World/TerrainCommitResult.cs[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainCommit/World/TerrainRegionState.cs[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainData/TerrainDataCodec.cs[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainData/TerrainPatch.cs[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainData/TerrainSnapshot.cs[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainGeometry/TerrainMesh.cs[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainGeometry/TerrainVertex.cs[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainProbe/TerrainProbe.cs[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainProbe/TerrainProbeCollision.cs[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainProjection/Tests/ProjectionResourcesTests.cs[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainProjection/TerrainProjectionResources.cs[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainRendering/Tests/AdapterTests.cs[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainRendering/TerrainMeshAdapter.cs[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainWorld/Actors/Tests/GroundOrderTests.cs[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainWorld/Actors/Tests/GroundPatrolTests.cs[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainWorld/Actors/GroundPatrol.cs[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainWorld/TerrainRegionView.cs[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/TerrainWorld/TerrainWorldDemo.cs[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.Bootstrap.cs[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.BootstrapSave.cs[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.BootstrapTests.cs[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.cs[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.HaulerVisuals.cs[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.LevelJob.cs[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.LevelJobTests.cs[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.LiveTerrain.cs[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.LiveTerrainTests.cs[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.Player.cs[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.PlayerSave.cs[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.PlayerTests.cs[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Main.PlayerVisuals.cs[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/PlayerContracts.cs[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://build-info.json[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/d1-art/markers.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/processor-r1/preview.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/processor-r1/preview.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/solar-r1/preview.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/facilities/solar-r1/preview.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/charger.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/crate.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/lander.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/preview.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/recovery.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/repair.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/storage.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/terrain-dug.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/terrain-flat.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/terrain-original.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/wangshan.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/lowfi-batch-r1/zhulei.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/materials/art-r1/accent_warm.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/materials/art-r1/body_light.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/materials/art-r1/frame_dark.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/materials/art-r1/rubber.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/materials/art-r1/soil_mars.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/materials/art-r1/solar_face.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/units/tuoyun-r1/preview.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://assets/units/tuoyun-r1/preview.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/gui_probe_r1.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/gui_probe_r1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/PreviewR1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_capture_r1.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_overlay_r1.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_panel_r1.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_r1.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/preview_view_r1.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/probe_sample_r1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_preview_r1/sample_wrapper.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/asset_preview/ArtI00.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/ground-order-tests/GroundOrderTests.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/ground-patrol-tests/GroundPatrolTests.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/terrain-collision-tests/CollisionTests.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/terrain-probe/TerrainProbe.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/terrain-projection-tests/ProjectionResourcesTests.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/terrain-render-tests/AdapterTests.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/terrain-world/TerrainWorldDemo.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/Main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/Presentation/Tests/ZhuleiVisualTests.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+[92m[ DONE ][39m [1mexport[22m
+[0m
+<PROJECT_ROOT>/试玩包/D1.1 2026-10-07 r3/Yudian.app: replacing existing signature
+<PROJECT_ROOT>/试玩包/D1.1 2026-10-07 r3/Yudian.app: valid on disk
+<PROJECT_ROOT>/试玩包/D1.1 2026-10-07 r3/Yudian.app: satisfies its Designated Requirement
+BUILD_OK: arm64 export, ad-hoc signature, manifest; GUI/runtime isolation remain separate checks

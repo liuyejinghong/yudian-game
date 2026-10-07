@@ -23,6 +23,9 @@ public partial class GroundPatrol : CharacterBody3D
     private int _targetIndex = -1;
     private Vector3 _orderTarget;
     private bool _hasOrder;
+    private Vector3[] _route = [];
+    private int _routeIndex;
+    private float _movementBudgetM = float.PositiveInfinity;
 
     /// <summary>暂停时不推水平运动与航点，仍处理重力/地面。</summary>
     public bool Paused { get; set; }
@@ -49,7 +52,7 @@ public partial class GroundPatrol : CharacterBody3D
     {
         get
         {
-            if (!_hasOrder || !IsOnFloor())
+            if (!_hasOrder || (_route.Length > 0 && _routeIndex < _route.Length - 1) || !IsOnFloor())
                 return false;
             Vector3 toTarget = _orderTarget - GlobalPosition;
             toTarget.Y = 0f;
@@ -73,8 +76,23 @@ public partial class GroundPatrol : CharacterBody3D
             throw new ArgumentException(
                 $"order target {target} must be finite with |coordinate| <= {CoordinateLimit}",
                 nameof(target));
+        _route = []; _routeIndex = 0;
         _orderTarget = target;
         _hasOrder = true;
+    }
+
+    public void SetMovementBudget(float metres)
+    {
+        if (float.IsNaN(metres) || metres < 0) throw new ArgumentException("movement budget must be nonnegative");
+        _movementBudgetM = metres;
+    }
+
+    public void SetRoute(Vector3[] points)
+    {
+        if (points == null || points.Length == 0 || points.Length > 10000 ||
+            Array.Exists(points, p => !float.IsFinite(p.X) || !float.IsFinite(p.Y) || !float.IsFinite(p.Z) || Math.Abs(p.X) > CoordinateLimit || Math.Abs(p.Y) > CoordinateLimit || Math.Abs(p.Z) > CoordinateLimit))
+            throw new ArgumentException("route waypoints invalid");
+        SetOrder(points[0]); _route = (Vector3[])points.Clone(); _routeIndex = 0;
     }
 
     /// <summary>
@@ -83,6 +101,7 @@ public partial class GroundPatrol : CharacterBody3D
     /// </summary>
     public void ClearOrder()
     {
+        _route = []; _routeIndex = 0;
         _hasOrder = false;
     }
 
@@ -112,6 +131,11 @@ public partial class GroundPatrol : CharacterBody3D
         Vector3 horizontal = Vector3.Zero;
         if (!Paused && (_hasOrder || PatrolEnabled))
         {
+            if (_hasOrder && _route.Length > 0 && _routeIndex < _route.Length - 1 && IsOnFloor())
+            {
+                var next = _orderTarget - before; next.Y = 0;
+                if (next.Length() <= WaypointReachXzM) _orderTarget = _route[++_routeIndex];
+            }
             Vector3 target = _hasOrder ? _orderTarget : _waypoints[_targetIndex];
             Vector3 toTarget = target - before;
             toTarget.Y = 0f;
@@ -124,7 +148,7 @@ public partial class GroundPatrol : CharacterBody3D
             }
             else if (chase)
             {
-                horizontal = toTarget * (MathF.Min(_speed, distance / dt) / distance);
+                horizontal = toTarget * (MathF.Min(_speed, MathF.Min(distance, _movementBudgetM) / dt) / distance);
             }
             // 订单到点（<=.25）：原地保持，不推进航点、不恢复巡逻。
         }

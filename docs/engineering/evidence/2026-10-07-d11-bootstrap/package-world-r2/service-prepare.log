@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=a7c79c408d3cce6719b70305690e87da2f935ab609a34f5dbbc27ea9fd5e54fb loaded_mvid=47c8792b-0bf0-433f-ae0d-74e0fff43733 CLR=8.0.31 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=113 query_frame=114 rays=52
+PLAYER_SAVE_OK version=1 stage= time=34.49999999999992
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=266 query_frame=267 rays=4225
+PLAYER_LOAD_READY version=1 stage= paused=True time=34.49999999999992
+BOOTSTRAP_TEST_PROGRESS step=6 stage=Delivering time=65.3 cargo=3 reason=已真实取货，驮运载货前往工地
+MAIN_GROUND_COMMIT authority=2 bound=2 paused=True
+MAIN_GROUND_SYNC authority=2 bound=2 verified=2 assigned_frame=760 query_frame=761 rays=28
+BOOTSTRAP_TEST_PROGRESS step=7 stage=Delivering time=132.0 cargo=3 reason=已真实取货，驮运载货前往工地
+BOOTSTRAP_TEST_PROGRESS step=9 stage=LevelTravel time=198.6 cargo=0 reason=筑垒前往整平施工站
+MAIN_GROUND_COMMIT authority=3 bound=3 paused=True
+MAIN_GROUND_SYNC authority=3 bound=3 verified=3 assigned_frame=1561 query_frame=1562 rays=46
+BOOTSTRAP_TEST_PROGRESS step=10 stage=Delivering time=265.3 cargo=4 reason=已真实取货，驮运载货前往工地
+BOOTSTRAP_TEST_PROGRESS step=11 stage=LevelTravel time=332.0 cargo=0 reason=筑垒前往整平施工站
+MAIN_GROUND_COMMIT authority=4 bound=4 paused=True
+MAIN_GROUND_SYNC authority=4 bound=4 verified=4 assigned_frame=2590 query_frame=2591 rays=56
+BOOTSTRAP_TEST_PROGRESS step=11 stage=Delivering time=398.6 cargo=8 reason=已真实取货，驮运载货前往工地
+BOOTSTRAP_TEST_PROGRESS step=12 stage=Pickup time=465.3 cargo=0 reason=驮运前往着陆器取货
+PLAYER_SAVE_OK version=4 stage= time=505.8333333333149
+MAIN_GROUND_COMMIT authority=5 bound=5 paused=True
+MAIN_GROUND_SYNC authority=5 bound=5 verified=5 assigned_frame=3895 query_frame=3896 rays=81
+BOOTSTRAP_TEST_PROGRESS step=13 stage=Delivering time=532.0 cargo=8 reason=已真实取货，驮运载货前往工地
+BOOTSTRAP_TEST_PROGRESS step=13 stage=Delivering time=598.6 cargo=1 reason=保障中，原工程、载荷与进度保留
+BOOTSTRAP_TEST_PROGRESS step=14 stage=Building time=665.3 cargo=0 reason=保障中，原工程、载荷与进度保留
+PLAYER_SAVE_OK version=5 stage= time=670.7666666666389
+BOOTSTRAP_TEST PREPARED_SERVICE paid=True progress=0.13333333333333333

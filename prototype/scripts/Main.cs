@@ -121,7 +121,9 @@ public partial class Main : Node3D
         var captureDirectory = System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_CAPTURE_DIR");
         if (_playerMode && _groundReady && captureDirectory != null && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
         {
-            string key = $"{_liveTerrain!.Current.Version}-{_levelJob?.Id ?? "none"}-{_levelJob?.Stage.ToString() ?? "Idle"}-{_userPaused}";
+            string id = BootstrapEnabled && _buildJob != null ? _buildJob.Id : _levelJob?.Id ?? "none";
+            string stage = BootstrapEnabled && _buildJob != null ? _buildJob.Stage : _levelJob?.Stage.ToString() ?? "Idle";
+            string key = $"{_liveTerrain!.Current.Version}-{id}-{stage}-{_userPaused}";
             if (key != _guiCaptureKey)
             {
                 if (_guiCapturePending == key)
@@ -285,6 +287,7 @@ public partial class Main : Node3D
     // 六类设施沿内环均布，几何与颜色各不相同；缓速自转或悬浮占位动画。
     private void BuildFacilities()
     {
+        if (BootstrapEnabled) { InitializeBootstrap(); return; }
         int n = _cfg.Scale.Facilities;
         float ring = _cfg.Scale.RingRadius;
         for (int i = 0; i < n; i++)
@@ -370,7 +373,7 @@ public partial class Main : Node3D
                 Node3D root = _liveMode ? new GroundPatrol() : new Node3D();
                 root.Name = $"Robot_{types[t].Name}_{k + 1}";
                 AddChild(root);
-                if (!(_playerMode && t == 1)) MeshPart(root, types[t].Mesh(), types[t].Color, _liveMode ? new Vector3(0, .55f, 0) : Vector3.Zero);
+                if (!(_playerMode && (t == 1 || (BootstrapEnabled && t == 2)))) MeshPart(root, types[t].Mesh(), types[t].Color, _liveMode ? new Vector3(0, .55f, 0) : Vector3.Zero);
                 if (t == 0)
                     MeshPart(root, new SphereMesh { Radius = 0.12f, Height = 0.24f }, new Color(0.9f, 0.9f, 0.9f), new Vector3(0, _liveMode ? 1.27f : .72f, 0));
 
@@ -386,7 +389,7 @@ public partial class Main : Node3D
 
                 var pts = new Vector3[4];
                 for (int i = 0; i < 4; i++)
-                    pts[i] = _facilityPositions[order[i]];
+                    pts[i] = BootstrapEnabled ? new Vector3(10 * MathF.Cos(i*MathF.PI/2),0,10 * MathF.Sin(i*MathF.PI/2)) : _facilityPositions[order[i]];
                 var cum = new float[5];
                 for (int i = 0; i < 4; i++)
                     cum[i + 1] = cum[i] + pts[i].DistanceTo(pts[(i + 1) % 4]);
@@ -403,14 +406,16 @@ public partial class Main : Node3D
                     }
                     p.Y = GroundHeight(p.X, p.Z) + .02f;
                     ground.Position = p;
-                    if (_playerMode) { ground.PatrolEnabled = false; ground.BodyRadius = t == 1 ? .9f : .55f; }
+                    if (_playerMode) { ground.PatrolEnabled = false; ground.BodyRadius = t == 1 ? .9f : BootstrapEnabled && t == 2 ? 1.4f : .55f; }
                     ground.Initialize(pts, types[t].Speed);
                     _groundRobots.Add(ground);
                     if (_playerMode && t == 1) AttachPlayerVisual(ground);
+                    if (BootstrapEnabled && t == 2) AttachHaulerVisual(ground);
                 }
                 else _robots.Add(new Patrol { Node = root, Points = pts, Cum = cum, Speed = types[t].Speed, Dist = dist });
             }
         }
+        if (BootstrapEnabled) InitializeRobotHealth();
     }
 
     private void BuildCamera()

@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=5c21aa24b520f1e9dfc31fc381324d1951820b7ca29da58e8693cee2f5584a35 loaded_mvid=029f0af8-07d8-4ce4-ad3f-284585a07053 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=101 query_frame=102 rays=4225
+PLAYER_LOAD_READY version=1 stage=Completed paused=False time=6.283333333333316
+PLAYER_CROSS_PROCESS_COMPLETED PASS

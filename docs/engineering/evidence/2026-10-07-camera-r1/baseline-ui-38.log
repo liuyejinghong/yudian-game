@@ -1,0 +1,104 @@
+  正在确定要还原的项目…
+  所有项目均是最新的，无法还原。
+  Yudian -> <PROJECT_ROOT>/camera-01-r1/prototype/.godot/mono/temp/bin/Debug/Yudian.dll
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.44
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PLAYER_UI_SELFTEST begin
+MAIN_GROUND_IDENTITY build_sha256=81c05e829456fe413aefe319c2c3acad4517c5372f6aeb07dcf245a415e4f91c loaded_mvid=99831888-aebc-40fc-a7f9-af01db54dfcc CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_UI_SELFTEST PASS HUD 建立确认按钮
+PLAYER_UI_SELFTEST PASS HUD 建立选择标签
+PLAYER_UI_SELFTEST PASS 普通场景 12 台机器人
+PLAYER_UI_SELFTEST PASS 找到合法预览点：可整平 · 半径 2m，目标高度 0m
+PLAYER_UI_SELFTEST PASS 设施重叠预览非法
+PLAYER_UI_SELFTEST PASS 场外预览非法
+PLAYER_UI_SELFTEST PASS 望山不能当筑垒执行
+PLAYER_UI_SELFTEST PASS 地面点选后显示已选位置：已选位置 (-20.3, -16.3) · 可整平 · 半径 2m，目标高度 0m
+自动分配筑垒
+PLAYER_UI_SELFTEST PASS 点击 HUD 面板不穿透（选择保持）
+PLAYER_UI_SELFTEST PASS 空点清除选择且不下命令
+PLAYER_UI_SELFTEST PASS 空点后仍无任务
+PLAYER_UI_SELFTEST PASS 机器人点选生效：已选 望山 1 · 本批仅筑垒执行整平
+LEVEL_JOB_START id=level-1 worker=Robot_Zhulei_2 base=0 station=(-14.840517, 2.3841858E-07, -16.295805) distance=34.842
+PLAYER_UI_SELFTEST PASS 确认后任务活动
+PLAYER_UI_SELFTEST PASS 双击只产生一个任务（level-1）：level-1
+PLAYER_UI_SELFTEST PASS 执行者是筑垒：Robot_Zhulei_2
+PLAYER_UI_SELFTEST PASS 阶段文本：前往现场
+LEVEL_JOB_END id=level-1 stage=Cancelled base=0 applied=none current=0 message=已取消；未改造地形
+PLAYER_UI_SELFTEST PASS 取消后无活动任务
+PLAYER_UI_SELFTEST PASS 暂停后按钮显示继续
+PLAYER_UI_SELFTEST PASS 暂停时模拟时间不推进
+PLAYER_UI_SELFTEST PASS 暂停期间 WASD 平移可用
+PLAYER_UI_SELFTEST PASS 滚轮缩放可用
+PLAYER_UI_SELFTEST PASS 连续拖动只累计实际总位移
+PLAYER_UI_SELFTEST PASS 暂停期间镜头旋转可用
+PLAYER_UI_SELFTEST PASS Esc 清除预览而不重建旧选区
+PLAYER_UI_SELFTEST PASS 未知操作被拒：未知操作，未执行
+PLAYER_SAVE_OK version=0 stage=Cancelled time=1.7166666666666655
+PLAYER_UI_SELFTEST PASS 保存成功可见
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=184 query_frame=185 rays=4225
+PLAYER_LOAD_READY version=0 stage=Cancelled paused=False time=1.7166666666666655
+PLAYER_UI_SELFTEST PASS 读取后世界就绪
+PLAYER_UI_SELFTEST PASS 读取完成后 UI 仍可用
+PLAYER_UI_SELFTEST PASS 整平模式按钮建立
+PLAYER_UI_SELFTEST PASS 五种建设模式按钮建立（来自真实蓝图）
+PLAYER_UI_SELFTEST PASS 库存与电力显示真实着陆器数据：库存 铁料 40（可用40） · 铜料 20（可用20） · 结构件 48（可用48） · 线缆 64（可用64） · 组件套件 12（可用12）
+日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST PASS 铺电缆与重试入口建立
+PLAYER_UI_SELFTEST PASS 90度朝向控件生效：朝向 90°
+PLAYER_UI_SELFTEST PASS 朝向 270° 回绕到 0°：朝向 0°
+PLAYER_UI_SELFTEST PASS 建设模式找到合法预览点：可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+PLAYER_UI_SELFTEST PASS 建设模式点选地面显示已选位置
+PLAYER_UI_SELFTEST PASS 已选位置显示材料成本：已选位置 (-20.3, -16.2) · 可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+成本 铁料3、铜料2、结构件3、线缆2、组件套件1 · 朝向 0° · 自动派驮运与筑垒
+PLAYER_UI_SELFTEST PASS 确认建设产生真实建设任务：build-1 · 前往整平
+PLAYER_UI_SELFTEST summary checks=38 failures=0
+PLAYER_UI_SELFTEST result PASS HUD 建立确认按钮
+PLAYER_UI_SELFTEST result PASS HUD 建立选择标签
+PLAYER_UI_SELFTEST result PASS 普通场景 12 台机器人
+PLAYER_UI_SELFTEST result PASS 找到合法预览点：可整平 · 半径 2m，目标高度 0m
+PLAYER_UI_SELFTEST result PASS 设施重叠预览非法
+PLAYER_UI_SELFTEST result PASS 场外预览非法
+PLAYER_UI_SELFTEST result PASS 望山不能当筑垒执行
+PLAYER_UI_SELFTEST result PASS 地面点选后显示已选位置：已选位置 (-20.3, -16.3) · 可整平 · 半径 2m，目标高度 0m
+自动分配筑垒
+PLAYER_UI_SELFTEST result PASS 点击 HUD 面板不穿透（选择保持）
+PLAYER_UI_SELFTEST result PASS 空点清除选择且不下命令
+PLAYER_UI_SELFTEST result PASS 空点后仍无任务
+PLAYER_UI_SELFTEST result PASS 机器人点选生效：已选 望山 1 · 本批仅筑垒执行整平
+PLAYER_UI_SELFTEST result PASS 确认后任务活动
+PLAYER_UI_SELFTEST result PASS 双击只产生一个任务（level-1）：level-1
+PLAYER_UI_SELFTEST result PASS 执行者是筑垒：Robot_Zhulei_2
+PLAYER_UI_SELFTEST result PASS 阶段文本：前往现场
+PLAYER_UI_SELFTEST result PASS 取消后无活动任务
+PLAYER_UI_SELFTEST result PASS 暂停后按钮显示继续
+PLAYER_UI_SELFTEST result PASS 暂停时模拟时间不推进
+PLAYER_UI_SELFTEST result PASS 暂停期间 WASD 平移可用
+PLAYER_UI_SELFTEST result PASS 滚轮缩放可用
+PLAYER_UI_SELFTEST result PASS 连续拖动只累计实际总位移
+PLAYER_UI_SELFTEST result PASS 暂停期间镜头旋转可用
+PLAYER_UI_SELFTEST result PASS Esc 清除预览而不重建旧选区
+PLAYER_UI_SELFTEST result PASS 未知操作被拒：未知操作，未执行
+PLAYER_UI_SELFTEST result PASS 保存成功可见
+PLAYER_UI_SELFTEST result PASS 读取后世界就绪
+PLAYER_UI_SELFTEST result PASS 读取完成后 UI 仍可用
+PLAYER_UI_SELFTEST result PASS 整平模式按钮建立
+PLAYER_UI_SELFTEST result PASS 五种建设模式按钮建立（来自真实蓝图）
+PLAYER_UI_SELFTEST result PASS 库存与电力显示真实着陆器数据：库存 铁料 40（可用40） · 铜料 20（可用20） · 结构件 48（可用48） · 线缆 64（可用64） · 组件套件 12（可用12）
+日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST result PASS 铺电缆与重试入口建立
+PLAYER_UI_SELFTEST result PASS 90度朝向控件生效：朝向 90°
+PLAYER_UI_SELFTEST result PASS 朝向 270° 回绕到 0°：朝向 0°
+PLAYER_UI_SELFTEST result PASS 建设模式找到合法预览点：可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+PLAYER_UI_SELFTEST result PASS 建设模式点选地面显示已选位置
+PLAYER_UI_SELFTEST result PASS 已选位置显示材料成本：已选位置 (-20.3, -16.2) · 可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+成本 铁料3、铜料2、结构件3、线缆2、组件套件1 · 朝向 0° · 自动派驮运与筑垒
+PLAYER_UI_SELFTEST result PASS 确认建设产生真实建设任务：build-1 · 前往整平

@@ -1,0 +1,18 @@
+{
+  "source_commit": "39309d27bfa89a954f383799c2c92e496fd57432",
+  "final_app": "<PROJECT_ROOT>/试玩包/D1.1 2026-10-07 r2/Yudian.app",
+  "root_entry": "<PROJECT_ROOT>/余电.app",
+  "entry_switch": "PENDING_GUI",
+  "old_app_preserved": "<PROJECT_ROOT>/试玩包/D1.0 2026-10-07/Yudian.app",
+  "schema1_preserved": true,
+  "schema2_slot": "user://saves/d11-player-v2.json",
+  "source_gui": {
+    "actions": "CUA: load real solar save; charger preview/confirm; actual haul and construction; cable connection; pause/save/close",
+    "dll_sha256": "32381cd269fbee70a863702a798bb052a940d398cf4ce7a09f9c1efe5d6c917e",
+    "final_source": false
+  },
+  "final_package_gui": {
+    "status": "BLOCKED_MAC_LOCK",
+    "tested_inputs": false
+  }
+}

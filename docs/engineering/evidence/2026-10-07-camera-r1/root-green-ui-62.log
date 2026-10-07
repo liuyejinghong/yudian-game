@@ -1,0 +1,178 @@
+  正在确定要还原的项目…
+  所有项目均是最新的，无法还原。
+<PROJECT_ROOT>/camera-01-r1/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(389,15): warning CS8602: 解引用可能出现空引用。 [<PROJECT_ROOT>/camera-01-r1/prototype/Yudian.csproj]
+<PROJECT_ROOT>/camera-01-r1/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(395,15): warning CS8602: 解引用可能出现空引用。 [<PROJECT_ROOT>/camera-01-r1/prototype/Yudian.csproj]
+<PROJECT_ROOT>/camera-01-r1/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(411,15): warning CS8602: 解引用可能出现空引用。 [<PROJECT_ROOT>/camera-01-r1/prototype/Yudian.csproj]
+  Yudian -> <PROJECT_ROOT>/camera-01-r1/prototype/.godot/mono/temp/bin/Debug/Yudian.dll
+
+已成功生成。
+
+<PROJECT_ROOT>/camera-01-r1/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(389,15): warning CS8602: 解引用可能出现空引用。 [<PROJECT_ROOT>/camera-01-r1/prototype/Yudian.csproj]
+<PROJECT_ROOT>/camera-01-r1/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(395,15): warning CS8602: 解引用可能出现空引用。 [<PROJECT_ROOT>/camera-01-r1/prototype/Yudian.csproj]
+<PROJECT_ROOT>/camera-01-r1/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(411,15): warning CS8602: 解引用可能出现空引用。 [<PROJECT_ROOT>/camera-01-r1/prototype/Yudian.csproj]
+    3 个警告
+    0 个错误
+
+已用时间 00:00:00.83
+ERROR: Failed to open 'user://logs/godot2026-10-07T18.20.11.log'.
+   at: copy (core/io/dir_access.cpp:429)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PLAYER_UI_SELFTEST begin
+MAIN_GROUND_IDENTITY build_sha256=989245ada79e743f549e25dfcbcf9af68651ef438e5336bfff4586c4a1e6bc06 loaded_mvid=5c5d18ae-32a0-4dcd-898e-4288db294309 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_UI_SELFTEST PASS HUD 建立确认按钮
+PLAYER_UI_SELFTEST PASS HUD 建立选择标签
+PLAYER_UI_SELFTEST PASS 普通场景 12 台机器人
+PLAYER_UI_SELFTEST PASS 找到合法预览点：可整平 · 半径 2m，目标高度 0m
+PLAYER_UI_SELFTEST PASS 设施重叠预览非法
+PLAYER_UI_SELFTEST PASS 场外预览非法
+PLAYER_UI_SELFTEST PASS 望山不能当筑垒执行
+PLAYER_UI_SELFTEST PASS 地面点选后显示已选位置：已选位置 (-20.3, -16.3) · 可整平 · 半径 2m，目标高度 0m
+自动分配筑垒
+PLAYER_UI_SELFTEST PASS 点击 HUD 面板不穿透（选择保持）
+PLAYER_UI_SELFTEST PASS 空点清除选择且不下命令
+PLAYER_UI_SELFTEST PASS 空点后仍无任务
+PLAYER_UI_SELFTEST PASS 机器人点选生效：已选 望山 1 · 本批仅筑垒执行整平
+LEVEL_JOB_START id=level-1 worker=Robot_Zhulei_2 base=0 station=(-14.840517, 2.3841858E-07, -16.295805) distance=34.842
+PLAYER_UI_SELFTEST PASS 确认后任务活动
+PLAYER_UI_SELFTEST PASS 双击只产生一个任务（level-1）：level-1
+PLAYER_UI_SELFTEST PASS 执行者是筑垒：Robot_Zhulei_2
+PLAYER_UI_SELFTEST PASS 阶段文本：前往现场
+LEVEL_JOB_END id=level-1 stage=Cancelled base=0 applied=none current=0 message=已取消；未改造地形
+PLAYER_UI_SELFTEST PASS 取消后无活动任务
+PLAYER_UI_SELFTEST PASS 暂停后按钮显示继续
+PLAYER_UI_SELFTEST PASS 暂停时模拟时间不推进
+PLAYER_UI_SELFTEST PASS 暂停期间镜头按钮旋转可用
+PLAYER_UI_SELFTEST PASS 暂停期间 WASD 平移可用
+PLAYER_UI_SELFTEST PASS 滚轮缩放可用
+PLAYER_UI_SELFTEST PASS 连续拖动只累计实际总位移
+PLAYER_UI_SELFTEST PASS 暂停期间镜头旋转可用
+PLAYER_UI_SELFTEST PASS Esc 清除预览而不重建旧选区
+PLAYER_UI_SELFTEST PASS 未知操作被拒：未知操作，未执行
+PLAYER_SAVE_OK version=0 stage=Cancelled time=1.7999999999999985
+PLAYER_UI_SELFTEST PASS 保存成功可见
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=192 query_frame=193 rays=4225
+PLAYER_LOAD_READY version=0 stage=Cancelled paused=False time=1.7999999999999985
+PLAYER_UI_SELFTEST PASS 读取后世界就绪
+PLAYER_UI_SELFTEST PASS 读取完成后 UI 仍可用
+PLAYER_UI_SELFTEST PASS 整平模式按钮建立
+PLAYER_UI_SELFTEST PASS 五种建设模式按钮建立（来自真实蓝图）
+PLAYER_UI_SELFTEST PASS 库存与电力显示真实着陆器数据：库存 铁料 40（可用40） · 铜料 20（可用20） · 结构件 48（可用48） · 线缆 64（可用64） · 组件套件 12（可用12）
+日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST PASS 铺电缆与重试入口建立
+PLAYER_UI_SELFTEST PASS 90度朝向控件生效：朝向 90°
+PLAYER_UI_SELFTEST PASS 朝向 270° 回绕到 0°：朝向 0°
+PLAYER_UI_SELFTEST PASS 建设模式找到合法预览点：可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+PLAYER_UI_SELFTEST PASS 建设模式点选地面显示已选位置
+PLAYER_UI_SELFTEST PASS 已选位置显示材料成本：已选位置 (-20.4, -16.2) · 可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+成本 铁料3、铜料2、结构件3、线缆2、组件套件1 · 朝向 0° · 自动派驮运与筑垒
+PLAYER_UI_SELFTEST PASS 确认建设产生真实建设任务：build-1 · 前往整平
+PLAYER_UI_SELFTEST CAMUI begin
+PLAYER_UI_SELFTEST PASS 九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）
+PLAYER_UI_SELFTEST PASS 镜头按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST PASS 镜头行与全部按钮在视口内不裁切
+PLAYER_UI_SELFTEST PASS 『前』按钮沿当前朝向明显平移: 13.76m
+PLAYER_UI_SELFTEST PASS 『右转』单次15度: 0.2618rad
+PLAYER_UI_SELFTEST PASS 旋转后『前』沿新朝向平移
+PLAYER_UI_SELFTEST PASS 连点三次『右转』45度不受工程冷却: 0.7854rad
+PLAYER_UI_SELFTEST PASS 连续拉近到下限后不再变化
+PLAYER_UI_SELFTEST PASS 连续拉远到上限后不再变化
+PLAYER_UI_SELFTEST PASS 平移到前限后不再变化
+PLAYER_UI_SELFTEST PASS 平移到后限后不再变化
+PLAYER_UI_SELFTEST PASS 复位恢复初始焦点/距离/朝向
+PLAYER_SAVE_OK version=0 stage= time=6.299999999999983
+PLAYER_UI_SELFTEST PASS 保存成功（冷却未被镜头按钮占用）
+PLAYER_UI_SELFTEST PASS 镜头操作不下达任务
+PLAYER_UI_SELFTEST CAMUI end
+PLAYER_UI_SELFTEST CAMERADIAG begin accumulated_input=True
+PLAYER_UI_SELFTEST CAMERADIAG initial origin=31.85,28.80,19.85 basisZ=0.61,0.63,0.49
+PLAYER_UI_SELFTEST CAMERADIAG same-frame Q rotation=0rad originBefore=31.85,28.80,19.85 originAfter=31.85,28.80,19.85 IsKeyPressed(preParse/afterPress/afterRelease/postFlush)=False/False/False/False
+PLAYER_UI_SELFTEST CAMERADIAG same-frame Right move=0m originAfter=31.85,28.80,19.85 IsKeyPressed(preParse/afterPress/afterRelease)=False/False/False
+PLAYER_UI_SELFTEST CAMERADIAG frame-span Q(2帧) rotation=0.01044rad polledDuringPress=True
+PLAYER_UI_SELFTEST PASS 跨帧短按Q被轮询到(旋转非零): 0.01044rad polled=True
+PLAYER_UI_SELFTEST CAMERADIAG frame-span Right(2帧) move=0.603m polledDuringPress=True
+PLAYER_UI_SELFTEST PASS 跨帧短按Right被轮询到(平移非零): 0.603m polled=True
+PLAYER_UI_SELFTEST CAMERADIAG short Q(60ms) rotation=0.05315rad polled=True
+PLAYER_UI_SELFTEST PASS 人级短按Q(60ms)旋转可见(期望约0.06rad): 0.05315
+PLAYER_UI_SELFTEST PASS 长按Q(0.3s)旋转显著
+PLAYER_UI_SELFTEST PASS 长按Right(0.3s)平移显著
+PLAYER_UI_SELFTEST CAMERADIAG wheel-up x1 originΔ=5.506m
+PLAYER_UI_SELFTEST PASS 滚轮上滚拉近可见: 5.506m
+PLAYER_UI_SELFTEST CAMERADIAG MagnifyGesture factor=1.25 originΔ=8.075m basisΔ=0rad
+PLAYER_UI_SELFTEST CAMERADIAG PanGesture delta=(240,0) originΔ=31.01m basisΔ=0rad
+PLAYER_UI_SELFTEST PASS MagnifyGesture 捏合缩放驱动相机: Δ=12.11m
+PLAYER_UI_SELFTEST PASS PanGesture 双指平移驱动相机: Δ=9.69m
+PLAYER_UI_SELFTEST PASS 右键拖动平移可见: 0.4707m
+PLAYER_UI_SELFTEST CAMERADIAG 右键拖动=0.4707m HUD面板释放后无键移动Δ=0m → 无残留
+PLAYER_UI_SELFTEST CAMERADIAG end
+PLAYER_UI_SELFTEST summary checks=62 failures=0
+PLAYER_UI_SELFTEST result PASS HUD 建立确认按钮
+PLAYER_UI_SELFTEST result PASS HUD 建立选择标签
+PLAYER_UI_SELFTEST result PASS 普通场景 12 台机器人
+PLAYER_UI_SELFTEST result PASS 找到合法预览点：可整平 · 半径 2m，目标高度 0m
+PLAYER_UI_SELFTEST result PASS 设施重叠预览非法
+PLAYER_UI_SELFTEST result PASS 场外预览非法
+PLAYER_UI_SELFTEST result PASS 望山不能当筑垒执行
+PLAYER_UI_SELFTEST result PASS 地面点选后显示已选位置：已选位置 (-20.3, -16.3) · 可整平 · 半径 2m，目标高度 0m
+自动分配筑垒
+PLAYER_UI_SELFTEST result PASS 点击 HUD 面板不穿透（选择保持）
+PLAYER_UI_SELFTEST result PASS 空点清除选择且不下命令
+PLAYER_UI_SELFTEST result PASS 空点后仍无任务
+PLAYER_UI_SELFTEST result PASS 机器人点选生效：已选 望山 1 · 本批仅筑垒执行整平
+PLAYER_UI_SELFTEST result PASS 确认后任务活动
+PLAYER_UI_SELFTEST result PASS 双击只产生一个任务（level-1）：level-1
+PLAYER_UI_SELFTEST result PASS 执行者是筑垒：Robot_Zhulei_2
+PLAYER_UI_SELFTEST result PASS 阶段文本：前往现场
+PLAYER_UI_SELFTEST result PASS 取消后无活动任务
+PLAYER_UI_SELFTEST result PASS 暂停后按钮显示继续
+PLAYER_UI_SELFTEST result PASS 暂停时模拟时间不推进
+PLAYER_UI_SELFTEST result PASS 暂停期间镜头按钮旋转可用
+PLAYER_UI_SELFTEST result PASS 暂停期间 WASD 平移可用
+PLAYER_UI_SELFTEST result PASS 滚轮缩放可用
+PLAYER_UI_SELFTEST result PASS 连续拖动只累计实际总位移
+PLAYER_UI_SELFTEST result PASS 暂停期间镜头旋转可用
+PLAYER_UI_SELFTEST result PASS Esc 清除预览而不重建旧选区
+PLAYER_UI_SELFTEST result PASS 未知操作被拒：未知操作，未执行
+PLAYER_UI_SELFTEST result PASS 保存成功可见
+PLAYER_UI_SELFTEST result PASS 读取后世界就绪
+PLAYER_UI_SELFTEST result PASS 读取完成后 UI 仍可用
+PLAYER_UI_SELFTEST result PASS 整平模式按钮建立
+PLAYER_UI_SELFTEST result PASS 五种建设模式按钮建立（来自真实蓝图）
+PLAYER_UI_SELFTEST result PASS 库存与电力显示真实着陆器数据：库存 铁料 40（可用40） · 铜料 20（可用20） · 结构件 48（可用48） · 线缆 64（可用64） · 组件套件 12（可用12）
+日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST result PASS 铺电缆与重试入口建立
+PLAYER_UI_SELFTEST result PASS 90度朝向控件生效：朝向 90°
+PLAYER_UI_SELFTEST result PASS 朝向 270° 回绕到 0°：朝向 0°
+PLAYER_UI_SELFTEST result PASS 建设模式找到合法预览点：可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+PLAYER_UI_SELFTEST result PASS 建设模式点选地面显示已选位置
+PLAYER_UI_SELFTEST result PASS 已选位置显示材料成本：已选位置 (-20.4, -16.2) · 可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+成本 铁料3、铜料2、结构件3、线缆2、组件套件1 · 朝向 0° · 自动派驮运与筑垒
+PLAYER_UI_SELFTEST result PASS 确认建设产生真实建设任务：build-1 · 前往整平
+PLAYER_UI_SELFTEST result PASS 九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）
+PLAYER_UI_SELFTEST result PASS 镜头按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST result PASS 镜头行与全部按钮在视口内不裁切
+PLAYER_UI_SELFTEST result PASS 『前』按钮沿当前朝向明显平移: 13.76m
+PLAYER_UI_SELFTEST result PASS 『右转』单次15度: 0.2618rad
+PLAYER_UI_SELFTEST result PASS 旋转后『前』沿新朝向平移
+PLAYER_UI_SELFTEST result PASS 连点三次『右转』45度不受工程冷却: 0.7854rad
+PLAYER_UI_SELFTEST result PASS 连续拉近到下限后不再变化
+PLAYER_UI_SELFTEST result PASS 连续拉远到上限后不再变化
+PLAYER_UI_SELFTEST result PASS 平移到前限后不再变化
+PLAYER_UI_SELFTEST result PASS 平移到后限后不再变化
+PLAYER_UI_SELFTEST result PASS 复位恢复初始焦点/距离/朝向
+PLAYER_UI_SELFTEST result PASS 保存成功（冷却未被镜头按钮占用）
+PLAYER_UI_SELFTEST result PASS 镜头操作不下达任务
+PLAYER_UI_SELFTEST result PASS 跨帧短按Q被轮询到(旋转非零): 0.01044rad polled=True
+PLAYER_UI_SELFTEST result PASS 跨帧短按Right被轮询到(平移非零): 0.603m polled=True
+PLAYER_UI_SELFTEST result PASS 人级短按Q(60ms)旋转可见(期望约0.06rad): 0.05315
+PLAYER_UI_SELFTEST result PASS 长按Q(0.3s)旋转显著
+PLAYER_UI_SELFTEST result PASS 长按Right(0.3s)平移显著
+PLAYER_UI_SELFTEST result PASS 滚轮上滚拉近可见: 5.506m
+PLAYER_UI_SELFTEST result PASS MagnifyGesture 捏合缩放驱动相机: Δ=12.11m
+PLAYER_UI_SELFTEST result PASS PanGesture 双指平移驱动相机: Δ=9.69m
+PLAYER_UI_SELFTEST result PASS 右键拖动平移可见: 0.4707m
