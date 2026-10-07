@@ -1,0 +1,10 @@
+PASS: full
+PASS: cargo-prepare
+PASS: cargo-resume
+PASS: service-prepare
+PASS: service-resume
+PASS: active-prepare
+PASS: active-resume
+PASS: charge-prepare
+PASS: charge-resume
+BOOTSTRAP_WORLD_TESTS PASS processes=9

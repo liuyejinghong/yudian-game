@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+MAIN_GROUND_IDENTITY build_sha256=a7c79c408d3cce6719b70305690e87da2f935ab609a34f5dbbc27ea9fd5e54fb loaded_mvid=47c8792b-0bf0-433f-ae0d-74e0fff43733 CLR=8.0.31 display=macOS
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_PAUSED terrain ray missing at -30,30
+PLAYER_LOAD_ROLLBACK
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=2162 query_frame=2163 rays=4225
+PLAYER_LOAD_READY version=0 stage= paused=False time=35.99999999999924

@@ -1,0 +1,25 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=cf50c224dc68ef2f7bdababbd88740da209453056c6b2b3dab211169b5c19a55 loaded_mvid=13195869-7c08-4427-8b94-c180064dc6c6 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+[DEBUG-corner] original=0 x=-30 z=30 top=3.4824078 bottom=-3.3929958
+[DEBUG-corner] initial-span count=7 expectedBody=True height=2.3841858E-07
+[DEBUG-corner] inward-0.001 count=7 expectedBody=True height=0
+[DEBUG-corner] inward-0.0001 count=7 expectedBody=True height=0
+MAIN_GROUND_PAUSED terrain ray missing at -30,30
+PLAYER_LOAD_ROLLBACK
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=8 query_frame=9 rays=4225
+PLAYER_LOAD_READY version=0 stage= paused=False time=0.09999999999999999
+MAIN_GROUND_PAUSED MAIN_GROUND_CHECK real saved game must pass native restore: 读取失败；已恢复原世界与任务，原档保留
+ERROR: [Yudian] InvalidOperationException: MAIN_GROUND_CHECK real saved game must pass native restore: 读取失败；已恢复原世界与任务，原档保留
+   at: void Yudian.Main.Fail(System.Exception) (res://scripts/Main.cs:541)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void Yudian.Main.Fail(System.Exception) (<PROJECT_ROOT>/d11-bootstrap-r1/prototype/scripts/Main.cs:541)
+       [2] void Yudian.Main._PhysicsProcess(double) (<PROJECT_ROOT>/d11-bootstrap-r1/prototype/scripts/Main.LiveTerrain.cs:109)
+       [3] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2648)
+       [4] bool Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node3D.cs:1127)
+       [5] bool Yudian.Main.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (<PROJECT_ROOT>/d11-bootstrap-r1/prototype/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Main_ScriptMethods.generated.cs:940)
+       [6] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)

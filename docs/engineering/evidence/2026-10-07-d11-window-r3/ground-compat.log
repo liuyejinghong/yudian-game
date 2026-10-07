@@ -1,0 +1,29 @@
+ERROR: Failed to open 'user://logs/godot2026-10-07T16.10.47.log'.
+   at: copy (core/io/dir_access.cpp:429)
+ERROR: Failed to open log file for writing: user://logs/godot.log
+   at: rotate_file (core/io/logger.cpp:169)
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=4ccca59bc5c079c4cac266ce8ef6942fa06e3fe4c90548b208e2edf5089f068e loaded_mvid=2f1694c6-f7d4-4751-a5dc-6b2ab55e8d3c CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+MAIN_GROUND_OCCUPIED 设施 0
+MAIN_GROUND_OCCUPIED Robot_Wangshan_2
+MAIN_GROUND_LONG_RAY_PRECISION index=0 expected=1.410421206553762E-26 long=0.00012207031 bounded=2.3841858E-07
+MAIN_GROUND_TEST_STEP PASS 0
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+MAIN_GROUND_TEST_STEP PASS 1
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=121 query_frame=122 rays=14
+MAIN_GROUND_COMMIT authority=2 bound=2 paused=True
+MAIN_GROUND_TEST_STEP PASS 2
+MAIN_GROUND_SYNC authority=2 bound=2 verified=2 assigned_frame=122 query_frame=123 rays=15
+MAIN_GROUND_PAUSED synthetic main bind failure
+MAIN_GROUND_COMMIT authority=3 bound= paused=True
+MAIN_GROUND_TEST_STEP PASS 3
+MAIN_GROUND_PAUSED synthetic recovery bind failure
+MAIN_GROUND_TEST_STEP PASS 4
+MAIN_GROUND_SYNC authority=3 bound=3 verified=3 assigned_frame=124 query_frame=125 rays=4225
+MAIN_GROUND_TEST_STEP PASS 5
+MAIN_GROUND_SELF_TEST PASS version=3 robots=12 travelled=78.537 grounded=12
+MAIN_GROUND_TEST_STEP PASS 6
