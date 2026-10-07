@@ -29,7 +29,7 @@ PCK SHA256：`d06bb037604d4565e9e807fc6640cd93b5d44d1b0f4aa04a41a172c582e627f5`�
 | 最终source | r15零警告零错误；r9 full PASS，7座建成、两轮保障、真实围挡120秒阻塞/保存读取/撤障重试、整平续接与返程取消 |
 | source跨进程 | r8九进程通过：全流＋取消载货/活动运输/已扣料维修/部分充电四种prepare-resume；其后Blocked加载订单修复由r9和最终包验证 |
 | 最终同包 | 九独立进程全PASS、同一loaded MVID/hash、CLR8.0.31；覆盖上述四种中断和每个resume后续完整流程 |
-| 界面/兼容 | source UI38项0失败，旧player五进程、LEVEL15、Main地形7、视觉适配12通过；最新保障修复仅bootstrap分支。导出包直接--script自测入口未完成，3分钟无begin输出后停止；不计为通过 |
+| 界面/兼容 | source UI38项0失败，旧player五进程、LEVEL15、Main地形7、视觉适配12通过；最新保障修复仅bootstrap分支。导出包直接--script自测入口未完成，3分钟未启动测试后停止，退出原件含引擎清理错误；作为未完成入口留档，不计为通过 |
 | source真实窗口 | CUA真实鼠标验证太阳能、重开读取、第二种充电设施运料/施工、付费电缆、暂停保存/关窗。附图为source GUI r2，明确不是最终包验收截图 |
 | 最终包窗口 | Metal启动与首帧渲染已核；CUA因Mac锁屏无法连接。真实鼠标保存/关闭/重开 NOT_RUN，根入口尚未切换 |
 | 独立审查 | reviewer与architect对39309d2均无剩余实质问题；审查只读，不代签实际GUI或所有者视觉 |

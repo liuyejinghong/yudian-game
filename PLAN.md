@@ -375,4 +375,4 @@ architect收尾发现服务路线重算失败/120秒超时后仍持有服务，�
 
 最终source39309d2、release-r2自包含CLR8.0.31九进程全PASS，UI source38/legacy15/7/visual12及旧player五进程通过；reviewer/architect无实质剩余问题。Mac再次锁屏，工具拒绝连接最终窗口，已请求所有者手动解锁；包Metal首帧仅渲染证明，不代替鼠标验证。步骤5仅剩最终包鼠标保存/重开、根入口切换、C02接受；当前六子片REVIEW、旧入口/包/v1档保留。PR工程提交与文档可独立审查合并，不以合并代签联合出口。
 
-补充：尝试导出包--script PlayerUiSelfTest入口，3分钟仍无begin/结果，仅启动日志；停止已核对的独立headless PID87341。此入口未完成，不等于38项包内通过；source38已过、最终包默认Main九进程与Metal首帧通过分别记录。锁屏窗口仍未自动操作。
+补充：尝试导出包--script PlayerUiSelfTest入口，3分钟仍无测试begin/结果；停止已核对的独立headless PID87341，终止后的引擎清理错误与默认Main启动输出均在原件保留。此入口未完成，不等于38项包内通过；source38已过、最终包默认Main九进程与Metal首帧通过分别记录。锁屏窗口仍未自动操作。
