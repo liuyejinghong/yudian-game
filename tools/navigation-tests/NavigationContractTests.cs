@@ -18,6 +18,7 @@ internal static class NavigationContractTests
         NarrowGap_Pass_SmallBody_Reject_LargeBody();
         SteepRidge_Rejected_AtDefaultSlope();
         ModerateSlope_Passes_Default_Blocked_Tighter();
+        BodyOverBoundary_Rejected_ClearMargin_Found();
         InputValidation_Negatives_And_NoSideEffects();
         Version_Follows_Snapshot_And_SameGeometry_SameRoute();
         Start_Or_Destination_Outside_Field_Unreachable();
@@ -138,9 +139,10 @@ internal static class NavigationContractTests
     private static void ModerateSlope_Passes_Default_Blocked_Tighter()
     {
         // 0.5m 台阶（atan(0.5) ≈ 26.57°）：默认 30° 可过，收紧到 10° 全拒绝。
+        // 端点距场界 1m > bodyRadius 0.3（场界收缩语义下合法）。
         TerrainSnapshot terrain = MakeSnapshot(5, 6, (_, column) => column <= 2 ? 0d : 0.5);
-        var start = new NavPoint(0, 2);
-        var destination = new NavPoint(5, 2);
+        var start = new NavPoint(1, 2);
+        var destination = new NavPoint(4, 2);
 
         RouteResult pass = BoundedRoute.Find(terrain, start, destination, 0.3, Array.Empty<NavObstacle>());
         RouteResult blocked = BoundedRoute.Find(terrain, start, destination, 0.3, Array.Empty<NavObstacle>(), maxSlopeDegrees: 10);
@@ -154,6 +156,42 @@ internal static class NavigationContractTests
         {
             Check.True(!blocked.Found, "0.5m step must fail at 10 degrees");
             Check.True(blocked.Points.Length == 0 && blocked.LengthM == 0, "failure must carry empty Points and LengthM=0");
+        });
+    }
+
+    private static void BodyOverBoundary_Rejected_ClearMargin_Found()
+    {
+        // 场界按 bodyRadius 收缩：中心在场内但距场界 < radius（身体越界）即不可达；
+        // 对照正例端点距场界 > radius，且全程按收缩边界独立复核。
+        TerrainSnapshot terrain = MakeSnapshot(11, 11, (_, _) => 0d); // 场界 x,z ∈ [0,10]
+
+        RouteResult startHugging = BoundedRoute.Find(
+            terrain, new NavPoint(0.3, 5), new NavPoint(9, 5), 0.5, Array.Empty<NavObstacle>());
+        Check.Ok("start within radius of boundary (body crosses) unreachable", () =>
+        {
+            Check.True(!startHugging.Found, "center 0.3m from west boundary with radius 0.5 must not route");
+            Check.True(startHugging.Reason.Contains("起点"), $"reason must mention 起点: {startHugging.Reason}");
+            Check.True(startHugging.Points.Length == 0 && startHugging.LengthM == 0, "failure invariants");
+            Check.True(startHugging.WorldVersion == terrain.Version, "WorldVersion must still match snapshot");
+        });
+
+        RouteResult destHugging = BoundedRoute.Find(
+            terrain, new NavPoint(5, 5), new NavPoint(5, 9.75), 0.5, Array.Empty<NavObstacle>());
+        Check.Ok("destination within radius of boundary (body crosses) unreachable", () =>
+        {
+            Check.True(!destHugging.Found, "destination 0.25m from north boundary with radius 0.5 must not route");
+            Check.True(destHugging.Reason.Contains("终点"), $"reason must mention 终点: {destHugging.Reason}");
+            Check.True(destHugging.Points.Length == 0 && destHugging.LengthM == 0, "failure invariants");
+        });
+
+        var start = new NavPoint(1, 5);
+        var destination = new NavPoint(9, 5);
+        RouteResult clear = BoundedRoute.Find(terrain, start, destination, 0.5, Array.Empty<NavObstacle>());
+        Check.Ok("endpoints farther than radius from boundary found", () =>
+        {
+            Check.True(clear.Found, $"expected Found with margin 1m > radius 0.5 ({clear.Reason})");
+            Check.True(PointEquals(clear.Points[^1], destination), "last point must be exactly destination");
+            AssertSegmentsValid(terrain, start, clear.Points, 0.5, Array.Empty<NavObstacle>(), 30, "body-margin");
         });
     }
 
@@ -322,6 +360,9 @@ internal static class NavigationContractTests
         double spacing = terrain.SpacingM;
         double endX = originX + (terrain.Columns - 1) * spacing;
         double endZ = originZ + (terrain.Rows - 1) * spacing;
+        // 收缩场界：中心距任一场界至少 bodyRadius，整个圆代理在场内。
+        double minX = originX + bodyRadius, maxX = endX - bodyRadius;
+        double minZ = originZ + bodyRadius, maxZ = endZ - bodyRadius;
 
         for (int segment = 0; segment + 1 < full.Count; segment++)
         {
@@ -338,8 +379,8 @@ internal static class NavigationContractTests
                 double t = (double)i / samples;
                 double x = x1 + dx * t;
                 double z = z1 + dz * t;
-                Check.True(x >= originX && x <= endX && z >= originZ && z <= endZ,
-                    $"{label} segment {segment} sample {i} out of field bounds");
+                Check.True(x >= minX - 1e-9 && x <= maxX + 1e-9 && z >= minZ - 1e-9 && z <= maxZ + 1e-9,
+                    $"{label} segment {segment} sample {i} leaves the body-radius shrunk field");
                 foreach (NavObstacle obstacle in obstacles)
                 {
                     double ex = x - obstacle.Center.X;

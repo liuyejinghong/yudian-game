@@ -20,8 +20,10 @@ public sealed record RouteResult(bool Found, string Reason, long WorldVersion, N
 /// <summary>
 /// D1.1 导航子票冻结实现：现有高度网格上的有界 A*。结点扩展上限 rows*columns；
 /// 网格段与 start/destination 连接段统一执行同一段校验（全程场内、避开按 bodyRadius
-/// 膨胀的圆障碍、采样坡度步长 &lt;= spacing/4）；对角移动禁止切角。连续高度按
-/// StageMeshBuilder 冻结的 a-d 三角对角线插值（a=左上，b=右上，c=左下，d=右下）。
+/// 膨胀的圆障碍、采样坡度步长 &lt;= spacing/4）；对角移动禁止切角。场内按 bodyRadius
+/// 收缩：中心距任一场界不足 bodyRadius 即视为场外（整个圆代理必须留在场内），
+/// 越界采样一律非法，不被收敛为合法。连续高度按 StageMeshBuilder 冻结的 a-d
+/// 三角对角线插值（a=左上，b=右上，c=左下，d=右下）。
 /// 只读、无缓存、确定性：相同输入产生相同输出，不修改快照。
 /// </summary>
 public static class BoundedRoute
@@ -44,8 +46,6 @@ public static class BoundedRoute
         double originX = terrain.OriginXM;
         double originZ = terrain.OriginZM;
         double spacing = terrain.SpacingM;
-        double endX = originX + (columns - 1) * spacing;
-        double endZ = originZ + (rows - 1) * spacing;
 
         var inflated = new double[obstacles.Length];
         for (int i = 0; i < obstacles.Length; i++)
@@ -59,9 +59,9 @@ public static class BoundedRoute
             centerZ[i] = obstacles[i].Center.Z;
         }
 
-        var context = new GridContext(terrain, originX, originZ, spacing, endX, endZ, centerX, centerZ, inflated, maxSlopeDegrees);
+        var context = new GridContext(terrain, originX, originZ, spacing, bodyRadius, centerX, centerZ, inflated, maxSlopeDegrees);
 
-        // 结点占位预判只作剪枝；段级校验仍是唯一裁决（端点采样同样检查障碍）。
+        // 结点占位预判只作剪枝；段级校验仍是唯一裁决（端点采样同样检查障碍与收缩场界）。
         bool[] free = new bool[rows * columns];
         for (int row = 0; row < rows; row++)
         {
@@ -69,7 +69,7 @@ public static class BoundedRoute
             {
                 double x = originX + column * spacing;
                 double z = originZ + row * spacing;
-                free[row * columns + column] = !context.BlockedAt(x, z);
+                free[row * columns + column] = context.CenterInField(x, z) && !context.BlockedAt(x, z);
             }
         }
 
@@ -171,19 +171,20 @@ public static class BoundedRoute
         Array.Fill(gScore, double.PositiveInfinity);
         Array.Fill(cameFrom, -1);
 
-        var heap = new MinHeap(nodeCount);
+        // .NET8 PriorityQueue + (f, node) 全序优先级：优先级含 node 决胜，出队序确定。
+        var heap = new PriorityQueue<int, (double F, int Node)>(nodeCount, NodePriorityComparer.Instance);
         foreach (int entry in entries)
         {
             double x = context.NodeX(entry);
             double z = context.NodeZ(entry);
             gScore[entry] = context.Distance3D(start.X, start.Z, x, z);
-            heap.Push(gScore[entry] + context.Heuristic(x, z, destination), entry);
+            heap.Enqueue(entry, (gScore[entry] + context.Heuristic(x, z, destination), entry));
         }
 
         int expansions = 0;
         while (heap.Count > 0)
         {
-            (double _, int node) = heap.Pop();
+            int node = heap.Dequeue();
             if (closed[node])
                 continue;
             closed[node] = true;
@@ -230,7 +231,7 @@ public static class BoundedRoute
                     {
                         gScore[neighbor] = candidate;
                         cameFrom[neighbor] = node;
-                        heap.Push(candidate + context.Heuristic(neighborX, neighborZ, destination), neighbor);
+                        heap.Enqueue(neighbor, (candidate + context.Heuristic(neighborX, neighborZ, destination), neighbor));
                     }
                 }
             }
@@ -286,8 +287,7 @@ public static class BoundedRoute
             double originX,
             double originZ,
             double spacing,
-            double endX,
-            double endZ,
+            double bodyRadius,
             double[] centerX,
             double[] centerZ,
             double[] inflated,
@@ -297,8 +297,12 @@ public static class BoundedRoute
             OriginX = originX;
             OriginZ = originZ;
             Spacing = spacing;
-            EndX = endX;
-            EndZ = endZ;
+            // 场界按 bodyRadius 收缩：中心可活动范围保证整个圆代理在场内。
+            // 采样网格原点与高度插值坐标不受收缩影响，仍用原始场界。
+            MinX = originX + bodyRadius;
+            MaxX = originX + (terrain.Columns - 1) * spacing - bodyRadius;
+            MinZ = originZ + bodyRadius;
+            MaxZ = originZ + (terrain.Rows - 1) * spacing - bodyRadius;
             _centerX = centerX;
             _centerZ = centerZ;
             _inflated = inflated;
@@ -309,13 +313,19 @@ public static class BoundedRoute
         public double OriginX { get; }
         public double OriginZ { get; }
         public double Spacing { get; }
-        public double EndX { get; }
-        public double EndZ { get; }
+        public double MinX { get; }
+        public double MaxX { get; }
+        public double MinZ { get; }
+        public double MaxZ { get; }
         public int Rows => _terrain.Rows;
         public int Columns => _terrain.Columns;
 
         public double NodeX(int node) => OriginX + (node % Columns) * Spacing;
         public double NodeZ(int node) => OriginZ + (node / Columns) * Spacing;
+
+        /// <summary>中心是否在 bodyRadius 收缩后的场内；等于收缩边界（圆与场界相切）视为在场。</summary>
+        public bool CenterInField(double x, double z)
+            => x >= MinX && x <= MaxX && z >= MinZ && z <= MaxZ;
 
         public double Heuristic(double x, double z, NavPoint destination)
         {
@@ -345,8 +355,9 @@ public static class BoundedRoute
         }
 
         /// <summary>
-        /// 段校验：按步长 spacing/4 采样，逐点检查场内、膨胀圆障碍与相邻采样点坡度；
-        /// 另做圆-线段精确距离复验，防止采样间隙漏检。端点即采样点，一并受检。
+        /// 段校验：按步长 spacing/4 采样，逐点检查收缩场内（中心距场界 ≥ bodyRadius，
+        /// 越界采样非法、不 clamp）、膨胀圆障碍与相邻采样点坡度；另做圆-线段精确距离
+        /// 复验，防止采样间隙漏检。端点即采样点，一并受检。
         /// </summary>
         public bool SegmentClear(double x1, double z1, double x2, double z2)
         {
@@ -364,7 +375,7 @@ public static class BoundedRoute
                 double t = (double)i / samples;
                 double x = x1 + dx * t;
                 double z = z1 + dz * t;
-                if (x < OriginX || x > EndX || z < OriginZ || z > EndZ)
+                if (!CenterInField(x, z))
                     return false;
                 if (BlockedAt(x, z))
                     return false;
@@ -425,65 +436,15 @@ public static class BoundedRoute
         private static double Clamp01(double value) => value < 0 ? 0 : (value > 1 ? 1 : value);
     }
 
-    // ---- 二叉最小堆：(f, node) 全序，同 f 按 node 序，保证确定性 ----
+    // ---- 优先级比较器：(f, node) 全序，同 f 按 node 序，出队序与输入无关地确定 ----
 
-    private sealed class MinHeap
+    private sealed class NodePriorityComparer : IComparer<(double F, int Node)>
     {
-        private (double Key, int Node)[] _items;
-        public int Count { get; private set; }
+        public static readonly NodePriorityComparer Instance = new();
 
-        public MinHeap(int capacity)
+        public int Compare((double F, int Node) left, (double F, int Node) right)
         {
-            int initial = capacity < 16 ? 16 : capacity;
-            _items = new (double, int)[initial];
-        }
-
-        public void Push(double key, int node)
-        {
-            if (Count == _items.Length)
-                Array.Resize(ref _items, _items.Length * 2);
-            int child = Count++;
-            while (child > 0)
-            {
-                int parent = (child - 1) / 2;
-                if (Compare(_items[parent], (key, node)) <= 0)
-                    break;
-                _items[child] = _items[parent];
-                child = parent;
-            }
-            _items[child] = (key, node);
-        }
-
-        public (double Key, int Node) Pop()
-        {
-            (double Key, int Node) top = _items[0];
-            Count--;
-            if (Count > 0)
-            {
-                (double Key, int Node) last = _items[Count];
-                int parent = 0;
-                while (true)
-                {
-                    int left = parent * 2 + 1;
-                    if (left >= Count)
-                        break;
-                    int child = left;
-                    int right = left + 1;
-                    if (right < Count && Compare(_items[right], _items[left]) < 0)
-                        child = right;
-                    if (Compare(_items[child], last) >= 0)
-                        break;
-                    _items[parent] = _items[child];
-                    parent = child;
-                }
-                _items[parent] = last;
-            }
-            return top;
-        }
-
-        private static int Compare((double Key, int Node) left, (double Key, int Node) right)
-        {
-            int byKey = left.Key.CompareTo(right.Key);
+            int byKey = left.F.CompareTo(right.F);
             return byKey != 0 ? byKey : left.Node.CompareTo(right.Node);
         }
     }

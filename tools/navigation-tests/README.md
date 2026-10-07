@@ -26,9 +26,11 @@ mkdir -p <空本地NuGet源目录>
 - 绕圆障碍成功：长度明显大于被挡直线，且每段通过独立采样校验（步长 spacing/4、场内、膨胀圆外、坡度）。
 - 窄口：bodyRadius=0.75 可穿、1.05 拒绝（同一几何，膨胀代理行为）；拒绝时中文原因/空 Points/LengthM=0。
 - 陡坡拒绝：20m 整列高墙在默认 30° 下不可达；0.5m 台阶默认 30° 可过、10° 全拒绝（maxSlopeDegrees 参数生效）。
+- 场界按 bodyRadius 收缩：中心距场界 < bodyRadius（身体越界）的起点/终点均不可达且原因点名端点，
+  距场界 > radius 的对照正例成功；独立校验器按收缩边界复核全程（越界采样不 clamp 为合法）。
 - 输入负例全部 ArgumentException 且无副作用：null terrain/obstacles、非有限坐标/圆心、
   bodyRadius≤0/非有限、障碍 radius≤0/非有限、maxSlopeDegrees ∉ (0,35]；边界合法值 35 可用。
 - 不同 version 快照：WorldVersion 各自跟随，几何相同则路线与长度逐位相同。
 - start/destination 在场外或终点落在膨胀障碍内：合法输入但不可达，原因分别提及 起点/终点。
-- start==destination（格点）：Found=true、单点 [destination]、LengthM=0。
-- 重复调用逐位一致（确定性、只读、无缓存）。
+- start==destination（场内格点）：Found=true、单点 [destination]、LengthM=0（主控已接受，用于原生 order 驻留）。
+- 重复调用逐位一致（确定性、只读、无缓存；A* 队列为 .NET8 PriorityQueue，(f,node) 全序优先级）。
