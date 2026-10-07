@@ -1,0 +1,57 @@
+{
+  "status": "candidate",
+  "surface_stage_input": {
+    "0": "natural_soil",
+    "1": "gravel_work_surface",
+    "2": "compacted_surface"
+  },
+  "surface_shader_rgba": {
+    "soil_color": [
+      0.58,
+      0.32,
+      0.21,
+      1.0
+    ],
+    "gravel_color": [
+      0.43,
+      0.4,
+      0.34,
+      1.0
+    ],
+    "compacted_color": [
+      0.56,
+      0.43,
+      0.29,
+      1.0
+    ]
+  },
+  "marker_srgb_hex": {
+    "selected": "#f5f1df",
+    "hover": "#78d9e5",
+    "legal": "#9ee3ac",
+    "illegal": "#ff936c",
+    "committed": "#edc77d"
+  },
+  "marker_shape": {
+    "selected": "continuous_ring_0.10m",
+    "hover": "continuous_ring_0.06m",
+    "legal": "continuous_ring_0.08m",
+    "illegal": "dashed_ring_0.08m_and_cross",
+    "committed": "double_rings_0.08m_center_spacing_0.18m_gap_0.10m"
+  },
+  "height_contract": "sample_height(world_x, world_z) + 0.025m at every vertex",
+  "authority": "Caller owns stage, permissions, world bounds and authoritative height. Only renders supplied facts; never writes or replaces terrain.",
+  "contract": "docs/engineering/contracts/d1-player-r1.md (2026-10-07): circular 2m work area; rectangle API removed",
+  "input": "build(center: world x/z Vector2, radius: meters, kind, sample_height(x,z)); engineering supplies actual 2m radius",
+  "surface_region_input": {
+    "region_center": "world x/z Vector2 supplied by engineering",
+    "region_radius": "2m work radius supplied by engineering",
+    "outside": "always natural soil (stage 0 appearance)"
+  },
+  "surface_detail": {
+    "natural": "warm Mars red soil; fine variation amplitude 0.014",
+    "gravel": "region only; grain contrast 0.06, centered to avoid brightness bias",
+    "compacted": "region only; brighter warm brown, subtle 0.012 directional pattern",
+    "filter": "fwidth world footprint fades cell noise from 0.35 to 1.0 cell per pixel"
+  }
+}

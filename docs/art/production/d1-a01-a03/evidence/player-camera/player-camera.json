@@ -1,0 +1,556 @@
+{
+	"driver": "metal",
+	"engine": "4.7.2-stable (official)",
+	"frames": {
+		"actual-normal": {
+			"far_m": 200.0,
+			"fov": 50.0,
+			"near_m": 0.0500000007450581,
+			"objects": [
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_0",
+					"position_m": [
+						14.0,
+						0.0999801158905029,
+						0.0
+					],
+					"projected_bounds_px": [
+						1184.7568359375,
+						729.056091308594,
+						334.019653320312,
+						236.7080078125
+					]
+				},
+				{
+					"clipped": true,
+					"hud_overlap": false,
+					"id": "Facility_1",
+					"position_m": [
+						6.99999952316284,
+						0.000000238418579101562,
+						12.1243562698364
+					],
+					"projected_bounds_px": [
+						282.597412109375,
+						963.69287109375,
+						447.451232910156,
+						484.38232421875
+					]
+				},
+				{
+					"clipped": true,
+					"hud_overlap": false,
+					"id": "Facility_2",
+					"position_m": [
+						-7.00000095367432,
+						-0.104023218154907,
+						12.1243553161621
+					],
+					"projected_bounds_px": [
+						-161.147918701172,
+						582.090148925781,
+						375.988708496094,
+						305.389953613281
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_3",
+					"position_m": [
+						-14.0,
+						-0.0099797248840332,
+						-0.00000122391884360695
+					],
+					"projected_bounds_px": [
+						323.410308837891,
+						356.020568847656,
+						113.688995361328,
+						74.4705505371094
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_4",
+					"position_m": [
+						-6.99999856948853,
+						0.00005340576171875,
+						-12.1243562698364
+					],
+					"projected_bounds_px": [
+						781.117370605469,
+						216.751281738281,
+						151.158813476562,
+						128.761505126953
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_5",
+					"position_m": [
+						7.0,
+						0.0177600383758545,
+						-22.0
+					],
+					"projected_bounds_px": [
+						1343.97009277344,
+						230.095230102539,
+						140.29443359375,
+						119.006759643555
+					]
+				},
+				{
+					"clipped": true,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_1",
+					"position_m": [
+						20.0,
+						0.00580301601439714,
+						-22.0
+					],
+					"projected_bounds_px": [
+						1865.06469726562,
+						397.406616210938,
+						85.47265625,
+						72.9288940429688
+					]
+				},
+				{
+					"clipped": true,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_2",
+					"position_m": [
+						20.0,
+						0.115227773785591,
+						-16.0
+					],
+					"projected_bounds_px": [
+						1828.06909179688,
+						499.390380859375,
+						96.1234130859375,
+						84.7620239257812
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_3",
+					"position_m": [
+						20.0,
+						0.314333975315094,
+						-10.0
+					],
+					"projected_bounds_px": [
+						1781.85021972656,
+						628.281982421875,
+						110.076416015625,
+						101.093139648438
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_4",
+					"position_m": [
+						20.0,
+						0.117077521979809,
+						-4.0
+					],
+					"projected_bounds_px": [
+						1710.56616210938,
+						818.778076171875,
+						127.07275390625,
+						123.770629882812
+					]
+				}
+			],
+			"position": [
+				17.2000007629395,
+				18.0,
+				15.5
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			]
+		},
+		"existing-overview": {
+			"far_m": 200.0,
+			"fov": 60.0,
+			"near_m": 0.0500000007450581,
+			"objects": [
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_0",
+					"position_m": [
+						14.0,
+						0.0999801158905029,
+						0.0
+					],
+					"projected_bounds_px": [
+						1062.48510742188,
+						665.064331054688,
+						145.990356445312,
+						100.77392578125
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_1",
+					"position_m": [
+						6.99999952316284,
+						0.000000238418579101562,
+						12.1243562698364
+					],
+					"projected_bounds_px": [
+						697.752136230469,
+						766.072814941406,
+						172.023376464844,
+						174.940002441406
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_2",
+					"position_m": [
+						-7.00000095367432,
+						-0.104023218154907,
+						12.1243553161621
+					],
+					"projected_bounds_px": [
+						445.475189208984,
+						597.991943359375,
+						166.274261474609,
+						143.906921386719
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_3",
+					"position_m": [
+						-14.0,
+						-0.0099797248840332,
+						-0.00000122391884360695
+					],
+					"projected_bounds_px": [
+						612.772338867188,
+						464.715393066406,
+						59.4012451171875,
+						40.8077697753906
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_4",
+					"position_m": [
+						-6.99999856948853,
+						0.00005340576171875,
+						-12.1243562698364
+					],
+					"projected_bounds_px": [
+						855.929016113281,
+						373.075805664062,
+						85.0808715820312,
+						76.4717712402344
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_5",
+					"position_m": [
+						7.0,
+						0.0177600383758545,
+						-22.0
+					],
+					"projected_bounds_px": [
+						1172.24987792969,
+						380.964202880859,
+						79.5701904296875,
+						68.7590942382812
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_1",
+					"position_m": [
+						20.0,
+						0.00580301601439714,
+						-22.0
+					],
+					"projected_bounds_px": [
+						1436.83178710938,
+						483.334991455078,
+						42.722412109375,
+						39.7937927246094
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_2",
+					"position_m": [
+						20.0,
+						0.115227773785591,
+						-16.0
+					],
+					"projected_bounds_px": [
+						1397.56726074219,
+						544.17724609375,
+						45.6746826171875,
+						43.6112060546875
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_3",
+					"position_m": [
+						20.0,
+						0.314333975315094,
+						-10.0
+					],
+					"projected_bounds_px": [
+						1352.18603515625,
+						613.771606445312,
+						49.1302490234375,
+						48.2559204101562
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_4",
+					"position_m": [
+						20.0,
+						0.117077521979809,
+						-4.0
+					],
+					"projected_bounds_px": [
+						1295.99987792969,
+						703.510131835938,
+						52.7528076171875,
+						53.6921997070312
+					]
+				}
+			],
+			"position": [
+				24.0,
+				31.0,
+				25.5
+			],
+			"rotation_degrees": [
+				-42.0162963867188,
+				35.5376777648926,
+				0.0
+			]
+		},
+		"normal-distance-1.6": {
+			"far_m": 200.0,
+			"fov": 50.0,
+			"near_m": 0.0500000007450581,
+			"objects": [
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_0",
+					"position_m": [
+						14.0,
+						0.0999801158905029,
+						0.0
+					],
+					"projected_bounds_px": [
+						1085.99719238281,
+						674.708862304688,
+						184.315795898438,
+						120.785949707031
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_1",
+					"position_m": [
+						6.99999952316284,
+						0.000000238418579101562,
+						12.1243562698364
+					],
+					"projected_bounds_px": [
+						620.511840820312,
+						787.9580078125,
+						219.444458007812,
+						217.7412109375
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_2",
+					"position_m": [
+						-7.00000095367432,
+						-0.104023218154907,
+						12.1243553161621
+					],
+					"projected_bounds_px": [
+						315.37744140625,
+						589.186340332031,
+						207.908996582031,
+						173.984558105469
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_3",
+					"position_m": [
+						-14.0,
+						-0.0099797248840332,
+						-0.00000122391884360695
+					],
+					"projected_bounds_px": [
+						532.770385742188,
+						437.271514892578,
+						73.8397827148438,
+						49.8507385253906
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_4",
+					"position_m": [
+						-6.99999856948853,
+						0.00005340576171875,
+						-12.1243562698364
+					],
+					"projected_bounds_px": [
+						835.360595703125,
+						332.759216308594,
+						105.253540039062,
+						92.0758666992188
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Facility_5",
+					"position_m": [
+						7.0,
+						0.0177600383758545,
+						-22.0
+					],
+					"projected_bounds_px": [
+						1226.96496582031,
+						343.9365234375,
+						98.870361328125,
+						83.6683959960938
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_1",
+					"position_m": [
+						20.0,
+						0.00580301601439714,
+						-22.0
+					],
+					"projected_bounds_px": [
+						1557.47290039062,
+						466.200988769531,
+						53.1859130859375,
+						48.7125244140625
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_2",
+					"position_m": [
+						20.0,
+						0.115227773785591,
+						-16.0
+					],
+					"projected_bounds_px": [
+						1508.86926269531,
+						536.351928710938,
+						57.08447265625,
+						53.7009887695312
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_3",
+					"position_m": [
+						20.0,
+						0.314333975315094,
+						-10.0
+					],
+					"projected_bounds_px": [
+						1452.23168945312,
+						616.950256347656,
+						61.6776123046875,
+						59.8253173828125
+					]
+				},
+				{
+					"clipped": false,
+					"hud_overlap": false,
+					"id": "Robot_Zhulei_4",
+					"position_m": [
+						20.0,
+						0.117077521979809,
+						-4.0
+					],
+					"projected_bounds_px": [
+						1381.60424804688,
+						722.995422363281,
+						66.5933837890625,
+						67.167724609375
+					]
+				}
+			],
+			"position": [
+				25.1200008392334,
+				28.8000011444092,
+				26.3000011444092
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.253833770752,
+				0.0
+			]
+		}
+	},
+	"hud_rects_px": [
+		[
+			16.0,
+			16.0,
+			298.0,
+			193.0
+		],
+		[
+			745.0,
+			1125.0,
+			430.0,
+			55.0
+		]
+	],
+	"scope": "actual engineering Main scene and HUD; camera-only in-memory overrides; no gameplay commands, entity/layout/material changes or source writes",
+	"window_px": [
+		1920,
+		1200
+	]
+}
