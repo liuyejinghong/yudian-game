@@ -1,0 +1,17 @@
+{
+  "LOW_Clast_06": {
+    "sheet": "stages/05-bake-test/problems-LOW_Clast_06/problems_normal_sheet.png",
+    "faces_bad_pct": 3.48,
+    "faces_flat_pct": 0.0
+  },
+  "MarsSubcrop_01": {
+    "sheet": "stages/05-bake-test/problems-MarsSubcrop_01/problems_normal_sheet.png",
+    "faces_bad_pct": 0.75,
+    "faces_flat_pct": 0.0
+  },
+  "MarsSubcrop_03": {
+    "sheet": "stages/05-bake-test/problems-MarsSubcrop_03/problems_normal_sheet.png",
+    "faces_bad_pct": 1.92,
+    "faces_flat_pct": 0.0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "hero_sha256": "141380133cb362aae0dcf52deb3ac1e62f33c31851d7437f92240b44da05cacf",
+  "uncached_import": true,
+  "images": [
+    {
+      "file": "mars-outcrop-r1_normal.png",
+      "sha256": "410a1d2fdc213bf3077ec2d030c9d760d074eb23a6842cb068c241f54b6d3484",
+      "matches_glb_bytes": true
+    },
+    {
+      "file": "mars-outcrop-r1_basecolor.png",
+      "sha256": "f0e5c296d2b2a02f0ac7da68944dead4c6c45b60468dd7e10eae819f085ca87d",
+      "matches_glb_bytes": true
+    },
+    {
+      "file": "mars-outcrop-r1_roughness.png",
+      "sha256": "809f9ec1336956d27455f1c0edf42e79d60e5c783f68735264a6d022ac8344f0",
+      "matches_glb_bytes": true
+    }
+  ]
+}

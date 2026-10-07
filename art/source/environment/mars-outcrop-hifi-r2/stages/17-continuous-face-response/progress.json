@@ -1,0 +1,41 @@
+{
+  "status": "BUILDING_COMPLETE_ACTUAL_FACE_PREVIEWS",
+  "source_identity": {
+    "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+    "bytes": 52451110
+  },
+  "physical_high_face_selection": [
+    {
+      "name": "right_actual_cut_face",
+      "faces": 30628,
+      "area_m2": 3.6450416308762215,
+      "center_bounds_min": [
+        0.6085614264011383,
+        -1.6986867487430573,
+        -0.144594457000494
+      ],
+      "center_bounds_max": [
+        3.0741369128227234,
+        0.05862721987068653,
+        1.4355684220790863
+      ]
+    },
+    {
+      "name": "actual_rear_wall",
+      "faces": 50548,
+      "area_m2": 8.04281811798819,
+      "center_bounds_min": [
+        -2.6175113320350647,
+        1.0255122780799866,
+        -0.14708631858229637
+      ],
+      "center_bounds_max": [
+        2.8133532404899597,
+        1.6489638090133667,
+        2.103931248188019
+      ]
+    }
+  ],
+  "selection": "Analytic actual stage09 wedge and curved rear wall plus matching real face normals; no u/v rectangle or artificial ROI",
+  "intrinsic_color": "World-position mineral and erosion reflectance at roughly2–8cm; old faces stronger/coarser, fresh faces weaker/finer, dust quiet; no lighting or AO inputs"
+}

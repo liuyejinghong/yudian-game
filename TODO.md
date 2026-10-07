@@ -1,15 +1,17 @@
 # 余电双线 TODO
 
-更新：2026-10-07。PR38—42与PR45—48已合并。此前所有者授权D1.0实施与美术新会话；普通入口、真实选区整平、低保真消费和磁盘保存已进入同一新Mac试玩包，独立验收证据齐备，六工程子片限定接受。D1.1工程与最终窗口复验已完成：读档角点误拒绝已修复，同包九进程、实际鼠标保存/重开/继续及默认入口均通过，六工程子片限定ACCEPTED；默认应用已更新。[D1.1复验](docs/engineering/reports/2026-10-07-d11-bootstrap-verification.md) / [D1.0复验](docs/engineering/reports/2026-10-07-d1-player-verification.md) / [路线入口](docs/roadmap/README.md) / [GitHub总索引17](https://github.com/liuyejinghong/yudian-game/issues/17)。
+更新：2026-10-08。PR38—42与PR45—49已合并。此前所有者授权D1.0实施与美术新会话；普通入口、真实选区整平、低保真消费和磁盘保存已进入同一新Mac试玩包，独立验收证据齐备，六工程子片限定接受。D1.1工程与最终窗口复验已完成：读档角点误拒绝已修复，同包九进程、实际鼠标保存/重开/继续及默认入口均通过，六工程子片限定ACCEPTED；默认应用已更新。[D1.1复验](docs/engineering/reports/2026-10-07-d11-bootstrap-verification.md) / [D1.0复验](docs/engineering/reports/2026-10-07-d1-player-verification.md) / [路线入口](docs/roadmap/README.md) / [GitHub总索引17](https://github.com/liuyejinghong/yudian-game/issues/17)。
 
 | 线 | 唯一权威任务表 | 当前事实 | 下一待办 |
 |---|---|---|---|
 | 产研 | [产研 TODO](docs/engineering/tasks/todo.md) | D1.1自举与镜头鼠标入口已收口，默认包r5；完整模块继续未完成 | D1.2采集加工/后续发展选择；物理触控板与真人键盘手感留验；[镜头证据](docs/engineering/reports/2026-10-07-camera-verification.md) |
-| 美术 | [美术 TODO](docs/art/production/todo.md) | A01实际取景/A03标记与表面候选已制作并在D1.0消费；素材父票REVIEW，所有者最终视觉未验 | 依据本批实际画面局部修正；D1.1按运输/建设/服务用途制作，U01独立局部修正；高保真仍需门槛 |
+| 美术 | [美术 TODO](docs/art/production/todo.md) | A01/A03已在默认应用消费；PR43地表外观返工；PR44两件高保真核心样板内部视觉通过，Sol实际试跑流程；Main/整场性能/所有者终审未验 | 六资源与U01/F02局部问题按D1.2用途补齐；核心高保真先核游戏预算和接入，不自动批量生产 |
 
 2026-10-07镜头返修：[CAMERA-01](docs/engineering/tasks/CAMERA-01.md)已限定ACCEPTED，GLM实现、1280×800 UI62项、r5实际鼠标缩放/旋转/平移及保存关闭重开后操作通过；根入口已更新，原两份存档字节保持。物理触控板与所有者原输入根因未签。[复验与留项](docs/engineering/reports/2026-10-07-camera-verification.md)。
 
 D1.1工程自举与镜头鼠标入口已收口，仍不称持续经营首玩。下一检查点为 **D1.2 可持续经营首玩**。D1.1 自举建设与真实保障 → D1.2 可持续经营/后续选择 → D2.0 竞争/勘探 → D2.1 本地委托/恢复 → D2.2 G1 → D3.0 有限扩张。P1 高保真生产切片和 R1 发行另过门槛；详细包规格用路线文档，不在此维护第二套逐行状态。
+
+本轮盘点见[2026-10-08双线进度](docs/workflow/2026-10-08-two-track-status.md)。附件PR列表保留已合并历史；PR43继续视觉返工，PR44按独立样板/流程范围复核归档，均不代签完整美术或玩家版本。
 
 ## 分工与开批
 

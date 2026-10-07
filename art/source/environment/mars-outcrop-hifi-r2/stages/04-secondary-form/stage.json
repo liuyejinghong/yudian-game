@@ -1,0 +1,13 @@
+{
+  "version": "5.2.2 LTS",
+  "stage": "04-secondary-form",
+  "voxel_m": 0.014,
+  "triangles": 938476,
+  "dimensions": [
+    6.145660400390625,
+    3.973417282104492,
+    2.3209521770477295
+  ],
+  "grain_or_noise": false,
+  "visual_gate": "PENDING_OPEN_IMAGES_AND_INDEPENDENT_REVIEW"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "TECHNICAL_PASS_PHASE_VISUAL_PASS_NOT_FINAL",
+  "candidate_glb_sha256": "792b5e2a29da157dafbb6c98e867e1946e5f13c534afd4ca6adf53e269434f21",
+  "candidate_source_sha256": "92bbc97c765a7649d1a93ee6c1c1e134de22bb3fdcd3b2e021e58dc9d547f0eb",
+  "native_capture_sha256": "d6b3401c35ff76b6d3534c18a2442e28875d3cefa1b8d4c7b5780803f77e217a",
+  "verifier_sha256": "64089573fe68bdbfaaa3e3c9e5f9a739ab4685a8973bd5b6586d480aacce9034",
+  "actual_native_frames": 7,
+  "root_pixel_viewed_frames": [
+    "normal",
+    "near",
+    "reverse",
+    "horizon",
+    "normal-low",
+    "detail",
+    "ground"
+  ],
+  "embedded_vs_imported_png_equal": true,
+  "formal_source": "12 not promoted",
+  "resolution_px": 2048
+}

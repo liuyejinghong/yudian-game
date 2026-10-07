@@ -1,0 +1,261 @@
+{
+  "version": "5.2.2 LTS",
+  "stage": "10-real-selected-to-active-test",
+  "high_triangles": 946516,
+  "game_triangles": 227160,
+  "uv": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 227160,
+    "islands": 2509,
+    "td_px_per_m": 305.8,
+    "td_face_spread_p95_p05": 1.09,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      305.3,
+      305.7
+    ],
+    "angle_err_mean_deg": 2.44,
+    "angle_err_p95_deg": 9.64,
+    "area_stretch_p95_log2": 0.24,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.142,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [
+      1222,
+      2282
+    ],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.4061,
+        "overlap_px_pct": 0.142,
+        "min_gap_px": 40.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 40.0,
+    "gap_required_px": 12,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 2366,
+        "faces": 1,
+        "td": 305.3,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9933,
+          0.2946,
+          0.9938,
+          0.2947
+        ]
+      },
+      {
+        "island": 1762,
+        "faces": 2,
+        "td": 305.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9933,
+          0.4073,
+          0.9937,
+          0.4073
+        ]
+      },
+      {
+        "island": 1617,
+        "faces": 1,
+        "td": 305.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9933,
+          0.2126,
+          0.9938,
+          0.2126
+        ]
+      },
+      {
+        "island": 103,
+        "faces": 1,
+        "td": 305.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9933,
+          0.2226,
+          0.9938,
+          0.2227
+        ]
+      },
+      {
+        "island": 17,
+        "faces": 2,
+        "td": 305.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.4666,
+          0.8691,
+          0.4666,
+          0.8709
+        ]
+      },
+      {
+        "island": 1391,
+        "faces": 2,
+        "td": 305.4,
+        "area_m2": 3e-05,
+        "uv_px": 2,
+        "flipped": 0,
+        "bbox": [
+          0.9609,
+          0.9696,
+          0.9612,
+          0.9704
+        ]
+      },
+      {
+        "island": 839,
+        "faces": 1,
+        "td": 305.5,
+        "area_m2": 5e-05,
+        "uv_px": 4,
+        "flipped": 0,
+        "bbox": [
+          0.9718,
+          0.249,
+          0.9725,
+          0.2497
+        ]
+      },
+      {
+        "island": 834,
+        "faces": 1,
+        "td": 305.5,
+        "area_m2": 5e-05,
+        "uv_px": 5,
+        "flipped": 0,
+        "bbox": [
+          0.9501,
+          0.452,
+          0.9509,
+          0.4527
+        ]
+      },
+      {
+        "island": 2508,
+        "faces": 1,
+        "td": 305.5,
+        "area_m2": 3e-05,
+        "uv_px": 3,
+        "flipped": 0,
+        "bbox": [
+          0.906,
+          0.068,
+          0.9072,
+          0.0683
+        ]
+      },
+      {
+        "island": 2479,
+        "faces": 1,
+        "td": 305.6,
+        "area_m2": 4e-05,
+        "uv_px": 4,
+        "flipped": 0,
+        "bbox": [
+          0.9718,
+          0.9593,
+          0.9725,
+          0.9599
+        ]
+      },
+      {
+        "island": 1709,
+        "faces": 2,
+        "td": 305.6,
+        "area_m2": 2e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.6682,
+          0.9912,
+          0.6684,
+          0.9918
+        ]
+      },
+      {
+        "island": 1711,
+        "faces": 5,
+        "td": 305.7,
+        "area_m2": 2e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.8464,
+          0.8051,
+          0.8489,
+          0.8051
+        ]
+      }
+    ]
+  },
+  "projection": {
+    "samples": 3513,
+    "outward_q": 0.00149,
+    "inward_q": 0.00184,
+    "outward_max": 0.00179,
+    "inward_max": 0.00218,
+    "cage_extrusion": 0.00241,
+    "max_ray_distance": 0.0052,
+    "miss_pct": 0.0,
+    "uncovered_pct": 0.0,
+    "wrong_part_pct": 0.03,
+    "search": 0.06,
+    "quantile": 0.999
+  },
+  "normal_source": "Independent approved high geometry only; no image-derived or shader normal in this geometry probe",
+  "low_mesh_cleanup": {
+    "merge_and_degenerate_edge_tolerance_m": 0.0002,
+    "triangles_before": 227162,
+    "triangles_after": 227160,
+    "approved_high_unchanged": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "scope": "read-only diagnostic; no formal light change",
+  "runtime_glb_sha256": "6bc4c9e9262edf503ba885d50a98b53f8ba2a247e81c1a5b21ef6102fad3895e",
+  "changed_parameter": "ambient_light_source: COLOR to SKY",
+  "unchanged": [
+    "Sun direction",
+    "Sun energy",
+    "camera",
+    "exposure",
+    "meshes",
+    "PBR"
+  ],
+  "frames_sha256": {
+    "reverse.png": "227260e09bfe01d50122561bd247eb0e88462dec872e84c35d6d2df53dc8ee83",
+    "detail.png": "52d325df85c1090203242580c105a56a6433f43efe074ee1de2582f136ca79a4"
+  },
+  "result": "still insufficient: medium-scale surface layer absent; not accepted candidate"
+}

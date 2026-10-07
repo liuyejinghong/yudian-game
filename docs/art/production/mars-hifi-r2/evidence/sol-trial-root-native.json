@@ -1,0 +1,669 @@
+{
+  "status": "PASS",
+  "blender": "5.2.2 LTS",
+  "native_source_reopen": true,
+  "source_images": [
+    {
+      "name": "Trial_base_color",
+      "size": [
+        512,
+        512
+      ],
+      "packed": true,
+      "path": "//textures/base_color.png",
+      "space": "sRGB"
+    },
+    {
+      "name": "Trial_normal",
+      "size": [
+        512,
+        512
+      ],
+      "packed": true,
+      "path": "//textures/normal.png",
+      "space": "Non-Color"
+    },
+    {
+      "name": "Trial_roughness",
+      "size": [
+        512,
+        512
+      ],
+      "packed": true,
+      "path": "//textures/roughness.png",
+      "space": "Non-Color"
+    }
+  ],
+  "source_uv": {
+    "object": "GAME_IndependentSandstone",
+    "uv_map": "UVMap",
+    "tex_res": 512,
+    "faces": 5378,
+    "islands": 935,
+    "td_px_per_m": 143.2,
+    "td_face_spread_p95_p05": 1.03,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      143.2,
+      143.2
+    ],
+    "angle_err_mean_deg": 0.91,
+    "angle_err_p95_deg": 3.03,
+    "area_stretch_p95_log2": 0.06,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.1802,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 7.5,
+        "border_px": 4.1
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 7.5,
+    "gap_required_px": 4,
+    "tiny_islands": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16,
+      17,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 0,
+        "faces": 15,
+        "td": 143.2,
+        "area_m2": 0.01282,
+        "uv_px": 263,
+        "flipped": 0,
+        "bbox": [
+          0.4545,
+          0.0948,
+          0.4661,
+          0.1904
+        ]
+      },
+      {
+        "island": 615,
+        "faces": 3,
+        "td": 143.2,
+        "area_m2": 0.00098,
+        "uv_px": 20,
+        "flipped": 0,
+        "bbox": [
+          0.4168,
+          0.705,
+          0.4215,
+          0.732
+        ]
+      },
+      {
+        "island": 616,
+        "faces": 3,
+        "td": 143.2,
+        "area_m2": 0.00072,
+        "uv_px": 15,
+        "flipped": 0,
+        "bbox": [
+          0.8242,
+          0.3625,
+          0.8384,
+          0.3679
+        ]
+      },
+      {
+        "island": 617,
+        "faces": 4,
+        "td": 143.2,
+        "area_m2": 0.00058,
+        "uv_px": 12,
+        "flipped": 0,
+        "bbox": [
+          0.6839,
+          0.705,
+          0.6884,
+          0.7311
+        ]
+      },
+      {
+        "island": 618,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00016,
+        "uv_px": 3,
+        "flipped": 0,
+        "bbox": [
+          0.8846,
+          0.5656,
+          0.8953,
+          0.5679
+        ]
+      },
+      {
+        "island": 619,
+        "faces": 3,
+        "td": 143.2,
+        "area_m2": 0.00102,
+        "uv_px": 21,
+        "flipped": 0,
+        "bbox": [
+          0.3636,
+          0.7881,
+          0.3692,
+          0.8067
+        ]
+      },
+      {
+        "island": 315,
+        "faces": 8,
+        "td": 143.2,
+        "area_m2": 0.00238,
+        "uv_px": 49,
+        "flipped": 0,
+        "bbox": [
+          0.0542,
+          0.75,
+          0.0697,
+          0.7712
+        ]
+      },
+      {
+        "island": 316,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00013,
+        "uv_px": 3,
+        "flipped": 0,
+        "bbox": [
+          0.9118,
+          0.027,
+          0.9221,
+          0.029
+        ]
+      },
+      {
+        "island": 317,
+        "faces": 8,
+        "td": 143.2,
+        "area_m2": 0.00234,
+        "uv_px": 48,
+        "flipped": 0,
+        "bbox": [
+          0.4055,
+          0.642,
+          0.4127,
+          0.6841
+        ]
+      },
+      {
+        "island": 318,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00026,
+        "uv_px": 5,
+        "flipped": 0,
+        "bbox": [
+          0.9118,
+          0.8239,
+          0.9214,
+          0.8281
+        ]
+      },
+      {
+        "island": 306,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00045,
+        "uv_px": 9,
+        "flipped": 0,
+        "bbox": [
+          0.9118,
+          0.2978,
+          0.9216,
+          0.305
+        ]
+      },
+      {
+        "island": 934,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00048,
+        "uv_px": 10,
+        "flipped": 0,
+        "bbox": [
+          0.855,
+          0.6787,
+          0.8676,
+          0.6867
+        ]
+      }
+    ]
+  },
+  "source_material_audit": [],
+  "empty_scene_glb_import": true,
+  "glb_geometry": {
+    "vertices": 6577,
+    "triangles": 5378,
+    "min": [
+      -0.4574401378631592,
+      -0.35829299688339233,
+      -0.15999974310398102
+    ],
+    "max": [
+      0.42997807264328003,
+      0.3107162117958069,
+      0.3999786972999573
+    ],
+    "dimensions": [
+      0.8874182105064392,
+      0.6690092086791992,
+      0.5599784404039383
+    ],
+    "uv_loops": 16134,
+    "uv_min": [
+      0.007999995723366737,
+      0.007999956607818604
+    ],
+    "uv_max": [
+      0.9905534386634827,
+      0.9919741153717041
+    ]
+  },
+  "glb_uv": {
+    "object": "GAME_IndependentSandstone",
+    "uv_map": "UVMap",
+    "tex_res": 512,
+    "faces": 5378,
+    "islands": 935,
+    "td_px_per_m": 143.2,
+    "td_face_spread_p95_p05": 1.03,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      143.2,
+      143.2
+    ],
+    "angle_err_mean_deg": 0.91,
+    "angle_err_p95_deg": 3.03,
+    "area_stretch_p95_log2": 0.06,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.1802,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 7.5,
+        "border_px": 4.1
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 7.5,
+    "gap_required_px": 4,
+    "tiny_islands": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 0,
+        "faces": 27,
+        "td": 143.2,
+        "area_m2": 0.0246,
+        "uv_px": 504,
+        "flipped": 0,
+        "bbox": [
+          0.3361,
+          0.2166,
+          0.3535,
+          0.3563
+        ]
+      },
+      {
+        "island": 615,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00035,
+        "uv_px": 7,
+        "flipped": 0,
+        "bbox": [
+          0.8846,
+          0.1567,
+          0.8956,
+          0.1607
+        ]
+      },
+      {
+        "island": 616,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00027,
+        "uv_px": 6,
+        "flipped": 0,
+        "bbox": [
+          0.9381,
+          0.6795,
+          0.9457,
+          0.6835
+        ]
+      },
+      {
+        "island": 617,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00022,
+        "uv_px": 5,
+        "flipped": 0,
+        "bbox": [
+          0.855,
+          0.1523,
+          0.8685,
+          0.1549
+        ]
+      },
+      {
+        "island": 618,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00056,
+        "uv_px": 11,
+        "flipped": 0,
+        "bbox": [
+          0.7903,
+          0.5075,
+          0.8072,
+          0.5125
+        ]
+      },
+      {
+        "island": 619,
+        "faces": 8,
+        "td": 143.2,
+        "area_m2": 0.00403,
+        "uv_px": 83,
+        "flipped": 0,
+        "bbox": [
+          0.1284,
+          0.0268,
+          0.1383,
+          0.0764
+        ]
+      },
+      {
+        "island": 315,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00071,
+        "uv_px": 15,
+        "flipped": 0,
+        "bbox": [
+          0.2193,
+          0.75,
+          0.2242,
+          0.7714
+        ]
+      },
+      {
+        "island": 316,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 3e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9858,
+          0.0438,
+          0.9905,
+          0.0447
+        ]
+      },
+      {
+        "island": 317,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00066,
+        "uv_px": 14,
+        "flipped": 0,
+        "bbox": [
+          0.855,
+          0.4876,
+          0.8679,
+          0.4942
+        ]
+      },
+      {
+        "island": 318,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00015,
+        "uv_px": 3,
+        "flipped": 0,
+        "bbox": [
+          0.9623,
+          0.0814,
+          0.9697,
+          0.0847
+        ]
+      },
+      {
+        "island": 306,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00061,
+        "uv_px": 12,
+        "flipped": 0,
+        "bbox": [
+          0.8846,
+          0.4372,
+          0.8952,
+          0.4462
+        ]
+      },
+      {
+        "island": 934,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00048,
+        "uv_px": 10,
+        "flipped": 0,
+        "bbox": [
+          0.855,
+          0.6787,
+          0.8676,
+          0.6867
+        ]
+      }
+    ]
+  },
+  "glb_images": [
+    {
+      "name": "base_color",
+      "size": [
+        512,
+        512
+      ],
+      "packed": true,
+      "space": "sRGB"
+    },
+    {
+      "name": "normal",
+      "size": [
+        512,
+        512
+      ],
+      "packed": true,
+      "space": "Non-Color"
+    },
+    {
+      "name": "roughness",
+      "size": [
+        512,
+        512
+      ],
+      "packed": true,
+      "space": "Non-Color"
+    }
+  ],
+  "embedded_images": 3,
+  "embedded_pngs": [
+    {
+      "name": "normal",
+      "width": 512,
+      "height": 512,
+      "bit_depth": 16,
+      "color_type": 2,
+      "sha256": "735920d1bf3f67e32b7f4da8c67f63ff36bd73442e8f40ef8ccb61a42e55ad89",
+      "bytes": 418930
+    },
+    {
+      "name": "base_color",
+      "width": 512,
+      "height": 512,
+      "bit_depth": 16,
+      "color_type": 2,
+      "sha256": "a20eb05b675911dc3f2bf3a6b3cc3b2b572de37ddda85ee7c4608a77ad8e8804",
+      "bytes": 363113
+    },
+    {
+      "name": "roughness",
+      "width": 512,
+      "height": 512,
+      "bit_depth": 8,
+      "color_type": 2,
+      "sha256": "67682facaa343897eb92e88d120ca8fd176470f28c98c91bc49440d3854d6839",
+      "bytes": 73283
+    }
+  ],
+  "background_png_roundtrip": {
+    "base_color": [
+      0.21999534964561462,
+      0.19500574469566345,
+      0.1709914207458496,
+      1.0
+    ],
+    "normal": [
+      0.5000076293945312,
+      0.5000076293945312,
+      1.0,
+      1.0
+    ],
+    "roughness": [
+      0.8599984645843506,
+      0.8599984645843506,
+      0.8599984645843506,
+      1.0
+    ]
+  },
+  "pbr_connections": [
+    "Base Color",
+    "Roughness",
+    "Normal"
+  ],
+  "metallic": 0,
+  "no_occlusion_texture": true,
+  "formal_hashes_unchanged": true,
+  "formal": {
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend": {
+      "sha256": "94ff01a08b6ef25a30dafeb2db2cb56c93589aeee280b23cf151ca705fa42ea0",
+      "bytes": 102824670
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb": {
+      "sha256": "ae5722b19aa99a1e3a0e5333d41eb5544ac9c2295c35685be9f41f5b05df4e78",
+      "bytes": 53028780
+    },
+    "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.blend": {
+      "sha256": "fa48f2e488f7c05103f3d65a918279bcae0b79c78ef849d86b9283d4cca908cd",
+      "bytes": 56226430
+    },
+    "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.glb": {
+      "sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+      "bytes": 50018792
+    }
+  },
+  "outputs": {
+    "trial.blend": {
+      "sha256": "73bc6517f4611f2aeb3b1e7890c571a5fe0d9d5ad622322aab39aed739cb86f8",
+      "bytes": 1791527
+    },
+    "trial.glb": {
+      "sha256": "8543b983a3881af0cb6c0be67031b88e8bf79f14ff7fc455715ccc427b3612c2",
+      "bytes": 1443300
+    },
+    "trial.py": {
+      "sha256": "d14e308b4384a0fb1f68cec8696e954b50689d864d7649a352d5fea9b20825be",
+      "bytes": 11342
+    },
+    "textures/base_color.png": {
+      "sha256": "a20eb05b675911dc3f2bf3a6b3cc3b2b572de37ddda85ee7c4608a77ad8e8804",
+      "bytes": 363113
+    },
+    "textures/normal.png": {
+      "sha256": "735920d1bf3f67e32b7f4da8c67f63ff36bd73442e8f40ef8ccb61a42e55ad89",
+      "bytes": 418930
+    },
+    "textures/roughness.png": {
+      "sha256": "ac4ec130f7497e7dcfa45680492c7ef2c2312a03f8bfbf11200c2fd2dc47136c",
+      "bytes": 228757
+    },
+    "renders/high.png": {
+      "sha256": "5ee85992a5b20306bd566e37673b2dbd9901e4a687f15909e3154747ddd2d506",
+      "bytes": 678147
+    },
+    "renders/mapped-low.png": {
+      "sha256": "3bdd12ef57384b174905ef10b00a3479028210214020a18169a2a926809456c8",
+      "bytes": 679018
+    }
+  },
+  "root_actual_native_recheck": true
+}

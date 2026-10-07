@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "version": "5.2.2 LTS",
+  "source": "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend",
+  "source_sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+  "glb": "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb",
+  "glb_sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+  "source_reopen": {
+    "objects": 1,
+    "triangles": 227160,
+    "bounds_min": [
+      -3.017899990081787,
+      -2.2795398235321045,
+      -0.16000327467918396
+    ],
+    "bounds_max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "dimensions": [
+      6.145660400390625,
+      3.9290380477905273,
+      2.320955276489258
+    ],
+    "uv_missing": [],
+    "finite": true,
+    "high_editable_collection_present": true,
+    "editable_high_triangles": 946516,
+    "textures": [
+      {
+        "name": "outcrop-base_color",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "sRGB",
+        "png_bit_depth": 8
+      },
+      {
+        "name": "outcrop-normal",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color",
+        "png_bit_depth": 8
+      },
+      {
+        "name": "outcrop-roughness",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color",
+        "png_bit_depth": 8
+      }
+    ]
+  },
+  "independent_glb_import": {
+    "objects": 1,
+    "triangles": 227160,
+    "bounds_min": [
+      -3.017899990081787,
+      -2.2795398235321045,
+      -0.16000327467918396
+    ],
+    "bounds_max": [
+      3.127760171890259,
+      1.6494983434677124,
+      2.160952091217041
+    ],
+    "dimensions": [
+      6.145660400390625,
+      3.9290380477905273,
+      2.320955276489258
+    ],
+    "uv_missing": [],
+    "finite": true
+  },
+  "embedded_images": 3,
+  "materials": [
+    {
+      "name": "GAME_MarsOutcrop",
+      "base_color_texture": true,
+      "normal_texture": true,
+      "roughness_texture": true,
+      "metallicFactor": 0
+    }
+  ],
+  "owner_final_visual": "NOT_RUN",
+  "Main_integration": "NOT_RUN",
+  "scene_performance": "NOT_RUN",
+  "file_bytes": {
+    "mars-outcrop-hifi-r2.blend": 52451110,
+    "mars-outcrop-hifi-r2.glb": 27662108
+  }
+}

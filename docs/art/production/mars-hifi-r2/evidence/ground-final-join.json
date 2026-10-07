@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "blender": "5.2.2 LTS",
+  "support_sha256": "2493622470df2a0c4194bb35357c0b856d6e77fe595cc63c046528a784cf0791",
+  "patch_sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+  "boundary_vertices": 600,
+  "max_separation_m": 2.6193204553243143e-08,
+  "max_matching_vertex_distance_m": 1.9073486328125e-06,
+  "min_boundary_normal_dot": 0.9999997615814209,
+  "max_boundary_uv_distance": 1.7881393432617188e-07
+}

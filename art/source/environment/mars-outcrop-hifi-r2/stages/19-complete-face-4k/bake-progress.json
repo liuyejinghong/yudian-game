@@ -1,0 +1,5327 @@
+{
+  "status": "MEASURING_BEFORE_4K_BAKE",
+  "input": {
+    "path": "art/source/environment/mars-outcrop-hifi-r2/stages/17-continuous-face-response/source-clean.blend",
+    "sha256": "aac30d2bdeef6262a320db6a7d1d20834716900724899609ddf1b36ea029840f",
+    "bytes": 114671327
+  },
+  "accepted_source_preview": "Root and independent Sol accepted stage18 2K continuity and backlit intrinsic detail, explicitly authorizing this frozen 4K candidate; final Godot/Sol verdict remains pending",
+  "high_triangles": 1281204,
+  "game_triangles": 929126,
+  "preservation": {
+    "status": "PASS",
+    "source": {
+      "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+      "bytes": 52451110
+    },
+    "candidate": {
+      "sha256": "aac30d2bdeef6262a320db6a7d1d20834716900724899609ddf1b36ea029840f",
+      "bytes": 114671327
+    },
+    "triangles": 929126,
+    "scope_counts": {
+      "permitted_face_corners": 2137824,
+      "outside_faces_on_permitted_or_deformed_fans": 9873,
+      "strict_outside_corners": 639681,
+      "strict_outside_original_corners": 639681
+    },
+    "input_target_truth": {
+      "strict_outside_original_corner_max_delta": 0.0,
+      "new_corner_rule": "Original-face barycentric interpolation; independently solved by cross products",
+      "max_barycentric_position_error": 2.2239869990059447e-07,
+      "strict_outside_position_delta_m": 0.0,
+      "original_sharp_edges": 0,
+      "candidate_sharp_edges": 0,
+      "original_and_candidate_all_faces_smooth": true
+    },
+    "same_state_encoding_control": {
+      "native": "5.2.2 LTS",
+      "same_coordinates_topology_initial_hard_edges": true,
+      "threshold": 0.0003,
+      "scope": "Range preservation is gated on strict outside corners; permitted faces and their shared fans are reported separately without editing them",
+      "all_corner_max_delta": 0.0006713877188730369,
+      "permitted_face_corner_max_delta": 0.0006713877188730369,
+      "outside_face_shared_fan_max_delta": 0.0,
+      "strict_outside_corner_max_delta": 0.0,
+      "strict_outside_p99_delta": 0.0,
+      "over_threshold_all": 2887,
+      "over_threshold_strict_outside": 0
+    },
+    "uv": {
+      "max_interpolation_error": 9.81468787353279e-08,
+      "max_original_face_area_partition_error": 8.89633255951594e-10,
+      "flipped_faces": 0,
+      "zero_area_faces": 0,
+      "non_triangular_polygons": 0
+    },
+    "bounds_max_delta": 0.0,
+    "legacy_diagnostics_retained": {
+      "old_topology_max_delta": 0.0006016109904149607,
+      "zero_displacement_same_topology_max_delta": 0.0003293200238104092,
+      "zero_displacement_over_threshold_count": 35,
+      "zero_displacement_all_35_corners_classified": [
+        {
+          "loop": 57068,
+          "vertex": 83686,
+          "original_face": 19022,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 57279,
+          "vertex": 83686,
+          "original_face": 19093,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 57288,
+          "vertex": 83686,
+          "original_face": 19096,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 69153,
+          "vertex": 96780,
+          "original_face": 23051,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 368971,
+          "vertex": 96780,
+          "original_face": 122990,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 615478,
+          "vertex": 83686,
+          "original_face": 205159,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 641724,
+          "vertex": 96780,
+          "original_face": 213908,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 641744,
+          "vertex": 96780,
+          "original_face": 213914,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 641782,
+          "vertex": 96780,
+          "original_face": 213927,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 722395,
+          "vertex": 83686,
+          "original_face": 110107,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 726145,
+          "vertex": 96780,
+          "original_face": 213927,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 736437,
+          "vertex": 83686,
+          "original_face": 19023,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 736962,
+          "vertex": 83686,
+          "original_face": 19097,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 736965,
+          "vertex": 83686,
+          "original_face": 19098,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 802171,
+          "vertex": 96780,
+          "original_face": 123003,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 819990,
+          "vertex": 83686,
+          "original_face": 19024,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 847353,
+          "vertex": 83686,
+          "original_face": 19024,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 931271,
+          "vertex": 96780,
+          "original_face": 122984,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 956586,
+          "vertex": 83686,
+          "original_face": 110510,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 956589,
+          "vertex": 83686,
+          "original_face": 110504,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 956592,
+          "vertex": 83686,
+          "original_face": 110503,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1013361,
+          "vertex": 83686,
+          "original_face": 19099,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1014370,
+          "vertex": 83686,
+          "original_face": 19011,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1042195,
+          "vertex": 83686,
+          "original_face": 19012,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1087392,
+          "vertex": 96780,
+          "original_face": 123004,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1091176,
+          "vertex": 83686,
+          "original_face": 110513,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1135537,
+          "vertex": 83686,
+          "original_face": 19100,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1204563,
+          "vertex": 96780,
+          "original_face": 123004,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1204566,
+          "vertex": 96780,
+          "original_face": 122983,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1214403,
+          "vertex": 83686,
+          "original_face": 110513,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1313502,
+          "vertex": 83686,
+          "original_face": 110513,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1317633,
+          "vertex": 96780,
+          "original_face": 122983,
+          "original_face_region": 1,
+          "co": [
+            1.639235019683838,
+            0.019185252487659454,
+            0.9851893186569214
+          ],
+          "delta": 0.0003067130981248062,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1400841,
+          "vertex": 83686,
+          "original_face": 19090,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 1825522,
+          "vertex": 83686,
+          "original_face": 205162,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        },
+        {
+          "loop": 2166394,
+          "vertex": 83686,
+          "original_face": 19011,
+          "original_face_region": 2,
+          "co": [
+            -1.4514530897140503,
+            1.433631420135498,
+            0.6010246872901917
+          ],
+          "delta": 0.0003293200238104092,
+          "vertex_touches_permitted_face": true,
+          "fan_touches_displaced_face": true,
+          "strict_outside": false
+        }
+      ],
+      "all_35_in_permitted_original_faces": true,
+      "original_face_regions": {
+        "1": 12,
+        "2": 23
+      },
+      "meaning": "Both earlier deltas remain recorded; a zero-displacement control also changes the geometric fan basis, so it is not the same encoding state."
+    }
+  },
+  "degenerate_repair": {
+    "status": "LOCAL_DUPLICATE_EDGE_REPAIR_PENDING_INDEPENDENT_PRESERVATION",
+    "input": {
+      "sha256": "24a10482169b74cb0c23cc009a11a65a013a19cc071a1987ed57632a6b0b5cad",
+      "bytes": 114801468
+    },
+    "threshold_m": 5.960464477539063e-08,
+    "selected_duplicate_edges": 875,
+    "merged_inserted_vertices": 868,
+    "removed_original_vertices": 0,
+    "max_merge_distance_m": 5.960464477539063e-08,
+    "triangles_before": 930876,
+    "triangles_after": 929126,
+    "removed_degenerate_triangles": 1750,
+    "uv_zero_area_faces_after": 0,
+    "uv_negative_faces_after": 0,
+    "bounds_max_delta": 0,
+    "merges": [
+      {
+        "from": 352974,
+        "to": 218894,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308853,
+        "to": 218894,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401867,
+        "to": 161619,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174894,
+        "to": 161619,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392106,
+        "to": 207307,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308850,
+        "to": 207307,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401869,
+        "to": 149224,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174893,
+        "to": 149224,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363205,
+        "to": 257692,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401871,
+        "to": 118698,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174895,
+        "to": 118698,
+        "distance_m": 0.0
+      },
+      {
+        "from": 353014,
+        "to": 207307,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308847,
+        "to": 207307,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348638,
+        "to": 212953,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363204,
+        "to": 224991,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455310,
+        "to": 256783,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348637,
+        "to": 212947,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401874,
+        "to": 130222,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174201,
+        "to": 130222,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316917,
+        "to": 166879,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394486,
+        "to": 256783,
+        "distance_m": 0.0
+      },
+      {
+        "from": 352971,
+        "to": 218891,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308844,
+        "to": 218891,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454310,
+        "to": 380171,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409931,
+        "to": 161344,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401876,
+        "to": 161614,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174897,
+        "to": 161614,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452908,
+        "to": 372485,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399133,
+        "to": 372485,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239346,
+        "to": 161344,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392103,
+        "to": 207304,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308841,
+        "to": 207304,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455309,
+        "to": 160280,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399134,
+        "to": 160280,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377413,
+        "to": 215747,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285425,
+        "to": 215747,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401878,
+        "to": 149219,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174896,
+        "to": 149219,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454364,
+        "to": 351271,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399132,
+        "to": 351271,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356682,
+        "to": 248786,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409930,
+        "to": 160501,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363202,
+        "to": 257689,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455308,
+        "to": 160280,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409884,
+        "to": 129552,
+        "distance_m": 0.0
+      },
+      {
+        "from": 194852,
+        "to": 129552,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239349,
+        "to": 160501,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455412,
+        "to": 408440,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401880,
+        "to": 118686,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174898,
+        "to": 118686,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316911,
+        "to": 150081,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356193,
+        "to": 218576,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285428,
+        "to": 218576,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377414,
+        "to": 215132,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285422,
+        "to": 215132,
+        "distance_m": 0.0
+      },
+      {
+        "from": 353015,
+        "to": 207304,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308838,
+        "to": 207304,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316909,
+        "to": 150079,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409929,
+        "to": 158862,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317551,
+        "to": 158955,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239352,
+        "to": 158862,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317550,
+        "to": 158100,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455408,
+        "to": 408448,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377415,
+        "to": 213971,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285419,
+        "to": 213971,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455307,
+        "to": 255981,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316908,
+        "to": 146563,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394345,
+        "to": 255981,
+        "distance_m": 0.0
+      },
+      {
+        "from": 195046,
+        "to": 132993,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454308,
+        "to": 380049,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452909,
+        "to": 372363,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399138,
+        "to": 372363,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356681,
+        "to": 215747,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455306,
+        "to": 159163,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399139,
+        "to": 159163,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409887,
+        "to": 124426,
+        "distance_m": 0.0
+      },
+      {
+        "from": 194893,
+        "to": 124426,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455403,
+        "to": 408634,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317545,
+        "to": 159798,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454365,
+        "to": 351149,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399137,
+        "to": 351149,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356199,
+        "to": 245957,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285424,
+        "to": 245957,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455305,
+        "to": 159163,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414861,
+        "to": 243617,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356680,
+        "to": 215132,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409890,
+        "to": 123431,
+        "distance_m": 0.0
+      },
+      {
+        "from": 194896,
+        "to": 123431,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224981,
+        "to": 147584,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456840,
+        "to": 246474,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414860,
+        "to": 246474,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356200,
+        "to": 245342,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285421,
+        "to": 245342,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308875,
+        "to": 116235,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140332,
+        "to": 116235,
+        "distance_m": 0.0
+      },
+      {
+        "from": 453162,
+        "to": 349259,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356679,
+        "to": 213971,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224630,
+        "to": 159979,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174884,
+        "to": 159979,
+        "distance_m": 0.0
+      },
+      {
+        "from": 453161,
+        "to": 373239,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409893,
+        "to": 121499,
+        "distance_m": 0.0
+      },
+      {
+        "from": 194899,
+        "to": 121499,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414857,
+        "to": 216819,
+        "distance_m": 0.0
+      },
+      {
+        "from": 453160,
+        "to": 350013,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356201,
+        "to": 244181,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285418,
+        "to": 244181,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224980,
+        "to": 159143,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414856,
+        "to": 215898,
+        "distance_m": 0.0
+      },
+      {
+        "from": 457350,
+        "to": 356217,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308878,
+        "to": 115027,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140336,
+        "to": 115027,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224632,
+        "to": 146748,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174881,
+        "to": 146748,
+        "distance_m": 0.0
+      },
+      {
+        "from": 457348,
+        "to": 356208,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224979,
+        "to": 161650,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414855,
+        "to": 215896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308881,
+        "to": 118765,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140338,
+        "to": 118765,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224633,
+        "to": 149255,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174878,
+        "to": 149255,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224978,
+        "to": 161651,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308884,
+        "to": 118766,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140340,
+        "to": 118766,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414852,
+        "to": 215895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224634,
+        "to": 149256,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174875,
+        "to": 149256,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455682,
+        "to": 399634,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414850,
+        "to": 246006,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413834,
+        "to": 224668,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455678,
+        "to": 393896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455675,
+        "to": 399630,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401845,
+        "to": 161621,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174888,
+        "to": 161621,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455669,
+        "to": 399568,
+        "distance_m": 0.0
+      },
+      {
+        "from": 254835,
+        "to": 161621,
+        "distance_m": 0.0
+      },
+      {
+        "from": 379864,
+        "to": 257694,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266780,
+        "to": 257694,
+        "distance_m": 0.0
+      },
+      {
+        "from": 240610,
+        "to": 144443,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414847,
+        "to": 218746,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363214,
+        "to": 246107,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308893,
+        "to": 246107,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414846,
+        "to": 224588,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401844,
+        "to": 124809,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308894,
+        "to": 124809,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414845,
+        "to": 218129,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392114,
+        "to": 215897,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308892,
+        "to": 215897,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414844,
+        "to": 217555,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401843,
+        "to": 124809,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414843,
+        "to": 216968,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414842,
+        "to": 245787,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224983,
+        "to": 215897,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401842,
+        "to": 161620,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174891,
+        "to": 161620,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412620,
+        "to": 144832,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366553,
+        "to": 213081,
+        "distance_m": 0.0
+      },
+      {
+        "from": 254833,
+        "to": 161620,
+        "distance_m": 0.0
+      },
+      {
+        "from": 213030,
+        "to": 144832,
+        "distance_m": 0.0
+      },
+      {
+        "from": 379863,
+        "to": 257693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266783,
+        "to": 257693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 372173,
+        "to": 246102,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308902,
+        "to": 246102,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363215,
+        "to": 246106,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308896,
+        "to": 246106,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412619,
+        "to": 144837,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401841,
+        "to": 124808,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308897,
+        "to": 124808,
+        "distance_m": 0.0
+      },
+      {
+        "from": 213034,
+        "to": 144837,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392115,
+        "to": 215896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308895,
+        "to": 215896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 372176,
+        "to": 246105,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308899,
+        "to": 246105,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401840,
+        "to": 124808,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412618,
+        "to": 144838,
+        "distance_m": 0.0
+      },
+      {
+        "from": 213036,
+        "to": 144838,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224986,
+        "to": 215896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 372177,
+        "to": 246106,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401839,
+        "to": 161619,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412617,
+        "to": 144839,
+        "distance_m": 0.0
+      },
+      {
+        "from": 254831,
+        "to": 161619,
+        "distance_m": 0.0
+      },
+      {
+        "from": 213038,
+        "to": 144839,
+        "distance_m": 0.0
+      },
+      {
+        "from": 379862,
+        "to": 257692,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266786,
+        "to": 257692,
+        "distance_m": 0.0
+      },
+      {
+        "from": 372178,
+        "to": 246107,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363216,
+        "to": 246105,
+        "distance_m": 2.9802322387695312e-08
+      },
+      {
+        "from": 401838,
+        "to": 124807,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 308900,
+        "to": 124807,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 392116,
+        "to": 215895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308898,
+        "to": 215895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413949,
+        "to": 214207,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455367,
+        "to": 411201,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401837,
+        "to": 124807,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 413948,
+        "to": 202620,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456557,
+        "to": 411216,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413947,
+        "to": 217206,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224989,
+        "to": 215895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455364,
+        "to": 411205,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401836,
+        "to": 161614,
+        "distance_m": 0.0
+      },
+      {
+        "from": 254827,
+        "to": 161614,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455362,
+        "to": 411209,
+        "distance_m": 0.0
+      },
+      {
+        "from": 379859,
+        "to": 257689,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266789,
+        "to": 257689,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363217,
+        "to": 246102,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401835,
+        "to": 124800,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308903,
+        "to": 124800,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239485,
+        "to": 150096,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455359,
+        "to": 411213,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392117,
+        "to": 215892,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308901,
+        "to": 215892,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456549,
+        "to": 359648,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401834,
+        "to": 124800,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456547,
+        "to": 388548,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224992,
+        "to": 215892,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456544,
+        "to": 359644,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456542,
+        "to": 388544,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414831,
+        "to": 219264,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414830,
+        "to": 219263,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456539,
+        "to": 411204,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324565,
+        "to": 150062,
+        "distance_m": 0.0
+      },
+      {
+        "from": 381914,
+        "to": 224988,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317609,
+        "to": 150059,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414825,
+        "to": 246101,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399135,
+        "to": 146130,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414824,
+        "to": 254803,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317554,
+        "to": 146130,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409909,
+        "to": 161345,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414823,
+        "to": 254799,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394484,
+        "to": 205141,
+        "distance_m": 0.0
+      },
+      {
+        "from": 282334,
+        "to": 161345,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385234,
+        "to": 257545,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356674,
+        "to": 245958,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 285400,
+        "to": 245958,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399112,
+        "to": 158949,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409908,
+        "to": 124427,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 285401,
+        "to": 124427,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 324568,
+        "to": 158949,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385574,
+        "to": 215748,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285399,
+        "to": 215748,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455322,
+        "to": 261187,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395716,
+        "to": 214019,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409907,
+        "to": 124427,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 366563,
+        "to": 261187,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454057,
+        "to": 352024,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399117,
+        "to": 352024,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455321,
+        "to": 206419,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409906,
+        "to": 158861,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366566,
+        "to": 206419,
+        "distance_m": 0.0
+      },
+      {
+        "from": 416312,
+        "to": 278769,
+        "distance_m": 0.0
+      },
+      {
+        "from": 282327,
+        "to": 158861,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454058,
+        "to": 370993,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399114,
+        "to": 370993,
+        "distance_m": 0.0
+      },
+      {
+        "from": 416311,
+        "to": 289217,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385233,
+        "to": 255767,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399131,
+        "to": 161100,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356675,
+        "to": 244180,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285403,
+        "to": 244180,
+        "distance_m": 0.0
+      },
+      {
+        "from": 416310,
+        "to": 236977,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317558,
+        "to": 161100,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409905,
+        "to": 121498,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285404,
+        "to": 121498,
+        "distance_m": 0.0
+      },
+      {
+        "from": 318491,
+        "to": 177459,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394487,
+        "to": 257374,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385575,
+        "to": 213970,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285402,
+        "to": 213970,
+        "distance_m": 0.0
+      },
+      {
+        "from": 416308,
+        "to": 289213,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399130,
+        "to": 148949,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409904,
+        "to": 121498,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424085,
+        "to": 245958,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316837,
+        "to": 159794,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317565,
+        "to": 148949,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394488,
+        "to": 207159,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455328,
+        "to": 377406,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399111,
+        "to": 147302,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399129,
+        "to": 147305,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409903,
+        "to": 159697,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424082,
+        "to": 244769,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324633,
+        "to": 147302,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317567,
+        "to": 147305,
+        "distance_m": 0.0
+      },
+      {
+        "from": 282322,
+        "to": 159697,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395727,
+        "to": 247765,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394489,
+        "to": 205971,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385232,
+        "to": 256353,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424080,
+        "to": 245340,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399110,
+        "to": 148104,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399128,
+        "to": 147306,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356676,
+        "to": 244766,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285406,
+        "to": 244766,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324637,
+        "to": 148104,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317576,
+        "to": 147306,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409902,
+        "to": 122476,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285407,
+        "to": 122476,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395728,
+        "to": 248339,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394492,
+        "to": 205972,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385576,
+        "to": 214556,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285405,
+        "to": 214556,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399127,
+        "to": 161423,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409901,
+        "to": 122476,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317580,
+        "to": 161423,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394493,
+        "to": 257592,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239454,
+        "to": 149675,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399109,
+        "to": 148106,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399126,
+        "to": 158329,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324649,
+        "to": 148106,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317594,
+        "to": 158329,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395732,
+        "to": 248341,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394495,
+        "to": 255374,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399125,
+        "to": 162222,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399108,
+        "to": 146467,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317600,
+        "to": 162222,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317573,
+        "to": 146467,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394496,
+        "to": 258059,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365591,
+        "to": 247180,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399124,
+        "to": 158118,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399121,
+        "to": 157249,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399107,
+        "to": 148112,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317608,
+        "to": 158118,
+        "distance_m": 0.0
+      },
+      {
+        "from": 323245,
+        "to": 157249,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324660,
+        "to": 148112,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394497,
+        "to": 255204,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409900,
+        "to": 174023,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395398,
+        "to": 254754,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395734,
+        "to": 248344,
+        "distance_m": 0.0
+      },
+      {
+        "from": 282266,
+        "to": 174023,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385224,
+        "to": 266337,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399120,
+        "to": 157259,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356677,
+        "to": 254750,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285409,
+        "to": 254750,
+        "distance_m": 0.0
+      },
+      {
+        "from": 323251,
+        "to": 157259,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394491,
+        "to": 205383,
+        "distance_m": 0.0
+      },
+      {
+        "from": 422021,
+        "to": 205383,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409899,
+        "to": 140069,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285410,
+        "to": 140069,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395400,
+        "to": 254756,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385577,
+        "to": 224540,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285408,
+        "to": 224540,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456729,
+        "to": 224668,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399106,
+        "to": 149218,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409898,
+        "to": 140069,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324693,
+        "to": 149218,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316808,
+        "to": 158701,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395739,
+        "to": 249100,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399105,
+        "to": 149220,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409897,
+        "to": 174016,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324698,
+        "to": 149220,
+        "distance_m": 0.0
+      },
+      {
+        "from": 282262,
+        "to": 174016,
+        "distance_m": 0.0
+      },
+      {
+        "from": 422026,
+        "to": 150059,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395740,
+        "to": 249102,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385223,
+        "to": 266331,
+        "distance_m": 0.0
+      },
+      {
+        "from": 422025,
+        "to": 158958,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356678,
+        "to": 254744,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285412,
+        "to": 254744,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409896,
+        "to": 140061,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285413,
+        "to": 140061,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385578,
+        "to": 224534,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285411,
+        "to": 224534,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409895,
+        "to": 140061,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456839,
+        "to": 366525,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316916,
+        "to": 159163,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455320,
+        "to": 204959,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452852,
+        "to": 351149,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366843,
+        "to": 204959,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412614,
+        "to": 149226,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174887,
+        "to": 149226,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454059,
+        "to": 370751,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399103,
+        "to": 370751,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224625,
+        "to": 149226,
+        "distance_m": 0.0
+      },
+      {
+        "from": 374190,
+        "to": 224982,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308872,
+        "to": 224982,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363212,
+        "to": 257694,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 412613,
+        "to": 118700,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 308869,
+        "to": 118700,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 409922,
+        "to": 157234,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392112,
+        "to": 207309,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266779,
+        "to": 207309,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455301,
+        "to": 249601,
+        "distance_m": 0.0
+      },
+      {
+        "from": 240465,
+        "to": 157234,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317557,
+        "to": 160280,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412612,
+        "to": 161621,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 414834,
+        "to": 249601,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377537,
+        "to": 254744,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452854,
+        "to": 351271,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224984,
+        "to": 161621,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 454616,
+        "to": 378913,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409921,
+        "to": 157241,
+        "distance_m": 0.0
+      },
+      {
+        "from": 374226,
+        "to": 257694,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 308866,
+        "to": 257694,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 455300,
+        "to": 219391,
+        "distance_m": 0.0
+      },
+      {
+        "from": 240469,
+        "to": 157241,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412611,
+        "to": 149225,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174890,
+        "to": 149225,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414837,
+        "to": 219391,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377538,
+        "to": 254750,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224623,
+        "to": 149225,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454617,
+        "to": 344339,
+        "distance_m": 0.0
+      },
+      {
+        "from": 374189,
+        "to": 224985,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308863,
+        "to": 224985,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455299,
+        "to": 245196,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363209,
+        "to": 257693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 414841,
+        "to": 245196,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412610,
+        "to": 118699,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308860,
+        "to": 118699,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454618,
+        "to": 378159,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392109,
+        "to": 207308,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266782,
+        "to": 207308,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424023,
+        "to": 224544,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412609,
+        "to": 161620,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157503,
+        "to": 121405,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224987,
+        "to": 161620,
+        "distance_m": 0.0
+      },
+      {
+        "from": 374227,
+        "to": 257693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308857,
+        "to": 257693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 453344,
+        "to": 378912,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412608,
+        "to": 149224,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366500,
+        "to": 212959,
+        "distance_m": 0.0
+      },
+      {
+        "from": 453343,
+        "to": 343593,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224621,
+        "to": 149224,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285431,
+        "to": 122087,
+        "distance_m": 0.0
+      },
+      {
+        "from": 374188,
+        "to": 224988,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308854,
+        "to": 224988,
+        "distance_m": 0.0
+      },
+      {
+        "from": 194838,
+        "to": 122087,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363206,
+        "to": 257692,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281100,
+        "to": 142590,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366498,
+        "to": 212957,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409894,
+        "to": 142080,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412607,
+        "to": 118698,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308851,
+        "to": 118698,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239394,
+        "to": 153110,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266785,
+        "to": 207307,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412606,
+        "to": 161619,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224990,
+        "to": 161619,
+        "distance_m": 0.0
+      },
+      {
+        "from": 374228,
+        "to": 257692,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308848,
+        "to": 257692,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409919,
+        "to": 142915,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174874,
+        "to": 114518,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412605,
+        "to": 149219,
+        "distance_m": 0.0
+      },
+      {
+        "from": 240525,
+        "to": 142915,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140433,
+        "to": 114518,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224617,
+        "to": 149219,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377546,
+        "to": 244766,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365447,
+        "to": 235505,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174285,
+        "to": 126827,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316764,
+        "to": 147599,
+        "distance_m": 0.0
+      },
+      {
+        "from": 374185,
+        "to": 224991,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308845,
+        "to": 224991,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452907,
+        "to": 352024,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363203,
+        "to": 257689,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455312,
+        "to": 166874,
+        "distance_m": 0.0
+      },
+      {
+        "from": 323509,
+        "to": 166874,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412604,
+        "to": 118686,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308842,
+        "to": 118686,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399119,
+        "to": 157525,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452862,
+        "to": 373238,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399116,
+        "to": 373238,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266788,
+        "to": 207304,
+        "distance_m": 0.0
+      },
+      {
+        "from": 323476,
+        "to": 157525,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452906,
+        "to": 370993,
+        "distance_m": 0.0
+      },
+      {
+        "from": 412603,
+        "to": 161614,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395453,
+        "to": 254878,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455315,
+        "to": 147909,
+        "distance_m": 0.0
+      },
+      {
+        "from": 323514,
+        "to": 147909,
+        "distance_m": 0.0
+      },
+      {
+        "from": 224993,
+        "to": 161614,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452863,
+        "to": 349779,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399113,
+        "to": 349779,
+        "distance_m": 0.0
+      },
+      {
+        "from": 374229,
+        "to": 257689,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308839,
+        "to": 257689,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409916,
+        "to": 142079,
+        "distance_m": 0.0
+      },
+      {
+        "from": 240530,
+        "to": 142079,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377547,
+        "to": 244180,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456470,
+        "to": 357882,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452905,
+        "to": 370751,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409914,
+        "to": 144563,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365440,
+        "to": 249472,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455318,
+        "to": 145896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324702,
+        "to": 145896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 421647,
+        "to": 239392,
+        "distance_m": 0.0
+      },
+      {
+        "from": 240537,
+        "to": 144563,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452864,
+        "to": 349537,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399102,
+        "to": 349537,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456466,
+        "to": 410412,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377548,
+        "to": 245958,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316748,
+        "to": 146560,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456458,
+        "to": 386641,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455581,
+        "to": 370473,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456457,
+        "to": 410346,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317607,
+        "to": 158958,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316742,
+        "to": 162457,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316741,
+        "to": 162454,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424734,
+        "to": 216970,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324806,
+        "to": 158957,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455580,
+        "to": 247180,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424732,
+        "to": 218747,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455579,
+        "to": 372174,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285427,
+        "to": 121414,
+        "distance_m": 0.0
+      },
+      {
+        "from": 194878,
+        "to": 121414,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281129,
+        "to": 142001,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424723,
+        "to": 215130,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239356,
+        "to": 161355,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365597,
+        "to": 213407,
+        "distance_m": 0.0
+      },
+      {
+        "from": 421340,
+        "to": 315462,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399142,
+        "to": 146554,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316745,
+        "to": 146554,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365596,
+        "to": 216262,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399123,
+        "to": 150334,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394300,
+        "to": 205431,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365595,
+        "to": 213577,
+        "distance_m": 0.0
+      },
+      {
+        "from": 321889,
+        "to": 150334,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399141,
+        "to": 147411,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395184,
+        "to": 249720,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316750,
+        "to": 147411,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456434,
+        "to": 409928,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399122,
+        "to": 189425,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394301,
+        "to": 206029,
+        "distance_m": 0.0
+      },
+      {
+        "from": 321892,
+        "to": 189425,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395185,
+        "to": 277305,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365593,
+        "to": 215795,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365592,
+        "to": 247769,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455557,
+        "to": 400417,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365589,
+        "to": 247768,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365588,
+        "to": 248956,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365587,
+        "to": 215577,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424702,
+        "to": 243603,
+        "distance_m": 0.0
+      },
+      {
+        "from": 453320,
+        "to": 348651,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455553,
+        "to": 400425,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239332,
+        "to": 158783,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385580,
+        "to": 245342,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401881,
+        "to": 149219,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266790,
+        "to": 149219,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365584,
+        "to": 246938,
+        "distance_m": 0.0
+      },
+      {
+        "from": 381915,
+        "to": 224991,
+        "distance_m": 0.0
+      },
+      {
+        "from": 249101,
+        "to": 224991,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456433,
+        "to": 409911,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409889,
+        "to": 123431,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308840,
+        "to": 118686,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392102,
+        "to": 207304,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401879,
+        "to": 118686,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366285,
+        "to": 235508,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366284,
+        "to": 207923,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285417,
+        "to": 124441,
+        "distance_m": 0.0
+      },
+      {
+        "from": 194903,
+        "to": 124441,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366840,
+        "to": 207305,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281153,
+        "to": 144573,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308843,
+        "to": 257689,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401877,
+        "to": 118686,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366839,
+        "to": 207303,
+        "distance_m": 0.0
+      },
+      {
+        "from": 345329,
+        "to": 215892,
+        "distance_m": 0.0
+      },
+      {
+        "from": 324754,
+        "to": 148830,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401875,
+        "to": 166001,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266414,
+        "to": 166001,
+        "distance_m": 0.0
+      },
+      {
+        "from": 381871,
+        "to": 260688,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308846,
+        "to": 130222,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392104,
+        "to": 218891,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401873,
+        "to": 130222,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366834,
+        "to": 206547,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401872,
+        "to": 149224,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266787,
+        "to": 149224,
+        "distance_m": 0.0
+      },
+      {
+        "from": 249104,
+        "to": 224988,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452603,
+        "to": 341851,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239303,
+        "to": 159372,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308849,
+        "to": 118698,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392105,
+        "to": 207307,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366832,
+        "to": 206544,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401870,
+        "to": 118698,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455324,
+        "to": 214184,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157419,
+        "to": 124800,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365445,
+        "to": 214184,
+        "distance_m": 0.0
+      },
+      {
+        "from": 350959,
+        "to": 215892,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454047,
+        "to": 372363,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452602,
+        "to": 342093,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366828,
+        "to": 206542,
+        "distance_m": 0.0
+      },
+      {
+        "from": 323237,
+        "to": 157247,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365401,
+        "to": 247826,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157423,
+        "to": 124807,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365400,
+        "to": 247228,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452601,
+        "to": 380924,
+        "distance_m": 0.0
+      },
+      {
+        "from": 350962,
+        "to": 215895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399140,
+        "to": 149828,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316902,
+        "to": 149828,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366827,
+        "to": 205968,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308852,
+        "to": 257692,
+        "distance_m": 0.0
+      },
+      {
+        "from": 323235,
+        "to": 157246,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394340,
+        "to": 207675,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401868,
+        "to": 118698,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281149,
+        "to": 142080,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157425,
+        "to": 124808,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385101,
+        "to": 202384,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413827,
+        "to": 224615,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456132,
+        "to": 388539,
+        "distance_m": 0.0
+      },
+      {
+        "from": 350963,
+        "to": 215896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 195541,
+        "to": 126768,
+        "distance_m": 0.0
+      },
+      {
+        "from": 345328,
+        "to": 215895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285420,
+        "to": 121499,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157427,
+        "to": 124809,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385579,
+        "to": 244181,
+        "distance_m": 0.0
+      },
+      {
+        "from": 350964,
+        "to": 215897,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409892,
+        "to": 121499,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401866,
+        "to": 166006,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266418,
+        "to": 166006,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308885,
+        "to": 130278,
+        "distance_m": 0.0
+      },
+      {
+        "from": 381874,
+        "to": 260691,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409891,
+        "to": 143719,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140317,
+        "to": 118686,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174223,
+        "to": 130278,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363207,
+        "to": 224988,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281146,
+        "to": 143719,
+        "distance_m": 0.0
+      },
+      {
+        "from": 345285,
+        "to": 207304,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348515,
+        "to": 255768,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266431,
+        "to": 166038,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401865,
+        "to": 130229,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308855,
+        "to": 130229,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385100,
+        "to": 203545,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348514,
+        "to": 256929,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285416,
+        "to": 135181,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174876,
+        "to": 161651,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392107,
+        "to": 218894,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140322,
+        "to": 118698,
+        "distance_m": 0.0
+      },
+      {
+        "from": 194959,
+        "to": 135181,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174877,
+        "to": 118766,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401864,
+        "to": 130229,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285423,
+        "to": 123431,
+        "distance_m": 0.0
+      },
+      {
+        "from": 345288,
+        "to": 207307,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348513,
+        "to": 257544,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281191,
+        "to": 169892,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266775,
+        "to": 149256,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399136,
+        "to": 189422,
+        "distance_m": 0.0
+      },
+      {
+        "from": 345327,
+        "to": 215896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308883,
+        "to": 118766,
+        "distance_m": 0.0
+      },
+      {
+        "from": 316927,
+        "to": 189422,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140324,
+        "to": 118699,
+        "distance_m": 0.0
+      },
+      {
+        "from": 394347,
+        "to": 277302,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401863,
+        "to": 149225,
+        "distance_m": 0.0
+      },
+      {
+        "from": 345289,
+        "to": 207308,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266784,
+        "to": 149225,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456119,
+        "to": 406081,
+        "distance_m": 0.0
+      },
+      {
+        "from": 345326,
+        "to": 215897,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 308882,
+        "to": 130277,
+        "distance_m": 0.0
+      },
+      {
+        "from": 381913,
+        "to": 224985,
+        "distance_m": 0.0
+      },
+      {
+        "from": 249105,
+        "to": 224985,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409888,
+        "to": 144562,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140326,
+        "to": 118700,
+        "distance_m": 0.0
+      },
+      {
+        "from": 195527,
+        "to": 124264,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174221,
+        "to": 130277,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363208,
+        "to": 257693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281143,
+        "to": 144562,
+        "distance_m": 0.0
+      },
+      {
+        "from": 345290,
+        "to": 207309,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266430,
+        "to": 166037,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401862,
+        "to": 118699,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308858,
+        "to": 118699,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385099,
+        "to": 204160,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348507,
+        "to": 206989,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174879,
+        "to": 161650,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392108,
+        "to": 207308,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308856,
+        "to": 207308,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455769,
+        "to": 400432,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401861,
+        "to": 118699,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174880,
+        "to": 118765,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456113,
+        "to": 406077,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285426,
+        "to": 124426,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266776,
+        "to": 149255,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385581,
+        "to": 245957,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308880,
+        "to": 118765,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452593,
+        "to": 343585,
+        "distance_m": 0.0
+      },
+      {
+        "from": 366816,
+        "to": 255816,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409886,
+        "to": 124426,
+        "distance_m": 0.0
+      },
+      {
+        "from": 353013,
+        "to": 207308,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308859,
+        "to": 207308,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455766,
+        "to": 364406,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456110,
+        "to": 350288,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401860,
+        "to": 149225,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308879,
+        "to": 127236,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413536,
+        "to": 280411,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456108,
+        "to": 379188,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308861,
+        "to": 257693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174219,
+        "to": 127236,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455762,
+        "to": 400428,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401859,
+        "to": 118699,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266429,
+        "to": 163530,
+        "distance_m": 0.0
+      },
+      {
+        "from": 196671,
+        "to": 140061,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455484,
+        "to": 406042,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174892,
+        "to": 118699,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174882,
+        "to": 159143,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356323,
+        "to": 224534,
+        "distance_m": 0.0
+      },
+      {
+        "from": 452591,
+        "to": 343463,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456105,
+        "to": 342602,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174883,
+        "to": 115027,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455759,
+        "to": 354713,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401858,
+        "to": 161620,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266777,
+        "to": 146748,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456103,
+        "to": 371502,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308877,
+        "to": 115027,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455323,
+        "to": 214986,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455757,
+        "to": 383613,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456134,
+        "to": 359639,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401857,
+        "to": 166007,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409885,
+        "to": 165487,
+        "distance_m": 0.0
+      },
+      {
+        "from": 365586,
+        "to": 214986,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266420,
+        "to": 166007,
+        "distance_m": 0.0
+      },
+      {
+        "from": 196675,
+        "to": 140069,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281111,
+        "to": 165487,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454049,
+        "to": 372485,
+        "distance_m": 0.0
+      },
+      {
+        "from": 381875,
+        "to": 260692,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308876,
+        "to": 122805,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356324,
+        "to": 224540,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385093,
+        "to": 260373,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456099,
+        "to": 406067,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363210,
+        "to": 224985,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174215,
+        "to": 122805,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413530,
+        "to": 215182,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285429,
+        "to": 248786,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455476,
+        "to": 406058,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401856,
+        "to": 130230,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308864,
+        "to": 130230,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266427,
+        "to": 143197,
+        "distance_m": 0.0
+      },
+      {
+        "from": 453313,
+        "to": 348522,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285430,
+        "to": 129552,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455753,
+        "to": 375927,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392110,
+        "to": 218895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308862,
+        "to": 218895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174885,
+        "to": 147584,
+        "distance_m": 0.0
+      },
+      {
+        "from": 385582,
+        "to": 218576,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401855,
+        "to": 130230,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174886,
+        "to": 116235,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456095,
+        "to": 352300,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409883,
+        "to": 129552,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266778,
+        "to": 159979,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455472,
+        "to": 406070,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308874,
+        "to": 116235,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456093,
+        "to": 381200,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401854,
+        "to": 149226,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456374,
+        "to": 357740,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455747,
+        "to": 393310,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266781,
+        "to": 149226,
+        "distance_m": 0.0
+      },
+      {
+        "from": 381912,
+        "to": 224982,
+        "distance_m": 0.0
+      },
+      {
+        "from": 249106,
+        "to": 224982,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456372,
+        "to": 386640,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363211,
+        "to": 257694,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 414658,
+        "to": 289223,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456371,
+        "to": 355693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455744,
+        "to": 400416,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401853,
+        "to": 118700,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 308867,
+        "to": 118700,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 392111,
+        "to": 207309,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308865,
+        "to": 207309,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456087,
+        "to": 406057,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401852,
+        "to": 118700,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 213047,
+        "to": 144869,
+        "distance_m": 0.0
+      },
+      {
+        "from": 196801,
+        "to": 122476,
+        "distance_m": 0.0
+      },
+      {
+        "from": 213046,
+        "to": 144868,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356332,
+        "to": 214556,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456084,
+        "to": 359651,
+        "distance_m": 0.0
+      },
+      {
+        "from": 213045,
+        "to": 142361,
+        "distance_m": 0.0
+      },
+      {
+        "from": 353012,
+        "to": 207309,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308868,
+        "to": 207309,
+        "distance_m": 0.0
+      },
+      {
+        "from": 196806,
+        "to": 121498,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456365,
+        "to": 386644,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401851,
+        "to": 149226,
+        "distance_m": 0.0
+      },
+      {
+        "from": 213043,
+        "to": 164366,
+        "distance_m": 0.0
+      },
+      {
+        "from": 356333,
+        "to": 213970,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456364,
+        "to": 408633,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317606,
+        "to": 158102,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308870,
+        "to": 257694,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 456080,
+        "to": 406053,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401850,
+        "to": 118700,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 455298,
+        "to": 239395,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174889,
+        "to": 118700,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 456663,
+        "to": 364407,
+        "distance_m": 0.0
+      },
+      {
+        "from": 421649,
+        "to": 239395,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456688,
+        "to": 413388,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456077,
+        "to": 354712,
+        "distance_m": 0.0
+      },
+      {
+        "from": 196813,
+        "to": 124427,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413804,
+        "to": 268714,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454769,
+        "to": 377422,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401849,
+        "to": 161621,
+        "distance_m": 5.960464477539063e-08
+      },
+      {
+        "from": 356334,
+        "to": 215748,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413803,
+        "to": 268716,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456075,
+        "to": 383612,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157346,
+        "to": 125524,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401848,
+        "to": 166008,
+        "distance_m": 0.0
+      },
+      {
+        "from": 266422,
+        "to": 166008,
+        "distance_m": 0.0
+      },
+      {
+        "from": 381876,
+        "to": 260693,
+        "distance_m": 0.0
+      },
+      {
+        "from": 363213,
+        "to": 224982,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317598,
+        "to": 159709,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401847,
+        "to": 130231,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308873,
+        "to": 130231,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317597,
+        "to": 162070,
+        "distance_m": 0.0
+      },
+      {
+        "from": 392113,
+        "to": 218896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308871,
+        "to": 218896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455297,
+        "to": 240569,
+        "distance_m": 0.0
+      },
+      {
+        "from": 401846,
+        "to": 130231,
+        "distance_m": 0.0
+      },
+      {
+        "from": 422023,
+        "to": 240569,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456067,
+        "to": 359655,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317595,
+        "to": 161677,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454776,
+        "to": 377551,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456065,
+        "to": 388555,
+        "distance_m": 0.0
+      },
+      {
+        "from": 413826,
+        "to": 218179,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456345,
+        "to": 386781,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456685,
+        "to": 413366,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456062,
+        "to": 406041,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285415,
+        "to": 130914,
+        "distance_m": 0.0
+      },
+      {
+        "from": 195052,
+        "to": 130914,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281251,
+        "to": 166457,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456340,
+        "to": 355618,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455319,
+        "to": 246756,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456338,
+        "to": 384518,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395743,
+        "to": 246756,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454320,
+        "to": 378437,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308891,
+        "to": 128227,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285398,
+        "to": 124286,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157433,
+        "to": 128227,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456335,
+        "to": 347932,
+        "distance_m": 0.0
+      },
+      {
+        "from": 196966,
+        "to": 124286,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399104,
+        "to": 145896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 254840,
+        "to": 147584,
+        "distance_m": 0.0
+      },
+      {
+        "from": 282407,
+        "to": 161225,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454361,
+        "to": 349537,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456124,
+        "to": 347030,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456333,
+        "to": 376832,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455317,
+        "to": 145896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308890,
+        "to": 121814,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157437,
+        "to": 121814,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317583,
+        "to": 158970,
+        "distance_m": 0.0
+      },
+      {
+        "from": 254842,
+        "to": 159143,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455316,
+        "to": 248216,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308889,
+        "to": 124855,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395466,
+        "to": 248216,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157439,
+        "to": 124855,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454319,
+        "to": 378679,
+        "distance_m": 0.0
+      },
+      {
+        "from": 254843,
+        "to": 161650,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348648,
+        "to": 204161,
+        "distance_m": 0.0
+      },
+      {
+        "from": 308888,
+        "to": 124856,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174209,
+        "to": 130231,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399115,
+        "to": 147909,
+        "distance_m": 0.0
+      },
+      {
+        "from": 157441,
+        "to": 124856,
+        "distance_m": 0.0
+      },
+      {
+        "from": 352976,
+        "to": 218896,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454362,
+        "to": 349779,
+        "distance_m": 0.0
+      },
+      {
+        "from": 254844,
+        "to": 161651,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317579,
+        "to": 148960,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455314,
+        "to": 147909,
+        "distance_m": 0.0
+      },
+      {
+        "from": 456122,
+        "to": 375930,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348647,
+        "to": 202383,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455296,
+        "to": 215007,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455313,
+        "to": 219390,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424165,
+        "to": 215007,
+        "distance_m": 0.0
+      },
+      {
+        "from": 395463,
+        "to": 219390,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454799,
+        "to": 372493,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454318,
+        "to": 344338,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455295,
+        "to": 249600,
+        "distance_m": 0.0
+      },
+      {
+        "from": 348646,
+        "to": 202969,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174207,
+        "to": 130230,
+        "distance_m": 0.0
+      },
+      {
+        "from": 424168,
+        "to": 249600,
+        "distance_m": 0.0
+      },
+      {
+        "from": 399118,
+        "to": 166874,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174899,
+        "to": 119687,
+        "distance_m": 0.0
+      },
+      {
+        "from": 352975,
+        "to": 218895,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454800,
+        "to": 350012,
+        "distance_m": 0.0
+      },
+      {
+        "from": 454363,
+        "to": 373238,
+        "distance_m": 0.0
+      },
+      {
+        "from": 140215,
+        "to": 119687,
+        "distance_m": 0.0
+      },
+      {
+        "from": 455311,
+        "to": 166874,
+        "distance_m": 0.0
+      },
+      {
+        "from": 343278,
+        "to": 204310,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174128,
+        "to": 130946,
+        "distance_m": 0.0
+      },
+      {
+        "from": 343277,
+        "to": 204309,
+        "distance_m": 0.0
+      },
+      {
+        "from": 285414,
+        "to": 131487,
+        "distance_m": 0.0
+      },
+      {
+        "from": 195114,
+        "to": 131487,
+        "distance_m": 0.0
+      },
+      {
+        "from": 343276,
+        "to": 204308,
+        "distance_m": 0.0
+      },
+      {
+        "from": 281282,
+        "to": 166878,
+        "distance_m": 0.0
+      },
+      {
+        "from": 409932,
+        "to": 148705,
+        "distance_m": 0.0
+      },
+      {
+        "from": 317559,
+        "to": 161172,
+        "distance_m": 0.0
+      },
+      {
+        "from": 343273,
+        "to": 204305,
+        "distance_m": 0.0
+      },
+      {
+        "from": 239314,
+        "to": 148705,
+        "distance_m": 0.0
+      },
+      {
+        "from": 377407,
+        "to": 248786,
+        "distance_m": 0.0
+      },
+      {
+        "from": 174205,
+        "to": 130229,
+        "distance_m": 0.0
+      }
+    ],
+    "output": {
+      "sha256": "aac30d2bdeef6262a320db6a7d1d20834716900724899609ddf1b36ea029840f",
+      "bytes": 114671327
+    },
+    "raw_original_normal_diagnostic": {
+      "reference": "Raw original corner vectors before native custom-normal encoding; not the same-state preservation gate",
+      "matched_corner_count": 678442,
+      "max_delta": 0.0007672744518574452,
+      "p99_delta": 0.00047717227396419567
+    }
+  },
+  "protected_files": {
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend": {
+      "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+      "bytes": 52451110
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb": {
+      "sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+      "bytes": 27662108
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/base_color.png": {
+      "sha256": "e222bb427de34bec53c0e7d7e0102f1713930379164b789a83d931f2e379765e",
+      "bytes": 4402001
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/normal.png": {
+      "sha256": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316",
+      "bytes": 9874807
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/roughness.png": {
+      "sha256": "aeccc6b8aeaf356e7478395d47d4f0e1c7e18e105f799851d2fbe19c5682f1ec",
+      "bytes": 4060101
+    },
+    "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.blend": {
+      "sha256": "fa48f2e488f7c05103f3d65a918279bcae0b79c78ef849d86b9283d4cca908cd",
+      "bytes": 56226430
+    },
+    "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.glb": {
+      "sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+      "bytes": 50018792
+    }
+  },
+  "uv": {
+    "object": "MarsOutcrop",
+    "uv_map": "UVMap",
+    "tex_res": 4096,
+    "faces": 929126,
+    "islands": 2993,
+    "td_px_per_m": 286.7,
+    "td_face_spread_p95_p05": 1.06,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      285.7,
+      286.7
+    ],
+    "angle_err_mean_deg": 0.83,
+    "angle_err_p95_deg": 3.75,
+    "area_stretch_p95_log2": 0.13,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.3586,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 38.0,
+        "border_px": 20.5
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 38.0,
+    "gap_required_px": 16,
+    "tiny_islands": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 2992,
+        "faces": 639369,
+        "td": 285.7,
+        "area_m2": 8.24168,
+        "uv_px": 672748,
+        "flipped": 0,
+        "bbox": [
+          0.232,
+          0.0051,
+          0.3922,
+          0.3904
+        ]
+      },
+      {
+        "island": 2991,
+        "faces": 54929,
+        "td": 286.3,
+        "area_m2": 3.27068,
+        "uv_px": 268169,
+        "flipped": 0,
+        "bbox": [
+          0.5583,
+          0.1195,
+          0.6695,
+          0.332
+        ]
+      },
+      {
+        "island": 2990,
+        "faces": 23172,
+        "td": 286.4,
+        "area_m2": 2.51455,
+        "uv_px": 206319,
+        "flipped": 0,
+        "bbox": [
+          0.0067,
+          0.5816,
+          0.197,
+          0.675
+        ]
+      },
+      {
+        "island": 2588,
+        "faces": 2,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.8133,
+          0.9938,
+          0.8135
+        ]
+      },
+      {
+        "island": 2178,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7214,
+          0.9941,
+          0.7215
+        ]
+      },
+      {
+        "island": 853,
+        "faces": 1,
+        "td": 286.4,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.552,
+          0.9723,
+          0.5522,
+          0.9729
+        ]
+      },
+      {
+        "island": 611,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9722,
+          0.5008,
+          0.9729,
+          0.501
+        ]
+      },
+      {
+        "island": 2920,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.8731,
+          0.9507,
+          0.8732,
+          0.9515
+        ]
+      },
+      {
+        "island": 859,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 1e-05,
+        "uv_px": 1,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.1098,
+          0.9942,
+          0.1099
+        ]
+      },
+      {
+        "island": 2811,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.691,
+          0.9941,
+          0.6911
+        ]
+      },
+      {
+        "island": 1752,
+        "faces": 1,
+        "td": 286.6,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.6091,
+          0.9941,
+          0.6092
+        ]
+      },
+      {
+        "island": 1897,
+        "faces": 2,
+        "td": 286.7,
+        "area_m2": 0.0,
+        "uv_px": 0,
+        "flipped": 0,
+        "bbox": [
+          0.9936,
+          0.7931,
+          0.994,
+          0.7931
+        ]
+      }
+    ]
+  },
+  "projection": {
+    "measured": {
+      "samples": 3502,
+      "outward_q": 0.00122,
+      "inward_q": 0.00126,
+      "outward_max": 0.00162,
+      "inward_max": 0.00136,
+      "cage_extrusion": 0.00211,
+      "max_ray_distance": 0.00425,
+      "miss_pct": 0.0,
+      "uncovered_pct": 0.0,
+      "wrong_part_pct": 0.0,
+      "search": 0.06,
+      "quantile": 0.999
+    },
+    "baseline": {
+      "samples": 3513,
+      "outward_q": 0.00149,
+      "inward_q": 0.00184,
+      "outward_max": 0.00179,
+      "inward_max": 0.00218,
+      "cage_extrusion": 0.00241,
+      "max_ray_distance": 0.0052,
+      "miss_pct": 0.0,
+      "uncovered_pct": 0.0,
+      "wrong_part_pct": 0.03,
+      "search": 0.06,
+      "quantile": 0.999
+    },
+    "used": {
+      "samples": 3502,
+      "outward_q": 0.00122,
+      "inward_q": 0.00126,
+      "outward_max": 0.00162,
+      "inward_max": 0.00136,
+      "cage_extrusion": 0.00241,
+      "max_ray_distance": 0.0052,
+      "miss_pct": 0.0,
+      "uncovered_pct": 0.0,
+      "wrong_part_pct": 0.0,
+      "search": 0.06,
+      "quantile": 0.999
+    },
+    "method": "Measured changed pair; do not reduce the already validated baseline ray envelope on unchanged thin beds"
+  },
+  "game_geometry_uv_normal_sha256": "cc56369463b6143328da74ada908e5a451bd2a3244df939ce61feb3fc4294a50",
+  "frozen_stage18_input": {
+    "path": "art/source/environment/mars-outcrop-hifi-r2/stages/17-continuous-face-response/source-clean.blend",
+    "sha256": "aac30d2bdeef6262a320db6a7d1d20834716900724899609ddf1b36ea029840f",
+    "bytes": 114671327
+  },
+  "bake_padding_px": 8,
+  "maps": {
+    "normal": {
+      "path": "art/source/environment/mars-outcrop-hifi-r2/stages/19-complete-face-4k/textures/normal.png",
+      "sha256": "5b4668182886e575d833efcc64da5b0b1aa3e534cb66fb89d561d950d4e55f6d",
+      "bytes": 10077240,
+      "size": [
+        4096,
+        4096
+      ],
+      "png_bit_depth": 8,
+      "neutral_border_pixel": [
+        128,
+        128,
+        255
+      ]
+    },
+    "base_color": {
+      "path": "art/source/environment/mars-outcrop-hifi-r2/stages/19-complete-face-4k/textures/base_color.png",
+      "sha256": "779c64e034d830f7d9d226172c3294975c273a5531ae3f8d633cc7e55ad0bc5e",
+      "bytes": 4395262,
+      "size": [
+        4096,
+        4096
+      ],
+      "png_bit_depth": 8,
+      "neutral_border_pixel": [
+        129,
+        122,
+        115
+      ]
+    },
+    "roughness": {
+      "path": "art/source/environment/mars-outcrop-hifi-r2/stages/19-complete-face-4k/textures/roughness.png",
+      "sha256": "c7a62c355f21ad939fb90bfc03562217087a3b950292e5a8cc2f1f6bf29c5ecd",
+      "bytes": 3927765,
+      "size": [
+        4096,
+        4096
+      ],
+      "png_bit_depth": 8,
+      "neutral_border_pixel": [
+        217,
+        217,
+        217
+      ]
+    }
+  }
+}

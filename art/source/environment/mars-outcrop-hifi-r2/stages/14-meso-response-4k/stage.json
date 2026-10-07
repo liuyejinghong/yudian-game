@@ -1,0 +1,122 @@
+{
+  "status": "4K_TWO_MAP_CANDIDATE_PENDING_FIXED_GODOT_REVIEW",
+  "formal_files_changed": false,
+  "protected_files": {
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend": {
+      "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+      "bytes": 52451110
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb": {
+      "sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+      "bytes": 27662108
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/base_color.png": {
+      "sha256": "e222bb427de34bec53c0e7d7e0102f1713930379164b789a83d931f2e379765e",
+      "bytes": 4402001
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/normal.png": {
+      "sha256": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316",
+      "bytes": 9874807
+    },
+    "art/source/environment/mars-outcrop-hifi-r2/textures/roughness.png": {
+      "sha256": "aeccc6b8aeaf356e7478395d47d4f0e1c7e18e105f799851d2fbe19c5682f1ec",
+      "bytes": 4060101
+    },
+    "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.blend": {
+      "sha256": "fa48f2e488f7c05103f3d65a918279bcae0b79c78ef849d86b9283d4cca908cd",
+      "bytes": 56226430
+    },
+    "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.glb": {
+      "sha256": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624",
+      "bytes": 50018792
+    }
+  },
+  "parameters": {
+    "existing_masks": [
+      "DustMask",
+      "FreshFractureMask",
+      "RearPlane/RearOnly/RearRightFracture",
+      "WeatheringPatches"
+    ],
+    "old_bare_color_multiplier": [
+      0.73,
+      1.13
+    ],
+    "old_patch_color_ramp": [
+      0.29,
+      0.7
+    ],
+    "fresh_mix_linear_rgb": [
+      0.205,
+      0.204,
+      0.197
+    ],
+    "fresh_mix_strength": 0.65,
+    "dust_mix_linear_rgb": [
+      0.295,
+      0.255,
+      0.212
+    ],
+    "dust_mix_strength": 0.22,
+    "roughness_old_bare": [
+      0.66,
+      0.8
+    ],
+    "roughness_fresh": [
+      0.59,
+      0.64
+    ],
+    "roughness_dust": [
+      0.91,
+      0.965
+    ],
+    "fine_roughness_amplitude": 0.009,
+    "normal_changed": false,
+    "scale": "Existing 3D weathering field: scale 3.7 per metre, mesoscopic coverage; no new periodic layer pattern"
+  },
+  "game_mesh_uv_sha256": "3046e25a80d4a9499126a891e5b6233233b238cb0087f731f92144506c55b34e",
+  "normal_png_sha256": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316",
+  "source_high_geometry_unchanged": true,
+  "glb_proof": {
+    "unchanged_buffer_views": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "replaced_image_views": [
+      6,
+      7
+    ],
+    "normal_png_sha256": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316",
+    "geometry_uv_normals_tangents_indices_and_normal_png_exact": true
+  },
+  "material_audit": [],
+  "color_roundtrip": "color-roundtrip.json",
+  "maps": {
+    "base_color": {
+      "sha256": "2872380f274b26df840b048455e1f4d11c513525214a4fefaccb91ee6cb2a431",
+      "bytes": 4860082
+    },
+    "roughness": {
+      "sha256": "9af6430700a9aa49c0ef04dfea0ae8b723e399ab1c6d39159c4db63b294916c3",
+      "bytes": 4378833
+    }
+  },
+  "candidate_glb": {
+    "sha256": "6bc4c9e9262edf503ba885d50a98b53f8ba2a247e81c1a5b21ef6102fad3895e",
+    "bytes": 28537920
+  },
+  "scope": "Two 4096 RGB8 EMIT maps only. Correctly encoded neutral background; resolution change does not fix color-space encoding. Original geometry, UV, normals, tangents and full-resolution normal PNG unchanged.",
+  "author_open_image_review": {
+    "images": [
+      "candidate-detail.png",
+      "candidate-rear-detail.png"
+    ],
+    "black_triangle_artifacts": "Not visible in these two actual rendered views",
+    "scope": "Technical preview only; fixed Godot visual decision pending root"
+  },
+  "native_import": "native-import.json"
+}

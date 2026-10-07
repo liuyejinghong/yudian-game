@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "blender": "5.2.2 LTS",
+  "check": "root native GLB support import and independent patch boundary measurement",
+  "support_sha256": "9a61b459cba332db810c8f12c4631cf2d580af72b9a1dd60320684d5da16bfcf",
+  "patch_source_sha256": "9535bcd59bec906f63384be248a985e8decd6a3c97de54e13807d5810e7880b5",
+  "patch_stage": "05-boundary-calibrated",
+  "boundary_vertices": 1200,
+  "max_separation_m": 4.558829758138927e-09,
+  "final_patch_glb": "NOT_RUN"
+}

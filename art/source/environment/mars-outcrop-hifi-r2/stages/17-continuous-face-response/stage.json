@@ -1,0 +1,282 @@
+{
+  "status": "PENDING_COMPLETE_FACE_GRAY_AND_SOURCE_PBR_REVIEW_NO_BAKE",
+  "source_identity": {
+    "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+    "bytes": 52451110
+  },
+  "physical_high_face_selection": [
+    {
+      "name": "right_actual_cut_face",
+      "faces": 30628,
+      "area_m2": 3.6450416308762215,
+      "center_bounds_min": [
+        0.6085614264011383,
+        -1.6986867487430573,
+        -0.144594457000494
+      ],
+      "center_bounds_max": [
+        3.0741369128227234,
+        0.05862721987068653,
+        1.4355684220790863
+      ]
+    },
+    {
+      "name": "actual_rear_wall",
+      "faces": 50548,
+      "area_m2": 8.04281811798819,
+      "center_bounds_min": [
+        -2.6175113320350647,
+        1.0255122780799866,
+        -0.14708631858229637
+      ],
+      "center_bounds_max": [
+        2.8133532404899597,
+        1.6489638090133667,
+        2.103931248188019
+      ]
+    }
+  ],
+  "selection": "Analytic actual stage09 wedge and curved rear wall plus matching real face normals; no u/v rectangle or artificial ROI",
+  "intrinsic_color": "World-position mineral and erosion reflectance at roughly2–8cm; old faces stronger/coarser, fresh faces weaker/finer, dust quiet; no lighting or AO inputs",
+  "high": {
+    "triangles_before": 946516,
+    "triangles_after": 1281204,
+    "target_edge_m": 0.01,
+    "selected_actual_faces": [
+      {
+        "name": "right_actual_cut_face",
+        "faces": 30628,
+        "area_m2": 3.6450416308762215,
+        "center_bounds_min": [
+          0.6085614264011383,
+          -1.6986867487430573,
+          -0.144594457000494
+        ],
+        "center_bounds_max": [
+          3.0741369128227234,
+          0.05862721987068653,
+          1.4355684220790863
+        ]
+      },
+      {
+        "name": "actual_rear_wall",
+        "faces": 50548,
+        "area_m2": 8.04281811798819,
+        "center_bounds_min": [
+          -2.6175113320350647,
+          1.0255122780799866,
+          -0.14708631858229637
+        ],
+        "center_bounds_max": [
+          2.8133532404899597,
+          1.6489638090133667,
+          2.103931248188019
+        ]
+      }
+    ],
+    "refinement": [
+      {
+        "round": 0,
+        "edges": 120023,
+        "max_length_m": 0.018262658268213272
+      },
+      {
+        "round": 1,
+        "edges": 7342,
+        "max_length_m": 0.012998063117265701
+      },
+      {
+        "round": 2,
+        "edges": 66,
+        "max_length_m": 0.010532592423260212
+      }
+    ],
+    "uv_diagonal_repairs": [],
+    "response": [
+      {
+        "name": "right_actual_cut_face",
+        "actual_face_edge_fade_m": [
+          0.04,
+          0.12
+        ],
+        "depth_quantiles_m": [
+          0.0,
+          0.001355462979059502,
+          0.003102170012923167,
+          0.005692557640605503
+        ],
+        "intrinsic_color_multiplier_quantiles": [
+          0.9565701318107198,
+          0.9801310542630672,
+          1.0,
+          1.0201315506492905,
+          1.0436705916435336
+        ],
+        "nonzero_depth_vertices": 70282,
+        "quiet_edge_vertices": 11273
+      },
+      {
+        "name": "actual_rear_wall",
+        "actual_face_edge_fade_m": [
+          0.04,
+          0.12
+        ],
+        "depth_quantiles_m": [
+          0.0,
+          0.0020498013954551274,
+          0.0038407500426338222,
+          0.0072544134788744925
+        ],
+        "intrinsic_color_multiplier_quantiles": [
+          0.9207155363448364,
+          0.9643555191169638,
+          1.0,
+          1.038783954685068,
+          1.083678158262643
+        ],
+        "nonzero_depth_vertices": 147395,
+        "quiet_edge_vertices": 21117
+      }
+    ],
+    "normal_control": null,
+    "max_vertex_displacement_m": 0.007254413478874493
+  },
+  "game": {
+    "triangles_before": 227160,
+    "triangles_after": 930876,
+    "target_edge_m": 0.02,
+    "selected_actual_faces": [
+      {
+        "name": "right_actual_cut_face",
+        "faces": 3428,
+        "area_m2": 3.6451854621476514,
+        "center_bounds_min": [
+          0.6083711981773376,
+          -1.6975372234980266,
+          -0.14464832345644632
+        ],
+        "center_bounds_max": [
+          3.0782431761423745,
+          0.05895842363437017,
+          1.4438084363937378
+        ]
+      },
+      {
+        "name": "actual_rear_wall",
+        "faces": 7253,
+        "area_m2": 8.041522348429858,
+        "center_bounds_min": [
+          -2.619671583175659,
+          1.0244792699813843,
+          -0.1492230345805486
+        ],
+        "center_bounds_max": [
+          2.815471092859904,
+          1.649088978767395,
+          2.1055750052134194
+        ]
+      }
+    ],
+    "refinement": [
+      {
+        "round": 0,
+        "edges": 7046,
+        "max_length_m": 0.6898605823516846
+      },
+      {
+        "round": 1,
+        "edges": 20682,
+        "max_length_m": 0.3449302911758423
+      },
+      {
+        "round": 2,
+        "edges": 60494,
+        "max_length_m": 0.17246516048908234
+      },
+      {
+        "round": 3,
+        "edges": 139498,
+        "max_length_m": 0.09030238538980484
+      },
+      {
+        "round": 4,
+        "edges": 111081,
+        "max_length_m": 0.04851681366562843
+      },
+      {
+        "round": 5,
+        "edges": 12831,
+        "max_length_m": 0.037019796669483185
+      },
+      {
+        "round": 6,
+        "edges": 219,
+        "max_length_m": 0.02085035666823387
+      }
+    ],
+    "uv_diagonal_repairs": [],
+    "response": [
+      {
+        "name": "right_actual_cut_face",
+        "actual_face_edge_fade_m": [
+          0.04,
+          0.12
+        ],
+        "depth_quantiles_m": [
+          0.0,
+          0.0011347926499299466,
+          0.0030464545643943204,
+          0.00550194862660616
+        ],
+        "intrinsic_color_multiplier_quantiles": [
+          0.9583014756894198,
+          0.9825492778264767,
+          1.0,
+          1.0189299786959434,
+          1.0424604199824237
+        ],
+        "nonzero_depth_vertices": 31142,
+        "quiet_edge_vertices": 7072
+      },
+      {
+        "name": "actual_rear_wall",
+        "actual_face_edge_fade_m": [
+          0.04,
+          0.12
+        ],
+        "depth_quantiles_m": [
+          3.3565898053268775e-05,
+          0.0021741016478921053,
+          0.003923213556160515,
+          0.007266353343694771
+        ],
+        "intrinsic_color_multiplier_quantiles": [
+          0.9191033348706504,
+          0.9618358980023769,
+          1.0,
+          1.0417478575037908,
+          1.0846571409756285
+        ],
+        "nonzero_depth_vertices": 292869,
+        "quiet_edge_vertices": 27460
+      }
+    ],
+    "normal_control": {
+      "max_uv_interpolation_error": 9.8146878402261e-08,
+      "matched_untouched_original_corner_count": 678472,
+      "native_roundtrip_corner_max_delta": 0.0006016109904149607,
+      "native_roundtrip_corner_p99_delta": 2.8313808342896276e-05,
+      "native_roundtrip_threshold": 0.0003,
+      "native_roundtrip_status": "REWORK"
+    },
+    "max_vertex_displacement_m": 0.007266353343694772
+  },
+  "bounds_delta": {
+    "HIGH_ParentSandstone": 0.0,
+    "MarsOutcrop": 0.0
+  },
+  "candidate": {
+    "sha256": "24a10482169b74cb0c23cc009a11a65a013a19cc071a1987ed57632a6b0b5cad",
+    "bytes": 114801468
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "path": "rejected-031a6/build.py",
+    "sha256": "850bd7d7e838894ccd5e59801e71b8d85cae82a350fd7863a19b9eb7d13cb985",
+    "bytes": 28761,
+    "kept": "local ignored backup; failed source, not current build recipe"
+  },
+  {
+    "path": "rejected-031a6/check.py",
+    "sha256": "6400085ee4206ba4417a622fb8f7581a8fd32c78207977cefb00fd0ec752049e",
+    "bytes": 11081,
+    "kept": "local ignored backup; failed source, not current build recipe"
+  },
+  {
+    "path": "candidate-r2/build.py",
+    "sha256": "0fbf17b266d8faf46fbf0fbd4ee11b962b8ca8a923bb27de17db44ea536dce5a",
+    "bytes": 27119,
+    "kept": "local ignored backup; failed source, not current build recipe"
+  },
+  {
+    "path": "candidate-r2/check.py",
+    "sha256": "c7740f1843525263ab55914b6bcb1a52c30bb0f52ffa6fc120e4ecfe572ae859",
+    "bytes": 8925,
+    "kept": "local ignored backup; failed source, not current build recipe"
+  },
+  {
+    "path": "failed-r2/build.py",
+    "sha256": "98e098742e4a6be45a4900ffd16c59cec216bcaa7682a76b547572a812c4807f",
+    "bytes": 24601,
+    "kept": "local ignored backup; failed source, not current build recipe"
+  },
+  {
+    "path": "failed-r1/build.py",
+    "sha256": "92c1d5ec27237f8b3d139a7fbf7915d9320ec5f5a20d02e66f110e5626560851",
+    "bytes": 23003,
+    "kept": "local ignored backup; failed source, not current build recipe"
+  },
+  {
+    "path": "failed-r1/check.py",
+    "sha256": "c8b8acb8180141ddf0e25a854d30134214f01da9889df8917aceb6ae503e1d3c",
+    "bytes": 7351,
+    "kept": "local ignored backup; failed source, not current build recipe"
+  }
+]

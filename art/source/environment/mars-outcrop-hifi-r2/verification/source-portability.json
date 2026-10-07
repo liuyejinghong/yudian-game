@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "source_before": {
+    "sha256": "7e50eb0d33bb0a6cd8c06a55ddd7fc6848a9860c9f027721bc89a6ad8e870306",
+    "bytes": 102825957
+  },
+  "source_after": {
+    "sha256": "94ff01a08b6ef25a30dafeb2db2cb56c93589aeee280b23cf151ca705fa42ea0",
+    "bytes": 102824670
+  },
+  "metadata_changes": [
+    {
+      "owner": "scene:Scene",
+      "property": "render.filepath",
+      "old_was_absolute": true,
+      "value": "//renders/baked-rear.png"
+    }
+  ],
+  "all_visible_mesh_uv_normals_colors_material_graphs_and_packed_images_identical": true,
+  "glb_and_png_bytes_unchanged": true,
+  "source_images": {
+    "stage19-base_color": {
+      "filepath": "//textures/base_color.png",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorspace": "sRGB",
+      "packed_sha256": "779c64e034d830f7d9d226172c3294975c273a5531ae3f8d633cc7e55ad0bc5e"
+    },
+    "stage19-normal": {
+      "filepath": "//textures/normal.png",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorspace": "Non-Color",
+      "packed_sha256": "5b4668182886e575d833efcc64da5b0b1aa3e534cb66fb89d561d950d4e55f6d"
+    },
+    "stage19-roughness": {
+      "filepath": "//textures/roughness.png",
+      "size": [
+        4096,
+        4096
+      ],
+      "colorspace": "Non-Color",
+      "packed_sha256": "c7a62c355f21ad939fb90bfc03562217087a3b950292e5a8cc2f1f6bf29c5ecd"
+    }
+  },
+  "under_100MiB": true
+}

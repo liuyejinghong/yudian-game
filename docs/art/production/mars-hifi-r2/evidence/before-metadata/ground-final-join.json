@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "blender": "5.2.2 LTS",
+  "support_sha256": "9a61b459cba332db810c8f12c4631cf2d580af72b9a1dd60320684d5da16bfcf",
+  "patch_sha256": "7a9c4ee8aaeab977f0e06ebd70cd505042e35c6206985e92bf93b445a9be2ff7",
+  "boundary_vertices": 600,
+  "max_separation_m": 4.558829758138927e-09
+}

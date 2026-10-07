@@ -1,0 +1,28 @@
+{
+  "status": "CURRENT_STAGE19_BAKED_VIEWS_WITH_PROVEN_SOURCE_METADATA_EQUIVALENCE",
+  "rendered_source": {
+    "path": "stages/19-complete-face-4k/candidate.blend",
+    "sha256": "7e50eb0d33bb0a6cd8c06a55ddd7fc6848a9860c9f027721bc89a6ad8e870306",
+    "bytes": 102825957
+  },
+  "current_source": {
+    "path": "mars-outcrop-hifi-r2.blend",
+    "sha256": "94ff01a08b6ef25a30dafeb2db2cb56c93589aeee280b23cf151ca705fa42ea0",
+    "bytes": 102824670
+  },
+  "equivalence_proof": "verification/source-portability.json",
+  "current_renders": {
+    "baked-detail.png": {
+      "original_path": "stages/19-complete-face-4k/baked-detail.png",
+      "sha256": "06aae69f6d8be0425805e4288eff2336c97a7f2967b66fc6f8520dfbe2653893",
+      "bytes": 1713790
+    },
+    "baked-rear.png": {
+      "original_path": "stages/19-complete-face-4k/baked-rear.png",
+      "sha256": "85a604ff49879bfa23946bab52721e0050b8b7a1b1afbf7956500cc4d390ed1c",
+      "bytes": 1556093
+    }
+  },
+  "historical_stage12": "renders/historical-12/provenance.json",
+  "method": "Actual stage19 Cycles renders from its baked GAME_EXPORT; copied byte-for-byte. Source metadata migration changed only the output path, with all visible inputs proved identical. No additional renders were run during promotion."
+}

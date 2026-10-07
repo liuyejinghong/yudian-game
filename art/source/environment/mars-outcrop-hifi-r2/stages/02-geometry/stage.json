@@ -1,0 +1,68 @@
+{
+  "version": "5.2.2 LTS",
+  "stage": "02-volume-cuts",
+  "skill_functions": [
+    "bx_sculpt.Clay",
+    "bx_sculpt.Prim",
+    "bx_sculpt.sd_halfspace",
+    "bx_sculpt.Clay.to_object"
+  ],
+  "high_triangles": 1465484,
+  "objects": [
+    {
+      "name": "HIGH_WestCrown",
+      "vertices": 211191,
+      "bounds": [
+        2.4092912673950195,
+        2.3075199127197266,
+        2.188405990600586
+      ]
+    },
+    {
+      "name": "HIGH_CentralJoint",
+      "vertices": 181738,
+      "bounds": [
+        1.8796160221099854,
+        2.57999324798584,
+        2.04954195022583
+      ]
+    },
+    {
+      "name": "HIGH_EastWedge",
+      "vertices": 140464,
+      "bounds": [
+        1.783700704574585,
+        2.2027413845062256,
+        1.7743836641311646
+      ]
+    },
+    {
+      "name": "HIGH_FrontTalus",
+      "vertices": 58062,
+      "bounds": [
+        2.126809597015381,
+        0.9325389862060547,
+        1.0178624391555786
+      ]
+    },
+    {
+      "name": "HIGH_ForeButtress",
+      "vertices": 85888,
+      "bounds": [
+        2.1163671016693115,
+        1.3461718559265137,
+        1.2665642499923706
+      ]
+    },
+    {
+      "name": "HIGH_RearHeel",
+      "vertices": 55409,
+      "bounds": [
+        2.2393040657043457,
+        0.8625439405441284,
+        1.061766505241394
+      ]
+    }
+  ],
+  "visual_gate": "PENDING_OPEN_IMAGES_AND_ROOT"
+}

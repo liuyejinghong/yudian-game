@@ -1,0 +1,217 @@
+{
+  "status": "PASS",
+  "operation": "Custom-property and image-reference paths only; no geometry, UV, material graph or image content edit",
+  "changes": [
+    {
+      "owner": "GAME_MarsOutcrop",
+      "property": "bx_texture_set.normal",
+      "value": "art/source/environment/mars-outcrop-hifi-r2/textures/normal.png"
+    },
+    {
+      "owner": "GAME_MarsOutcrop",
+      "property": "bx_texture_set.base_color",
+      "value": "art/source/environment/mars-outcrop-hifi-r2/textures/base_color.png"
+    },
+    {
+      "owner": "GAME_MarsOutcrop",
+      "property": "bx_texture_set.roughness",
+      "value": "art/source/environment/mars-outcrop-hifi-r2/textures/roughness.png"
+    }
+  ],
+  "image_references_made_relative": [],
+  "ui_retention_flags": [
+    {
+      "material": "REVIEW_Neutral_Clay",
+      "fake_user_before": false,
+      "fake_user_after": true
+    }
+  ],
+  "before_files": {
+    "mars-outcrop-hifi-r2.blend": {
+      "sha256": "804129d8a228b5fab2a9fb20f500d692c05884167794bb6dfcdc9e45405facc1",
+      "bytes": 52451405
+    },
+    "mars-outcrop-hifi-r2.glb": {
+      "sha256": "0bb0ed99c0a58d063a9c7cc7177150e8d091ec1ebcbd2cba1f4d32ef97809640",
+      "bytes": 27662272
+    }
+  },
+  "after_files": {
+    "mars-outcrop-hifi-r2.blend": {
+      "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+      "bytes": 52451110
+    },
+    "mars-outcrop-hifi-r2.glb": {
+      "sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+      "bytes": 27662108
+    }
+  },
+  "source_visual_identity_unchanged": true,
+  "glb_visual_identity_unchanged": true,
+  "glb_binary_payload_unchanged": true,
+  "binary_preservation": "Native re-exported JSON, non-extras structure matched exactly; original complete visual BIN retained to avoid tangent recalculation differences",
+  "source_visual_identity": {
+    "meshes": {
+      "HIGH_ParentSandstone": {
+        "geometry": "4ab0a77b8a23ae8638ee1279bada6aad47aef7267ffe6042a899ba6431a86d99",
+        "uv": {},
+        "materials": [
+          "SOURCE_rock_HIGH_ParentSandstone"
+        ]
+      },
+      "HIGH_ParentSandstone.001": {
+        "geometry": "4b1a7214982bc43c0d3f54ce9044da0e932ef47de9c5de673576c70a531195ea",
+        "uv": {
+          "UVMap": "8e9e040ca1a3ee3b0d2ba2775c3b51017405f24cbaea78dbcc177c4616ea43e3"
+        },
+        "materials": [
+          "GAME_MarsOutcrop"
+        ]
+      }
+    },
+    "objects": {
+      "HIGH_ParentSandstone": {
+        "data": "HIGH_ParentSandstone",
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "hide_render": true,
+        "hide_viewport": false,
+        "view_layer_hidden": {
+          "ViewLayer": true
+        },
+        "modifiers": []
+      },
+      "MarsOutcrop": {
+        "data": "HIGH_ParentSandstone.001",
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "hide_render": false,
+        "hide_viewport": false,
+        "view_layer_hidden": {
+          "ViewLayer": false
+        },
+        "modifiers": []
+      }
+    },
+    "collections": {
+      "Collection": {
+        "objects": [],
+        "children": [],
+        "hide_render": false,
+        "hide_viewport": false
+      },
+      "GAME_EXPORT": {
+        "objects": [
+          "MarsOutcrop"
+        ],
+        "children": [],
+        "hide_render": false,
+        "hide_viewport": false
+      },
+      "SOURCE_HIGH_EDITABLE": {
+        "objects": [
+          "HIGH_ParentSandstone"
+        ],
+        "children": [],
+        "hide_render": false,
+        "hide_viewport": false
+      }
+    },
+    "material_graphs": {
+      "GAME_MarsOutcrop": "a9927a7c6fb457b4893451cb31bffa1dfc19b1a78275fb2011c09344fda3cf68",
+      "REVIEW_Neutral_Clay": "5b3956745ac9e6185b57331d3cd8cb5acd5ede2ac916c9e3c00ca221a1daa1e1",
+      "SOURCE_rock_HIGH_ParentSandstone": "50a74879441d699dd85988e3feae9a4dd6de4122510edc5580320ff378c33d4d"
+    },
+    "packed_images": {
+      "outcrop-base_color": "e222bb427de34bec53c0e7d7e0102f1713930379164b789a83d931f2e379765e",
+      "outcrop-normal": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316",
+      "outcrop-roughness": "aeccc6b8aeaf356e7478395d47d4f0e1c7e18e105f799851d2fbe19c5682f1ec"
+    }
+  },
+  "glb_visual_identity": {
+    "images": [
+      {
+        "name": "normal",
+        "sha256": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316"
+      },
+      {
+        "name": "base_color",
+        "sha256": "e222bb427de34bec53c0e7d7e0102f1713930379164b789a83d931f2e379765e"
+      },
+      {
+        "name": "roughness",
+        "sha256": "448f27731747e3918d1dd8ff6818870e95da80bced2f5911c855028da14d3be1"
+      }
+    ],
+    "accessors": [
+      {
+        "type": "VEC3",
+        "componentType": 5126,
+        "count": 139496,
+        "sha256": "81afbe04d5f67b571bab65d493a092e45041baf21265be1d609dded1a3f114f1"
+      },
+      {
+        "type": "VEC3",
+        "componentType": 5126,
+        "count": 139496,
+        "sha256": "496f2b0bb72a3544df4dcdfd9e127774cad81a61f34232e136f8becd274f55e0"
+      },
+      {
+        "type": "VEC2",
+        "componentType": 5126,
+        "count": 139496,
+        "sha256": "63a5aa945dab1abfb5a0ef7652921a7fdca6771aa95867b6dce9ba7bb35166f4"
+      },
+      {
+        "type": "VEC4",
+        "componentType": 5126,
+        "count": 139496,
+        "sha256": "9533ab34d33546f04e9b2101839edc6f91b9fce3eb0aaccd07b75d72a079d393"
+      },
+      {
+        "type": "SCALAR",
+        "componentType": 5125,
+        "count": 681480,
+        "sha256": "666c771a20d8eddf12ab0aa3f11a23047bb54d235c9a7a8022c70a39bc339d9a"
+      }
+    ]
+  },
+  "glb_user_paths_remaining": 0,
+  "export_guard_source": {
+    "path": "art/source/environment/mars-outcrop-hifi-r2/pipeline.py",
+    "sha256": "94afdef7c7e96a6f9a099b981599bfaa226934c980846899f39b50de42a9cc2e",
+    "bytes": 17975
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "HISTORICAL_STAGE12_RENDER_EVIDENCE",
+  "inputs": {
+    "outcrop": {
+      "sha256": "804129d8a228b5fab2a9fb20f500d692c05884167794bb6dfcdc9e45405facc1",
+      "bytes": 52451405
+    },
+    "ground": {
+      "sha256": "b8d3a0052f831d729ca8119f989b4f136f147192a702aaf5c7e1eefbcf56a437",
+      "bytes": 56226091
+    },
+    "source_files_changed": false,
+    "method": "Delivered GAME_EXPORT PBR objects; same four material preview cameras, plus three combined contact cameras; no runtime material override"
+  },
+  "renders": {
+    "baked-bed-close.png": {
+      "sha256": "c9cbe88d83349dd6a366365ca18519a97d90a0d4435fbfd381fa473fc6dd9861",
+      "bytes": 1789457
+    },
+    "baked-detail.png": {
+      "sha256": "ec07bfd0b1eed9b44c25c12bc119d403605eabb93a357fd213aea8b66949932b",
+      "bytes": 1778309
+    },
+    "baked-front.png": {
+      "sha256": "249652ca4546f7718b688dc3ef1d184a23fdfbc8d9db66881ac26c9415390ee4",
+      "bytes": 1703834
+    },
+    "baked-rear-detail.png": {
+      "sha256": "39d9c7e63fcdf1f85cc8006005c6bf7959abfa96e5ac92e5ab930850c549f4f4",
+      "bytes": 1871816
+    },
+    "combined-front.png": {
+      "sha256": "fe067d71bff1d9f1172562cde9e7664020463aec77e175238c9d4a84e7c19f79",
+      "bytes": 1780606
+    },
+    "combined-low.png": {
+      "sha256": "6a78aec581cfde53545cb6ae441fc1525b21d9a4c4f09b71e50bf8467413fb61",
+      "bytes": 1739926
+    },
+    "combined-reverse.png": {
+      "sha256": "e1a34e562d412ac12dca6a032d4d42235d7ed0c9b7e97279acdee5b3ead36d70",
+      "bytes": 1771536
+    },
+    "detail.png": {
+      "sha256": "ce78e49004175fe7434dcb5fac74b94f937070b6db259ea11227b085ad7850ec",
+      "bytes": 1784370
+    },
+    "front.png": {
+      "sha256": "036313b5ddd9313c3d88f8dc95c9b9ceb4549198fe9fee008d9ed3a658b89ded",
+      "bytes": 1703880
+    },
+    "reverse.png": {
+      "sha256": "2705909c15a009ec159a78bee5a4eec314c0f64cfa47c494f5bcf520ade19bdf",
+      "bytes": 1754994
+    }
+  }
+}

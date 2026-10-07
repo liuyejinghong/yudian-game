@@ -1,0 +1,58 @@
+[
+  {
+    "file": "color-processing.jpg",
+    "title": "PIA16800 raw / natural / white-balanced comparison",
+    "source_url": "https://science.nasa.gov/resource/raw-natural-and-white-balanced-views-of-martian-terrain/",
+    "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/downloadable_items/3/36790_PIA16800_raw-natural-WB.jpg?crop=faces%2Cfocalpoint&fit=clip&h=863&w=1150",
+    "site": "Curiosity, Gale; Sol19, 2012-08-23",
+    "processing": "三列不同处理；中列自然色近似现场；不从白平衡列取天空",
+    "credit": "NASA/JPL-Caltech/MSSS",
+    "read_date": "2026-10-07",
+    "purpose": "reference only; not runtime texture",
+    "sha256": "de020941c17f1a904575334967a1699e8ef8529b74db536143ce9f7dea96b09f",
+    "bytes": 129893,
+    "root_pixel_viewed": true
+  },
+  {
+    "file": "murray-buttes-shape.jpg",
+    "title": "PIA21042 Farewell to Murray Buttes Image2",
+    "source_url": "https://science.nasa.gov/resource/farewell-to-murray-buttes-image-2/",
+    "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/downloadable_items/3/9/39376_mars-curiosity-rover-msl-rock-layers-PIA21042.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1200&w=1344",
+    "site": "Curiosity, Gale/Stimson; Sol1454, 2016-09-08",
+    "processing": "处理方式未声明；只用形体/地表组织，无像素颜色认证",
+    "credit": "NASA/JPL-Caltech/MSSS",
+    "read_date": "2026-10-07",
+    "purpose": "reference only; not runtime texture",
+    "sha256": "54a5b4cada3b4419952aa83f36e0e50e0c9cf46bd3f2c78e4924e6d4fb4801b3",
+    "bytes": 162206,
+    "root_pixel_viewed": true
+  },
+  {
+    "file": "stimson-close.jpg",
+    "title": "PIA21044 Farewell to Murray Buttes Image4",
+    "source_url": "https://www.jpl.nasa.gov/images/pia21044-farewell-to-murray-buttes-image-4/",
+    "image_url": "https://d2pn8kiwq2w21t.cloudfront.net/original_images/jpegPIA21044.jpg",
+    "site": "Curiosity, Gale/Stimson; Sol1454, 2016-09-08",
+    "processing": "处理方式未声明；交错层理、断裂与侵蚀形体参考，无明示量尺",
+    "credit": "NASA/JPL-Caltech/MSSS",
+    "read_date": "2026-10-07",
+    "purpose": "reference only; not runtime texture",
+    "sha256": "0ba1cea422c22e393790d2ce7de28c3e79a34a18d8d80a5128a4b2717b6c0955",
+    "bytes": 225551,
+    "root_pixel_viewed": true
+  },
+  {
+    "file": "jezero-natural.jpg",
+    "title": "PIA24833 Malamaire Figure2 natural color",
+    "source_url": "https://science.nasa.gov/photojournal/malamaire-view-of-citadelle-area/",
+    "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia24/pia24833/figures/PIA24833_fig2.jpg?fit=clip&w=1600&h=1200",
+    "site": "Perseverance, Jezero/Citadelle; Sol180",
+    "processing": "Fig2自然色；黑色缺块是拼图边界；只作破碎/覆盖关系和处理对照，不合成已知Gale剖面",
+    "credit": "NASA/JPL-Caltech/ASU/MSSS",
+    "read_date": "2026-10-07",
+    "purpose": "reference only; not runtime texture",
+    "sha256": "62be14f70c0f357762b20a16cef80b7265bf20ddf8b976c45cf78d5c00069c9b",
+    "bytes": 89742,
+    "root_pixel_viewed": true
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "method": "Fresh clone/decimation and initial unwrap from frozen high, followed by the production local UV recipe",
+  "identity": {
+    "uv_sha256": "eabbb6128a61589e1b17f04861a983c6b005b94956a6de09760dce4bdc232dfb",
+    "geometry_vertex_sha256": "f94a58f29ba6d83f32261321e5b740db6f3fcd428a25f39611a4f8736b2b0d8c",
+    "triangles": 227160,
+    "loops": 681480
+  }
+}

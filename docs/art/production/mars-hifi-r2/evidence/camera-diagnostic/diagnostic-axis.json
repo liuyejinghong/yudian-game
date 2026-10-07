@@ -1,0 +1,13 @@
+{
+	"gpu_format": 4,
+	"gpu_size": [
+		4096,
+		4096
+	],
+	"method": "same Blender camera eye/target/lens and 1500x1100 viewport; lighting comparison is approximate across engines",
+	"normal_scale": 1.0,
+	"sampled_pixels": 2048,
+	"sampled_rgb_max_error": 0.0,
+	"source_format": 4,
+	"source_unchanged": true
+}

@@ -1,0 +1,385 @@
+{
+  "status": "BUILD_PASS_VERIFY_PENDING",
+  "blender": "5.2.2 LTS",
+  "high": {
+    "vertices": 7686,
+    "triangles": 15368,
+    "min": [
+      -0.45778778195381165,
+      -0.3586506247520447,
+      -0.1599999964237213
+    ],
+    "max": [
+      0.4300000071525574,
+      0.3104400038719177,
+      0.4006716310977936
+    ],
+    "dimensions": [
+      0.887787789106369,
+      0.6690906286239624,
+      0.5606716275215149
+    ],
+    "uv_loops": 0,
+    "uv_min": null,
+    "uv_max": null
+  },
+  "low": {
+    "vertices": 2691,
+    "triangles": 5378,
+    "min": [
+      -0.4574401378631592,
+      -0.35829299688339233,
+      -0.15999974310398102
+    ],
+    "max": [
+      0.42997807264328003,
+      0.3107162117958069,
+      0.3999786972999573
+    ],
+    "dimensions": [
+      0.8874182105064392,
+      0.6690092086791992,
+      0.5599784404039383
+    ],
+    "uv_loops": 16134,
+    "uv_min": [
+      0.007999995723366737,
+      0.007999961264431477
+    ],
+    "uv_max": [
+      0.9905534386634827,
+      0.9919741153717041
+    ]
+  },
+  "uv": {
+    "object": "GAME_IndependentSandstone",
+    "uv_map": "UVMap",
+    "tex_res": 512,
+    "faces": 5378,
+    "islands": 935,
+    "td_px_per_m": 143.2,
+    "td_face_spread_p95_p05": 1.03,
+    "td_island_spread_p95_p05": 1.0,
+    "td_island_min_max": [
+      143.2,
+      143.2
+    ],
+    "angle_err_mean_deg": 0.91,
+    "angle_err_p95_deg": 3.03,
+    "area_stretch_p95_log2": 0.06,
+    "flipped_faces": 0,
+    "zero_area_faces": 0,
+    "overlap_px_pct": 0.0,
+    "overlapping_island_pairs": 0,
+    "self_overlapping_islands": [],
+    "tiles": [
+      1001
+    ],
+    "per_tile": {
+      "1001": {
+        "coverage": 0.1802,
+        "overlap_px_pct": 0.0,
+        "min_gap_px": 7.5,
+        "border_px": 4.1
+      }
+    },
+    "faces_crossing_tiles": 0,
+    "min_gap_px": 7.5,
+    "gap_required_px": 4,
+    "tiny_islands": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16,
+      17,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "sharp_edges_not_on_seams": 0,
+    "flat_shaded_share": 0.0,
+    "mirror_stacked_hint": false,
+    "islands_detail": [
+      {
+        "island": 0,
+        "faces": 15,
+        "td": 143.2,
+        "area_m2": 0.01282,
+        "uv_px": 263,
+        "flipped": 0,
+        "bbox": [
+          0.4545,
+          0.0948,
+          0.4661,
+          0.1904
+        ]
+      },
+      {
+        "island": 615,
+        "faces": 3,
+        "td": 143.2,
+        "area_m2": 0.00098,
+        "uv_px": 20,
+        "flipped": 0,
+        "bbox": [
+          0.4168,
+          0.705,
+          0.4215,
+          0.732
+        ]
+      },
+      {
+        "island": 616,
+        "faces": 3,
+        "td": 143.2,
+        "area_m2": 0.00072,
+        "uv_px": 15,
+        "flipped": 0,
+        "bbox": [
+          0.8242,
+          0.3625,
+          0.8384,
+          0.3679
+        ]
+      },
+      {
+        "island": 617,
+        "faces": 4,
+        "td": 143.2,
+        "area_m2": 0.00058,
+        "uv_px": 12,
+        "flipped": 0,
+        "bbox": [
+          0.6839,
+          0.705,
+          0.6884,
+          0.7311
+        ]
+      },
+      {
+        "island": 618,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00016,
+        "uv_px": 3,
+        "flipped": 0,
+        "bbox": [
+          0.8846,
+          0.5656,
+          0.8953,
+          0.5679
+        ]
+      },
+      {
+        "island": 619,
+        "faces": 3,
+        "td": 143.2,
+        "area_m2": 0.00102,
+        "uv_px": 21,
+        "flipped": 0,
+        "bbox": [
+          0.3636,
+          0.7881,
+          0.3692,
+          0.8067
+        ]
+      },
+      {
+        "island": 315,
+        "faces": 8,
+        "td": 143.2,
+        "area_m2": 0.00238,
+        "uv_px": 49,
+        "flipped": 0,
+        "bbox": [
+          0.0542,
+          0.75,
+          0.0697,
+          0.7712
+        ]
+      },
+      {
+        "island": 316,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00013,
+        "uv_px": 3,
+        "flipped": 0,
+        "bbox": [
+          0.9118,
+          0.027,
+          0.9221,
+          0.029
+        ]
+      },
+      {
+        "island": 317,
+        "faces": 8,
+        "td": 143.2,
+        "area_m2": 0.00234,
+        "uv_px": 48,
+        "flipped": 0,
+        "bbox": [
+          0.4055,
+          0.642,
+          0.4127,
+          0.6841
+        ]
+      },
+      {
+        "island": 318,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00026,
+        "uv_px": 5,
+        "flipped": 0,
+        "bbox": [
+          0.9118,
+          0.8239,
+          0.9214,
+          0.8281
+        ]
+      },
+      {
+        "island": 306,
+        "faces": 1,
+        "td": 143.2,
+        "area_m2": 0.00045,
+        "uv_px": 9,
+        "flipped": 0,
+        "bbox": [
+          0.9118,
+          0.2978,
+          0.9216,
+          0.305
+        ]
+      },
+      {
+        "island": 934,
+        "faces": 2,
+        "td": 143.2,
+        "area_m2": 0.00048,
+        "uv_px": 10,
+        "flipped": 0,
+        "bbox": [
+          0.855,
+          0.6787,
+          0.8676,
+          0.6867
+        ]
+      }
+    ]
+  },
+  "projection": {
+    "samples": 4035,
+    "outward_q": 0.00498,
+    "inward_q": 0.00587,
+    "outward_max": 0.00498,
+    "inward_max": 0.00587,
+    "cage_extrusion": 0.00561,
+    "max_ray_distance": 0.01219,
+    "miss_pct": 0.0,
+    "uncovered_pct": 0.0,
+    "wrong_part_pct": 0.0,
+    "search": 0.08,
+    "quantile": 1
+  },
+  "normal_sanity": {
+    "pixels": 47165,
+    "inverted_pct": 0.002,
+    "flat_exact_pct": 0.61,
+    "bad_length_pct": 0.0,
+    "steep_pct": 0.002,
+    "mean": [
+      0.498,
+      0.501,
+      0.995
+    ],
+    "std": [
+      0.05,
+      0.052,
+      0.012
+    ],
+    "nan": 0,
+    "problems": [],
+    "notes": []
+  },
+  "material_audit": [],
+  "bakes": [
+    {
+      "role": "normal",
+      "result": [
+        "FINISHED"
+      ],
+      "selected_to_active": true,
+      "threads": 4,
+      "samples": 16
+    },
+    {
+      "role": "base_color",
+      "result": [
+        "FINISHED"
+      ],
+      "selected_to_active": true,
+      "threads": 4,
+      "samples": 16
+    },
+    {
+      "role": "roughness",
+      "result": [
+        "FINISHED"
+      ],
+      "selected_to_active": true,
+      "threads": 4,
+      "samples": 16
+    }
+  ],
+  "background_fill": {
+    "base_color_linear": [
+      0.22,
+      0.195,
+      0.171
+    ],
+    "base_color_encoded": [
+      0.5063864292846207,
+      0.4788675791397135,
+      0.4504375525761222
+    ],
+    "normal": [
+      0.5,
+      0.5,
+      1
+    ],
+    "roughness": 0.86
+  },
+  "formal_unchanged": true,
+  "skills_functions": [
+    "bx_uvbake.prepare_low",
+    "bx_uvbake.uv_qa",
+    "bx_uvbake.measure_projection",
+    "bx_uvbake.bake_sanity",
+    "bx_materials.write_vertex_values",
+    "bx_materials.pbr_from_textures",
+    "bx_materials.audit_material"
+  ],
+  "helpers": [
+    "build.rock_volume",
+    "pipeline.clone_low",
+    "pipeline.surface",
+    "pipeline.emit_source/restore_source",
+    "pipeline.new_image/target/save_map/material/export"
+  ],
+  "limits": "512 original small fragment transfer trial; no formal 4K or Godot/visual acceptance claimed"
+}

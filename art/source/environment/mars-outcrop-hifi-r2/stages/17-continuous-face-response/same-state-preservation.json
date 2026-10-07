@@ -1,0 +1,245 @@
+{
+  "status": "REWORK",
+  "source": {
+    "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+    "bytes": 52451110
+  },
+  "candidate": {
+    "sha256": "24a10482169b74cb0c23cc009a11a65a013a19cc071a1987ed57632a6b0b5cad",
+    "bytes": 114801468
+  },
+  "triangles": 930876,
+  "scope_counts": {
+    "permitted_face_corners": 2143074,
+    "outside_faces_on_permitted_or_deformed_fans": 9873,
+    "strict_outside_corners": 639681,
+    "strict_outside_original_corners": 639681
+  },
+  "input_target_truth": {
+    "strict_outside_original_corner_max_delta": 0.0,
+    "new_corner_rule": "Original-face barycentric interpolation; independently solved by cross products",
+    "max_barycentric_position_error": 2.2239869990059447e-07,
+    "strict_outside_position_delta_m": 0.0,
+    "original_sharp_edges": 0,
+    "candidate_sharp_edges": 0,
+    "original_and_candidate_all_faces_smooth": true
+  },
+  "same_state_encoding_control": {
+    "native": "5.2.2 LTS",
+    "same_coordinates_topology_initial_hard_edges": true,
+    "threshold": 0.0003,
+    "all_corner_max_delta": 0.000695957336164609,
+    "strict_outside_corner_max_delta": 0.0,
+    "strict_outside_p99_delta": 0.0,
+    "over_threshold_all": 5596,
+    "over_threshold_strict_outside": 0
+  },
+  "uv": {
+    "max_interpolation_error": 9.81468787353279e-08,
+    "max_original_face_area_partition_error": 8.89633255951594e-10,
+    "flipped_faces": 0,
+    "zero_area_faces": 1750,
+    "non_triangular_polygons": 0
+  },
+  "bounds_max_delta": 0.0,
+  "legacy_diagnostics_retained": {
+    "old_topology_max_delta": 0.0006016109904149607,
+    "zero_displacement_same_topology_max_delta": 0.0003293200238104092,
+    "zero_displacement_over_threshold_count": 35,
+    "zero_displacement_worst_positions_classified": [
+      {
+        "loop": 736962,
+        "vertex": 83686,
+        "original_face": 19097,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 615478,
+        "vertex": 83686,
+        "original_face": 205159,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 736965,
+        "vertex": 83686,
+        "original_face": 19098,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 1214403,
+        "vertex": 83686,
+        "original_face": 110513,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 819990,
+        "vertex": 83686,
+        "original_face": 19024,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 57068,
+        "vertex": 83686,
+        "original_face": 19022,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 1014370,
+        "vertex": 83686,
+        "original_face": 19011,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 1042195,
+        "vertex": 83686,
+        "original_face": 19012,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 2166394,
+        "vertex": 83686,
+        "original_face": 19011,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 1091176,
+        "vertex": 83686,
+        "original_face": 110513,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 722395,
+        "vertex": 83686,
+        "original_face": 110107,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      },
+      {
+        "loop": 736437,
+        "vertex": 83686,
+        "original_face": 19023,
+        "co": [
+          -1.4514530897140503,
+          1.433631420135498,
+          0.6010246872901917
+        ],
+        "delta": 0.0003293200238104092,
+        "original_face_region": 2,
+        "vertex_touches_permitted_face": true,
+        "fan_touches_displaced_face": true,
+        "strict_outside": false,
+        "same_state_control_delta": 0.0
+      }
+    ],
+    "meaning": "Both earlier deltas remain recorded; a zero-displacement control also changes the geometric fan basis, so it is not the same encoding state."
+  }
+}

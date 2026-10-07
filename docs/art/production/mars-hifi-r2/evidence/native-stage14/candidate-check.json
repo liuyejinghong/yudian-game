@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "candidate_glb_sha256": "6bc4c9e9262edf503ba885d50a98b53f8ba2a247e81c1a5b21ef6102fad3895e",
+  "embedded_vs_imported_png_equal": true,
+  "actual_native_frames": 7,
+  "final_formal_source": "not promoted yet"
+}

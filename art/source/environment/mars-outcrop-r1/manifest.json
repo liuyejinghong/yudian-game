@@ -1,0 +1,101 @@
+{
+  "asset": "mars-outcrop-r1",
+  "status": "lookdev candidate; owner visual acceptance pending",
+  "authoring": "Blender 4.5.14 / original authored polygons and procedural texture bake; saved blend is the exact reexport source",
+  "seed": 21044,
+  "units": "metres",
+  "blender_axis": "+Z up",
+  "gltf_axis": "+Y up; Blender (x,y,z) -> glTF (x,z,-y)",
+  "root_origin": "XY AABB centre, Z=ground; identity object transforms",
+  "burial_allowance_m": 0.14,
+  "bounds_blender": {
+    "min": [
+      -3.074721336364746,
+      -2.0710933208465576,
+      -0.14000000059604645
+    ],
+    "max": [
+      3.074721336364746,
+      2.0710933208465576,
+      2.1920957565307617
+    ],
+    "size": [
+      6.149442672729492,
+      4.142186641693115,
+      2.332095757126808
+    ]
+  },
+  "triangles": 47998,
+  "vertices": 24039,
+  "loose_components": 20,
+  "composition": "1 continuous basal bench, 3 obliquely jointed retreating upper beds, 2 broken plates, 14 unequal angular toe fragments",
+  "materials": [
+    {
+      "name": "Stimson_Original_Baked_PBR",
+      "metallic": 0,
+      "textures": [
+        "basecolor.png",
+        "normal.png",
+        "roughness.png"
+      ],
+      "resolution": [
+        2048,
+        2048
+      ],
+      "normal": "tangent +Y (OpenGL/glTF)"
+    }
+  ],
+  "originality": "All mesh coordinates and PBR pixels authored/generated here. No photo pixel is used in runtime geometry or textures.",
+  "references": [
+    {
+      "id": "PIA21044",
+      "url": "https://www.jpl.nasa.gov/images/pia21044-farewell-to-murray-buttes-image-4/",
+      "use": "Observed cross-bedding, vertical joints, undercut rims. Processing unspecified; not calibrated colour."
+    },
+    {
+      "id": "PIA21042",
+      "url": "https://science.nasa.gov/resource/farewell-to-murray-buttes-image-2/",
+      "use": "Observed stepped outcrop and angular talus; processing unspecified."
+    },
+    {
+      "id": "PIA16800",
+      "url": "https://science.nasa.gov/resource/raw-natural-and-white-balanced-views-of-martian-terrain/",
+      "use": "Colour-processing distinction only; chosen muted palette is art direction."
+    }
+  ],
+  "scope": "Decorative single outcrop study; no collisions, mining/resource semantics, LOD, game-state or Main integration.",
+  "reexport_contract": {
+    "strict": "JSON and all non-tangent buffer views including geometry, normals, UV, indices and PNG bytes are identical",
+    "tangent_xyz_max_delta": 0.00011,
+    "tangent_w": "exactly unchanged, +1 or -1",
+    "reason": "Blender glTF exporter rounds tangents to four decimals; few components cross a rounding boundary between processes",
+    "report": "verification/check-report.json; exact_binary is reported separately, never inferred"
+  },
+  "limits": [
+    "Not a measured reconstruction of a Martian site.",
+    "Texture atlas limits sub-centimetre detail; no millimetre geometry.",
+    "Godot normal/near/reverse/low and terrain contact await independent root verification and owner visual acceptance."
+  ],
+  "files": {
+    "mars-outcrop-r1.blend": {
+      "bytes": 16287032,
+      "sha256": "4c04088e824f3687f03db42b4e10cab0507f96aad0f32ba1c13bd24ab72d7ec0"
+    },
+    "mars-outcrop-r1.glb": {
+      "bytes": 13558660,
+      "sha256": "141380133cb362aae0dcf52deb3ac1e62f33c31851d7437f92240b44da05cacf"
+    },
+    "textures/basecolor.png": {
+      "bytes": 2322162,
+      "sha256": "f0e5c296d2b2a02f0ac7da68944dead4c6c45b60468dd7e10eae819f085ca87d"
+    },
+    "textures/normal.png": {
+      "bytes": 5775843,
+      "sha256": "410a1d2fdc213bf3077ec2d030c9d760d074eb23a6842cb068c241f54b6d3484"
+    },
+    "textures/roughness.png": {
+      "bytes": 2283432,
+      "sha256": "5beaff37fe754db0dfcb08bc05d7860b4ac856706323137e478217f4999512ec"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "baseline_uv_negative": 0,
+  "baseline_normal_roundtrip_max_delta": 0.0007672744104638696,
+  "negative_triangles": [],
+  "untouched_original_vertex_corner_normal": {
+    "count": 681912,
+    "max_delta": 0.0007672744518574452,
+    "p99_delta": 0.00047706891661084233,
+    "max_center_m": [
+      -1.9592485427856445,
+      -0.13364028930664062,
+      1.0105007886886597
+    ],
+    "source_face": 6793,
+    "compared_to_native_roundtrip_max_delta": 0.00027483647575658103,
+    "compared_to_native_roundtrip_p99_delta": 0.0
+  }
+}

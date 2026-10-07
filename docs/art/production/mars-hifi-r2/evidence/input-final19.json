@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "godot": "4.7.2.stable.mono.official.ed1daf0bf",
+  "exit_code": 0,
+  "native_headless_input_check": true,
+  "observed_stdout": "MARS_LOOKDEV_INPUT_OK views=6 low_toggle=true label_toggle=true drag_reset=true",
+  "inputs": {
+    "art/environment/mars-lookdev-r1/check_input.gd": "8a9b834b10f8d294d4f8b69eb1ec4c6b633b3ebbaf519581d5511ada3ea6a935",
+    "art/environment/mars-lookdev-r1/lookdev.gd": "0b73ec3ec98c93ad6c4bbd51db07671357f0964057c8e2635c6a7b33a08d7408",
+    "art/environment/mars-lookdev-r1/hifi/mars-outcrop-hifi-r2.glb": "ae5722b19aa99a1e3a0e5333d41eb5544ac9c2295c35685be9f41f5b05df4e78",
+    "art/environment/mars-lookdev-r1/hifi/mars-ground-patch-hifi-r2.glb": "1b8416146652229d11c7c1bd391ef479093adeea95dd5869ab9d6fbc194fe624"
+  },
+  "main_and_performance": "NOT_RUN"
+}

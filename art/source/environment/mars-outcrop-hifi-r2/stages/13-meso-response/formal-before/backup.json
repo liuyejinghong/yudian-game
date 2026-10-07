@@ -1,0 +1,32 @@
+[
+  {
+    "file": "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.blend",
+    "sha256": "b43b4d75ca00e5fbf52cc9cb39571f9a159bcd5a987c4fae87414d012f6d591d",
+    "bytes": 52451110
+  },
+  {
+    "file": "art/source/environment/mars-outcrop-hifi-r2/mars-outcrop-hifi-r2.glb",
+    "sha256": "0e6f3d03d894626c8414cd815d87e7fdd9a3c775bf0a088ffcd3324df2f46c9e",
+    "bytes": 27662108
+  },
+  {
+    "file": "art/source/environment/mars-outcrop-hifi-r2/manifest.json",
+    "sha256": "9d078d40fda26690a5d57d61be4be4eaaca1b2e5b6aabd443a1193d6d4de5464",
+    "bytes": 333182
+  },
+  {
+    "file": "art/source/environment/mars-outcrop-hifi-r2/textures/base_color.png",
+    "sha256": "e222bb427de34bec53c0e7d7e0102f1713930379164b789a83d931f2e379765e",
+    "bytes": 4402001
+  },
+  {
+    "file": "art/source/environment/mars-outcrop-hifi-r2/textures/normal.png",
+    "sha256": "ce6f9ba6bf26b8bac20404abe1f8f9c9f10003882133c55b01b9426fd1ac1316",
+    "bytes": 9874807
+  },
+  {
+    "file": "art/source/environment/mars-outcrop-hifi-r2/textures/roughness.png",
+    "sha256": "aeccc6b8aeaf356e7478395d47d4f0e1c7e18e105f799851d2fbe19c5682f1ec",
+    "bytes": 4060101
+  }
+]

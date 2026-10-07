@@ -1,0 +1,18 @@
+{
+  "version": "5.2.2 LTS",
+  "build_hash": "d13f752e3b9c",
+  "native_architecture": "arm64",
+  "official_dmg_sha256": "dc4125399b8bfefe283cc1624d6cfc7809d1cac20ace51072127eb371f31f210",
+  "old_source_load": "PASS",
+  "old_source_unchanged": true,
+  "old_source_sha256": "4c04088e824f3687f03db42b4e10cab0507f96aad0f32ba1c13bd24ab72d7ec0",
+  "old_source_polygons": 47998,
+  "selected_to_active_normal_bake": "PASS",
+  "normal_red_minmax": [
+    0.4431372880935669,
+    0.5568627715110779
+  ],
+  "packed_source_reopen": "PASS",
+  "glb_export_import": "PASS",
+  "performance_comparison": "NOT_RUN"
+}

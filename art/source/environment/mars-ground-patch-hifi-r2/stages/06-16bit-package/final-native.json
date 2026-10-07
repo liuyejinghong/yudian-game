@@ -1,0 +1,115 @@
+{
+  "status": "PASS",
+  "version": "5.2.2 LTS",
+  "source": "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.blend",
+  "source_sha256": "849cd33be1ff67b08d7af6caae9ebaaed5e096a3eeecc13e0b7626ed69ae333c",
+  "glb": "art/source/environment/mars-ground-patch-hifi-r2/mars-ground-patch-hifi-r2.glb",
+  "glb_sha256": "e144b015f8375b34ef478eaae7975cf9c699c5d07e94be705feac6311370cf61",
+  "source_reopen": {
+    "objects": 315,
+    "triangles": 374280,
+    "bounds_min": [
+      -6.0,
+      -6.0,
+      -0.03925097733736038
+    ],
+    "bounds_max": [
+      6.0,
+      6.0,
+      0.351167231798172
+    ],
+    "dimensions": [
+      12.0,
+      12.0,
+      0.3904182016849518
+    ],
+    "uv_missing": [],
+    "finite": true,
+    "high_editable_collection_present": true,
+    "textures": [
+      {
+        "name": "ground-clast-base_color",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "sRGB"
+      },
+      {
+        "name": "ground-clast-normal",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color"
+      },
+      {
+        "name": "ground-clast-roughness",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color"
+      },
+      {
+        "name": "ground-sand-base_color",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "sRGB"
+      },
+      {
+        "name": "ground-sand-normal",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color"
+      },
+      {
+        "name": "ground-sand-roughness",
+        "width": 4096,
+        "height": 4096,
+        "packed": true,
+        "colorspace": "Non-Color"
+      }
+    ]
+  },
+  "independent_glb_import": {
+    "objects": 315,
+    "triangles": 374280,
+    "bounds_min": [
+      -6.0,
+      -6.0,
+      -0.03925097733736038
+    ],
+    "bounds_max": [
+      6.0,
+      6.0,
+      0.351167231798172
+    ],
+    "dimensions": [
+      12.0,
+      12.0,
+      0.3904182016849518
+    ],
+    "uv_missing": [],
+    "finite": true
+  },
+  "embedded_images": 6,
+  "materials": [
+    {
+      "name": "Mars_clast_PBR",
+      "base_color_texture": true,
+      "normal_texture": true,
+      "roughness_texture": true,
+      "metallicFactor": 0
+    },
+    {
+      "name": "Mars_sand_PBR",
+      "base_color_texture": true,
+      "normal_texture": true,
+      "roughness_texture": true,
+      "metallicFactor": 0
+    }
+  ],
+  "owner_final_visual": "NOT_RUN",
+  "Main_integration": "NOT_RUN",
+  "scene_performance": "NOT_RUN"
+}

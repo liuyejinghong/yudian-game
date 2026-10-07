@@ -1,0 +1,69 @@
+{
+  "triangles": 47998,
+  "export_vertices": 61529,
+  "normals": 61529,
+  "bounds_gltf": {
+    "min": [
+      -3.074721336364746,
+      -0.14000000059604645,
+      -2.0710933208465576
+    ],
+    "max": [
+      3.074721336364746,
+      2.1920957565307617,
+      2.0710933208465576
+    ],
+    "size": [
+      6.149442672729492,
+      2.332095757126808,
+      4.142186641693115
+    ]
+  },
+  "embedded_images": [
+    {
+      "name": "normal",
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 5775843
+    },
+    {
+      "name": "basecolor",
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 2322162
+    },
+    {
+      "name": "roughness",
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 2217109
+    }
+  ],
+  "sha256": "141380133cb362aae0dcf52deb3ac1e62f33c31851d7437f92240b44da05cacf",
+  "blend_reopen": {
+    "pass": true,
+    "loose_components": 20,
+    "manifold": true,
+    "packed_original_textures": 3,
+    "exact_binary": false,
+    "same_json_and_non_tangent_bytes": true,
+    "tangent_xyz_max_delta": 0.00010001659393310547,
+    "tangent_xyz_changed_components": 1,
+    "tangent_delta_limit": 0.00011,
+    "same_tangent_handedness": true,
+    "reexport_sha256": "4f12bccee20f192c2faa7d21643c0224d603a410f29bd5a73847775ab4b37ffa"
+  },
+  "independent_glb_import": {
+    "pass": true,
+    "triangles": 47998,
+    "pbr_images": 3,
+    "bounds_match": true
+  },
+  "pass": true
+}

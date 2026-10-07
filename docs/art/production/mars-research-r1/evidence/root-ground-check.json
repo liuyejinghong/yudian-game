@@ -1,0 +1,9 @@
+{
+  "source_reopen": "PASS",
+  "meshes": 3,
+  "finite_vertices": "PASS",
+  "anchor_ground_vertices": "PASS",
+  "unit_scale": "PASS",
+  "same_glb_bytes": true,
+  "sha256": "2693c1b6f576c0529c2fc56d0da0a349d21281bb182d7284c09582ef2f181a52"
+}

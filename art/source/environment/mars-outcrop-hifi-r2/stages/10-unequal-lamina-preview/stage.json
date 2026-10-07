@@ -1,0 +1,8 @@
+{
+  "stage": "10-material-only",
+  "geometry_source": "stages/09-exposed-bed-material/source-high.blend",
+  "geometry_source_sha256": "7f3c801c8cac8231661e3fba16f44deb770fc7f8019067d55c87a5f79a782a34",
+  "triangles": 946516,
+  "source_shader": "Old front bed mask: unequal centimetre-scale sediment lenses, with varying spacing/width/run length; exposed/fresh/dust masks control 16mm/5mm granular fields and roughness; no AO or image-derived normals",
+  "status": "PENDING_OPEN_IMAGE_AND_VISUAL_REVIEW"
+}
