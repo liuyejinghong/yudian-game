@@ -1,0 +1,42 @@
+{
+	"checks": 14,
+	"display": "macOS",
+	"driver": "metal",
+	"engine": "4.7.2-stable (official)",
+	"failures": 0,
+	"marked_nodes": [
+		[
+			23,
+			31
+		],
+		[
+			60,
+			50
+		],
+		[
+			0,
+			0
+		],
+		[
+			64,
+			64
+		]
+	],
+	"mask_size": [
+		65,
+		65
+	],
+	"scope": "synthetic plane/mask shader check; not world authority, live task, or default application",
+	"viewport_px": [
+		768,
+		768
+	],
+	"world_origin": [
+		-30,
+		-30
+	],
+	"world_span": [
+		60,
+		60
+	]
+}

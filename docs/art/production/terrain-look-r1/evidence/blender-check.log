@@ -1,0 +1,30 @@
+INFO Draco mesh compression is available, use library at /Users/ethan/yudian-game/tools-bin/Blender-4.5.14.app/Contents/Resources/4.5/scripts/addons_core/io_scene_gltf2/libextern_draco.dylib
+13:53:03 | INFO: Starting glTF 2.0 export
+13:53:03 | INFO: Extracting primitive: Stone_01
+13:53:03 | INFO: Primitives created: 4
+13:53:03 | INFO: Extracting primitive: Stone_02
+13:53:03 | INFO: Primitives created: 4
+13:53:03 | INFO: Extracting primitive: Stone_03
+13:53:03 | INFO: Primitives created: 4
+13:53:03 | INFO: Extracting primitive: Stone_04
+13:53:03 | INFO: Primitives created: 4
+13:53:03 | INFO: Extracting primitive: Stone_05
+13:53:03 | INFO: Primitives created: 4
+13:53:03 | INFO: Finished glTF 2.0 export in 0.01170492172241211 s
+
+ROCK_CHECK rock-cluster {"dimensions_xyz_m": [3.0, 0.88, 2.5], "bounds_gltf_m": {"min": [-1.5, 0.0, -1.25], "max": [1.5, 0.8799999952316284, 1.25]}, "meshes": [{"name": "Stone_01", "vertices": 45, "faces": 38, "triangles": 86}, {"name": "Stone_02", "vertices": 45, "faces": 38, "triangles": 86}, {"name": "Stone_03", "vertices": 45, "faces": 38, "triangles": 86}, {"name": "Stone_04", "vertices": 45, "faces": 38, "triangles": 86}, {"name": "Stone_05", "vertices": 45, "faces": 38, "triangles": 86}], "triangles": 430, "reopen_export_check": {"max_float_diff": 0.0, "problems": [], "reexport_sha256": "67f6a8f87b04edf92abfc79712d833d2242f861b574b5ffa135dfa16dc45e8d7", "deliverable_sha256": "67f6a8f87b04edf92abfc79712d833d2242f861b574b5ffa135dfa16dc45e8d7", "identical_bytes": true}}
+13:53:03 | INFO: Starting glTF 2.0 export
+13:53:03 | INFO: Extracting primitive: Stone_01
+13:53:03 | INFO: Primitives created: 4
+13:53:03 | INFO: Extracting primitive: Stone_02
+13:53:03 | INFO: Primitives created: 4
+13:53:03 | INFO: Extracting primitive: Stone_03
+13:53:03 | INFO: Primitives created: 4
+13:53:03 | INFO: Finished glTF 2.0 export in 0.006453037261962891 s
+
+ROCK_CHECK rock-outcrop {"dimensions_xyz_m": [4.0, 1.45, 2.0], "bounds_gltf_m": {"min": [-2.0, 0.0, -1.0], "max": [2.0, 1.4500000476837158, 1.0]}, "meshes": [{"name": "Stone_01", "vertices": 45, "faces": 38, "triangles": 86}, {"name": "Stone_02", "vertices": 45, "faces": 38, "triangles": 86}, {"name": "Stone_03", "vertices": 45, "faces": 38, "triangles": 86}], "triangles": 258, "reopen_export_check": {"max_float_diff": 0.0, "problems": [], "reexport_sha256": "0540f7f0e0379b33ad1c764dc0eb660a7d895bdf4fc8ebbb4d343987971ac48f", "deliverable_sha256": "0540f7f0e0379b33ad1c764dc0eb660a7d895bdf4fc8ebbb4d343987971ac48f", "identical_bytes": true}}
+Blender 4.5.14 LTS (hash 62c1db4208e8 built 2026-09-15 01:30:44)
+Read blend: "/Users/ethan/yudian-game/art-terrain-look-r1-20261007/art/environment/terrain-look-r1/rocks/rock-cluster.blend"
+Read blend: "/Users/ethan/yudian-game/art-terrain-look-r1-20261007/art/environment/terrain-look-r1/rocks/rock-outcrop.blend"
+
+Blender quit

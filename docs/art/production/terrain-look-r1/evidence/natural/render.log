@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+MAIN_GROUND_IDENTITY build_sha256=2f0e91e6d918a4b0b5eee53dcca5d15ff8986b1897869fb1e50c5745521bee43 loaded_mvid=982ab56b-3823-4aa2-91e9-359475fb085f CLR=10.0.12 display=macOS
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+TERRAIN_LOOK_CAPTURE_OK frames=8 terrain_and_mask_unchanged=true

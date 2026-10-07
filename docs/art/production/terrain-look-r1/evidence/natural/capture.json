@@ -1,0 +1,179 @@
+{
+	"driver": "metal",
+	"engine": "4.7.2-stable (official)",
+	"frames": {
+		"close-after": {
+			"fov": 50.0,
+			"msaa": 2,
+			"position": [
+				19.0,
+				8.0,
+				0.0
+			],
+			"rotation_degrees": [
+				-33.2402534484863,
+				34.992015838623,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d"
+		},
+		"close-before": {
+			"fov": 50.0,
+			"msaa": 2,
+			"position": [
+				19.0,
+				8.0,
+				0.0
+			],
+			"rotation_degrees": [
+				-33.2402534484863,
+				34.992015838623,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14"
+		},
+		"low-after": {
+			"fov": 50.0,
+			"msaa": 0,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 0.75,
+			"shader_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d"
+		},
+		"low-before": {
+			"fov": 50.0,
+			"msaa": 0,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 0.75,
+			"shader_sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14"
+		},
+		"normal-after": {
+			"fov": 50.0,
+			"msaa": 2,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d"
+		},
+		"normal-before": {
+			"fov": 50.0,
+			"msaa": 2,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14"
+		},
+		"rocks-close": {
+			"fov": 50.0,
+			"msaa": 0,
+			"position": [
+				23.0,
+				10.0,
+				12.0
+			],
+			"rotation_degrees": [
+				-31.8061027526855,
+				29.7448787689209,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d"
+		},
+		"rocks-normal": {
+			"fov": 50.0,
+			"msaa": 0,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d"
+		}
+	},
+	"mask_enabled": true,
+	"mask_sha256": "31ef6078ab23831e391f325a13ff93e59f98a4d57889897f5249e9efaa84c672",
+	"mask_unchanged": true,
+	"rocks": [
+		{
+			"base_gap_max_m": -0.02,
+			"base_gap_min_m": -0.0242899558902718,
+			"base_samples": 135,
+			"ground_at_origin": 0.00218259356915951,
+			"id": "rock-cluster",
+			"position": [
+				19.0,
+				-0.0192114859819412,
+				4.0
+			],
+			"scope": "art-only placement example; no collider, no resource identity",
+			"sha256": "67f6a8f87b04edf92abfc79712d833d2242f861b574b5ffa135dfa16dc45e8d7",
+			"yaw": 0.25
+		},
+		{
+			"base_gap_max_m": -0.02,
+			"base_gap_min_m": -0.70846982717514,
+			"base_samples": 81,
+			"ground_at_origin": 0.874107182025909,
+			"id": "rock-outcrop",
+			"position": [
+				13.0,
+				0.514440953731537,
+				-5.0
+			],
+			"scope": "art-only placement example; no collider, no resource identity",
+			"sha256": "0540f7f0e0379b33ad1c764dc0eb660a7d895bdf4fc8ebbb4d343987971ac48f",
+			"yaw": -0.6
+		}
+	],
+	"scope": "actual Main with read-only shader overrides; optional engineering save loaded through existing API; rocks are art-only placement examples, no game registration",
+	"shader_after_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d",
+	"shader_before_sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14",
+	"stage": 0,
+	"terrain_arrays_sha256": "20f86fc272c284c99826941aa987f672e612dc632fe8b10e4a03cf600dbcb677",
+	"terrain_unchanged": true,
+	"viewport_px": [
+		1920,
+		1200
+	]
+}
