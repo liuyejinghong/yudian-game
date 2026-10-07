@@ -1,0 +1,79 @@
+  正在确定要还原的项目…
+  所有项目均是最新的，无法还原。
+  Yudian -> <PROJECT_ROOT>/camera-01-r1/prototype/.godot/mono/temp/bin/Debug/Yudian.dll
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.74
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PLAYER_UI_SELFTEST begin
+MAIN_GROUND_IDENTITY build_sha256=0b9262acc9bd36afa7d591d87d1e3777c908d2566025b232f8bebf171d393ad8 loaded_mvid=d72cc687-4fdd-48d8-b1d8-0731dab66bd3 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_UI_SELFTEST mode=camera-diag-only
+PLAYER_UI_SELFTEST CAMUI begin
+PLAYER_UI_SELFTEST PASS 九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）
+PLAYER_UI_SELFTEST PASS 镜头按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST PASS 镜头行与全部按钮在视口内不裁切
+PLAYER_UI_SELFTEST PASS 『前』按钮沿当前朝向明显平移: 13.76m
+PLAYER_UI_SELFTEST PASS 『右转』单次15度: 0.2618rad
+PLAYER_UI_SELFTEST PASS 旋转后『前』沿新朝向平移
+PLAYER_UI_SELFTEST PASS 连点三次『右转』45度不受工程冷却: 0.7854rad
+PLAYER_UI_SELFTEST PASS 连续拉近到下限后不再变化
+PLAYER_UI_SELFTEST PASS 连续拉远到上限后不再变化
+PLAYER_UI_SELFTEST PASS 平移到前限后不再变化
+PLAYER_UI_SELFTEST PASS 平移到后限后不再变化
+PLAYER_UI_SELFTEST PASS 复位恢复初始焦点/距离/朝向
+PLAYER_SAVE_OK version=0 stage= time=1.1333333333333342
+PLAYER_UI_SELFTEST PASS 保存成功（冷却未被镜头按钮占用）
+PLAYER_UI_SELFTEST PASS 镜头操作不下达任务
+PLAYER_UI_SELFTEST CAMUI end
+PLAYER_UI_SELFTEST CAMERADIAG begin accumulated_input=True
+PLAYER_UI_SELFTEST CAMERADIAG initial origin=31.85,28.80,19.85 basisZ=0.61,0.63,0.49
+PLAYER_UI_SELFTEST CAMERADIAG same-frame Q rotation=0rad originBefore=31.85,28.80,19.85 originAfter=31.85,28.80,19.85 IsKeyPressed(preParse/afterPress/afterRelease/postFlush)=False/False/False/False
+PLAYER_UI_SELFTEST CAMERADIAG same-frame Right move=0m originAfter=31.85,28.80,19.85 IsKeyPressed(preParse/afterPress/afterRelease)=False/False/False
+PLAYER_UI_SELFTEST CAMERADIAG frame-span Q(2帧) rotation=0.01345rad polledDuringPress=True
+PLAYER_UI_SELFTEST PASS 跨帧短按Q被轮询到(旋转非零): 0.01345rad polled=True
+PLAYER_UI_SELFTEST CAMERADIAG frame-span Right(2帧) move=2.206m polledDuringPress=True
+PLAYER_UI_SELFTEST PASS 跨帧短按Right被轮询到(平移非零): 2.206m polled=True
+PLAYER_UI_SELFTEST CAMERADIAG short Q(60ms) rotation=0.05597rad polled=True
+PLAYER_UI_SELFTEST PASS 人级短按Q(60ms)旋转可见(期望约0.06rad): 0.05597
+PLAYER_UI_SELFTEST PASS 长按Q(0.3s)旋转显著
+PLAYER_UI_SELFTEST PASS 长按Right(0.3s)平移显著
+PLAYER_UI_SELFTEST CAMERADIAG wheel-up x1 originΔ=5.506m
+PLAYER_UI_SELFTEST PASS 滚轮上滚拉近可见: 5.506m
+PLAYER_UI_SELFTEST CAMERADIAG MagnifyGesture factor=1.25 originΔ=8.075m basisΔ=0rad
+PLAYER_UI_SELFTEST CAMERADIAG PanGesture delta=(240,0) originΔ=31.01m basisΔ=0rad
+PLAYER_UI_SELFTEST PASS MagnifyGesture 捏合缩放驱动相机: Δ=12.11m
+PLAYER_UI_SELFTEST PASS PanGesture 双指平移驱动相机: Δ=9.69m
+PLAYER_UI_SELFTEST PASS 右键拖动平移可见: 0.4707m
+PLAYER_UI_SELFTEST CAMERADIAG 右键拖动=0.4707m HUD面板释放后无键移动Δ=0m → 无残留
+PLAYER_UI_SELFTEST CAMERADIAG end
+PLAYER_UI_SELFTEST summary checks=23 failures=0
+PLAYER_UI_SELFTEST result PASS 九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）
+PLAYER_UI_SELFTEST result PASS 镜头按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST result PASS 镜头行与全部按钮在视口内不裁切
+PLAYER_UI_SELFTEST result PASS 『前』按钮沿当前朝向明显平移: 13.76m
+PLAYER_UI_SELFTEST result PASS 『右转』单次15度: 0.2618rad
+PLAYER_UI_SELFTEST result PASS 旋转后『前』沿新朝向平移
+PLAYER_UI_SELFTEST result PASS 连点三次『右转』45度不受工程冷却: 0.7854rad
+PLAYER_UI_SELFTEST result PASS 连续拉近到下限后不再变化
+PLAYER_UI_SELFTEST result PASS 连续拉远到上限后不再变化
+PLAYER_UI_SELFTEST result PASS 平移到前限后不再变化
+PLAYER_UI_SELFTEST result PASS 平移到后限后不再变化
+PLAYER_UI_SELFTEST result PASS 复位恢复初始焦点/距离/朝向
+PLAYER_UI_SELFTEST result PASS 保存成功（冷却未被镜头按钮占用）
+PLAYER_UI_SELFTEST result PASS 镜头操作不下达任务
+PLAYER_UI_SELFTEST result PASS 跨帧短按Q被轮询到(旋转非零): 0.01345rad polled=True
+PLAYER_UI_SELFTEST result PASS 跨帧短按Right被轮询到(平移非零): 2.206m polled=True
+PLAYER_UI_SELFTEST result PASS 人级短按Q(60ms)旋转可见(期望约0.06rad): 0.05597
+PLAYER_UI_SELFTEST result PASS 长按Q(0.3s)旋转显著
+PLAYER_UI_SELFTEST result PASS 长按Right(0.3s)平移显著
+PLAYER_UI_SELFTEST result PASS 滚轮上滚拉近可见: 5.506m
+PLAYER_UI_SELFTEST result PASS MagnifyGesture 捏合缩放驱动相机: Δ=12.11m
+PLAYER_UI_SELFTEST result PASS PanGesture 双指平移驱动相机: Δ=9.69m
+PLAYER_UI_SELFTEST result PASS 右键拖动平移可见: 0.4707m

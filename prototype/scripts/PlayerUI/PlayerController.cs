@@ -34,6 +34,9 @@ public partial class PlayerController : Node
     private Basis _cameraBasis = Basis.Identity;
     private Vector3 _focus = Vector3.Zero;
     private float _distance = 26f;
+    private Basis _initialBasis = Basis.Identity;
+    private Vector3 _initialFocus = Vector3.Zero;
+    private float _initialDistance = 26f;
     private Vector2 _mousePos;
     private Vector2? _panGrab;
     private bool _rightDragged;
@@ -93,6 +96,9 @@ public partial class PlayerController : Node
 
         BuildMarkers();
         BuildHud();
+        _initialBasis = _cameraBasis;
+        _initialFocus = _focus;
+        _initialDistance = _distance;
         _initialized = true;
     }
 
@@ -134,6 +140,13 @@ public partial class PlayerController : Node
                 break;
             case InputEventMouseButton button:
                 HandleMouseButton(button);
+                break;
+            case InputEventMagnifyGesture magnify when magnify.Factor > 0f && float.IsFinite(magnify.Factor):
+                _distance = Mathf.Clamp(_distance / magnify.Factor, MinDistanceM, MaxDistanceM);
+                break;
+            case InputEventPanGesture pan when float.IsFinite(pan.Delta.X) && float.IsFinite(pan.Delta.Y):
+                var axes = FlatAxes();
+                _focus += (axes.Forward * pan.Delta.Y - axes.Right * pan.Delta.X) * (_distance * 0.004f);
                 break;
         }
     }
@@ -212,27 +225,47 @@ public partial class PlayerController : Node
 
     // ---- 相机 ----
 
+    // 水平视轴供键盘、手势和按钮共用。
+    private (Vector3 Forward, Vector3 Right) FlatAxes()
+    {
+        var forward = -_cameraBasis.Z;
+        forward.Y = 0f;
+        var right = _cameraBasis.X;
+        right.Y = 0f;
+        return (forward.Normalized(), right.Normalized());
+    }
+
     private void UpdateCamera(float focusLimit, float dt)
     {
         float rotation = (Input.IsKeyPressed(Key.Q) ? 1 : 0) - (Input.IsKeyPressed(Key.E) ? 1 : 0);
         _cameraBasis = _cameraBasis.Rotated(Vector3.Up, rotation * dt).Orthonormalized();
-        var flatForward = -_cameraBasis.Z;
-        flatForward.Y = 0f;
-        flatForward = flatForward.Normalized();
-        var flatRight = _cameraBasis.X;
-        flatRight.Y = 0f;
-        flatRight = flatRight.Normalized();
+        var axes = FlatAxes();
 
         float axis = Input.IsKeyPressed(Key.W) || Input.IsKeyPressed(Key.Up) ? 1f :
             Input.IsKeyPressed(Key.S) || Input.IsKeyPressed(Key.Down) ? -1f : 0f;
         float side = Input.IsKeyPressed(Key.D) || Input.IsKeyPressed(Key.Right) ? 1f :
             Input.IsKeyPressed(Key.A) || Input.IsKeyPressed(Key.Left) ? -1f : 0f;
         float speed = _distance * 0.9f * dt;
-        _focus += (flatForward * axis + flatRight * side) * speed;
+        _focus += (axes.Forward * axis + axes.Right * side) * speed;
 
         _focus = new Vector3(Mathf.Clamp(_focus.X, -focusLimit, focusLimit), 0,
             Mathf.Clamp(_focus.Z, -focusLimit, focusLimit));
         _camera.GlobalTransform = new Transform3D(_cameraBasis, _focus + _cameraBasis.Z * _distance);
+    }
+
+    // ---- 镜头按钮 ----
+    private void PanCamera(float side, float forward)
+    {
+        var axes = FlatAxes();
+        _focus += (axes.Forward * forward + axes.Right * side) * (_distance * 0.3f);
+    }
+    private void ZoomCamera(float scale) => _distance = Mathf.Clamp(_distance * scale, MinDistanceM, MaxDistanceM);
+    private void RotateCamera(float radians) => _cameraBasis = _cameraBasis.Rotated(Vector3.Up, radians).Orthonormalized();
+    private void ResetCamera()
+    {
+        _cameraBasis = _initialBasis;
+        _focus = _initialFocus;
+        _distance = _initialDistance;
     }
 
     // ---- 选择几何 ----
@@ -418,15 +451,15 @@ public partial class PlayerController : Node
         info.AddChild(_supportLabel);
         info.AddChild(_facilityLabel);
 
-        var hints = new Label { Text = "WASD／方向键平移 · 右键拖动 · 滚轮缩放 · Q/E 旋转 · F 定位 · Esc 清除选区",
-            AnchorLeft = 0, AnchorRight = 1, AnchorTop = 1, AnchorBottom = 1, OffsetTop = -136, OffsetBottom = -114,
+        var hints = new Label { Text = "按住 WASD／方向键平移 · 右键拖动或双指平移 · 滚轮／捏合缩放 · 按住 Q/E 旋转 · F 定位 · Esc 清除选区",
+            AnchorLeft = 0, AnchorRight = 1, AnchorTop = 1, AnchorBottom = 1, OffsetTop = -160, OffsetBottom = -138,
             HorizontalAlignment = HorizontalAlignment.Center, MouseFilter = Control.MouseFilterEnum.Ignore };
         hints.AddThemeFontSizeOverride("font_size", 14); hud.AddChild(hints);
         var bar = new CenterContainer
         {
             Name = "CommandBar",
             AnchorLeft = 0f, AnchorRight = 1f, AnchorTop = 1f, AnchorBottom = 1f,
-            OffsetTop = -112, OffsetBottom = -14,
+            OffsetTop = -134, OffsetBottom = -14,
             MouseFilter = Control.MouseFilterEnum.Ignore,
         };
         hud.AddChild(bar);
@@ -439,6 +472,18 @@ public partial class PlayerController : Node
         _rowModes = new HBoxContainer { Name = "BuildBar", Visible = false };
         _rowModes.AddThemeConstantOverride("separation", 8);
         stack.AddChild(_rowModes);
+        var camRow = new HBoxContainer { Name = "CameraRow" };
+        camRow.AddThemeConstantOverride("separation", 6);
+        stack.AddChild(camRow);
+        AddCamButton(camRow, "CameraForwardButton", "前", () => PanCamera(0f, 1f));
+        AddCamButton(camRow, "CameraBackButton", "后", () => PanCamera(0f, -1f));
+        AddCamButton(camRow, "CameraLeftButton", "左", () => PanCamera(-1f, 0f));
+        AddCamButton(camRow, "CameraRightButton", "右", () => PanCamera(1f, 0f));
+        AddCamButton(camRow, "CameraZoomInButton", "拉近", () => ZoomCamera(0.8f));
+        AddCamButton(camRow, "CameraZoomOutButton", "拉远", () => ZoomCamera(1.25f));
+        AddCamButton(camRow, "CameraRotateLeftButton", "左转", () => RotateCamera(-Mathf.Pi / 12f));
+        AddCamButton(camRow, "CameraRotateRightButton", "右转", () => RotateCamera(Mathf.Pi / 12f));
+        AddCamButton(camRow, "CameraResetButton", "复位", ResetCamera);
         var row = new HBoxContainer();
         row.AddThemeConstantOverride("separation", 10);
         stack.AddChild(row);
@@ -495,8 +540,8 @@ public partial class PlayerController : Node
         ContentMarginLeft = 12, ContentMarginRight = 12, ContentMarginTop = 6, ContentMarginBottom = 6,
     };
 
-    // 所有命令按钮统一走冷却包装：双击的第二下被丢弃，不重复提交。
-    private Button MakeButton(string name, string text, Action command, bool accent = false)
+    // 工程命令防双击；镜头操作不占用命令冷却。
+    private Button MakeButton(string name, string text, Action command, bool accent = false, bool commandCooldown = true)
     {
         var button = new Button
         {
@@ -517,11 +562,22 @@ public partial class PlayerController : Node
         }
         button.Pressed += () =>
         {
-            if (_commandCooldown > 0f) return;
-            _commandCooldown = CommandCooldownS;
+            if (commandCooldown)
+            {
+                if (_commandCooldown > 0f) return;
+                _commandCooldown = CommandCooldownS;
+            }
             command();
         };
         return button;
+    }
+
+    // 镜头按钮：不参与工程冷却，并保留键盘焦点（可访问性）。
+    private void AddCamButton(HBoxContainer row, string name, string text, Action command)
+    {
+        var button = MakeButton(name, text, command, commandCooldown: false);
+        button.FocusMode = Control.FocusModeEnum.All;
+        row.AddChild(button);
     }
 
     private void DoConfirm()
