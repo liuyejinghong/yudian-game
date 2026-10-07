@@ -455,3 +455,5 @@ source-r7只检查已选hauler的让位仍Preparing超时，同一步第二次�
 原让位现场源码绿replay已完成charger且重复读取不推进；reviewer再发现两台本目标驮运可被分配同安全dock。FreeStation过滤已有Clearance空间占用，坏档拒绝重叠，新增第二驮运dock检查；r2导出只保留候选身份未执行最终矩阵，本修复另导r3。
 
 2026-10-08 r3最终源码5add887d991c12ae5ad7606119fcd1a8bda85a74固定导出，13生产/仓储/让位恢复＋9旧规则＋3旧档/保护＝25原生进程全部PASS，同CLR8.0.31/MVID。源码、GLB与包manifest逐hash复核不变；文档/7自测试、独立reviewer/architect完成。step4仅GUI仍NOT_RUN，用户已被请求手动解锁未回；step5待同r3实际鼠标/保存关窗重开后合格切入口和PR精确集成。现可发布draft可审查成果，不宣称全部任务完成，不切默认。
+
+Draft PR52已创建并attach（创建head68c5996ee2bf4fcc7e7ff246b49f4b5c08591533），Issue17已同步REVIEW；main未合并，默认未切。后续仅解锁后同r3真实窗口验收→必要局部修复/独立审→合格入口/PR精确集成，继续保旧档。

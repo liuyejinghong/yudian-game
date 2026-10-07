@@ -63,3 +63,5 @@ D1.1 基础供电/回充/维修必须与自举一起建设；E14 本地候选从
 2026-10-05 APP-START限定接受：项目目录「余电.app」双击进入整平场景，自包含runtime；移动中文含空格路径/签名/真实GUI与最终包Main15步通过。[复验](docs/engineering/reports/2026-10-05-desktop-start-verification.md)。本地试玩包，不自动跟随源码更新。
 
 2026-10-08 D1.2代码与r3原生复验已完成，25个固定身份进程通过；真实GUI因锁屏NOT_RUN，默认r5及原档保留。解锁后补实际鼠标和保存关闭重开，再合格集成。[复验](docs/engineering/reports/2026-10-08-d12-production-verification.md)。
+
+D1.2可审查交付：[Draft PR52](https://github.com/liuyejinghong/yudian-game/pull/52)，已附工程会话，当前因真实GUI未验而保留Draft。

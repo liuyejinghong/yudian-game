@@ -50,3 +50,5 @@ E14未发现可用本地候选执行器，真实模型NOT_RUN；没有下载权�
 最终r3另外通过D11原规则9进程、旧schema2无新增字段迁移/旧r1 schema3缺Supply字段恢复/processor-first保护3进程。25个原生进程同loaded身份；完整流程t3053.7、地形v21、采矿回执14、配方回执21、8座设施，铁矿剩14、铜矿剩84、未消耗kit为0。派生数字只用于有限过程核对，不代表长期存续。
 
 [公开证据说明](../evidence/2026-10-08-d12-native-r3/README.md) / [13进程](../evidence/2026-10-08-d12-native-r3/package-world/runner.log) / [9旧规则](../evidence/2026-10-08-d12-native-r3/legacy-world/runner.log) / [3兼容及保护](../evidence/2026-10-08-d12-native-r3/native-extra-runner.log) / [固定包manifest](../evidence/2026-10-08-d12-native-r3/build-manifest.json) / [入口与原档](../evidence/2026-10-08-d12-native-r3/entry-and-save-state.json) / [证据hash](../evidence/2026-10-08-d12-native-r3/evidence-sha256.json)。
+
+[Draft PR52](https://github.com/liuyejinghong/yudian-game/pull/52)已创建并attach到工程会话；[总索引17](https://github.com/liuyejinghong/yudian-game/issues/17)已同步REVIEW/锁屏留项。PR未合并、默认未切；实际GUI验收与后续精确集成仍是未完成工作。
