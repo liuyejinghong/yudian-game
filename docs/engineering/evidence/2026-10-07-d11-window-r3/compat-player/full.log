@@ -1,0 +1,66 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=4ccca59bc5c079c4cac266ce8ef6942fa06e3fe4c90548b208e2edf5089f068e loaded_mvid=2f1694c6-f7d4-4751-a5dc-6b2ab55e8d3c CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+PLAYER_REACHABILITY Robot_Zhulei_1 mound=可整平 · 半径 2m，目标高度 0m
+PLAYER_REACHABILITY Robot_Zhulei_2 mound=可整平 · 半径 2m，目标高度 0m
+PLAYER_REACHABILITY Robot_Zhulei_3 mound=可整平 · 半径 2m，目标高度 0m
+PLAYER_REACHABILITY Robot_Zhulei_4 mound=可整平 · 半径 2m，目标高度 0m
+PLAYER_TEST_STEP PASS 0
+PLAYER_TEST_STEP PASS 1
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=101 query_frame=102 rays=4225
+PLAYER_TEST_STEP PASS 2
+PLAYER_TEST_STEP PASS 3
+PLAYER_TEST_STEP PASS 4
+PLAYER_TEST_STEP PASS 5
+PLAYER_TEST_STEP PASS 6
+LEVEL_JOB_START id=level-1 worker=Robot_Zhulei_3 base=0 station=(17.475, 0.7815442, -10) distance=2.525
+PLAYER_TEST_STEP PASS 7
+LEVEL_JOB_ARRIVED id=level-1 seconds=1.550 position=(17.70607, 0.75251305, -9.999827)
+PLAYER_TEST_STEP PASS 8
+PLAYER_TEST_STEP PASS 9
+PLAYER_SAVE_OK version=0 stage=Working time=3.649999999999992
+PLAYER_BAD_SAVE_REJECT PASS below-terrain
+PLAYER_BAD_SAVE_REJECT PASS skip-work
+PLAYER_BAD_SAVE_REJECT PASS outside-patch
+PLAYER_BAD_SAVE_REJECT PASS unsafe-station
+PLAYER_BAD_SAVE_REJECT PASS blocked-route
+PLAYER_SAVE_WRITE_FAILURE PASS
+PLAYER_TEST_STEP PASS 10
+PLAYER_COMMAND_REJECTED JSON deserialization for type 'Yudian.Main+PlayerSave' was missing required properties including: 'FixtureHash', 'Terrain', 'Time', 'Paused', 'Permission', 'Cancelled'.
+PLAYER_TEST_STEP PASS 11
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=257 query_frame=258 rays=4225
+PLAYER_LOAD_READY version=0 stage=Working paused=True time=3.649999999999992
+PLAYER_TEST_STEP PASS 12
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+LEVEL_JOB_COMMIT id=level-1 status=Committed applied=1 verified=none
+PLAYER_SAVE_OK version=1 stage=AwaitingPhysics time=6.26666666666665
+PLAYER_SAVE_AWAITING_PHYSICS PASS
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=417 query_frame=418 rays=14
+LEVEL_JOB_END id=level-1 stage=Completed base=0 applied=1 current=1 message=整平已提交，物理验证完成
+PLAYER_TEST_STEP PASS 13
+PLAYER_SAVE_OK version=1 stage=Completed time=6.283333333333316
+PLAYER_TEST_STEP PASS 14
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=420 query_frame=421 rays=4225
+PLAYER_LOAD_READY version=1 stage=Completed paused=False time=6.283333333333316
+PLAYER_TEST_STEP PASS 15
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=424 query_frame=425 rays=4225
+PLAYER_LOAD_READY version=1 stage=Completed paused=False time=6.283333333333316
+PLAYER_TEST_STEP PASS 16
+LEVEL_JOB_START id=level-2 worker=Robot_Zhulei_4 base=1 station=(19, -2.3841858E-07, 12.525) distance=16.555
+PLAYER_TEST_STEP PASS 17
+LEVEL_JOB_END id=level-2 stage=Cancelled base=1 applied=none current=1 message=已取消；未改造地形
+PLAYER_TEST_STEP PASS 18
+PLAYER_SAVE_OK version=1 stage=Cancelled time=6.333333333333316
+PLAYER_TEST_STEP PASS 19
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=431 query_frame=432 rays=4225
+PLAYER_LOAD_READY version=1 stage=Cancelled paused=True time=6.333333333333316
+PLAYER_VISUAL_RESTORE PASS
+PLAYER_TEST_STEP PASS 20
+PLAYER_LOAD_ROLLBACK
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=435 query_frame=436 rays=4225
+PLAYER_LOAD_READY version=1 stage=Cancelled paused=True time=6.333333333333316
+PLAYER_SELF_TEST PASS steps=22
+PLAYER_TEST_STEP PASS 21

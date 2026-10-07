@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -22,6 +23,7 @@ public partial class Main
     private bool _bootstrapLevelLimitChecked, _bootstrapReturnCancel;
     private Node3D? _bootstrapTestBlocker;
     private bool _bootstrapBlockedSeen;
+    private PlayerSave? _bootstrapReplay;
     private float _bootstrapMoveStart;
     private double _bootstrapMoveEnergy, _bootstrapMoveDurability, _bootstrapLevelWork;
     private string BootstrapPhase=>System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_TEST_PHASE")??"full";
@@ -73,6 +75,11 @@ public partial class Main
                 Engine.TimeScale=8;_bootstrapTestStart=_playerTime;
                 GroundRequire(_baseFacilities.Count==1&&_baseFacilities[0].Type=="lander"&&_groundRobots.Count==12,"formal new game only lander/finite kits");
                 GroundRequire(!PreviewBuild("solar",new(7,0,-22)).Legal,"facility overlap rejects without mutation");
+                if(BootstrapPhase=="replay")
+                {
+                    _bootstrapReplay=JsonSerializer.Deserialize<PlayerSave>(File.ReadAllText(PlayerSavePath),SaveOptions)!;
+                    QueuePlayerAction("load");_bootstrapTestStep=107;break;
+                }
                 if(BootstrapPhase.StartsWith("resume")){QueuePlayerAction("load");_bootstrapTestStep=BootstrapPhase switch{"resume-service"=>101,"resume-active"=>103,"resume-charge"=>105,_=>100};break;}
                 TestBuild("solar",new(-3,0,-14));_bootstrapTestStep=1;break;
             case 1:
@@ -218,6 +225,22 @@ public partial class Main
                 GroundRequire(!_services.ContainsKey(_bootstrapTestBuilder)&&!Actor(_bootstrapTestBuilder).HasOrder&&!_groundFault,"cancel during service return stops only original journey");
                 SavePlayer();ValidatePlayerSave(CapturePlayer());
                 GD.Print($"BOOTSTRAP_TEST PASS cycles={_bootstrapTestCycles} built={_baseFacilities.Count(f=>f.Built)} levelReturn=true time={_playerTime:0.0} elapsed={_playerTime-_bootstrapTestStart:0.0} source={AssemblyHash()}");GetTree().Quit();break;
+            case 107:
+                if(_loadPending!=null)break;
+                GroundRequire(!_playerNotice.StartsWith("读取失败"),"real saved game must pass native restore: "+_playerNotice);
+                if(!_playerNotice.StartsWith("读取完成"))break;
+                var expected=_bootstrapReplay!;var actual=CapturePlayer();
+                GroundRequire(actual.Paused==expected.Paused&&actual.Time==expected.Time&&actual.Terrain==expected.Terrain,"replay retains time, pause and terrain");
+                GroundRequire(actual.Bootstrap!.Build?.Id==expected.Bootstrap!.Build?.Id&&actual.Bootstrap.Build?.Stage==expected.Bootstrap.Build?.Stage&&actual.Bootstrap.Build?.Trip==expected.Bootstrap.Build?.Trip,"replay retains actual current work phase and trip");
+                var expectedLedger=expected.Bootstrap.Ledger;var actualLedger=actual.Bootstrap.Ledger;
+                GroundRequire(actualLedger.Operations.Count==expectedLedger.Operations.Count&&expectedLedger.Operations.All(op=>actualLedger.Operations.GetValueOrDefault(op.Key)==op.Value)&&expectedLedger.Containers.All(c=>c.Items.All(i=>_ledger.Count(c.Id,i.Key)==i.Value)),"replay preserves custody and never repeats transactions");
+                GD.Print("BOOTSTRAP_TEST REPLAY RESTORED version="+_liveTerrain!.Current.Version+" stage="+_buildJob?.Stage);
+                _liveTerrain.Body.CollisionLayer=0;_bootstrapTestStep=108;break;
+            case 108:
+                bool collisionRejected=false;
+                try{VerifyGroundProjection();}catch(InvalidOperationException){collisionRejected=true;}
+                GroundRequire(collisionRejected,"native verification must reject a missing collision body despite valid CPU heights");
+                GD.Print("BOOTSTRAP_TEST REPLAY PASS native-collision-required=true");GetTree().Quit();break;
             case 106:
                 if(_loadPending!=null||!_playerNotice.StartsWith("读取完成"))break;
                 GroundRequire(_services[_bootstrapTestBuilder].Blocked&&!Actor(_bootstrapTestBuilder).HasOrder&&_levelJob!.Work.ElapsedSeconds==_bootstrapLevelWork,"blocked service load cannot autonomously restore old level order");

@@ -357,7 +357,7 @@ APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入
 2. [x] GLM独占Navigation路径计算；Codex原生航点、路线版本、单工位预约与有界冲突。证明：绕障、窄口/超坡拒绝、失效重算、真实单机物理围挡超时释放/撤障重试，MoveAndSlide抵达；双机竞争仍待后续专门样本。
 3. [x] Codex真实取货/载货/交付、单活动建设目标和两类以上设施共用流程；GLM独占PlayerUI消费只读DTO。证明：运输中取消保货、重试不重复、非法选址拒绝、落成改变能力、正式新档无预建主要设施。
 4. [x] Codex有限有成本供电、能量/耐久、正常充电维修和中断续接；schema2单独槽复用加载屏障。证明：两轮工作-保障-工作、无电不补、维修不充电、零值停机、暂停不耗损、取货后/落成前/服务中跨进程恢复、坏档保原世界和原档。
-5. [ ] reviewer独立审查持久化/关键状态；实际默认应用自举，干净构建新包与同包复验；architect收口。合格后建PR并按既有授权合并，同步TODO/应用入口；未跑GUI和所有者视觉不代签。
+5. [x] 实际窗口与默认入口通过，reviewer/architect已复核修复与公开证据，两处旧说明已修正；实现与验收步骤收口。合格后建PR并按既有授权合并，同步TODO/应用入口；未跑GUI和所有者视觉不代签。
 
 主控独占Main*.cs、PlayerContracts.cs、GroundPatrol.cs、Resources/Core、共享自举配置、PLAN和产研TODO/集成/保存；GLM导航仅Navigation及tools/navigation-tests；GLM UI仅PlayerUI及tools/player-ui-tests。美术继续既有独立会话，当前只领取U01货舱共面问题局部修复，待接口后逐张冻结A04/A05/A06。原D1.0包及用户schema1档保留。两次失败停止该步重计划。
 
@@ -376,3 +376,9 @@ architect收尾发现服务路线重算失败/120秒超时后仍持有服务，�
 最终source39309d2、release-r2自包含CLR8.0.31九进程全PASS，UI source38/legacy15/7/visual12及旧player五进程通过；reviewer/architect无实质剩余问题。Mac再次锁屏，工具拒绝连接最终窗口，已请求所有者手动解锁；包Metal首帧仅渲染证明，不代替鼠标验证。步骤5仅剩最终包鼠标保存/重开、根入口切换、C02接受；当前六子片REVIEW、旧入口/包/v1档保留。PR工程提交与文档可独立审查合并，不以合并代签联合出口。
 
 补充：尝试导出包--script PlayerUiSelfTest入口，3分钟仍无测试begin/结果；停止已核对的独立headless PID87341，终止后的引擎清理错误与默认Main启动输出均在原件保留。此入口未完成，不等于38项包内通过；source38已过、最终包默认Main九进程与Metal首帧通过分别记录。锁屏窗口仍未自动操作。
+
+2026-10-07解锁后实际窗口：维修站build-4(13.2,-10.3)完成，build-5线缆实运4已卸货、返着陆器Pickup时暂停保存。关闭重开读取回滚，真实日志 terrain ray missing at -30,30；原档/原世界保留，默认入口仍D1.0。使用diagnosing-bugs，以该私有真实档replay phase建立失败检查，不发布玩家档，不放宽校验。修复后同档原生＋真实鼠标重开再验。
+
+角点replay-red-r1退出1，与GUI同样(-30,30)射线无命中。一次诊断探针证实原射线span无命中、初始span及场内微移.001/.0001均真实命中新碰撞体；不是缺面或未同步。停止原边界采样策略，改外边界采样向场内移动cell间距.001，预期高度复用相同Stage三角插值，严格.0001容差与mesh/shape一致检查保留。replay回归还故意禁用真实碰撞体，必须拒绝，以防CPU高度冒充物理通过；临时DEBUG-corner已移除。
+
+2026-10-07修复源975916d：同一真实档source与自包含CLR8.0.31 replay通过，故意禁用碰撞体仍拒绝；源码全流、旧player五进程、LEVEL15与Main7通过。原Main7命令漏历史--live-terrain，按正确入口重跑通过，错误原件保留。r3签名/arm64/九进程全部通过；真实鼠标读取原中断点、继续接线、暂停保存、关闭重开读完成态，库存29/18/33/50/9未重复扣料。根余电.app已切r3，旧入口另保，正常启动/读取原schema2并关闭，两份原存档hash不变。reviewer及architect记录复核已完成，旧入口说明局部修正；PR精确合并回执同步GitHub总索引17，完整模块/G1/自然平衡/所有者视觉不扩签。
