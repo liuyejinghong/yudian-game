@@ -35,3 +35,5 @@
 源文件可直接在Blender编辑；场景双击 [open-lookdev.command](../../../../art/environment/mars-lookdev-r1/open-lookdev.command) 打开。制作与验收均在独立看样进行，现役设备未在此批重制。
 
 精确英雄GLB：`141380133cb362aae0dcf52deb3ac1e62f33c31851d7437f92240b44da05cacf`；Blender米制宽/深/高约6.149×4.142×2.332m，47,998tri，14cm埋入余量。支撑地形149,362tri/763碎屑/108岩板；这些是本次统计，不是最低配置预算。
+
+[草稿 PR44](https://github.com/liuyejinghong/yudian-game/pull/44) 已提交供审阅；不可变源与证据提交：`d24736bc8b818105c67bb28e31ca49f1ebbbc5dd`。候选尚未合并到现役游戏。

@@ -11,7 +11,7 @@
 3. [x] 搭独立RTS看样场景框架：近中远层次、风化表土/砂砾/露岩/地平线，已有设备尺度参照；不复刻真实着陆点，不对照片RGB作精确反射率认证。证明：实际Godot白昼normal/near/低画质图，固定输入、相机/源hash，区别独立样景与默认游戏。
 4. [x] 派Astra（gpt-6-astra/xhigh、明确工人角色、fork none）制作一件原创风化层状基岩露头。证明：任务包含研究、实际参考、冻结brief、独占源/.blend/GLB/必要材质纹理/manifest与可复跑check；不派无资料空白题，不人为限制成上批低面数块。
 5. [x] root独立验收Astra源重开/再导出/轴向尺度/形体材质/资源身份、同场景normal+near+低画质读图。证明：运行输出与可复跑检查；必要局部返工，不用面数/技术PASS代替真实风格品质。
-6. [ ] architect收尾、文档/范围/身份检查、提交与交付；完整游戏接入/所有者最终视觉/整场性能各自留未验。证明：精确HEAD、资料来源链接、场景/素材可定位，未改主控占有文件。
+6. [x] architect收尾、文档/范围/身份检查、提交与交付；完整游戏接入/所有者最终视觉/整场性能各自留未验。证明：精确HEAD、资料来源链接、场景/素材可定位，未改主控占有文件。
 
 同一步两失败记录失败并重新计划；源/旧图不覆盖。持续推进，不因新票/追问替换目标。付费资产与大量遥感下载不在本批。NASA照片仅作带处理说明的参考，不默认当运行贴图；正式资产原创。
 
@@ -30,8 +30,10 @@
 - 独立project同时包含可编辑blend，Godot headless因未配置editor Blender路径中止GLB导入；已依据官方ProjectSettings关闭该project自动blend转换，运行资源只用显式GLB。Blender源保留并独立重开，不装新工具或修改全局editor配置。
 
 - 场景Godot native Forward+/Metal已实际渲染；首轮地面过亮/风纹过多，root按同镜头调色与局部纹理修正。框架键盘事件、画质/说明切换、拖动/复位自检PASS。支撑地表源主控独立重开，finite/meter/四锚点邻近顶点/导出字节一致PASS。
-- Astra首图规则柱墙/纹理条带否决并返工；Blender pack_islands重复崩溃后asset局部architect审查、改已知岛矩形排版。最终源/同场图核验仍待最后修正完成。
+- Astra首图规则柱墙/纹理条带否决并返工；Blender pack_islands重复崩溃后asset局部architect审查、改已知岛矩形排版。当时最终源/同场图核验待修正；最终结果见末条记录。
 
 - 收尾architect核对参考和Godot图，确认贴图无错版/资源接线正确；提出局部P1：厚床边过圆、背面缺薄片截断，与冻结brief矛盾。Astra第二次形体验收未过，保留031a6候选/hash与图，重新计划只补尖薄悬缘/剥落破面，不重开调研/框架。P2岩性误称“片岩”已改“片状砂岩碎屑”。
 
 - 最终Astra局部薄片/斜楔返修：14138013...cacf，47,998tri。root无旧.godot/抽取PNG真实导入与5native图通过，贴图字节一致、LOD0固定原网格；主控source重开/原始打包PBR/GLB再导出及独立导入通过。切线仅1个xyz分量约1e-4舍入，其余JSON/数据严格相同，exact_binary=false。architect复核原P1关闭到首件看样候选，owner视觉仍NOT_RUN；质量候选非生产最终接受。
+
+- 交付：源与证据提交 `d24736bc8b818105c67bb28e31ca49f1ebbbc5dd` 已推送；[Draft PR44](https://github.com/liuyejinghong/yudian-game/pull/44) 已创建并挂到本会话。独立看样与完整需求可直接审阅；所有者最终视觉/Main接入/整场性能继续NOT_RUN。
