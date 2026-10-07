@@ -3,10 +3,6 @@ render_mode cull_back;
 
 // The caller supplies a stage fact; this shader never changes height or stage.
 uniform int stage : hint_range(0, 2) = 0;
-uniform sampler2D committed_mask : filter_nearest, repeat_disable;
-uniform bool use_committed_mask = false;
-uniform vec2 world_origin = vec2(-30.0);
-uniform vec2 world_span = vec2(60.0);
 uniform vec2 region_center = vec2(0.0);
 uniform float region_radius = 2.0;
 uniform vec4 soil_color : source_color = vec4(0.58, 0.32, 0.21, 1.0);
@@ -32,24 +28,13 @@ void fragment() {
 	float stones = step(0.74, grain(floor(ground * 8.0)));
 	vec3 base = soil_color.rgb;
 	float variation = (fine - 0.5) * 0.014 * fine_fade;
-	bool in_region = distance(ground, region_center) <= region_radius;
-	bool compacted = !use_committed_mask && stage == 2 && in_region;
-	if (use_committed_mask) {
-		vec2 uv = (ground - world_origin) / world_span;
-		if (all(greaterThanEqual(uv, vec2(0.0))) && all(lessThanEqual(uv, vec2(1.0)))) {
-			// Grid nodes map to texel centers, including both world endpoints.
-			vec2 dimensions = vec2(textureSize(committed_mask, 0));
-			vec2 texel_uv = (uv * (dimensions - vec2(1.0)) + vec2(0.5)) / dimensions;
-			compacted = texture(committed_mask, texel_uv).r > 0.5;
-		}
-	}
-	if (compacted) {
+	if (stage == 1 && distance(ground, region_center) <= region_radius) {
+		base = gravel_color.rgb;
+		variation += (stones - 0.26) * 0.06 * stone_fade;
+	} else if (stage == 2 && distance(ground, region_center) <= region_radius) {
 		base = compacted_color.rgb;
 		variation *= 0.4;
 		variation += sin(ground.x * 12.0) * 0.012 * (1.0 - smoothstep(0.35, 1.0, footprint * 12.0));
-	} else if (stage == 1 && in_region) {
-		base = gravel_color.rgb;
-		variation += (stones - 0.26) * 0.06 * stone_fade;
 	}
 	ALBEDO = clamp(base + variation, vec3(0.0), vec3(1.0));
 	ROUGHNESS = 0.93;

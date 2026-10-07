@@ -27,12 +27,16 @@
       "sha256": "1c2abcf796d9d864f60d2b515a44af9b7489c909d3a2d5270a02597876b4da78"
     },
     {
-      "path": "art/d1/palette.json",
-      "sha256": "0e967daf7f025f737df0ba5bc9f4de1e6ff51b7dca85d50c3a2fcb723dcf86bc"
+      "path": "docs/art/production/d1-a01-a03/evidence/source-r1/palette.json",
+      "sha256": "0e967daf7f025f737df0ba5bc9f4de1e6ff51b7dca85d50c3a2fcb723dcf86bc",
+      "original_path": "art/d1/palette.json",
+      "captured_commit": "0a7f10d"
     },
     {
-      "path": "art/d1/surface.gdshader",
-      "sha256": "3c95813294727540cf651d3bce44737ee1d6764d6a01d29bd768441de729778e"
+      "path": "docs/art/production/d1-a01-a03/evidence/source-r1/surface.gdshader",
+      "sha256": "3c95813294727540cf651d3bce44737ee1d6764d6a01d29bd768441de729778e",
+      "original_path": "art/d1/surface.gdshader",
+      "captured_commit": "0a7f10d"
     },
     {
       "path": "art/d1/verify.py",
@@ -268,5 +272,6 @@
   "technical_status": "standalone source and native capture checked",
   "ordinary_application_consumption": "NOT_RUN",
   "owner_visual_acceptance": "NOT_RUN",
-  "phase_comparison": "PENDING engineering committed-region/version and same-place task samples; surface captures are style inputs on unchanged v0 geometry"
+  "phase_comparison": "PENDING engineering committed-region/version and same-place task samples; surface captures are style inputs on unchanged v0 geometry",
+  "source_snapshot_note": "r1 shader/palette inputs preserved byte-for-byte at their capture commit; mask extension is separate evidence, not a rewrite of r1 images."
 }

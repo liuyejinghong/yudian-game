@@ -46,40 +46,12 @@
   "surface_region_input": {
     "region_center": "world x/z Vector2 supplied by engineering",
     "region_radius": "2m work radius supplied by engineering",
-    "outside": "natural soil unless authoritative committed_mask marks it"
+    "outside": "always natural soil (stage 0 appearance)"
   },
   "surface_detail": {
     "natural": "warm Mars red soil; fine variation amplitude 0.014",
     "gravel": "region only; grain contrast 0.06, centered to avoid brightness bias",
-    "compacted": "authoritative mask when enabled; single region stage2 fallback when disabled; brighter warm brown and subtle directional pattern",
+    "compacted": "region only; brighter warm brown, subtle 0.012 directional pattern",
     "filter": "fwidth world footprint fades cell noise from 0.35 to 1.0 cell per pixel"
-  },
-  "committed_mask_input": {
-    "use_committed_mask": false,
-    "world_origin": [
-      -30,
-      -30
-    ],
-    "world_span": [
-      60,
-      60
-    ],
-    "texture": {
-      "size": [
-        65,
-        65
-      ],
-      "channel": "linear red, 0 unchanged / 1 changed",
-      "filter": "nearest",
-      "repeat": "disabled",
-      "columns": "world X increasing",
-      "rows": "world Z increasing",
-      "world_to_texel_uv": "(((world_xz-world_origin)/world_span)*(texture_size-1)+0.5)/texture_size"
-    },
-    "priority": "mask compacted > actual stage1 Working/WaitingForSpace gravel > natural soil",
-    "enabled_stage2": "ignored; unmarked cells remain natural even when stage=2",
-    "authority": "engineering derives mask from current vs same-fixture initial heights per world version; shader never builds or saves facts",
-    "ordinary_application_consumption": "NOT_RUN",
-    "owner_visual_acceptance": "NOT_RUN"
   }
 }

@@ -144,7 +144,7 @@
 | ID／任务 | 优先级／状态 | 真实前置与用途 | 拟写入边界 | 工程接入者／包与版本内变化 | 来源 |
 |---|---|---|---|---|---|
 | ART-CAMERA-01 实际工作相机 | P0／REVIEW | DT-A01；C01／E01初始视口与现役manifest；先定位尺度、可点击性、遮挡及地表可读性，可与UI骨架并行 | 已交art/d1/camera.json与calibrate.gd；实际Main视口与同世界低保真对照；正常／总览无遮挡。主场景相机、UI由工程接入；点击与所有者视觉未验 | Codex，D1.0／E01／E03／C02；普通游戏viewport消费正常／总览／近景配置，记录窗口像素、UI占用与版本，所有者看样 | [DT-A01](../../roadmap/art-work-packages.md)、[本批交付](d1-a01-a03/README.md) |
-| ART-ENV-SURFACE-01 地表成果表面 | P0／IN_PROGRESS | DT-A03；A01镜头与C01／E02边界、采样、阶段／版本；自然土、作业面、压实面帮助读懂真实整平 | art/d1/surface.gdshader与palette.json候选源已交并真实渲染；已有2m圆区域合同，仍待工程已提交区域／版本与同地点真实阶段样例；不改高度场/M01/Main | Codex，D1.0／E02／E03／C02与E04保存；同地点原始→作业→完成→取消保留成果可读，投影与重载同源；E10／E12再补开挖暴露层 | [DT-A03](../../roadmap/art-work-packages.md)、[尚缺接缝](d1-a01-a03/INTERFACE.md) |
+| ART-ENV-SURFACE-01 地表成果表面 | P0／IN_PROGRESS | DT-A03；A01镜头与C01／E02边界、采样、阶段／版本；自然土、作业面、压实面帮助读懂真实整平 | art/d1/surface.gdshader与palette.json候选源已交并真实渲染；已有2m圆区域合同，已扩展工程权威高度差异派生的65×65 committed mask；同地点正式阶段及默认视口样例待工程；不改高度场/M01/Main | Codex，D1.0／E02／E03／C02与E04保存；同地点原始→作业→完成→取消保留成果可读，投影与重载同源；E10／E12再补开挖暴露层 | [DT-A03](../../roadmap/art-work-packages.md)、[尚缺接缝](d1-a01-a03/INTERFACE.md) |
 | ART-MARKER-01 选择与工程标记 | P0／REVIEW | DT-A03；A01视距，E01选择／命令及E02合法范围、提交／取消／阻塞语义；与表面并行 | 已交art/d1/markers.gd、palette.json与138项自检；2m实线／虚线加叉／双圆环按native高度采样，真实坡地与低画质候选已核；正式选择/权限消费待工程接入 | Codex，D1.0／E01／E02／E03／C02，E04保存相关权威事实；真实选择、合法／非法／已提交范围及阻塞反馈进入游戏，取消不抹成果 | [DT-A03](../../roadmap/art-work-packages.md)、[本批交付](d1-a01-a03/README.md) |
 | ART-U01-CARGO-FIX-01 内置载荷局部候选返修 | P0／DRAFT | DT-A02a；当前canonical源／审查支持共面解释，未运行复现；只修箱身或重复顶面，保留外包络、Cargo socket、轴与状态 | 已有[源生成器](../../../art/source/units/tuoyun-r1/generate_tuoyun_r1.py)296–301行；完整源／运行GLB／manifest／包装写入清单尚待冻结。不得扩大到独立P01-CRATE或重做整车 | Codex，E03／C02；同相机正常空／载、载货近景90／180及维护回归。D1.0若未消费仅记制作；后续E07实际载货接入才记版本效果 | [局部发现](review/2026-10-05-independent-review.md)、[DT-A02](../../roadmap/art-work-packages.md) |
 | ART-F02-READABILITY-01 加工形态与朝向 | P1／DRAFT | DT-A02b；F02 rev2、A01正常0／90／180；E10加工用途与工作／停机状态明确后强化进出料和一个工艺特征，保持防护逻辑 | 已有[源目录](../../../art/source/facilities/processor-r1/)；局部源／GLB／manifest／包装写入清单尚待冻结，不改M01或新增大型工厂 | Codex，D1.1／D1.2的E03／E10／C02，与A07状态反馈联合；实际加工时朝向、进出料及工作／停机可读，不因未到加工阶段额外阻塞D1.0 | [逐项审查](review/2026-10-05-independent-review.md)、[DT-A02](../../roadmap/art-work-packages.md) |
@@ -169,4 +169,6 @@
 
 独立技术：真实Godot4.7.2/Metal/Forward+，1920×1200，11PNG；标记138/138自检，原生顶点采样误差<1e-5m、三角心离地.0208–.0276m。正常7模型不侵入左320/上56/下112留白；无模型缩放。总览关闭MSAA、内部渲染.75时五标记可辨。
 
-正式接入／版本内验收／所有者视觉：均NOT_RUN。表面图是同一v0几何的样式输入，未假冒原始→施工→提交→取消成果；工程需补已提交区域／版本与实际阶段样例，详见[接缝](d1-a01-a03/INTERFACE.md)。T01正式阶段仍BLOCKED，T02/E10、U01局部返修及高保真未进入本批。
+正式接入／版本内验收／所有者视觉：均NOT_RUN。表面图是同一v0几何的样式输入，未假冒原始→施工→提交→取消成果；工程已确定从权威高度差异派生committed mask，美术shader已扩展消费；真实默认场景阶段／取消／重载对照仍待工程，详见[接缝](d1-a01-a03/INTERFACE.md)。T01正式阶段仍BLOCKED，T02/E10、U01局部返修及高保真未进入本批。
+
+2026-10-07同批mask续接：shader可选committed_mask/use_committed_mask/world_origin/world_span，默认false兼容原小样；mask压实优先于当前作业碎石，未标点不因stage2冒称提交。工程负责height差异生成/版本刷新/重载派生，不新增美术账本。扩展源与参数提交同PR，独立合成检查不代签实际接入或所有者视觉；正式表面行仍IN_PROGRESS。
