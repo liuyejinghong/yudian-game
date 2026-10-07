@@ -52,6 +52,7 @@ public partial class Main
     {
         _liveTerrain = new TerrainRegionView(); AddChild(_liveTerrain); _liveTerrain.Initialize(_liveInitial);
         _groundRayIndices = Enumerable.Range(0, _liveInitial.HeightsM.Count).ToArray();
+        if (_playerMode) return;
         var ui = new CanvasLayer(); AddChild(ui);
         var panel = new VBoxContainer { Position = new Vector2(20, 20) }; ui.AddChild(panel);
         panel.AddChild(new Label { Text = "余电 · 整平任务\n工程灰模；一名筑垒执行整平" });
@@ -91,10 +92,17 @@ public partial class Main
                 }
                 else _groundMessage = "等待物理同步或先恢复投影";
             }
-            TickLevelJob(delta);
+            if (_playerMode)
+            {
+                ProcessPlayerCommand();
+                FinishPlayerLoad();
+                if (!_userPaused && _loadPending == null && !_groundFault && _groundVerified == _liveTerrain.Current.Version)
+                { _playerTime += delta; TickLevelJob(delta); }
+            }
+            else TickLevelJob(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") LevelTestStep(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1") GroundTestStep();
-            _groundStatus!.Text = $"权威 v{_liveTerrain.Current.Version} · 绑定 v{_liveTerrain.ProjectionVersion?.ToString() ?? "未知"} · 物理 v{_groundVerified?.ToString() ?? "待验"}\n" +
+            if (_groundStatus != null) _groundStatus.Text = $"权威 v{_liveTerrain.Current.Version} · 绑定 v{_liveTerrain.ProjectionVersion?.ToString() ?? "未知"} · 物理 v{_groundVerified?.ToString() ?? "待验"}\n" +
                 $"机器人 {_groundRobots.Count} · 贴地 {_groundRobots.Count(x => x.IsOnFloor())} · 停滞 {_groundRobots.Count(x => x.Blocked)}\n" +
                 _groundMessage + "\n完整导航、设施建设、经济、保存尚未接入";
         }
@@ -191,7 +199,7 @@ public partial class Main
             if (TouchesFootprint(patch, _facilityPositions[i].X, _facilityPositions[i].Z, FacilityRadii[i % 6]))
                 { RejectOccupied("设施 " + i); return null; }
         foreach (var actor in _groundRobots)
-            if (TouchesFootprint(patch, actor.GlobalPosition.X, actor.GlobalPosition.Z, .35f))
+            if (TouchesFootprint(patch, actor.GlobalPosition.X, actor.GlobalPosition.Z, actor.BodyRadius))
                 { RejectOccupied(actor.Name.ToString()); return null; }
         _groundRayIndices = Enumerable.Range(0, patch.HeightsM.Count).Where(i => patch.HeightsM[i] != patch.Base.HeightsM[i]).ToArray();
         try
@@ -213,7 +221,15 @@ public partial class Main
         _groundMessage = "占用拒绝：" + name + "；巡逻继续，可待离开后重试"; PauseGround(false);
         GD.Print("MAIN_GROUND_OCCUPIED " + name); return false;
     }
-    private void PauseGround(bool value) { foreach (var actor in _groundRobots) actor.Paused = value; }
+    private void PauseGround(bool value)
+    {
+        _projectionPaused = value;
+        foreach (var actor in _groundRobots)
+        {
+            actor.Paused = value || (_playerMode && (_userPaused || _loadPending != null));
+            actor.SetPhysicsProcess(!(_playerMode && _userPaused && _loadPending == null));
+        }
+    }
     private void GroundFault(Exception ex)
     {
         _groundFault = true; _groundVerified = null; PauseGround(true); _groundMessage = "投影故障，巡逻暂停：" + ex.Message;

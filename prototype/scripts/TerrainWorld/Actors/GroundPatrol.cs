@@ -26,6 +26,8 @@ public partial class GroundPatrol : CharacterBody3D
 
     /// <summary>暂停时不推水平运动与航点，仍处理重力/地面。</summary>
     public bool Paused { get; set; }
+    public bool PatrolEnabled { get; set; } = true;
+    public float BodyRadius { get; set; } = .35f;
 
     /// <summary>当前目标航点索引；Initialize成功前为-1，成功后从0开始。</summary>
     public int TargetIndex => _targetIndex;
@@ -108,7 +110,7 @@ public partial class GroundPatrol : CharacterBody3D
         Vector3 before = GlobalPosition;
 
         Vector3 horizontal = Vector3.Zero;
-        if (!Paused)
+        if (!Paused && (_hasOrder || PatrolEnabled))
         {
             Vector3 target = _hasOrder ? _orderTarget : _waypoints[_targetIndex];
             Vector3 toTarget = target - before;
@@ -180,8 +182,8 @@ public partial class GroundPatrol : CharacterBody3D
         FloorBlockOnWall = true;
         AddChild(new CollisionShape3D
         {
-            Shape = new CapsuleShape3D { Radius = 0.35f, Height = 1.1f },
-            Position = new Vector3(0f, 0.55f, 0f),
+            Shape = new CapsuleShape3D { Radius = BodyRadius, Height = MathF.Max(1.1f, BodyRadius * 2) },
+            Position = new Vector3(0f, MathF.Max(.55f, BodyRadius), 0f),
         });
     }
 }

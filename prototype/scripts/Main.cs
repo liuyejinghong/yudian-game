@@ -78,7 +78,8 @@ public partial class Main : Node3D
             _cfg = LoadFixture(options.FixturePath);
             _features.Add(_cfg.Terrain.Mound);
             _features.Add(_cfg.Terrain.MineralPit);
-            _liveMode = options.LiveTerrain;
+            _playerMode = !options.Benchmark && !options.LiveTerrain;
+            _liveMode = options.LiveTerrain || _playerMode;
             if (_liveMode) PrepareLiveTerrain();
             _duration = options.Duration ?? _cfg.Benchmark.DurationSeconds;
             ValidateProbeGeometry();
@@ -111,7 +112,7 @@ public partial class Main : Node3D
             var error = GetViewport().GetTexture().GetImage().SavePng(capture);
             if (error != Error.Ok) { Fail(new IOException("截图保存失败: " + error)); return; }
         }
-        float dt = (float)delta;
+        float dt = _playerMode && (_userPaused || _loadPending != null) ? 0 : (float)delta;
         _animTime += dt;
 
         foreach (var s in _spinners)
@@ -360,7 +361,9 @@ public partial class Main : Node3D
                     int i = 0; while (i < 3 && cum[i + 1] < dist) i++;
                     Vector3 p = pts[i].Lerp(pts[(i + 1) % 4], (dist - cum[i]) / (cum[i + 1] - cum[i]));
                     p.Y = GroundHeight(p.X, p.Z) + .02f;
-                    ground.Position = p; ground.Initialize(pts, types[t].Speed);
+                    ground.Position = p;
+                    if (_playerMode) { ground.PatrolEnabled = false; ground.BodyRadius = t == 1 ? .9f : .55f; }
+                    ground.Initialize(pts, types[t].Speed);
                     _groundRobots.Add(ground);
                 }
                 else _robots.Add(new Patrol { Node = root, Points = pts, Cum = cum, Speed = types[t].Speed, Dist = dist });

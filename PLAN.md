@@ -326,3 +326,16 @@ APP-START已合并PR35：head8a2c986、merge115f1c7；独立architect四hash/入
 本轮核验：architect 前置及收尾、独立 reviewer 均无剩余实质阻碍；文档验证和 diff 格式通过，旧接受/审查表格行保留、六个 D1.0 子片仍 DRAFT，美术 TODO 与 AGENTS 的 Lessons 以上字节未改。仅六份 Markdown；游戏、构建、新视觉验证 NOT_RUN。
 
 发布入口：[PR #40](https://github.com/liuyejinghong/yudian-game/pull/40)。本节是发布核验记录；后续接手先读该 PR 的实际合并状态，不重复派发本轮文档。
+
+
+## d1-player-r1 · 2026-10-07 D1.0 实际应用
+
+授权：所有者批准推进既定 D1.0，并授权新开美术项目会话。基线259a8bf；复用地形/原生运动/LEVEL-JOB，自包含应用。美术独立会话01a1146c-a73a-7121-b215-c7cfa515a23f，独占art/**及docs/art/**，不改Main或工程状态表。
+
+1. [ ] 主控冻结最小命令/只读状态/快照/区域接口并接真实入口；architect已前置审查。证明：有限范围/版本/权限重验，用户暂停和加载屏障分别保留，旧模式隔离。
+2. [ ] 冻结基线与单写者后，两GLM包并行交UI/输入与筑垒状态适配；美术交候选视口/表面/标记。证明：原生模型确认、独占diff、实际原型消费与必要自测。
+3. [ ] 主控参数化整平、最小磁盘保存/完整校验/加载物理屏障与分步集成。证明：两合法位置、非法/重复无副作用、暂停保工作进度、保存中断/提交/完成/取消重开不重复世界效果、坏档/写失败保有效档。
+4. [ ] reviewer独立审查关键状态与恢复；主控跑受影响native/兼容和真实GUI；architect收尾。证明：实际输出/截图与真实交互，默认应用操作完整；未测的真人意愿与所有者最终视觉不代签。
+5. [ ] 以精确source/hash更新双击应用、交付PR并按既有授权合并、同步TODO。证明：同包跨进程恢复、主线与包身份；D1.0不扩签经营/G1。
+
+工程主控独占Main*.cs、PlayerContracts.cs、GroundPatrol最小模式边界、保存/加载、Main注册及build launcher、根PLAN/TODO及工程任务表；GLM-A独占PlayerUI/**与tools/player-ui-tests；GLM-B独占Presentation/**与tools/player-visual-tests。无新依赖/大量模型下载/API支出。原有运行与失败日志保留，新轮目录独立。

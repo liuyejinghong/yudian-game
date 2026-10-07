@@ -14,6 +14,7 @@ public partial class Main
     {
         public required string Id;
         public required TerrainPatch Patch;
+        public Vector3 Center;
         public GroundPatrol? Worker;
         public Vector3 Station;
         public WorkMeter Work = new(3);
@@ -38,15 +39,15 @@ public partial class Main
         _levelStatus = new Label(); panel.AddChild(_levelStatus);
     }
 
-    private void StartLevelJob()
+    private void StartLevelJob(float? centerX = null, float? centerZ = null, string? workerId = null)
     {
         if (_levelJob?.Active == true)
         { _levelNotice = "已有活动任务：" + _levelJob.Id; return; }
         if (!_groundReady || _groundFault || _groundVerified != _liveTerrain!.Current.Version)
         { _levelNotice = "等待地形物理恢复后下单"; return; }
-        var site = _cfg.Terrain.Mound.Position;
+        float[] site = [centerX ?? _cfg.Terrain.Mound.Position[0], centerZ ?? _cfg.Terrain.Mound.Position[1]];
         string id = "level-" + ++_levelSequence;
-        var job = new LevelJob { Id = id, Patch = GroundPatch(site[0], site[1], 0, id) };
+        var job = new LevelJob { Id = id, Patch = GroundPatch(site[0], site[1], 0, id), Center = new Vector3(site[0], 0, site[1]) };
         _levelJob = job; _levelNotice = "";
         if (!_liveTerrain.PermissionGranted || _liveTerrain.CancellationRequested)
         { FinishLevelJob(LevelStage.Failed, "未获改造权限或已取消"); return; }
@@ -69,6 +70,8 @@ public partial class Main
                 if (distance >= best) continue;
                 job.Worker = actor; job.Station = station; best = distance;
             }
+        if (_playerMode)
+        { var selected = FindLevelWorker(job.Patch, job.Center, workerId); job.Worker = selected.Worker; job.Station = selected.Station; }
         if (job.Worker == null) { FinishLevelJob(LevelStage.Failed, "没有筑垒或安全施工站"); return; }
         job.Station.Y = GroundHeight(job.Station.X, job.Station.Z);
         job.Worker.SetOrder(job.Station);
