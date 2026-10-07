@@ -1,0 +1,143 @@
+{
+  "id": "D1-A01-candidate-r2",
+  "baseline_commit": "259a8bf",
+  "status": "candidate; owner and E01 consumption pending",
+  "unit": "meter",
+  "model_scale": 1,
+  "window_px": [
+    1920,
+    1200
+  ],
+  "ui_reservation_px": {
+    "left": 320,
+    "top": 56,
+    "bottom": 112
+  },
+  "projection": "perspective",
+  "keep_aspect": "keep_height",
+  "near_m": 0.05,
+  "far_m": 200,
+  "cameras": {
+    "main_baseline": {
+      "position": [
+        13.2,
+        13,
+        18
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "fov": 60
+    },
+    "reference_normal": {
+      "position": [
+        22.3848,
+        28,
+        15.8848
+      ],
+      "target": [
+        4,
+        0,
+        -2.5
+      ],
+      "fov": 60
+    },
+    "normal": {
+      "position": [
+        17.2,
+        18,
+        15.5
+      ],
+      "target": [
+        4,
+        0,
+        -2.5
+      ],
+      "fov": 50
+    },
+    "overview": {
+      "position": [
+        24,
+        31,
+        25.5
+      ],
+      "target": [
+        4,
+        0,
+        -2.5
+      ],
+      "fov": 60
+    },
+    "close": {
+      "position": [
+        18,
+        10,
+        6
+      ],
+      "target": [
+        10,
+        0,
+        -4
+      ],
+      "fov": 50
+    }
+  },
+  "calibration_models": [
+    {
+      "manifest": "art/manifests/tuoyun-r1.json",
+      "xz_m": [
+        6,
+        -5
+      ]
+    },
+    {
+      "manifest": "art/manifests/lowfi-batch-r1/zhulei.json",
+      "xz_m": [
+        10,
+        -4
+      ]
+    },
+    {
+      "manifest": "art/manifests/lowfi-batch-r1/wangshan.json",
+      "xz_m": [
+        14,
+        -3
+      ]
+    },
+    {
+      "manifest": "art/manifests/solar-r1.json",
+      "xz_m": [
+        0,
+        -10
+      ]
+    },
+    {
+      "manifest": "art/manifests/processor-r1.json",
+      "xz_m": [
+        -4,
+        -1
+      ]
+    },
+    {
+      "manifest": "art/manifests/lowfi-batch-r1/storage.json",
+      "xz_m": [
+        0,
+        5
+      ]
+    },
+    {
+      "manifest": "art/manifests/lowfi-batch-r1/charger.json",
+      "xz_m": [
+        7,
+        6
+      ]
+    }
+  ],
+  "lighting": "Main baseline unchanged; -55/-35 sun, ambient energy1, no tone mapping override",
+  "terrain": "Main live-terrain v0; read physics projection only; no reference GLB substitution",
+  "runtime_input_owner": "engineering E01/C02",
+  "owner_visual_acceptance": "NOT_RUN",
+  "composition_note": "camera aim shifted 2m along screen-left to preserve left320px UI; close is focused on robots, facilities may crop"
+}

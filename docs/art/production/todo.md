@@ -1,6 +1,6 @@
 # 《余电》美术待办清单
 
-更新日期：2026-10-06
+更新日期：2026-10-07
 初版：GLM按TODO-ART-01整理，基线`06f70c9`；维护与接受：Codex。历史批次art-brief-r1基线`9a89601`；历史需求补齐从main `3999d30`独立分支推进。2026-10-06本轮依据已合并 PR #38重评待办，基线`0662c126cd9d966c8e085ed00a0ff72880841063`；仅文档重评，不制作新素材、不启动派单、不进行新的游戏或视觉验收。当前重评输入见[美术执行包](../../roadmap/art-work-packages.md)；历史需求输入见[补齐计划](PLAN.md)与[本轮记录](evidence/art-requirements-2026-10-04.md)。
 
 ## 1. 本轮范围与边界
@@ -139,13 +139,13 @@
 
 **素材尚未齐全。** 第9节“已齐”只指模型子批。soil_mars仍是纯色材质，三版地表仅参考；通用箱和三块深色岩石不能代替六类资源、独立地标和操作标记。依据[覆盖盘点](requirements/asset-coverage-2026-10-05.md)、[独立效果审查](review/2026-10-05-independent-review.md)、[美术执行包](../../roadmap/art-work-packages.md)和[接口合同](../../roadmap/contracts.md)重评；以下七行是这些新增／缺口任务的唯一权威状态记录，执行包只作范围与接缝说明。
 
-正常游戏视距先于近景；制作、独立技术检查、正式接入、版本内验收四维证据分记，所有者视觉接受单独记录。现有normal只是参考镜头；本轮没有新素材、游戏运行或新的视觉验收，七票均DRAFT，不能因路线已写好自动READY。READY前须冻结具体写入路径、输入、消费者和验收样本，实际派单后才记IN_PROGRESS。
+正常游戏视距先于近景；制作、独立技术检查、正式接入、版本内验收四维证据分记，所有者视觉接受单独记录。2026-10-06重评时normal只是参考镜头、七票均DRAFT；2026-10-07已有授权下A01／A03实际制作，最新四维证据见第12节，其余票仍DRAFT。READY前须冻结具体写入路径、输入、消费者和验收样本，实际派单后才记IN_PROGRESS。
 
 | ID／任务 | 优先级／状态 | 真实前置与用途 | 拟写入边界 | 工程接入者／包与版本内变化 | 来源 |
 |---|---|---|---|---|---|
-| ART-CAMERA-01 实际工作相机 | P0／DRAFT | DT-A01；C01／E01初始视口与现役manifest；先定位尺度、可点击性、遮挡及地表可读性，可与UI骨架并行 | 尚待冻结专属参考记录／独立对照场景；主场景相机、灯光、UI和共享材质由Codex单写 | Codex，D1.0／E01／E03／C02；普通游戏viewport消费正常／总览／近景配置，记录窗口像素、UI占用与版本，所有者看样 | [DT-A01](../../roadmap/art-work-packages.md)、[审查](review/2026-10-05-independent-review.md) |
-| ART-ENV-SURFACE-01 地表成果表面 | P0／DRAFT | DT-A03；A01镜头与C01／E02边界、采样、阶段／版本；自然土、作业面、压实面帮助读懂真实整平 | 尚待冻结独立表面资源／映射目录；形式按用途选简单材质、顶点／世界坐标或必要纹理；不改权威高度场、M01或Main | Codex，D1.0／E02／E03／C02与E04保存；同地点原始→作业→完成→取消保留成果可读，投影与重载同源；E10／E12再补开挖暴露层 | [覆盖盘点](requirements/asset-coverage-2026-10-05.md)、[DT-A03](../../roadmap/art-work-packages.md) |
-| ART-MARKER-01 选择与工程标记 | P0／DRAFT | DT-A03；A01视距，E01选择／命令及E02合法范围、提交／取消／阻塞语义；与表面并行 | 尚待冻结独立标记资源目录；贴地、非红绿唯一通道；不改规则或共享注册表 | Codex，D1.0／E01／E02／E03／C02，E04保存相关权威事实；真实选择、合法／非法／已提交范围及阻塞反馈进入游戏，取消不抹成果 | [覆盖盘点](requirements/asset-coverage-2026-10-05.md)、[DT-A03](../../roadmap/art-work-packages.md) |
+| ART-CAMERA-01 实际工作相机 | P0／REVIEW | DT-A01；C01／E01初始视口与现役manifest；先定位尺度、可点击性、遮挡及地表可读性，可与UI骨架并行 | 已交art/d1/camera.json与calibrate.gd；实际Main视口与同世界低保真对照；正常／总览无遮挡。主场景相机、UI由工程接入；点击与所有者视觉未验 | Codex，D1.0／E01／E03／C02；普通游戏viewport消费正常／总览／近景配置，记录窗口像素、UI占用与版本，所有者看样 | [DT-A01](../../roadmap/art-work-packages.md)、[本批交付](d1-a01-a03/README.md) |
+| ART-ENV-SURFACE-01 地表成果表面 | P0／IN_PROGRESS | DT-A03；A01镜头与C01／E02边界、采样、阶段／版本；自然土、作业面、压实面帮助读懂真实整平 | art/d1/surface.gdshader与palette.json候选源已交并真实渲染；已有2m圆区域合同，仍待工程已提交区域／版本与同地点真实阶段样例；不改高度场/M01/Main | Codex，D1.0／E02／E03／C02与E04保存；同地点原始→作业→完成→取消保留成果可读，投影与重载同源；E10／E12再补开挖暴露层 | [DT-A03](../../roadmap/art-work-packages.md)、[尚缺接缝](d1-a01-a03/INTERFACE.md) |
+| ART-MARKER-01 选择与工程标记 | P0／REVIEW | DT-A03；A01视距，E01选择／命令及E02合法范围、提交／取消／阻塞语义；与表面并行 | 已交art/d1/markers.gd、palette.json与138项自检；2m实线／虚线加叉／双圆环按native高度采样，真实坡地与低画质候选已核；正式选择/权限消费待工程接入 | Codex，D1.0／E01／E02／E03／C02，E04保存相关权威事实；真实选择、合法／非法／已提交范围及阻塞反馈进入游戏，取消不抹成果 | [DT-A03](../../roadmap/art-work-packages.md)、[本批交付](d1-a01-a03/README.md) |
 | ART-U01-CARGO-FIX-01 内置载荷局部候选返修 | P0／DRAFT | DT-A02a；当前canonical源／审查支持共面解释，未运行复现；只修箱身或重复顶面，保留外包络、Cargo socket、轴与状态 | 已有[源生成器](../../../art/source/units/tuoyun-r1/generate_tuoyun_r1.py)296–301行；完整源／运行GLB／manifest／包装写入清单尚待冻结。不得扩大到独立P01-CRATE或重做整车 | Codex，E03／C02；同相机正常空／载、载货近景90／180及维护回归。D1.0若未消费仅记制作；后续E07实际载货接入才记版本效果 | [局部发现](review/2026-10-05-independent-review.md)、[DT-A02](../../roadmap/art-work-packages.md) |
 | ART-F02-READABILITY-01 加工形态与朝向 | P1／DRAFT | DT-A02b；F02 rev2、A01正常0／90／180；E10加工用途与工作／停机状态明确后强化进出料和一个工艺特征，保持防护逻辑 | 已有[源目录](../../../art/source/facilities/processor-r1/)；局部源／GLB／manifest／包装写入清单尚待冻结，不改M01或新增大型工厂 | Codex，D1.1／D1.2的E03／E10／C02，与A07状态反馈联合；实际加工时朝向、进出料及工作／停机可读，不因未到加工阶段额外阻塞D1.0 | [逐项审查](review/2026-10-05-independent-review.md)、[DT-A02](../../roadmap/art-work-packages.md) |
 | ART-RESOURCE-01 六类资源表示 | P1／DRAFT | DT-A04；E05资源ID、单件／批量视觉语义、载荷／箱位／出料包络和A01视距；铁矿、铜矿、铁料、铜料、结构件、线缆 | 尚待冻结独立资源源／GLB／必要材质图标／manifest目录；容器复用P01-CRATE，不增加第七条工业链 | Codex，D1.1子片／D1.2完整，E07／E10／E13／C02；真实取送加工中类别一致，数量仍由账本UI给出，不用数箱代替库存 | [覆盖盘点](requirements/asset-coverage-2026-10-05.md)、[DT-A04](../../roadmap/art-work-packages.md) |
@@ -160,3 +160,13 @@
 ## 11. 美术目录公开发布 · 2026-10-05
 
 所有者已授权上传并合并美术文件夹。公开副本只带美术变更，技术目录保持main版本；[发布核验](evidence/publication-r1/README.md)记录路径清理、13份Blender重开、独立导入／228自测和历史证据hash边界。素材仍REVIEW，完整低保真素材里程碑仍未达成。
+
+## 12. D1.0 A01／A03 实际制作 · 2026-10-07
+
+授权与基线：所有者授权推进D1.0并新开美术会话；独立分支art/d1-a01-a03-20261007，base259a8bf。只写art/d1/**、docs/art/production/d1-a01-a03/**与本TODO；Main/PlayerUI/工程相机/共享材质/canonical模型及根文档未改。
+
+制作：Codex负责相机配置、实际Main视口校准、图形核验与交付；独立worker负责A03圆形标记/表面源，architect前置和收尾只读审查。小批资源与独立源技术进入REVIEW；地表正式阶段映射仍IN_PROGRESS，当前状态以第10节三行及[交付](d1-a01-a03/README.md)为准，不宣告D1.0或完整素材覆盖完成。
+
+独立技术：真实Godot4.7.2/Metal/Forward+，1920×1200，11PNG；标记138/138自检，原生顶点采样误差<1e-5m、三角心离地.0208–.0276m。正常7模型不侵入左320/上56/下112留白；无模型缩放。总览关闭MSAA、内部渲染.75时五标记可辨。
+
+正式接入／版本内验收／所有者视觉：均NOT_RUN。表面图是同一v0几何的样式输入，未假冒原始→施工→提交→取消成果；工程需补已提交区域／版本与实际阶段样例，详见[接缝](d1-a01-a03/INTERFACE.md)。T01正式阶段仍BLOCKED，T02/E10、U01局部返修及高保真未进入本批。

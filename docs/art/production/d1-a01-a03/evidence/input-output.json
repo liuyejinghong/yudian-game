@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-07",
+  "baseline_commit": "259a8bf",
+  "upstream_contract": {
+    "path": "docs/engineering/contracts/d1-player-r1.md",
+    "source": "engineering working copy supplied via coordination, not part of art commit",
+    "sha256": "fb9eb648ae64eefa8089ee7d06fb9b6983899b25d99813222fcd8a217c26a43e",
+    "radius_m": 2,
+    "sampling_spacing_m": 0.9375,
+    "legal_margin_m": 3.875
+  },
+  "inputs": [
+    {
+      "path": "art/d1/calibrate.gd",
+      "sha256": "938597c9472ead0ce061a5e9b81586efef83d002d2b63146656911d37f77e74a"
+    },
+    {
+      "path": "art/d1/camera.json",
+      "sha256": "b5e94bb12c7e1ff8e5627e02e3bf8d39d6d2a63696cdc57e2a89bb5cd948d248"
+    },
+    {
+      "path": "art/d1/check_markers.gd",
+      "sha256": "389368f72a3066557201b5d603fb131ee8d3037d6ff8fee0e59a1a8af50ede9f"
+    },
+    {
+      "path": "art/d1/markers.gd",
+      "sha256": "1c2abcf796d9d864f60d2b515a44af9b7489c909d3a2d5270a02597876b4da78"
+    },
+    {
+      "path": "art/d1/palette.json",
+      "sha256": "0e967daf7f025f737df0ba5bc9f4de1e6ff51b7dca85d50c3a2fcb723dcf86bc"
+    },
+    {
+      "path": "art/d1/surface.gdshader",
+      "sha256": "3c95813294727540cf651d3bce44737ee1d6764d6a01d29bd768441de729778e"
+    },
+    {
+      "path": "art/d1/verify.py",
+      "sha256": "f98c8312dc39914d9dc46cb9300d08dfccc91949fa7a9fdea6c5032ec06e9971"
+    },
+    {
+      "path": "art/manifests/lowfi-batch-r1/charger.json",
+      "sha256": "ee8aa1919c2330d2d12e4c2fb17e54fea7b3b318261d59d68b34a84106a44d83"
+    },
+    {
+      "path": "art/manifests/lowfi-batch-r1/storage.json",
+      "sha256": "47b63fd2b328f857ccaffd45b9b23b697c0892609d57e1e2a06e28b9888da314"
+    },
+    {
+      "path": "art/manifests/lowfi-batch-r1/wangshan.json",
+      "sha256": "d1e18a4565f20fe9d5c080f1340499eb4ff088b2706c0984b34b23c4dfbb61f3"
+    },
+    {
+      "path": "art/manifests/lowfi-batch-r1/zhulei.json",
+      "sha256": "ac39cdb42f5cc2b6a8112b8b3fd0e4478f85d39a3cd73cc9c8f32a599af77aff"
+    },
+    {
+      "path": "art/manifests/processor-r1.json",
+      "sha256": "19c270eac5283e2111ab2cff95fdb3e05e06f7d1ebb7aeb1afb820d17859f84c"
+    },
+    {
+      "path": "art/manifests/solar-r1.json",
+      "sha256": "decbd4419139eb58c41f5fb9f6e80628c8a922e6c1a021fcdd07978b557e06bf"
+    },
+    {
+      "path": "art/manifests/tuoyun-r1.json",
+      "sha256": "a8e2b0aa08ce01768cfd93b776e051e90d44c80cac982c7d8bc00f1b7c643012"
+    },
+    {
+      "path": "prototype/assets/facilities/processor-r1/preview.gd",
+      "sha256": "0e3ccd727e53ca224996cf1db1f1f6bae384d05e911bc72867ff5c4f02384979"
+    },
+    {
+      "path": "prototype/assets/facilities/processor-r1/preview.tscn",
+      "sha256": "82dd55fc9723d5e6991af4345eae00995ed3db382cd7e16f47be5b43037ebfac"
+    },
+    {
+      "path": "prototype/assets/facilities/processor-r1/processor-r1.glb",
+      "sha256": "627f4541fb8b2e1aa494d231ff5bc3c723699b88d90e6d7a82d77e10b2e8d157"
+    },
+    {
+      "path": "prototype/assets/facilities/solar-r1/preview.gd",
+      "sha256": "c13531c52d9642322ed44465a9c03a39fb3fb2e486d8870be1813f97491bf316"
+    },
+    {
+      "path": "prototype/assets/facilities/solar-r1/preview.tscn",
+      "sha256": "b8527a3c66174df092e20bdd2cb375d65cd2b888e03bbad28e345df515d43fd2"
+    },
+    {
+      "path": "prototype/assets/facilities/solar-r1/solar-r1.glb",
+      "sha256": "3e8b475006e71ac599f0f2d160c97e48229dbef756f6d9f80e4dce10eb4a0a73"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/charger.tscn",
+      "sha256": "e30ae1d23065939453f188c31466859a78851be69e5e6ca301bc326439e3d471"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/models/charger.glb",
+      "sha256": "5537e297f44705ab2b96e1e4fecddff41d854f3b2005ae30dfaeca8f5d408a8c"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/models/charger.glb.import",
+      "sha256": "a949857bdec06524c692a33af8002eb5914ec640332fb989b69237a31e9a34e5"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/models/storage.glb",
+      "sha256": "ea594929b3e110b99130d45068916a4859dae346a31db00d9a75d490ff07033d"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/models/storage.glb.import",
+      "sha256": "0552478c61ae08c16876e9c949549b0efa7090767468bcef01aba36f4f478d33"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/models/wangshan.glb",
+      "sha256": "20715df8d1096cecc52b511dcaa1871a0a35e898c4a77408074dc9843e1f774b"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/models/wangshan.glb.import",
+      "sha256": "623b24dcf75fac1d7fb63a59075bfbc9c6b603b929423f50a0837e3987dd2609"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/models/zhulei.glb",
+      "sha256": "7e68fa0b2b5271ad2d6ae528dcb2062fe1a525646c96007d4e6a749970eb7b8d"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/models/zhulei.glb.import",
+      "sha256": "0b1367b3d8f5bcc5ee486a78412b8fca5eb45e23fe36526ff95dfd0a80d7f062"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/preview.gd",
+      "sha256": "65f6c685794c23624ee59897e5ee345a77d280ae3f6df6d38841c7db7314a449"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/storage.tscn",
+      "sha256": "4133457700ed2cd4aa366a031cccb21f5d0becbca5cc6a1e113b20ab090ae896"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/wangshan.tscn",
+      "sha256": "9603840fbf5af7239f6e7d84f3041b8eea2812f873b4b12f00b32429987e7960"
+    },
+    {
+      "path": "prototype/assets/lowfi-batch-r1/zhulei.tscn",
+      "sha256": "3ae36e6d4526accd73e98a4a2f3571d5fdf3371f14118c89b71e1a8799c7845c"
+    },
+    {
+      "path": "prototype/assets/materials/art-r1/accent_warm.tres",
+      "sha256": "fe01e258db57c387c7dbba6aa9b1febe67a8b24c6fbc479d1fc71a3824faa290"
+    },
+    {
+      "path": "prototype/assets/materials/art-r1/body_light.tres",
+      "sha256": "c42d893024832f054751605a3cbb672222c022a83825cfa8fb45a9d19af8ffa1"
+    },
+    {
+      "path": "prototype/assets/materials/art-r1/frame_dark.tres",
+      "sha256": "3d98442ab026c3ebaf73b98e397428e97c3185012a16bf1ace5917ddf6ad6936"
+    },
+    {
+      "path": "prototype/assets/materials/art-r1/rubber.tres",
+      "sha256": "82c0f80a962402f8c204dbb73680062b1e2fcf80389895b3cce8bf243ffe246a"
+    },
+    {
+      "path": "prototype/assets/materials/art-r1/soil_mars.tres",
+      "sha256": "5f8aa3e483006e74e69cbda1385c2392c2f4f71f73b4129f957f2e15adf8a4f6"
+    },
+    {
+      "path": "prototype/assets/materials/art-r1/solar_face.tres",
+      "sha256": "1b1be352ed4d6694b2883a4a6392a60b15a8c31dcc386517dd7d94f52571c209"
+    },
+    {
+      "path": "prototype/assets/units/tuoyun-r1/preview.gd",
+      "sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af"
+    },
+    {
+      "path": "prototype/assets/units/tuoyun-r1/preview.tscn",
+      "sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31"
+    },
+    {
+      "path": "prototype/assets/units/tuoyun-r1/tuoyun-r1.glb",
+      "sha256": "63c82349bb2c834ba33266c1741b95709dbb43566ab1402dd980f9d634827fd9"
+    },
+    {
+      "path": "prototype/fixtures/s_small.json",
+      "sha256": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee"
+    },
+    {
+      "path": "prototype/scenes/Main.tscn",
+      "sha256": "b480bca0f9c8e3edeeff5eba982bd2d5ac644e91ce248b4b6828f41ba93a1ad9"
+    },
+    {
+      "path": "prototype/scenes/art_preview_r1/preview_r1.gd",
+      "sha256": "41eea168533f5168050e3de1d6ecb099daafc396815a177a3f2e6e268d40eb36"
+    },
+    {
+      "path": "prototype/scenes/art_preview_r1/preview_view_r1.gd",
+      "sha256": "1b485c1bb539c3dd353c27dd24cd0fbab9b59001038282e137c5487348131282"
+    },
+    {
+      "path": "prototype/scripts/Main.LevelJob.cs",
+      "sha256": "e8d897456ec8d7e275fa3a340fbc954f5fc1e6b1ba450e8bafdf9b8a8618bb22"
+    },
+    {
+      "path": "prototype/scripts/Main.LiveTerrain.cs",
+      "sha256": "3c66cdb750f44c211a738668f34cdd1a3dee7fdff3d961680ea643d583fd0c56"
+    },
+    {
+      "path": "prototype/scripts/Main.cs",
+      "sha256": "de56adefb1a42ae62410337ce64c8a1260ea09f093d7a3e0e835f0d8f1d575ea"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/actual-main-v0.png",
+      "sha256": "90bbe436d06aa465ce92879ea0a73d561f243744d1f3ccb35de6c38edabb4b45"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/capture.json",
+      "sha256": "c74e9d5f5c54a6c70a9dfbfa2486bfb8fdf9efb4c80b00c1ed21cea87c104f2d"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/capture.log",
+      "sha256": "d85b432a34efff1581961457147c7a731ee2fb0fdfd530b019aeb82c9423c7fb"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/close.png",
+      "sha256": "7072d3c1b177f1dc4cccd1dc947794638c49d57cbb52139e5e4625a91e3e4b43"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/main_baseline.png",
+      "sha256": "28ec5899a4c3a1de14503ed7d8f5f1c2d6d904d6509616d05ea054d884467109"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/marker-check.log",
+      "sha256": "bf42d24796096bd6694c0f7d0889ccb5888b7a3422ae2da652c1e350cb5a3f32"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/markers-normal.png",
+      "sha256": "ce653142216d90edb765144e6cfda3ce6742ae508d03159c15b2e60a6055731d"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/markers-overview-low.png",
+      "sha256": "2fb1a9592543edc482a801e8a0d11e23b3023f06905484368cae5262f920aa31"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/normal.png",
+      "sha256": "022e2211c6c7671ce15acc71394a938417762e8df8a59e9c742196895f634cb6"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/overview.png",
+      "sha256": "2a17127a1b3e0597a4537029d40cfc1eb083cefa3947b85a954ba461780dfd1c"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/reference_normal.png",
+      "sha256": "3141f40d162921c252cef0ae302b4facf6a4cfde47179bdd3cbe931878f18bad"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/surface-style-0.png",
+      "sha256": "a9f142cc7d54ee8a380492c43e736943586e6028d63156de200577b636d2ec1f"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/surface-style-1.png",
+      "sha256": "5126ee2e46c1a0afe035803ab74db9a9297116f8069b2b4b6a3d450d6af0a144"
+    },
+    {
+      "path": "docs/art/production/d1-a01-a03/evidence/surface-style-2.png",
+      "sha256": "16b90c4acb214d055fbb362561a80155da3bd44c1ef0e4629b439cfee674ef67"
+    }
+  ],
+  "technical_status": "standalone source and native capture checked",
+  "ordinary_application_consumption": "NOT_RUN",
+  "owner_visual_acceptance": "NOT_RUN",
+  "phase_comparison": "PENDING engineering committed-region/version and same-place task samples; surface captures are style inputs on unchanged v0 geometry"
+}

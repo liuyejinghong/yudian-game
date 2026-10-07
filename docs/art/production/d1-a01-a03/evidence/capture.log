@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+MAIN_GROUND_IDENTITY build_sha256=149449d104a19532f2ddae051d83c41f48348b2055fa27f855f44cd046df4e72 loaded_mvid=4b87df0b-f577-412a-81d5-0a6706323a0b CLR=10.0.12 display=macOS
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=6
+A01_A03_CAPTURE_OK Main baseline, art overlay, surface style samples separately recorded
