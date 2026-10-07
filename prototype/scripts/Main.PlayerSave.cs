@@ -47,9 +47,9 @@ public partial class Main
         public BootstrapSave? Bootstrap { get; init; }
     }
     private static readonly JsonSerializerOptions SaveOptions = new() { UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow };
-    private string PlayerSavePath => (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1")
+    private string PlayerSavePath => (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_DEVELOPMENT_SELF_TEST") == "1")
         ? System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_TEST_SAVE") ?? "/private/tmp/yudian-player-test.json"
-        : ProjectSettings.GlobalizePath(BootstrapEnabled ? "user://saves/d11-player-v2.json" : "user://saves/d1-player-v1.json");
+        : ProjectSettings.GlobalizePath(DevelopmentEnabled ? "user://saves/d12-player-v3.json" : BootstrapEnabled ? "user://saves/d11-player-v2.json" : "user://saves/d1-player-v1.json");
     private PlayerSave? _loadPending, _loadRollback;
     private bool _loadRecovered;
     private int _loadStarted;
@@ -65,7 +65,7 @@ public partial class Main
         if (BootstrapEnabled) SettleBaseMovement();
         return new()
         {
-        Schema = BootstrapEnabled ? 2 : 1, Bootstrap = BootstrapEnabled ? CaptureBootstrap() : null, FixtureHash = _fixtureHash, Terrain = TerrainDataCodec.Serialize(_liveTerrain!.Current),
+        Schema = DevelopmentEnabled ? 3 : BootstrapEnabled ? 2 : 1, Bootstrap = BootstrapEnabled ? CaptureBootstrap() : null, FixtureHash = _fixtureHash, Terrain = TerrainDataCodec.Serialize(_liveTerrain!.Current),
         Time = _playerTime, Paused = _userPaused, Permission = _liveTerrain.PermissionGranted, Cancelled = _liveTerrain.CancellationRequested, Sequence = _levelSequence,
         Robots = _groundRobots.Select(x => new RobotSave { Id = x.Name.ToString(), Position = SavedVector(x.GlobalPosition), Velocity = SavedVector(x.Velocity), Yaw = x.Rotation.Y }).ToArray(),
         Job = _levelJob is not {} j ? null : new JobSave
@@ -108,10 +108,10 @@ public partial class Main
         else if (element.ValueKind == JsonValueKind.Array)
             foreach (var child in element.EnumerateArray()) RejectDuplicateFields(child);
     }
-    private void LoadPlayer()
+    private void LoadPlayer(bool legacy=false)
     {
         if (!_groundReady || _loadPending != null) { _playerNotice = "等待当前世界恢复后读取"; return; }
-        var path = PlayerSavePath;
+        var path = legacy ? ProjectSettings.GlobalizePath("user://saves/d11-player-v2.json") : PlayerSavePath;
         if (!File.Exists(path)) { _playerNotice = "还没有存档"; return; }
         if (new FileInfo(path).Length > 4_000_000) throw new InvalidDataException("存档过大，未读取");
         string text = File.ReadAllText(path);
@@ -143,7 +143,7 @@ public partial class Main
     }
     private TerrainSnapshot ValidatePlayerSave(PlayerSave saved)
     {
-        if (saved.Schema != (BootstrapEnabled ? 2 : 1) || (saved.Schema == 1 && saved.Bootstrap != null) || saved.FixtureHash != _fixtureHash) throw new InvalidDataException("存档版本或场景配置不匹配，原档保留");
+        if ((DevelopmentEnabled ? saved.Schema is not (2 or 3) : saved.Schema != (BootstrapEnabled ? 2 : 1)) || (saved.Schema == 1 && saved.Bootstrap != null) || saved.FixtureHash != _fixtureHash) throw new InvalidDataException("存档版本或场景配置不匹配，原档保留");
         if (!double.IsFinite(saved.Time) || saved.Time < 0 || saved.Time > 1e12 || saved.Sequence < 0)
             throw new InvalidDataException("存档时间或任务序号无效");
         var terrain = TerrainDataCodec.ParseSnapshot(saved.Terrain);

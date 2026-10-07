@@ -64,12 +64,13 @@ public partial class PlayerController : Node
     private GodotObject _markerFactory = null!;
     private Marker _previewMarker = null!, _siteMarker = null!, _jobMarker = null!, _selectMarker = null!;
     private Label _titleLabel = null!, _statusLabel = null!, _jobLabel = null!, _selectionLabel = null!,
-        _worldLabel = null!, _stockLabel = null!, _supportLabel = null!, _facilityLabel = null!;
+        _worldLabel = null!, _stockLabel = null!, _supportLabel = null!, _facilityLabel = null!,
+        _devTitleLabel = null!, _devBodyLabel = null!;
     private ScrollContainer _infoScroll = null!;
     private Button _confirmButton = null!, _cancelButton = null!, _pauseButton = null!,
         _saveButton = null!, _loadButton = null!, _recoverButton = null!,
-        _connectButton = null!, _retryButton = null!;
-    private HBoxContainer _rowModes = null!;
+        _connectButton = null!, _retryButton = null!, _restockButton = null!, _legacyButton = null!;
+    private HBoxContainer _rowModes = null!, _rowOps = null!;
     private Button? _rotateButton;
     private ButtonGroup _modeGroup = null!;
 
@@ -443,23 +444,30 @@ public partial class PlayerController : Node
         _stockLabel = InfoLabel("StockLabel", 14, Palette.TextDim);
         _supportLabel = InfoLabel("SupportLabel", 14, Palette.Accent);
         _facilityLabel = InfoLabel("FacilityLabel", 14, Palette.TextDim);
+        _devTitleLabel = InfoLabel("DevTitleLabel", 14, Palette.Accent);
+        _devBodyLabel = InfoLabel("DevBodyLabel", 14, Palette.TextDim);
         info.AddChild(_statusLabel);
         info.AddChild(_jobLabel);
+        info.AddChild(_devTitleLabel);
+        info.AddChild(_devBodyLabel);
         info.AddChild(_selectionLabel);
         info.AddChild(_worldLabel);
         info.AddChild(_stockLabel);
         info.AddChild(_supportLabel);
         info.AddChild(_facilityLabel);
 
-        var hints = new Label { Text = "按住 WASD／方向键平移 · 右键拖动或双指平移 · 滚轮／捏合缩放 · 按住 Q/E 旋转 · F 定位 · Esc 清除选区",
-            AnchorLeft = 0, AnchorRight = 1, AnchorTop = 1, AnchorBottom = 1, OffsetTop = -160, OffsetBottom = -138,
+        var hints = new Label
+        {
+            Name = "Hints",
+            Text = "按住 WASD／方向键平移 · 右键拖动或双指平移 · 滚轮／捏合缩放 · 按住 Q/E 旋转 · F 定位 · Esc 清除选区",
+            AnchorLeft = 0, AnchorRight = 1, AnchorTop = 1, AnchorBottom = 1, OffsetTop = -212, OffsetBottom = -190,
             HorizontalAlignment = HorizontalAlignment.Center, MouseFilter = Control.MouseFilterEnum.Ignore };
         hints.AddThemeFontSizeOverride("font_size", 14); hud.AddChild(hints);
         var bar = new CenterContainer
         {
             Name = "CommandBar",
             AnchorLeft = 0f, AnchorRight = 1f, AnchorTop = 1f, AnchorBottom = 1f,
-            OffsetTop = -134, OffsetBottom = -14,
+            OffsetTop = -186, OffsetBottom = -14,
             MouseFilter = Control.MouseFilterEnum.Ignore,
         };
         hud.AddChild(bar);
@@ -488,6 +496,11 @@ public partial class PlayerController : Node
         row.AddThemeConstantOverride("separation", 10);
         stack.AddChild(row);
 
+        // 第四行经营按钮：与建设命令分开，1280 宽底栏放得下全部入口。
+        _rowOps = new HBoxContainer { Name = "OpsBar" };
+        _rowOps.AddThemeConstantOverride("separation", 10);
+        stack.AddChild(_rowOps);
+
         _confirmButton = MakeButton("ConfirmButton", "确认整平", DoConfirm, accent: true);
         _cancelButton = MakeButton("CancelButton", "取消任务", () => _world.QueuePlayerAction("cancel"));
         _pauseButton = MakeButton("PauseButton", "暂停", () => _world.QueuePlayerAction("pause"));
@@ -496,6 +509,8 @@ public partial class PlayerController : Node
         _recoverButton = MakeButton("RecoverButton", "故障恢复", () => _world.QueuePlayerAction("recover"));
         _connectButton = MakeButton("ConnectButton", "连接电缆", () => _world.QueuePlayerAction("connect"));
         _retryButton = MakeButton("RetryButton", "重试工程/保障", () => _world.QueuePlayerAction("retry"));
+        _restockButton = MakeButton("RestockButton", "补维修耗材", () => _world.QueuePlayerAction("restock"));
+        _legacyButton = MakeButton("LegacyLoadButton", "读取旧档", () => _world.QueuePlayerAction("legacy"));
         row.AddChild(_confirmButton);
         row.AddChild(_cancelButton);
         row.AddChild(_pauseButton);
@@ -504,6 +519,8 @@ public partial class PlayerController : Node
         row.AddChild(_recoverButton);
         row.AddChild(_connectButton);
         row.AddChild(_retryButton);
+        _rowOps.AddChild(_restockButton);
+        _rowOps.AddChild(_legacyButton);
     }
 
     private static Label InfoLabel(string name, int size, Color color)
@@ -600,7 +617,7 @@ public partial class PlayerController : Node
         _stockLabel.Visible = boot;
         _facilityLabel.Visible = boot;
         _supportLabel.Visible = false;
-        _confirmButton.Text = Building ? "确认建设" : "确认整平";
+        _confirmButton.Text = Building ? "建设·含前置授权" : "确认整平";
 
         _statusLabel.Text = state.Notice;
         _jobLabel.Text = state.Job is not { } job
@@ -638,6 +655,28 @@ public partial class PlayerController : Node
             }
         }
 
+        // 发展只读面板：仅展示权威 DevelopmentReadModel，不在 UI 侧计算成本或矿量。
+        // 经营按钮按 dev.Enabled 显隐（不把 bootstrap 当发展）；旧档读取还需世界就绪。
+        var dev = _world.ReadDevelopment();
+        bool devOn = dev.Enabled;
+        _devTitleLabel.Visible = devOn;
+        _devBodyLabel.Visible = devOn;
+        _rowOps.Visible = devOn;
+        _legacyButton.Disabled = !state.Ready;
+        if (devOn)
+        {
+            _devTitleLabel.Text = "发展 · " + dev.Provider;
+            _devBodyLabel.Text = string.Join("\n", new[]
+                {
+                    dev.Goal.Length > 0 ? "目标 " + dev.Goal : "",
+                    dev.Stage.Length > 0 ? "阶段 " + dev.Stage : "",
+                    dev.Need.Length > 0 ? "净缺口 " + dev.Need : "",
+                    dev.Reason.Length > 0 ? "等待 " + dev.Reason : "",
+                    dev.Choices.Length > 0 ? "后续方向 " + dev.Choices : "",
+                    dev.Mines.Length > 0 ? "矿点 " + dev.Mines : "",
+                }.Where(s => s.Length > 0));
+        }
+
         bool jobActive = state.Job is { Active: true };
         _confirmButton.Disabled = !(_preview is { Legal: true } && !jobActive && state.Ready) || _commandCooldown > 0f;
         _cancelButton.Disabled = !jobActive;
@@ -648,7 +687,7 @@ public partial class PlayerController : Node
 
     private string ModeHint()
         => Building
-            ? $"成本 {_currentBlueprint?.Cost ?? "…"} · 朝向 {_yawSteps * 90}° · 自动派驮运与筑垒"
+            ? $"成本 {_currentBlueprint?.Cost ?? "…"} · 朝向 {_yawSteps * 90}° · 确认即一次授权：缺料时自动采集/运输/加工并完成该建设，无需逐配方手点"
             : SelectedWorkerId() is { } selectedWorker ? WorkerDisplay(selectedWorker) : "自动分配筑垒";
 
     private static string FacilityName(BootstrapReadModel boot, string id)

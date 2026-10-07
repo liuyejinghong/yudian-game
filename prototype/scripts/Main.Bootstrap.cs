@@ -83,7 +83,7 @@ public partial class Main
     }
     private BuildingDefinition Definition(string type) => _bootstrapConfig.Buildings.Single(x => x.Id == type);
     private float BaseRadius(BaseFacility f) => f.Type == "lander" ? 2.3f : (float)Definition(f.Type).Radius;
-    private string BaseName(string type) => type == "lander" ? "着陆器" : Definition(type).Name;
+    private string BaseName(string type) => type == "lander" ? "着陆器" : type=="connection"?"供电连接":Definition(type).Name;
     private GroundPatrol Actor(string id) => _groundRobots.Single(x => x.Name.ToString() == id);
     private static string CargoContainer(string id) => "cargo:" + id;
     private bool Operational(GroundPatrol a) => !BootstrapEnabled || _health.TryGetValue(a.Name.ToString(),out var h) && h.Energy > 0 && h.Durability > 0;
@@ -94,12 +94,12 @@ public partial class Main
 
     private void InitializeBootstrap()
     {
-        using var file = Godot.FileAccess.Open("res://config/bootstrap-v1.json", Godot.FileAccess.ModeFlags.Read);
-        _bootstrapConfig = JsonSerializer.Deserialize<BootstrapConfig>(file.GetAsText(), SaveOptions) ?? throw new InvalidOperationException("缺少自举配置");
+        _bootstrapConfig = LoadBootstrapConfig(DevelopmentEnabled ? "d12-firstplay-1" : "d11-bootstrap-1");
         _bootstrapConfig.Validate();
         _ledger = new(new([new("lander",500,new(_bootstrapConfig.Initial)),new("spent",MaterialLedger.Limit,new())],[],new()));
         _baseFacilities.Add(new(){Id="lander",Type="lander",Position=[7,0,-22],Built=true});
         RebuildBaseFacilities();
+        if(DevelopmentEnabled)InitializeDevelopment();
     }
     private void InitializeRobotHealth()
     {
@@ -121,7 +121,7 @@ public partial class Main
             var root = new Node3D{Name="Base_"+f.Id,Position=p,Rotation=new(0,f.Yaw,0)};AddChild(root);_facilityNodes.Add(f.Id,root);
             if(f.Built)
             {
-                string path = f.Type switch {"solar"=>"facilities/solar-r1/solar-r1.glb","processor"=>"facilities/processor-r1/processor-r1.glb",_=>"lowfi-batch-r1/models/"+f.Type+".glb"};
+                string path = f.Type switch {"solar"=>"facilities/solar-r1/solar-r1.glb","processor"=>DevelopmentEnabled?"facilities/processor-r1/preview.tscn":"facilities/processor-r1/processor-r1.glb",_=>"lowfi-batch-r1/models/"+f.Type+".glb"};
                 root.AddChild(GD.Load<PackedScene>("res://assets/"+path).Instantiate<Node3D>());
                 root.AddChild(new StaticBody3D { CollisionLayer=2, CollisionMask=0 });
                 var body=(StaticBody3D)root.GetChild(root.GetChildCount()-1);
@@ -143,7 +143,7 @@ public partial class Main
     public BootstrapReadModel ReadBootstrap()
     {
         if(!BootstrapEnabled || _bootstrapConfig==null || !_groundReady) return new(false,"","",[],[],[],0);
-        string stock=string.Join(" · ",MaterialLedger.Materials.Where(m=>_bootstrapConfig.Initial[m]>0).Select(m=>$"{MaterialName(m)} {_ledger.Count("lander",m)}（可用{_ledger.Available("lander",m)}）"));
+        string stock=string.Join(" · ",MaterialLedger.Materials.Where(m=>_ledger.Count("lander",m)>0||_bootstrapConfig.Initial[m]>0).Select(m=>$"{MaterialName(m)} {_ledger.Count("lander",m)}（可用{_ledger.Available("lander",m)}）"));
         return new(true,stock,$"{(Daylight?"日照":"夜间")} · 发电 {_baseFacilities.Count(f=>f.Type=="solar"&&Powered(f))*_bootstrapConfig.SolarOutput:0.#} /s · 电缆连接 ≤{_bootstrapConfig.ConnectionRangeM:0}m，每段{_bootstrapConfig.ConnectionCables}线缆",
             _bootstrapConfig.Buildings.Select(b=>new BuildBlueprintView(b.Id,b.Name,(float)b.Radius,FormatMaterials(BuildCost(b.Id)))).ToArray(),
             _baseFacilities.Select(f=>new FacilityView(f.Id,f.Type,BaseName(f.Type),LoadVector(f.Position),BaseRadius(f),f.Built,Powered(f),f.Source)).ToArray(),
@@ -185,14 +185,18 @@ public partial class Main
         if(!_bootstrapConfig.Buildings.Any(b=>b.Id==type)||!float.IsFinite(yaw)||Math.Abs(yaw)>MathF.PI||!float.IsFinite(center.X)||!float.IsFinite(center.Z))return new(false,"设施或朝向无效",center,_liveTerrain!.Current.Version,0);
         float radius=(float)Definition(type).Radius;center.Y=0;
         string why="";var t=_liveTerrain!.Current;
-        if(_buildJob?.Active==true||_levelJob?.Active==true)why="先完成或取消当前工程";
+        if(HasCurrentWork)why="先完成或取消当前工程";
         else if(!_liveTerrain.PermissionGranted||_liveTerrain.CancellationRequested)why="未获建设权限";
         else if(Math.Abs(center.X)+radius+t.SpacingM*3+2>=_cfg.Terrain.Size/2||Math.Abs(center.Z)+radius+t.SpacingM*3+2>=_cfg.Terrain.Size/2)why="设施与作业站须位于场地内部";
         else if(_baseFacilities.Any(f=>XzDistance(LoadVector(f.Position),center)<=BaseRadius(f)+radius+(float)t.SpacingM*2+1))why="与设施或已有工程重叠";
         else if(_groundRobots.Any(a=>XzDistance(a.GlobalPosition,center)<=a.BodyRadius+radius+(float)t.SpacingM*2))why="作业范围内有机器人";
+        else if(DevelopmentEnabled&&_mines.Any(m=>XzDistance(LoadVector(m.Position),center)<=radius+2+(float)t.SpacingM*2+1))why="建设不得覆盖已知矿点与采集包络";
+        else if(StartupGuard(type) is { Length: >0 } guard)why=guard;
+        else if(DevelopmentEnabled)why=DevelopmentFeasibility(type);
         else if(BuildCost(type).Any(x=>_ledger.Available("lander",x.Key)<x.Value))why="有限启动库存不足："+FormatMaterials(BuildCost(type));
-        else if(!_groundRobots.Any(a=>a.Name.ToString().StartsWith("Robot_Zhulei_")&&Operational(a)))why="没有可行动的筑垒";
-        return new(why.Length==0,why.Length==0?"可建设 · "+BaseName(type)+" · "+FormatMaterials(BuildCost(type)):why,center,t.Version,0,radius+(float)t.SpacingM);
+        if(why.Length==0&&!_groundRobots.Any(a=>a.Name.ToString().StartsWith("Robot_Zhulei_")&&Operational(a)))why="没有可行动的筑垒";
+        string gap=DevelopmentEnabled?FormatMaterials(BuildCost(type).Where(x=>UsableStock()[x.Key]<x.Value).ToDictionary(x=>x.Key,x=>x.Value-UsableStock()[x.Key])):"";
+        return new(why.Length==0,why.Length==0?"可建设 · "+BaseName(type)+" · "+FormatMaterials(BuildCost(type))+(gap.Length==0?"":" · 净缺口 "+gap):why,center,t.Version,0,radius+(float)t.SpacingM);
     }
     public void QueueBuild(string type,Vector3 center,float yaw,long observedVersion)
         =>QueuePlayer(new("build:"+type,center,observedVersion,null,yaw));
@@ -225,12 +229,12 @@ public partial class Main
     }
     private void ConnectNextFacility()
     {
-        if(_buildJob?.Active==true||_levelJob?.Active==true)throw new InvalidOperationException("先完成或取消当前工程");
+        if(HasCurrentWork)throw new InvalidOperationException("先完成或取消当前工程");
         foreach(var f in _baseFacilities.Where(f=>f.Built&&f.Type is not ("solar" or "lander" or "storage")&&f.Source==null))
         {
             var source=_baseFacilities.Where(s=>s.Built&&s.Type=="solar"&&XzDistance(LoadVector(s.Position),LoadVector(f.Position))<=_bootstrapConfig.ConnectionRangeM).OrderBy(s=>XzDistance(LoadVector(s.Position),LoadVector(f.Position))).FirstOrDefault();
             if(source==null)continue;
-            StartBaseBuild("connection",LoadVector(f.Position),f.Yaw,f.Id,source.Id);return;
+            if(DevelopmentEnabled)StartDevelopment("connection",LoadVector(f.Position),f.Yaw,f.Id,source.Id);else StartBaseBuild("connection",LoadVector(f.Position),f.Yaw,f.Id,source.Id);return;
         }
         throw new InvalidOperationException("没有位于已建阵列12m内且尚未连接的用电设施");
     }
@@ -333,14 +337,14 @@ public partial class Main
             case "Pickup":
                 if(!TakeStation("lander",j.Hauler))break;
                 if(!_routes.TryGetValue(j.Hauler,out var pickup)||!Arrived(hauler,pickup.Destination))break;
-                if(_ledger.Load(cargo)>0)_ledger.Transfer(j.Id+"-return-"+j.Trip,j.Id,cargo,"lander",new(_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value)));
+                if(_ledger.Load(cargo)>0)TransferMaterials(j.Id+"-return-"+j.Trip,j.Id,cargo,"lander",new(_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value)));
                 var need=j.Cost.ToDictionary(x=>x.Key,x=>Math.Max(0,x.Value-_ledger.Count(buffer,x.Key)));int remaining=_bootstrapConfig.CargoCapacity;
                 var load=new Dictionary<string,int>();foreach(var pair in need){int n=Math.Min(remaining,pair.Value);if(n>0){load.Add(pair.Key,n);remaining-=n;}}
                 if(load.Count==0){ReleaseStations(j.Hauler);j.Stage="BuilderTravel";OrderBase(hauler,hauler.GlobalPosition+new Vector3(0,0,3));break;}
                 _ledger.Release(j.Id); var outstanding=need.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value);
                 _ledger.Reserve(j.Id,"lander",outstanding);
                 j.Trip++;
-                _ledger.Transfer(j.Id+"-take-"+j.Trip,j.Id,"lander",cargo,load);ReleaseStations(j.Hauler);
+                TransferMaterials(j.Id+"-take-"+j.Trip,j.Id,"lander",cargo,load);ReleaseStations(j.Hauler);
                 if(OrderDelivery(j,hauler)){j.Stage="Delivering";j.Reason="已真实取货，驮运载货前往工地";}
                 else j.Stage="CargoWaiting";
                 break;
@@ -349,7 +353,7 @@ public partial class Main
                 if(!TakeStation(j.Facility,j.Hauler))break;
                 if(j.HaulStation==null||!Arrived(hauler,LoadVector(j.HaulStation)))break;
                 var items=_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value);
-                _ledger.Transfer(j.Id+"-unload-"+j.Trip,j.Id,cargo,buffer,items);j.Trip++;ReleaseStations(j.Hauler);j.Stage="Fetching";j.Reason="物料已在现场交接；继续补足余料";break;
+                TransferMaterials(j.Id+"-unload-"+j.Trip,j.Id,cargo,buffer,items);j.Trip++;ReleaseStations(j.Hauler);j.Stage="Fetching";j.Reason="物料已在现场交接；继续补足余料";break;
             case "BuilderTravel":
                 if(TakeStation(j.Facility,j.Builder)&&OrderBase(builder,station)){j.Stage="Building";j.Work=0;j.Reason="物料齐备，筑垒前往并实际施工";}break;
             case "Building":
@@ -358,7 +362,7 @@ public partial class Main
                 if(!TickBuildWork(builder,j,delta,seconds))break;
                 var f=_baseFacilities.Single(f=>f.Id==j.Facility);
                 if(j.Type!="connection"&&_groundRobots.Any(a=>XzDistance(a.GlobalPosition,center)<BaseRadius(f)+a.BodyRadius)){j.Reason="等待落成占地空闲";break;}
-                _ledger.Transfer(j.Id+"-consume",j.Id,buffer,"spent",j.Type=="connection"?j.Cost:Definition(j.Type).Cost);
+                TransferMaterials(j.Id+"-consume",j.Id,buffer,"spent",j.Type=="connection"?j.Cost:Definition(j.Type).Cost);
                 if(j.Type=="connection"){f.Source=j.Source;f.ConnectionId=j.Id;}else f.Built=true;
                 _baseRevision++;RebuildBaseFacilities();StopBase(builder);ReleaseStations(j.Builder);_ledger.Release(j.Id);j.Stage="Completed";j.Reason=j.Type=="connection"?"电缆已铺设；按日照与实际出力供电":"已落成："+BaseName(j.Type);_playerNotice=j.Reason;break;
         }
@@ -381,7 +385,7 @@ public partial class Main
     }
     private void TickBootstrap(double delta)
     {
-        TickBaseRoutes(delta);TickBaseServices(delta);TickBaseBuild(delta);
+        _recipeWorked=false;TickBaseRoutes(delta);TickBaseServices(delta);TickBaseBuild(delta);TickDevelopment(delta);
     }
     private void TickBaseRoutes(double delta)
     {
@@ -425,6 +429,7 @@ public partial class Main
             if(!_services.ContainsKey(id))h.Reason=kind=="repair"?"低耐久；没有可达且有电的维修位":"低电量；没有可达且有电的充电位";
         }
         var power=_baseFacilities.Where(f=>f.Type=="solar"&&f.Built).ToDictionary(f=>f.Id,f=>Daylight?_bootstrapConfig.SolarOutput:0);
+        _remainingPower=power;
         foreach(var s in _services.Values.OrderBy(s=>int.Parse(s.Id[8..])).ToArray())
         {
             var actor=Actor(s.Robot);var h=_health[s.Robot];var f=_baseFacilities.Single(f=>f.Id==s.Facility);
@@ -445,7 +450,7 @@ public partial class Main
                 {
                     s.Blocked=true;actor.ClearOrder();ReleaseStations(s.Robot);h.Reason="维修耗材不足；保留任务，可补料后重试";continue;
                 }
-                if(!s.Paid){_ledger.Transfer(s.Id+"-parts",s.Id,s.Facility,"spent",new(){{"parts",_bootstrapConfig.RepairParts}});s.Paid=true;}
+                if(!s.Paid){TransferMaterials(s.Id+"-parts",s.Id,s.Facility,"spent",new(){{"parts",_bootstrapConfig.RepairParts}});s.Paid=true;}
                 s.Progress=Math.Min(_bootstrapConfig.RepairSeconds,s.Progress+delta);
                 if(s.Progress<_bootstrapConfig.RepairSeconds)continue;
                 h.Durability=_bootstrapConfig.Capacity;

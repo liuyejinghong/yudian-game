@@ -107,6 +107,7 @@ public partial class Main
             if (_playerMode) TickPlayerVisuals(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1") PlayerTestStep();
             if (System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1") BootstrapTestStep();
+            if(System.Environment.GetEnvironmentVariable("YUDIAN_DEVELOPMENT_SELF_TEST")=="1")DevelopmentTestStep();
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") LevelTestStep(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1") GroundTestStep();
             if (BootstrapEnabled && _groundReady)
@@ -127,7 +128,7 @@ public partial class Main
         {
             GroundFault(ex);
             if (_playerMode && _loadPending != null && _loadRollback != null) { FinishPlayerLoad(); return; }
-            if (System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" ||
+            if(System.Environment.GetEnvironmentVariable("YUDIAN_DEVELOPMENT_SELF_TEST")=="1" || System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" ||
                 System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1" ||
                 System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") Fail(ex);
         }

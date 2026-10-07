@@ -247,6 +247,8 @@ public partial class PlayerUiSelfTest : SceneTree
             await CameraUiChecks();
             // —— CAMERA-01 镜头输入诊断：同帧/跨帧短按、长按对照、滚轮、触控板手势、HUD释放残留 ——
             await CameraDiag();
+            // —— D1.2 发展只读面板与补维修耗材入口（最后执行：restock 会触发真实搬运，不干扰前序断言）——
+            await DevelopmentUiChecks();
 
             Report();
             Quit(_failures == 0 ? 0 : 1);
@@ -259,6 +261,103 @@ public partial class PlayerUiSelfTest : SceneTree
     }
 
     // ---- 帮助 ----
+
+    // D1.2：发展面板只读展示权威 DTO；补维修耗材按钮走真实 QueuePlayerAction("restock")。
+    private async System.Threading.Tasks.Task DevelopmentUiChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST DEV begin");
+        var dev = _world.ReadDevelopment();
+        var devTitle = _ui.FindChild("DevTitleLabel", true, false) as Label;
+        var devBody = _ui.FindChild("DevBodyLabel", true, false) as Label;
+        var restock = _ui.FindChild("RestockButton", true, false) as Button;
+        var legacy = _ui.FindChild("LegacyLoadButton", true, false) as Button;
+        Check(restock != null && legacy != null, "补维修耗材与读取旧档按钮建立");
+        if (!dev.Enabled)
+        {
+            Check(devTitle is { Visible: false } && devBody is { Visible: false }, "发展面板在 DTO 未启用时隐藏");
+            Check(restock != null && !restock.IsVisibleInTree() && legacy != null && !legacy.IsVisibleInTree(),
+                "经营按钮在 DTO 未启用时不可见（不把 bootstrap 当发展）");
+            NotRun("发展面板内容展示（DevelopmentReadModel 未启用）");
+            NotRun("补维修耗材真实请求（DevelopmentReadModel 未启用）");
+            return;
+        }
+
+        Check(devTitle is { Visible: true } && devTitle!.Text.Contains(dev.Provider),
+            "发展标题显示提供者：" + devTitle!.Text);
+        Check(devBody is { Visible: true } &&
+                devBody!.Text.Contains(dev.Goal) && devBody.Text.Contains(dev.Need) &&
+                devBody.Text.Contains(dev.Reason) && devBody.Text.Contains(dev.Choices) &&
+                devBody.Text.Contains(dev.Mines),
+            "发展面板展示目标/净缺口/等待原因/两方向/矿点 DTO 原文");
+        Check(restock!.IsVisibleInTree() && legacy!.IsVisibleInTree() && !legacy.Disabled,
+            "经营按钮按 dev.Enabled 可见，旧档读取在世界就绪时可用");
+
+        // 建设确认文案表达有限缺料前置授权（一次授权全链，非逐配方手点）
+        if (_ui.FindChild("ModeButton_charger", true, false) is Button chargerMode &&
+            _ui.FindChild("ModeLevelButton", true, false) is Button levelMode)
+        {
+            await CommandClick(chargerMode);
+            await Frames(2);
+            var confirmBtn = (Button)_ui.FindChild("ConfirmButton", true, false)!;
+            Check(confirmBtn.Text.Contains("建设·含前置授权"),
+                "建设确认按钮短文案表达缺料前置授权：" + confirmBtn.Text);
+            var buildSite = FindLegalBuildSite("charger");
+            Check(buildSite.Legal, "建设模式找到合法预览点：" + buildSite.Reason);
+            Click(_camera.UnprojectPosition(new Vector3(buildSite.Center.X, 0.2f, buildSite.Center.Z)));
+            await Frames(3);
+            var selection = (Label)_ui.FindChild("SelectionLabel", true, false)!;
+            Check(selection.Text.Contains("一次授权"), "已选位置说明一次授权采集/运输/加工/该建设：" + selection.Text);
+            PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+            await CommandClick(levelMode);
+            await Frames(2);
+        }
+        else
+            NotRun("建设确认文案检查（蓝图按钮未建立）");
+
+        // 1280x800 布局：经营第四行两按钮在视口内，且整套命令栏不与底部操作提示重叠
+        var view = Root.GetVisibleRect().Size;
+        var rect = restock!.GetGlobalRect();
+        Check(rect.Position.X >= 0 && rect.Position.Y >= 0 && rect.End.X <= view.X && rect.End.Y <= view.Y,
+            "补维修耗材按钮在视口内不裁切: " + rect);
+        var legacyRect = legacy!.GetGlobalRect();
+        Check(legacyRect.Position.X >= 0 && legacyRect.Position.Y >= 0 && legacyRect.End.X <= view.X && legacyRect.End.Y <= view.Y,
+            "读取旧档按钮在视口内不裁切: " + legacyRect);
+        var bodyRect = devBody!.GetGlobalRect();
+        Check(bodyRect.Position.X >= 0 && bodyRect.Position.Y >= 0, "发展面板在视口内起始");
+        if (_ui.FindChild("Hints", true, false) is Label hints && restock.GetParent() is Control opsRow &&
+            opsRow.GetParent() is Control stack && stack.GetParent() is Control barPanel)
+            Check(barPanel.GetGlobalRect().Position.Y >= hints.GetGlobalRect().End.Y - 0.5f,
+                "第四行命令栏整体不与操作提示重叠: barTop=" + F(barPanel.GetGlobalRect().Position.Y) +
+                " hintsBottom=" + F(hints.GetGlobalRect().End.Y));
+        else
+            NotRun("命令栏与提示不重叠（节点结构未找到）");
+
+        // restock 走权威命令：同帧双击被工程冷却合并为一次请求，且不被“未知操作”拒绝
+        Click(restock.GetGlobalRect().GetCenter());
+        Click(restock.GetGlobalRect().GetCenter());
+        await Frames(3);
+        var notice = _world.ReadPlayerState().Notice;
+        Check(!notice.Contains("未知操作") && !notice.Contains("操作正在处理"),
+            "restock 请求被权威接受且双击只提交一次：" + notice);
+
+        // 读取后新 UI 仍可用：保存→读取→发展面板与补料按钮恢复
+        _world.QueuePlayerAction("save");
+        await WaitFor(() => _world.ReadPlayerState().Notice.Contains("已保存"), 10, "D1.2 保存");
+        _world.QueuePlayerAction("load");
+        await WaitFor(() => _world.ReadPlayerState().Notice.Contains("读取完成"), 60, "D1.2 读取");
+        Check(_world.ReadPlayerState().Ready, "读取后世界就绪");
+        await Frames(5);
+        var devAfter = _world.ReadDevelopment();
+        var titleAfter = _ui.FindChild("DevTitleLabel", true, false) as Label;
+        var restockAfter = _ui.FindChild("RestockButton", true, false) as Button;
+        var legacyAfter = _ui.FindChild("LegacyLoadButton", true, false) as Button;
+        if (devAfter.Enabled)
+            Check(titleAfter is { Visible: true } && titleAfter!.Text.Contains(devAfter.Provider),
+                "读取后发展面板仍显示提供者：" + titleAfter!.Text);
+        Check(restockAfter is { Visible: true }, "读取后补维修耗材按钮仍可用");
+        Check(legacyAfter is { Visible: true } && !legacyAfter!.Disabled, "读取后旧档按钮仍可用");
+        GD.Print("PLAYER_UI_SELFTEST DEV end");
+    }
 
     // 网格扫描一个合法整平点：机器人停驻位随种子变化，不能写死坐标。
     private PlayerSitePreview FindLegalSite()

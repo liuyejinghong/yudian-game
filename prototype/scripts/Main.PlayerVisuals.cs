@@ -16,6 +16,7 @@ public partial class Main
     }
     private void TickPlayerVisuals(double delta)
     {
+        if(_resourceViewDirty){RebuildResourceViews();_resourceViewDirty=false;}
         UpdatePlayerSurface();
         bool frozen = _userPaused || _projectionPaused || _loadPending != null || _groundFault;
         foreach (var actor in _groundRobots)
@@ -37,6 +38,7 @@ public partial class Main
             _playerVisuals[actor] = (visual, actor.GlobalPosition);
         }
         if (BootstrapEnabled) TickHaulerVisuals(delta, frozen);
+        TickProcessorVisuals();
     }
     private void RestorePlayerVisuals()
     {

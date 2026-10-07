@@ -1,0 +1,136 @@
+{
+  "Version": "d12-firstplay-1",
+  "Initial": {
+    "iron_ore": 0,
+    "copper_ore": 0,
+    "iron": 17,
+    "copper": 5,
+    "parts": 21,
+    "cable": 20,
+    "kit": 8
+  },
+  "MoveEnergyPerM": 0.2,
+  "MoveWearPerM": 0.02,
+  "WorkEnergyPerSecond": 0.25,
+  "WorkWearPerSecond": 0.15,
+  "ChargePerSecond": 3.0,
+  "RepairPerSecond": 2.0,
+  "RepairParts": 2,
+  "RepairSeconds": 8.0,
+  "Capacity": 100.0,
+  "CargoCapacity": 8,
+  "SolarOutput": 4.0,
+  "DaySeconds": 600.0,
+  "DaylightSeconds": 400.0,
+  "ConnectionRangeM": 12.0,
+  "ConnectionCables": 4,
+  "Buildings": [
+    {
+      "Id": "solar",
+      "Name": "太阳能阵列",
+      "Radius": 2.9,
+      "WorkSeconds": 6,
+      "Cost": {
+        "iron": 4,
+        "parts": 4,
+        "cable": 2,
+        "kit": 1
+      }
+    },
+    {
+      "Id": "charger",
+      "Name": "充电桩",
+      "Radius": 1.9,
+      "WorkSeconds": 5,
+      "Cost": {
+        "iron": 3,
+        "copper": 2,
+        "parts": 3,
+        "cable": 2,
+        "kit": 1
+      }
+    },
+    {
+      "Id": "repair",
+      "Name": "维修站",
+      "Radius": 2.7,
+      "WorkSeconds": 6,
+      "Cost": {
+        "iron": 4,
+        "parts": 4,
+        "cable": 2,
+        "kit": 1
+      }
+    },
+    {
+      "Id": "processor",
+      "Name": "加工设施",
+      "Radius": 3.0,
+      "WorkSeconds": 8,
+      "Cost": {
+        "iron": 6,
+        "copper": 3,
+        "parts": 6,
+        "cable": 2,
+        "kit": 2
+      }
+    },
+    {
+      "Id": "storage",
+      "Name": "仓储",
+      "Radius": 3.8,
+      "WorkSeconds": 5,
+      "Cost": {
+        "iron": 4,
+        "parts": 4,
+        "kit": 1
+      }
+    }
+  ],
+  "Recipes": [
+    {
+      "Id": "iron",
+      "Input": {
+        "iron_ore": 2
+      },
+      "Output": {
+        "iron": 1
+      },
+      "WorkSeconds": 4,
+      "Power": 1
+    },
+    {
+      "Id": "copper",
+      "Input": {
+        "copper_ore": 2
+      },
+      "Output": {
+        "copper": 1
+      },
+      "WorkSeconds": 4,
+      "Power": 1
+    },
+    {
+      "Id": "parts",
+      "Input": {
+        "iron": 2
+      },
+      "Output": {
+        "parts": 1
+      },
+      "WorkSeconds": 5,
+      "Power": 1
+    },
+    {
+      "Id": "cable",
+      "Input": {
+        "copper": 1
+      },
+      "Output": {
+        "cable": 2
+      },
+      "WorkSeconds": 4,
+      "Power": 1
+    }
+  ]
+}

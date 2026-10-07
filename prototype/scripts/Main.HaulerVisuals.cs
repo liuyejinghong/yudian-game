@@ -16,6 +16,7 @@ public partial class Main
         string id=actor.Name.ToString();
         if(!Operational(actor))return "disabled";
         if(_services.TryGetValue(id,out var service)&&Arrived(actor,LoadVector(service.Station)))return service.Kind=="repair"?"maintenance":"charge";
+        if(DevelopmentEnabled&&Production is {Kind:"mine",Stage:"Working"} task&&task.Robot==id&&Arrived(actor,LoadVector(task.Station!))&&!Servicing(actor))return "work";
         if(_buildJob is {} build&&build.Builder==id&&build.Stage is "Building" or "Levelling"&&Arrived(actor,LoadVector(build.Station))&&!Servicing(actor))return "work";
         if(_levelJob is {} level&&level.Worker==actor&&level.Stage==LevelStage.Working&&WorkerAtStation(level)&&!Servicing(actor))return "work";
         return moving?"move":"idle";
@@ -25,6 +26,7 @@ public partial class Main
         var h=_health[actor.Name.ToString()];string reason=state=="disabled"?h.Energy<=0&&h.Durability<=0?"both":h.Energy<=0?"no_power":"mechanical":"none";
         var preset=new Godot.Collections.Dictionary{{"state",state},{"phase","completed"},{"phase_t",0.0},{"cargo",_ledger.Load(CargoContainer(actor.Name.ToString()))>0?"loaded":"empty"},{"reason",reason},{"time_s",time}};
         string error=_haulerVisuals[actor].Visual.Call("apply_preview",preset).AsString();
+        if(DevelopmentEnabled&&_haulerVisuals[actor].Visual.GetNodeOrNull<Node3D>("Model/tuoyun-r1/Model/CargoBox") is {} box)box.Visible=false;
         if(error.Length>0)throw new System.InvalidOperationException("驮运状态适配失败："+error);
     }
     private void TickHaulerVisuals(double delta,bool frozen)

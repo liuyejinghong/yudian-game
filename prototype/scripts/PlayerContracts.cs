@@ -10,3 +10,5 @@ public sealed record BuildBlueprintView(string Id, string Name, float Radius, st
 public sealed record FacilityView(string Id, string Type, string Name, Vector3 Position, float Radius, bool Built, bool Powered, string? Source);
 public sealed record RobotSupportView(string Id, double Energy, double Durability, double Capacity, int Cargo, string State, string Reason);
 public sealed record BootstrapReadModel(bool Enabled, string Stock, string Power, BuildBlueprintView[] Blueprints, FacilityView[] Facilities, RobotSupportView[] Robots, long Revision);
+
+public sealed record DevelopmentReadModel(bool Enabled, string Provider, string Goal, string Stage, string Need, string Reason, string Choices, string Mines);

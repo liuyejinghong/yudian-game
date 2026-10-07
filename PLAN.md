@@ -426,3 +426,18 @@ D1.2预检（只读，未派实施）：architect核出Ledger仅同料Transfer�
 本文件是合并前快照；最终exact-head合并、本地主线同步与总索引回执以PR44/Issue17为准。默认包与原档保持，后续D1.2及视觉接入明确未派。
 
 收尾：architect只读核资产未改、两件原生exit0/PASS与SHA、七帧验证、运行目录无变化、43保持返工；无实质归档阻断。首轮受限Blender的Metal初始化崩溃exit139原件私下保留，正常权限检查通过；不计失败为通过。
+
+## d12-firstplay-r1 · 2026-10-08 持续经营首玩
+
+已有授权：开始实施、GLM外包、隔离实现、实际GUI验收、合格PR集成。独占树eng-d12-20261008，基线51c9b632。历史阶段限制不覆盖本批授权；原存档/默认r5保留到新包合格。
+1. [ ] 核实际权威接缝，architect前审，冻结d12-firstplay-r1与六资源/货舱/加工美术接口。证明：真实消费者/有限安全首套/两个后续目标净缺口样本齐全；不造旁路经济。
+2. [ ] GLM通过Bridge原生Flash交独占有限缺口算法与PlayerUI子件；主控交矿量/地形/转换账/运输/生产/建设集成。证明：实际到场/取卸/有效工段、枯竭/无电/满仓/取消/投影失败无重复收益，纯算法独立检查。
+3. [ ] schema3新槽、schema2兼容读取及完整恢复校验；主控持有事务。证明：取货/生产投入/产出/建设/保障跨进程、重复读不重复结算、坏档拒绝保世界；原档字节不变。
+4. [ ] reviewer独立审关键状态与恢复；主控跑源码/最终原生包与真实GUI新档/暂停/缺料链/取消/失败/保存关闭重开，architect收尾。证明：同source/PCK/日志身份，不代签真人/G1/性能/发行。
+5. [ ] 合格后切默认入口、提交PR精确合并并attach、更新唯一工程TODO/根摘要/Issue17。证明：合并回执与默认包身份；原入口/旧档保留。
+
+单写者：Codex Main*.cs、Resources/Core、共享配置/合同、PLAN/TODO、保存与应用；GLM-A仅Goals/ProductionPlan.cs和tools/production-plan-tests；GLM-B仅PlayerUI及tools/player-ui-tests；美术独立树art-d12-20261008，只交素材，工程不写art/docs-art。新增事实留最小合同与原生检查，无新依赖/大量权重/付费API。两个失败同一步停止重计划，失败日志原件保留。
+
+D1.2已核：GLM-A原生Flash sess_bf11ef5df9交有限缺口81项；GLM-B sess_6424188cf2交只读UI/旧档/补料，主控78项通过，主控仅把经营事实移至信息区前部。source-r2九进程过矿提交/实运/投入/产出恢复，legacy-source-r1九进程通过，schema2测试副本迁移schema3通过，原用户两档hash留存。独立reviewer发现完成目标绑定旧current Build、自举保护释放过早、超时重试路由、任意端点、补料净缺口、阻塞义务替代及restock引用，均局部修复并补反例。
+
+source-r3负例首次失败：Blocked运输取消时ResumeStage被覆盖为Blocked，保存拒绝“生产重试阶段无效”；保留原件，修为Cancelled保原恢复阶段，source-r4同一步继续复验。后续接线不能绕生产：连接目标保存真实facility/source，并共用生产前置/延后patch。增加第二阵列→新充电桩真实供电检查，不增加设施类型。U01 rev4源/GLB/node/clips身份独立核后仅消费prototype GLB；六资源素材未齐可用明确临时表示，工程不等待美术。
