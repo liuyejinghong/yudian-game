@@ -128,7 +128,7 @@ public partial class Main
             .ToDictionary(x=>x.Key,x=>x.Value-stock[x.Key]-pending[x.Key]));
         var goal=_development;var task=Production;
         string need=goal==null?"选择建设位置后预览":goal.Stage is "Completed" or "Building"?"无需新增生产":Gap(DevelopmentDemand(goal.Type));
-        string stage=task==null?ProductionStageName(goal?.Stage??"待选择"):
+        string stage=goal?.Stage=="Building"&&_buildJob is {} build?BaseStageText(build.Stage):task==null?ProductionStageName(goal?.Stage??"待选择"):
             (task.Kind=="mine"?"采集 · ":task.Kind=="recipe"?"加工 · ":"运输 · ")+ProductionStageName(task.Stage);
         string amounts(IEnumerable<string> sources)=>FormatMaterials(MaterialLedger.Materials
             .ToDictionary(m=>m,m=>sources.Sum(c=>_ledger.Available(c,m))).Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value));
@@ -145,7 +145,7 @@ public partial class Main
                 reason.Length==0,reason);
         }).ToArray();
         string supply=goal==null?"":_baseFacilities.FirstOrDefault(f=>f.Id==goal.Supply) is {} f?BaseName(f.Type):"";
-        string reasonText=task?.Reason??goal?.Reason??"先建太阳能、充电、维修、加工，并接通三段电缆";
+        string reasonText=(goal?.Stage=="Building"?_buildJob?.Reason:null)??task?.Reason??goal?.Reason??"先建太阳能、充电、维修、加工，并接通三段电缆";
         if(reasonText.Length==0)reasonText="开始筹备材料，机器人会自动补前置";
         return new(true,"自动筹备",goal==null?"先建基础设施":goal.Type=="restock"?"补维修耗材":BaseName(goal.Type),stage,
             need.Length==0?"无需新增生产":need,reasonText,string.Join("\n",directions.Select(d=>$"{d.Name} · {d.Cost} → {d.Consequence}")),

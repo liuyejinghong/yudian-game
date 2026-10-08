@@ -213,12 +213,18 @@ public partial class Main : Node3D
     private void ApplyWindowAndQuality()
     {
         var size = new Vector2I(_cfg.TargetResolution.Width, _cfg.TargetResolution.Height);
+        if (_playerMode && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
+            size = System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_SIZE") switch
+            {
+                "1280x800" => new Vector2I(1280, 800), "1920x1200" => new Vector2I(1920, 1200),
+                null or "" => size, _ => throw new InvalidOperationException("GUI test size must be 1280x800 or 1920x1200"),
+            };
         if (_playerMode && DisplayServer.GetName() != "headless")
         {
             var available = DisplayServer.ScreenGetUsableRect().Size - new Vector2I(60, 100);
             size = new Vector2I(Math.Min(size.X, available.X), Math.Min(size.Y, available.Y));
         }
-        if (!OS.GetCmdlineArgs().Contains("--resolution")) GetWindow().Size = size;
+        GetWindow().Size = size;
         var vp = GetViewport();
         vp.Msaa3D = _cfg.Quality.Msaa3d switch
         {

@@ -481,3 +481,5 @@ architect已只读预审；保留r3功能GUI已过结果，薄入口/HUD修正�
 下一证明：固定ec5d464构建r4，8同包原生进程；实际1920与1280分别入口/首建/保存退出重开，后段paid/cargo/completed/方向用同r3真实检查点明确辅助，核正确净缺口与新资源绑定。原两档hash不变；通过后精确合并PR52和切默认，未通过则保留Draft。自然平衡/真人/G1/本地模型/稳定性能/发行未签。
 
 2026-10-08 r4固定包已导出（ec5d464 / source83c40939 / PCK408d8386），8同包CLR8.0.31进程PASS、loadedSHA f3f51224 / MVID d5f79189，无ERROR/leak。实际Metal1920x1200新入口→鼠标双击开始→暂停→SaveQuit exit0，隔离档paused133.0166/terrain0/goalnull/buildseq0。GUI发现首屏Prepared/Mines把功率/保障挤到下方，双击入口后第2击还透传选地(4.7,-1.5)，未建造。r4 LIMITED FUNCTIONAL/HUD REWORK，默认仍r5。GLM最后一个follow-up task_f553b0f3bc仅2 UI文件：长明细进现有折叠区、首屏事实可见，入口退出短窗防跨帧第2击，并增加真实几何/跨帧反例。主控Main入口初始Notice改为选择开始/继续，旧整平指令不在入口提示。完成后固定新r5候选再验，不重贴r4结果为r5。
+
+r4后段GUI辅助：同r3真实cargo隔离副本载入成功暂停，HUD真实在途结构件4、净缺口无需新增生产；继续1x实际卸货→仓储落成，载货架/图标在卸空后移除。该观察仍r4，不能代新包；本来尝试--resolution1280x800，但捕获PNG/Cua仍1920x1200，未签1280。官方OS文档说明GetCmdlineArgs排除已被引擎处理的参数（https://docs.godotengine.org/en/stable/classes/class_os.html#class-os-method-get-cmdline-args），最小GDScript反例证实仅剩--script。撤回无效参数判断，仅GUI_TEST下增加闭集GUI_SIZE=1280x800/1920x1200，沿原Window.Size应用与屏幕夹限；普通入口尺寸不改。此下必须由实际PNG尺寸核验。建筑中发展NextStep改读当前_buildJob.Reason/Stage，避免继续显示此前重试历史句。
