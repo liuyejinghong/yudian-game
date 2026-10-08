@@ -1,0 +1,118 @@
+{
+  "result": "PASS",
+  "scope": "Lowest vertices contact real static bed top; no dynamics or roll stability signoff",
+  "bed_sha256": "cf401d19b2f59d4b48df68582fb8c4da644490c30e0e3d046061f5a526c5a1be",
+  "cases": {
+    "copper": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "placements": [
+        {
+          "placement": [
+            -0.19,
+            0.48,
+            2.0
+          ],
+          "lowest_vertices_on_bed": 2
+        },
+        {
+          "placement": [
+            -0.19,
+            0.48,
+            2.27
+          ],
+          "lowest_vertices_on_bed": 2
+        },
+        {
+          "placement": [
+            0.19,
+            0.48,
+            2.0
+          ],
+          "lowest_vertices_on_bed": 2
+        },
+        {
+          "placement": [
+            0.19,
+            0.48,
+            2.27
+          ],
+          "lowest_vertices_on_bed": 2
+        }
+      ]
+    },
+    "parts": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "placements": [
+        {
+          "placement": [
+            -0.19,
+            0.48,
+            2.0
+          ],
+          "lowest_vertices_on_bed": 4
+        },
+        {
+          "placement": [
+            -0.19,
+            0.48,
+            2.27
+          ],
+          "lowest_vertices_on_bed": 4
+        },
+        {
+          "placement": [
+            0.19,
+            0.48,
+            2.0
+          ],
+          "lowest_vertices_on_bed": 4
+        },
+        {
+          "placement": [
+            0.19,
+            0.48,
+            2.27
+          ],
+          "lowest_vertices_on_bed": 4
+        }
+      ]
+    },
+    "cable": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "placements": [
+        {
+          "placement": [
+            -0.19,
+            0.48,
+            2.0
+          ],
+          "lowest_vertices_on_bed": 1
+        },
+        {
+          "placement": [
+            -0.19,
+            0.48,
+            2.27
+          ],
+          "lowest_vertices_on_bed": 1
+        },
+        {
+          "placement": [
+            0.19,
+            0.48,
+            2.0
+          ],
+          "lowest_vertices_on_bed": 1
+        },
+        {
+          "placement": [
+            0.19,
+            0.48,
+            2.27
+          ],
+          "lowest_vertices_on_bed": 1
+        }
+      ]
+    }
+  }
+}

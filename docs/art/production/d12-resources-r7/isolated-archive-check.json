@@ -1,0 +1,52 @@
+{
+  "result": "PASS_ISOLATED_PUBLIC_ARCHIVE_CHECK",
+  "command": [
+    "python3",
+    "docs/art/production/d12-resources-r7/check_archive.py"
+  ],
+  "observed_exit_code": 0,
+  "isolated_stage": "independent copy containing this archive plus bindings assets only",
+  "temporary_Godot_fixture_present": false,
+  "original_linked_r7_source_present": false,
+  "private_evidence_tree_present": false,
+  "inputs": {
+    "art/exports/resources/d12-r1/r7/cable.glb": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+    "art/exports/resources/d12-r1/r7/copper.glb": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+    "art/exports/resources/d12-r1/r7/copper_ore.glb": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+    "art/exports/resources/d12-r1/r7/iron.glb": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+    "art/exports/resources/d12-r1/r7/iron_ore.glb": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+    "art/exports/resources/d12-r1/r7/parts.glb": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+    "art/exports/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb": "6b834914f8194bf20adabb94c2cacbfb910703fd64f23e5e8ea31d9682e3cad9",
+    "art/icons/resources-d12-r1/cable.svg": "6bc50dcc6974e01ba390e8c7834ea323eb1548d7f9ef752e6e6af5d58fc3f4ed",
+    "art/icons/resources-d12-r1/copper.svg": "cc890d16598c1ba4d76d6b011c88358483fd36af425e0818c6e26b367dc3b447",
+    "art/icons/resources-d12-r1/copper_ore.svg": "cdc294f181ee40d1eb2fdcc1c5da0502f2aa68134ffd205399a500a7b68df344",
+    "art/icons/resources-d12-r1/iron.svg": "5949b410c504c40aacef91453d8a80543499359479971d2e1958f55daf4d887a",
+    "art/icons/resources-d12-r1/iron_ore.svg": "cd0caae18b1c8a397882ddc8165f32646823421ebc9107beaf5e940fc5a101a7",
+    "art/icons/resources-d12-r1/mapping.json": "0fc0109278358182d0d934b4b1c4b1c5fe03fb48d03ffa1f573e93c048fded7d",
+    "art/icons/resources-d12-r1/parts.svg": "9fa6e96696e04e7177163afbca124f54c69fe13a3d57948d100acb8f315c98cc",
+    "art/source/resources/d12-r1/r7-portable/resources-grey-r7.blend": "5b5eeb3a68fcd3160e40efe47e5af6e816e4d6543e221d3dc523c61b7a2cb200",
+    "art/source/resources/d12-r1/resource-pair-grey-r5-portable.blend": "de0fbdcc1af74b3e830c5ae41a62c46720e1993dc30cfd8e91cfacf3a6d1636b",
+    "art/source/units/tuoyun-cargo-carrier-d12-r1/generate_carrier.py": "4c5298d8750f10ad6e797c72b81de6b3a7bda62fabad5f84cd90bf1444bc8546",
+    "art/source/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.blend": "fe012561b6e301a10354a55f438cc43311588b51c82db86f4d3136558be9d327",
+    "art/source/units/tuoyun-r1/tuoyun-r1.glb": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+    "docs/art/production/d12-resources-r7/context/f02-rev3-processor.glb": "cf401d19b2f59d4b48df68582fb8c4da644490c30e0e3d046061f5a526c5a1be",
+    "docs/art/production/d12-resources-r7/technical/resource-facts.json": "f5ced89d2c8881d6666e4d03aa7153743e6e1233a5d346bef04d4aa534f321ad"
+  },
+  "output": {
+    "status": "PASS_ARCHIVE_BINDINGS_NOT_NEW_VISUAL_SIGNOFF",
+    "original_pngs": 57,
+    "archived_raw_public_pairs": 89,
+    "current_capture_inputs_checked": 17,
+    "historical_capture_inputs_not_replayed": 14,
+    "resource_triangles": {
+      "iron_ore": 64,
+      "copper_ore": 48,
+      "iron": 188,
+      "copper": 124,
+      "parts": 412,
+      "cable": 460
+    },
+    "output_static_contacts": 12,
+    "portable_independent_identity": "PASS_SOURCE_IDENTITY_PORTABILITY_LIMITED"
+  }
+}

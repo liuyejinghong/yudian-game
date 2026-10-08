@@ -1,0 +1,447 @@
+{
+  "mode": "source",
+  "blender": "5.2.2 LTS",
+  "resources": {
+    "iron_ore": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bounds_y_up": [
+        [
+          -0.21850284934043884,
+          0.0,
+          -0.1991950422525406
+        ],
+        [
+          0.2739032506942749,
+          0.34047049283981323,
+          0.22117018699645996
+        ]
+      ],
+      "triangles": 64,
+      "material": {
+        "baseColorFactor": [
+          0.3199999928474426,
+          0.3199999928474426,
+          0.3199999928474426,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7799999713897705
+      },
+      "private_paths_in_json": false,
+      "reopen_audit": {
+        "bounds_y_up": [
+          [
+            -0.21850284934043884,
+            0.0,
+            -0.1991950422525406
+          ],
+          [
+            0.2739032506942749,
+            0.34047049283981323,
+            0.22117018699645996
+          ]
+        ],
+        "triangles": 64,
+        "non_manifold_edges": 0,
+        "zero_area_faces": 0,
+        "bottom_contact_area_centroid_y_up": [
+          -6.309730515852152e-10,
+          0.0,
+          5.047784412681722e-09
+        ],
+        "bottom_bbox_center_y_up": [
+          0.02770020067691803,
+          0.0,
+          0.010987572371959686
+        ],
+        "signed_volume_m3": 0.036466856637602046
+      },
+      "four_visual_aggregates_bounds_y_up": [
+        [
+          -0.33202685207128524,
+          0.72,
+          -0.029476777464151394
+        ],
+        [
+          0.3680371129512787,
+          0.9413058203458786,
+          0.643760621547699
+        ]
+      ]
+    },
+    "iron": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bounds_y_up": [
+        [
+          -0.2095024734735489,
+          0.0,
+          -0.1344478577375412
+        ],
+        [
+          0.2095024734735489,
+          0.18000000715255737,
+          0.1344478577375412
+        ]
+      ],
+      "triangles": 188,
+      "material": {
+        "baseColorFactor": [
+          0.3199999928474426,
+          0.3199999928474426,
+          0.3199999928474426,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7799999713897705
+      },
+      "private_paths_in_json": false,
+      "reopen_audit": {
+        "bounds_y_up": [
+          [
+            -0.2095024734735489,
+            0.0,
+            -0.1344478577375412
+          ],
+          [
+            0.2095024734735489,
+            0.18000000715255737,
+            0.1344478577375412
+          ]
+        ],
+        "triangles": 188,
+        "non_manifold_edges": 0,
+        "zero_area_faces": 0,
+        "bottom_contact_area_centroid_y_up": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bottom_bbox_center_y_up": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "signed_volume_m3": 0.018091079500873037
+      },
+      "four_visual_aggregates_bounds_y_up": [
+        [
+          -0.32617660775780677,
+          0.72,
+          0.012608892470598224
+        ],
+        [
+          0.32617660775780677,
+          0.8370000046491622,
+          0.5873911075294018
+        ]
+      ]
+    },
+    "copper_ore": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "bounds_y_up": [
+        [
+          -0.22499999403953552,
+          0.0,
+          -0.18980124592781067
+        ],
+        [
+          0.22499999403953552,
+          0.21984724700450897,
+          0.18980127573013306
+        ]
+      ],
+      "triangles": 48,
+      "material": {
+        "baseColorFactor": [
+          0.3199999928474426,
+          0.3199999928474426,
+          0.3199999928474426,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7799999713897705
+      },
+      "private_paths_in_json": false,
+      "reopen_audit": {
+        "bounds_y_up": [
+          [
+            -0.22499999403953552,
+            0.0,
+            -0.18980124592781067
+          ],
+          [
+            0.22499999403953552,
+            0.21984724700450897,
+            0.18980127573013306
+          ]
+        ],
+        "triangles": 48,
+        "non_manifold_edges": 0,
+        "zero_area_faces": 0,
+        "bottom_contact_area_centroid_y_up": [
+          0.0060169892385602,
+          0.0,
+          0.002436540089547634
+        ],
+        "bottom_bbox_center_y_up": [
+          0.0,
+          0.0,
+          1.4901161193847656e-08
+        ],
+        "signed_volume_m3": 0.017749924435562676
+      },
+      "four_visual_aggregates_bounds_y_up": [
+        [
+          -0.33624999612569806,
+          0.72,
+          -0.023370809853076935
+        ],
+        [
+          0.33624999612569806,
+          0.8629007105529308,
+          0.6233708292245865
+        ]
+      ]
+    },
+    "copper": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "bounds_y_up": [
+        [
+          -0.2199999988079071,
+          0.0,
+          -0.07000000029802322
+        ],
+        [
+          0.2199999988079071,
+          0.14000000059604645,
+          0.07000000029802322
+        ]
+      ],
+      "triangles": 124,
+      "material": {
+        "baseColorFactor": [
+          0.3199999928474426,
+          0.3199999928474426,
+          0.3199999928474426,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7799999713897705
+      },
+      "private_paths_in_json": false,
+      "reopen_audit": {
+        "bounds_y_up": [
+          [
+            -0.2199999988079071,
+            0.0,
+            -0.07000000029802322
+          ],
+          [
+            0.2199999988079071,
+            0.14000000059604645,
+            0.07000000029802322
+          ]
+        ],
+        "triangles": 124,
+        "non_manifold_edges": 0,
+        "zero_area_faces": 0,
+        "bottom_contact_area_centroid_y_up": null,
+        "bottom_bbox_center_y_up": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "signed_volume_m3": 0.00658553500679449
+      },
+      "four_visual_aggregates_bounds_y_up": [
+        [
+          -0.3329999992251396,
+          0.72,
+          0.05449999980628491
+        ],
+        [
+          0.3329999992251396,
+          0.8110000003874301,
+          0.5455000001937151
+        ]
+      ]
+    },
+    "parts": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "bounds_y_up": [
+        [
+          -0.21000000834465027,
+          0.0,
+          -0.12999999523162842
+        ],
+        [
+          0.21000000834465027,
+          0.18000000715255737,
+          0.12999999523162842
+        ]
+      ],
+      "triangles": 412,
+      "material": {
+        "baseColorFactor": [
+          0.3199999928474426,
+          0.3199999928474426,
+          0.3199999928474426,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7799999713897705
+      },
+      "private_paths_in_json": false,
+      "reopen_audit": {
+        "bounds_y_up": [
+          [
+            -0.21000000834465027,
+            0.0,
+            -0.12999999523162842
+          ],
+          [
+            0.21000000834465027,
+            0.18000000715255737,
+            0.12999999523162842
+          ]
+        ],
+        "triangles": 412,
+        "non_manifold_edges": 0,
+        "zero_area_faces": 0,
+        "bottom_contact_area_centroid_y_up": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bottom_bbox_center_y_up": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "signed_volume_m3": 0.007894567734440439
+      },
+      "four_visual_aggregates_bounds_y_up": [
+        [
+          -0.3265000054240227,
+          0.72,
+          0.015500003099441537
+        ],
+        [
+          0.3265000054240227,
+          0.8370000046491622,
+          0.5844999969005584
+        ]
+      ]
+    },
+    "cable": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "bounds_y_up": [
+        [
+          -0.20372575521469116,
+          0.0,
+          -0.17245610058307648
+        ],
+        [
+          0.20372575521469116,
+          0.13193953037261963,
+          0.17245610058307648
+        ]
+      ],
+      "triangles": 460,
+      "material": {
+        "baseColorFactor": [
+          0.3199999928474426,
+          0.3199999928474426,
+          0.3199999928474426,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.7799999713897705
+      },
+      "private_paths_in_json": false,
+      "reopen_audit": {
+        "bounds_y_up": [
+          [
+            -0.20372575521469116,
+            0.0,
+            -0.17245610058307648
+          ],
+          [
+            0.20372575521469116,
+            0.13193953037261963,
+            0.17245610058307648
+          ]
+        ],
+        "triangles": 460,
+        "non_manifold_edges": 0,
+        "zero_area_faces": 0,
+        "bottom_contact_area_centroid_y_up": null,
+        "bottom_bbox_center_y_up": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "signed_volume_m3": 0.0017429921736196693
+      },
+      "four_visual_aggregates_bounds_y_up": [
+        [
+          -0.3224217408895492,
+          0.72,
+          -0.012096465378999707
+        ],
+        [
+          0.3224217408895492,
+          0.8057606947422027,
+          0.6120964653789998
+        ]
+      ]
+    }
+  },
+  "frozen_snapshot_sha256": "e4df027d8bb38da25311e2e58dc1b48e0007d4e0e3b58a73e84761f98477fdad",
+  "frozen_source_semantics_exact": true,
+  "portable_closure": {
+    "libraries": 0,
+    "linked_ids": 0,
+    "images": [
+      {
+        "name": "Render Result",
+        "source": "VIEWER",
+        "filepath": "",
+        "packed": false
+      },
+      {
+        "name": "Viewer Node",
+        "source": "VIEWER",
+        "filepath": "",
+        "packed": false
+      }
+    ],
+    "editable_geometry_node_modifiers": {
+      "iron_ore": [
+        {
+          "name": "Smooth by Angle",
+          "group": "Smooth by Angle",
+          "local": true
+        }
+      ],
+      "iron": [],
+      "copper_ore": [
+        {
+          "name": "Smooth by Angle",
+          "group": "Smooth by Angle",
+          "local": true
+        }
+      ],
+      "copper": [],
+      "parts": [
+        {
+          "name": "Smooth by Angle",
+          "group": "Smooth by Angle",
+          "local": true
+        }
+      ],
+      "cable": []
+    },
+    "render_output": "<RENDER_OUTPUT>/"
+  }
+}

@@ -1,0 +1,1013 @@
+{
+  "candidate": "A04a-six-grey-identifiers-carrier-r7",
+  "date": "2026-10-08",
+  "verdict": "PASS_LIMITED_STATIC_GRAY_AND_KNOWN_MAPPING",
+  "scope": "Four new near/reverse gray forms; known-mapping six-type cargo normal/low glyphs; static carrier and empty; visible near output contacts. No distant model-only recognition signoff.",
+  "visually_reviewed_original_pngs": [
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-normal-low.png",
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-normal.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-cable-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-cable-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper_ore-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper_ore-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron_ore-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron_ore-reverse.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-parts-near.png",
+    "docs/art/production/d12-resources-r7/godot-r7/single-parts-reverse.png"
+  ],
+  "capture_sha256": "206b5f59e985acc16d583745b25fdc58da10a15464680b557aa97e7a4c38b158",
+  "capture_sources_matched": 31,
+  "resource_glbs": {
+    "iron_ore": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "triangles_independently_parsed": 64,
+      "bounds_declared": [
+        [
+          -0.21850284934043884,
+          0.0,
+          -0.1991950422525406
+        ],
+        [
+          0.2739032506942749,
+          0.34047049283981323,
+          0.22117018699645996
+        ]
+      ]
+    },
+    "copper_ore": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "triangles_independently_parsed": 48,
+      "bounds_declared": [
+        [
+          -0.22499999403953552,
+          0.0,
+          -0.18980124592781067
+        ],
+        [
+          0.22499999403953552,
+          0.21984724700450897,
+          0.18980127573013306
+        ]
+      ]
+    },
+    "iron": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "triangles_independently_parsed": 188,
+      "bounds_declared": [
+        [
+          -0.2095024734735489,
+          0.0,
+          -0.1344478577375412
+        ],
+        [
+          0.2095024734735489,
+          0.18000000715255737,
+          0.1344478577375412
+        ]
+      ]
+    },
+    "copper": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "triangles_independently_parsed": 124,
+      "bounds_declared": [
+        [
+          -0.2199999988079071,
+          0.0,
+          -0.07000000029802322
+        ],
+        [
+          0.2199999988079071,
+          0.14000000059604645,
+          0.07000000029802322
+        ]
+      ]
+    },
+    "parts": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "triangles_independently_parsed": 412,
+      "bounds_declared": [
+        [
+          -0.21000000834465027,
+          0.0,
+          -0.12999999523162842
+        ],
+        [
+          0.21000000834465027,
+          0.18000000715255737,
+          0.12999999523162842
+        ]
+      ]
+    },
+    "cable": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "triangles_independently_parsed": 460,
+      "bounds_declared": [
+        [
+          -0.20372575521469116,
+          0.0,
+          -0.17245610058307648
+        ],
+        [
+          0.20372575521469116,
+          0.13193953037261963,
+          0.17245610058307648
+        ]
+      ]
+    }
+  },
+  "carrier": {
+    "revision": 1,
+    "status": "SUBMITTED",
+    "unit": "meter",
+    "up": "+Y",
+    "forward": "-Z",
+    "origin": "existing CargoSocket mount anchor; not resource bottom-center origin",
+    "source": "art/source/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.blend",
+    "source_sha256": "fe012561b6e301a10354a55f438cc43311588b51c82db86f4d3136558be9d327",
+    "generator": "art/source/units/tuoyun-cargo-carrier-d12-r1/generate_carrier.py",
+    "generator_sha256": "4c5298d8750f10ad6e797c72b81de6b3a7bda62fabad5f84cd90bf1444bc8546",
+    "glb": "art/exports/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb",
+    "sha256": "6b834914f8194bf20adabb94c2cacbfb910703fd64f23e5e8ea31d9682e3cad9",
+    "runtime_copy_by_engineering": "res://assets/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb",
+    "mount": {
+      "parent": "Socket_Cargo",
+      "local_position": [
+        0,
+        0,
+        0
+      ],
+      "local_rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1,
+      "u01_socket_translation": [
+        0,
+        0.48,
+        0.28
+      ]
+    },
+    "material_role": "frame_dark",
+    "triangles": 220,
+    "local_bounds": [
+      [
+        -0.395,
+        0,
+        -0.375
+      ],
+      [
+        0.395,
+        0.24,
+        0.415
+      ]
+    ],
+    "mounted_bounds": [
+      [
+        -0.395,
+        0.48,
+        -0.095
+      ],
+      [
+        0.395,
+        0.72,
+        0.695
+      ]
+    ],
+    "deck_top_world_y": 0.72,
+    "consumer": "show only when authoritative cargo items has a positive supported resource; empty hides attachment and goods",
+    "semantics": "static vehicle attachment, never inventory item or quantity/capacity authority",
+    "technical": "author source/GLB plus actual Godot scale1 socket mount/empty static PASS",
+    "independent_visual": "SUBMITTED r7",
+    "Main": "NOT_RUN",
+    "all_transport_animation_clearance": "NOT_RUN"
+  },
+  "read_only_replay": {
+    "capture_checker": "PASS 57 actual PNGs source/capture/ID/empty/socket/AABB; minimum gap .045807m",
+    "output_contact_checker": "PASS 12 placements, every lowest vertex on actual bed top",
+    "method": "Executed original script logic with Path.write_text intercepted to compare computed report against existing JSON; no production files written",
+    "exit_code": 0
+  },
+  "native_render_source_reopen_complete_import_attributes": "NOT_RUN by independent review; source/native checks remain submitted technical evidence",
+  "Main_multicar_dynamic_blind_PBR_performance_owner": "NOT_ASSESSED or NOT_RUN",
+  "files": {
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-delivery-sha256.json": {
+      "sha256": "03131b6309d24144d02f3ca9148c196330b54718da12ee8826b6acb0795598f0",
+      "bytes": 12619,
+      "role": "evidence"
+    },
+    "art/icons/resources-d12-r1/cable.svg": {
+      "sha256": "6bc50dcc6974e01ba390e8c7834ea323eb1548d7f9ef752e6e6af5d58fc3f4ed",
+      "bytes": 322,
+      "role": "declared_delivery"
+    },
+    "art/icons/resources-d12-r1/copper.svg": {
+      "sha256": "cc890d16598c1ba4d76d6b011c88358483fd36af425e0818c6e26b367dc3b447",
+      "bytes": 359,
+      "role": "declared_delivery"
+    },
+    "art/icons/resources-d12-r1/copper_ore.svg": {
+      "sha256": "cdc294f181ee40d1eb2fdcc1c5da0502f2aa68134ffd205399a500a7b68df344",
+      "bytes": 329,
+      "role": "declared_delivery"
+    },
+    "art/icons/resources-d12-r1/iron.svg": {
+      "sha256": "5949b410c504c40aacef91453d8a80543499359479971d2e1958f55daf4d887a",
+      "bytes": 300,
+      "role": "declared_delivery"
+    },
+    "art/icons/resources-d12-r1/iron_ore.svg": {
+      "sha256": "cd0caae18b1c8a397882ddc8165f32646823421ebc9107beaf5e940fc5a101a7",
+      "bytes": 336,
+      "role": "declared_delivery"
+    },
+    "art/icons/resources-d12-r1/mapping.json": {
+      "sha256": "0fc0109278358182d0d934b4b1c4b1c5fe03fb48d03ffa1f573e93c048fded7d",
+      "bytes": 958,
+      "role": "declared_delivery"
+    },
+    "art/icons/resources-d12-r1/parts.svg": {
+      "sha256": "9fa6e96696e04e7177163afbca124f54c69fe13a3d57948d100acb8f315c98cc",
+      "bytes": 199,
+      "role": "declared_delivery"
+    },
+    "docs/art/production/d12-resources-r7/technical/fixture-capture.log": {
+      "sha256": "429b25d088da95528ea3919530dbfbb806825fc948603cee26d519aa3e5780e0",
+      "bytes": 182,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-check-first-failure.txt": {
+      "sha256": "9162b81dd466247b069a118a30ba95a5259ca2605cff6dcf974024a5c5a857b8",
+      "bytes": 244,
+      "role": "declared_delivery"
+    },
+    "docs/art/production/d12-resources-r7/technical/fixture-check.json": {
+      "sha256": "15d20dea7e59f1d0b811bb6f7d90d27c1908da37af156b4a788e96d66b68a558",
+      "bytes": 9808,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-check.log": {
+      "sha256": "b712c4dc4eda90d736cecfbaec2722223daac78d0c99af05db3aa128b1cb144e",
+      "bytes": 99,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-failure-missing-facts.log": {
+      "sha256": "c18d1965ecdea76a909e09d1558ff2442452d7063fa01e36c2c3918223f7e75f",
+      "bytes": 189,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-import.log": {
+      "sha256": "032997f304d41c4734817f5b32d957808101c367807dfe983fc2e2a3ae6ac64c",
+      "bytes": 8620,
+      "role": "declared_delivery"
+    },
+    "docs/art/production/d12-resources-r7/technical/fixture-run-receipt.json": {
+      "sha256": "8d8483ff2b4237c71753eb52f27fa4180e1d2db91c795f3513b0e723346d5a45",
+      "bytes": 1084,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/capture.gd": {
+      "sha256": "b3e756acf42f5f448b57b68bd70ebf47c2e5abfdcec845f2d063efb0a92517ae",
+      "bytes": 13572,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/check_capture.py": {
+      "sha256": "91a50571aef0650ba3c7a09089c9218a948f11062f4af50f0e8eaba6464fb245",
+      "bytes": 10352,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/assets/units/tuoyun-r1/tuoyun-r1.glb.import": {
+      "sha256": "003b3505fd4b9bff86e76f6a6e134ac04b7a8d5af2638fbf88789309738ec8ec",
+      "bytes": 1163,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/carrier.glb.import": {
+      "sha256": "2bbca899c14e475af68e498d051cd738e83b5bda18c9d4f85b85aeea465794f2",
+      "bytes": 1135,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/processor.glb.import": {
+      "sha256": "2f2e243bfffdef61a07b060b594c917712fde31b7e1042dc0fbf74a6d6573098",
+      "bytes": 1141,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/cable.glb.import": {
+      "sha256": "d9475f613f51b98e37b992a75e462e9bac2ecd8dd2fe3261d6b968ef14b0e4e4",
+      "bytes": 1139,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/copper.glb.import": {
+      "sha256": "69445e4649db62e46166c33977707a3da1d3e9ddabeeb4a69ef9f5b2981d97cf",
+      "bytes": 1141,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/copper_ore.glb.import": {
+      "sha256": "251cdfb8939302fb9c37bfacce574806aeb0e3929e4abf70240b5caae547a6b5",
+      "bytes": 1154,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/iron.glb.import": {
+      "sha256": "59631347586c3b2369bca40fdce0d49628e45916a5d82817e63c5d258d859075",
+      "bytes": 1135,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/iron_ore.glb.import": {
+      "sha256": "14b04a57ed7f48fce7f442996a835b81b8999e148cea0921f07822f57c448473",
+      "bytes": 1147,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/parts.glb.import": {
+      "sha256": "27243b953d4098b08c9e49783f533440ee1585ee6296407aa7a38e63c7204269",
+      "bytes": 1139,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/iterations/check_capture-first.py": {
+      "sha256": "31ed39c81539943a947282af06706b5be1921f9955843673db2915e8a449912a",
+      "bytes": 10287,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/mapping-r6-original.json": {
+      "sha256": "f46b92e2bb14660637547150f6bc355c610a280201153956787bf36a3586d2a6",
+      "bytes": 634,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/prepare.py": {
+      "sha256": "30bcd341a61e345c2aa63cae3ac4a99731794e07deea47d0b5f57841ec3058bc",
+      "bytes": 4892,
+      "role": "declared_delivery"
+    },
+    "docs/art/production/d12-resources-r7/technical/resource-facts.json": {
+      "sha256": "f5ced89d2c8881d6666e4d03aa7153743e6e1233a5d346bef04d4aa534f321ad",
+      "bytes": 22006,
+      "role": "declared_delivery"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/capture.json": {
+      "sha256": "206b5f59e985acc16d583745b25fdc58da10a15464680b557aa97e7a4c38b158",
+      "bytes": 144001,
+      "role": "evidence"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-near.png": {
+      "sha256": "09c42788ce8018ba7b5321c91a33d0908e6b242df496af6b1c3126bf52d69bfc",
+      "bytes": 128103,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-normal-low.png": {
+      "sha256": "b84c5678c7814a4766076abaad53c0cc71c43f19c2bb8208deec1d05edee086a",
+      "bytes": 31575,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-normal.png": {
+      "sha256": "4310501a12f9adeba866b4be63585dc5ab72cec40ead1e6bc544d5645e53e33f",
+      "bytes": 22185,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-reverse.png": {
+      "sha256": "80ac2da3a03afd77e9d81e73d2d3c7e6cccc46d141083a482888f6d04b9b72f0",
+      "bytes": 127232,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-near.png": {
+      "sha256": "1fcb0077e51f6ccbd98215fb608dd6a4b09304e17bad280927e9d4cb6a601a6a",
+      "bytes": 123348,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-normal-low.png": {
+      "sha256": "7f9487fcf81935167627a3fedd69ef4af5a58153cfa47f6435076e886832fe41",
+      "bytes": 31452,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-normal.png": {
+      "sha256": "6e143496366ee0f7c908503ecea0a9843dee7397abb1e416d99cf39a4e54c9a8",
+      "bytes": 21918,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-reverse.png": {
+      "sha256": "d47077daee545bd4f2446cf6fcddc4789ffd703d86735de774a5b1117d648600",
+      "bytes": 123266,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-near.png": {
+      "sha256": "747776d149b976bde8318111351f7687c8b76e0357599546faed5454c4260aac",
+      "bytes": 125197,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-normal-low.png": {
+      "sha256": "858aa6195f2248134a1fbe7589997bdf0a74cf70736074cb269cf2925a0d95ce",
+      "bytes": 31602,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-normal.png": {
+      "sha256": "7a998aa91186a167228f6775feb68100c90ee09007a404111e26bb7037bc135e",
+      "bytes": 22187,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-reverse.png": {
+      "sha256": "8772a3636a7693f2788e33064094b07a8bc6eb3c2ab391d19e5e64f0a28bc6ae",
+      "bytes": 125053,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-near.png": {
+      "sha256": "94b5c383de8c804bc718d241d490b0cf69d4c5f427d7c0eb091fa67fe2676ee2",
+      "bytes": 123484,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-normal-low.png": {
+      "sha256": "0eaadf0a585cf01e9ad301f39c313cf6bb9603ad228b0995387a839e3c1cc3ab",
+      "bytes": 31200,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-normal.png": {
+      "sha256": "d8b2cb3b4d8d2c7fea056c05835390e4ade2b33a62e2d8eb41673a03e3ba3b52",
+      "bytes": 21621,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-reverse.png": {
+      "sha256": "7c8e3a8b38a582cb0e623484dc27f176125b93a40a938558be86cc6c65f3493e",
+      "bytes": 123216,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-near.png": {
+      "sha256": "423c2f0dd3cd4a8adf6d0e29316bedb05d577c00247fd484d66301b28bf41a5b",
+      "bytes": 123765,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-normal-low.png": {
+      "sha256": "fff753cb59f1e496886e5314934e19f8bb1002365a81a042ed2a0fecc827a2c3",
+      "bytes": 31362,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-normal.png": {
+      "sha256": "8045cb99f2ac289eb4e42e239200df44c9b74cb603adc5496b47aa59f28ccff6",
+      "bytes": 21813,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-reverse.png": {
+      "sha256": "a86d97bc5f36fa63fa1491811f9ec5ac28f010292388c44eef9667dba08d1650",
+      "bytes": 123407,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-near.png": {
+      "sha256": "eacff7fc7fbd2bd4900ea8bea0d12d6f5d8c91e3aee87aa1ff80cda55150a64c",
+      "bytes": 124524,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-normal-low.png": {
+      "sha256": "63ab311a3b9e6893dba066190a05ed8372dd6b4763b0a73489cca80893574cf8",
+      "bytes": 31629,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-normal.png": {
+      "sha256": "a4a85fcf8991ff722f0c6032d7cf426072e2e63704302de0cb914c9aa8306c96",
+      "bytes": 22349,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-reverse.png": {
+      "sha256": "96870b85a95d469da1a4f83e6bcdbf379c6bf6cd2a902f70bd3ff92e5bf6be0a",
+      "bytes": 121387,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-near.png": {
+      "sha256": "1eb4988fd2a5165e93a102cc29d97abf19d16ce10e21266462d559b7039b5512",
+      "bytes": 123997,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-normal-low.png": {
+      "sha256": "bafc43dd050584cfc22d18c1eecb2df395eb60a7101746967e8ba94bab25bd47",
+      "bytes": 32133,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-normal.png": {
+      "sha256": "bcd96840047cdb688ddb9241fb2abd6dcff0d1503b00be4d7fd43dee764c79ac",
+      "bytes": 22725,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-reverse.png": {
+      "sha256": "5e06fe40460785dbdfa22ee4b3fe30c971bfad8baa181e8c1c4b3eb1f25dd432",
+      "bytes": 123359,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-near.png": {
+      "sha256": "04095d493b0cf66f4fac1d748a37696ed057053d133b66a931a83e7516cc485f",
+      "bytes": 125780,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-normal-low.png": {
+      "sha256": "a3d7d5954db0391c2375549dfef06b7316490dc903b432a8550f9ae5526245ac",
+      "bytes": 31697,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-normal.png": {
+      "sha256": "310841b4883fd37a131853808ffe9affaeb8542c0f702b8edbb6a293454d613f",
+      "bytes": 22307,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-reverse.png": {
+      "sha256": "01e470a323c0e90809faa27410a269d038754a18040af5c90a14fadb20a6fdd4",
+      "bytes": 124955,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-near.png": {
+      "sha256": "b001448eb078b12e32ac4b02649a1aee1e57e93313220b3e422b6d554b5708f7",
+      "bytes": 123086,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-normal-low.png": {
+      "sha256": "d702f593bee65ec5cd1353d59e535739d8bfb9695422e9fda43efb8b6a85f7ad",
+      "bytes": 31377,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-normal.png": {
+      "sha256": "43a20ad0238cf78873032b40583bdc499588ae1bdfad9254abf93e34091c1763",
+      "bytes": 22009,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-reverse.png": {
+      "sha256": "059a651b1917a1474feec55f95aee03229fefd32bcb0eb753bbb61c5cafc1ad8",
+      "bytes": 122122,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-near.png": {
+      "sha256": "3c3c152f00e18de6badbeb9123234a94381d6b425314e592c9d32f6239a40f74",
+      "bytes": 258661,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-normal-low.png": {
+      "sha256": "121f7d369dc993a0e168101addad7be1cc63c0233206e2214b45ae86103d534a",
+      "bytes": 44242,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-normal.png": {
+      "sha256": "ec75125b6726045578799e163d8699e518522036c058f09909b8282fa1ad1706",
+      "bytes": 32655,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-near.png": {
+      "sha256": "5c3d3a3a140ccb74bc01c14f5c5d82cc8c7b5ad016c8dd16ee62a134f298c0fa",
+      "bytes": 247218,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-normal-low.png": {
+      "sha256": "f69ba9db389ed29afa89282a477191540b20893f0b4d64635fe0284406f9da22",
+      "bytes": 44284,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-normal.png": {
+      "sha256": "f89f55ab5667f86d755f6101ca13f571410d93dec392823952068860e401ec64",
+      "bytes": 32723,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-near.png": {
+      "sha256": "f8d838353bf80ebf3b89c543b0befc206fdcb5b7e82c24529a8286bab4b92ff3",
+      "bytes": 250537,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-normal-low.png": {
+      "sha256": "be84bf6a274fd75ba47d82d9a54c0ac8edf51155991b22bd7840f7ff9ed711c5",
+      "bytes": 44214,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-normal.png": {
+      "sha256": "82cc65743c2c10571a63bc1b288b28aa523c7acdb6751df1ff2bd381ed17f516",
+      "bytes": 32751,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-cable-near.png": {
+      "sha256": "74e03c60ee3fe0abba87d9a1198c13a973e4a5adf7be8931ded52bd667697fc2",
+      "bytes": 45836,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-cable-reverse.png": {
+      "sha256": "fcdb7e9bc36401c445cbad28ad1246af25651a648dc2d3acf9e1a33e98ce696c",
+      "bytes": 46154,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper-near.png": {
+      "sha256": "b6b85e580dcbc6d92b742b4113b62f021d09ee18f4d10f0b90db1b123ea15b11",
+      "bytes": 43127,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper-reverse.png": {
+      "sha256": "f66d56c5f2b59f356b8ef2db82fe0bd5782d87639f7f80c9fa89c31e210da568",
+      "bytes": 43131,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper_ore-near.png": {
+      "sha256": "9259563fe870e0586e62aacba7dc4172919dd1eb96119865d30136e3fb5cc0c9",
+      "bytes": 43279,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper_ore-reverse.png": {
+      "sha256": "92f17edbde90060b08b0903c5fcc0dcee9e038d9b4c726ae42a61568dbdf424a",
+      "bytes": 44355,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron-near.png": {
+      "sha256": "082a3f9a525eacbdd2f9ec9f516306148a7575ead67c1842061fff3ae6ed55cb",
+      "bytes": 42392,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron-reverse.png": {
+      "sha256": "21f333dbbf2c4129b985d0413fdd690d7b1db2b30b6de0a4886e0e85ca7f2bf5",
+      "bytes": 42394,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron_ore-near.png": {
+      "sha256": "25af949e3bcf4b9e1ff7c178c9196d03f497413e0ea83b4b3175e60acae150fc",
+      "bytes": 43888,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron_ore-reverse.png": {
+      "sha256": "3a16b559768f0079330804909f2afeb9ba2e794010d4eb6ef0799d4d019e4a5e",
+      "bytes": 44008,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-parts-near.png": {
+      "sha256": "79b27f39c24379b4264d8d78aa147277f933aee5e5931310ad96b134ff08cfe4",
+      "bytes": 42613,
+      "role": "original_png_visually_reviewed"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-parts-reverse.png": {
+      "sha256": "5076e4a33fde2cc8f6308510ea8622a3444ab20549ead9d96935669d16bc4510",
+      "bytes": 42626,
+      "role": "original_png_visually_reviewed"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-REPORT.md": {
+      "sha256": "bf6d20b67f1fa339f4476cb053837bae52ec3cae059312ed4c82f5d6a3b11961",
+      "bytes": 4700,
+      "role": "declared_delivery"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/delivery-sha256.json": {
+      "sha256": "18db0fc1190f8fc264ffc1a01b62823f22daab3094eaf90e5988ab1ae81590bc",
+      "bytes": 1076,
+      "role": "evidence"
+    },
+    "art/source/resources/d12-r1/r7/resources-grey-r7.blend": {
+      "sha256": "73b927f43df0c179f80bc08696531719e201f3f2bb1bbb452b69c5eb96e396ce",
+      "bytes": 112853,
+      "role": "editable_source"
+    },
+    "art/exports/resources/d12-r1/r7/copper.glb": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "bytes": 5092,
+      "role": "resource_glb"
+    },
+    "art/exports/resources/d12-r1/r7/parts.glb": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "bytes": 10180,
+      "role": "resource_glb"
+    },
+    "art/exports/resources/d12-r1/r7/cable.glb": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "bytes": 13300,
+      "role": "resource_glb"
+    },
+    "art/exports/resources/d12-r1/r7/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "resource_glb"
+    },
+    "art/exports/resources/d12-r1/r7/copper_ore.glb": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "bytes": 3324,
+      "role": "resource_glb"
+    },
+    "art/exports/resources/d12-r1/r7/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "resource_glb"
+    },
+    "art/source/resources/d12-r1/r7/build_resources.py": {
+      "sha256": "49e6f44f71039487a1aa449289188a5ea8bfb9784c471948f6a5d79c4f21f499",
+      "bytes": 8493,
+      "role": "declared_delivery"
+    },
+    "art/source/resources/d12-r1/r7/verify_resources.py": {
+      "sha256": "c9f2026886d65ed9a7ce94e5feed5b818ac7df6b25a6ff44230dcae80be7b048",
+      "bytes": 11584,
+      "role": "declared_delivery"
+    },
+    "historical-local-project/yudian-d12-resource-r7/assets/units/tuoyun-r1/preview.gd": {
+      "sha256": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+      "bytes": 6293,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/assets/units/tuoyun-r1/preview.tscn": {
+      "sha256": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+      "bytes": 350,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/assets/units/tuoyun-r1/tuoyun-r1.glb": {
+      "sha256": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+      "bytes": 399064,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/assets/units/tuoyun-r1/tuoyun-r1.glb.import": {
+      "sha256": "003b3505fd4b9bff86e76f6a6e134ac04b7a8d5af2638fbf88789309738ec8ec",
+      "bytes": 1163,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/capture.gd": {
+      "sha256": "b3e756acf42f5f448b57b68bd70ebf47c2e5abfdcec845f2d063efb0a92517ae",
+      "bytes": 13572,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/carrier.glb": {
+      "sha256": "6b834914f8194bf20adabb94c2cacbfb910703fd64f23e5e8ea31d9682e3cad9",
+      "bytes": 14924,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/carrier.glb.import": {
+      "sha256": "2bbca899c14e475af68e498d051cd738e83b5bda18c9d4f85b85aeea465794f2",
+      "bytes": 1135,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/class-icons/cable.svg": {
+      "sha256": "6bc50dcc6974e01ba390e8c7834ea323eb1548d7f9ef752e6e6af5d58fc3f4ed",
+      "bytes": 322,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/class-icons/copper.svg": {
+      "sha256": "cc890d16598c1ba4d76d6b011c88358483fd36af425e0818c6e26b367dc3b447",
+      "bytes": 359,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/class-icons/copper_ore.svg": {
+      "sha256": "cdc294f181ee40d1eb2fdcc1c5da0502f2aa68134ffd205399a500a7b68df344",
+      "bytes": 329,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/class-icons/iron.svg": {
+      "sha256": "5949b410c504c40aacef91453d8a80543499359479971d2e1958f55daf4d887a",
+      "bytes": 300,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/class-icons/iron_ore.svg": {
+      "sha256": "cd0caae18b1c8a397882ddc8165f32646823421ebc9107beaf5e940fc5a101a7",
+      "bytes": 336,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/class-icons/mapping.json": {
+      "sha256": "0fc0109278358182d0d934b4b1c4b1c5fe03fb48d03ffa1f573e93c048fded7d",
+      "bytes": 958,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/class-icons/parts.svg": {
+      "sha256": "9fa6e96696e04e7177163afbca124f54c69fe13a3d57948d100acb8f315c98cc",
+      "bytes": 199,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/manifest.json": {
+      "sha256": "e1eb09a2c0d058c84320466f5b55befc05664baa389b47e2c3abca5618f368b8",
+      "bytes": 17743,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/processor.glb": {
+      "sha256": "cf401d19b2f59d4b48df68582fb8c4da644490c30e0e3d046061f5a526c5a1be",
+      "bytes": 65288,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/processor.glb.import": {
+      "sha256": "2f2e243bfffdef61a07b060b594c917712fde31b7e1042dc0fbf74a6d6573098",
+      "bytes": 1141,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resource-facts.json": {
+      "sha256": "f5ced89d2c8881d6666e4d03aa7153743e6e1233a5d346bef04d4aa534f321ad",
+      "bytes": 22006,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/cable.glb": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "bytes": 13300,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/cable.glb.import": {
+      "sha256": "d9475f613f51b98e37b992a75e462e9bac2ecd8dd2fe3261d6b968ef14b0e4e4",
+      "bytes": 1139,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/copper.glb": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "bytes": 5092,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/copper.glb.import": {
+      "sha256": "69445e4649db62e46166c33977707a3da1d3e9ddabeeb4a69ef9f5b2981d97cf",
+      "bytes": 1141,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/copper_ore.glb": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "bytes": 3324,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/copper_ore.glb.import": {
+      "sha256": "251cdfb8939302fb9c37bfacce574806aeb0e3929e4abf70240b5caae547a6b5",
+      "bytes": 1154,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/iron.glb.import": {
+      "sha256": "59631347586c3b2369bca40fdce0d49628e45916a5d82817e63c5d258d859075",
+      "bytes": 1135,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/iron_ore.glb.import": {
+      "sha256": "14b04a57ed7f48fce7f442996a835b81b8999e148cea0921f07822f57c448473",
+      "bytes": 1147,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/parts.glb": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "bytes": 10180,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/resources/parts.glb.import": {
+      "sha256": "27243b953d4098b08c9e49783f533440ee1585ee6296407aa7a38e63c7204269",
+      "bytes": 1139,
+      "role": "actual_capture_source"
+    },
+    "historical-local-project/yudian-d12-resource-r7/scenes/art_preview_r1/preview_view_r1.gd": {
+      "sha256": "1b485c1bb539c3dd353c27dd24cd0fbab9b59001038282e137c5487348131282",
+      "bytes": 8536,
+      "role": "actual_capture_source"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/manifest-r7-candidate.json": {
+      "sha256": "e31871a72d7376db6320a8ffb2399fac36784cb37854b6f0b7771a1e5dc0764f",
+      "bytes": 5791,
+      "role": "evidence"
+    },
+    "art/manifests/tuoyun-cargo-carrier-d12-r1.json": {
+      "sha256": "8e15bcbe6b65442bd619b01eed924a9d9b24d36c131b098867fef3cc86f0af58",
+      "bytes": 1834,
+      "role": "evidence"
+    },
+    "art/source/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.blend": {
+      "sha256": "fe012561b6e301a10354a55f438cc43311588b51c82db86f4d3136558be9d327",
+      "bytes": 90155,
+      "role": "evidence"
+    },
+    "art/source/units/tuoyun-cargo-carrier-d12-r1/generate_carrier.py": {
+      "sha256": "4c5298d8750f10ad6e797c72b81de6b3a7bda62fabad5f84cd90bf1444bc8546",
+      "bytes": 9962,
+      "role": "evidence"
+    },
+    "art/exports/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb": {
+      "sha256": "6b834914f8194bf20adabb94c2cacbfb910703fd64f23e5e8ea31d9682e3cad9",
+      "bytes": 14924,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/REVIEW-INPUT-r7.md": {
+      "sha256": "7e025553411b8d66be660d986ee8c3a2a77135280cfb0d4bac6cc26d6170b051",
+      "bytes": 3267,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/REPORT.md": {
+      "sha256": "16ea951633535ab10ef6bdedb598028d41781bc162d2b355c3e7f3981565c309",
+      "bytes": 5956,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/geometry-diagnostic.json": {
+      "sha256": "785d36cf2456471359a3205ccf423b1f88d244e046efb38a132eeee1bff54fe8",
+      "bytes": 923,
+      "role": "evidence"
+    },
+    "docs/art/production/d12-resources-r7/technical/root-readback-r7-source.json": {
+      "sha256": "da7c7bb69e869cb74f5a2baf17a01073066280cfcbecc3df4b0d12767a2e1c42",
+      "bytes": 8315,
+      "role": "evidence"
+    },
+    "docs/art/production/d12-resources-r7/technical/root-readback-r7-glb.json": {
+      "sha256": "13f55caeedd6361f4ad96396300f6e0228ab33a299c0819f0dc86460886e5e35",
+      "bytes": 8312,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/root_reopen_r7.py": {
+      "sha256": "cc91787ae65e6b314ee91dffa3ecffc83fa523aa8dfdf78d7019ed58e4826670",
+      "bytes": 2011,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/check_output_contacts_r7.py": {
+      "sha256": "4e208c4e4f000d07fb30754bf563f98cbd4c08467112fafcaa866044e412fab8",
+      "bytes": 2817,
+      "role": "evidence"
+    },
+    "docs/art/production/d12-resources-r7/technical/output-contact-check-r7.json": {
+      "sha256": "d98729ee040ce0e9c0f38f42916c2b7a4c0ac41da77a76160f63c2e8b354aa66",
+      "bytes": 2427,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/u01-carrier/author/AUTHOR-REPORT.md": {
+      "sha256": "ba74cbf03a8d6d0438ff0f0aa59b17cd8dcd2da2c49fa52388c91d87e384f3f9",
+      "bytes": 3017,
+      "role": "evidence"
+    },
+    "docs/art/production/d12-resources-r7/technical/carrier-check.json": {
+      "sha256": "be3cc96747e33b7515435035966f6997ed5e9afea580ee5d25469b3a4f018d94",
+      "bytes": 3652,
+      "role": "evidence"
+    },
+    "docs/art/production/d12-resources-r7/technical/readback-identity-check.json": {
+      "sha256": "29b4e1edddd092de9f951f18f61b5e9f846d826958d54ea4cfc02bf87d2f0350",
+      "bytes": 203,
+      "role": "evidence"
+    },
+    "art/source/units/tuoyun-r1/generate_tuoyun_r1.py": {
+      "sha256": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+      "bytes": 48948,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/f02/author/before-rev4/source/generate_processor_r1.py": {
+      "sha256": "1f4f3343497b51b99cd25c077a12afe249eef2a9f8d08d0204036c43189d1600",
+      "bytes": 34049,
+      "role": "evidence"
+    },
+    "art/exports/resources/d12-r1/r5/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/identifier-r6-frozen/iron_ore.svg": {
+      "sha256": "cd0caae18b1c8a397882ddc8165f32646823421ebc9107beaf5e940fc5a101a7",
+      "bytes": 336,
+      "role": "evidence"
+    },
+    "art/exports/resources/d12-r1/r5/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "evidence"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/identifier-r6-frozen/iron.svg": {
+      "sha256": "5949b410c504c40aacef91453d8a80543499359479971d2e1958f55daf4d887a",
+      "bytes": 300,
+      "role": "evidence"
+    },
+    "historical-local-project/yudian-d12-resource-r7/project.godot": {
+      "sha256": "e1f83769538cc265871589e001468b5ce0b9a4f55dfa46925e4986eafca386ad",
+      "bytes": 239,
+      "role": "evidence"
+    }
+  },
+  "frozen_F02_glb_sha256": "cf401d19b2f59d4b48df68582fb8c4da644490c30e0e3d046061f5a526c5a1be",
+  "old_r5_glb_and_r6_two_SVG_byte_exact": true,
+  "report": {
+    "path": "docs/art/production/d12-resources-r7/independent/REVIEW.md",
+    "sha256": "4a38bbbe2239156789a68a5493efe93f8daaec57dc675d35fec5f45ea68ee726"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "revision": 1,
+  "status": "PASS_LIMITED_STATIC",
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "origin": "existing CargoSocket mount anchor; not resource bottom-center origin",
+  "source": "art/source/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.blend",
+  "source_sha256": "fe012561b6e301a10354a55f438cc43311588b51c82db86f4d3136558be9d327",
+  "generator": "art/source/units/tuoyun-cargo-carrier-d12-r1/generate_carrier.py",
+  "generator_sha256": "4c5298d8750f10ad6e797c72b81de6b3a7bda62fabad5f84cd90bf1444bc8546",
+  "glb": "art/exports/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb",
+  "sha256": "6b834914f8194bf20adabb94c2cacbfb910703fd64f23e5e8ea31d9682e3cad9",
+  "runtime_copy_by_engineering": "res://assets/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb",
+  "mount": {
+    "parent": "Socket_Cargo",
+    "local_position": [
+      0,
+      0,
+      0
+    ],
+    "local_rotation_degrees": [
+      0,
+      0,
+      0
+    ],
+    "scale": 1,
+    "u01_socket_translation": [
+      0,
+      0.48,
+      0.28
+    ]
+  },
+  "material_role": "frame_dark",
+  "triangles": 220,
+  "local_bounds": [
+    [
+      -0.395,
+      0,
+      -0.375
+    ],
+    [
+      0.395,
+      0.24,
+      0.415
+    ]
+  ],
+  "mounted_bounds": [
+    [
+      -0.395,
+      0.48,
+      -0.095
+    ],
+    [
+      0.395,
+      0.72,
+      0.695
+    ]
+  ],
+  "deck_top_world_y": 0.72,
+  "consumer": "show only when authoritative cargo items has a positive supported resource; empty hides attachment and goods",
+  "semantics": "static vehicle attachment, never inventory item or quantity/capacity authority",
+  "technical": "author source/GLB plus actual Godot scale1 socket mount/empty static PASS",
+  "independent_visual": "r7 PASS supplied visible static support and empty hiding; no full feet visibility or dynamic clearance signature",
+  "Main": "NOT_RUN",
+  "all_transport_animation_clearance": "NOT_RUN",
+  "independent_report": "docs/art/production/d12-resources-r7/independent/REVIEW.md"
+}

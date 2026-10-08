@@ -1,0 +1,25 @@
+{
+  "scope": "observed native tool execution, mock fixture only",
+  "runs": [
+    {
+      "command": "tools/run_godot.sh --headless --editor --import --path historical-local-project/yudian-d12-resource-r7 --quit",
+      "exit_code": 0,
+      "log": "fixture-import.log",
+      "log_sha256": "032997f304d41c4734817f5b32d957808101c367807dfe983fc2e2a3ae6ac64c"
+    },
+    {
+      "command": "tools/run_godot.sh --path historical-local-project/yudian-d12-resource-r7 --script res://capture.gd --resolution 1920x1200 --quit-after 1500 -- <tree>/docs/art/production/d12-r1/resources/godot-r7",
+      "exit_code": 0,
+      "log": "fixture-capture.log",
+      "log_sha256": "429b25d088da95528ea3919530dbfbb806825fc948603cee26d519aa3e5780e0"
+    },
+    {
+      "command": "same native capture command with resource-facts.json temporarily renamed; failure-missing-facts target",
+      "exit_code": 1,
+      "log": "fixture-failure-missing-facts.log",
+      "success_marker": false,
+      "capture_json_written": false,
+      "log_sha256": "c18d1965ecdea76a909e09d1558ff2442452d7063fa01e36c2c3918223f7e75f"
+    }
+  ]
+}
