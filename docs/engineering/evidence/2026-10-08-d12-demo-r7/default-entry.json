@@ -1,0 +1,16 @@
+{
+  "old": "<WORKSPACE>/试玩包/D1.1 2026-10-07 r5/Yudian.app",
+  "new": "<WORKSPACE>/试玩包/D1.2 2026-10-08 r7/Yudian.app",
+  "backup": "<WORKSPACE>/余电-D1.1-r5-2026-10-07.app",
+  "source": "99569dbe9969d455e67a4661434f269655419fa1",
+  "pck": "fb6dea6e529ca49bf7725724920853667eae8657ff957cda9958380986a100f7",
+  "normal_launch_verified": true,
+  "normal_process_path": "<WORKSPACE>/试玩包/D1.2 2026-10-08 r7/Yudian.app/Contents/MacOS/Yudian",
+  "normal_entry": "New Game / Continue disabled (no formal D12 slot) / Quit; actual1920x1200",
+  "normal_exit": "Quit button observed, PID28955 no longer present; no terminal exit code captured",
+  "original_saves_unchanged": {
+    "d11-player-v2.json": true,
+    "d1-player-v1.json": true
+  },
+  "formal_d12_slot_absent": true
+}

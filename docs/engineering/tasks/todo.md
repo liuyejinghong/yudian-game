@@ -1,6 +1,6 @@
 # 产研 TODO
 
-更新：2026-10-08；主控Codex。历史PR33/34的Main地形与固定整平接受保留；本批以main259a8bf冻结D1.0，普通镜头/选择/真实整平/低保真与最小磁盘保存已在新默认包接通。D1.1自举建设现从main718905d进入隔离实施；导航/账本/建设/保障与schema2已实现并独立复验；975916d修复包九进程、同一真实存档的鼠标保存/重开/继续和正常入口通过；根应用已更新为D1.1。当前默认r5已完成镜头鼠标/按钮/滚轮入口复验；物理触控板与持续按键手感未签。D1.2已授权隔离实施，真实采矿/四配方/缺口目标/补维修耗材与schema3已接入；r3原生25进程/恢复/兼容通过，GUI因Mac锁屏待解锁，工程REVIEW，默认仍r5。本地候选尚未提供，真实模型NOT_RUN。稳定性能继续未完成。
+更新：2026-10-08；主控Codex。D1.0／D1.1与镜头鼠标限定接受保留。D1.2有限采矿、四配方、真实运输、仓储取货、保障与schema3恢复已接通，E13薄入口／HUD／保存退出已在r7实窗收口；四工程子片限定ACCEPTED，默认入口已更新。r3生产25进程证据独立，r7九进程与1920／1280真实GUI通过；原两档字节不变。完整父模块、本地模型／真人／自然平衡／G1／联合性能继续未完成。
 
 按[联合里程碑](../../roadmap/milestones.md)细化[九模块与D1—D3](../module-roadmap.md)。PR38/39/40是此前文档/TODO/编排整理；随后所有者明确批准D1.0实施和新美术项目会话，本轮已运行、重新导出并更新本机应用。实际证据及边界见[D1.0复验](../reports/2026-10-07-d1-player-verification.md)。
 
@@ -9,10 +9,10 @@
 | ID | 优先级 | 状态 | 依赖/解除条件 | 拟执行槽 | 交付与接受条件 | 来源/证据 |
 |---|---|---|---|---|---|---|
 | CAMERA-01 | P0 | ACCEPTED | r5实际鼠标按钮/滚动、暂停/边界复位、保存关窗重开后镜头通过；正常入口已切r5，原档不变；仅接受鼠标入口，触控板/真人按住键盘手感未签 | GLM UI；Codex复现/集成/实际输入验收 | 缩放/旋转/平移可见，新档/暂停/读档后可用；不误下工程命令，操作可发现；原设备根因不因合成手势通过而结论化 | [返修票](CAMERA-01.md) / [复验](../reports/2026-10-07-camera-verification.md) / GAME-UX / DT-E01 |
-| C01-D1.2 | P0 | REVIEW | 基线51c9b632；architect前审/关键状态reviewer已落实修正 | Codex | 有限安全首套、矿量/地形同次提交、版本配方账、有限目标与schema3、六资源/货舱接口 | [执行合同](../contracts/d12-firstplay-r1.md) |
-| E10-E11-D1.2 | P0 | REVIEW | r3 full实采/实运/四配方/仓储取货与第二阵列→新充电桩通过；实际GUI功能LIMITED PASS；净缺口/HUD返修 | Codex权威；GLM纯缺口 | 真实净缺口、无kit配方、取消/投影失败/阻塞不重发，至少仓储/供电不同后果 | [执行合同](../contracts/d12-firstplay-r1.md) |
-| E12-E13-D1.2 | P0 | REVIEW | r3六边界13进程＋D11九进程＋三兼容/保护通过；UI源码78项；实际GUI功能LIMITED PASS；净缺口/HUD返修 | Codex恢复；GLM UI | 新槽保旧档、经营状态/等待原因与授权、坏引用拒绝，不代签真人 | [执行合同](../contracts/d12-firstplay-r1.md) |
-| C02-D1.2 | P0 | IN_PROGRESS | r3固定source/PCK原生通过，U01 PR50源/消费同sha；实际窗口、默认切换、合格PR集成待解锁 | Codex | 固定source/hash导出、保存关闭重开继续、合格后切默认和PR精确集成 | [执行合同](../contracts/d12-firstplay-r1.md) |
+| C01-D1.2 | P0 | ACCEPTED | 基线51c9b632；architect前审/关键状态reviewer已落实修正 | Codex | 有限安全首套、矿量/地形同次提交、版本配方账、有限目标与schema3、六资源/货舱接口 | [执行合同](../contracts/d12-firstplay-r1.md) |
+| E10-E11-D1.2 | P0 | ACCEPTED | r3 full实采/实运/四配方/仓储取货与第二阵列→新充电桩通过；r3功能证据保留；r7缺口/HUD/入口实际窗口通过 | Codex权威；GLM纯缺口 | 真实净缺口、无kit配方、取消/投影失败/阻塞不重发，至少仓储/供电不同后果 | [执行合同](../contracts/d12-firstplay-r1.md) |
+| E12-E13-D1.2 | P0 | ACCEPTED | r3六边界13进程＋D11九进程＋三兼容/保护通过；r3 UI源码78项/r7 UI127项；r3功能证据保留；r7九进程/缺口/HUD/入口实际窗口通过 | Codex恢复；GLM UI | 新槽保旧档、经营状态/等待原因与授权、坏引用拒绝，不代签真人 | [执行合同](../contracts/d12-firstplay-r1.md) |
+| C02-D1.2 | P0 | ACCEPTED | r3固定source/PCK原生通过，U01 PR50源/消费同sha；r7九进程/两尺寸真实窗口通过；默认r7已更新，精确集成回执见PR52/Issue17 | Codex | 固定source/hash导出、保存关闭重开继续、合格后切默认和PR精确集成 | [执行合同](../contracts/d12-firstplay-r1.md) |
 | C01-D1.1 | P0 | ACCEPTED | 975916d规则与恢复独立审查；原生与最终包真实窗口通过 | Codex | 冻结有限自举账、设施实例、路径/共享预约、分离健康、schema2；首套投入安全证明，数值为可调探针 | [执行合同](../contracts/d11-bootstrap-r1.md) |
 | C02-D1.1 | P0 | ACCEPTED | r3同包九进程/签名与真实鼠标保存/重开/继续通过；默认入口已更新，仅签工程子片 | Codex | 从仅着陆器实建首套保障/加工，真实运输/两轮工作保障/保存重开；未测项明确，不以子件通过结项 | [本批证据](../reports/2026-10-07-d11-bootstrap-verification.md) |
 | E05-D1.1 | P1 | ACCEPTED | 14项账本、真实运输守恒与同包中断恢复通过；C02工程收口 | Codex账本 | 离散库存/载荷/现场/消耗守恒，预约不扣料，自己取消，坏档拒绝；当批保存 | [执行合同](../contracts/d11-bootstrap-r1.md) |
@@ -107,9 +107,8 @@ APP-START已合并[PR35](https://github.com/liuyejinghong/yudian-game/pull/35)�
 
 2026-10-07 D1.1工程、同包原生与实际窗口复验已完成；六工程子片限定ACCEPTED，根入口已切到975916d修复包。下一批D1.2缺料生产与有后果的发展选择；详细限定与失败修复见[D1.1复验](../reports/2026-10-07-d11-bootstrap-verification.md)。不扩签全部模块、自然平衡或联合视觉。
 
-2026-10-08 D1.2实现与r3原生25进程已通过，工程REVIEW：真实GUI功能LIMITED PASS，净缺口/HUD返修；默认仍D1.1 r5、原两档字节不变。D12-DEMO-UX/E13整合新包验收后切默认与精确PR集成。[D1.2复验与留项](../reports/2026-10-08-d12-production-verification.md)。
+2026-10-08 D1.2/E13限定ACCEPTED：r3生产25进程保留，r7九同包进程及1920／1280实际GUI闭环通过，默认r7及r5回退已核，原档字节不变。[复验与留项](../reports/2026-10-08-d12-production-verification.md) / [PR52](https://github.com/liuyejinghong/yudian-game/pull/52)。
 
+## D12-DEMO-UX / E13 普通试玩闭环（2026-10-08 限定ACCEPTED）
 
-## D12-DEMO-UX / E13 普通试玩闭环（2026-10-08 已领取）
-
-Codex负责Main权威/保存成功契约与最终GUI，UI消费者限定现有Godot HUD；architect已预审，步骤与证明见 [PLAN](../../../PLAN.md)。r3功能GUI已验；整合薄入口/HUD修正固定新包验收后集成PR52。交付薄入口（新游戏/继续/保存退出）、中文目标/下一步、库存净缺口/电力保障和两方向对照。保存失败不退出，加载物理就绪才恢复；普通1x实测等待，不以8x模拟签节奏。D2扩展/模型/高保真不作为本票依赖。
+Codex负责Main权威／保存契约／包与真实GUI，GLM通过Bridge原生Flash只写PlayerUI消费者；保存关键接缝reviewer与最终architect已审。r7薄入口、中文当前动作／下一步、真实净缺口／在途／已投入、库存功率与选中／未选机器人保障可用，两方向成本／后果在原折叠区可查。保存失败不退出，加载物理就绪才恢复；普通1x首建与阶段档辅助后段已实测，不以8x或源码UI代实际尺寸。默认r7正式入口已核、r5及旧档保留；精确合并回执以PR52／Issue17为准。自然平衡／盲玩／模型／D2／联合性能／发行未签。

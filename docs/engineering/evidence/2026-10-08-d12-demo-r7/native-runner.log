@@ -1,0 +1,10 @@
+PASS: prepare
+PASS: resume
+PASS: recipe
+PASS: cargo
+PASS: completed
+PASS: rollback
+PASS: ore
+PASS: output
+PASS: retry
+DEMO_WORLD_TESTS PASS processes=9
