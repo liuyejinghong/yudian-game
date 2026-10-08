@@ -1,0 +1,1076 @@
+{
+  "candidate": "A02b-F02-rev5-sample",
+  "date": "2026-10-08",
+  "verdict": "PASS_LOCAL_SAMPLE_ONLY",
+  "scope": "Seven supplied static yaw90 work frames and visible close joints; regressions and continuous playback not assessed",
+  "files": {
+    "art/source/facilities/processor-d12-rev5-sample/generate_processor_rev5.py": {
+      "role": "capture_bound_source",
+      "raw_sha256": "e33f8a0da7da47151c4a72bf8811c1cd19b5223dae84ade56f6a9932f7c6738d",
+      "raw_bytes": 36677
+    },
+    "art/source/facilities/processor-d12-rev5-sample/geometry-facts.json": {
+      "role": "delivered_candidate",
+      "raw_sha256": "7b08da3b67a6f37f9535de0744fcb01c1a0e7cd94a3271efbcf39ccc4e20e1ee",
+      "raw_bytes": 9466
+    },
+    "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.bin": {
+      "role": "capture_bound_source",
+      "raw_sha256": "08122a6745d65ae88766b2c870aa85570e38d1262b90674729d270f6db5669be",
+      "raw_bytes": 133752
+    },
+    "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.blend": {
+      "role": "capture_bound_source",
+      "raw_sha256": "e4c1883a4c2e2f47af010c58f1ac0d97928d9a40893e268762fbdb24b2c87f50",
+      "raw_bytes": 124530
+    },
+    "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.glb": {
+      "role": "delivered_candidate",
+      "raw_sha256": "b439ab57f4c23fc9868fcb8c0d313ebbdb2956942f1ff3eac7f74080a5bd51e2",
+      "raw_bytes": 160696
+    },
+    "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.gltf": {
+      "role": "capture_bound_source",
+      "raw_sha256": "6a1c97d2ffe63090f6cfc2f6f6ba12f9a376bcae74c2a85fdff0d528000d6f32",
+      "raw_bytes": 26953
+    },
+    "docs/art/production/d12-f02-rev5/author/native-readback-r1.log": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "4c71d83c0c8abfc35526a43bcb50890ddc829fcee2d828a14a305e8c9a6ead8b",
+      "raw_bytes": 2355,
+      "public_sha256": "f5351ef6a066b1b4924547f2bf7411cadc8dac74c814bb254bf7c66525812560",
+      "public_bytes": 2313
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/readback_native.py": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "5cd5016e6f9c77e1c680d352517767258306ba8cd01886b4ea142507fa5187cc",
+      "raw_bytes": 3570
+    },
+    "docs/art/production/d12-f02-rev5/author/candidate-check.json": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "422e5107b5b7983fc246a84b594497bc28b91bd842f8ecfba0e6b1a8940f03e9",
+      "raw_bytes": 40096,
+      "public_sha256": "422e5107b5b7983fc246a84b594497bc28b91bd842f8ecfba0e6b1a8940f03e9",
+      "public_bytes": 40096
+    },
+    "docs/art/production/d12-f02-rev5/author/glb-parts-check.json": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "20a8e129b5a948825d61d8e568641406036aa3f276fab38e361d1126fe6ad555",
+      "raw_bytes": 52106,
+      "public_sha256": "20a8e129b5a948825d61d8e568641406036aa3f276fab38e361d1126fe6ad555",
+      "public_bytes": 52106
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/check_glb_parts.py": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "e4c52b6763c8aa76d21333a48627adf8ec8471f9093458802f26f0867b11cf62",
+      "raw_bytes": 3387
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/PLAN.md": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "6ecbdc43ebf7868585185a525f401612dcea80ae1ad184163be87f98a33f38bd",
+      "raw_bytes": 1539
+    },
+    "docs/art/production/d12-f02-rev5/author/delivery-hashes.json": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "6f4bfc4c42530c520862e42f414cabe1db0f986f69f7d969f546e17e830b6a31",
+      "raw_bytes": 611,
+      "public_sha256": "6f4bfc4c42530c520862e42f414cabe1db0f986f69f7d969f546e17e830b6a31",
+      "public_bytes": 611
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/AUTHOR-REPORT.md": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "db79f97b82a8c377aa717ba9377ddb6970ab2eaa1e1acd0ca57f74eacf615fe7",
+      "raw_bytes": 3842
+    },
+    "docs/art/production/d12-f02-rev5/author/native-check.json": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "05b95651a89362ed090339a67cdd99bf5e30b168e9ba6d5e62ea5a5a46453acf",
+      "raw_bytes": 1500,
+      "public_sha256": "05b95651a89362ed090339a67cdd99bf5e30b168e9ba6d5e62ea5a5a46453acf",
+      "public_bytes": 1500
+    },
+    "docs/art/production/d12-f02-rev5/author/build-r1.log": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "bdc9d2381b8a0d24c63b1024a1524919aa174631f4caefee49f1e319adec66a4",
+      "raw_bytes": 2677,
+      "public_sha256": "bdc9d2381b8a0d24c63b1024a1524919aa174631f4caefee49f1e319adec66a4",
+      "public_bytes": 2677
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/build_native.py": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "4d2edc9abf25bf8b154622099dd1405a6a298adfe785f3d7b4fa743a7d84a226",
+      "raw_bytes": 6357
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/before-rev4/processor-r1.blend": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "1ccd37cefc6f939a9bf2a08458408b9064e49b7fbb24fb37daf466ae6b713fc9",
+      "raw_bytes": 120123
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/before-rev4/sha256.json": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "b02001aec05f7b66170370226b924649a74ddbea972548bdd072ab3d7311344c",
+      "raw_bytes": 637
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/before-rev4/processor-r1.bin": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "afa6dc3add2b51fd4cc735f4663b58fb8bcbfbbf574b5f0b15b6ddfac55213c4",
+      "raw_bytes": 80664
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/before-rev4/generate_processor_r1.py": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "89f4cc2aa492b37831d3c1d1f2400db128e98ab0cd56abdb8653c27965fc0948",
+      "raw_bytes": 34627
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/before-rev4/A02b-F02-local-rev4-REVIEW.md.raw": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "a5254f9baa9617c98e1dce0b65f34c97bd72b9ca82c459d664a4a012cdbfb2b9",
+      "raw_bytes": 8166
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/before-rev4/geometry-facts.json": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "ad7113d02e4108cfecb1e641a4cf27330749d7ca0bf84cea9adf80902c58fb7f",
+      "raw_bytes": 9503
+    },
+    "docs/art/production/d12-r1/f02/author/rev5/before-rev4/processor-r1.gltf": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "b835c228809787665264a65beac395db2163774538ea3299abc0c5fe23307842",
+      "raw_bytes": 26828
+    },
+    "docs/art/production/d12-f02-rev5/before-rev4/processor-r1.glb": {
+      "role": "author_evidence_or_rev4_backup",
+      "raw_sha256": "1fdb11e64ad3c8641e9d67066e140587b8c5e37c2a4597ab4e7097d5c2ab753e",
+      "raw_bytes": 107496,
+      "public_sha256": "1fdb11e64ad3c8641e9d67066e140587b8c5e37c2a4597ab4e7097d5c2ab753e",
+      "public_bytes": 107496
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/capture_hashes.json": {
+      "role": "evidence",
+      "raw_sha256": "e490828cc9b27ce68476343ca3ee409b47407a03af654f056ca7f521ab1ab106",
+      "raw_bytes": 419,
+      "public_sha256": "d1c844dae4cc8847cfafa70c41d97b95af8301940dc6a8841e823f423010b39c",
+      "public_bytes": 838
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.json": {
+      "role": "capture_json",
+      "raw_sha256": "4383421b823ed2d961df673782de59c804a7c88cec59800c5144f3560fbaaef6",
+      "raw_bytes": 7798,
+      "public_sha256": "57f728717b467c6edcfd42ea6a64b659a5ebef86cb0a054af3433065f32ff6ef",
+      "public_bytes": 7801
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.png": {
+      "role": "visually_reviewed_png",
+      "raw_sha256": "6ac30ac1f92b6df637045266b5d00508e78aa0cf184835bcd018046ddaa6da80",
+      "raw_bytes": 265803,
+      "public_sha256": "6ac30ac1f92b6df637045266b5d00508e78aa0cf184835bcd018046ddaa6da80",
+      "public_bytes": 265803
+    },
+    "capture-fixture/yudian-d12-f02-rev5/assets/facilities/processor-r1/processor-r1.glb": {
+      "role": "actual_tmp_glb",
+      "raw_sha256": "b439ab57f4c23fc9868fcb8c0d313ebbdb2956942f1ff3eac7f74080a5bd51e2",
+      "raw_bytes": 160696
+    },
+    "capture-fixture/yudian-d12-f02-rev5/manifest.json": {
+      "role": "actual_tmp_manifest",
+      "raw_sha256": "c2267090c5c9412ab20cbc397f273136dc99b59993be880eefe43e17e5bd7a30",
+      "raw_bytes": 9832
+    },
+    "capture-fixture/yudian-d12-f02-rev5/assets/materials/art-r1/accent_warm.tres": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "fe01e258db57c387c7dbba6aa9b1febe67a8b24c6fbc479d1fc71a3824faa290",
+      "raw_bytes": 146
+    },
+    "capture-fixture/yudian-d12-f02-rev5/assets/materials/art-r1/body_light.tres": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "c42d893024832f054751605a3cbb672222c022a83825cfa8fb45a9d19af8ffa1",
+      "raw_bytes": 147
+    },
+    "capture-fixture/yudian-d12-f02-rev5/assets/materials/art-r1/frame_dark.tres": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "3d98442ab026c3ebaf73b98e397428e97c3185012a16bf1ace5917ddf6ad6936",
+      "raw_bytes": 147
+    },
+    "capture-fixture/yudian-d12-f02-rev5/assets/materials/art-r1/rubber.tres": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "82c0f80a962402f8c204dbb73680062b1e2fcf80389895b3cce8bf243ffe246a",
+      "raw_bytes": 146
+    },
+    "capture-fixture/yudian-d12-f02-rev5/assets/materials/art-r1/soil_mars.tres": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "5f8aa3e483006e74e69cbda1385c2392c2f4f71f73b4129f957f2e15adf8a4f6",
+      "raw_bytes": 147
+    },
+    "capture-fixture/yudian-d12-f02-rev5/assets/materials/art-r1/solar_face.tres": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "1b1be352ed4d6694b2883a4a6392a60b15a8c31dcc386517dd7d94f52571c209",
+      "raw_bytes": 146
+    },
+    "capture-fixture/yudian-d12-f02-rev5/scenes/art_preview_r1/PreviewR1.tscn": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "04419f702b26595f0d34b72ab0231ca61cc55eeb1f166a20ef501848815b2fb5",
+      "raw_bytes": 194
+    },
+    "capture-fixture/yudian-d12-f02-rev5/scenes/art_preview_r1/preview_capture_r1.gd": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "ea5076694c5cc4eab19a9ad7bc516a5a472338bba352d71f772920a5ca19c74c",
+      "raw_bytes": 8819
+    },
+    "capture-fixture/yudian-d12-f02-rev5/scenes/art_preview_r1/preview_overlay_r1.gd": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "35843e958a11ccf7c7074a5087d7a6243396137cc319511b3c472457f80c7e38",
+      "raw_bytes": 5268
+    },
+    "capture-fixture/yudian-d12-f02-rev5/scenes/art_preview_r1/preview_panel_r1.gd": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "f17b8575ec0a27a95160d2d606c0077b30b22d73350ec0d2f081e7af680059e2",
+      "raw_bytes": 7890
+    },
+    "capture-fixture/yudian-d12-f02-rev5/scenes/art_preview_r1/preview_r1.gd": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "41eea168533f5168050e3de1d6ecb099daafc396815a177a3f2e6e268d40eb36",
+      "raw_bytes": 87257
+    },
+    "capture-fixture/yudian-d12-f02-rev5/scenes/art_preview_r1/preview_view_r1.gd": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "ab10e3a0679e9542473c7f01adbf50fb39a012be11ee49ae748c83db6282b9b1",
+      "raw_bytes": 8531
+    },
+    "capture-fixture/yudian-d12-f02-rev5/scenes/art_preview_r1/sample_wrapper.gd": {
+      "role": "actual_tmp_capture_source_or_material",
+      "raw_sha256": "9eff00d89f8157a5b55e9236354b14b9f083d0374d2badac8e0dbadedf3c8c4d",
+      "raw_bytes": 7218
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/capture_hashes.json": {
+      "role": "evidence",
+      "raw_sha256": "5d0cbb045813d929bf2f0f0b4085c82a2f4e8e301688d8b4f26acb66a4860b7f",
+      "raw_bytes": 418,
+      "public_sha256": "0ecddc9c05f76b355744bcbb6190f7aaf19b77ec27a080b6e2a3f7a613b99cc6",
+      "public_bytes": 836
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.json": {
+      "role": "capture_json",
+      "raw_sha256": "25b7ca22cdc8750181a862bd0be2dfafa96ede099b5556adb411fe4d3dbaf7ee",
+      "raw_bytes": 7825,
+      "public_sha256": "03a6b96f88abcb4cb84d6347ae9d3f30f2385829f938d44d3866a324dd4d65e0",
+      "public_bytes": 7828
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.png": {
+      "role": "visually_reviewed_png",
+      "raw_sha256": "4cbbe96673081997633ccc5fc6d4ed15692660c293b29b81d80ec94ab51a5fba",
+      "raw_bytes": 32076,
+      "public_sha256": "4cbbe96673081997633ccc5fc6d4ed15692660c293b29b81d80ec94ab51a5fba",
+      "public_bytes": 32076
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/capture_hashes.json": {
+      "role": "evidence",
+      "raw_sha256": "a34b1ebb2e331450791794482523e32dfe1333780fe3d2427950ac93f89d1859",
+      "raw_bytes": 418,
+      "public_sha256": "7f8bf27c21b37698b5ae927c02c030b526d2ba31bc8eb1fed81509ab5087b59b",
+      "public_bytes": 836
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.json": {
+      "role": "capture_json",
+      "raw_sha256": "a335dc014183d9b120ab195a99777e6f883019a4c1fd45a75b464f772c87b5b5",
+      "raw_bytes": 7832,
+      "public_sha256": "c1c18fe04ed2a780a0240f4bd90186875dc68304670a77a14af1130f6e36bae1",
+      "public_bytes": 7835
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.png": {
+      "role": "visually_reviewed_png",
+      "raw_sha256": "e6f7d19c9de04b5a78a110dfbaa1d972677a01542869851382499e06114a1dfe",
+      "raw_bytes": 45512,
+      "public_sha256": "e6f7d19c9de04b5a78a110dfbaa1d972677a01542869851382499e06114a1dfe",
+      "public_bytes": 45512
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/capture_hashes.json": {
+      "role": "evidence",
+      "raw_sha256": "ea61f59b27b780c668aaa9158ea0048d2011a282ffcda5d170ff05bba9285d6b",
+      "raw_bytes": 418,
+      "public_sha256": "5b6bbc1c7053976cab9deb162e63eda3de1be1107be58b46e13ae766028894be",
+      "public_bytes": 836
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.json": {
+      "role": "capture_json",
+      "raw_sha256": "e21f53a7ed34490821fba8645226a3d027f781f1e75578b3e4611b6504c10d3d",
+      "raw_bytes": 7825,
+      "public_sha256": "f575e024b124e5729f66f2737cba514b04e52fd05ac771db6a0d759641e605a8",
+      "public_bytes": 7828
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.png": {
+      "role": "visually_reviewed_png",
+      "raw_sha256": "cef3ce27d36e93e4c0609107809f97804dcd10d624fa128df6e6833303c4db00",
+      "raw_bytes": 32022,
+      "public_sha256": "cef3ce27d36e93e4c0609107809f97804dcd10d624fa128df6e6833303c4db00",
+      "public_bytes": 32022
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/capture_hashes.json": {
+      "role": "evidence",
+      "raw_sha256": "bcc772e2f91e274118b75f455845bed39ec607de0669f9e066d141ff660173dc",
+      "raw_bytes": 418,
+      "public_sha256": "53db1c37b5f304387883af91daa4e5ceebb8959de2d4bc6f8e4a84a41603fbc3",
+      "public_bytes": 836
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.json": {
+      "role": "capture_json",
+      "raw_sha256": "2aff421c84be353ff70a00154c5387c4c23d0b8e001eb6a84ea3e9ff2d73a891",
+      "raw_bytes": 7832,
+      "public_sha256": "757617a0a74876b803623af50c3f5efad6dc600a9cfdba9310dab34a632df88a",
+      "public_bytes": 7835
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.png": {
+      "role": "visually_reviewed_png",
+      "raw_sha256": "9a21789430c7dca2ddb9b5cc17bf0e8754b5f7d2dae8b8822ff76e110aa43e41",
+      "raw_bytes": 45534,
+      "public_sha256": "9a21789430c7dca2ddb9b5cc17bf0e8754b5f7d2dae8b8822ff76e110aa43e41",
+      "public_bytes": 45534
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/capture_hashes.json": {
+      "role": "evidence",
+      "raw_sha256": "4c65706073f31dd22d4fcc2a50d8438f62efed4fd50614661cd27b5b6d10c91f",
+      "raw_bytes": 418,
+      "public_sha256": "48b051c940d0ab383f83e7fd447ab907255b33b4273ac4a832f983e34ec80030",
+      "public_bytes": 836
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.json": {
+      "role": "capture_json",
+      "raw_sha256": "b18cb52b1e5efbe613b69566b008e606f2237f1e3e1f26affac5d6dcd72c0af4",
+      "raw_bytes": 7825,
+      "public_sha256": "73dbedbaa4a510a3d0b2800262dc67344d6c1f42538388401b8cbacd5b5810c2",
+      "public_bytes": 7828
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.png": {
+      "role": "visually_reviewed_png",
+      "raw_sha256": "e85a1fc9726199345927bff7bda597ff787bbfda3a8590e8b192c14b7836cbab",
+      "raw_bytes": 31933,
+      "public_sha256": "e85a1fc9726199345927bff7bda597ff787bbfda3a8590e8b192c14b7836cbab",
+      "public_bytes": 31933
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/capture_hashes.json": {
+      "role": "evidence",
+      "raw_sha256": "97a73ed0886d3580d8abe897e4b8b517282a3c4b8e31d5fd1d101299643f7573",
+      "raw_bytes": 418,
+      "public_sha256": "e2beec2bfd60d4d07877b262a6601bf470dcac2803a6c7b340acbffcc13d762d",
+      "public_bytes": 836
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.json": {
+      "role": "capture_json",
+      "raw_sha256": "f60399ee2bf4a4abbcd8321dc4c80685017966109df74b6490a2eaaa17a67402",
+      "raw_bytes": 7832,
+      "public_sha256": "a1af5bc2a5a93ca0b1af7e3b9f0f8095a93de42f1be9c7ce538e916050d5128c",
+      "public_bytes": 7835
+    },
+    "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.png": {
+      "role": "visually_reviewed_png",
+      "raw_sha256": "cb81e0badfa6f59e8f2c64f65e9189e89e2babb87bc4641ca53b0cdd30e92da2",
+      "raw_bytes": 45452,
+      "public_sha256": "cb81e0badfa6f59e8f2c64f65e9189e89e2babb87bc4641ca53b0cdd30e92da2",
+      "public_bytes": 45452
+    },
+    "docs/art/production/d12-r1/f02/fixture/capture-rev5-sample.py": {
+      "role": "evidence",
+      "raw_sha256": "8ce737508d08f267c16db39e898ab69fa4ab2661da9963debbe757e86947ebfe",
+      "raw_bytes": 1523
+    },
+    "docs/art/production/d12-r1/f02/fixture/prepare-rev5.py": {
+      "role": "evidence",
+      "raw_sha256": "f579efb92112f042bca02de3bc5a5c91d07be87e889fbfbd4bd392b03c7bd283",
+      "raw_bytes": 1848
+    },
+    "docs/art/production/d12-f02-rev5/check-rev5-sample.py": {
+      "role": "evidence",
+      "raw_sha256": "0617640e7d350d4295a62c18278629a5a808e254d37af63afec139b450a6319d",
+      "raw_bytes": 3500,
+      "public_sha256": "ffc74d17f40fbfd7065c82debc4112eb4ae46d9ab9ebde0cbac8d4ea9e15a898",
+      "public_bytes": 3641
+    },
+    "docs/art/production/d12-r1/f02/fixture/manifest-rev5-sample.json": {
+      "role": "evidence",
+      "raw_sha256": "c2267090c5c9412ab20cbc397f273136dc99b59993be880eefe43e17e5bd7a30",
+      "raw_bytes": 9832
+    },
+    "docs/art/production/d12-r1/f02/REVIEW-INPUT-rev5-sample.md": {
+      "role": "evidence",
+      "raw_sha256": "e1b2e3f7648e67ddf1543906409c7411239b6a80e3ac5b93273bfb93b27f11b3",
+      "raw_bytes": 1818
+    },
+    "docs/art/production/d12-r1/f02/fixture/preview-view-main-camera.gd": {
+      "role": "evidence",
+      "raw_sha256": "ab10e3a0679e9542473c7f01adbf50fb39a012be11ee49ae748c83db6282b9b1",
+      "raw_bytes": 8531
+    },
+    "capture-fixture/yudian-d12-f02-rev5/project.godot": {
+      "role": "evidence",
+      "raw_sha256": "0c2f74549879ab632316e9b5626b08ac11fccf7de47904c3f73406b56a068e43",
+      "raw_bytes": 282
+    }
+  },
+  "frames": {
+    "close-90-work-0.5": {
+      "requested": {
+        "camera": "close",
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 0.5,
+        "yaw": 90
+      },
+      "actual_yaw": 90.0000025044782,
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "close",
+        "near": 0.0500000007450581,
+        "position": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -27.4744281768799,
+          36.8698997497559,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.400000005960464,
+          0.0
+        ]
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "png": "docs/art/production/d12-f02-rev5/godot-rev5-sample/close-90-work-0.5/blind_0001.png"
+    },
+    "normal-90-work-0.0": {
+      "requested": {
+        "camera": "normal",
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 0.0,
+        "yaw": 90
+      },
+      "actual_yaw": 90.0000025044782,
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          21.1200008392334,
+          28.7999992370605,
+          28.7999992370605
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -38.8828773498535,
+          36.2538375854492,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "png": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0/blind_0001.png"
+    },
+    "normal-90-work-0.0-low": {
+      "requested": {
+        "camera": "normal",
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 0.0,
+        "yaw": 90
+      },
+      "actual_yaw": 90.0000025044782,
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          21.1200008392334,
+          28.7999992370605,
+          28.7999992370605
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -38.8828773498535,
+          36.2538375854492,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "disabled",
+        "msaa_3d_raw": 0,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 0.75,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "png": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.0-low/blind_0001.png"
+    },
+    "normal-90-work-0.5": {
+      "requested": {
+        "camera": "normal",
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 0.5,
+        "yaw": 90
+      },
+      "actual_yaw": 90.0000025044782,
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          21.1200008392334,
+          28.7999992370605,
+          28.7999992370605
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -38.8828773498535,
+          36.2538375854492,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "png": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5/blind_0001.png"
+    },
+    "normal-90-work-0.5-low": {
+      "requested": {
+        "camera": "normal",
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 0.5,
+        "yaw": 90
+      },
+      "actual_yaw": 90.0000025044782,
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          21.1200008392334,
+          28.7999992370605,
+          28.7999992370605
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -38.8828773498535,
+          36.2538375854492,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "disabled",
+        "msaa_3d_raw": 0,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 0.75,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "png": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-0.5-low/blind_0001.png"
+    },
+    "normal-90-work-1.5": {
+      "requested": {
+        "camera": "normal",
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 1.5,
+        "yaw": 90
+      },
+      "actual_yaw": 90.0000025044782,
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          21.1200008392334,
+          28.7999992370605,
+          28.7999992370605
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -38.8828773498535,
+          36.2538375854492,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "4x",
+        "msaa_3d_raw": 2,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 1.0,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "png": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5/blind_0001.png"
+    },
+    "normal-90-work-1.5-low": {
+      "requested": {
+        "camera": "normal",
+        "cargo": "empty",
+        "phase": "completed",
+        "phase_t": 0.0,
+        "reason": "none",
+        "state": "work",
+        "time_s": 1.5,
+        "yaw": 90
+      },
+      "actual_yaw": 90.0000025044782,
+      "camera": {
+        "attributes": "none",
+        "far": 200.0,
+        "fov": 50.0,
+        "keep_aspect": "keep_height",
+        "mode_requested": "normal",
+        "near": 0.0500000007450581,
+        "position": [
+          21.1200008392334,
+          28.7999992370605,
+          28.7999992370605
+        ],
+        "projection": "perspective",
+        "rotation_degrees": [
+          -38.8828773498535,
+          36.2538375854492,
+          0.0
+        ],
+        "target": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "viewport": {
+        "height": 1200,
+        "msaa_3d": "disabled",
+        "msaa_3d_raw": 0,
+        "own_world_3d": true,
+        "render_target_update_mode": 4,
+        "scaling_3d_scale": 0.75,
+        "screen_space_aa": "disabled",
+        "transparent_bg": false,
+        "use_taa": false,
+        "width": 1920
+      },
+      "light": {
+        "directional_shadow_max_distance": 80.0,
+        "light_color": "ffffff",
+        "light_energy": 1.0,
+        "rotation_degrees": [
+          -54.9999961853027,
+          -30.0,
+          0.0
+        ],
+        "shadow_enabled": true,
+        "soft_shadow_filter_quality": {
+          "note": "DirectionalLight3D has no per-light filter getter; this preview does not override the project/engine default",
+          "project_setting": "rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality",
+          "value": 2
+        }
+      },
+      "environment": {
+        "ambient_light_color": "d5dbdf",
+        "ambient_light_energy": 0.600000023841858,
+        "ambient_light_sky_contribution": 0.0,
+        "ambient_light_source": "color",
+        "background_color": "aeb8bc",
+        "background_energy_multiplier": 1.0,
+        "background_mode": "color",
+        "fog_enabled": false,
+        "glow_enabled": false,
+        "reflected_light_source": "disabled",
+        "sdfgi_enabled": false,
+        "ssao_enabled": false,
+        "ssil_enabled": false,
+        "ssr_enabled": false,
+        "tonemap_exposure": 1.0,
+        "tonemap_mode": "linear",
+        "volumetric_fog_enabled": false
+      },
+      "png": "docs/art/production/d12-f02-rev5/godot-rev5-sample/normal-90-work-1.5-low/blind_0001.png"
+    }
+  },
+  "derived_capture_time_source_bindings": {
+    "normal-90-work-0.0-low": {
+      "kind": "reconstructed_capture_time_low_view_source",
+      "basis": "docs/art/production/d12-r1/f02/fixture/preview-view-main-camera.gd",
+      "sha256": "4734ae2e0a19ec6d2f13e1302580c31f7b7168d4b28a34bd2d43b7b54e56e550",
+      "exact_match": true
+    },
+    "normal-90-work-0.5-low": {
+      "kind": "reconstructed_capture_time_low_view_source",
+      "basis": "docs/art/production/d12-r1/f02/fixture/preview-view-main-camera.gd",
+      "sha256": "4734ae2e0a19ec6d2f13e1302580c31f7b7168d4b28a34bd2d43b7b54e56e550",
+      "exact_match": true
+    },
+    "normal-90-work-1.5-low": {
+      "kind": "reconstructed_capture_time_low_view_source",
+      "basis": "docs/art/production/d12-r1/f02/fixture/preview-view-main-camera.gd",
+      "sha256": "4734ae2e0a19ec6d2f13e1302580c31f7b7168d4b28a34bd2d43b7b54e56e550",
+      "exact_match": true
+    }
+  },
+  "independent_glb_comparison": {
+    "changed_meshes": [
+      "PressGuide",
+      "PressRam"
+    ],
+    "other_15_mesh_all_primitive_attributes_indices_material_equal": [
+      "Base",
+      "Chamber",
+      "FeedBed",
+      "FeedGate",
+      "Gantry",
+      "StopGate",
+      "OutputRack",
+      "ServicePort",
+      "PowerPort",
+      "DustCollar",
+      "ElectronicsInnerCover",
+      "HeatPanel",
+      "ServiceCover",
+      "InputCrate",
+      "OutputCrate"
+    ],
+    "nodes_TRS_sockets_exact": true,
+    "materials_exact": true,
+    "animations_json_and_sampler_bytes_exact": true,
+    "triangles": 1988,
+    "meshes": 17,
+    "nodes": 23
+  },
+  "actual_checker_run": {
+    "command": "python3 docs/art/production/d12-r1/f02/fixture/check-rev5-sample.py",
+    "exit_code": 0,
+    "result": "PASS"
+  },
+  "native_Blender_Godot_render": "NOT_RUN",
+  "continuous_sweep_joints_bevel_manifold": "author technical evidence read, not independently rerun",
+  "other_yaws_disabled_maintenance": "NOT_ASSESSED",
+  "Main_performance_owner": "NOT_RUN",
+  "report": {
+    "path": "docs/art/production/d12-f02-rev5/independent/A02b-F02-rev5-sample-REVIEW.md",
+    "raw_sha256": "75550f6b00c665c44488bd6985240327b59b50e5f9376e7f3783be7897a0ea12",
+    "public_sha256": "9cf8d009c74d3849aeaf10f4c61a3191d0809ef913c3384046e2cf6885d9d06d"
+  },
+  "archive_hash_semantics": "raw_* are independent reviewer original-byte records, not hashes of normalized public JSON/report; public_* bind copied public files. Historical capture-fixture paths record past inputs, not runnable public resources. Full original/public mapping: ../archive-map.json. Original checker update history is raw_independent_checker_update.",
+  "raw_independent_checker_update": {
+    "only_changed_recorded_evidence": "docs/art/production/d12-f02-rev5/check-rev5-sample.py",
+    "reason": "production expanded its checker to original GLB bytes comparison; no asset/frame/source/capture change",
+    "rerun_exit_code": 0,
+    "result": "PASS",
+    "raw_previous_sha256": "d0b3ad17be6304ae5df0408c0b8ef2e3aee5a19775de65938801e9bcbcfd0baa",
+    "raw_current_sha256": "0617640e7d350d4295a62c18278629a5a808e254d37af63afec139b450a6319d",
+    "scope": "Original independent checker-update history before public path-only adaptation; not a hash of this public checker"
+  }
+}

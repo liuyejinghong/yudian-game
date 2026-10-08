@@ -1,0 +1,2009 @@
+{
+  "continuous_stroke": "PASS: nominal per-component swept AABB is conservative for actual chamfers; deltaY[-.35,0]",
+  "sweep_pairs": [
+    {
+      "moving": "ram_body",
+      "fixed": "ch_floor",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_wall_px_lo",
+      "gap_m": 0.15,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_wall_nx_lo",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_front_low",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_front_l",
+      "gap_m": 1.83,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_front_r",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_front_top",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_rear_lo",
+      "gap_m": 0.77,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_rear_l",
+      "gap_m": 1.68,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_rear_r",
+      "gap_m": 0.15,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_rear_top",
+      "gap_m": 0.78,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "throat_floor",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "throat_ceil",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "throat_side_l",
+      "gap_m": 1.79,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "throat_side_r",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "throat_back",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "cav_floor",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "cav_ceil",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "cav_back",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "cav_side_f",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "cav_side_r",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_wall_px_hi",
+      "gap_m": 0.08,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_wall_nx_below",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_wall_nx_above",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_wall_nx_front",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_wall_nx_rear",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_front_hi",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_front_bay_sill",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_rear_hi",
+      "gap_m": 0.68,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_rear_bay_sill",
+      "gap_m": 0.13,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "ch_bay_inner_guard",
+      "gap_m": 0.655,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "roof_l",
+      "gap_m": 2.28,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "roof_r",
+      "gap_m": 0.16,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "roof_f",
+      "gap_m": 1.5,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "roof_b",
+      "gap_m": 0.18,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "cav_unit",
+      "gap_m": 2.05,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "roof_panel",
+      "gap_m": 0.68,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "rear_stripe",
+      "gap_m": 0.23,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "rail_l",
+      "gap_m": 0.04,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "rail_r",
+      "gap_m": 0.04,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "press_beam",
+      "gap_m": 0.15,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "press_foot_l",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "press_foot_r",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "press_die",
+      "gap_m": 0.75,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "press_sleeve_l",
+      "gap_m": 0.485,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "press_sleeve_r",
+      "gap_m": 0.485,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "press_sleeve_f",
+      "gap_m": 0.615,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "press_sleeve_b",
+      "gap_m": 0.465,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "HeatPanel",
+      "gap_m": 0.0325,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "OutputRack",
+      "gap_m": 0.78,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "InputCrate",
+      "gap_m": 2.0,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "OutputCrate",
+      "gap_m": 0.91,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_body",
+      "fixed": "output_display_envelope",
+      "gap_m": 0.63,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_floor",
+      "gap_m": 1.21,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_wall_px_lo",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_wall_nx_lo",
+      "gap_m": 2.395,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_front_low",
+      "gap_m": 1.03,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_front_l",
+      "gap_m": 1.895,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_front_r",
+      "gap_m": 1.0,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_front_top",
+      "gap_m": 1.0,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_rear_lo",
+      "gap_m": 1.03,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_rear_l",
+      "gap_m": 1.745,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_rear_r",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_rear_top",
+      "gap_m": 0.845,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "throat_floor",
+      "gap_m": 1.03,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "throat_ceil",
+      "gap_m": 0.7,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "throat_side_l",
+      "gap_m": 1.855,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "throat_side_r",
+      "gap_m": 0.7,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "throat_back",
+      "gap_m": 0.735,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "cav_floor",
+      "gap_m": 1.995,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "cav_ceil",
+      "gap_m": 1.995,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "cav_back",
+      "gap_m": 1.995,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "cav_side_f",
+      "gap_m": 1.995,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "cav_side_r",
+      "gap_m": 1.995,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_wall_px_hi",
+      "gap_m": 0.26,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_wall_nx_below",
+      "gap_m": 2.395,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_wall_nx_above",
+      "gap_m": 2.395,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_wall_nx_front",
+      "gap_m": 2.395,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_wall_nx_rear",
+      "gap_m": 2.395,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_front_hi",
+      "gap_m": 1.0,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_front_bay_sill",
+      "gap_m": 1.0,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_rear_hi",
+      "gap_m": 0.745,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_rear_bay_sill",
+      "gap_m": 0.26,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "ch_bay_inner_guard",
+      "gap_m": 0.72,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "roof_l",
+      "gap_m": 2.345,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "roof_r",
+      "gap_m": 0.4,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "roof_f",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "roof_b",
+      "gap_m": 0.4,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "cav_unit",
+      "gap_m": 2.115,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "roof_panel",
+      "gap_m": 0.745,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "rear_stripe",
+      "gap_m": 0.295,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "rail_l",
+      "gap_m": 0.005,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "rail_r",
+      "gap_m": 0.84,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "press_beam",
+      "gap_m": 0.39,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "press_foot_l",
+      "gap_m": 1.21,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "press_foot_r",
+      "gap_m": 1.21,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "press_die",
+      "gap_m": 1.01,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "press_sleeve_l",
+      "gap_m": 0.46,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "press_sleeve_r",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "press_sleeve_f",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "press_sleeve_b",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "HeatPanel",
+      "gap_m": 0.0975,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "OutputRack",
+      "gap_m": 1.03,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "InputCrate",
+      "gap_m": 1.45,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "OutputCrate",
+      "gap_m": 0.975,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_z",
+      "fixed": "output_display_envelope",
+      "gap_m": 1.0,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_floor",
+      "gap_m": 1.21,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_wall_px_lo",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_wall_nx_lo",
+      "gap_m": 2.06,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_front_low",
+      "gap_m": 1.03,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_front_l",
+      "gap_m": 1.56,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_front_r",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_front_top",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_rear_lo",
+      "gap_m": 1.03,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_rear_l",
+      "gap_m": 1.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_rear_r",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_rear_top",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "throat_floor",
+      "gap_m": 1.03,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "throat_ceil",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "throat_side_l",
+      "gap_m": 1.52,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "throat_side_r",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "throat_back",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "cav_floor",
+      "gap_m": 1.66,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "cav_ceil",
+      "gap_m": 1.66,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "cav_back",
+      "gap_m": 1.66,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "cav_side_f",
+      "gap_m": 1.66,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "cav_side_r",
+      "gap_m": 1.66,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_wall_px_hi",
+      "gap_m": 0.26,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_wall_nx_below",
+      "gap_m": 2.06,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_wall_nx_above",
+      "gap_m": 2.06,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_wall_nx_front",
+      "gap_m": 2.06,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_wall_nx_rear",
+      "gap_m": 2.06,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_front_hi",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_front_bay_sill",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_rear_hi",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_rear_bay_sill",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "ch_bay_inner_guard",
+      "gap_m": 0.385,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "roof_l",
+      "gap_m": 2.01,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "roof_r",
+      "gap_m": 0.4,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "roof_f",
+      "gap_m": 0.89,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "roof_b",
+      "gap_m": 0.59,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "cav_unit",
+      "gap_m": 1.78,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "roof_panel",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "rear_stripe",
+      "gap_m": 0.69,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "rail_l",
+      "gap_m": 0.37,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "rail_r",
+      "gap_m": 1.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "press_beam",
+      "gap_m": 0.39,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "press_foot_l",
+      "gap_m": 1.21,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "press_foot_r",
+      "gap_m": 1.24,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "press_die",
+      "gap_m": 1.01,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "press_sleeve_l",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "press_sleeve_r",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "press_sleeve_f",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "press_sleeve_b",
+      "gap_m": 0.41,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "HeatPanel",
+      "gap_m": 0.28,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "OutputRack",
+      "gap_m": 1.03,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "InputCrate",
+      "gap_m": 1.39,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "OutputCrate",
+      "gap_m": 0.99,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_link_x",
+      "fixed": "output_display_envelope",
+      "gap_m": 1.49,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_floor",
+      "gap_m": 0.2,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_wall_px_lo",
+      "gap_m": 0.14,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_wall_nx_lo",
+      "gap_m": 1.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_front_low",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_front_l",
+      "gap_m": 1.44,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_front_r",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_front_top",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_rear_lo",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_rear_l",
+      "gap_m": 1.29,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_rear_r",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_rear_top",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "throat_floor",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "throat_ceil",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "throat_side_l",
+      "gap_m": 1.4,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "throat_side_r",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "throat_back",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "cav_floor",
+      "gap_m": 1.54,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "cav_ceil",
+      "gap_m": 1.54,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "cav_back",
+      "gap_m": 1.54,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "cav_side_f",
+      "gap_m": 1.54,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "cav_side_r",
+      "gap_m": 1.54,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_wall_px_hi",
+      "gap_m": 0.14,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_wall_nx_below",
+      "gap_m": 1.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_wall_nx_above",
+      "gap_m": 1.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_wall_nx_front",
+      "gap_m": 1.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_wall_nx_rear",
+      "gap_m": 1.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_front_hi",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_front_bay_sill",
+      "gap_m": 0.94,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_rear_hi",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_rear_bay_sill",
+      "gap_m": 0.64,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "ch_bay_inner_guard",
+      "gap_m": 0.265,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "roof_l",
+      "gap_m": 1.89,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "roof_r",
+      "gap_m": 0.4,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "roof_f",
+      "gap_m": 0.89,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "roof_b",
+      "gap_m": 0.59,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "cav_unit",
+      "gap_m": 1.66,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "roof_panel",
+      "gap_m": 0.4,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "rear_stripe",
+      "gap_m": 0.69,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "rail_l",
+      "gap_m": 0.48,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "rail_r",
+      "gap_m": 1.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "press_beam",
+      "gap_m": 0.39,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "press_foot_l",
+      "gap_m": 0.42,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "press_foot_r",
+      "gap_m": 1.24,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "press_die",
+      "gap_m": 0.0,
+      "class": "contact-at-full-stroke"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "press_sleeve_l",
+      "gap_m": 0.005,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "press_sleeve_r",
+      "gap_m": 0.005,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "press_sleeve_f",
+      "gap_m": 0.005,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "press_sleeve_b",
+      "gap_m": 0.005,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "HeatPanel",
+      "gap_m": 0.28,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "OutputRack",
+      "gap_m": 0.69,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "InputCrate",
+      "gap_m": 1.39,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "OutputCrate",
+      "gap_m": 0.99,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_stem",
+      "fixed": "output_display_envelope",
+      "gap_m": 1.49,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_floor",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_wall_px_lo",
+      "gap_m": 0.35,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_wall_nx_lo",
+      "gap_m": 2.6,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_front_low",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_front_l",
+      "gap_m": 2.1,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_front_r",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_front_top",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_rear_lo",
+      "gap_m": 0.77,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_rear_l",
+      "gap_m": 1.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_rear_r",
+      "gap_m": 0.4,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_rear_top",
+      "gap_m": 1.05,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "throat_floor",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "throat_ceil",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "throat_side_l",
+      "gap_m": 2.06,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "throat_side_r",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "throat_back",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "cav_floor",
+      "gap_m": 2.2,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "cav_ceil",
+      "gap_m": 2.2,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "cav_back",
+      "gap_m": 2.2,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "cav_side_f",
+      "gap_m": 2.2,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "cav_side_r",
+      "gap_m": 2.2,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_wall_px_hi",
+      "gap_m": 0.35,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_wall_nx_below",
+      "gap_m": 2.6,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_wall_nx_above",
+      "gap_m": 2.6,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_wall_nx_front",
+      "gap_m": 2.6,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_wall_nx_rear",
+      "gap_m": 2.6,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_front_hi",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_front_bay_sill",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_rear_hi",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_rear_bay_sill",
+      "gap_m": 0.4,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "ch_bay_inner_guard",
+      "gap_m": 0.925,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "roof_l",
+      "gap_m": 2.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "roof_r",
+      "gap_m": 0.35,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "roof_f",
+      "gap_m": 1.5,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "roof_b",
+      "gap_m": 0.45,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "cav_unit",
+      "gap_m": 2.32,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "roof_panel",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "rear_stripe",
+      "gap_m": 0.5,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "rail_l",
+      "gap_m": 0.04,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "rail_r",
+      "gap_m": 0.04,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "press_beam",
+      "gap_m": 0.15,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "press_foot_l",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "press_foot_r",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "press_die",
+      "gap_m": 0.75,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "press_sleeve_l",
+      "gap_m": 0.665,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "press_sleeve_r",
+      "gap_m": 0.515,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "press_sleeve_f",
+      "gap_m": 0.615,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "press_sleeve_b",
+      "gap_m": 0.515,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "HeatPanel",
+      "gap_m": 0.3025,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "OutputRack",
+      "gap_m": 1.05,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "InputCrate",
+      "gap_m": 2.0,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "OutputCrate",
+      "gap_m": 1.18,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_face",
+      "fixed": "output_display_envelope",
+      "gap_m": 0.9,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_floor",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_wall_px_lo",
+      "gap_m": 0.15,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_wall_nx_lo",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_front_low",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_front_l",
+      "gap_m": 1.83,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_front_r",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_front_top",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_rear_lo",
+      "gap_m": 0.77,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_rear_l",
+      "gap_m": 1.68,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_rear_r",
+      "gap_m": 0.15,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_rear_top",
+      "gap_m": 0.78,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "throat_floor",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "throat_ceil",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "throat_side_l",
+      "gap_m": 1.79,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "throat_side_r",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "throat_back",
+      "gap_m": 1.25,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "cav_floor",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "cav_ceil",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "cav_back",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "cav_side_f",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "cav_side_r",
+      "gap_m": 1.93,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_wall_px_hi",
+      "gap_m": 0.08,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_wall_nx_below",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_wall_nx_above",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_wall_nx_front",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_wall_nx_rear",
+      "gap_m": 2.33,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_front_hi",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_front_bay_sill",
+      "gap_m": 1.55,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_rear_hi",
+      "gap_m": 0.68,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_rear_bay_sill",
+      "gap_m": 0.13,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "ch_bay_inner_guard",
+      "gap_m": 0.655,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "roof_l",
+      "gap_m": 2.28,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "roof_r",
+      "gap_m": 0.68,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "roof_f",
+      "gap_m": 1.5,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "roof_b",
+      "gap_m": 0.68,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "cav_unit",
+      "gap_m": 2.05,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "roof_panel",
+      "gap_m": 0.68,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "rear_stripe",
+      "gap_m": 0.23,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "rail_l",
+      "gap_m": 0.04,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "rail_r",
+      "gap_m": 0.04,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "press_beam",
+      "gap_m": 0.67,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "press_foot_l",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "press_foot_r",
+      "gap_m": 0.95,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "press_die",
+      "gap_m": 0.75,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "press_sleeve_l",
+      "gap_m": 0.485,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "press_sleeve_r",
+      "gap_m": 0.485,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "press_sleeve_f",
+      "gap_m": 0.615,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "press_sleeve_b",
+      "gap_m": 0.465,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "HeatPanel",
+      "gap_m": 0.0325,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "OutputRack",
+      "gap_m": 0.78,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "InputCrate",
+      "gap_m": 2.0,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "OutputCrate",
+      "gap_m": 0.91,
+      "class": "separated"
+    },
+    {
+      "moving": "ram_edge",
+      "fixed": "output_display_envelope",
+      "gap_m": 0.63,
+      "class": "separated"
+    }
+  ],
+  "terminal_contacts": [
+    {
+      "moving": "ram_stem",
+      "fixed": "press_die",
+      "gap_m": 0.0,
+      "class": "contact-at-full-stroke"
+    }
+  ],
+  "fixed_positive_area_joints": [
+    [
+      "press_foot_l",
+      "slab"
+    ],
+    [
+      "press_foot_r",
+      "slab"
+    ],
+    [
+      "press_foot_l",
+      "rail_l"
+    ],
+    [
+      "press_foot_r",
+      "rail_r"
+    ],
+    [
+      "rail_l",
+      "press_beam"
+    ],
+    [
+      "rail_r",
+      "press_beam"
+    ],
+    [
+      "press_beam",
+      "roof_r"
+    ],
+    [
+      "press_die",
+      "ch_floor"
+    ]
+  ],
+  "moving_positive_area_joints": [
+    [
+      "ram_body",
+      "ram_link_z"
+    ],
+    [
+      "ram_link_z",
+      "ram_link_x"
+    ],
+    [
+      "ram_link_x",
+      "ram_stem"
+    ]
+  ],
+  "original_ram_composite": "body/face/accent layered overlaps retained as one moving assembly; not a fixed-body collision",
+  "service_cover_continuous_x_bound": -1.15,
+  "service_cover_gap_m": 1.96,
+  "unchanged_mesh_bytes": [
+    "Base",
+    "Chamber",
+    "FeedBed",
+    "FeedGate",
+    "Gantry",
+    "StopGate",
+    "OutputRack",
+    "ServicePort",
+    "PowerPort",
+    "DustCollar",
+    "ElectronicsInnerCover",
+    "HeatPanel",
+    "ServiceCover",
+    "InputCrate",
+    "OutputCrate"
+  ],
+  "node_TRS_socket_pivot_material_animation": "EXACT",
+  "new_real_bevel_m": 0.003,
+  "bevel_segments": 1,
+  "new_primitive_count": 16,
+  "new_primitive_manifold": "all closed positive volume, zero non-manifold edges before flat vertex splitting",
+  "changed_mesh_flat_triangles": 704,
+  "max_normal_error": 1.530511830727388e-05,
+  "static_bounds": [
+    [
+      -1.8,
+      0.0,
+      -2.4
+    ],
+    [
+      1.8,
+      2.4,
+      2.4
+    ]
+  ],
+  "visual": "NOT_SIGNED; actual Godot 7 captures owned by master"
+}

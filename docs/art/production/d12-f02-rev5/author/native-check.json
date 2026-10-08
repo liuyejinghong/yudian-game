@@ -1,0 +1,76 @@
+{
+  "new_process_native_reopen": "PASS",
+  "independent_glb_import": "PASS",
+  "independent_glb_container_matches_separate_source": "PASS",
+  "geometry": {
+    "objects": [
+      "Base",
+      "Chamber",
+      "DustCollar",
+      "ElectronicsInnerCover",
+      "FeedBed",
+      "FeedGate",
+      "Gantry",
+      "HeatPanel",
+      "InputCrate",
+      "Model",
+      "OutputCrate",
+      "OutputRack",
+      "PowerPort",
+      "PressGuide",
+      "PressRam",
+      "ServiceCover",
+      "ServicePort",
+      "Socket_Input",
+      "Socket_Output",
+      "Socket_PowerIn",
+      "Socket_Service",
+      "StopGate",
+      "processor-r1"
+    ],
+    "meshes": 17,
+    "triangles": 1988,
+    "bounds_blender": [
+      [
+        -1.8,
+        -2.4,
+        0.0
+      ],
+      [
+        1.8,
+        2.4,
+        2.4
+      ]
+    ],
+    "actions": [
+      "disabled",
+      "maintenance",
+      "work-loop"
+    ]
+  },
+  "native_pose_checks": [
+    {
+      "clip": "work-loop",
+      "time_s": 0,
+      "actual_Y": 1.9
+    },
+    {
+      "clip": "work-loop",
+      "time_s": 0.5,
+      "actual_Y": 1.55
+    },
+    {
+      "clip": "work-loop",
+      "time_s": 1.5,
+      "actual_Y": 1.725
+    },
+    {
+      "clip": "disabled",
+      "time_s": 1,
+      "actual_Y": 0.95
+    }
+  ],
+  "canonical_rev4_input_byte_preservation": "PASS",
+  "glb_sha256": "b439ab57f4c23fc9868fcb8c0d313ebbdb2956942f1ff3eac7f74080a5bd51e2",
+  "visual": "NOT_SIGNED: no Blender yaw/render; actual Godot and independent review pending"
+}

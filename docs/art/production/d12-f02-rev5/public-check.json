@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-08",
+  "public_copied_files": 71,
+  "png_frames": 19,
+  "all_png_size": [
+    1920,
+    1200
+  ],
+  "public_archive_hashes": "PASS",
+  "independent_identity_public_bindings": "PASS",
+  "source_binding_and_15_mesh_animation_checks": "PASS",
+  "raw_public_json_semantics": "capture_hashes.files is public; raw_files is original; identities raw_* vs public_* explicit",
+  "commands": [
+    {
+      "command": "python3 -B docs/art/production/d12-f02-rev5/check-rev5-sample.py",
+      "checker_sha256": "ffc74d17f40fbfd7065c82debc4112eb4ae46d9ab9ebde0cbac8d4ea9e15a898",
+      "exit_code": 0,
+      "stdout": "PASS: nodes/materials/15 meshes/all animation keys unchanged; 7 source-bound frames, yaw90/work; aesthetic/Main not signed"
+    },
+    {
+      "command": "python3 -B docs/art/production/d12-f02-rev5/check-rev5-regression.py",
+      "checker_sha256": "9af740cc6a46824798be7e7e226e88e4b35630b4d4cf653dde53def2d77d4743",
+      "exit_code": 0,
+      "stdout": "PASS: nodes/materials/15 meshes/all animation keys unchanged; 7 source-bound frames, yaw90/work; aesthetic/Main not signed\nPASS: 12 regression source/PNG/JSON/actual yaw/state/time/camera/quality records; aesthetic/Main not signed"
+    }
+  ],
+  "acceptance": "19 supplied static frames only; Main/continuous dynamics/performance/owner NOT_ACCEPTED",
+  "markdown_links": "PASS",
+  "required_documentation_and_local_links": {
+    "command": "python3 -B tools/verify_documents.py",
+    "exit_code": 0,
+    "stdout": "PASS: required documentation, current local links, six archived source hashes, A01-A24 and B01-B08.\nGame/native/model/performance/playtest results: NOT_RUN."
+  },
+  "raw_original_inputs_unchanged": "PASS: all 71 selected originals match copy-time raw SHA",
+  "actual_candidate_glb_sha_guard": {
+    "result": "PASS",
+    "actual_sha256": "b439ab57f4c23fc9868fcb8c0d313ebbdb2956942f1ff3eac7f74080a5bd51e2",
+    "expected_sha256": "b439ab57f4c23fc9868fcb8c0d313ebbdb2956942f1ff3eac7f74080a5bd51e2"
+  },
+  "negative_mutated_candidate_glb": {
+    "method": "minimal temporary tree containing unchanged public sample checker and candidate GLB copy; XOR1 on final byte; no formal input modified",
+    "changed_bytes": 1,
+    "candidate_copy_sha256": "1e3ded421934c3c952c3e9a4443eb0f8805b345d82acfa15c80464a405f4bc53",
+    "expected_sha256": "b439ab57f4c23fc9868fcb8c0d313ebbdb2956942f1ff3eac7f74080a5bd51e2",
+    "checker_sha256": "ffc74d17f40fbfd7065c82debc4112eb4ae46d9ab9ebde0cbac8d4ea9e15a898",
+    "exit_code": 1,
+    "failure": "AssertionError at current candidate file SHA == expected guard",
+    "stderr": "Traceback (most recent call last):\n  File \"negative-fixture/docs/art/production/d12-f02-rev5/check-rev5-sample.py\", line 25, in <module>\n    assert hashlib.sha256((ROOT / 'art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.glb').read_bytes()).hexdigest() == expected\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "temporary_copy_removed": true
+  }
+}
