@@ -1,0 +1,163 @@
+{
+  "source_version": "terrain-look-r1-rocks-v1",
+  "baseline": "718905d",
+  "blender": "4.5.14 LTS",
+  "units": "meters",
+  "axes": "+Y up / -Z forward in glTF; Blender +Z up",
+  "provenance": "Original deterministic polygon-ring geometry; no external assets, textures, or AI-generated meshes",
+  "semantics": {
+    "animation": false,
+    "collision": false,
+    "resource_facts": false,
+    "real_obstacle": false
+  },
+  "formal_integration": "NOT_RUN",
+  "not_run": [
+    "default world placement/reload lifecycle",
+    "owner final visual acceptance",
+    "controlled full-scene performance"
+  ],
+  "generator_sha256": "182265938256844aa459f03d3eb8ff8b9828b2999b2c4235638cb4a4c85d321f",
+  "export_helper": {
+    "path": "art/source/lowfi-batch-r1/existing/build_terrain.py",
+    "sha256": "6bea862b00afb1622b552fa37907cdf1d2d5573e43a19daeb31f2985b0e11e6b"
+  },
+  "check_command": "\"$YUDIAN_BLENDER\" --background --factory-startup --python-exit-code 1 --python art/environment/terrain-look-r1/rocks/generate_rocks.py -- --check",
+  "assets": {
+    "rock-cluster": {
+      "dimensions_xyz_m": [
+        3.0,
+        0.88,
+        2.5
+      ],
+      "bounds_gltf_m": {
+        "min": [
+          -1.5,
+          0.0,
+          -1.25
+        ],
+        "max": [
+          1.5,
+          0.8799999952316284,
+          1.25
+        ]
+      },
+      "meshes": [
+        {
+          "name": "Stone_01",
+          "vertices": 45,
+          "faces": 38,
+          "triangles": 86
+        },
+        {
+          "name": "Stone_02",
+          "vertices": 45,
+          "faces": 38,
+          "triangles": 86
+        },
+        {
+          "name": "Stone_03",
+          "vertices": 45,
+          "faces": 38,
+          "triangles": 86
+        },
+        {
+          "name": "Stone_04",
+          "vertices": 45,
+          "faces": 38,
+          "triangles": 86
+        },
+        {
+          "name": "Stone_05",
+          "vertices": 45,
+          "faces": 38,
+          "triangles": 86
+        }
+      ],
+      "triangles": 430,
+      "reopen_export_check": {
+        "max_float_diff": 0.0,
+        "problems": [],
+        "reexport_sha256": "67f6a8f87b04edf92abfc79712d833d2242f861b574b5ffa135dfa16dc45e8d7",
+        "deliverable_sha256": "67f6a8f87b04edf92abfc79712d833d2242f861b574b5ffa135dfa16dc45e8d7",
+        "identical_bytes": true
+      },
+      "files": {
+        "rock-cluster.blend": {
+          "bytes": 504724,
+          "sha256": "64c3dc1e714c609ef3c23e6be3d7b027368103692bc0cf2a7670618a5b6448f4"
+        },
+        "rock-cluster.glb": {
+          "bytes": 33948,
+          "sha256": "67f6a8f87b04edf92abfc79712d833d2242f861b574b5ffa135dfa16dc45e8d7"
+        }
+      }
+    },
+    "rock-outcrop": {
+      "dimensions_xyz_m": [
+        4.0,
+        1.45,
+        2.0
+      ],
+      "bounds_gltf_m": {
+        "min": [
+          -2.0,
+          0.0,
+          -1.0
+        ],
+        "max": [
+          2.0,
+          1.4500000476837158,
+          1.0
+        ]
+      },
+      "meshes": [
+        {
+          "name": "Stone_01",
+          "vertices": 45,
+          "faces": 38,
+          "triangles": 86
+        },
+        {
+          "name": "Stone_02",
+          "vertices": 45,
+          "faces": 38,
+          "triangles": 86
+        },
+        {
+          "name": "Stone_03",
+          "vertices": 45,
+          "faces": 38,
+          "triangles": 86
+        }
+      ],
+      "triangles": 258,
+      "reopen_export_check": {
+        "max_float_diff": 0.0,
+        "problems": [],
+        "reexport_sha256": "0540f7f0e0379b33ad1c764dc0eb660a7d895bdf4fc8ebbb4d343987971ac48f",
+        "deliverable_sha256": "0540f7f0e0379b33ad1c764dc0eb660a7d895bdf4fc8ebbb4d343987971ac48f",
+        "identical_bytes": true
+      },
+      "files": {
+        "rock-outcrop.blend": {
+          "bytes": 489400,
+          "sha256": "3b206ce608727eff0d7bba6c608005b2154d14a20b926feeaae3968e8ded5f52"
+        },
+        "rock-outcrop.glb": {
+          "bytes": 20332,
+          "sha256": "0540f7f0e0379b33ad1c764dc0eb660a7d895bdf4fc8ebbb4d343987971ac48f"
+        }
+      }
+    }
+  },
+  "native_visual_check": {
+    "method": "GLTFDocument.append_from_file / generate_scene",
+    "evidence": "docs/art/production/terrain-look-r1/evidence/natural/capture.json",
+    "viewport_px": [
+      1920,
+      1200
+    ],
+    "scope": "art-only placement examples; no default world registration"
+  }
+}

@@ -1,0 +1,116 @@
+{
+	"driver": "metal",
+	"engine": "4.7.2-stable (official)",
+	"frames": {
+		"close-after": {
+			"fov": 50.0,
+			"msaa": 2,
+			"position": [
+				19.0,
+				8.0,
+				0.0
+			],
+			"rotation_degrees": [
+				-33.2402534484863,
+				34.992015838623,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d"
+		},
+		"close-before": {
+			"fov": 50.0,
+			"msaa": 2,
+			"position": [
+				19.0,
+				8.0,
+				0.0
+			],
+			"rotation_degrees": [
+				-33.2402534484863,
+				34.992015838623,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14"
+		},
+		"low-after": {
+			"fov": 50.0,
+			"msaa": 0,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 0.75,
+			"shader_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d"
+		},
+		"low-before": {
+			"fov": 50.0,
+			"msaa": 0,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 0.75,
+			"shader_sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14"
+		},
+		"normal-after": {
+			"fov": 50.0,
+			"msaa": 2,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d"
+		},
+		"normal-before": {
+			"fov": 50.0,
+			"msaa": 2,
+			"position": [
+				25.1200008392334,
+				28.7999992370605,
+				26.2999992370605
+			],
+			"rotation_degrees": [
+				-38.8828773498535,
+				36.2538375854492,
+				0.0
+			],
+			"scale": 1.0,
+			"shader_sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14"
+		}
+	},
+	"mask_enabled": true,
+	"mask_sha256": "da4f107161fb4996391b054feb84c99ef368d2bf3313ea4de9d071561ce46262",
+	"mask_unchanged": true,
+	"rocks": [],
+	"scope": "actual Main with read-only shader overrides; optional engineering save loaded through existing API; rocks are art-only placement examples, no game registration",
+	"shader_after_sha256": "69b6e7fe037fd8593aa27529530b6d2d7d476e5d6fd1d27b24cdfd5c83d15f3d",
+	"shader_before_sha256": "8ecab1d7780a2801aa0579f5d2a53f04fed282c9c91ec38f3be979fbadcadf14",
+	"stage": 0,
+	"terrain_arrays_sha256": "5ff2194f04f4d2f23084119e7df21e72d03239190a262f75d4fc160e865e4627",
+	"terrain_unchanged": true,
+	"viewport_px": [
+		1920,
+		1200
+	]
+}
