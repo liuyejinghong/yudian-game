@@ -445,7 +445,7 @@ public partial class Main
                 if(batch!=null){var facility=_facilityNodes[batch.Source];output=batch.Stage=="Completed";var socket=facility.FindChild(output?"Socket_Output":"Socket_Input",true,false) as Node3D??throw new InvalidOperationException("加工挂点缺失");point=socket.GlobalPosition;basis=facility.GlobalBasis;processor=true;}
                 else if(_baseFacilities.Any(f=>f.Id==c.Id&&f.Type=="storage"))point=_facilityNodes[c.Id].ToGlobal(new Vector3(2.4f,0,1));
                 if(!processor)point.Y=(float)SavedGroundHeight(_liveTerrain!.Current,point.X,point.Z);}
-            var items=c.Items.Where(x=>x.Value>0).Take(4).ToArray();
+            var items=c.Items.Where(x=>x.Value>0&&x.Key!="kit").Take(4).ToArray();
             for(int i=0;i<items.Length;i++)
             {
                 bool small=cargo||processor;

@@ -29,6 +29,7 @@ public partial class Main
         if(_demoStep==0)
         {
             DemoCheck(_entryOpen&&_playerTime==0&&_groundRobots.All(a=>a.IsPhysicsProcessing()),"entry freezes simulation but allows grounding");
+            DemoCheck(new[]{"iron_ore","copper_ore","iron","copper","parts","cable"}.All(id=>ResourceLoader.Exists("res://assets/resources/d12-r1/"+id+".glb")&&ResourceLoader.Exists("res://assets/resources/d12-r1/icons/"+id+".svg")),"all six accepted resource models and glyphs are bundled");
             _demoPath=PlayerSavePath;_demoBytes=File.ReadAllBytes(_demoPath);
             if(phase=="prepare"){QueuePlayerAction("savequit");_demoStep=1;}
             else {if(phase=="rollback")_playerTestInjectLoadFault=true;QueuePlayerAction("load");_demoStep=20;}
