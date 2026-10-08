@@ -1,0 +1,175 @@
+{
+  "technical": "PASS",
+  "blender": "5.2.2 LTS",
+  "origin": "CargoSocket mount anchor at local(0,0,0); Y0 bottom contact plane; geometry center localZ .02",
+  "material_role": "frame_dark",
+  "nodes": 6,
+  "meshes": 5,
+  "triangles": 220,
+  "local_bounds": [
+    [
+      -0.395,
+      0,
+      -0.375
+    ],
+    [
+      0.395,
+      0.24,
+      0.415
+    ]
+  ],
+  "mounted_bounds": [
+    [
+      -0.395,
+      0.48,
+      -0.095
+    ],
+    [
+      0.395,
+      0.72,
+      0.695
+    ]
+  ],
+  "deck_size": [
+    0.79,
+    0.03,
+    0.79
+  ],
+  "leg_size": [
+    0.05,
+    0.21,
+    0.05
+  ],
+  "deck_top_local_y": 0.24,
+  "deck_top_mounted_y": 0.72,
+  "rail_clearance_m": {
+    "side": 0.025,
+    "front_rear": 0.005
+  },
+  "source_audit": {
+    "Deck": {
+      "bounds": [
+        [
+          -0.395,
+          0.21,
+          -0.375
+        ],
+        [
+          0.395,
+          0.24,
+          0.415
+        ]
+      ],
+      "non_manifold": 0,
+      "bevel_m": 0.003,
+      "bevel_segments": 1
+    },
+    "Leg_LF": {
+      "bounds": [
+        [
+          -0.305,
+          0.0,
+          -0.285
+        ],
+        [
+          -0.255,
+          0.21,
+          -0.235
+        ]
+      ],
+      "non_manifold": 0,
+      "bevel_m": 0.003,
+      "bevel_segments": 1
+    },
+    "Leg_LR": {
+      "bounds": [
+        [
+          -0.305,
+          0.0,
+          0.275
+        ],
+        [
+          -0.255,
+          0.21,
+          0.325
+        ]
+      ],
+      "non_manifold": 0,
+      "bevel_m": 0.003,
+      "bevel_segments": 1
+    },
+    "Leg_RF": {
+      "bounds": [
+        [
+          0.255,
+          0.0,
+          -0.285
+        ],
+        [
+          0.305,
+          0.21,
+          -0.235
+        ]
+      ],
+      "non_manifold": 0,
+      "bevel_m": 0.003,
+      "bevel_segments": 1
+    },
+    "Leg_RR": {
+      "bounds": [
+        [
+          0.255,
+          0.0,
+          0.275
+        ],
+        [
+          0.305,
+          0.21,
+          0.325
+        ]
+      ],
+      "non_manifold": 0,
+      "bevel_m": 0.003,
+      "bevel_segments": 1
+    }
+  },
+  "independent_export_audit": {
+    "Deck": {
+      "non_manifold_welded_edges": 0,
+      "positive_volume_m3": 0.01869416304301315,
+      "max_face_normal_error": 7.927859175732708e-05
+    },
+    "Leg_LF": {
+      "non_manifold_welded_edges": 0,
+      "positive_volume_m3": 0.0005195637529122146,
+      "max_face_normal_error": 8.409661978419421e-05
+    },
+    "Leg_LR": {
+      "non_manifold_welded_edges": 0,
+      "positive_volume_m3": 0.0005195641140668767,
+      "max_face_normal_error": 8.409661978419421e-05
+    },
+    "Leg_RF": {
+      "non_manifold_welded_edges": 0,
+      "positive_volume_m3": 0.0005195638329193268,
+      "max_face_normal_error": 8.409661978419421e-05
+    },
+    "Leg_RR": {
+      "non_manifold_welded_edges": 0,
+      "positive_volume_m3": 0.0005195642762222026,
+      "max_face_normal_error": 8.409661978419421e-05
+    }
+  },
+  "source_reopen": "PASS",
+  "independent_glb_readback": "PASS",
+  "actual_socket_parenting_scale1": "PASS",
+  "u01_inputs_sha256": {
+    "tuoyun-r1.bin": "1d0e9ca39e8ffbd40f699b032c12f9e02ce53248f124744135cced315b29e9a9",
+    "generate_tuoyun_r1.py": "517dc05908536a746488c70daf362bd1bcb06d6225becd221578e2c92134df1f",
+    "tuoyun-r1.glb": "929d3b716c435c6ed428a6ab61c14ab8e5b8442093da8c4aea7f11d498c2b341",
+    "tuoyun-r1.gltf": "9a2eb69219862acec3ef727fd11b65dd2450641e6d02043202135bf63d3ee336"
+  },
+  "u01_changed": false,
+  "visual": "NOT_SIGNED; author Workbench inspection only; actual Godot resource/empty captures and independent review owned by master",
+  "transport_all_animations_main_performance": "NOT_RUN"
+}

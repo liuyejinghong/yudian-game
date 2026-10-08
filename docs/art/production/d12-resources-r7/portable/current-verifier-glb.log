@@ -1,0 +1,77 @@
+04:21:56 | INFO: Data are loaded, start creating Blender stuff
+04:21:56 | INFO: Blender create Mesh node iron_ore
+04:21:56 | INFO: glTF import finished in 0.00s
+04:21:56 | INFO: Data are loaded, start creating Blender stuff
+04:21:56 | INFO: Blender create Mesh node iron
+04:21:56 | INFO: glTF import finished in 0.00s
+04:21:56 | INFO: Data are loaded, start creating Blender stuff
+04:21:56 | INFO: Blender create Mesh node copper_ore
+04:21:56 | INFO: glTF import finished in 0.00s
+04:21:56 | INFO: Data are loaded, start creating Blender stuff
+04:21:56 | INFO: Blender create Mesh node copper
+04:21:56 | INFO: glTF import finished in 0.00s
+04:21:56 | INFO: Data are loaded, start creating Blender stuff
+04:21:56 | INFO: Blender create Mesh node parts
+04:21:56 | INFO: glTF import finished in 0.00s
+04:21:56 | INFO: Data are loaded, start creating Blender stuff
+04:21:56 | INFO: Blender create Mesh node cable
+04:21:56 | INFO: glTF import finished in 0.00s
+sandbox_extension_issue_file_to_process failed for <BLENDER_APPLICATION>: 1 (Operation not permitted)
+00:00.490  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/silhouette_front.png'
+00:00.501  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/silhouette_threequarter.png'
+00:00.512  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/silhouette_back.png'
+00:00.522  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/silhouette_low.png'
+00:00.546  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/hsgrey_front.png'
+00:00.561  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/hsgrey_threequarter.png'
+00:00.575  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/hsgrey_back.png'
+00:00.589  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/hsgrey_low.png'
+00:01.355  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore-near.png'
+00:01.366  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/silhouette_front.png'
+00:01.375  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/silhouette_threequarter.png'
+00:01.384  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/silhouette_back.png'
+00:01.394  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/silhouette_low.png'
+00:01.407  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/hsgrey_front.png'
+00:01.420  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/hsgrey_threequarter.png'
+00:01.434  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/hsgrey_back.png'
+00:01.446  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/hsgrey_low.png'
+00:02.140  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron-near.png'
+00:02.151  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/silhouette_front.png'
+00:02.161  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/silhouette_threequarter.png'
+00:02.170  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/silhouette_back.png'
+00:02.181  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/silhouette_low.png'
+00:02.195  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/hsgrey_front.png'
+00:02.209  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/hsgrey_threequarter.png'
+00:02.223  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/hsgrey_back.png'
+00:02.236  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/hsgrey_low.png'
+00:02.923  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore-near.png'
+00:02.933  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/silhouette_front.png'
+00:02.942  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/silhouette_threequarter.png'
+00:02.951  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/silhouette_back.png'
+00:02.959  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/silhouette_low.png'
+00:02.971  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/hsgrey_front.png'
+00:02.984  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/hsgrey_threequarter.png'
+00:02.996  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/hsgrey_back.png'
+00:03.008  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/hsgrey_low.png'
+00:03.701  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper-near.png'
+00:03.712  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/silhouette_front.png'
+00:03.721  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/silhouette_threequarter.png'
+00:03.731  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/silhouette_back.png'
+00:03.741  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/silhouette_low.png'
+00:03.754  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/hsgrey_front.png'
+00:03.767  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/hsgrey_threequarter.png'
+00:03.780  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/hsgrey_back.png'
+00:03.792  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/hsgrey_low.png'
+00:04.483  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts-near.png'
+00:04.494  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/silhouette_front.png'
+00:04.504  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/silhouette_threequarter.png'
+00:04.513  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/silhouette_back.png'
+00:04.523  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/silhouette_low.png'
+00:04.536  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/hsgrey_front.png'
+00:04.548  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/hsgrey_threequarter.png'
+00:04.561  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/hsgrey_back.png'
+00:04.573  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/hsgrey_low.png'
+00:05.256  render           | Saved: 'historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable-near.png'
+RESULT {"mode": "glb", "sheets": ["docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/review_sheet.png", "docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/review_sheet.png", "docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/review_sheet.png", "docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/review_sheet.png", "docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/review_sheet.png", "docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/review_sheet.png"], "triangles": {"iron_ore": 64, "iron": 188, "copper_ore": 48, "copper": 124, "parts": 412, "cable": 460}}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

@@ -1,0 +1,389 @@
+{
+  "note": "SHA256 of the complete public archive, excluding this index itself. archive-map.json retains raw/public pair identities; this index identifies all copied and newly generated archive files.",
+  "files": {
+    "README.md": {
+      "sha256": "485da0bd33561490cf73a3c591348b06e6609025b476571b523d7675dc09c2a0",
+      "bytes": 11894
+    },
+    "archive-check.json": {
+      "sha256": "c3d905d1e5413566e18f98a250ddb061642f87ac42c509353a1fcee5e37d7394",
+      "bytes": 464
+    },
+    "archive-map.json": {
+      "sha256": "94d5a47852530147f3913f6d04d90185737886419652ee028d0a5e0a60a5312d",
+      "bytes": 43299
+    },
+    "archive-readonly-review.json": {
+      "sha256": "1baa364b3f94a307ed66fd95afb426a2205ae0e604fae39e7f167953dfd07bf8",
+      "bytes": 882
+    },
+    "bindings.json": {
+      "sha256": "1d82a9e44e11769677d6ab8bdd11081ebb50964f8cafde7c0b02c4252feff28d",
+      "bytes": 7057
+    },
+    "check_archive.py": {
+      "sha256": "399fb576a4215a68bae04ea6aac84253b7399c1262ced46ae88708ffa1b83936",
+      "bytes": 10400
+    },
+    "context/f02-rev3-processor.glb": {
+      "sha256": "cf401d19b2f59d4b48df68582fb8c4da644490c30e0e3d046061f5a526c5a1be",
+      "bytes": 65288
+    },
+    "godot-r7/capture.json": {
+      "sha256": "206b5f59e985acc16d583745b25fdc58da10a15464680b557aa97e7a4c38b158",
+      "bytes": 144001
+    },
+    "godot-r7/cargo-cable-near.png": {
+      "sha256": "09c42788ce8018ba7b5321c91a33d0908e6b242df496af6b1c3126bf52d69bfc",
+      "bytes": 128103
+    },
+    "godot-r7/cargo-cable-normal-low.png": {
+      "sha256": "b84c5678c7814a4766076abaad53c0cc71c43f19c2bb8208deec1d05edee086a",
+      "bytes": 31575
+    },
+    "godot-r7/cargo-cable-normal.png": {
+      "sha256": "4310501a12f9adeba866b4be63585dc5ab72cec40ead1e6bc544d5645e53e33f",
+      "bytes": 22185
+    },
+    "godot-r7/cargo-cable-reverse.png": {
+      "sha256": "80ac2da3a03afd77e9d81e73d2d3c7e6cccc46d141083a482888f6d04b9b72f0",
+      "bytes": 127232
+    },
+    "godot-r7/cargo-copper-near.png": {
+      "sha256": "1fcb0077e51f6ccbd98215fb608dd6a4b09304e17bad280927e9d4cb6a601a6a",
+      "bytes": 123348
+    },
+    "godot-r7/cargo-copper-normal-low.png": {
+      "sha256": "7f9487fcf81935167627a3fedd69ef4af5a58153cfa47f6435076e886832fe41",
+      "bytes": 31452
+    },
+    "godot-r7/cargo-copper-normal.png": {
+      "sha256": "6e143496366ee0f7c908503ecea0a9843dee7397abb1e416d99cf39a4e54c9a8",
+      "bytes": 21918
+    },
+    "godot-r7/cargo-copper-reverse.png": {
+      "sha256": "d47077daee545bd4f2446cf6fcddc4789ffd703d86735de774a5b1117d648600",
+      "bytes": 123266
+    },
+    "godot-r7/cargo-copper_ore-near.png": {
+      "sha256": "747776d149b976bde8318111351f7687c8b76e0357599546faed5454c4260aac",
+      "bytes": 125197
+    },
+    "godot-r7/cargo-copper_ore-normal-low.png": {
+      "sha256": "858aa6195f2248134a1fbe7589997bdf0a74cf70736074cb269cf2925a0d95ce",
+      "bytes": 31602
+    },
+    "godot-r7/cargo-copper_ore-normal.png": {
+      "sha256": "7a998aa91186a167228f6775feb68100c90ee09007a404111e26bb7037bc135e",
+      "bytes": 22187
+    },
+    "godot-r7/cargo-copper_ore-reverse.png": {
+      "sha256": "8772a3636a7693f2788e33064094b07a8bc6eb3c2ab391d19e5e64f0a28bc6ae",
+      "bytes": 125053
+    },
+    "godot-r7/cargo-empty-near.png": {
+      "sha256": "94b5c383de8c804bc718d241d490b0cf69d4c5f427d7c0eb091fa67fe2676ee2",
+      "bytes": 123484
+    },
+    "godot-r7/cargo-empty-normal-low.png": {
+      "sha256": "0eaadf0a585cf01e9ad301f39c313cf6bb9603ad228b0995387a839e3c1cc3ab",
+      "bytes": 31200
+    },
+    "godot-r7/cargo-empty-normal.png": {
+      "sha256": "d8b2cb3b4d8d2c7fea056c05835390e4ade2b33a62e2d8eb41673a03e3ba3b52",
+      "bytes": 21621
+    },
+    "godot-r7/cargo-empty-reverse.png": {
+      "sha256": "7c8e3a8b38a582cb0e623484dc27f176125b93a40a938558be86cc6c65f3493e",
+      "bytes": 123216
+    },
+    "godot-r7/cargo-iron-near.png": {
+      "sha256": "423c2f0dd3cd4a8adf6d0e29316bedb05d577c00247fd484d66301b28bf41a5b",
+      "bytes": 123765
+    },
+    "godot-r7/cargo-iron-normal-low.png": {
+      "sha256": "fff753cb59f1e496886e5314934e19f8bb1002365a81a042ed2a0fecc827a2c3",
+      "bytes": 31362
+    },
+    "godot-r7/cargo-iron-normal.png": {
+      "sha256": "8045cb99f2ac289eb4e42e239200df44c9b74cb603adc5496b47aa59f28ccff6",
+      "bytes": 21813
+    },
+    "godot-r7/cargo-iron-reverse.png": {
+      "sha256": "a86d97bc5f36fa63fa1491811f9ec5ac28f010292388c44eef9667dba08d1650",
+      "bytes": 123407
+    },
+    "godot-r7/cargo-iron_ore-near.png": {
+      "sha256": "eacff7fc7fbd2bd4900ea8bea0d12d6f5d8c91e3aee87aa1ff80cda55150a64c",
+      "bytes": 124524
+    },
+    "godot-r7/cargo-iron_ore-normal-low.png": {
+      "sha256": "63ab311a3b9e6893dba066190a05ed8372dd6b4763b0a73489cca80893574cf8",
+      "bytes": 31629
+    },
+    "godot-r7/cargo-iron_ore-normal.png": {
+      "sha256": "a4a85fcf8991ff722f0c6032d7cf426072e2e63704302de0cb914c9aa8306c96",
+      "bytes": 22349
+    },
+    "godot-r7/cargo-iron_ore-reverse.png": {
+      "sha256": "96870b85a95d469da1a4f83e6bcdbf379c6bf6cd2a902f70bd3ff92e5bf6be0a",
+      "bytes": 121387
+    },
+    "godot-r7/cargo-mixed-a-near.png": {
+      "sha256": "1eb4988fd2a5165e93a102cc29d97abf19d16ce10e21266462d559b7039b5512",
+      "bytes": 123997
+    },
+    "godot-r7/cargo-mixed-a-normal-low.png": {
+      "sha256": "bafc43dd050584cfc22d18c1eecb2df395eb60a7101746967e8ba94bab25bd47",
+      "bytes": 32133
+    },
+    "godot-r7/cargo-mixed-a-normal.png": {
+      "sha256": "bcd96840047cdb688ddb9241fb2abd6dcff0d1503b00be4d7fd43dee764c79ac",
+      "bytes": 22725
+    },
+    "godot-r7/cargo-mixed-a-reverse.png": {
+      "sha256": "5e06fe40460785dbdfa22ee4b3fe30c971bfad8baa181e8c1c4b3eb1f25dd432",
+      "bytes": 123359
+    },
+    "godot-r7/cargo-mixed-b-near.png": {
+      "sha256": "04095d493b0cf66f4fac1d748a37696ed057053d133b66a931a83e7516cc485f",
+      "bytes": 125780
+    },
+    "godot-r7/cargo-mixed-b-normal-low.png": {
+      "sha256": "a3d7d5954db0391c2375549dfef06b7316490dc903b432a8550f9ae5526245ac",
+      "bytes": 31697
+    },
+    "godot-r7/cargo-mixed-b-normal.png": {
+      "sha256": "310841b4883fd37a131853808ffe9affaeb8542c0f702b8edbb6a293454d613f",
+      "bytes": 22307
+    },
+    "godot-r7/cargo-mixed-b-reverse.png": {
+      "sha256": "01e470a323c0e90809faa27410a269d038754a18040af5c90a14fadb20a6fdd4",
+      "bytes": 124955
+    },
+    "godot-r7/cargo-parts-near.png": {
+      "sha256": "b001448eb078b12e32ac4b02649a1aee1e57e93313220b3e422b6d554b5708f7",
+      "bytes": 123086
+    },
+    "godot-r7/cargo-parts-normal-low.png": {
+      "sha256": "d702f593bee65ec5cd1353d59e535739d8bfb9695422e9fda43efb8b6a85f7ad",
+      "bytes": 31377
+    },
+    "godot-r7/cargo-parts-normal.png": {
+      "sha256": "43a20ad0238cf78873032b40583bdc499588ae1bdfad9254abf93e34091c1763",
+      "bytes": 22009
+    },
+    "godot-r7/cargo-parts-reverse.png": {
+      "sha256": "059a651b1917a1474feec55f95aee03229fefd32bcb0eb753bbb61c5cafc1ad8",
+      "bytes": 122122
+    },
+    "godot-r7/output-cable-near.png": {
+      "sha256": "3c3c152f00e18de6badbeb9123234a94381d6b425314e592c9d32f6239a40f74",
+      "bytes": 258661
+    },
+    "godot-r7/output-cable-normal-low.png": {
+      "sha256": "121f7d369dc993a0e168101addad7be1cc63c0233206e2214b45ae86103d534a",
+      "bytes": 44242
+    },
+    "godot-r7/output-cable-normal.png": {
+      "sha256": "ec75125b6726045578799e163d8699e518522036c058f09909b8282fa1ad1706",
+      "bytes": 32655
+    },
+    "godot-r7/output-copper-near.png": {
+      "sha256": "5c3d3a3a140ccb74bc01c14f5c5d82cc8c7b5ad016c8dd16ee62a134f298c0fa",
+      "bytes": 247218
+    },
+    "godot-r7/output-copper-normal-low.png": {
+      "sha256": "f69ba9db389ed29afa89282a477191540b20893f0b4d64635fe0284406f9da22",
+      "bytes": 44284
+    },
+    "godot-r7/output-copper-normal.png": {
+      "sha256": "f89f55ab5667f86d755f6101ca13f571410d93dec392823952068860e401ec64",
+      "bytes": 32723
+    },
+    "godot-r7/output-parts-near.png": {
+      "sha256": "f8d838353bf80ebf3b89c543b0befc206fdcb5b7e82c24529a8286bab4b92ff3",
+      "bytes": 250537
+    },
+    "godot-r7/output-parts-normal-low.png": {
+      "sha256": "be84bf6a274fd75ba47d82d9a54c0ac8edf51155991b22bd7840f7ff9ed711c5",
+      "bytes": 44214
+    },
+    "godot-r7/output-parts-normal.png": {
+      "sha256": "82cc65743c2c10571a63bc1b288b28aa523c7acdb6751df1ff2bd381ed17f516",
+      "bytes": 32751
+    },
+    "godot-r7/single-cable-near.png": {
+      "sha256": "74e03c60ee3fe0abba87d9a1198c13a973e4a5adf7be8931ded52bd667697fc2",
+      "bytes": 45836
+    },
+    "godot-r7/single-cable-reverse.png": {
+      "sha256": "fcdb7e9bc36401c445cbad28ad1246af25651a648dc2d3acf9e1a33e98ce696c",
+      "bytes": 46154
+    },
+    "godot-r7/single-copper-near.png": {
+      "sha256": "b6b85e580dcbc6d92b742b4113b62f021d09ee18f4d10f0b90db1b123ea15b11",
+      "bytes": 43127
+    },
+    "godot-r7/single-copper-reverse.png": {
+      "sha256": "f66d56c5f2b59f356b8ef2db82fe0bd5782d87639f7f80c9fa89c31e210da568",
+      "bytes": 43131
+    },
+    "godot-r7/single-copper_ore-near.png": {
+      "sha256": "9259563fe870e0586e62aacba7dc4172919dd1eb96119865d30136e3fb5cc0c9",
+      "bytes": 43279
+    },
+    "godot-r7/single-copper_ore-reverse.png": {
+      "sha256": "92f17edbde90060b08b0903c5fcc0dcee9e038d9b4c726ae42a61568dbdf424a",
+      "bytes": 44355
+    },
+    "godot-r7/single-iron-near.png": {
+      "sha256": "082a3f9a525eacbdd2f9ec9f516306148a7575ead67c1842061fff3ae6ed55cb",
+      "bytes": 42392
+    },
+    "godot-r7/single-iron-reverse.png": {
+      "sha256": "21f333dbbf2c4129b985d0413fdd690d7b1db2b30b6de0a4886e0e85ca7f2bf5",
+      "bytes": 42394
+    },
+    "godot-r7/single-iron_ore-near.png": {
+      "sha256": "25af949e3bcf4b9e1ff7c178c9196d03f497413e0ea83b4b3175e60acae150fc",
+      "bytes": 43888
+    },
+    "godot-r7/single-iron_ore-reverse.png": {
+      "sha256": "3a16b559768f0079330804909f2afeb9ba2e794010d4eb6ef0799d4d019e4a5e",
+      "bytes": 44008
+    },
+    "godot-r7/single-parts-near.png": {
+      "sha256": "79b27f39c24379b4264d8d78aa147277f933aee5e5931310ad96b134ff08cfe4",
+      "bytes": 42613
+    },
+    "godot-r7/single-parts-reverse.png": {
+      "sha256": "5076e4a33fde2cc8f6308510ea8622a3444ab20549ead9d96935669d16bc4510",
+      "bytes": 42626
+    },
+    "independent/REVIEW.md": {
+      "sha256": "4a38bbbe2239156789a68a5493efe93f8daaec57dc675d35fec5f45ea68ee726",
+      "bytes": 7754
+    },
+    "independent/identity.json": {
+      "sha256": "10cac16e68bec95e5a1711f29ed55468f181a9a006692371ea831a53d4f2e2ff",
+      "bytes": 46236
+    },
+    "independent/portable-source-addendum-REVIEW.md": {
+      "sha256": "80500d0b2b9cecda875e020fb0e76673978aa1e8afd8e3ebe887f67ac8f9ebba",
+      "bytes": 7208
+    },
+    "independent/portable-source-addendum-identity.json": {
+      "sha256": "69617ca9e635736b7f5123c520325a162960cb8c2c557757504c422e7a5162d0",
+      "bytes": 106457
+    },
+    "isolated-archive-check.json": {
+      "sha256": "f26926b5464ab7171f677cad2e3194038e5780e83f7a41aba9664531a235726f",
+      "bytes": 3556
+    },
+    "portable/current-verifier-glb.log": {
+      "sha256": "51e528287fc94b07b5f1531d91dc2ba3e9340c7bff09bd88383889b6f147e4ae",
+      "bytes": 11742
+    },
+    "portable/current-verifier-receipt.json": {
+      "sha256": "fbd0b5dacf78bfe226ee6ffc2e52656d63bed4807bcdf740b0e3882077315fb1",
+      "bytes": 27104
+    },
+    "portable/current-verifier-source.log": {
+      "sha256": "92b3c2cbfba4277f34d890c581e4804c0dd4ec80d940e195dfa56c6b24f96edf",
+      "bytes": 11136
+    },
+    "portable/current-verifier-stage.json": {
+      "sha256": "f54f126d83e34c27e4842821f6d62fdc1f2d3453f6355916fe0a1589a24db15f",
+      "bytes": 3094
+    },
+    "portable/fresh-reopen-differences.json": {
+      "sha256": "08fd33d24aa13802de535d4541ddd53b8518e5dadacda4d78a525cc35158d583",
+      "bytes": 49679
+    },
+    "portable/isolated-rebuild-proof.json": {
+      "sha256": "8642e75de181e81914148113107aef5d32f4715178ea5152ecad0e7928a49b76",
+      "bytes": 2940
+    },
+    "portable/isolated-rebuild-proof.log": {
+      "sha256": "9ae2a0896c8328d6f1edc3a95dd94407f73bbb3171f4e0965db0b930de47a3f7",
+      "bytes": 2687
+    },
+    "portable/isolated-rebuild.log": {
+      "sha256": "e6cdfeca593e6a741cf201773978c098bd3fb42cc34ba6241a593c2790f3183a",
+      "bytes": 1827
+    },
+    "portable/isolated-stage.json": {
+      "sha256": "fb7418958cf2fab633e1809e7387f864431b5e19d3eb7870b757894bbf50d545",
+      "bytes": 1609
+    },
+    "portable/native-proof.json": {
+      "sha256": "181d5ff6b417efebc48a2a7ee56f9aedb6e14fe2b6445b60c9369da357f88c5f",
+      "bytes": 6706
+    },
+    "portable/native-proof.log": {
+      "sha256": "b02e8346c0f2934ae5a20c4dd30f895817f7c11fb027017be3f970da1a8d5043",
+      "bytes": 8077
+    },
+    "portable/output/current-glb-readback.json": {
+      "sha256": "9876fa5fe6bcf91e0fdd562db027366a7cdf37a723ab5db8a901f37139514a42",
+      "bytes": 9386
+    },
+    "portable/output/current-source-readback.json": {
+      "sha256": "3e276efd8f0420e9ca9a3fcafb74160549c1bf03b40612e16838b01d823e6eb7",
+      "bytes": 10456
+    },
+    "portable/resource-pair-grey-r5-portable-before.json": {
+      "sha256": "b1f2b9dcd54d738f066b5edb1cc66ce6f9569e3786c3f18d25a49fc1e1dac5d6",
+      "bytes": 687535
+    },
+    "portable/resources-grey-r7-before.json": {
+      "sha256": "e4df027d8bb38da25311e2e58dc1b48e0007d4e0e3b58a73e84761f98477fdad",
+      "bytes": 3957660
+    },
+    "technical/carrier-check.json": {
+      "sha256": "be3cc96747e33b7515435035966f6997ed5e9afea580ee5d25469b3a4f018d94",
+      "bytes": 3652
+    },
+    "technical/fixture-capture.log": {
+      "sha256": "429b25d088da95528ea3919530dbfbb806825fc948603cee26d519aa3e5780e0",
+      "bytes": 182
+    },
+    "technical/fixture-check.json": {
+      "sha256": "15d20dea7e59f1d0b811bb6f7d90d27c1908da37af156b4a788e96d66b68a558",
+      "bytes": 9808
+    },
+    "technical/fixture-run-receipt.json": {
+      "sha256": "cfefd78d33a7dd2aa8ada2148c17f3c15213ab609d90a1cad1ec8058d571b088",
+      "bytes": 1108
+    },
+    "technical/output-contact-check-r7.json": {
+      "sha256": "d98729ee040ce0e9c0f38f42916c2b7a4c0ac41da77a76160f63c2e8b354aa66",
+      "bytes": 2427
+    },
+    "technical/readback-identity-check.json": {
+      "sha256": "29b4e1edddd092de9f951f18f61b5e9f846d826958d54ea4cfc02bf87d2f0350",
+      "bytes": 203
+    },
+    "technical/resource-facts.json": {
+      "sha256": "f5ced89d2c8881d6666e4d03aa7153743e6e1233a5d346bef04d4aa534f321ad",
+      "bytes": 22006
+    },
+    "technical/root-readback-r7-glb.json": {
+      "sha256": "13f55caeedd6361f4ad96396300f6e0228ab33a299c0819f0dc86460886e5e35",
+      "bytes": 8312
+    },
+    "technical/root-readback-r7-glb.log": {
+      "sha256": "510b8fc353a16eddd0dba70de466f17516a64444596c6a1504f19d23b4a72784",
+      "bytes": 1134
+    },
+    "technical/root-readback-r7-source.json": {
+      "sha256": "da7c7bb69e869cb74f5a2baf17a01073066280cfcbecc3df4b0d12767a2e1c42",
+      "bytes": 8315
+    },
+    "technical/root-readback-r7-source.log": {
+      "sha256": "800a25437158afe22c2bf037488dd9f8a49e92e147af9e8a4782c125fd46a23f",
+      "bytes": 280
+    }
+  }
+}
