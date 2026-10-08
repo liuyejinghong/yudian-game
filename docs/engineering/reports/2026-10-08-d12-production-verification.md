@@ -1,6 +1,6 @@
 # D1.2 有限生产与发展选择复验
 
-2026-10-08。有限矿点采集、四配方、真实物料搬运、缺口目标、补维修耗材和schema3恢复已接同一Main。当前工程进入REVIEW；最终r3原生25进程检查通过，实际窗口因Mac锁屏尚未运行。默认「余电.app」保持D1.1 r5，PR合格与入口切换需完成实际GUI验收。
+2026-10-08。有限矿点采集、四配方、真实物料搬运、缺口目标、补维修耗材和schema3恢复已接同一Main。最终r3原生25进程与真实Metal鼠标功能链通过（LIMITED PASS）。实窗暴露净缺口把在途/已投入/完成旧成本重复报告的HUD问题，完整E13/demo仍REVIEW；D12-DEMO-UX正在修正，固定新包验收后再精确集成PR52及切入口。默认「余电.app」仍D1.1 r5。
 
 ## 行为与范围
 
@@ -30,7 +30,7 @@ r1从c6a3a5e导出并通过9进程，源快照ea9f09f29dcbcb62b67592dcea2a9e6bb5
 | 仓储后续原生 | r3同包13进程全部通过：full、矿提交后、载货、加工投入、产出、仓储取货、让位途中各prepare/resume；重复读取不推进/重结算 |
 | 实际失败现场 | 原仓储停车导致新charger整平Occupied拒绝；相同失败现场副本绿replay已建成charger |
 | 恢复/反例 | 源码覆盖超时阻塞后取消/重试、无电不推进、投入缺失/非法端点/错阶段/取消档Supply不一致拒绝；最终r3实际执行新增Supply反例及双车不同站断言，全部通过 |
-| 真实GUI | NOT_RUN：CUA报告Mac锁屏，自动解锁失败；已请所有者手动解锁。Metal启动头不算操作验收，无新截图或默认入口通过声明 |
+| 真实GUI | LIMITED PASS：新档太阳能、同包重开、采矿/实运/已付加工恢复、载货取消/重试、仓储→第2太阳能实际供料与发电8/s、只读保存失败保原档、5进程close0；后续阶段fixture辅助，实际1280未验，HUD已知缺口返修 |
 | 独立审查 | architect前审及让位根因审查；reviewer对关键账/恢复、Supply边界、规划圆排除和站点冲突复核，无剩余静态实质问题；最终architect确认13进程/运行源身份及Draft范围，无新增静态阻断 |
 
 保障用低健康注入触发真实充电和三次付费维修，证明成本与往返，不证明自然平衡。两种发展方向有实际运输/布局/供电后果；尚不签真人理解、长期存续或G1。
@@ -45,10 +45,12 @@ source-r3曾发现Blocked运输取消把ResumeStage覆盖成Blocked，保存被�
 
 两个ZCode独立会话确认GLM-5.3-Flash：A只写纯缺口算法/检查，B只写只读UI/检查。Codex持有权威账、事务、恢复、配置、实际构建与验收；GLM会话已结束，费用UNKNOWN，context/token数据不能换算账单。
 
-E14未发现可用本地候选执行器，真实模型NOT_RUN；没有下载权重或调用付费API。本轮不新增通用规划平台、多目标竞争、救援/勘探、新设施、所有者视觉、联合性能或发行流程。下一步完成实际鼠标缺料链/暂停取消/保存关闭重开、默认入口与精确PR集成；旧应用及原用户存档保留。
+E14未发现可用本地候选执行器，真实模型NOT_RUN；没有下载权重或调用付费API。本轮不新增通用规划平台、多目标竞争、救援/勘探、新设施、所有者视觉、联合性能或发行流程。下一步完成D12-DEMO-UX/E13固定HUD、薄入口和保存退出，修正净生产缺口，再构建验收整合候选包并精确集成；r3已通过功能不重做，旧应用与原用户存档保留。
 
 最终r3另外通过D11原规则9进程、旧schema2无新增字段迁移/旧r1 schema3缺Supply字段恢复/processor-first保护3进程。25个原生进程同loaded身份；完整流程t3053.7、地形v21、采矿回执14、配方回执21、8座设施，铁矿剩14、铜矿剩84、未消耗kit为0。派生数字只用于有限过程核对，不代表长期存续。
 
 [公开证据说明](../evidence/2026-10-08-d12-native-r3/README.md) / [13进程](../evidence/2026-10-08-d12-native-r3/package-world/runner.log) / [9旧规则](../evidence/2026-10-08-d12-native-r3/legacy-world/runner.log) / [3兼容及保护](../evidence/2026-10-08-d12-native-r3/native-extra-runner.log) / [固定包manifest](../evidence/2026-10-08-d12-native-r3/build-manifest.json) / [入口与原档](../evidence/2026-10-08-d12-native-r3/entry-and-save-state.json) / [证据hash](../evidence/2026-10-08-d12-native-r3/evidence-sha256.json)。
 
-[Draft PR52](https://github.com/liuyejinghong/yudian-game/pull/52)已创建并attach到工程会话；[总索引17](https://github.com/liuyejinghong/yudian-game/issues/17)已同步REVIEW/锁屏留项。PR未合并、默认未切；实际GUI验收与后续精确集成仍是未完成工作。
+[Draft PR52](https://github.com/liuyejinghong/yudian-game/pull/52)已attach；实际窗口已解锁并完成上述功能验收。PR未合并、默认未切，完整HUD/demo返修及整合新包仍是未完成工作。
+
+[实际GUI动作、阶段摘要与截图](../evidence/2026-10-08-d12-gui-r3/README.md)。r3在实际1x中自然触发回充/夜间等待；第一太阳能至t133.633、仓储至t932.55、第2太阳能至t1808.483已观测完成，后两者期间暂停/读档/工具操作，不把观测时间或8x native终态当自然建造节奏。

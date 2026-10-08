@@ -10,8 +10,8 @@
 |---|---|---|---|---|---|---|
 | CAMERA-01 | P0 | ACCEPTED | r5实际鼠标按钮/滚动、暂停/边界复位、保存关窗重开后镜头通过；正常入口已切r5，原档不变；仅接受鼠标入口，触控板/真人按住键盘手感未签 | GLM UI；Codex复现/集成/实际输入验收 | 缩放/旋转/平移可见，新档/暂停/读档后可用；不误下工程命令，操作可发现；原设备根因不因合成手势通过而结论化 | [返修票](CAMERA-01.md) / [复验](../reports/2026-10-07-camera-verification.md) / GAME-UX / DT-E01 |
 | C01-D1.2 | P0 | REVIEW | 基线51c9b632；architect前审/关键状态reviewer已落实修正 | Codex | 有限安全首套、矿量/地形同次提交、版本配方账、有限目标与schema3、六资源/货舱接口 | [执行合同](../contracts/d12-firstplay-r1.md) |
-| E10-E11-D1.2 | P0 | REVIEW | r3 full实采/实运/四配方/仓储取货与第二阵列→新充电桩通过；实际GUI待解锁 | Codex权威；GLM纯缺口 | 真实净缺口、无kit配方、取消/投影失败/阻塞不重发，至少仓储/供电不同后果 | [执行合同](../contracts/d12-firstplay-r1.md) |
-| E12-E13-D1.2 | P0 | REVIEW | r3六边界13进程＋D11九进程＋三兼容/保护通过；UI源码78项；实际GUI待解锁 | Codex恢复；GLM UI | 新槽保旧档、经营状态/等待原因与授权、坏引用拒绝，不代签真人 | [执行合同](../contracts/d12-firstplay-r1.md) |
+| E10-E11-D1.2 | P0 | REVIEW | r3 full实采/实运/四配方/仓储取货与第二阵列→新充电桩通过；实际GUI功能LIMITED PASS；净缺口/HUD返修 | Codex权威；GLM纯缺口 | 真实净缺口、无kit配方、取消/投影失败/阻塞不重发，至少仓储/供电不同后果 | [执行合同](../contracts/d12-firstplay-r1.md) |
+| E12-E13-D1.2 | P0 | REVIEW | r3六边界13进程＋D11九进程＋三兼容/保护通过；UI源码78项；实际GUI功能LIMITED PASS；净缺口/HUD返修 | Codex恢复；GLM UI | 新槽保旧档、经营状态/等待原因与授权、坏引用拒绝，不代签真人 | [执行合同](../contracts/d12-firstplay-r1.md) |
 | C02-D1.2 | P0 | IN_PROGRESS | r3固定source/PCK原生通过，U01 PR50源/消费同sha；实际窗口、默认切换、合格PR集成待解锁 | Codex | 固定source/hash导出、保存关闭重开继续、合格后切默认和PR精确集成 | [执行合同](../contracts/d12-firstplay-r1.md) |
 | C01-D1.1 | P0 | ACCEPTED | 975916d规则与恢复独立审查；原生与最终包真实窗口通过 | Codex | 冻结有限自举账、设施实例、路径/共享预约、分离健康、schema2；首套投入安全证明，数值为可调探针 | [执行合同](../contracts/d11-bootstrap-r1.md) |
 | C02-D1.1 | P0 | ACCEPTED | r3同包九进程/签名与真实鼠标保存/重开/继续通过；默认入口已更新，仅签工程子片 | Codex | 从仅着陆器实建首套保障/加工，真实运输/两轮工作保障/保存重开；未测项明确，不以子件通过结项 | [本批证据](../reports/2026-10-07-d11-bootstrap-verification.md) |
@@ -107,4 +107,9 @@ APP-START已合并[PR35](https://github.com/liuyejinghong/yudian-game/pull/35)�
 
 2026-10-07 D1.1工程、同包原生与实际窗口复验已完成；六工程子片限定ACCEPTED，根入口已切到975916d修复包。下一批D1.2缺料生产与有后果的发展选择；详细限定与失败修复见[D1.1复验](../reports/2026-10-07-d11-bootstrap-verification.md)。不扩签全部模块、自然平衡或联合视觉。
 
-2026-10-08 D1.2实现与r3原生25进程已通过，工程REVIEW：GUI因Mac锁屏未运行，默认仍D1.1 r5、原两档字节不变。待解锁后同r3实际鼠标缺料链/暂停取消/保存关闭重开，合格后切默认与精确PR集成。[D1.2复验与留项](../reports/2026-10-08-d12-production-verification.md)。
+2026-10-08 D1.2实现与r3原生25进程已通过，工程REVIEW：真实GUI功能LIMITED PASS，净缺口/HUD返修；默认仍D1.1 r5、原两档字节不变。D12-DEMO-UX/E13整合新包验收后切默认与精确PR集成。[D1.2复验与留项](../reports/2026-10-08-d12-production-verification.md)。
+
+
+## D12-DEMO-UX / E13 普通试玩闭环（2026-10-08 已领取）
+
+Codex负责Main权威/保存成功契约与最终GUI，UI消费者限定现有Godot HUD；architect已预审，步骤与证明见 [PLAN](../../../PLAN.md)。r3功能GUI已验；整合薄入口/HUD修正固定新包验收后集成PR52。交付薄入口（新游戏/继续/保存退出）、中文目标/下一步、库存净缺口/电力保障和两方向对照。保存失败不退出，加载物理就绪才恢复；普通1x实测等待，不以8x模拟签节奏。D2扩展/模型/高保真不作为本票依赖。
