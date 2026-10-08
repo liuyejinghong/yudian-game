@@ -84,6 +84,7 @@ public partial class Main : Node3D
             _playerMode = !options.Benchmark && !options.LiveTerrain;
             _entryOpen = _playerMode && new[] { "YUDIAN_PLAYER_SELF_TEST", "YUDIAN_BOOTSTRAP_SELF_TEST", "YUDIAN_DEVELOPMENT_SELF_TEST" }
                 .All(name => System.Environment.GetEnvironmentVariable(name) != "1");
+            if (_entryOpen) _playerNotice = "选择开始新游戏或继续存档";
             _liveMode = options.LiveTerrain || _playerMode;
             if (_liveMode) PrepareLiveTerrain();
             _duration = options.Duration ?? _cfg.Benchmark.DurationSeconds;

@@ -1,0 +1,10 @@
+{
+  "git_head": "ec5d4640ff3972a1eb79edd4b6d81696fe7c2efd",
+  "source_snapshot_sha256": "83c40939bcc8f1c3ab1ff1df46f4365e8048a89d5367f4155a47a4aa3fe63108",
+  "assets_snapshot_sha256": "14a87b7aabfee70aacadea077ece332e845fbcf330cb76f2ef43071a814e4638",
+  "pck_sha256": "408d83868ca49a526e8c0f26b08cedd7ad0bdeaa207af9fdf116386d725f3d1d",
+  "binary_sha256": "7b9bf0197b4b67172f365c90b626880db4f50de64056a256471af897f4722d53",
+  "sdk": "10.0.401",
+  "godot": "4.7.2.stable.mono.official.ed1daf0bf",
+  "tfm": "net8.0"
+}

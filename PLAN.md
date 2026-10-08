@@ -475,3 +475,9 @@ architect已只读预审；保留r3功能GUI已过结果，薄入口/HUD修正�
 
 
 2026-10-08资格更新：r3实际鼠标功能LIMITED PASS，5进程正常close0；两方向实际建成和仓储供料、回充/日照等待、已付配方跨进程及readonly保存失败均实证。已知HUD在途/已投入/完成旧成本误作净缺口，不签完整E13/demo；PR52仍Draft/默认r5。先在独立demo树整合修正候选、固定新包验收，再精确集成，不以“先合并52才能验新包”相互等待。源Main新7进程已过，仅属demo源，不冒充r3或最终新包；GLM UI仍实施。
+
+2026-10-08 E13整合：Codex Main/DTO/save与资源绑定550ebd1窄提交移入PR52为aa8b7bc；无冲突合入美术主线486e9e9为e388b5a。GLM sess_cad9792c7a原UI turn因入口重复失败取消；限定返修task_4e94fac026/e6fafff源码116检查PASS，入口遮罩每帧刷新、失败日志保留；未选机汇总task_1a01078441/2d074a8补齐，源码118检查PASS/实际SaveQuit exit0，主控核commit仅2归属文件。Bridge协调目录变更清单混有主控合并/美术兄弟树并发变更，不当作worker改动。reviewer核入口/持久化/资源节点归属无实质问题。r3实际GUI LIMITED PASS/HUD REWORK记录c8e5c56已推送，Issue17/PR52已去掉旧锁屏NOT_RUN当前表述。默认r5仍保留。
+
+下一证明：固定ec5d464构建r4，8同包原生进程；实际1920与1280分别入口/首建/保存退出重开，后段paid/cargo/completed/方向用同r3真实检查点明确辅助，核正确净缺口与新资源绑定。原两档hash不变；通过后精确合并PR52和切默认，未通过则保留Draft。自然平衡/真人/G1/本地模型/稳定性能/发行未签。
+
+2026-10-08 r4固定包已导出（ec5d464 / source83c40939 / PCK408d8386），8同包CLR8.0.31进程PASS、loadedSHA f3f51224 / MVID d5f79189，无ERROR/leak。实际Metal1920x1200新入口→鼠标双击开始→暂停→SaveQuit exit0，隔离档paused133.0166/terrain0/goalnull/buildseq0。GUI发现首屏Prepared/Mines把功率/保障挤到下方，双击入口后第2击还透传选地(4.7,-1.5)，未建造。r4 LIMITED FUNCTIONAL/HUD REWORK，默认仍r5。GLM最后一个follow-up task_f553b0f3bc仅2 UI文件：长明细进现有折叠区、首屏事实可见，入口退出短窗防跨帧第2击，并增加真实几何/跨帧反例。主控Main入口初始Notice改为选择开始/继续，旧整平指令不在入口提示。完成后固定新r5候选再验，不重贴r4结果为r5。
