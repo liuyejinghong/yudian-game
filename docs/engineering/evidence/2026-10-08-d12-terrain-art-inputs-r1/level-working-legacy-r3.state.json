@@ -1,0 +1,31 @@
+{
+  "sample": "level-working-legacy-r3",
+  "FixtureHash": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+  "Schema": 2,
+  "ConfigVersion": "d11-bootstrap-1",
+  "Mode": "D1.1 regression inside fixed D1.2 r3 package; not default D1.2 gameplay",
+  "Time": 1232.1000000001177,
+  "Paused": true,
+  "TerrainVersion": 6,
+  "LevelJob": {
+    "Stage": "Working",
+    "AppliedVersion": null,
+    "Center": [
+      14,
+      0,
+      -8
+    ],
+    "Work": 0.26666666666666666,
+    "Station": [
+      19.475,
+      0.3441453,
+      -8
+    ],
+    "Message": "保障或停机中；原任务进度保留"
+  },
+  "shader_stage_derived_from_UpdatePlayerSurface": 1,
+  "derivation_note": "LevelJob Working or WaitingForSpace ->1; ProductionTask Working alone ->0. Shader stage is consumer-derived, not serialized in save.",
+  "services_in_flight": 1,
+  "effective_work_note": "Retained job is Working but snapshot is paused and service return is in flight; not evidence of uninterrupted effective work.",
+  "changed_cells_from_initial": 342
+}

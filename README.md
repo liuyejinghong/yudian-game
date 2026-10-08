@@ -1,8 +1,10 @@
 # 余电 · Yudian
 
+2026-10-08：默认「余电.app」已更新为 D1.2 r7：新游戏／继续存档／保存退出、有限采矿加工、真实运输建设及两个发展方向已接通。r7九项原生检查、1920与1280实际窗口闭环通过；原D1.1包和存档保留。[试玩操作](prototype/README.md) / [验收范围与留项](docs/engineering/reports/2026-10-08-d12-production-verification.md)。
+
 2026-10-07：本机「余电.app」已切换到通过真实鼠标保存/关闭/重开验收的D1.1自举建设包；真实运料、施工、付费供电与充电维修已接通。[试玩操作](prototype/README.md) / [D1.1证据与范围](docs/engineering/reports/2026-10-07-d11-bootstrap-verification.md)。
 
-镜头鼠标入口已验，默认应用已更新为r5；底栏提供平移、缩放、旋转和复位，暂停及保存重开后仍可操作。物理触控板另验。[镜头复验与留项](docs/engineering/reports/2026-10-07-camera-verification.md)。
+2026-10-07镜头历史验收：当批默认更新为r5；底栏提供平移、缩放、旋转和复位，暂停及保存重开后仍可操作。物理触控板另验。[镜头复验与留项](docs/engineering/reports/2026-10-07-camera-verification.md)。
 
 **目标委托式的单人 3D 火星基地经营与生存游戏。**
 
@@ -12,9 +14,9 @@
 
 任务跟踪从[双线 TODO](TODO.md)进入：产研与美术分别维护任务、依赖、拟执行agent及验收证据。当前按所有者授权逐批推进冻结子票，美术在独立线制作；默认优先GLM执行实现，Codex负责合同、审查、实机验收与集成。
 
-当前项目协调目录的 **余电.app** 是D1.1本地试玩包：从着陆器和有限套件开始，实际运料建设、付费接线、充电维修与保存重开已接通；旧D1.0包及存档保留，资源采集/加工经营仍待D1.2。[启动与工程说明](prototype/README.md)。
+当前项目协调目录的 **余电.app** 是D1.2 r7本地试玩包：从着陆器和有限库存起步，采矿、加工、运输、建设、保障与保存重开同源；仓储与太阳能有不同的发展后果，旧包和原档保留。[启动与工程说明](prototype/README.md)。
 
-已有 `prototype/` Godot/C# 原型，具名 S 测试档包含六类设施与十二台机器人；正式新档只预建着陆器。显式`--live-terrain`已限定接受主场景权威地形改造、碰撞同步与原生贴地巡逻，显式benchmark沿用灰模负载；[历史复验](docs/engineering/reports/2026-10-05-main-ground-verification.md)。默认玩家应用已接有限导航、建设、基础供电保障与schema2保存；完整目标委托、真实生产、救援与经营闭环仍待后续。macOS Apple Silicon 原生首发，Windows 后续；最低配置和联合负载仍需项目实测。
+已有 `prototype/` Godot/C# 原型，具名 S 测试档包含六类设施与十二台机器人；正式新档只预建着陆器。显式`--live-terrain`已限定接受主场景权威地形改造、碰撞同步与原生贴地巡逻，显式benchmark沿用灰模负载；[历史复验](docs/engineering/reports/2026-10-05-main-ground-verification.md)。默认玩家应用已接有限导航、建设、保障、真实生产与schema3保存；多目标竞争、正式本地委托、救援和长期经营仍待后续。macOS Apple Silicon 原生首发，Windows 后续；最低配置和联合负载仍需项目实测。
 
 2026-10-04 接手整改保留旧灰模；输入校验、可写输出、真实运行身份、导出复现与独立 ART-I00 校准的证据见 [本轮复验](docs/engineering/reports/2026-10-04-takeover-verification.md)。准确构建/启动入口见 [原型运行说明](prototype/README.md)。旧 T1/T2 报告原样保留，成绩不能外推完整游戏。
 

@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=1a0c334f3786a9616905ac8e92567da6c53c2430c970cadbad11e92854f899b5 loaded_mvid=72c9a8c6-d728-48c0-92c1-d21cb38397b5 CLR=8.0.31 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=7 query_frame=8 rays=4225
+PLAYER_LOAD_READY version=7 stage= paused=True time=577.0333333333109
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=11 query_frame=12 rays=4225
+PLAYER_LOAD_READY version=7 stage= paused=True time=577.0333333333109
+D12_PROGRESS step=93 time=655.2 goal=Supplying prod=prod-6:haul/iron_ore/Pickup reason=执行者保障或停机；载荷与原进度保留 build=/
+D12_PROGRESS step=93 time=735.2 goal=Supplying prod=prod-9:recipe/iron/Working reason=加工设施实际用电生产：铁料 build=/
+D12_PROGRESS step=93 time=815.2 goal=Supplying prod=prod-14:haul/parts/Delivering reason=真实载货运输：结构件4 build=/
+MAIN_GROUND_COMMIT authority=8 bound=8 paused=True
+MAIN_GROUND_SYNC authority=8 bound=8 verified=8 assigned_frame=2006 query_frame=2007 rays=81
+D12_PROGRESS step=93 time=895.2 goal=Building prod=:// reason=重试原目标；已结算不重放 build=Pickup/驮运前往着陆器取货
+D12_TEST RESTORED phase=resume-cargo

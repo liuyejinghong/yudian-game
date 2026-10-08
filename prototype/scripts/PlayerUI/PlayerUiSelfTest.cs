@@ -46,6 +46,9 @@ public partial class PlayerUiSelfTest : SceneTree
             _ui = (PlayerController)_world.FindChild("PlayerController", true, false)!;
             await Frames(3);
 
+            // D12 入口：本测试环境（YUDIAN_PLAYER_GUI_TEST）不在 Main 的入口豁免名单，启动即 EntryOpen。
+            await EntryChecks();
+
             // CAMERA-01：设 YUDIAN_CAMERA_DIAG_ONLY=1 时跳过完整 UI 流程，只跑镜头验收与诊断（快速重跑入口）。
             if (System.Environment.GetEnvironmentVariable("YUDIAN_CAMERA_DIAG_ONLY") == "1")
             {
@@ -116,6 +119,10 @@ public partial class PlayerUiSelfTest : SceneTree
             var job = _world.ReadPlayerState().Job;
             Check(job is { Active: true }, "确认后任务活动");
             Check(job?.Id == "level-1", "双击只产生一个任务（level-1）：" + job?.Id);
+            var jobLabel = (Label)_ui.FindChild("JobLabel", true, false)!;
+            Check(!jobLabel.Text.Contains("level-"), "任务行不泄露内部任务 ID：" + jobLabel.Text.Split('\n')[0]);
+            Check(!jobLabel.Text.Contains("进度 0%"), "0 进度阶段不显示百分比冒充总进度：" + jobLabel.Text.Split('\n')[0]);
+            Check(jobLabel.Text.Contains("执行者"), "任务行显示中文阶段与执行者：" + jobLabel.Text.Split('\n')[0]);
             Check(job?.WorkerId.StartsWith("Robot_Zhulei_", StringComparison.Ordinal) == true,
                 "执行者是筑垒：" + job?.WorkerId);
             Check(job?.Stage == "前往现场", "阶段文本：" + job?.Stage);
@@ -206,6 +213,39 @@ public partial class PlayerUiSelfTest : SceneTree
                     "五种建设模式按钮建立（来自真实蓝图）");
                 Check(((Label)_ui.FindChild("StockLabel", true, false)!).Text.Contains("铁料"),
                     "库存与电力显示真实着陆器数据：" + ((Label)_ui.FindChild("StockLabel", true, false)!).Text);
+
+                // 未选机首屏保障汇总：与权威 DTO 按真实 State 分组计数完全一致
+                var supportLabel = (Label)_ui.FindChild("SupportLabel", true, false)!;
+                string GroupText(Yudian.BootstrapReadModel b) =>
+                    "保障 " + string.Join("／", b.Robots.GroupBy(r => r.State).Select(g => g.Key + g.Count()));
+                Check(supportLabel.Visible && supportLabel.Text == GroupText(_world.ReadBootstrap()),
+                    "未选机时显示全体保障汇总：" + supportLabel.Text);
+
+                // 选机后切单机真实保障：电量/耐久/载货与该机 State 原文
+                string? supportRobot = null;
+                foreach (var robot in _world.ReadPlayerRobots())
+                {
+                    var pos = _camera.UnprojectPosition(robot.Position + Vector3.Up * 0.45f);
+                    var rect = Root.GetVisibleRect();
+                    if (pos.X > 340 && pos.Y > 80 && pos.X < rect.Size.X - 80 && pos.Y < rect.Size.Y - 200)
+                    {
+                        supportRobot = robot.Id;
+                        Click(pos);
+                        break;
+                    }
+                }
+                await Frames(3);
+                if (supportRobot is { } supportId)
+                {
+                    var single = _world.ReadBootstrap().Robots.FirstOrDefault(r => r.Id == supportId);
+                    Check(supportLabel.Visible && supportLabel.Text.Contains("电量") && supportLabel.Text.Contains("耐久") &&
+                        supportLabel.Text.Contains("载货") && single != null && supportLabel.Text.Contains(single.State),
+                        "选机后显示该机单机保障：" + supportLabel.Text.Replace("\n", " "));
+                    PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+                    await Frames(2);
+                }
+                else
+                    NotRun("选机单机保障（无机器人投影在可点区域）");
                 Check(_ui.FindChild("ConnectButton", true, false) is Button && _ui.FindChild("RetryButton", true, false) is Button,
                     "铺电缆与重试入口建立");
 
@@ -247,9 +287,12 @@ public partial class PlayerUiSelfTest : SceneTree
             await CameraUiChecks();
             // —— CAMERA-01 镜头输入诊断：同帧/跨帧短按、长按对照、滚轮、触控板手势、HUD释放残留 ——
             await CameraDiag();
-
-            Report();
-            Quit(_failures == 0 ? 0 : 1);
+            // —— D1.2 发展只读面板与补维修耗材入口（最后执行：restock 会触发真实搬运，不干扰前序断言）——
+            await DevelopmentUiChecks();
+            // —— D12：1920 与 1280 实际窗口尺寸分别记布局证据 ——
+            await LayoutBothSizes();
+            // —— D12 收尾：保存退出（保存成功进程退出=退出码 0；存在更早失败则不触发，避免被正常退出掩盖）——
+            await SaveQuitFinale();
         }
         catch (Exception e)
         {
@@ -259,6 +302,353 @@ public partial class PlayerUiSelfTest : SceneTree
     }
 
     // ---- 帮助 ----
+
+    // D12 启动入口：双提交一次、世界无穿透、坏档留入口、键盘可操作、入口禁保存。
+    private async System.Threading.Tasks.Task EntryChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST ENTRY begin");
+        if (!_world.ReadPlayerState().EntryOpen)
+        {
+            NotRun("入口整组检查（权威 EntryOpen=false，启动未开入口）");
+            return;
+        }
+        var overlay = _ui.FindChild("EntryOverlay", true, false) as Control;
+        var newGame = (Button)_ui.FindChild("EntryNewGameButton", true, false)!;
+        var load = (Button)_ui.FindChild("EntryLoadButton", true, false)!;
+        var quit = (Button)_ui.FindChild("EntryQuitButton", true, false)!;
+        Check(overlay is { Visible: true }, "入口遮罩在 EntryOpen 时可见");
+        Check(_ui.FindChild("InfoPanel", true, false) is Control { Visible: false } &&
+              _ui.FindChild("CommandBar", true, false) is Control { Visible: false },
+            "入口期间运行中 HUD 隐藏（保存/暂停/建造不可点）");
+        Check(newGame.FocusMode != Control.FocusModeEnum.None && quit.FocusMode != Control.FocusModeEnum.None,
+            "入口按钮保留键盘焦点可访问");
+        await Frames(2);
+        Check(newGame.HasFocus(), "入口自动聚焦开始新游戏（回车即可开始）");
+        Check(!newGame.Disabled, "世界就绪后开始新游戏可用");
+        Check(load.Disabled && !_world.ReadPlayerState().SaveExists, "无存档时继续存档禁用");
+
+        // 无穿透：世界点选、键盘镜头、暂停/保存命令全部被入口拦下
+        var selection = (Label)_ui.FindChild("SelectionLabel", true, false)!;
+        var entryView = Root.GetVisibleRect().Size;
+        Click(new Vector2(entryView.X * .8f, entryView.Y * .5f));
+        await Frames(3);
+        Check(_world.ReadPlayerState().EntryOpen && !selection.Text.Contains("已选位置") && _world.ReadPlayerState().Job == null,
+            "入口期间点击世界无穿透、无选择");
+        var camBefore = _camera.GlobalPosition;
+        PressKey(Key.W, true); await RealSeconds(0.25); PressKey(Key.W, false); await Frames(2);
+        Check(_camera.GlobalPosition.DistanceTo(camBefore) < 1e-5, "入口期间键盘不透传镜头");
+        _world.QueuePlayerAction("pause");
+        await Frames(2);
+        Check(_world.ReadPlayerState().Notice.Contains("请先选择") && !_world.ReadPlayerState().Paused,
+            "入口期间暂停命令被权威拒绝");
+        _world.QueuePlayerAction("save");
+        await Frames(2);
+        Check(_world.ReadPlayerState().Notice.Contains("请先选择"), "入口期间保存被权威拒绝（不盖旧档）");
+
+        // 1920 下入口布局单独记证据，随后回 1280 继续其余流程
+        Root.Size = new Vector2I(1920, 1080);
+        await Frames(3);
+        var view = Root.GetVisibleRect().Size;
+        bool InView(Control c) { var r = c.GetGlobalRect(); return r.Position.X >= 0 && r.Position.Y >= 0 && r.End.X <= view.X && r.End.Y <= view.Y; }
+        Check(overlay != null && InView(overlay) && InView(newGame) && InView(load) && InView(quit),
+            "1920x1080 入口遮罩与三按钮完整可见不越界");
+        Root.Size = new Vector2I(1280, 800);
+        await Frames(3);
+
+        // 坏档：垃圾存档 → 继续存档失败 → 留在入口、世界不变
+        string savePath = System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_TEST_SAVE")
+            ?? throw new InvalidOperationException("缺少 YUDIAN_PLAYER_TEST_SAVE");
+        System.IO.File.WriteAllText(savePath, "{ 这不是存档 json");
+        await WaitFor(() => _world.ReadPlayerState().SaveExists, 5, "坏档文件被识别为存档存在");
+        await Frames(2);
+        Check(!load.Disabled, "存档存在时继续存档启用");
+        await CommandClick(load);
+        await WaitFor(() => _world.ReadPlayerState().Notice.Contains("读取失败"), 15, "坏档读取失败提示");
+        Check(_world.ReadPlayerState().EntryOpen, "坏档后仍留在入口（EntryOpen 保持）");
+        Check(overlay is { Visible: true }, "坏档后入口遮罩仍显示");
+        Check(_world.ReadPlayerState().Ready && _world.ReadPlayerState().Job == null, "坏档后当前世界完好");
+        System.IO.File.Delete(savePath);
+        await WaitFor(() => !_world.ReadPlayerState().SaveExists, 5, "坏档删除后存档标记消失");
+
+        // 键盘双提交：同一帧两次回车只启动一次，不泄漏世界命令。
+        // 回车激活聚焦按钮必须走 Viewport GUI 路由（PushInput），ParseInputEvent 只进轮询状态；
+        // 坏档读取的命令冷却要到点击后 0.35s 才过期，headless 帧率极高必须按真实时间等待。
+        await RealSeconds(0.5);
+        var newGameCenter = newGame.GetGlobalRect().GetCenter();
+        newGame.GrabFocus();
+        await Frames(1);
+        Check(newGame.HasFocus(), "开始新游戏持有键盘焦点");
+        for (int i = 0; i < 2; i++)
+        {
+            Root.PushInput(new InputEventKey { Keycode = Key.Enter, Pressed = true });
+            Root.PushInput(new InputEventKey { Keycode = Key.Enter, Pressed = false });
+        }
+        await WaitFor(() => !_world.ReadPlayerState().EntryOpen, 10, "回车开始新游戏关闭入口");
+        await Frames(5);
+        Check(!_world.ReadPlayerState().EntryOpen && overlay is { Visible: false },
+            "双提交后入口只离开一次且不再回来");
+        Check(_world.ReadPlayerState().Job == null, "开始新游戏不泄漏世界任务");
+        Check(_world.ReadPlayerState().Notice.Contains("先建"), "新游戏权威提示先建保障：" + _world.ReadPlayerState().Notice);
+        Check(_ui.FindChild("InfoPanel", true, false) is Control { Visible: true }, "开始后运行中 HUD 恢复显示");
+
+        // 真实鼠标双击第二击：入口关闭后隔帧点击原按钮屏幕位置，短窗门禁内不得透传选中世界。
+        // 同帧双事件测不出这个 bug（遮罩当帧还在），必须跨帧。
+        await Frames(4);
+        Click(newGameCenter);
+        await Frames(3);
+        Check(!selection.Text.Contains("已选位置") && _world.ReadPlayerState().Job == null,
+            "入口关闭短窗内第二击不选中世界：" + selection.Text);
+        await RealSeconds(0.5);
+        Root.PushInput(new InputEventMouseButton { ButtonIndex = MouseButton.Left, Pressed = true, DoubleClick = true, Position = newGameCenter });
+        Root.PushInput(new InputEventMouseButton { ButtonIndex = MouseButton.Left, Pressed = false, Position = newGameCenter });
+        await Frames(3);
+        Check(!selection.Text.Contains("已选位置") && !selection.Text.Contains("已选机器人") && _world.ReadPlayerState().Job == null,
+            "平台双击第二击在短门禁过期后仍不选世界");
+        GD.Print("PLAYER_UI_SELFTEST ENTRY end");
+    }
+
+    // D12：1920 与 1280 实际窗口尺寸分别验证关键控制不裁切、不与提示重叠、确认按钮定宽。
+    private async System.Threading.Tasks.Task LayoutBothSizes()
+    {
+        foreach (var size in new[] { new Vector2I(1920, 1080), new Vector2I(1280, 800) })
+        {
+            Root.Size = size;
+            await Frames(4);
+            var view = Root.GetVisibleRect().Size;
+            bool InView(Control c) { var r = c.GetGlobalRect(); return r.Position.X >= 0 && r.Position.Y >= 0 && r.End.X <= view.X && r.End.Y <= view.Y; }
+            string tag = size.X + "x" + size.Y;
+            var confirm = (Button)_ui.FindChild("ConfirmButton", true, false)!;
+            var saveQuit = (Button)_ui.FindChild("SaveQuitButton", true, false)!;
+            var pause = (Button)_ui.FindChild("PauseButton", true, false)!;
+            Check(confirm.CustomMinimumSize.X >= 170, tag + " 确认按钮定宽（整平/建设文字切换不位移）: " + F(confirm.CustomMinimumSize.X));
+            Check(InView(confirm) && InView(saveQuit) && InView(pause) && saveQuit.IsVisibleInTree(),
+                tag + " 暂停/保存退出等关键控制完整可见不裁切");
+            // 默认滚动=0：当前动作/库存功率/保障/发展核心行必须整行落在 InfoScroll 可视区（上下边界证明）。
+            if (_ui.FindChild("InfoScroll", true, false) is ScrollContainer infoScroll)
+            {
+                infoScroll.ScrollVertical = 0;
+                await Frames(2);
+                var scrollRect = infoScroll.GetGlobalRect();
+                bool RowVisible(Control c)
+                {
+                    var r = c.GetGlobalRect();
+                    return r.Position.Y >= scrollRect.Position.Y - 0.5f && r.End.Y <= scrollRect.End.Y + 0.5f;
+                }
+                var stock = (Label)_ui.FindChild("StockLabel", true, false)!;
+                var support = (Label)_ui.FindChild("SupportLabel", true, false)!;
+                var jobRow = (Label)_ui.FindChild("JobLabel", true, false)!;
+                var devBodyRow = (Label)_ui.FindChild("DevBodyLabel", true, false)!;
+                Check(stock.Visible && stock.Text.Contains(_world.ReadBootstrap().Power) && RowVisible(stock),
+                    tag + " 库存/功率行在首屏可视区且含权威功率: " + stock.Text.Replace("\n", " · "));
+                Check(support.Visible && RowVisible(support) && jobRow.Visible && RowVisible(jobRow),
+                    tag + " 当前动作与保障行在首屏可视区");
+                if (devBodyRow.Visible)
+                    Check(RowVisible(devBodyRow), tag + " 发展核心行（下一步/净缺口）在首屏可视区: bottom=" +
+                        F(devBodyRow.GetGlobalRect().End.Y) + "/" + F(scrollRect.End.Y));
+                else
+                    NotRun(tag + " 发展核心行首屏（发展未启用）");
+            }
+            else
+                NotRun(tag + " 首屏核心行几何（InfoScroll 未建立）");
+            if (_ui.FindChild("Hints", true, false) is Label hints &&
+                saveQuit.GetParent() is Control row && row.GetParent() is Control stack && stack.GetParent() is Control barPanel)
+                Check(barPanel.GetGlobalRect().Position.Y >= hints.GetGlobalRect().End.Y - 0.5f,
+                    tag + " 命令栏不与操作提示重叠: barTop=" + F(barPanel.GetGlobalRect().Position.Y) +
+                    " hintsBottom=" + F(hints.GetGlobalRect().End.Y));
+            else
+                NotRun(tag + " 命令栏与提示不重叠（节点结构未找到）");
+        }
+    }
+
+    // D12 收尾：保存退出。保存成功后 Main 退出进程（退出码 0 即通过）；有更早失败则不触发。
+    private async System.Threading.Tasks.Task SaveQuitFinale()
+    {
+        if (_failures > 0)
+        {
+            NotRun("保存退出（存在更早失败，避免失败被正常退出掩盖）");
+            Report();
+            Quit(1);
+            return;
+        }
+        Report();
+        GD.Print("PLAYER_UI_SELFTEST SAVEQUIT begin");
+        var saveQuit = (Button)_ui.FindChild("SaveQuitButton", true, false)!;
+        while (true)
+        {
+            await CommandClick(saveQuit);
+            try
+            {
+                await WaitFor(() => _world.ReadPlayerState().Notice.Contains("已保存"), 6, "保存退出先原子落盘");
+                break;
+            }
+            catch (TimeoutException)
+            {
+                if (_world.ReadPlayerState().Notice.Contains("贴地")) { GD.Print("PLAYER_UI_SELFTEST SAVEQUIT retry（等机器人贴地）"); continue; }
+                throw;
+            }
+        }
+        GD.Print("PLAYER_UI_SELFTEST SAVEQUIT saved; 等待 Main 退出进程");
+        double deadline = Time.GetTicksMsec() / 1000.0 + 10;
+        while (Time.GetTicksMsec() / 1000.0 < deadline)
+            await ToSignal(this, SceneTree.SignalName.ProcessFrame);
+        GD.Print("PLAYER_UI_SELFTEST FAIL 保存成功后进程未退出");
+        Quit(1);
+    }
+
+    // D1.2：发展面板只读展示权威 DTO；补维修耗材按钮走真实 QueuePlayerAction("restock")。
+    private async System.Threading.Tasks.Task DevelopmentUiChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST DEV begin");
+        var dev = _world.ReadDevelopment();
+        var devTitle = _ui.FindChild("DevTitleLabel", true, false) as Label;
+        var devBody = _ui.FindChild("DevBodyLabel", true, false) as Label;
+        var restock = _ui.FindChild("RestockButton", true, false) as Button;
+        var legacy = _ui.FindChild("LegacyLoadButton", true, false) as Button;
+        Check(restock != null && legacy != null, "补维修耗材与读取旧档按钮建立");
+        if (!dev.Enabled)
+        {
+            Check(devTitle is { Visible: false } && devBody is { Visible: false }, "发展面板在 DTO 未启用时隐藏");
+            Check(restock != null && !restock.IsVisibleInTree() && legacy != null && !legacy.IsVisibleInTree(),
+                "经营按钮在 DTO 未启用时不可见（不把 bootstrap 当发展）");
+            NotRun("发展面板内容展示（DevelopmentReadModel 未启用）");
+            NotRun("补维修耗材真实请求（DevelopmentReadModel 未启用）");
+            return;
+        }
+
+        var body = devBody ?? throw new InvalidOperationException("DevBodyLabel 未建立");
+        Check(devTitle is { Visible: true } && devTitle!.Text.Contains(dev.Provider),
+            "发展标题显示提供者：" + devTitle!.Text);
+        Check(body is { Visible: true } &&
+                body.Text.Contains("目标 " + dev.Goal) && body.Text.Contains("当前 " + dev.Stage) &&
+                body.Text.Contains("下一步 " + dev.Reason) && body.Text.Contains("净缺口 " + dev.Need),
+            "发展核心行显示目标/当前动作/下一步/净缺口（权威原文）");
+        Check((dev.Supply.Length == 0 || body.Text.Contains("供给 " + dev.Supply)) &&
+              (dev.Transit.Length == 0 || body.Text.Contains("在途 " + dev.Transit)) &&
+              (dev.InProcess.Length == 0 || body.Text.Contains("在制 " + dev.InProcess)),
+            "供给/在途/在制按权威有值显示在核心行");
+        Check(dev.Prepared.Length == 0 || !body.Text.Contains("已备"), "已备长明细不挤占核心首屏");
+
+        // 两方向：Directions 有值时走折叠详情并逐字段核对；为空时核心行回落 Choices 文本。
+        if (dev.Directions is { Length: > 0 } dirs)
+        {
+            var dirToggle = _ui.FindChild("DevDirectionsToggle", true, false) as Button;
+            var dirLabel = _ui.FindChild("DevDirectionsLabel", true, false) as Label;
+            Check(dirToggle is { Visible: true } && dirLabel is { Visible: false }, "方向详情默认折叠不挤占首屏");
+            ScrollIntoView(dirToggle!);
+            await CommandClick(dirToggle!);
+            await Frames(2);
+            Check(dirLabel is { Visible: true }, "方向详情可展开查看");
+            Check(dirs.All(d => dirLabel!.Text.Contains(d.Name) && dirLabel.Text.Contains(d.Cost) &&
+                    dirLabel.Text.Contains(d.Need) && dirLabel.Text.Contains(d.Consequence) &&
+                    dirLabel.Text.Contains(d.Name + " · " + (d.Feasible ? "可行" : "暂不可行")) &&
+                    (d.Reason.Length == 0 || dirLabel.Text.Contains(d.Reason))),
+                "两方向逐字段显示权威 Name/Cost/Need/Consequence/Feasible/Reason");
+            Check((dev.Prepared.Length == 0 || dirLabel!.Text.Contains("已备 " + dev.Prepared)) &&
+                  (dev.Mines.Length == 0 || dirLabel!.Text.Contains("矿点 " + dev.Mines)),
+                "发展详情展开后可见已备/矿点权威原文");
+            await CommandClick(dirToggle!);
+            await Frames(2);
+            Check(dirLabel is { Visible: false }, "方向详情可再次折叠");
+        }
+        else
+        {
+            Check(dev.Choices.Length > 0 && body.Text.Contains("后续方向 " + dev.Choices),
+                "Directions 为空时核心行回落既有 Choices 文本");
+            NotRun("两方向 Directions 详情（权威为空）");
+            NotRun("发展详情已备/矿点展开（Directions 为空）");
+        }
+        Check(restock!.IsVisibleInTree() && legacy!.IsVisibleInTree() && !legacy.Disabled,
+            "经营按钮按 dev.Enabled 可见，旧档读取在世界就绪时可用");
+
+        // 建设确认文案表达有限缺料前置授权（一次授权全链，非逐配方手点）
+        if (_ui.FindChild("ModeButton_charger", true, false) is Button chargerMode &&
+            _ui.FindChild("ModeLevelButton", true, false) is Button levelMode)
+        {
+            await CommandClick(chargerMode);
+            await Frames(2);
+            var confirmBtn = (Button)_ui.FindChild("ConfirmButton", true, false)!;
+            Check(confirmBtn.Text.Contains("建设·含前置授权"),
+                "建设确认按钮短文案表达缺料前置授权：" + confirmBtn.Text);
+            var buildSite = FindLegalBuildSite("charger");
+            Check(buildSite.Legal, "建设模式找到合法预览点：" + buildSite.Reason);
+            Click(_camera.UnprojectPosition(new Vector3(buildSite.Center.X, 0.2f, buildSite.Center.Z)));
+            await Frames(3);
+            var selection = (Label)_ui.FindChild("SelectionLabel", true, false)!;
+            Check(selection.Text.Contains("一次授权"), "已选位置说明一次授权采集/运输/加工/该建设：" + selection.Text);
+            PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+            await CommandClick(levelMode);
+            await Frames(2);
+        }
+        else
+            NotRun("建设确认文案检查（蓝图按钮未建立）");
+
+        // 1280x800 布局：经营第四行两按钮在视口内，且整套命令栏不与底部操作提示重叠。
+        // 布局断言须在默认滚动位置测：上面的折叠检查可能已把信息区滚离顶部。
+        if (_ui.FindChild("InfoScroll", true, false) is ScrollContainer infoScroll)
+        {
+            infoScroll.ScrollVertical = 0;
+            await Frames(2);
+        }
+        var view = Root.GetVisibleRect().Size;
+        var rect = restock!.GetGlobalRect();
+        Check(rect.Position.X >= 0 && rect.Position.Y >= 0 && rect.End.X <= view.X && rect.End.Y <= view.Y,
+            "补维修耗材按钮在视口内不裁切: " + rect);
+        var legacyRect = legacy!.GetGlobalRect();
+        Check(legacyRect.Position.X >= 0 && legacyRect.Position.Y >= 0 && legacyRect.End.X <= view.X && legacyRect.End.Y <= view.Y,
+            "读取旧档按钮在视口内不裁切: " + legacyRect);
+        var bodyRect = devBody!.GetGlobalRect();
+        Check(bodyRect.Position.X >= 0 && bodyRect.Position.Y >= 0, "发展面板在视口内起始");
+        if (_ui.FindChild("Hints", true, false) is Label hints && restock.GetParent() is Control opsRow &&
+            opsRow.GetParent() is Control stack && stack.GetParent() is Control barPanel)
+            Check(barPanel.GetGlobalRect().Position.Y >= hints.GetGlobalRect().End.Y - 0.5f,
+                "第四行命令栏整体不与操作提示重叠: barTop=" + F(barPanel.GetGlobalRect().Position.Y) +
+                " hintsBottom=" + F(hints.GetGlobalRect().End.Y));
+        else
+            NotRun("命令栏与提示不重叠（节点结构未找到）");
+
+        // 设施折叠：默认收起，展开显示真实设施，可再次折回。
+        if (_ui.FindChild("FacilityToggle", true, false) is Button facToggle &&
+            _ui.FindChild("FacilityLabel", true, false) is Label facLabel)
+        {
+            Check(facToggle.Visible && !facLabel.Visible, "设施列表默认折叠不挤占首屏");
+            ScrollIntoView(facToggle);
+            await CommandClick(facToggle);
+            await Frames(2);
+            Check(facLabel.Visible && facLabel.Text.Length > 0,
+                "设施列表展开显示真实状态：" + facLabel.Text.Split('\n')[0]);
+            await CommandClick(facToggle);
+            await Frames(2);
+            Check(!facLabel.Visible, "设施列表可再次折叠");
+        }
+        else
+            NotRun("设施折叠（控件未建立）");
+
+        // restock 走权威命令：同帧双击被工程冷却合并为一次请求，且不被“未知操作”拒绝
+        Click(restock.GetGlobalRect().GetCenter());
+        Click(restock.GetGlobalRect().GetCenter());
+        await Frames(3);
+        var notice = _world.ReadPlayerState().Notice;
+        Check(!notice.Contains("未知操作") && !notice.Contains("操作正在处理"),
+            "restock 请求被权威接受且双击只提交一次：" + notice);
+
+        // 读取后新 UI 仍可用：保存→读取→发展面板与补料按钮恢复
+        _world.QueuePlayerAction("save");
+        await WaitFor(() => _world.ReadPlayerState().Notice.Contains("已保存"), 10, "D1.2 保存");
+        _world.QueuePlayerAction("load");
+        await WaitFor(() => _world.ReadPlayerState().Notice.Contains("读取完成"), 60, "D1.2 读取");
+        Check(_world.ReadPlayerState().Ready, "读取后世界就绪");
+        await Frames(5);
+        var devAfter = _world.ReadDevelopment();
+        var titleAfter = _ui.FindChild("DevTitleLabel", true, false) as Label;
+        var restockAfter = _ui.FindChild("RestockButton", true, false) as Button;
+        var legacyAfter = _ui.FindChild("LegacyLoadButton", true, false) as Button;
+        if (devAfter.Enabled)
+            Check(titleAfter is { Visible: true } && titleAfter!.Text.Contains(devAfter.Provider),
+                "读取后发展面板仍显示提供者：" + titleAfter!.Text);
+        Check(restockAfter is { Visible: true }, "读取后补维修耗材按钮仍可用");
+        Check(legacyAfter is { Visible: true } && !legacyAfter!.Disabled, "读取后旧档按钮仍可用");
+        GD.Print("PLAYER_UI_SELFTEST DEV end");
+    }
 
     // 网格扫描一个合法整平点：机器人停驻位随种子变化，不能写死坐标。
     private PlayerSitePreview FindLegalSite()
@@ -623,6 +1013,19 @@ public partial class PlayerUiSelfTest : SceneTree
     {
         await RealSeconds(0.5);
         Click(button.GetGlobalRect().GetCenter());
+    }
+
+    // 信息区内的控件可能在滚动视口外被裁剪：合成点击前先滚动到可见处，否则点击被 ScrollContainer 吞掉。
+    private void ScrollIntoView(Control target)
+    {
+        if (_ui.FindChild("InfoScroll", true, false) is not ScrollContainer scroll) return;
+        var scrollRect = scroll.GetGlobalRect();
+        var rect = target.GetGlobalRect();
+        if (rect.Position.Y < scrollRect.Position.Y)
+            scroll.ScrollVertical = Math.Max(0, scroll.ScrollVertical + (int)(rect.Position.Y - scrollRect.Position.Y) - 4);
+        else if (rect.End.Y > scrollRect.End.Y)
+            scroll.ScrollVertical = Math.Min((int)scroll.GetVScrollBar().MaxValue,
+                scroll.ScrollVertical + (int)(rect.End.Y - scrollRect.End.Y) + 8);
     }
 
     private async System.Threading.Tasks.Task RealSeconds(double seconds)

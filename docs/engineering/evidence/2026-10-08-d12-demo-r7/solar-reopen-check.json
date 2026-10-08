@@ -1,0 +1,14 @@
+{
+  "time_before": 161.10000000002034,
+  "time_after": 161.10000000002034,
+  "paused_before": true,
+  "paused_after": true,
+  "build_sequence": 1,
+  "build_stage": "Completed",
+  "goal_stage": "Completed",
+  "ledger_equal": true,
+  "development_equal": true,
+  "terrain_equal": true,
+  "full_json_equal": false,
+  "only_difference": "Completed Robot_Zhulei_3 Travel18.400766 and Robot_Tuoyun_1 Travel156.503647 normalize to0 on restore; no additional work/material changes"
+}

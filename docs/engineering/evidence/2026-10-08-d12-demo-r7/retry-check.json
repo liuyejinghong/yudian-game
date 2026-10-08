@@ -1,0 +1,10 @@
+{
+  "paused": true,
+  "time": 2595.700000000269,
+  "build_stage": "Preparing",
+  "build_reason": "重新安排让位与施工，保留已结算物料",
+  "containers_equal": true,
+  "terrain_equal": true,
+  "build_sequence_equal": true,
+  "fixture_assisted": true
+}

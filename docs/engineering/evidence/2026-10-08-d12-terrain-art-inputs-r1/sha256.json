@@ -1,0 +1,14 @@
+{
+  "mining-working.state.json": "e6fa1edfa542b124b9a428542e1b25dbba375b0237886b3a6734a9cb0df9d8bf",
+  "current-terminal.state.json": "21d55e0f1d34292e60ecf534ee0f90bc5707bb8acaccd6e0901260efad8a0f27",
+  "level-working-legacy-r3.state.json": "c3828771232858577d12505735a1e0f5d8e999d0194b6c2541e0b3449879d94e",
+  "mining-committed.terrain.json": "ec4cad3d7219e62bae0b49fdab7db82806aab25f0464b7fd475b585e9b2a988a",
+  "initial.terrain.json": "85d3e95b179b4429743f60103308409f1a1e49e86bdf577e612b440ce12cfe50",
+  "current-terminal.terrain.json": "dcdbcdd9206a97679090ed4dd707dd7f92dae9d1135b10cad7b2fb3466122495",
+  "README.md": "a3d478a5b91e30a582a025dda1c7723490e5893c32575438c1bf7416fb7c7ada",
+  "mining-working.terrain.json": "ee0c2888e5b1cd9631dc765bc7ef178bbf22a8230df2a4b3cbdfe927bc4aaf8d",
+  "manifest.json": "99d7e3e7a20d574d2c88d7070110825c22c5755f38cc00255c940fd45c07b9eb",
+  "mining-committed.state.json": "82d87d5367fba90fcfe5f34e8193003a49f052c3ece44c2f0acb04eb619cc72e",
+  "initial.state.json": "52820e1c0f45070816af36659146b9532312ad29b95ae26f3d4609a008dbe06d",
+  "level-working-legacy-r3.terrain.json": "dc3095f504d19daee67c42ed4e89d9dd6700d25ce663c2c7057cf0404b2ac7a7"
+}

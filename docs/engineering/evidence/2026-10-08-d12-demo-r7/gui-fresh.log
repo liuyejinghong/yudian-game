@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+
+MAIN_GROUND_IDENTITY build_sha256=7fb9acdcff1edf0a2abe3443c01d6fa8adee3e2523b3c534b123f1416675ee7e loaded_mvid=9ccdc62d-1834-425d-a57f-b982be54499f CLR=8.0.31 display=macOS
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_GUI_CLICK double=True entry=False gate=0
+PLAYER_GUI_CLICK double=False entry=False gate=0
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=4633 query_frame=4634 rays=53
+PLAYER_SAVE_OK version=1 stage= time=161.10000000002034

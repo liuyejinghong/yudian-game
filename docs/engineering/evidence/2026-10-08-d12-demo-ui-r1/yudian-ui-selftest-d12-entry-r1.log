@@ -1,0 +1,50 @@
+  正在确定要还原的项目…
+  所有项目均是最新的，无法还原。
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(442,42): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(443,44): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(444,43): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(445,45): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(447,40): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(469,45): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+  Yudian -> <workspace>/prototype/.godot/mono/temp/bin/Debug/Yudian.dll
+
+已成功生成。
+
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(442,42): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(443,44): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(444,43): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(445,45): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(447,40): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(469,45): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+    6 个警告
+    0 个错误
+
+已用时间 00:00:02.47
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PLAYER_UI_SELFTEST begin
+MAIN_GROUND_IDENTITY build_sha256=1883205837467b0f478d21798332a6d1c0a1cd186eb551d6e596496ce8e6a6bd loaded_mvid=1ecbe411-e490-4966-b7b1-3e15f3827dc3 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_UI_SELFTEST viewport=(1280, 800)
+PLAYER_UI_SELFTEST ENTRY begin
+PLAYER_UI_SELFTEST PASS 入口遮罩在 EntryOpen 时可见
+PLAYER_UI_SELFTEST PASS 入口期间运行中 HUD 隐藏（保存/暂停/建造不可点）
+PLAYER_UI_SELFTEST PASS 入口按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST PASS 入口自动聚焦开始新游戏（回车即可开始）
+PLAYER_UI_SELFTEST PASS 世界就绪后开始新游戏可用
+PLAYER_UI_SELFTEST PASS 无存档时继续存档禁用
+PLAYER_UI_SELFTEST PASS 入口期间点击世界无穿透、无选择
+PLAYER_UI_SELFTEST PASS 入口期间键盘不透传镜头
+PLAYER_UI_SELFTEST PASS 入口期间暂停命令被权威拒绝
+PLAYER_UI_SELFTEST PASS 入口期间保存被权威拒绝（不盖旧档）
+PLAYER_UI_SELFTEST PASS 1920x1080 入口遮罩与三按钮完整可见不越界
+PLAYER_UI_SELFTEST PASS 存档存在时继续存档启用
+PLAYER_COMMAND_REJECTED '0xE8' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+PLAYER_UI_SELFTEST PASS 坏档后仍留在入口（EntryOpen 保持）
+PLAYER_UI_SELFTEST PASS 坏档后入口遮罩仍显示
+PLAYER_UI_SELFTEST PASS 坏档后当前世界完好
+PLAYER_UI_SELFTEST PASS 开始新游戏持有键盘焦点
+PLAYER_UI_SELFTEST FAIL 异常 TimeoutException: 等待超时：回车开始新游戏关闭入口
+exit=1

@@ -426,3 +426,70 @@ D1.2预检（只读，未派实施）：architect核出Ledger仅同料Transfer�
 本文件是合并前快照；最终exact-head合并、本地主线同步与总索引回执以PR44/Issue17为准。默认包与原档保持，后续D1.2及视觉接入明确未派。
 
 收尾：architect只读核资产未改、两件原生exit0/PASS与SHA、七帧验证、运行目录无变化、43保持返工；无实质归档阻断。首轮受限Blender的Metal初始化崩溃exit139原件私下保留，正常权限检查通过；不计失败为通过。
+
+## d12-firstplay-r1 · 2026-10-08 持续经营首玩
+
+已有授权：开始实施、GLM外包、隔离实现、实际GUI验收、合格PR集成。独占树eng-d12-20261008，基线51c9b632。历史阶段限制不覆盖本批授权；原存档/默认r5保留到新包合格。
+1. [x] 核实际权威接缝，architect前审，冻结d12-firstplay-r1与六资源/货舱/加工美术接口。证明：真实消费者/有限安全首套/两个后续目标净缺口样本齐全；不造旁路经济。
+2. [x] GLM通过Bridge原生Flash交独占有限缺口算法与PlayerUI子件；主控交矿量/地形/转换账/运输/生产/建设集成。证明：实际到场/取卸/有效工段、枯竭/无电/满仓/取消/投影失败无重复收益，纯算法独立检查。
+3. [x] schema3新槽、schema2兼容读取及完整恢复校验；主控持有事务。证明：取货/生产投入/产出/建设/保障跨进程、重复读不重复结算、坏档拒绝保世界；原档字节不变。
+4. [x] reviewer独立审关键状态与恢复；主控跑源码/最终原生包与真实GUI新档/暂停/缺料链/取消/失败/保存关闭重开，architect收尾。证明：同source/PCK/日志身份，不代签真人/G1/性能/发行。
+5. [ ] 合格后切默认入口、提交PR精确合并并attach、更新唯一工程TODO/根摘要/Issue17。证明：合并回执与默认包身份；原入口/旧档保留。
+
+单写者：Codex Main*.cs、Resources/Core、共享配置/合同、PLAN/TODO、保存与应用；GLM-A仅Goals/ProductionPlan.cs和tools/production-plan-tests；GLM-B仅PlayerUI及tools/player-ui-tests；美术独立树art-d12-20261008，只交素材，工程不写art/docs-art。新增事实留最小合同与原生检查，无新依赖/大量权重/付费API。两个失败同一步停止重计划，失败日志原件保留。
+
+D1.2已核：GLM-A原生Flash sess_bf11ef5df9交有限缺口81项；GLM-B sess_6424188cf2交只读UI/旧档/补料，主控78项通过，主控仅把经营事实移至信息区前部。source-r2九进程过矿提交/实运/投入/产出恢复，legacy-source-r1九进程通过，schema2测试副本迁移schema3通过，原用户两档hash留存。独立reviewer发现完成目标绑定旧current Build、自举保护释放过早、超时重试路由、任意端点、补料净缺口、阻塞义务替代及restock引用，均局部修复并补反例。
+
+source-r3负例首次失败：Blocked运输取消时ResumeStage被覆盖为Blocked，保存拒绝“生产重试阶段无效”；保留原件，修为Cancelled保原恢复阶段，source-r4同一步继续复验。后续接线不能绕生产：连接目标保存真实facility/source，并共用生产前置/延后patch。增加第二阵列→新充电桩真实供电检查，不增加设施类型。U01 rev4源/GLB/node/clips身份独立核后仅消费prototype GLB；六资源素材未齐可用明确临时表示，工程不等待美术。
+
+2026-10-08 r1最终原生9进程、迁移/保护通过；GUI因Mac锁屏尚未运行。补查发现仓储始终不被正常建设使用，不能签“有后果”的方向：architect确认补保存Supply贯穿目标集料/建设取货/预约/取消重试，并测满仓回退、仓储取货跨进程与旧缺省lander；另导出r2保留r1身份与证据。
+
+仓储reviewer发现取消/阻塞建设档可单改Goal.Supply，再重试后保存才拒绝；改为当前Build存在即校验双方仓库一致，并加取消档反例。source-r5缺显式SDK环境启动失败保留；r6显式DOTNET_ROOT/PATH复跑，后续新增反例由最终r2执行。
+
+source-r6实测仓储运输改变停车位置，新charger前选中驮运留在目标patch包络，连续Occupied正确拒绝后超时Blocked（失败原件保留）。最小修复Preparing让该工程驮运实际走至Supply安全dock、离开后才整平；保留占用/地形安全边界，新增FreeStation过滤参数，不做泛化避让。
+
+source-r7只检查已选hauler的让位仍Preparing超时，同一步第二次失败，停止全量重复，改用既有产出边界副本获取让位前完整事实。architect指出须覆盖本目标所有实际运输者、固定安全dock等停稳，并保存/取消；先核实际路线拒绝原因，再恢复全量。
+
+让位现场副本已取：驮运(15.474,8.782)、cargo空、energy24.98、无service/route，Clearance空。新增未建charger的导航规划圆(radius1.9+hauler1.4)把现有停车点含入，FindRoute从起点拒绝所有dock；不是实体卡住。只在Preparing让位时对本目标运输者排除本工程尚未建成的规划圆，现有设施/机器人/实际MoveAndSlide碰撞与Occupied提交检查不变。移除临时旧output→让位探针分支，正式resume均完成原目标。
+
+原让位现场源码绿replay已完成charger且重复读取不推进；reviewer再发现两台本目标驮运可被分配同安全dock。FreeStation过滤已有Clearance空间占用，坏档拒绝重叠，新增第二驮运dock检查；r2导出只保留候选身份未执行最终矩阵，本修复另导r3。
+
+2026-10-08 r3最终源码5add887d991c12ae5ad7606119fcd1a8bda85a74固定导出，13生产/仓储/让位恢复＋9旧规则＋3旧档/保护＝25原生进程全部PASS，同CLR8.0.31/MVID。源码、GLB与包manifest逐hash复核不变；文档/7自测试、独立reviewer/architect完成。step4仅GUI仍NOT_RUN，用户已被请求手动解锁未回；step5待同r3实际鼠标/保存关窗重开后合格切入口和PR精确集成。现可发布draft可审查成果，不宣称全部任务完成，不切默认。
+
+Draft PR52已创建并attach（创建head68c5996ee2bf4fcc7e7ff246b49f4b5c08591533），Issue17已同步REVIEW；main未合并，默认未切。后续仅解锁后同r3真实窗口验收→必要局部修复/独立审→合格入口/PR精确集成，继续保旧档。
+
+2026-10-08 A03只读数据交接：保留同FixtureHash的D1.2 initial/source-UI v0、r3矿工作v4/矿提交v5/终态v21四份65×65 TerrainDataCodec原样快照及真实阶段/回执/中心。四网格元数据/4225有限高度/Working未付和Completed回执v5核验；提交后取消无独立保存，明记NOT_SAMPLED，不合成。只加工程证据/合同链接，不重跑引擎、不改权威或runtime，不占GUI。
+
+A03消费复核补充：已有r3 legacy-world/full.json.bak实际LevelJob Working v6同FixtureHash，导出辅助数据，明标schema2/d11配置及暂停/保障返程，不冒称D1.2默认模式。初始四帧LevelJob空应shader stage0，新增LevelJob帧按消费者派生stage1；committed mask语义改造高度，非一概压实。高度快照字节未改，取消和D1.2默认Working缺样继续保留。
+
+
+2026-10-08 r3 GUI续接：实际新档太阳能(3.1,-14.3)双确认仅goal/build-1；普通1x完成，暂停保存于t133.633/terrain1。鼠标关窗、同包重开点击读取两次，完成建筑/暂停/时间/资源保留；再保存仅两个完成机器人Travel规范化为null，无额外建设/发货。当前GUI截图实际1920×1200；1280启动参数未改变观察尺寸，不记实窗1280通过。缺料后续使用同r3原生mine.json.bak阶段fixture辅助，明确不冒称全首套人工建成。默认仍r5。
+
+## D12-DEMO-UX / E13 普通试玩闭环（2026-10-08，已授权）
+
+architect已只读预审；保留r3功能GUI已过结果，薄入口/HUD修正固定新包验收后再集成PR52，复用同一模拟与保存，不扩D2。
+1. [x] 新游戏/继续/保存退出入口；保存成功才退出，加载物理就绪才恢复。证明：空档/坏档/双提交/保存拒绝保世界与旧档、正常退出重开。
+2. [x] 固定展示中文目标/当前动作/下一步、库存净缺口/功率/机器人保障；详细信息折叠。证明：HUD只消费Main事实，两方向成本/真实净缺口/不同后果一致，长原因可读。
+3. [x] 固定新源导出，普通1x真实鼠标走首建、两方向、自动生产运输、暂停取消和保存重开。证明：同包身份、真实等待耗时；实际窗口尺寸单独记录，不以源码UI测试替代。
+4. [ ] 保存关键改动reviewer、最终architect复核；合格PR精确集成及默认入口更新。证明：实际检查/合并hash，原档/r5留存。
+
+
+2026-10-08资格更新：r3实际鼠标功能LIMITED PASS，5进程正常close0；两方向实际建成和仓储供料、回充/日照等待、已付配方跨进程及readonly保存失败均实证。已知HUD在途/已投入/完成旧成本误作净缺口，不签完整E13/demo；PR52仍Draft/默认r5。先在独立demo树整合修正候选、固定新包验收，再精确集成，不以“先合并52才能验新包”相互等待。源Main新7进程已过，仅属demo源，不冒充r3或最终新包；GLM UI仍实施。
+
+2026-10-08 E13整合：Codex Main/DTO/save与资源绑定550ebd1窄提交移入PR52为aa8b7bc；无冲突合入美术主线486e9e9为e388b5a。GLM sess_cad9792c7a原UI turn因入口重复失败取消；限定返修task_4e94fac026/e6fafff源码116检查PASS，入口遮罩每帧刷新、失败日志保留；未选机汇总task_1a01078441/2d074a8补齐，源码118检查PASS/实际SaveQuit exit0，主控核commit仅2归属文件。Bridge协调目录变更清单混有主控合并/美术兄弟树并发变更，不当作worker改动。reviewer核入口/持久化/资源节点归属无实质问题。r3实际GUI LIMITED PASS/HUD REWORK记录c8e5c56已推送，Issue17/PR52已去掉旧锁屏NOT_RUN当前表述。默认r5仍保留。
+
+下一证明：固定ec5d464构建r4，8同包原生进程；实际1920与1280分别入口/首建/保存退出重开，后段paid/cargo/completed/方向用同r3真实检查点明确辅助，核正确净缺口与新资源绑定。原两档hash不变；通过后精确合并PR52和切默认，未通过则保留Draft。自然平衡/真人/G1/本地模型/稳定性能/发行未签。
+
+2026-10-08 r4固定包已导出（ec5d464 / source83c40939 / PCK408d8386），8同包CLR8.0.31进程PASS、loadedSHA f3f51224 / MVID d5f79189，无ERROR/leak。实际Metal1920x1200新入口→鼠标双击开始→暂停→SaveQuit exit0，隔离档paused133.0166/terrain0/goalnull/buildseq0。GUI发现首屏Prepared/Mines把功率/保障挤到下方，双击入口后第2击还透传选地(4.7,-1.5)，未建造。r4 LIMITED FUNCTIONAL/HUD REWORK，默认仍r5。GLM最后一个follow-up task_f553b0f3bc仅2 UI文件：长明细进现有折叠区、首屏事实可见，入口退出短窗防跨帧第2击，并增加真实几何/跨帧反例。主控Main入口初始Notice改为选择开始/继续，旧整平指令不在入口提示。完成后固定新r5候选再验，不重贴r4结果为r5。
+
+r4后段GUI辅助：同r3真实cargo隔离副本载入成功暂停，HUD真实在途结构件4、净缺口无需新增生产；继续1x实际卸货→仓储落成，载货架/图标在卸空后移除。该观察仍r4，不能代新包；本来尝试--resolution1280x800，但捕获PNG/Cua仍1920x1200，未签1280。官方OS文档说明GetCmdlineArgs排除已被引擎处理的参数（https://docs.godotengine.org/en/stable/classes/class_os.html#class-os-method-get-cmdline-args），最小GDScript反例证实仅剩--script。撤回无效参数判断，仅GUI_TEST下增加闭集GUI_SIZE=1280x800/1920x1200，沿原Window.Size应用与屏幕夹限；普通入口尺寸不改。此下必须由实际PNG尺寸核验。建筑中发展NextStep改读当前_buildJob.Reason/Stage，避免继续显示此前重试历史句。
+
+最后UI交付00d7ddb整合3f99e3b：headless126项PASS/exit0，现货明细与矿点进原发展详情折叠、首屏功率/保障/下一步/缺口、跨帧第2击防透传。主控简化门禁由前一帧遮罩Visible派生，沿既有CommandCooldownS，关闭帧不减之前的dt；无重复前态字段。集成首轮自测因入口Notice变短，旧“点中心”点到开始按钮，保留失败；改点面板外且加强EntryOpen断言后integrated-r2 126项全PASS/真实SaveQuit exit0，编译0警告0错误。Main新GUI_SIZE与实际建设阶段/原因会进入新的r5固定候选；后续任何UI验收修正由主控负责，不再派第四follow-up。r4两GUI进程均正常退出0，实际尺寸均1920，保留而不代签1280。
+
+2026-10-08 r5候选8原生PASS，尚未GUI；独立reviewer发现暂停取消后retry仍保旧Reason，真实clearance源码红复现。仅RetryBaseBuild更新当前阶段原因、HUD等同提示去重；新增第9暂停重试反例确认账容器不变。旧测试GroundRequire被FailGround捕获重复，红进程手停130留存；DemoCheck失败先Quit1。显式SDK环境source9/集成UI126均exit0通过，build0警告0错误；另导新r6，不覆盖r5。
+
+r6九原生PASS/exit0；实际1920双击开始仍第2击选地，无任务。r4/r6同一步两次实窗失败，暂停重复冷却方案，architect重新审原生DoubleClick事件路线；下一候选另导r7，不覆盖r6。旧短窗测试不覆盖超过.35秒的平台双击，补相应反例后再实窗。
+
+architect重计划后，直接沿原生DoubleClick标志，第二press清_leftTracking，release不再选世界。源码实际Metal记录double=True/entry=False/gate=0；双击不选地，普通单击仍选地，正常close0。延迟超过门禁的新反例与其余UI共127检查PASS/SaveQuit0；build0警告错误。仅两UI文件窄修及test-only事件日志，另导r7，生产/持久化不改。
+
+2026-10-08 r7最终验收：9固定包进程/源码UI127通过；1920首建与1280重开、配方、保存失败、暂停cancel/retry、实运仓储／方向卡共6GUI正常exit0。阶段副本辅助明确；187source/PCK与28证据hash核验，reviewer无剩可达问题、architect无实质门禁。r7默认入口已切并正常桌面启动／退出、实际PID路径核对；r5备用／原档保留，正式D12槽未写。证据README追加默认回执后hash重生。最后仅PR52匹配最新head精确合并及Issue17回执；未发生前不预写merge SHA。

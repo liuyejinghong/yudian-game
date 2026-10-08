@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -81,6 +82,9 @@ public partial class Main : Node3D
             _features.Add(_cfg.Terrain.Mound);
             _features.Add(_cfg.Terrain.MineralPit);
             _playerMode = !options.Benchmark && !options.LiveTerrain;
+            _entryOpen = _playerMode && new[] { "YUDIAN_PLAYER_SELF_TEST", "YUDIAN_BOOTSTRAP_SELF_TEST", "YUDIAN_DEVELOPMENT_SELF_TEST" }
+                .All(name => System.Environment.GetEnvironmentVariable(name) != "1");
+            if (_entryOpen) _playerNotice = "选择开始新游戏或继续存档";
             _liveMode = options.LiveTerrain || _playerMode;
             if (_liveMode) PrepareLiveTerrain();
             _duration = options.Duration ?? _cfg.Benchmark.DurationSeconds;
@@ -123,7 +127,7 @@ public partial class Main : Node3D
         {
             string id = BootstrapEnabled && _buildJob != null ? _buildJob.Id : _levelJob?.Id ?? "none";
             string stage = BootstrapEnabled && _buildJob != null ? _buildJob.Stage : _levelJob?.Stage.ToString() ?? "Idle";
-            string key = $"{_liveTerrain!.Current.Version}-{id}-{stage}-{_userPaused}";
+            string key = $"{_liveTerrain!.Current.Version}-{id}-{stage}-{_userPaused}-{ReadPlayerState().Ready}-{_entryOpen}-{_playerNotice.GetHashCode():x8}";
             if (key != _guiCaptureKey)
             {
                 if (_guiCapturePending == key)
@@ -136,7 +140,7 @@ public partial class Main : Node3D
                 _guiCapturePending = key;
             }
         }
-        float dt = _playerMode && (_userPaused || _loadPending != null) ? 0 : (float)delta;
+        float dt = _playerMode && (_entryOpen || _userPaused || _loadPending != null) ? 0 : (float)delta;
         _animTime += dt;
 
         foreach (var s in _spinners)
@@ -209,6 +213,12 @@ public partial class Main : Node3D
     private void ApplyWindowAndQuality()
     {
         var size = new Vector2I(_cfg.TargetResolution.Width, _cfg.TargetResolution.Height);
+        if (_playerMode && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
+            size = System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_SIZE") switch
+            {
+                "1280x800" => new Vector2I(1280, 800), "1920x1200" => new Vector2I(1920, 1200),
+                null or "" => size, _ => throw new InvalidOperationException("GUI test size must be 1280x800 or 1920x1200"),
+            };
         if (_playerMode && DisplayServer.GetName() != "headless")
         {
             var available = DisplayServer.ScreenGetUsableRect().Size - new Vector2I(60, 100);
@@ -558,6 +568,7 @@ public partial class Main : Node3D
 
     public override void _ExitTree()
     {
+        foreach (var texture in _cargoGlyphTextures.Values) texture.Dispose();
         _playerSurface?.Dispose(); _committedMask?.Dispose();
         if (_recorder == null) return;
         try { _recorder.Finish(Summary(), "interrupted"); }

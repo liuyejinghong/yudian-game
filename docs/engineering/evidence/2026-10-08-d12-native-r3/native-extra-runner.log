@@ -1,0 +1,4 @@
+PASS: migration
+PASS: old-schema3
+PASS: guard
+EXTRA_CHECKS PASS processes=3

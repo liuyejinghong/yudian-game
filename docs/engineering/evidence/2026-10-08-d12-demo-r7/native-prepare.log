@@ -1,0 +1,19 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=7fb9acdcff1edf0a2abe3443c01d6fa8adee3e2523b3c534b123f1416675ee7e loaded_mvid=9ccdc62d-1834-425d-a57f-b982be54499f CLR=8.0.31 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+DEMO_CHECK PASS entry freezes simulation but allows grounding
+DEMO_CHECK PASS all six accepted resource models and glyphs are bundled
+DEMO_CHECK PASS entry savequit cannot overwrite old slot or quit
+PLAYER_COMMAND_REJECTED 'b' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 1.
+DEMO_CHECK PASS bad slot keeps entry with visible failure
+DEMO_CHECK PASS new game chooses existing initial world without replacing old slot
+DEMO_CHECK PASS new game starts ordinary simulation
+PLAYER_SAVE_OK version=0 stage= time=0.5166666666666666
+DEMO_CHECK PASS grounded new game can save
+PLAYER_COMMAND_REJECTED Access to the path '/private/tmp/yudian-d12-demo-native-r7/entry.json.readonly/valid.json.3e37cb96de7f41a08693890f003c5289.tmp' is denied.
+DEMO_CHECK PASS write refusal keeps world and old slot and does not quit
+DEMO_TEST SAVEQUIT_REQUEST
+PLAYER_SAVE_OK version=0 stage= time=0.5166666666666666

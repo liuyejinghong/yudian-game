@@ -1,0 +1,49 @@
+{
+  "sample": "current-terminal",
+  "FixtureHash": "81c4f0072c4bf223afd0db84ad588ac1cd5bd524a119596dd62214b273bd46ee",
+  "Schema": 3,
+  "ConfigVersion": "d12-firstplay-1",
+  "Time": 3053.6999999998525,
+  "Paused": true,
+  "TerrainVersion": 21,
+  "LevelJob": null,
+  "BuildJob": {
+    "Id": "build-11",
+    "Type": "connection",
+    "Stage": "Completed",
+    "Center": [
+      18,
+      0,
+      9
+    ],
+    "Work": 3,
+    "Reason": "电缆已铺设；按日照与实际出力供电"
+  },
+  "DevelopmentGoal": {
+    "Id": "goal-12",
+    "Type": "connection",
+    "Stage": "Completed",
+    "Center": [
+      18,
+      0,
+      9
+    ]
+  },
+  "ProductionTask": {
+    "Id": "prod-74",
+    "Goal": "goal-12",
+    "Kind": "haul",
+    "Material": "cable",
+    "Stage": "Completed",
+    "Work": 0,
+    "Paid": true,
+    "Source": "batch:prod-73",
+    "Destination": "build-8"
+  },
+  "MiningSiteCenter": null,
+  "MiningAppliedVersionFromReceipt": null,
+  "MiningReceipt": null,
+  "changed_cells_from_initial": 372,
+  "shader_stage_derived_from_UpdatePlayerSurface": 0,
+  "derivation_note": "No LevelJob Working/WaitingForSpace; ProductionTask Working does not select levelling shader stage1."
+}

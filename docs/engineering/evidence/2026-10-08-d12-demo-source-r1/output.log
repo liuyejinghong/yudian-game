@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=9de7bf6cd386fe7a3ae515c9926f6ddbb2dfd6ea27ba1f1731bdde0f017e2218 loaded_mvid=d0e7f67b-84e5-49f0-8437-7b708471a4f5 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+DEMO_CHECK PASS entry freezes simulation but allows grounding
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=91 query_frame=92 rays=4225
+PLAYER_LOAD_READY version=7 stage= paused=True time=616.0999999999754
+DEMO_CHECK PASS continue leaves entry only after successful load and preserves pause
+DEMO_CHECK PASS glyphs and carriers follow actual nonempty supported cargo
+DEMO_CHECK PASS carrier uses actual socket and empty cargo hides attachment
+DEMO_CHECK PASS batch resources stay outside replaceable facility roots
+DEMO_CHECK PASS resource views survive rebuilding facility roots
+DEMO_CHECK PASS real output fixture exercises nonempty batch views
+DEMO_CHECK PASS read model does not mutate authoritative facts
+DEMO_CHECK PASS resource views remain valid after deferred frees
+DEMO_TEST PASS phase=output

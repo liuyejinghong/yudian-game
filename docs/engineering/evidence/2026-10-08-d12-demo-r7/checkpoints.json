@@ -1,0 +1,52 @@
+{
+  "solar-completed": {
+    "sha256": "3b9d044d7c23e3c27f269ceeb728d86cfbf4419b942e111d6705a15aa7c39bef",
+    "schema": 3,
+    "time": 161.10000000002034,
+    "paused": true,
+    "terrain_version": 1,
+    "build_sequence": 1,
+    "build_stage": "Completed",
+    "goal_stage": "Completed"
+  },
+  "solar-reopened": {
+    "sha256": "c128f56ac102fed516cbb8c82806929f14561c9f3318dac3e34b08048a73aff4",
+    "schema": 3,
+    "time": 161.10000000002034,
+    "paused": true,
+    "terrain_version": 1,
+    "build_sequence": 1,
+    "build_stage": "Completed",
+    "goal_stage": "Completed"
+  },
+  "recipe": {
+    "sha256": "4b255f07b6a396ff34646f2ec2c02db485412100f2cfdca1e1a82a98a8cd1879",
+    "schema": 3,
+    "time": 646.4333333332115,
+    "paused": true,
+    "terrain_version": 7,
+    "build_sequence": 7,
+    "build_stage": null,
+    "goal_stage": "Supplying"
+  },
+  "cargo": {
+    "sha256": "b556a4b7980d8271df3d0a0815be87a29a43263b0d58e7d518a693481ec1aba6",
+    "schema": 3,
+    "time": 939.6999999996115,
+    "paused": true,
+    "terrain_version": 8,
+    "build_sequence": 8,
+    "build_stage": "Completed",
+    "goal_stage": "Completed"
+  },
+  "retry": {
+    "sha256": "235ba0b42bf8439da98b4a3568f6fe67293daea78990f9f1acbe1fa963dc1f0e",
+    "schema": 3,
+    "time": 2595.700000000269,
+    "paused": true,
+    "terrain_version": 19,
+    "build_sequence": 10,
+    "build_stage": "Preparing",
+    "goal_stage": "Building"
+  }
+}

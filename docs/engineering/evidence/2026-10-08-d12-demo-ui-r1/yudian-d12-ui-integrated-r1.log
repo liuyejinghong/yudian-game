@@ -1,0 +1,23 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PLAYER_UI_SELFTEST begin
+MAIN_GROUND_IDENTITY build_sha256=25638ec13fe131d6cac8f7d0e9833336de820a3fe1f7bffc6677059355067ea0 loaded_mvid=c66b341b-5859-4917-a379-f79ccd103ab3 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_UI_SELFTEST viewport=(1280, 800)
+PLAYER_UI_SELFTEST ENTRY begin
+PLAYER_UI_SELFTEST PASS 入口遮罩在 EntryOpen 时可见
+PLAYER_UI_SELFTEST PASS 入口期间运行中 HUD 隐藏（保存/暂停/建造不可点）
+PLAYER_UI_SELFTEST PASS 入口按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST PASS 入口自动聚焦开始新游戏（回车即可开始）
+PLAYER_UI_SELFTEST PASS 世界就绪后开始新游戏可用
+PLAYER_UI_SELFTEST PASS 无存档时继续存档禁用
+PLAYER_UI_SELFTEST PASS 入口期间点击世界无穿透、无选择
+PLAYER_UI_SELFTEST FAIL 入口期间键盘不透传镜头
+PLAYER_UI_SELFTEST FAIL 入口期间暂停命令被权威拒绝
+PLAYER_UI_SELFTEST FAIL 入口期间保存被权威拒绝（不盖旧档）
+PLAYER_SAVE_OK version=0 stage= time=0.35
+PLAYER_UI_SELFTEST PASS 1920x1080 入口遮罩与三按钮完整可见不越界
+PLAYER_UI_SELFTEST FAIL 存档存在时继续存档启用
+PLAYER_UI_SELFTEST FAIL 异常 TimeoutException: 等待超时：坏档读取失败提示

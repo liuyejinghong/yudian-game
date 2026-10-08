@@ -1,0 +1,41 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=19704b8e532dfd25ea947f46b7d82ea8368c23d4e36d991c0f313271f98a0e7a loaded_mvid=38e06f7d-5700-4a8e-97ca-bdbda5724d98 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=114 query_frame=115 rays=52
+D12_PROGRESS step=1 time=79.3 goal=Building prod=:// reason= build=Pickup/驮运前往着陆器取货
+MAIN_GROUND_COMMIT authority=2 bound=2 paused=True
+MAIN_GROUND_SYNC authority=2 bound=2 verified=2 assigned_frame=750 query_frame=751 rays=28
+D12_PROGRESS step=2 time=159.3 goal=Building prod=:// reason= build=Building/物料齐备，筑垒前往并实际施工
+MAIN_GROUND_COMMIT authority=3 bound=3 paused=True
+MAIN_GROUND_SYNC authority=3 bound=3 verified=3 assigned_frame=1552 query_frame=1553 rays=46
+D12_PROGRESS step=4 time=239.3 goal=Building prod=:// reason= build=Delivering/已真实取货，驮运载货前往工地
+D12_PROGRESS step=5 time=319.3 goal=Completed prod=:// reason=发展目标已建成；选择下一方向 build=Pickup/驮运前往着陆器取货
+MAIN_GROUND_COMMIT authority=4 bound=4 paused=True
+MAIN_GROUND_SYNC authority=4 bound=4 verified=4 assigned_frame=2581 query_frame=2582 rays=56
+D12_PROGRESS step=6 time=399.3 goal=Building prod=:// reason= build=Delivering/已真实取货，驮运载货前往工地
+D12_PROGRESS step=7 time=479.3 goal=Completed prod=:// reason=发展目标已建成；选择下一方向 build=Delivering/已真实取货，驮运载货前往工地
+PLAYER_SAVE_OK version=4 stage= time=505.2999999999816
+PLAYER_SAVE_OK version=4 stage= time=534.09999999998
+MAIN_GROUND_PAUSED synthetic D12 mining projection failure
+MAIN_GROUND_COMMIT authority=5 bound= paused=True
+MAIN_GROUND_SYNC authority=5 bound=5 verified=5 assigned_frame=4057 query_frame=4058 rays=4225
+MAIN_GROUND_COMMIT authority=6 bound=6 paused=True
+MAIN_GROUND_SYNC authority=6 bound=6 verified=6 assigned_frame=4107 query_frame=4108 rays=15
+MAIN_GROUND_COMMIT authority=7 bound=7 paused=True
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=4157 query_frame=4158 rays=15
+D12_PROGRESS step=16 time=558.8 goal=Supplying prod=prod-4:haul/iron_ore/Pickup reason=驮运前往真实取货位 build=/
+MAIN_GROUND_PAUSED 生产重试阶段无效
+ERROR: [Yudian] InvalidDataException: 生产重试阶段无效
+   at: void Yudian.Main.Fail(System.Exception) (res://scripts/Main.cs:541)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void Yudian.Main.Fail(System.Exception) (<WORKTREE>/prototype/scripts/Main.cs:541)
+       [2] void Yudian.Main._PhysicsProcess(double) (<WORKTREE>/prototype/scripts/Main.LiveTerrain.cs:110)
+       [3] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2648)
+       [4] bool Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node3D.cs:1127)
+       [5] bool Yudian.Main.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (<WORKTREE>/prototype/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Main_ScriptMethods.generated.cs:1140)
+       [6] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)

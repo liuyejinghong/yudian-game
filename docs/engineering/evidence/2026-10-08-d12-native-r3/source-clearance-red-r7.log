@@ -1,0 +1,92 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=ea30a39a2251d0d4d9a337e48090b336a47c1de8fa3badd998fe6a897aeb4e3f loaded_mvid=10fd4537-6b85-4873-99c3-05a75a619280 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=114 query_frame=115 rays=52
+D12_PROGRESS step=1 time=79.3 goal=Building prod=:// reason= build=Pickup/驮运前往着陆器取货
+MAIN_GROUND_COMMIT authority=2 bound=2 paused=True
+MAIN_GROUND_SYNC authority=2 bound=2 verified=2 assigned_frame=750 query_frame=751 rays=28
+D12_PROGRESS step=2 time=159.3 goal=Building prod=:// reason= build=Building/物料齐备，筑垒前往并实际施工
+MAIN_GROUND_COMMIT authority=3 bound=3 paused=True
+MAIN_GROUND_SYNC authority=3 bound=3 verified=3 assigned_frame=1553 query_frame=1554 rays=46
+D12_PROGRESS step=4 time=239.3 goal=Building prod=:// reason= build=Delivering/已真实取货，驮运载货前往工地
+D12_PROGRESS step=5 time=319.3 goal=Building prod=:// reason= build=Pickup/驮运前往着陆器取货
+MAIN_GROUND_COMMIT authority=4 bound=4 paused=True
+MAIN_GROUND_SYNC authority=4 bound=4 verified=4 assigned_frame=2583 query_frame=2584 rays=56
+D12_PROGRESS step=6 time=399.3 goal=Building prod=:// reason= build=Delivering/已真实取货，驮运载货前往工地
+D12_PROGRESS step=7 time=479.3 goal=Building prod=:// reason= build=Delivering/已真实取货，驮运载货前往工地
+PLAYER_SAVE_OK version=4 stage= time=505.69999999998157
+PLAYER_SAVE_OK version=4 stage= time=534.49999999998
+MAIN_GROUND_PAUSED synthetic D12 mining projection failure
+MAIN_GROUND_COMMIT authority=5 bound= paused=True
+MAIN_GROUND_SYNC authority=5 bound=5 verified=5 assigned_frame=4060 query_frame=4061 rays=4225
+MAIN_GROUND_COMMIT authority=6 bound=6 paused=True
+MAIN_GROUND_SYNC authority=6 bound=6 verified=6 assigned_frame=4110 query_frame=4111 rays=15
+MAIN_GROUND_COMMIT authority=7 bound=7 paused=True
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=4160 query_frame=4161 rays=15
+D12_PROGRESS step=16 time=558.8 goal=Supplying prod=prod-4:haul/iron_ore/Pickup reason=驮运前往真实取货位 build=/
+D12_PROGRESS step=20 time=638.8 goal=Supplying prod=prod-6:haul/iron_ore/Pickup reason=执行者保障或停机；载荷与原进度保留 build=/
+D12_PROGRESS step=20 time=718.8 goal=Supplying prod=prod-8:haul/iron_ore/Delivering reason=真实载货运输：铁矿8 build=/
+D12_PROGRESS step=20 time=798.8 goal=Supplying prod=prod-14:haul/parts/Pickup reason=驮运前往真实取货位 build=/
+MAIN_GROUND_COMMIT authority=8 bound=8 paused=True
+MAIN_GROUND_SYNC authority=8 bound=8 verified=8 assigned_frame=6329 query_frame=6330 rays=81
+D12_PROGRESS step=20 time=878.8 goal=Building prod=:// reason=重试原目标；已结算不重放 build=Delivering/已真实取货，驮运载货前往工地
+MAIN_GROUND_COMMIT authority=9 bound=9 paused=True
+MAIN_GROUND_SYNC authority=9 bound=9 verified=9 assigned_frame=7042 query_frame=7043 rays=15
+MAIN_GROUND_COMMIT authority=10 bound=10 paused=True
+MAIN_GROUND_SYNC authority=10 bound=10 verified=10 assigned_frame=7092 query_frame=7093 rays=15
+MAIN_GROUND_COMMIT authority=11 bound=11 paused=True
+MAIN_GROUND_SYNC authority=11 bound=11 verified=11 assigned_frame=7142 query_frame=7143 rays=15
+D12_PROGRESS step=205 time=958.8 goal=Supplying prod=prod-18:haul/iron_ore/Pickup reason=驮运前往真实取货位 build=/
+D12_PROGRESS step=205 time=1038.8 goal=Supplying prod=prod-19:recipe/iron/Working reason=加工等待日照/已连接电源；投入保留，未产出 build=/
+D12_PROGRESS step=205 time=1118.8 goal=Supplying prod=prod-19:recipe/iron/Working reason=加工等待日照/已连接电源；投入保留，未产出 build=/
+D12_PROGRESS step=205 time=1198.8 goal=Supplying prod=prod-19:recipe/iron/Working reason=加工等待日照/已连接电源；投入保留，未产出 build=/
+D12_PROGRESS step=205 time=1278.8 goal=Supplying prod=prod-21:recipe/iron/Working reason=加工设施实际用电生产：铁料 build=/
+D12_PROGRESS step=205 time=1358.8 goal=Supplying prod=prod-27:mine/copper_ore/Working reason= build=/
+MAIN_GROUND_COMMIT authority=12 bound=12 paused=True
+MAIN_GROUND_SYNC authority=12 bound=12 verified=12 assigned_frame=10287 query_frame=10288 rays=14
+D12_PROGRESS step=205 time=1438.8 goal=Supplying prod=prod-33:haul/parts/Pickup reason=驮运前往真实取货位 build=/
+D12_PROGRESS step=205 time=1518.8 goal=Supplying prod=prod-34:haul/cable/Delivering reason=真实载货运输：线缆2 build=/
+MAIN_GROUND_COMMIT authority=13 bound=13 paused=True
+MAIN_GROUND_SYNC authority=13 bound=13 verified=13 assigned_frame=11979 query_frame=11980 rays=51
+D12_PROGRESS step=21 time=1598.8 goal=Building prod=:// reason=目标取消；已开挖、投入、产物与在途货物保留，不产生新义务 build=Delivering/已真实取货，驮运载货前往工地
+D12_PROGRESS step=23 time=1678.8 goal=Completed prod=:// reason=发展目标已建成；选择下一方向 build=Completed/已落成：太阳能阵列
+D12_PROGRESS step=23 time=1758.8 goal=Completed prod=:// reason=发展目标已建成；选择下一方向 build=Completed/已落成：太阳能阵列
+MAIN_GROUND_COMMIT authority=14 bound=14 paused=True
+MAIN_GROUND_SYNC authority=14 bound=14 verified=14 assigned_frame=13759 query_frame=13760 rays=15
+D12_PROGRESS step=25 time=1838.8 goal=Supplying prod=prod-37:mine/iron_ore/Working reason=筑垒现场采集；耗电与磨损计入 build=/
+MAIN_GROUND_COMMIT authority=15 bound=15 paused=True
+MAIN_GROUND_SYNC authority=15 bound=15 verified=15 assigned_frame=13809 query_frame=13810 rays=15
+D12_PROGRESS step=25 time=1918.8 goal=Supplying prod=prod-41:recipe/iron/Working reason=加工设施实际用电生产：铁料 build=/
+MAIN_GROUND_COMMIT authority=16 bound=16 paused=True
+MAIN_GROUND_SYNC authority=16 bound=16 verified=16 assigned_frame=14829 query_frame=14830 rays=15
+MAIN_GROUND_COMMIT authority=17 bound=17 paused=True
+MAIN_GROUND_SYNC authority=17 bound=17 verified=17 assigned_frame=14879 query_frame=14880 rays=15
+MAIN_GROUND_COMMIT authority=18 bound=18 paused=True
+MAIN_GROUND_SYNC authority=18 bound=18 verified=18 assigned_frame=14929 query_frame=14930 rays=15
+D12_PROGRESS step=27 time=1998.8 goal=Supplying prod=prod-49:haul/iron_ore/Pickup reason=驮运前往真实取货位 build=/
+MAIN_GROUND_COMMIT authority=19 bound=19 paused=True
+MAIN_GROUND_SYNC authority=19 bound=19 verified=19 assigned_frame=15404 query_frame=15405 rays=14
+D12_PROGRESS step=27 time=2078.8 goal=Supplying prod=prod-52:haul/copper_ore/Delivering reason=真实载货运输：铜矿6 build=/
+D12_PROGRESS step=27 time=2158.8 goal=Supplying prod=prod-57:recipe/iron/Working reason=加工设施实际用电生产：铁料 build=/
+D12_PROGRESS step=27 time=2238.8 goal=Supplying prod=prod-63:haul/iron/Delivering reason=执行者保障或停机；载荷与原进度保留 build=/
+D12_PROGRESS step=27 time=2318.8 goal=Supplying prod=prod-63:haul/iron/Delivering reason=执行者保障或停机；载荷与原进度保留 build=/
+D12_PROGRESS step=27 time=2398.8 goal=Supplying prod=prod-63:haul/iron/Delivering reason=执行者保障或停机；载荷与原进度保留 build=/
+D12_PROGRESS step=27 time=2478.8 goal=Supplying prod=prod-65:haul/copper/Pickup reason=驮运前往真实取货位 build=/
+D12_PROGRESS step=27 time=2558.8 goal=Supplying prod=prod-67:haul/cable/Delivering reason=真实载货运输：线缆2 build=/
+D12_PROGRESS step=27 time=2638.8 goal=Building prod=:// reason= build=Preparing/驮运先离开本工程整平范围
+D12_PROGRESS step=27 time=2718.8 goal=Building prod=:// reason= build=Preparing/驮运先离开本工程整平范围
+MAIN_GROUND_PAUSED D12 goal blocked 180秒未完成当前阶段；事实保留，可重试
+ERROR: [Yudian] InvalidOperationException: D12 goal blocked 180秒未完成当前阶段；事实保留，可重试
+   at: void Yudian.Main.Fail(System.Exception) (res://scripts/Main.cs:541)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void Yudian.Main.Fail(System.Exception) (<WORKTREE>/prototype/scripts/Main.cs:541)
+       [2] void Yudian.Main._PhysicsProcess(double) (<WORKTREE>/prototype/scripts/Main.LiveTerrain.cs:110)
+       [3] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2648)
+       [4] bool Godot.Node3D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node3D.cs:1127)
+       [5] bool Yudian.Main.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (<WORKTREE>/prototype/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/Yudian.Main_ScriptMethods.generated.cs:1140)
+       [6] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)

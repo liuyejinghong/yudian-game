@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=1a0c334f3786a9616905ac8e92567da6c53c2430c970cadbad11e92854f899b5 loaded_mvid=72c9a8c6-d728-48c0-92c1-d21cb38397b5 CLR=8.0.31 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_SYNC authority=5 bound=5 verified=5 assigned_frame=7 query_frame=8 rays=4225
+PLAYER_LOAD_READY version=5 stage= paused=True time=540.233333333313
+MAIN_GROUND_SYNC authority=5 bound=5 verified=5 assigned_frame=11 query_frame=12 rays=4225
+PLAYER_LOAD_READY version=5 stage= paused=True time=540.233333333313
+MAIN_GROUND_COMMIT authority=6 bound=6 paused=True
+MAIN_GROUND_SYNC authority=6 bound=6 verified=6 assigned_frame=63 query_frame=64 rays=15
+MAIN_GROUND_COMMIT authority=7 bound=7 paused=True
+MAIN_GROUND_SYNC authority=7 bound=7 verified=7 assigned_frame=113 query_frame=114 rays=15
+D12_PROGRESS step=93 time=618.4 goal=Supplying prod=prod-6:haul/iron_ore/Pickup reason=驮运前往真实取货位 build=/
+D12_PROGRESS step=93 time=698.4 goal=Supplying prod=prod-7:recipe/iron/Working reason=加工设施实际用电生产：铁料 build=/
+D12_PROGRESS step=93 time=778.4 goal=Supplying prod=prod-13:haul/iron/Delivering reason=真实载货运输：铁料4 build=/
+MAIN_GROUND_COMMIT authority=8 bound=8 paused=True
+MAIN_GROUND_SYNC authority=8 bound=8 verified=8 assigned_frame=2278 query_frame=2279 rays=81
+D12_PROGRESS step=93 time=858.4 goal=Building prod=:// reason=重试原目标；已结算不重放 build=Delivering/已真实取货，驮运载货前往工地
+D12_TEST RESTORED phase=resume-mine

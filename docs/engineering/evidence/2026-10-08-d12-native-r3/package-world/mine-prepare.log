@@ -1,0 +1,27 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+MAIN_GROUND_IDENTITY build_sha256=1a0c334f3786a9616905ac8e92567da6c53c2430c970cadbad11e92854f899b5 loaded_mvid=72c9a8c6-d728-48c0-92c1-d21cb38397b5 CLR=8.0.31 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+MAIN_GROUND_COMMIT authority=1 bound=1 paused=True
+MAIN_GROUND_SYNC authority=1 bound=1 verified=1 assigned_frame=114 query_frame=115 rays=52
+D12_PROGRESS step=1 time=79.3 goal=Building prod=:// reason= build=Pickup/驮运前往着陆器取货
+MAIN_GROUND_COMMIT authority=2 bound=2 paused=True
+MAIN_GROUND_SYNC authority=2 bound=2 verified=2 assigned_frame=750 query_frame=751 rays=28
+D12_PROGRESS step=2 time=159.3 goal=Building prod=:// reason= build=Building/物料齐备，筑垒前往并实际施工
+MAIN_GROUND_COMMIT authority=3 bound=3 paused=True
+MAIN_GROUND_SYNC authority=3 bound=3 verified=3 assigned_frame=1553 query_frame=1554 rays=46
+D12_PROGRESS step=4 time=239.3 goal=Building prod=:// reason= build=Delivering/已真实取货，驮运载货前往工地
+D12_PROGRESS step=5 time=319.3 goal=Building prod=:// reason= build=Pickup/驮运前往着陆器取货
+MAIN_GROUND_COMMIT authority=4 bound=4 paused=True
+MAIN_GROUND_SYNC authority=4 bound=4 verified=4 assigned_frame=2583 query_frame=2584 rays=56
+D12_PROGRESS step=6 time=399.3 goal=Building prod=:// reason= build=Delivering/已真实取货，驮运载货前往工地
+D12_PROGRESS step=7 time=479.3 goal=Building prod=:// reason= build=Delivering/已真实取货，驮运载货前往工地
+PLAYER_SAVE_OK version=4 stage= time=505.69999999998157
+PLAYER_SAVE_OK version=4 stage= time=534.49999999998
+MAIN_GROUND_PAUSED synthetic D12 mining projection failure
+MAIN_GROUND_COMMIT authority=5 bound= paused=True
+MAIN_GROUND_SYNC authority=5 bound=5 verified=5 assigned_frame=4060 query_frame=4061 rays=4225
+PLAYER_SAVE_OK version=5 stage= time=540.233333333313
+D12_TEST PREPARED phase=prepare-mine

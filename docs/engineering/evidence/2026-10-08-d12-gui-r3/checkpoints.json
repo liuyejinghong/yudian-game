@@ -1,0 +1,1142 @@
+[
+  {
+    "checkpoint": "solar-completed",
+    "save_sha256": "36b107c910d15e22909479db63ebaef8834cf76199b56464bbb8f7d950767ac5",
+    "schema": 3,
+    "time": 133.63333333333182,
+    "paused": true,
+    "terrain_version": 1,
+    "config": "d12-firstplay-1",
+    "build_sequence": 1,
+    "goal": {
+      "Id": "goal-1",
+      "Type": "solar",
+      "Stage": "Completed",
+      "Supply": "lander",
+      "Active": false
+    },
+    "build": {
+      "Id": "build-1",
+      "Type": "solar",
+      "Stage": "Completed",
+      "Supply": "lander",
+      "Active": false
+    },
+    "mines": [
+      {
+        "Id": "mine-iron",
+        "Remaining": 96
+      },
+      {
+        "Id": "mine-copper",
+        "Remaining": 96
+      }
+    ],
+    "tasks": [],
+    "build9_operations": {}
+  },
+  {
+    "checkpoint": "solar-reopened",
+    "save_sha256": "54dade2f1acf90c3caf3ca449b8db8ab6afe627e9e32b9aa13f6bedf4f539349",
+    "schema": 3,
+    "time": 133.63333333333182,
+    "paused": true,
+    "terrain_version": 1,
+    "config": "d12-firstplay-1",
+    "build_sequence": 1,
+    "goal": {
+      "Id": "goal-1",
+      "Type": "solar",
+      "Stage": "Completed",
+      "Supply": "lander",
+      "Active": false
+    },
+    "build": {
+      "Id": "build-1",
+      "Type": "solar",
+      "Stage": "Completed",
+      "Supply": "lander",
+      "Active": false
+    },
+    "mines": [
+      {
+        "Id": "mine-iron",
+        "Remaining": 96
+      },
+      {
+        "Id": "mine-copper",
+        "Remaining": 96
+      }
+    ],
+    "tasks": [],
+    "build9_operations": {}
+  },
+  {
+    "checkpoint": "recipe-input",
+    "save_sha256": "6634a5fdcc499c5ee033f73da53b6debfff095eec507bb22d55f1a144203e2a1",
+    "schema": 3,
+    "time": 600.7999999999197,
+    "paused": true,
+    "terrain_version": 7,
+    "config": "d12-firstplay-1",
+    "build_sequence": 7,
+    "goal": {
+      "Id": "goal-8",
+      "Type": "storage",
+      "Stage": "Supplying",
+      "Supply": "lander",
+      "Active": true
+    },
+    "build": null,
+    "mines": [
+      {
+        "Id": "mine-iron",
+        "Remaining": 72
+      },
+      {
+        "Id": "mine-copper",
+        "Remaining": 96
+      }
+    ],
+    "tasks": [
+      {
+        "Id": "prod-1",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-2",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-3",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-4",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-5",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Working",
+        "Paid": true,
+        "Work": 0.8000000000000008
+      }
+    ],
+    "build9_operations": {}
+  },
+  {
+    "checkpoint": "cargo",
+    "save_sha256": "aecec7d098ae944366f87536425a17bbbcc66bcf6cd48f9fc49569364a82715a",
+    "schema": 3,
+    "time": 811.6666666663946,
+    "paused": true,
+    "terrain_version": 7,
+    "config": "d12-firstplay-1",
+    "build_sequence": 7,
+    "goal": {
+      "Id": "goal-8",
+      "Type": "storage",
+      "Stage": "Supplying",
+      "Supply": "lander",
+      "Active": true
+    },
+    "build": null,
+    "mines": [
+      {
+        "Id": "mine-iron",
+        "Remaining": 72
+      },
+      {
+        "Id": "mine-copper",
+        "Remaining": 96
+      }
+    ],
+    "tasks": [
+      {
+        "Id": "prod-1",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-2",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-3",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-4",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-5",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-6",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-7",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-8",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-9",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-10",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-11",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-12",
+        "Kind": "recipe",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 20
+      },
+      {
+        "Id": "prod-13",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-14",
+        "Kind": "haul",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Delivering",
+        "Paid": true,
+        "Work": 0
+      }
+    ],
+    "build9_operations": {}
+  },
+  {
+    "checkpoint": "cargo-cancelled",
+    "save_sha256": "b74af5566b79283884bcedbadb901021b789ca12dc2961e55a54b41e1eeec55b",
+    "schema": 3,
+    "time": 811.6666666663946,
+    "paused": true,
+    "terrain_version": 7,
+    "config": "d12-firstplay-1",
+    "build_sequence": 7,
+    "goal": {
+      "Id": "goal-8",
+      "Type": "storage",
+      "Stage": "Cancelled",
+      "Supply": "lander",
+      "Active": false
+    },
+    "build": null,
+    "mines": [
+      {
+        "Id": "mine-iron",
+        "Remaining": 72
+      },
+      {
+        "Id": "mine-copper",
+        "Remaining": 96
+      }
+    ],
+    "tasks": [
+      {
+        "Id": "prod-1",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-2",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-3",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-4",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-5",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-6",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-7",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-8",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-9",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-10",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-11",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-12",
+        "Kind": "recipe",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 20
+      },
+      {
+        "Id": "prod-13",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-14",
+        "Kind": "haul",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Cancelled",
+        "Paid": true,
+        "Work": 0
+      }
+    ],
+    "build9_operations": {}
+  },
+  {
+    "checkpoint": "storage-completed",
+    "save_sha256": "2a224fe0dd2c4412a7d239f56e98b353c02f7e162908504555d23e254e55f0bb",
+    "schema": 3,
+    "time": 932.549999999618,
+    "paused": true,
+    "terrain_version": 8,
+    "config": "d12-firstplay-1",
+    "build_sequence": 8,
+    "goal": {
+      "Id": "goal-8",
+      "Type": "storage",
+      "Stage": "Completed",
+      "Supply": "lander",
+      "Active": false
+    },
+    "build": {
+      "Id": "build-8",
+      "Type": "storage",
+      "Stage": "Completed",
+      "Supply": "lander",
+      "Active": false
+    },
+    "mines": [
+      {
+        "Id": "mine-iron",
+        "Remaining": 72
+      },
+      {
+        "Id": "mine-copper",
+        "Remaining": 96
+      }
+    ],
+    "tasks": [
+      {
+        "Id": "prod-1",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-2",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-3",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-4",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-5",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-6",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-7",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-8",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-9",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-10",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-11",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-12",
+        "Kind": "recipe",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 20
+      },
+      {
+        "Id": "prod-13",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-14",
+        "Kind": "haul",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      }
+    ],
+    "build9_operations": {}
+  },
+  {
+    "checkpoint": "solar2-goal",
+    "save_sha256": "fa445dc253d17c4b305527367999b6f268f2fb54b8e65d17ad32bfed2579b020",
+    "schema": 3,
+    "time": 932.549999999618,
+    "paused": true,
+    "terrain_version": 8,
+    "config": "d12-firstplay-1",
+    "build_sequence": 8,
+    "goal": {
+      "Id": "goal-9",
+      "Type": "solar",
+      "Stage": "Supplying",
+      "Supply": "build-8",
+      "Active": true
+    },
+    "build": null,
+    "mines": [
+      {
+        "Id": "mine-iron",
+        "Remaining": 72
+      },
+      {
+        "Id": "mine-copper",
+        "Remaining": 96
+      }
+    ],
+    "tasks": [
+      {
+        "Id": "prod-1",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-2",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-3",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-4",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-5",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-6",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-7",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-8",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-9",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-10",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-11",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-12",
+        "Kind": "recipe",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 20
+      },
+      {
+        "Id": "prod-13",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-14",
+        "Kind": "haul",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      }
+    ],
+    "build9_operations": {}
+  },
+  {
+    "checkpoint": "solar2-completed",
+    "save_sha256": "19a51f09f3020e44974dd4e8c6c0005aa0dd5961537fa174a4d5f47cebc826cd",
+    "schema": 3,
+    "time": 1808.4833333321546,
+    "paused": true,
+    "terrain_version": 13,
+    "config": "d12-firstplay-1",
+    "build_sequence": 9,
+    "goal": {
+      "Id": "goal-9",
+      "Type": "solar",
+      "Stage": "Completed",
+      "Supply": "build-8",
+      "Active": false
+    },
+    "build": {
+      "Id": "build-9",
+      "Type": "solar",
+      "Stage": "Completed",
+      "Supply": "build-8",
+      "Active": false
+    },
+    "mines": [
+      {
+        "Id": "mine-iron",
+        "Remaining": 48
+      },
+      {
+        "Id": "mine-copper",
+        "Remaining": 94
+      }
+    ],
+    "tasks": [
+      {
+        "Id": "prod-1",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-2",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-3",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-4",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-5",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-6",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-7",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-8",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-9",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-10",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-11",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-12",
+        "Kind": "recipe",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 20
+      },
+      {
+        "Id": "prod-13",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-14",
+        "Kind": "haul",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-15",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-16",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-17",
+        "Kind": "mine",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-18",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-19",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-20",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-21",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-22",
+        "Kind": "haul",
+        "Material": "iron_ore",
+        "Quantity": 8,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-23",
+        "Kind": "recipe",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 16
+      },
+      {
+        "Id": "prod-24",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-25",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-26",
+        "Kind": "recipe",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 20
+      },
+      {
+        "Id": "prod-27",
+        "Kind": "mine",
+        "Material": "copper_ore",
+        "Quantity": 2,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 6
+      },
+      {
+        "Id": "prod-28",
+        "Kind": "haul",
+        "Material": "copper_ore",
+        "Quantity": 2,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-29",
+        "Kind": "recipe",
+        "Material": "copper",
+        "Quantity": 1,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 4
+      },
+      {
+        "Id": "prod-30",
+        "Kind": "haul",
+        "Material": "copper",
+        "Quantity": 1,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-31",
+        "Kind": "recipe",
+        "Material": "cable",
+        "Quantity": 1,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 4
+      },
+      {
+        "Id": "prod-32",
+        "Kind": "haul",
+        "Material": "iron",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-33",
+        "Kind": "haul",
+        "Material": "parts",
+        "Quantity": 4,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-34",
+        "Kind": "haul",
+        "Material": "cable",
+        "Quantity": 2,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      },
+      {
+        "Id": "prod-35",
+        "Kind": "haul",
+        "Material": "kit",
+        "Quantity": 1,
+        "Stage": "Completed",
+        "Paid": true,
+        "Work": 0
+      }
+    ],
+    "build9_operations": {
+      "build-9-take-1": "build-9|build-8|cargo:Robot_Tuoyun_1|iron:4,parts:4",
+      "build-9-unload-1": "build-9|cargo:Robot_Tuoyun_1|build-9|iron:4,parts:4",
+      "build-9-take-3": "build-9|build-8|cargo:Robot_Tuoyun_1|cable:2,kit:1",
+      "build-9-unload-3": "build-9|cargo:Robot_Tuoyun_1|build-9|cable:2,kit:1",
+      "build-9-consume": "build-9|build-9|spent|cable:2,iron:4,kit:1,parts:4"
+    }
+  }
+]

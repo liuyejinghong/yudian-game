@@ -1,0 +1,17 @@
+{
+  "schema": 3,
+  "time": 3053.6999999998525,
+  "terrain_version": 21,
+  "mines": {
+    "mine-iron": 14,
+    "mine-copper": 84
+  },
+  "mining_receipts": 14,
+  "recipe_receipts": 21,
+  "built_facilities": 8,
+  "kits_remaining": 0,
+  "identity_count": 25,
+  "identity": "build_sha256=1a0c334f3786a9616905ac8e92567da6c53c2430c970cadbad11e92854f899b5 loaded_mvid=72c9a8c6-d728-48c0-92c1-d21cb38397b5 CLR=8.0.31 display=headless",
+  "source_files_unchanged_since_export": true,
+  "fixture_note": "Health was lowered to exercise three paid repairs and expanded charging; this does not prove natural balance."
+}

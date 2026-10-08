@@ -1,0 +1,75 @@
+  正在确定要还原的项目…
+  所有项目均是最新的，无法还原。
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(448,42): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(449,44): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(450,43): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(451,45): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(453,40): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(475,45): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+  Yudian -> <workspace>/prototype/.godot/mono/temp/bin/Debug/Yudian.dll
+
+已成功生成。
+
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(448,42): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(449,44): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(450,43): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(451,45): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(453,40): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+<workspace>/prototype/scripts/PlayerUI/PlayerUiSelfTest.cs(475,45): warning CS8602: 解引用可能出现空引用。 [<workspace>/prototype/Yudian.csproj]
+    6 个警告
+    0 个错误
+
+已用时间 00:00:00.82
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PLAYER_UI_SELFTEST begin
+MAIN_GROUND_IDENTITY build_sha256=2eb1451642cc5ec886cbaa2db972565c1a384251a85fdfc03c96541d52d600f7 loaded_mvid=c3f7ce7d-d4cf-46f8-943e-977c6e5e27fc CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_UI_SELFTEST viewport=(1280, 800)
+PLAYER_UI_SELFTEST ENTRY begin
+PLAYER_UI_SELFTEST PASS 入口遮罩在 EntryOpen 时可见
+PLAYER_UI_SELFTEST PASS 入口期间运行中 HUD 隐藏（保存/暂停/建造不可点）
+PLAYER_UI_SELFTEST PASS 入口按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST PASS 入口自动聚焦开始新游戏（回车即可开始）
+PLAYER_UI_SELFTEST PASS 世界就绪后开始新游戏可用
+PLAYER_UI_SELFTEST PASS 无存档时继续存档禁用
+PLAYER_UI_SELFTEST PASS 入口期间点击世界无穿透、无选择
+PLAYER_UI_SELFTEST PASS 入口期间键盘不透传镜头
+PLAYER_UI_SELFTEST PASS 入口期间暂停命令被权威拒绝
+PLAYER_UI_SELFTEST PASS 入口期间保存被权威拒绝（不盖旧档）
+PLAYER_UI_SELFTEST PASS 1920x1080 入口遮罩与三按钮完整可见不越界
+PLAYER_UI_SELFTEST PASS 存档存在时继续存档启用
+PLAYER_COMMAND_REJECTED '0xE8' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+PLAYER_UI_SELFTEST PASS 坏档后仍留在入口（EntryOpen 保持）
+PLAYER_UI_SELFTEST PASS 坏档后入口遮罩仍显示
+PLAYER_UI_SELFTEST PASS 坏档后当前世界完好
+PLAYER_UI_SELFTEST PASS 开始新游戏持有键盘焦点
+PLAYER_UI_SELFTEST FAIL 双提交后入口只离开一次且不再回来
+PLAYER_UI_SELFTEST PASS 开始新游戏不泄漏世界任务
+PLAYER_UI_SELFTEST PASS 新游戏权威提示先建保障：先建太阳能、充电、维修和加工，再选择发展方向
+PLAYER_UI_SELFTEST FAIL 开始后运行中 HUD 恢复显示
+PLAYER_UI_SELFTEST ENTRY end
+PLAYER_UI_SELFTEST PASS HUD 建立确认按钮
+PLAYER_UI_SELFTEST PASS HUD 建立选择标签
+PLAYER_UI_SELFTEST PASS 普通场景 12 台机器人
+PLAYER_UI_SELFTEST PASS 找到合法预览点：可整平 · 半径 2m，目标高度 0m
+PLAYER_UI_SELFTEST PASS 设施重叠预览非法
+PLAYER_UI_SELFTEST PASS 场外预览非法
+PLAYER_UI_SELFTEST PASS 望山不能当筑垒执行
+PLAYER_UI_SELFTEST FAIL 地面点选后显示已选位置：左键点选机器人或地面；右键取消选择
+PLAYER_UI_SELFTEST FAIL 点击 HUD 面板不穿透（选择保持）
+PLAYER_UI_SELFTEST PASS 空点清除选择且不下命令
+PLAYER_UI_SELFTEST PASS 空点后仍无任务
+PLAYER_UI_SELFTEST FAIL 机器人点选生效：左键点选机器人或地面；右键取消选择
+PLAYER_UI_SELFTEST FAIL 确认后任务活动
+PLAYER_UI_SELFTEST FAIL 双击只产生一个任务（level-1）：
+PLAYER_UI_SELFTEST PASS 任务行不泄露内部任务 ID：当前没有任务；点击地面选择整平位置，确认后筑垒自动前往
+PLAYER_UI_SELFTEST PASS 0 进度阶段不显示百分比冒充总进度：当前没有任务；点击地面选择整平位置，确认后筑垒自动前往
+PLAYER_UI_SELFTEST FAIL 任务行显示中文阶段与执行者：当前没有任务；点击地面选择整平位置，确认后筑垒自动前往
+PLAYER_UI_SELFTEST FAIL 执行者是筑垒：
+PLAYER_UI_SELFTEST FAIL 阶段文本：
+PLAYER_UI_SELFTEST PASS 取消后无活动任务
+PLAYER_UI_SELFTEST FAIL 异常 TimeoutException: 等待超时：暂停生效
+exit=1
