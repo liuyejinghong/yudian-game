@@ -76,10 +76,11 @@ public partial class Main
         }
         };
     }
-    private void SavePlayer()
+    private bool SavePlayer()
     {
-        if (!_groundReady || _loadPending != null) { _playerNotice = "等待世界恢复后保存"; return; }
-        if (_groundRobots.Any(x => !x.IsOnFloor())) { _playerNotice = "等待机器人贴地后保存"; return; }
+        if (_entryOpen) { _playerNotice = "请先选择新游戏或继续存档再保存"; return false; }
+        if (!_groundReady || _loadPending != null) { _playerNotice = "等待世界恢复后保存"; return false; }
+        if (_groundRobots.Any(x => !x.IsOnFloor())) { _playerNotice = "等待机器人贴地后保存"; return false; }
         var snapshot = CapturePlayer(); ValidatePlayerSave(snapshot);
         string text = JsonSerializer.Serialize(snapshot, SaveOptions);
         string path = PlayerSavePath; Directory.CreateDirectory(Path.GetDirectoryName(path)!);
@@ -92,8 +93,9 @@ public partial class Main
             }
             if (File.Exists(path)) File.Copy(path, path + ".bak", true);
             File.Move(temporary, path, true);
-            _playerNotice = "已保存；退出后点击读取可继续";
+            _playerNotice = "已保存；下次启动可继续存档";
             GD.Print($"PLAYER_SAVE_OK version={_liveTerrain!.Current.Version} stage={_levelJob?.Stage} time={_playerTime:R}");
+            return true;
         }
         finally { if (File.Exists(temporary)) File.Delete(temporary); }
     }
@@ -124,7 +126,7 @@ public partial class Main
     private void ApplyPlayerLoad(PlayerSave snapshot, TerrainSnapshot terrain)
     {
         var next = new TerrainRegionView(); AddChild(next);
-        if (_playerTestInjectLoadFault && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1")
+        if (_playerTestInjectLoadFault && (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_DEMO_SELF_TEST") == "1"))
         { _playerTestInjectLoadFault = false; next.AfterMeshBoundForTest = () => throw new InvalidOperationException("synthetic player load projection fault"); }
         try { next.Initialize(terrain); next.PermissionGranted = snapshot.Permission; next.CancellationRequested = snapshot.Cancelled; }
         catch { RemoveChild(next); next.QueueFree(); throw; }
@@ -261,6 +263,7 @@ public partial class Main
             _levelJob = job;
         }
         if (BootstrapEnabled) RestoreBaseOrders(saved.Bootstrap!);
+        if (!_loadRecovered) _entryOpen = false;
         _loadPending = null; _loadRollback = null; RestorePlayerVisuals(); PauseGround(false); _playerNotice = _loadRecovered ? "读取失败；已恢复原世界与任务，原档保留" : _userPaused ? "读取完成；保持用户暂停" : "读取完成；继续原任务";
         GD.Print($"PLAYER_LOAD_READY version={_liveTerrain.Current.Version} stage={_levelJob?.Stage} paused={_userPaused} time={_playerTime:R}");
     }

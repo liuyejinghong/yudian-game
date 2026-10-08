@@ -1,0 +1,76 @@
+{
+  "source_commit": "486e9e944a7f9fd195dfd08a3785f3be97c0e2a6",
+  "files": [
+    {
+      "source": "art/exports/resources/d12-r1/r7/iron_ore.glb",
+      "runtime": "res://assets/resources/d12-r1/iron_ore.glb",
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56"
+    },
+    {
+      "source": "art/exports/resources/d12-r1/r7/copper_ore.glb",
+      "runtime": "res://assets/resources/d12-r1/copper_ore.glb",
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67"
+    },
+    {
+      "source": "art/exports/resources/d12-r1/r7/iron.glb",
+      "runtime": "res://assets/resources/d12-r1/iron.glb",
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970"
+    },
+    {
+      "source": "art/exports/resources/d12-r1/r7/copper.glb",
+      "runtime": "res://assets/resources/d12-r1/copper.glb",
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d"
+    },
+    {
+      "source": "art/exports/resources/d12-r1/r7/parts.glb",
+      "runtime": "res://assets/resources/d12-r1/parts.glb",
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49"
+    },
+    {
+      "source": "art/exports/resources/d12-r1/r7/cable.glb",
+      "runtime": "res://assets/resources/d12-r1/cable.glb",
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3"
+    },
+    {
+      "source": "art/exports/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb",
+      "runtime": "res://assets/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb",
+      "sha256": "6b834914f8194bf20adabb94c2cacbfb910703fd64f23e5e8ea31d9682e3cad9"
+    },
+    {
+      "source": "art/source/facilities/processor-d12-rev5-sample/processor-d12-rev5-sample.glb",
+      "runtime": "res://assets/facilities/processor-r1/processor-r1.glb",
+      "sha256": "b439ab57f4c23fc9868fcb8c0d313ebbdb2956942f1ff3eac7f74080a5bd51e2"
+    },
+    {
+      "source": "art/icons/resources-d12-r1/iron_ore.svg",
+      "runtime": "res://assets/resources/d12-r1/icons/iron_ore.svg",
+      "sha256": "cd0caae18b1c8a397882ddc8165f32646823421ebc9107beaf5e940fc5a101a7"
+    },
+    {
+      "source": "art/icons/resources-d12-r1/copper_ore.svg",
+      "runtime": "res://assets/resources/d12-r1/icons/copper_ore.svg",
+      "sha256": "cdc294f181ee40d1eb2fdcc1c5da0502f2aa68134ffd205399a500a7b68df344"
+    },
+    {
+      "source": "art/icons/resources-d12-r1/iron.svg",
+      "runtime": "res://assets/resources/d12-r1/icons/iron.svg",
+      "sha256": "5949b410c504c40aacef91453d8a80543499359479971d2e1958f55daf4d887a"
+    },
+    {
+      "source": "art/icons/resources-d12-r1/copper.svg",
+      "runtime": "res://assets/resources/d12-r1/icons/copper.svg",
+      "sha256": "cc890d16598c1ba4d76d6b011c88358483fd36af425e0818c6e26b367dc3b447"
+    },
+    {
+      "source": "art/icons/resources-d12-r1/parts.svg",
+      "runtime": "res://assets/resources/d12-r1/icons/parts.svg",
+      "sha256": "9fa6e96696e04e7177163afbca124f54c69fe13a3d57948d100acb8f315c98cc"
+    },
+    {
+      "source": "art/icons/resources-d12-r1/cable.svg",
+      "runtime": "res://assets/resources/d12-r1/icons/cable.svg",
+      "sha256": "6bc50dcc6974e01ba390e8c7834ea323eb1548d7f9ef752e6e6af5d58fc3f4ed"
+    }
+  ],
+  "scope": "runtime copy; dynamic and visual checks pending"
+}

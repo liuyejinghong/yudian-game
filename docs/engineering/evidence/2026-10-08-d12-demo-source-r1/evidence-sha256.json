@@ -1,0 +1,12 @@
+{
+  "README.md": "0d2e470657e7951ecfb6dd6a51626a4e0259a0e7d8b98d9b8d0af5e02973969d",
+  "build.log": "6d9f313fca1b4e3ede7e938898a8aa22eb3c6235040ea825fa95e78eda0accef",
+  "cargo.log": "cce740b3b1cde8d244b2e32689085acbc8eeabae467fdc01410c08f8516e8364",
+  "completed.log": "06e0d24a6e043ec118d96f9bbc65c9c6f27ef92791379987cd001018a6e32f9e",
+  "ore.log": "b8b3d838e54e2994cc2c80861f0bcca15e264cba3017b21f5444ddbfc90feeed",
+  "output.log": "1493a4970f5c49287d420c6b5fe20c68386b59e12d492d6a9a0980e04a5fe2d0",
+  "prepare.log": "34f2dc1f4fdb89fb4318c378d549008b329541c64f679d733c9889942cba4770",
+  "recipe.log": "5e5178302e18ec94832517daa95d21bb02f049da9259aceb56ba8f802c38e9dc",
+  "resume.log": "ff6a3ef3c9c33636ab0af8941004ffabcab3b2c1acad8c7eb7fa02a9cf55aafc",
+  "rollback.log": "11cde934f82ddb808c0a26e79a6f42401bb1f11e0eb3f3be9028dcce77e622a2"
+}

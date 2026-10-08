@@ -90,7 +90,7 @@ def main():
     for f in sorted(PROJECT.rglob('*')):
         rel = f.relative_to(PROJECT)
         if f.is_file() and rel.parts[0] not in ('.godot', 'export', 'benchmarks') and f.name != 'build-info.json':
-            if f.suffix in ('.cs', '.tscn', '.json', '.glb', '.gltf', '.bin', '.cfg', '.godot', '.csproj', '.import', '.gd', '.gdshader', '.tres'):
+            if f.suffix in ('.cs', '.tscn', '.json', '.glb', '.gltf', '.bin', '.cfg', '.godot', '.csproj', '.import', '.gd', '.gdshader', '.tres', '.svg'):
                 source[str(rel)] = sha(f)
                 if rel.parts[0] == 'assets': assets[str(rel)] = sha(f)
     identity = {

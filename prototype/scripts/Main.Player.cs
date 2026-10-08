@@ -7,7 +7,7 @@ using Yudian.Terrain;
 namespace Yudian;
 public partial class Main
 {
-    private bool _playerMode, _userPaused, _projectionPaused;
+    private bool _playerMode, _userPaused, _projectionPaused, _entryOpen;
     private double _playerTime;
     private sealed record PlayerCommand(string Action, Vector3 Center, long Version, string? Worker, float Yaw = 0);
     private PlayerCommand? _playerCommand;
@@ -16,7 +16,7 @@ public partial class Main
         _groundReady && !_groundFault && _groundVerified == _liveTerrain?.Current.Version && _loadPending == null,
         _userPaused, PlayerNotice(), DevelopmentEnabled&&_development is {} g&&g.Stage is "Supplying" or "Blocked" ? new(g.Id, Production?.Reason??g.Reason,Production?.Robot??"", Production is {Kind:"mine"} p?p.Work/6:0,LoadVector(g.Center),true) : BootstrapEnabled && _buildJob is {} b ? new(b.Id, BaseStageText(b.Stage), b.Builder, Math.Min(1,b.Work/(b.Type=="connection"?3:Definition(b.Type).WorkSeconds)), LoadVector(b.Center), b.Active) : _levelJob == null ? null : new(_levelJob.Id, LevelStageText(_levelJob.Stage),
             _levelJob.Worker?.Name.ToString() ?? "", _levelJob.Work.Fraction, _levelJob.Center, _levelJob.Active),
-        _playerTime, _liveTerrain?.Current.Version ?? 0, _cfg.Terrain.Size / 2, System.IO.File.Exists(PlayerSavePath));
+        _playerTime, _liveTerrain?.Current.Version ?? 0, _cfg.Terrain.Size / 2, System.IO.File.Exists(PlayerSavePath), _entryOpen, _entryOpen && _loadPending != null);
     private string PlayerNotice()
     {
         if (_groundFault) return _groundMessage;
@@ -61,13 +61,15 @@ public partial class Main
     public void QueuePlayerAction(string action)
     {
         if((action is "restock" or "legacy")&&!DevelopmentEnabled){_playerNotice="本模式没有此经营操作";return;}
+        if (_entryOpen && action is not ("newgame" or "load" or "recover")) { _playerNotice = "请先选择开始新游戏或继续存档"; return; }
         if ((action is "connect" or "retry") && !BootstrapEnabled) { _playerNotice="本模式没有此经营操作"; return; }
-        if (action is not ("cancel" or "pause" or "save" or "load" or "recover" or "connect" or "retry" or "restock" or "legacy")) { _playerNotice = "未知操作，未执行"; return; }
+        if (action is not ("cancel" or "pause" or "save" or "load" or "recover" or "connect" or "retry" or "restock" or "legacy" or "newgame" or "savequit")) { _playerNotice = "未知操作，未执行"; return; }
         QueuePlayer(new(action, Vector3.Zero, -1, null));
     }
     private void QueuePlayer(PlayerCommand command)
     {
         if (!_playerMode) return;
+        if (_entryOpen && command.Action is not ("newgame" or "load" or "recover")) { _playerNotice = "请先选择开始新游戏或继续存档"; return; }
         if (_playerCommand != null) { _playerNotice = "操作正在处理，请稍候"; return; }
         _playerCommand = command;
     }
@@ -77,11 +79,18 @@ public partial class Main
         _playerCommand = null;
         try
         {
-            if (command.Action == "pause") { _userPaused = !_userPaused; PauseGround(_projectionPaused); _playerNotice = _userPaused ? "模拟已暂停，镜头和界面仍可操作" : "模拟继续"; }
+            if (command.Action == "newgame")
+            {
+                if (!_entryOpen) { _playerNotice = "新游戏只在启动入口选择"; return; }
+                if (!ReadPlayerState().Ready) { _playerNotice = "等待世界准备完成"; return; }
+                _entryOpen = false; PauseGround(false); _playerNotice = "先建太阳能、充电、维修和加工，再选择发展方向";
+            }
+            else if (command.Action == "pause") { _userPaused = !_userPaused; PauseGround(_projectionPaused); _playerNotice = _userPaused ? "模拟已暂停，镜头和界面仍可操作" : "模拟继续"; }
             else if (command.Action == "recover") { RecoverGround(); _playerNotice = "正在重新验证物理投影"; }
             else if (command.Action == "load") LoadPlayer();
             else if(command.Action=="legacy")LoadPlayer(true);
             else if (command.Action == "save") SavePlayer();
+            else if (command.Action == "savequit") { if (SavePlayer()) GetTree().Quit(); }
             else if (!ReadPlayerState().Ready) _playerNotice = "等待世界恢复后再操作";
             else if (command.Action == "connect" && BootstrapEnabled) ConnectNextFacility();
             else if(command.Action=="restock"&&DevelopmentEnabled)StartRestock();
@@ -105,7 +114,7 @@ public partial class Main
             }
         }
         catch (Exception ex) { _playerNotice = command.Action == "load" ? "读取失败：存档损坏、不支持或无法访问；当前世界与原档保留"
-                : command.Action == "save" ? "保存失败；此前存档保留，请检查可用空间与访问权限" : "操作未执行：" + ex.Message; GD.Print("PLAYER_COMMAND_REJECTED " + ex.Message); }
+                : command.Action is "save" or "savequit" ? "保存失败；此前存档保留，请检查可用空间与访问权限" : "操作未执行：" + ex.Message; GD.Print("PLAYER_COMMAND_REJECTED " + ex.Message); }
     }
 
     private (GroundPatrol? Worker, Vector3 Station) FindLevelWorker(TerrainPatch patch, Vector3 center, string? workerId)

@@ -1,5 +1,6 @@
 #nullable enable
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -81,6 +82,8 @@ public partial class Main : Node3D
             _features.Add(_cfg.Terrain.Mound);
             _features.Add(_cfg.Terrain.MineralPit);
             _playerMode = !options.Benchmark && !options.LiveTerrain;
+            _entryOpen = _playerMode && new[] { "YUDIAN_PLAYER_SELF_TEST", "YUDIAN_BOOTSTRAP_SELF_TEST", "YUDIAN_DEVELOPMENT_SELF_TEST" }
+                .All(name => System.Environment.GetEnvironmentVariable(name) != "1");
             _liveMode = options.LiveTerrain || _playerMode;
             if (_liveMode) PrepareLiveTerrain();
             _duration = options.Duration ?? _cfg.Benchmark.DurationSeconds;
@@ -136,7 +139,7 @@ public partial class Main : Node3D
                 _guiCapturePending = key;
             }
         }
-        float dt = _playerMode && (_userPaused || _loadPending != null) ? 0 : (float)delta;
+        float dt = _playerMode && (_entryOpen || _userPaused || _loadPending != null) ? 0 : (float)delta;
         _animTime += dt;
 
         foreach (var s in _spinners)
@@ -214,7 +217,7 @@ public partial class Main : Node3D
             var available = DisplayServer.ScreenGetUsableRect().Size - new Vector2I(60, 100);
             size = new Vector2I(Math.Min(size.X, available.X), Math.Min(size.Y, available.Y));
         }
-        GetWindow().Size = size;
+        if (!OS.GetCmdlineArgs().Contains("--resolution")) GetWindow().Size = size;
         var vp = GetViewport();
         vp.Msaa3D = _cfg.Quality.Msaa3d switch
         {
@@ -558,6 +561,7 @@ public partial class Main : Node3D
 
     public override void _ExitTree()
     {
+        foreach (var texture in _cargoGlyphTextures.Values) texture.Dispose();
         _playerSurface?.Dispose(); _committedMask?.Dispose();
         if (_recorder == null) return;
         try { _recorder.Finish(Summary(), "interrupted"); }
