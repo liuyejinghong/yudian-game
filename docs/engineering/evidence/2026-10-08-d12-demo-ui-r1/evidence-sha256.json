@@ -1,8 +1,13 @@
 {
-  "README.md": "d6fd636902bd3a28f233d1180e1cc481e2e51aa81910842a6cccaa4944ffcd2f",
+  "README.md": "f26d4b4eed6de0ab0c20410448892c3d3fa491d0e5a3a2c46c5dfbf1e7885eee",
+  "yudian-d12-demo-integrated-build-r3.log": "c35c46cadca43aeadaa3825fcbfb0577d7ec7892b7bffcfeb66f46018b034615",
+  "yudian-d12-ui-integrated-r1.log": "0db29682a1ef95787d093c4649d153199d8faa786c495e66d437860d2363f5a7",
+  "yudian-d12-ui-integrated-r2.log": "5422efc4c243624746279b5babc7706556e45d7979347ea68c8fdb16b75a3951",
   "yudian-ui-selftest-d12-entry-r1.log": "155db68ed349a2a3be55187fb952896d0e715e2bf6b5f09c4e2849a89bf5d054",
   "yudian-ui-selftest-d12-entry-r2.log": "54b1126d9bfbcbcf200e05b779156ffae2cc6259140370ff910c407c96ace234",
   "yudian-ui-selftest-d12-entry-r3.log": "95cd09540566fa4dfe0d88d04bc7d7c43a2ad559c9c284ddeee7cd010d5cc399",
   "yudian-ui-selftest-d12-final.log": "aacc2e8c88bc8d0e49bc684881b627658def907b87ba5c60c9341b9c374f5a30",
+  "yudian-ui-selftest-d12-gate-r1.log": "cc47bc0abc9a7080e5543968b64ab71f4e9a164e3c0fa93821a7c87fbba3a15a",
+  "yudian-ui-selftest-d12-gate-r2.log": "d636dd3684121afcf8b7c2a5f9e971b95da18a41a97511000a635735af24f1a7",
   "yudian-ui-selftest-d12-support-r1.log": "eae21f7cb671f52ecf0f8c36334d00ab7ac655f2c4b5787ec04f89e3d85721bc"
 }

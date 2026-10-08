@@ -329,9 +329,10 @@ public partial class PlayerUiSelfTest : SceneTree
 
         // 无穿透：世界点选、键盘镜头、暂停/保存命令全部被入口拦下
         var selection = (Label)_ui.FindChild("SelectionLabel", true, false)!;
-        Click(Root.GetVisibleRect().Size / 2f);
+        var entryView = Root.GetVisibleRect().Size;
+        Click(new Vector2(entryView.X * .8f, entryView.Y * .5f));
         await Frames(3);
-        Check(!selection.Text.Contains("已选位置") && _world.ReadPlayerState().Job == null,
+        Check(_world.ReadPlayerState().EntryOpen && !selection.Text.Contains("已选位置") && _world.ReadPlayerState().Job == null,
             "入口期间点击世界无穿透、无选择");
         var camBefore = _camera.GlobalPosition;
         PressKey(Key.W, true); await RealSeconds(0.25); PressKey(Key.W, false); await Frames(2);

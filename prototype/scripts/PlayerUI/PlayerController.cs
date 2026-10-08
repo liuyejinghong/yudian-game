@@ -21,8 +21,6 @@ public partial class PlayerController : Node
 
     private const float SiteRadiusM = 2f;
     private const float CommandCooldownS = 0.35f;
-    // 入口关闭后的世界输入门禁：吞掉开始按钮双击的第二击，避免其在遮罩消失后选中世界。
-    private const float EntryInputGateS = 0.35f;
     private const float PreviewIntervalS = 0.15f;
     private const float MinDistanceM = 7f, MaxDistanceM = 70f;
     private const float ClickSlackPx = 8f;
@@ -81,7 +79,6 @@ public partial class PlayerController : Node
     private Label _entryNotice = null!;
     private Button _entryNewGameButton = null!, _entryLoadButton = null!, _entryQuitButton = null!;
     private bool _entryFocusTaken;
-    private bool _entryWasOpen = true;
     private float _entryCloseGate;
     private Button _devDirectionsToggle = null!, _facilityToggle = null!;
 
@@ -122,9 +119,8 @@ public partial class PlayerController : Node
         var state = _world.ReadPlayerState();
         // UpdateEntryHud 必须每帧调用：入口关闭后的第一帧要靠它隐藏遮罩、恢复运行中 HUD。
         bool entry = state.EntryOpen || state.EntryLoading;
-        if (!entry && _entryWasOpen) _entryCloseGate = EntryInputGateS;
-        _entryWasOpen = entry;
-        _entryCloseGate = MathF.Max(0f, _entryCloseGate - dt);
+        if (!entry && _entryOverlay.Visible) _entryCloseGate = CommandCooldownS;
+        else _entryCloseGate = MathF.Max(0f, _entryCloseGate - dt);
         UpdateEntryHud(state);
         if (entry) return; // 入口期间权威冻结世界交互
         _entryFocusTaken = false;
