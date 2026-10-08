@@ -65,14 +65,21 @@ public partial class PlayerController : Node
     private Marker _previewMarker = null!, _siteMarker = null!, _jobMarker = null!, _selectMarker = null!;
     private Label _titleLabel = null!, _statusLabel = null!, _jobLabel = null!, _selectionLabel = null!,
         _worldLabel = null!, _stockLabel = null!, _supportLabel = null!, _facilityLabel = null!,
-        _devTitleLabel = null!, _devBodyLabel = null!;
+        _devTitleLabel = null!, _devBodyLabel = null!, _devDirectionsLabel = null!;
     private ScrollContainer _infoScroll = null!;
     private Button _confirmButton = null!, _cancelButton = null!, _pauseButton = null!,
-        _saveButton = null!, _loadButton = null!, _recoverButton = null!,
+        _saveButton = null!, _saveQuitButton = null!, _loadButton = null!, _recoverButton = null!,
         _connectButton = null!, _retryButton = null!, _restockButton = null!, _legacyButton = null!;
     private HBoxContainer _rowModes = null!, _rowOps = null!;
     private Button? _rotateButton;
     private ButtonGroup _modeGroup = null!;
+
+    // 启动入口：EntryOpen/EntryLoading 由 Main 权威给出，UI 只做遮罩、按钮与禁透传。
+    private Control _entryOverlay = null!, _infoPanel = null!, _commandBar = null!, _hintsLabel = null!;
+    private Label _entryNotice = null!;
+    private Button _entryNewGameButton = null!, _entryLoadButton = null!, _entryQuitButton = null!;
+    private bool _entryFocusTaken;
+    private Button _devDirectionsToggle = null!, _facilityToggle = null!;
 
     private sealed class Marker
     {
@@ -109,6 +116,10 @@ public partial class PlayerController : Node
         float dt = (float)delta;
         _commandCooldown = MathF.Max(0f, _commandCooldown - dt);
         var state = _world.ReadPlayerState();
+        // UpdateEntryHud 必须每帧调用：入口关闭后的第一帧要靠它隐藏遮罩、恢复运行中 HUD。
+        UpdateEntryHud(state);
+        if (state.EntryOpen || state.EntryLoading) return; // 入口期间权威冻结世界交互
+        _entryFocusTaken = false;
         _robots = _world.ReadPlayerRobots();
         _bootstrap = _world.ReadBootstrap();
         UpdateCamera(state.ExtentM + 4f, dt);
@@ -122,6 +133,8 @@ public partial class PlayerController : Node
     public override void _UnhandledInput(InputEvent @event)
     {
         if (!_initialized) return;
+        var state = _world.ReadPlayerState();
+        if (state.EntryOpen || state.EntryLoading) return; // 入口期间世界不接收任何输入
         switch (@event)
         {
             case InputEventKey key when key.Pressed && !key.Echo && key.Keycode == Key.Escape:
@@ -420,6 +433,7 @@ public partial class PlayerController : Node
         };
         panel.AddThemeStyleboxOverride("panel", PanelStyle());
         hud.AddChild(panel);
+        _infoPanel = panel;
 
         var box = new VBoxContainer();
         box.AddThemeConstantOverride("separation", 6);
@@ -446,14 +460,21 @@ public partial class PlayerController : Node
         _facilityLabel = InfoLabel("FacilityLabel", 14, Palette.TextDim);
         _devTitleLabel = InfoLabel("DevTitleLabel", 14, Palette.Accent);
         _devBodyLabel = InfoLabel("DevBodyLabel", 14, Palette.TextDim);
+        _devDirectionsLabel = InfoLabel("DevDirectionsLabel", 14, Palette.TextDim);
+        // 优先级：当前动作/目标/下一步 → 库存电力/保障/选机；设施与两方向长说明折叠可查。
         info.AddChild(_statusLabel);
         info.AddChild(_jobLabel);
         info.AddChild(_devTitleLabel);
         info.AddChild(_devBodyLabel);
-        info.AddChild(_selectionLabel);
-        info.AddChild(_worldLabel);
         info.AddChild(_stockLabel);
         info.AddChild(_supportLabel);
+        info.AddChild(_selectionLabel);
+        info.AddChild(_worldLabel);
+        _devDirectionsToggle = FoldToggle("DevDirectionsToggle", "方向详情", _devDirectionsLabel);
+        info.AddChild(_devDirectionsToggle);
+        info.AddChild(_devDirectionsLabel);
+        _facilityToggle = FoldToggle("FacilityToggle", "设施", _facilityLabel);
+        info.AddChild(_facilityToggle);
         info.AddChild(_facilityLabel);
 
         var hints = new Label
@@ -463,6 +484,7 @@ public partial class PlayerController : Node
             AnchorLeft = 0, AnchorRight = 1, AnchorTop = 1, AnchorBottom = 1, OffsetTop = -212, OffsetBottom = -190,
             HorizontalAlignment = HorizontalAlignment.Center, MouseFilter = Control.MouseFilterEnum.Ignore };
         hints.AddThemeFontSizeOverride("font_size", 14); hud.AddChild(hints);
+        _hintsLabel = hints;
         var bar = new CenterContainer
         {
             Name = "CommandBar",
@@ -471,6 +493,7 @@ public partial class PlayerController : Node
             MouseFilter = Control.MouseFilterEnum.Ignore,
         };
         hud.AddChild(bar);
+        _commandBar = bar;
         var barPanel = new PanelContainer { MouseFilter = Control.MouseFilterEnum.Stop };
         barPanel.AddThemeStyleboxOverride("panel", PanelStyle());
         bar.AddChild(barPanel);
@@ -502,9 +525,12 @@ public partial class PlayerController : Node
         stack.AddChild(_rowOps);
 
         _confirmButton = MakeButton("ConfirmButton", "确认整平", DoConfirm, accent: true);
+        // 固定宽度：整平/建设两态文案长度不同，避免按钮文字切换时整行移动。
+        _confirmButton.CustomMinimumSize = new Vector2(176, 0);
         _cancelButton = MakeButton("CancelButton", "取消任务", () => _world.QueuePlayerAction("cancel"));
         _pauseButton = MakeButton("PauseButton", "暂停", () => _world.QueuePlayerAction("pause"));
         _saveButton = MakeButton("SaveButton", "保存", () => _world.QueuePlayerAction("save"));
+        _saveQuitButton = MakeButton("SaveQuitButton", "保存退出", () => _world.QueuePlayerAction("savequit"));
         _loadButton = MakeButton("LoadButton", "读取", () => _world.QueuePlayerAction("load"));
         _recoverButton = MakeButton("RecoverButton", "故障恢复", () => _world.QueuePlayerAction("recover"));
         _connectButton = MakeButton("ConnectButton", "连接电缆", () => _world.QueuePlayerAction("connect"));
@@ -515,12 +541,94 @@ public partial class PlayerController : Node
         row.AddChild(_cancelButton);
         row.AddChild(_pauseButton);
         row.AddChild(_saveButton);
+        row.AddChild(_saveQuitButton);
         row.AddChild(_loadButton);
         row.AddChild(_recoverButton);
         row.AddChild(_connectButton);
         row.AddChild(_retryButton);
         _rowOps.AddChild(_restockButton);
         _rowOps.AddChild(_legacyButton);
+
+        BuildEntryOverlay(hud);
+    }
+
+    // 启动薄入口：标题、一句先建保障提示、Notice、新游戏/继续存档/退出；退出是普通关闭，不保存新局。
+    private void BuildEntryOverlay(CanvasLayer hud)
+    {
+        var overlay = new ColorRect
+        {
+            Name = "EntryOverlay",
+            Color = new Color(0.13f, 0.11f, 0.09f, 0.92f),
+            Visible = false,
+            MouseFilter = Control.MouseFilterEnum.Stop,
+        };
+        overlay.SetAnchorsPreset(Control.LayoutPreset.FullRect);
+        hud.AddChild(overlay);
+        _entryOverlay = overlay;
+
+        var center = new CenterContainer
+        {
+            MouseFilter = Control.MouseFilterEnum.Ignore,
+        };
+        center.SetAnchorsPreset(Control.LayoutPreset.FullRect);
+        overlay.AddChild(center);
+
+        var entryPanel = new PanelContainer { Name = "EntryPanel" };
+        entryPanel.AddThemeStyleboxOverride("panel", PanelStyle());
+        center.AddChild(entryPanel);
+
+        var box = new VBoxContainer();
+        box.AddThemeConstantOverride("separation", 10);
+        box.CustomMinimumSize = new Vector2(300, 0);
+        entryPanel.AddChild(box);
+
+        var title = NewLabel("余电", 30, Palette.Accent);
+        title.HorizontalAlignment = HorizontalAlignment.Center;
+        box.AddChild(title);
+        var hint = NewLabel("先建保障（太阳能、充电、维修），再发展生产。", 15, Palette.Text);
+        hint.AutowrapMode = TextServer.AutowrapMode.Arbitrary;
+        hint.HorizontalAlignment = HorizontalAlignment.Center;
+        box.AddChild(hint);
+        _entryNotice = NewLabel("", 14, Palette.TextDim);
+        _entryNotice.Name = "EntryNotice";
+        _entryNotice.AutowrapMode = TextServer.AutowrapMode.Arbitrary;
+        _entryNotice.CustomMinimumSize = new Vector2(300, 0);
+        box.AddChild(_entryNotice);
+
+        _entryNewGameButton = EntryButton("EntryNewGameButton", "开始新游戏", () => _world.QueuePlayerAction("newgame"));
+        _entryLoadButton = EntryButton("EntryLoadButton", "继续存档", () => _world.QueuePlayerAction("load"));
+        _entryQuitButton = EntryButton("EntryQuitButton", "退出", () => GetTree().Quit());
+        box.AddChild(_entryNewGameButton);
+        box.AddChild(_entryLoadButton);
+        box.AddChild(_entryQuitButton);
+    }
+
+    private Button EntryButton(string name, string text, Action command)
+    {
+        var button = MakeButton(name, text, command, accent: true);
+        button.FocusMode = Control.FocusModeEnum.All; // 入口必须可纯键盘操作
+        button.CustomMinimumSize = new Vector2(240, 40);
+        return button;
+    }
+
+    // 折叠开关：文字等宽（▸/▾ 同宽），展开状态不移动周围布局。
+    private Button FoldToggle(string name, string text, Control target)
+    {
+        var button = new Button
+        {
+            Name = name,
+            Text = text + " ▸",
+            ToggleMode = true,
+            FocusMode = Control.FocusModeEnum.All,
+            CustomMinimumSize = new Vector2(96, 24),
+        };
+        button.Toggled += on =>
+        {
+            target.Visible = on;
+            button.Text = text + (on ? " ▾" : " ▸");
+        };
+        target.Visible = false;
+        return button;
     }
 
     private static Label InfoLabel(string name, int size, Color color)
@@ -606,6 +714,28 @@ public partial class PlayerController : Node
             _world.QueueLevel(preview.Center, preview.Version, SelectedWorkerId());
     }
 
+    // 入口遮罩：显示/按钮态全部来自 EntryOpen/EntryLoading/Ready/SaveExists/Notice，UI 不自行判断载入结果。
+    private void UpdateEntryHud(PlayerReadModel state)
+    {
+        bool entry = state.EntryOpen || state.EntryLoading;
+        _entryOverlay.Visible = entry;
+        _infoPanel.Visible = !entry;
+        _commandBar.Visible = !entry;
+        _hintsLabel.Visible = !entry;
+        if (!entry) return;
+        if (!_entryFocusTaken && state.Ready)
+        {
+            _entryFocusTaken = true;
+            _entryNewGameButton.GrabFocus(); // 键盘用户直接可回车开始
+        }
+        _entryNotice.Text = state.Notice;
+        _entryNotice.Visible = state.Notice.Length > 0;
+        _entryNewGameButton.Disabled = state.EntryLoading || !state.Ready;
+        _entryLoadButton.Disabled = state.EntryLoading || !state.Ready || !state.SaveExists;
+        _entryQuitButton.Disabled = state.EntryLoading;
+        _entryLoadButton.Text = state.EntryLoading ? "载入中…" : "继续存档";
+    }
+
     private void UpdateHud(PlayerReadModel state)
     {
         bool boot = BootstrapOn;
@@ -615,18 +745,21 @@ public partial class PlayerController : Node
         _connectButton.Visible = boot;
         _retryButton.Visible = boot;
         _stockLabel.Visible = boot;
-        _facilityLabel.Visible = boot;
+        // 设施列表收在折叠开关后：开关随 bootstrap 显隐，展开状态由开关自己管理。
+        _facilityToggle.Visible = boot;
+        if (!boot) _facilityLabel.Visible = false;
         _supportLabel.Visible = false;
         _confirmButton.Text = Building ? "建设·含前置授权" : "确认整平";
 
         _statusLabel.Text = state.Notice;
+        // 任务行不露内部 goal/build ID；运输等 0 进度阶段不显示"进度 0%"冒充总进度。
         _jobLabel.Text = state.Job is not { } job
             ? "当前没有任务；" + (Building
                 ? "选择建设类型后点击地面放置，确认后自动派驮运与筑垒"
                 : "点击地面选择整平位置，确认后筑垒自动前往")
-            : string.Format(Inv,
-                "任务 {0} · {1} · 执行者 {2} · 进度 {3:P0}\n中心 ({4:F1}, {5:F1}){6}",
-                job.Id, StageDisplay(job.Stage), WorkerDisplay(job.WorkerId), job.Progress,
+            : string.Format(Inv, "{0} · 执行者 {1}{2}\n中心 ({3:F1}, {4:F1}){5}",
+                StageDisplay(job.Stage), WorkerDisplay(job.WorkerId),
+                job.Progress > 0 ? string.Format(Inv, " · 进度 {0:P0}", job.Progress) : "",
                 job.Center.X, job.Center.Z, job.Active ? "" : " · 非活动");
 
         _selectionLabel.Text = _selectedSite is { } site
@@ -655,26 +788,42 @@ public partial class PlayerController : Node
             }
         }
 
-        // 发展只读面板：仅展示权威 DevelopmentReadModel，不在 UI 侧计算成本或矿量。
-        // 经营按钮按 dev.Enabled 显隐（不把 bootstrap 当发展）；旧档读取还需世界就绪。
+        // 发展只读面板：仅展示权威 DevelopmentReadModel，不在 UI 侧计算成本、缺口或产物。
+        // 现货/在途/已备/在制与两方向字段按有值显示；方向长说明折叠。
         var dev = _world.ReadDevelopment();
         bool devOn = dev.Enabled;
         _devTitleLabel.Visible = devOn;
         _devBodyLabel.Visible = devOn;
+        _devDirectionsToggle.Visible = devOn;
         _rowOps.Visible = devOn;
         _legacyButton.Disabled = !state.Ready;
         if (devOn)
         {
             _devTitleLabel.Text = "发展 · " + dev.Provider;
-            _devBodyLabel.Text = string.Join("\n", new[]
-                {
-                    dev.Goal.Length > 0 ? "目标 " + dev.Goal : "",
-                    dev.Stage.Length > 0 ? "阶段 " + dev.Stage : "",
-                    dev.Need.Length > 0 ? "净缺口 " + dev.Need : "",
-                    dev.Reason.Length > 0 ? "等待 " + dev.Reason : "",
-                    dev.Choices.Length > 0 ? "后续方向 " + dev.Choices : "",
-                    dev.Mines.Length > 0 ? "矿点 " + dev.Mines : "",
-                }.Where(s => s.Length > 0));
+            var lines = new[]
+            {
+                dev.Goal.Length > 0 ? "目标 " + dev.Goal : "",
+                dev.Stage.Length > 0 ? "当前 " + dev.Stage : "",
+                dev.Reason.Length > 0 ? "下一步 " + dev.Reason : "",
+                dev.Need.Length > 0 ? "净缺口 " + dev.Need : "",
+                dev.Supply.Length > 0 ? "供给 " + dev.Supply : "",
+                dev.Prepared.Length > 0 ? "已备 " + dev.Prepared : "",
+                dev.Transit.Length > 0 ? "在途 " + dev.Transit : "",
+                dev.InProcess.Length > 0 ? "在制 " + dev.InProcess : "",
+                // 旧 Directions 为空时才回落到既有 Choices 文本。
+                dev.Directions is { Length: > 0 } || dev.Choices.Length == 0 ? "" : "后续方向 " + dev.Choices,
+                dev.Mines.Length > 0 ? "矿点 " + dev.Mines : "",
+            }.Where(s => s.Length > 0);
+            _devBodyLabel.Text = string.Join("\n", lines);
+            var dirs = dev.Directions;
+            if (dirs is { Length: > 0 })
+                _devDirectionsLabel.Text = string.Join("\n\n", dirs.Select(d =>
+                    $"{d.Name} · {(d.Feasible ? "可行" : "暂不可行")}\n成本 {d.Cost}\n缺口 {d.Need}\n后果 {d.Consequence}" +
+                    (d.Reason.Length > 0 ? "\n" + d.Reason : "")));
+            else
+                _devDirectionsLabel.Text = "";
+            _devDirectionsToggle.Visible = dirs is { Length: > 0 };
+            if (!_devDirectionsToggle.Visible) _devDirectionsLabel.Visible = false;
         }
 
         bool jobActive = state.Job is { Active: true };
@@ -682,6 +831,7 @@ public partial class PlayerController : Node
         _cancelButton.Disabled = !jobActive;
         _pauseButton.Text = state.Paused ? "继续" : "暂停";
         _saveButton.Disabled = !state.Ready;
+        _saveQuitButton.Disabled = !state.Ready;
         _loadButton.Disabled = !state.Ready || !state.SaveExists;
     }
 
@@ -694,7 +844,7 @@ public partial class PlayerController : Node
         => Array.Find(boot.Facilities, f => f.Id == id) is { } facility ? facility.Name : id;
 
     private string WorkerDisplay(string? workerId)
-        => workerId == null ? "未分配"
+        => string.IsNullOrEmpty(workerId) ? "未分配" // 发展/加工任务可能没有执行者字符串
             : Array.Find(_robots, r => r.Id == workerId) is { } robot ? robot.Name : workerId;
 
     private static string StageDisplay(string stage) => stage switch
