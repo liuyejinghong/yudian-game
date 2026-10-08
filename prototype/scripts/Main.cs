@@ -126,7 +126,7 @@ public partial class Main : Node3D
         {
             string id = BootstrapEnabled && _buildJob != null ? _buildJob.Id : _levelJob?.Id ?? "none";
             string stage = BootstrapEnabled && _buildJob != null ? _buildJob.Stage : _levelJob?.Stage.ToString() ?? "Idle";
-            string key = $"{_liveTerrain!.Current.Version}-{id}-{stage}-{_userPaused}";
+            string key = $"{_liveTerrain!.Current.Version}-{id}-{stage}-{_userPaused}-{ReadPlayerState().Ready}-{_entryOpen}-{_playerNotice.GetHashCode():x8}";
             if (key != _guiCaptureKey)
             {
                 if (_guiCapturePending == key)
