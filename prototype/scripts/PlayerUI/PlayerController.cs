@@ -21,6 +21,8 @@ public partial class PlayerController : Node
 
     private const float SiteRadiusM = 2f;
     private const float CommandCooldownS = 0.35f;
+    // 入口关闭后的世界输入门禁：吞掉开始按钮双击的第二击，避免其在遮罩消失后选中世界。
+    private const float EntryInputGateS = 0.35f;
     private const float PreviewIntervalS = 0.15f;
     private const float MinDistanceM = 7f, MaxDistanceM = 70f;
     private const float ClickSlackPx = 8f;
@@ -79,6 +81,8 @@ public partial class PlayerController : Node
     private Label _entryNotice = null!;
     private Button _entryNewGameButton = null!, _entryLoadButton = null!, _entryQuitButton = null!;
     private bool _entryFocusTaken;
+    private bool _entryWasOpen = true;
+    private float _entryCloseGate;
     private Button _devDirectionsToggle = null!, _facilityToggle = null!;
 
     private sealed class Marker
@@ -117,8 +121,12 @@ public partial class PlayerController : Node
         _commandCooldown = MathF.Max(0f, _commandCooldown - dt);
         var state = _world.ReadPlayerState();
         // UpdateEntryHud 必须每帧调用：入口关闭后的第一帧要靠它隐藏遮罩、恢复运行中 HUD。
+        bool entry = state.EntryOpen || state.EntryLoading;
+        if (!entry && _entryWasOpen) _entryCloseGate = EntryInputGateS;
+        _entryWasOpen = entry;
+        _entryCloseGate = MathF.Max(0f, _entryCloseGate - dt);
         UpdateEntryHud(state);
-        if (state.EntryOpen || state.EntryLoading) return; // 入口期间权威冻结世界交互
+        if (entry) return; // 入口期间权威冻结世界交互
         _entryFocusTaken = false;
         _robots = _world.ReadPlayerRobots();
         _bootstrap = _world.ReadBootstrap();
@@ -135,6 +143,7 @@ public partial class PlayerController : Node
         if (!_initialized) return;
         var state = _world.ReadPlayerState();
         if (state.EntryOpen || state.EntryLoading) return; // 入口期间世界不接收任何输入
+        if (_entryCloseGate > 0f) return; // 入口刚关闭：吞掉双击第二击，不选中世界
         switch (@event)
         {
             case InputEventKey key when key.Pressed && !key.Echo && key.Keycode == Key.Escape:
@@ -449,10 +458,10 @@ public partial class PlayerController : Node
         };
         box.AddChild(_infoScroll);
         var info = new VBoxContainer { SizeFlagsHorizontal = Control.SizeFlags.ExpandFill };
-        info.AddThemeConstantOverride("separation", 6);
+        info.AddThemeConstantOverride("separation", 4);
         _infoScroll.AddChild(info);
-        _statusLabel = InfoLabel("StatusLabel", 16, Palette.Accent);
-        _jobLabel = InfoLabel("JobLabel", 17, Palette.Text);
+        _statusLabel = InfoLabel("StatusLabel", 15, Palette.Accent);
+        _jobLabel = InfoLabel("JobLabel", 16, Palette.Text);
         _selectionLabel = InfoLabel("SelectionLabel", 15, Palette.TextDim);
         _worldLabel = InfoLabel("WorldLabel", 14, Palette.TextDim);
         _stockLabel = InfoLabel("StockLabel", 14, Palette.TextDim);
@@ -461,16 +470,16 @@ public partial class PlayerController : Node
         _devTitleLabel = InfoLabel("DevTitleLabel", 14, Palette.Accent);
         _devBodyLabel = InfoLabel("DevBodyLabel", 14, Palette.TextDim);
         _devDirectionsLabel = InfoLabel("DevDirectionsLabel", 14, Palette.TextDim);
-        // 优先级：当前动作/目标/下一步 → 库存电力/保障/选机；设施与两方向长说明折叠可查。
+        // 优先级：当前动作/库存功率/保障/发展核心在默认滚动首屏；已备/矿点/两方向与设施折叠可查。
         info.AddChild(_statusLabel);
         info.AddChild(_jobLabel);
-        info.AddChild(_devTitleLabel);
-        info.AddChild(_devBodyLabel);
         info.AddChild(_stockLabel);
         info.AddChild(_supportLabel);
+        info.AddChild(_devTitleLabel);
+        info.AddChild(_devBodyLabel);
         info.AddChild(_selectionLabel);
         info.AddChild(_worldLabel);
-        _devDirectionsToggle = FoldToggle("DevDirectionsToggle", "方向详情", _devDirectionsLabel);
+        _devDirectionsToggle = FoldToggle("DevDirectionsToggle", "发展详情", _devDirectionsLabel);
         info.AddChild(_devDirectionsToggle);
         info.AddChild(_devDirectionsLabel);
         _facilityToggle = FoldToggle("FacilityToggle", "设施", _facilityLabel);
@@ -637,6 +646,7 @@ public partial class PlayerController : Node
         label.Name = name;
         label.CustomMinimumSize = new Vector2(258, 0);
         label.AutowrapMode = TextServer.AutowrapMode.Arbitrary;
+        label.AddThemeConstantOverride("line_separation", 1); // 首屏合同要求多行标签收紧行距
         label.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
         return label;
     }
@@ -806,30 +816,36 @@ public partial class PlayerController : Node
         if (devOn)
         {
             _devTitleLabel.Text = "发展 · " + dev.Provider;
+            // 核心行只放决策必需项（目标/当前合一行省首屏高度）；已备/矿点长明细与两方向一起收进"发展详情"折叠。
+            string goalStage = (dev.Goal.Length > 0, dev.Stage.Length > 0) switch
+            {
+                (true, true) => "目标 " + dev.Goal + " · 当前 " + dev.Stage,
+                (true, false) => "目标 " + dev.Goal,
+                (false, true) => "当前 " + dev.Stage,
+                _ => "",
+            };
             var lines = new[]
             {
-                dev.Goal.Length > 0 ? "目标 " + dev.Goal : "",
-                dev.Stage.Length > 0 ? "当前 " + dev.Stage : "",
+                goalStage,
                 dev.Reason.Length > 0 ? "下一步 " + dev.Reason : "",
                 dev.Need.Length > 0 ? "净缺口 " + dev.Need : "",
                 dev.Supply.Length > 0 ? "供给 " + dev.Supply : "",
-                dev.Prepared.Length > 0 ? "已备 " + dev.Prepared : "",
                 dev.Transit.Length > 0 ? "在途 " + dev.Transit : "",
                 dev.InProcess.Length > 0 ? "在制 " + dev.InProcess : "",
                 // 旧 Directions 为空时才回落到既有 Choices 文本。
                 dev.Directions is { Length: > 0 } || dev.Choices.Length == 0 ? "" : "后续方向 " + dev.Choices,
-                dev.Mines.Length > 0 ? "矿点 " + dev.Mines : "",
             }.Where(s => s.Length > 0);
             _devBodyLabel.Text = string.Join("\n", lines);
-            var dirs = dev.Directions;
-            if (dirs is { Length: > 0 })
-                _devDirectionsLabel.Text = string.Join("\n\n", dirs.Select(d =>
+            var detail = new System.Collections.Generic.List<string>();
+            if (dev.Directions is { Length: > 0 } dirs)
+                detail.Add(string.Join("\n\n", dirs.Select(d =>
                     $"{d.Name} · {(d.Feasible ? "可行" : "暂不可行")}\n成本 {d.Cost}\n缺口 {d.Need}\n后果 {d.Consequence}" +
-                    (d.Reason.Length > 0 ? "\n" + d.Reason : "")));
-            else
-                _devDirectionsLabel.Text = "";
-            _devDirectionsToggle.Visible = dirs is { Length: > 0 };
-            if (!_devDirectionsToggle.Visible) _devDirectionsLabel.Visible = false;
+                    (d.Reason.Length > 0 ? "\n" + d.Reason : ""))));
+            if (dev.Prepared.Length > 0) detail.Add("已备 " + dev.Prepared);
+            if (dev.Mines.Length > 0) detail.Add("矿点 " + dev.Mines);
+            _devDirectionsLabel.Text = string.Join("\n\n", detail);
+            _devDirectionsToggle.Visible = detail.Count > 0;
+            if (detail.Count == 0) _devDirectionsLabel.Visible = false;
         }
 
         bool jobActive = state.Job is { Active: true };

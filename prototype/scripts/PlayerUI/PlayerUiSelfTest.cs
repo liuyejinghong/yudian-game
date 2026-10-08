@@ -373,6 +373,7 @@ public partial class PlayerUiSelfTest : SceneTree
         // 回车激活聚焦按钮必须走 Viewport GUI 路由（PushInput），ParseInputEvent 只进轮询状态；
         // 坏档读取的命令冷却要到点击后 0.35s 才过期，headless 帧率极高必须按真实时间等待。
         await RealSeconds(0.5);
+        var newGameCenter = newGame.GetGlobalRect().GetCenter();
         newGame.GrabFocus();
         await Frames(1);
         Check(newGame.HasFocus(), "开始新游戏持有键盘焦点");
@@ -388,6 +389,15 @@ public partial class PlayerUiSelfTest : SceneTree
         Check(_world.ReadPlayerState().Job == null, "开始新游戏不泄漏世界任务");
         Check(_world.ReadPlayerState().Notice.Contains("先建"), "新游戏权威提示先建保障：" + _world.ReadPlayerState().Notice);
         Check(_ui.FindChild("InfoPanel", true, false) is Control { Visible: true }, "开始后运行中 HUD 恢复显示");
+
+        // 真实鼠标双击第二击：入口关闭后隔帧点击原按钮屏幕位置，短窗门禁内不得透传选中世界。
+        // 同帧双事件测不出这个 bug（遮罩当帧还在），必须跨帧。
+        await Frames(4);
+        Click(newGameCenter);
+        await Frames(3);
+        Check(!selection.Text.Contains("已选位置") && _world.ReadPlayerState().Job == null,
+            "入口关闭短窗内第二击不选中世界：" + selection.Text);
+        await RealSeconds(0.4); // 等门禁过期，后续世界交互恢复正常
         GD.Print("PLAYER_UI_SELFTEST ENTRY end");
     }
 
@@ -407,6 +417,33 @@ public partial class PlayerUiSelfTest : SceneTree
             Check(confirm.CustomMinimumSize.X >= 170, tag + " 确认按钮定宽（整平/建设文字切换不位移）: " + F(confirm.CustomMinimumSize.X));
             Check(InView(confirm) && InView(saveQuit) && InView(pause) && saveQuit.IsVisibleInTree(),
                 tag + " 暂停/保存退出等关键控制完整可见不裁切");
+            // 默认滚动=0：当前动作/库存功率/保障/发展核心行必须整行落在 InfoScroll 可视区（上下边界证明）。
+            if (_ui.FindChild("InfoScroll", true, false) is ScrollContainer infoScroll)
+            {
+                infoScroll.ScrollVertical = 0;
+                await Frames(2);
+                var scrollRect = infoScroll.GetGlobalRect();
+                bool RowVisible(Control c)
+                {
+                    var r = c.GetGlobalRect();
+                    return r.Position.Y >= scrollRect.Position.Y - 0.5f && r.End.Y <= scrollRect.End.Y + 0.5f;
+                }
+                var stock = (Label)_ui.FindChild("StockLabel", true, false)!;
+                var support = (Label)_ui.FindChild("SupportLabel", true, false)!;
+                var jobRow = (Label)_ui.FindChild("JobLabel", true, false)!;
+                var devBodyRow = (Label)_ui.FindChild("DevBodyLabel", true, false)!;
+                Check(stock.Visible && stock.Text.Contains(_world.ReadBootstrap().Power) && RowVisible(stock),
+                    tag + " 库存/功率行在首屏可视区且含权威功率: " + stock.Text.Replace("\n", " · "));
+                Check(support.Visible && RowVisible(support) && jobRow.Visible && RowVisible(jobRow),
+                    tag + " 当前动作与保障行在首屏可视区");
+                if (devBodyRow.Visible)
+                    Check(RowVisible(devBodyRow), tag + " 发展核心行（下一步/净缺口）在首屏可视区: bottom=" +
+                        F(devBodyRow.GetGlobalRect().End.Y) + "/" + F(scrollRect.End.Y));
+                else
+                    NotRun(tag + " 发展核心行首屏（发展未启用）");
+            }
+            else
+                NotRun(tag + " 首屏核心行几何（InfoScroll 未建立）");
             if (_ui.FindChild("Hints", true, false) is Label hints &&
                 saveQuit.GetParent() is Control row && row.GetParent() is Control stack && stack.GetParent() is Control barPanel)
                 Check(barPanel.GetGlobalRect().Position.Y >= hints.GetGlobalRect().End.Y - 0.5f,
@@ -480,11 +517,10 @@ public partial class PlayerUiSelfTest : SceneTree
                 body.Text.Contains("下一步 " + dev.Reason) && body.Text.Contains("净缺口 " + dev.Need),
             "发展核心行显示目标/当前动作/下一步/净缺口（权威原文）");
         Check((dev.Supply.Length == 0 || body.Text.Contains("供给 " + dev.Supply)) &&
-              (dev.Prepared.Length == 0 || body.Text.Contains("已备 " + dev.Prepared)) &&
               (dev.Transit.Length == 0 || body.Text.Contains("在途 " + dev.Transit)) &&
               (dev.InProcess.Length == 0 || body.Text.Contains("在制 " + dev.InProcess)),
-            "供给/已备/在途/在制按权威有值显示");
-        Check(dev.Mines.Length == 0 || body.Text.Contains("矿点 " + dev.Mines), "矿点显示权威原文");
+            "供给/在途/在制按权威有值显示在核心行");
+        Check(dev.Prepared.Length == 0 || !body.Text.Contains("已备"), "已备长明细不挤占核心首屏");
 
         // 两方向：Directions 有值时走折叠详情并逐字段核对；为空时核心行回落 Choices 文本。
         if (dev.Directions is { Length: > 0 } dirs)
@@ -501,6 +537,9 @@ public partial class PlayerUiSelfTest : SceneTree
                     dirLabel.Text.Contains(d.Name + " · " + (d.Feasible ? "可行" : "暂不可行")) &&
                     (d.Reason.Length == 0 || dirLabel.Text.Contains(d.Reason))),
                 "两方向逐字段显示权威 Name/Cost/Need/Consequence/Feasible/Reason");
+            Check((dev.Prepared.Length == 0 || dirLabel!.Text.Contains("已备 " + dev.Prepared)) &&
+                  (dev.Mines.Length == 0 || dirLabel!.Text.Contains("矿点 " + dev.Mines)),
+                "发展详情展开后可见已备/矿点权威原文");
             await CommandClick(dirToggle!);
             await Frames(2);
             Check(dirLabel is { Visible: false }, "方向详情可再次折叠");
@@ -510,6 +549,7 @@ public partial class PlayerUiSelfTest : SceneTree
             Check(dev.Choices.Length > 0 && body.Text.Contains("后续方向 " + dev.Choices),
                 "Directions 为空时核心行回落既有 Choices 文本");
             NotRun("两方向 Directions 详情（权威为空）");
+            NotRun("发展详情已备/矿点展开（Directions 为空）");
         }
         Check(restock!.IsVisibleInTree() && legacy!.IsVisibleInTree() && !legacy.Disabled,
             "经营按钮按 dev.Enabled 可见，旧档读取在世界就绪时可用");
