@@ -1,0 +1,25 @@
+OK static=[[-1.8, 0.0, -2.4], [1.8, 2.4, 2.4]] tris=1988 bin=133752B
+03:18:30 | INFO: Data are loaded, start creating Blender stuff
+03:18:30 | INFO: Blender create Mesh node Base
+03:18:30 | INFO: Blender create Mesh node Chamber
+03:18:30 | INFO: Blender create Mesh node PressGuide
+03:18:30 | INFO: Blender create Mesh node PressRam
+03:18:30 | INFO: Blender create Mesh node FeedBed
+03:18:30 | INFO: Blender create Mesh node FeedGate
+03:18:30 | INFO: Blender create Mesh node Gantry
+03:18:30 | INFO: Blender create Mesh node StopGate
+03:18:30 | INFO: Blender create Mesh node OutputRack
+03:18:30 | INFO: Blender create Mesh node ServicePort
+03:18:30 | INFO: Blender create Mesh node PowerPort
+03:18:30 | INFO: Blender create Mesh node DustCollar
+03:18:30 | INFO: Blender create Mesh node ElectronicsInnerCover
+03:18:30 | INFO: Blender create Mesh node HeatPanel
+03:18:30 | INFO: Blender create Mesh node ServiceCover
+03:18:30 | INFO: Blender create Mesh node InputCrate
+03:18:30 | INFO: Blender create Mesh node OutputCrate
+03:18:30 | INFO: glTF import finished in 0.01s
+Info: Saved as "processor-d12-rev5-sample.blend"
+REV5_CANDIDATE_PASS {"continuous_stroke": "PASS: nominal per-component swept AABB is conservative for actual chamfers; deltaY[-.35,0]", "terminal_contacts": [{"moving": "ram_stem", "fixed": "press_die", "gap_m": 0.0, "class": "contact-at-full-stroke"}], "fixed_positive_area_joints": [["press_foot_l", "slab"], ["press_foot_r", "slab"], ["press_foot_l", "rail_l"], ["press_foot_r", "rail_r"], ["rail_l", "press_beam"], ["rail_r", "press_beam"], ["press_beam", "roof_r"], ["press_die", "ch_floor"]], "moving_positive_area_joints": [["ram_body", "ram_link_z"], ["ram_link_z", "ram_link_x"], ["ram_link_x", "ram_stem"]], "original_ram_composite": "body/face/accent layered overlaps retained as one moving assembly; not a fixed-body collision", "service_cover_continuous_x_bound": -1.15, "service_cover_gap_m": 1.96, "unchanged_mesh_bytes": ["Base", "Chamber", "FeedBed", "FeedGate", "Gantry", "StopGate", "OutputRack", "ServicePort", "PowerPort", "DustCollar", "ElectronicsInnerCover", "HeatPanel", "ServiceCover", "InputCrate", "OutputCrate"], "node_TRS_socket_pivot_material_animation": "EXACT", "new_real_bevel_m": 0.003, "bevel_segments": 1, "new_primitive_count": 16, "new_primitive_manifold": "all closed positive volume, zero non-manifold edges before flat vertex splitting", "changed_mesh_flat_triangles": 704, "max_normal_error": 1.530511830727388e-05, "static_bounds": [[-1.8, 0.0, -2.4], [1.8, 2.4, 2.4]], "visual": "NOT_SIGNED; actual Godot 7 captures owned by master"}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

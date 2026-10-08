@@ -1,0 +1,28 @@
+00:00.405  blend            | Read blend: "historical-local-project/yudian-r7-portable-rebuild/art/source/resources/d12-r1/resource-pair-grey-r5-portable.blend"
+INFO Draco is available, use library at <BLENDER_APPLICATION>/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.dylib
+INFO MeshOptimizer is available, use library at <BLENDER_APPLICATION>/Contents/Resources/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.dylib
+03:55:53 | INFO: Starting glTF 2.0 export
+03:55:53 | INFO: Extracting primitive: copper_ore
+03:55:53 | INFO: Primitives created: 1
+03:55:53 | INFO: Finished glTF 2.0 export in 0.008440017700195312 s
+
+03:55:53 | INFO: Starting glTF 2.0 export
+03:55:53 | INFO: Extracting primitive: copper
+03:55:53 | INFO: Primitives created: 1
+03:55:53 | INFO: Finished glTF 2.0 export in 0.0015597343444824219 s
+
+03:55:53 | INFO: Starting glTF 2.0 export
+03:55:53 | INFO: Extracting primitive: parts
+03:55:53 | INFO: Primitives created: 1
+03:55:53 | INFO: Finished glTF 2.0 export in 0.0024950504302978516 s
+
+03:55:53 | INFO: Starting glTF 2.0 export
+03:55:53 | INFO: Extracting primitive: cable
+03:55:53 | INFO: Primitives created: 1
+03:55:53 | INFO: Finished glTF 2.0 export in 0.0020132064819335938 s
+
+Info: Saved as "resources-grey-r7.blend"
+RESULT {"objects": ["copper_ore", "copper", "parts", "cable"], "verdicts": {"copper_ore": ["2 hard edges smoothed across: micro bevel, Smooth by Angle or WN Keep Sharp"], "copper": [], "parts": [], "cable": ["normal smear on 10 flat faces (60.4% of flat area, worst 23.77 deg): Harden Normals / Weighted Normal; if they change nothing, the face is not planar", "218 hard edges smoothed across: micro bevel, Smooth by Angle or WN Keep Sharp"]}}
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:49:19)
+
+Blender quit

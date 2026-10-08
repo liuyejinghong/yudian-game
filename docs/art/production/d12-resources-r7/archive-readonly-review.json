@@ -1,0 +1,23 @@
+{
+  "role": "read-only architect",
+  "result": "NO_NEW_MATERIAL_ISSUE",
+  "archive_check_observed_exit": 0,
+  "png": 57,
+  "raw_public_pairs": 89,
+  "current_inputs": 17,
+  "static_output_contacts": 12,
+  "base_archive_review": "Previously checked current native receipt 19 inputs and reachable archive links",
+  "addendum_review": {
+    "raw_public_identity_matches": true,
+    "verdict": "PASS_SOURCE_IDENTITY_PORTABILITY_LIMITED",
+    "portable_and_original_source_identity_bridge_matches": true,
+    "native_proof_receipt_stage_raw_hash_bindings_match": true,
+    "README_and_report_links_reachable": true,
+    "two_manifest_links_preserved": true
+  },
+  "limits": [
+    "No new visual review or native Blender/Godot run",
+    "No new full 351-file replay",
+    "Original raw identity is resolved through archive-map; new public text SHA differs after path normalization"
+  ]
+}

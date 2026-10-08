@@ -1,0 +1,28 @@
+{
+  "stage": "A04a six known-mapping cargo identifiers candidate; independent static review required",
+  "icons": {
+    "iron_ore": "iron_ore.svg",
+    "copper_ore": "copper_ore.svg",
+    "iron": "iron.svg",
+    "copper": "copper.svg",
+    "parts": "parts.svg",
+    "cable": "cable.svg"
+  },
+  "trigger": "authoritative cargo items[id] > 0",
+  "empty": "hide all",
+  "mixed": "show one identifier for each nonzero family",
+  "normal_size_pixels": 16,
+  "gap_pixels": 2,
+  "quantity": "ledger UI only; no count inferred from glyphs or models",
+  "source_mesh_scale": 0.65,
+  "normal_view_only": "cargo normal/normal-low only; no output or near/reverse glyphs",
+  "ownership": "engineering implements actual Main ledger binding; independent fixture uses explicitly frozen mock items",
+  "display_names": {
+    "iron_ore": "铁矿",
+    "copper_ore": "铜矿",
+    "iron": "铁料",
+    "copper": "铜料",
+    "parts": "结构件",
+    "cable": "线缆"
+  }
+}

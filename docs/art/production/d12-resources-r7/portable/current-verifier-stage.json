@@ -1,0 +1,29 @@
+{
+  "isolated_root": "historical-local-project/yudian-r7-portable-current-verify",
+  "purpose": "Current portable verifier source/glb receipt; original linked blends deliberately absent",
+  "inputs": {
+    "docs/art/production/d12-resources-r7/portable/resources-grey-r7-before.json": "e4df027d8bb38da25311e2e58dc1b48e0007d4e0e3b58a73e84761f98477fdad",
+    ".agents/skills/scenario-blender-hard-surface/scripts/bx_hardsurface.py": "a7eb60b356c16609573ea8bb0005cd1278e908dcd7593eb7ff1f749ceb7b9999",
+    ".agents/skills/scenario-blender-expert/scripts/bx_audit.py": "a4afe1bede3cf6c227c557aa9a5efd3ac6aafaa44adf0dc401cf238f0e06f951",
+    ".agents/skills/scenario-blender-expert/scripts/bx_review.py": "3862dc1452960f01219206bbc0f24d487810d0f4cda6ab41b97108e522e53986",
+    ".agents/skills/scenario-blender-expert/scripts/bx_gui.py": "d5c020f27d2714f7f773da30cfa190017be453a621bb45f1eccececa3a33d60c",
+    "art/exports/resources/d12-r1/r7/copper.glb": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+    "art/exports/resources/d12-r1/r7/parts.glb": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+    "art/exports/resources/d12-r1/r7/cable.glb": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+    "art/exports/resources/d12-r1/r7/iron.glb": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+    "art/exports/resources/d12-r1/r7/copper_ore.glb": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+    "art/exports/resources/d12-r1/r7/iron_ore.glb": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+    "art/exports/resources/d12-r1/r5/iron.glb": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+    "art/exports/resources/d12-r1/r5/iron_ore.glb": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+    "art/source/resources/d12-r1/resource-pair-grey-r5-portable.blend": "de0fbdcc1af74b3e830c5ae41a62c46720e1993dc30cfd8e91cfacf3a6d1636b",
+    "art/source/resources/d12-r1/r7-portable/prove_portable.py": "d99c8a49c29daafca4409ef0f7a7343f27f2c7e14bef4385e1e337f10c9939ea",
+    "art/source/resources/d12-r1/r7-portable/resources-grey-r7.blend": "5b5eeb3a68fcd3160e40efe47e5af6e816e4d6543e221d3dc523c61b7a2cb200",
+    "art/source/resources/d12-r1/r7-portable/build_resources.py": "fde3382f5230f7b7590634f40c1235fdcf757a467c546dacd30af269084392cd",
+    "art/source/resources/d12-r1/r7-portable/make_portable.py": "56ec776eba0127f3131c12a64402e23b97254771c7ff6c054a8df9acf39cd772",
+    "art/source/resources/d12-r1/r7-portable/verify_resources.py": "4465626e4d93fe90eae7e01bf686aca61db4ddacb8f145455870036036833d59"
+  },
+  "verifier_sha256": "4465626e4d93fe90eae7e01bf686aca61db4ddacb8f145455870036036833d59",
+  "historical_stage": "isolated-stage.json preserved unchanged and archived in prior-current-verifier-correction",
+  "historical_stage_verifier_sha256": "30fc3e8900347d876034eea128d01e80fa312c235a57d7d49227a9ca28999d67",
+  "pre_correction_actual_isolated_verifier_sha256": "65dfdcf226ecdc1c153b39e21b0ec0e8a589bd1ab99cb598b2796d09a634fab3"
+}

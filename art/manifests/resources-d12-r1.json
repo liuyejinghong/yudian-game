@@ -1,0 +1,246 @@
+{
+  "revision": 4,
+  "stage": "A04a-grey-six-r7-with-cargo-identifiers",
+  "status": "PASS_LIMITED_STATIC",
+  "unit": "meter",
+  "up": "+Y",
+  "forward": "-Z",
+  "source": "art/source/resources/d12-r1/r7-portable/resources-grey-r7.blend",
+  "source_sha256": "5b5eeb3a68fcd3160e40efe47e5af6e816e4d6543e221d3dc523c61b7a2cb200",
+  "single_model_discrete_units": 1,
+  "aggregate_semantics": "visual symbol for authoritative items; number of models never determines quantity",
+  "max_visual_aggregates": 4,
+  "resources": [
+    {
+      "id": "iron_ore",
+      "glb": "art/exports/resources/d12-r1/r7/iron_ore.glb",
+      "runtime_copy_by_engineering": "res://assets/resources/d12-r1/iron_ore.glb",
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "triangles": 64,
+      "bounds": [
+        [
+          -0.21850284934043884,
+          0.0,
+          -0.1991950422525406
+        ],
+        [
+          0.2739032506942749,
+          0.34047049283981323,
+          0.22117018699645996
+        ]
+      ]
+    },
+    {
+      "id": "copper_ore",
+      "glb": "art/exports/resources/d12-r1/r7/copper_ore.glb",
+      "runtime_copy_by_engineering": "res://assets/resources/d12-r1/copper_ore.glb",
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "triangles": 48,
+      "bounds": [
+        [
+          -0.22499999403953552,
+          0.0,
+          -0.18980124592781067
+        ],
+        [
+          0.22499999403953552,
+          0.21984724700450897,
+          0.18980127573013306
+        ]
+      ]
+    },
+    {
+      "id": "iron",
+      "glb": "art/exports/resources/d12-r1/r7/iron.glb",
+      "runtime_copy_by_engineering": "res://assets/resources/d12-r1/iron.glb",
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "triangles": 188,
+      "bounds": [
+        [
+          -0.2095024734735489,
+          0.0,
+          -0.1344478577375412
+        ],
+        [
+          0.2095024734735489,
+          0.18000000715255737,
+          0.1344478577375412
+        ]
+      ]
+    },
+    {
+      "id": "copper",
+      "glb": "art/exports/resources/d12-r1/r7/copper.glb",
+      "runtime_copy_by_engineering": "res://assets/resources/d12-r1/copper.glb",
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "triangles": 124,
+      "bounds": [
+        [
+          -0.2199999988079071,
+          0.0,
+          -0.07000000029802322
+        ],
+        [
+          0.2199999988079071,
+          0.14000000059604645,
+          0.07000000029802322
+        ]
+      ]
+    },
+    {
+      "id": "parts",
+      "glb": "art/exports/resources/d12-r1/r7/parts.glb",
+      "runtime_copy_by_engineering": "res://assets/resources/d12-r1/parts.glb",
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "triangles": 412,
+      "bounds": [
+        [
+          -0.21000000834465027,
+          0.0,
+          -0.12999999523162842
+        ],
+        [
+          0.21000000834465027,
+          0.18000000715255737,
+          0.12999999523162842
+        ]
+      ]
+    },
+    {
+      "id": "cable",
+      "glb": "art/exports/resources/d12-r1/r7/cable.glb",
+      "runtime_copy_by_engineering": "res://assets/resources/d12-r1/cable.glb",
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "triangles": 460,
+      "bounds": [
+        [
+          -0.20372575521469116,
+          0.0,
+          -0.17245610058307648
+        ],
+        [
+          0.20372575521469116,
+          0.13193953037261963,
+          0.17245610058307648
+        ]
+      ]
+    }
+  ],
+  "material_stage": "one shared grey; final materials NOT_ASSESSED",
+  "Main": "NOT_RUN",
+  "cargo_fixture": {
+    "scale": 0.65,
+    "placements": [
+      [
+        -0.19,
+        0.72,
+        0.1
+      ],
+      [
+        0.19,
+        0.72,
+        0.1
+      ],
+      [
+        -0.19,
+        0.72,
+        0.5
+      ],
+      [
+        0.19,
+        0.72,
+        0.5
+      ]
+    ],
+    "hide": "CargoBox",
+    "carrier": "art/manifests/tuoyun-cargo-carrier-d12-r1.json; scale1 on actual Socket_Cargo",
+    "iron_yaw_degrees": 90
+  },
+  "output_fixture": {
+    "scale": 0.65,
+    "placements": [
+      [
+        -0.18,
+        0.48,
+        2.2
+      ],
+      [
+        0.18,
+        0.48,
+        2.2
+      ],
+      [
+        -0.18,
+        0.597001,
+        2.2
+      ],
+      [
+        0.18,
+        0.597001,
+        2.2
+      ]
+    ],
+    "hide": "OutputCrate",
+    "source_socket_unchanged": [
+      0,
+      0.48,
+      2.2
+    ],
+    "layout": "two stacks, two billets each; upper support is lower billet; mock items remain iron4",
+    "new_processed_candidates": {
+      "ids": [
+        "copper",
+        "parts",
+        "cable"
+      ],
+      "placements": [
+        [
+          -0.19,
+          0.48,
+          2
+        ],
+        [
+          0.19,
+          0.48,
+          2
+        ],
+        [
+          -0.19,
+          0.48,
+          2.27
+        ],
+        [
+          0.19,
+          0.48,
+          2.27
+        ]
+      ],
+      "layout": "four symbolic aggregates, bottom contact real bed, frozen mock items4; no output glyphs",
+      "background_glb_sha256": "cf401d19b2f59d4b48df68582fb8c4da644490c30e0e3d046061f5a526c5a1be",
+      "background_scope": "frozen F02 rev3; F02 rev5 integration is engineering-owned and needs actual Main validation"
+    }
+  },
+  "family_identifiers": "art/icons/resources-d12-r1/mapping.json",
+  "independent_scope": {
+    "single_shapes": "r5 PASS",
+    "output_static": "r5 PASS",
+    "mixed_mesh_normal_low": "r5 REWORK, geometry alone unchanged",
+    "mixed_identifier_normal_low": "r6 PASS single vehicle static glyph-assisted only; actual binding NOT_RUN",
+    "formal_carrier": "r7 PASS visible static support/empty; partially hidden feet not visually signed",
+    "Main": "NOT_RUN",
+    "new_four_shapes": "r7 PASS supplied near/reverse single and cargo static shapes",
+    "six_cargo_identifiers": "r7 PASS known mapping single vehicle normal/low static; no new-player blind recognition",
+    "new_processed_output": "r7 PASS near static contact only; normal/low category and precise contact NOT_ASSESSED",
+    "report": "docs/art/production/d12-resources-r7/independent/REVIEW.md",
+    "independent_source_identity_addendum": "PASS_SOURCE_IDENTITY_PORTABILITY_LIMITED; no new aesthetic/Main/dynamic signoff"
+  },
+  "source_identity": {
+    "captured_original_sha256": "73b927f43df0c179f80bc08696531719e201f3f2bb1bbb452b69c5eb96e396ce",
+    "portable_dependency": "art/source/resources/d12-r1/resource-pair-grey-r5-portable.blend",
+    "portable_dependency_sha256": "de0fbdcc1af74b3e830c5ae41a62c46720e1993dc30cfd8e91cfacf3a6d1636b",
+    "technical_equivalence": "PASS: native semantic snapshot and full GLTF visual payload unchanged; fresh zero external libraries; isolated rebuild GLBs byte-identical",
+    "independent_source_identity_addendum": "PASS_SOURCE_IDENTITY_PORTABILITY_LIMITED: independently recomputed source/snapshot/full GLB equivalence; original57 image scope unchanged; native not rerun by reviewer",
+    "evidence": "docs/art/production/d12-resources-r7/README.md",
+    "independent_report": "docs/art/production/d12-resources-r7/independent/portable-source-addendum-REVIEW.md"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "u01_inputs_unchanged": "PASS",
+  "delivery_hashes_match": "PASS",
+  "two_native_exports_glb_byte_equal": "PASS",
+  "glb_sha256": "6b834914f8194bf20adabb94c2cacbfb910703fd64f23e5e8ea31d9682e3cad9"
+}

@@ -1,0 +1,806 @@
+{
+  "note": "Raw evidence remains unchanged locally. Published text normalizes private paths and published references only. Internal historical SHA fields still identify raw files; use original_sha256 to resolve them through this map. PNG/GLB are byte exact. Omitted historical provenance markers are not file links or runtime dependencies.",
+  "files": [
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-cable-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-near.png",
+      "original_sha256": "09c42788ce8018ba7b5321c91a33d0908e6b242df496af6b1c3126bf52d69bfc",
+      "archive_sha256": "09c42788ce8018ba7b5321c91a33d0908e6b242df496af6b1c3126bf52d69bfc",
+      "original_bytes": 128103,
+      "archive_bytes": 128103,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-cable-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-normal-low.png",
+      "original_sha256": "b84c5678c7814a4766076abaad53c0cc71c43f19c2bb8208deec1d05edee086a",
+      "archive_sha256": "b84c5678c7814a4766076abaad53c0cc71c43f19c2bb8208deec1d05edee086a",
+      "original_bytes": 31575,
+      "archive_bytes": 31575,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-cable-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-normal.png",
+      "original_sha256": "4310501a12f9adeba866b4be63585dc5ab72cec40ead1e6bc544d5645e53e33f",
+      "archive_sha256": "4310501a12f9adeba866b4be63585dc5ab72cec40ead1e6bc544d5645e53e33f",
+      "original_bytes": 22185,
+      "archive_bytes": 22185,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-cable-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-reverse.png",
+      "original_sha256": "80ac2da3a03afd77e9d81e73d2d3c7e6cccc46d141083a482888f6d04b9b72f0",
+      "archive_sha256": "80ac2da3a03afd77e9d81e73d2d3c7e6cccc46d141083a482888f6d04b9b72f0",
+      "original_bytes": 127232,
+      "archive_bytes": 127232,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-copper-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-near.png",
+      "original_sha256": "1fcb0077e51f6ccbd98215fb608dd6a4b09304e17bad280927e9d4cb6a601a6a",
+      "archive_sha256": "1fcb0077e51f6ccbd98215fb608dd6a4b09304e17bad280927e9d4cb6a601a6a",
+      "original_bytes": 123348,
+      "archive_bytes": 123348,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-copper-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-normal-low.png",
+      "original_sha256": "7f9487fcf81935167627a3fedd69ef4af5a58153cfa47f6435076e886832fe41",
+      "archive_sha256": "7f9487fcf81935167627a3fedd69ef4af5a58153cfa47f6435076e886832fe41",
+      "original_bytes": 31452,
+      "archive_bytes": 31452,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-copper-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-normal.png",
+      "original_sha256": "6e143496366ee0f7c908503ecea0a9843dee7397abb1e416d99cf39a4e54c9a8",
+      "archive_sha256": "6e143496366ee0f7c908503ecea0a9843dee7397abb1e416d99cf39a4e54c9a8",
+      "original_bytes": 21918,
+      "archive_bytes": 21918,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-copper-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-reverse.png",
+      "original_sha256": "d47077daee545bd4f2446cf6fcddc4789ffd703d86735de774a5b1117d648600",
+      "archive_sha256": "d47077daee545bd4f2446cf6fcddc4789ffd703d86735de774a5b1117d648600",
+      "original_bytes": 123266,
+      "archive_bytes": 123266,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-copper_ore-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-near.png",
+      "original_sha256": "747776d149b976bde8318111351f7687c8b76e0357599546faed5454c4260aac",
+      "archive_sha256": "747776d149b976bde8318111351f7687c8b76e0357599546faed5454c4260aac",
+      "original_bytes": 125197,
+      "archive_bytes": 125197,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-copper_ore-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-normal-low.png",
+      "original_sha256": "858aa6195f2248134a1fbe7589997bdf0a74cf70736074cb269cf2925a0d95ce",
+      "archive_sha256": "858aa6195f2248134a1fbe7589997bdf0a74cf70736074cb269cf2925a0d95ce",
+      "original_bytes": 31602,
+      "archive_bytes": 31602,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-copper_ore-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-normal.png",
+      "original_sha256": "7a998aa91186a167228f6775feb68100c90ee09007a404111e26bb7037bc135e",
+      "archive_sha256": "7a998aa91186a167228f6775feb68100c90ee09007a404111e26bb7037bc135e",
+      "original_bytes": 22187,
+      "archive_bytes": 22187,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-copper_ore-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-reverse.png",
+      "original_sha256": "8772a3636a7693f2788e33064094b07a8bc6eb3c2ab391d19e5e64f0a28bc6ae",
+      "archive_sha256": "8772a3636a7693f2788e33064094b07a8bc6eb3c2ab391d19e5e64f0a28bc6ae",
+      "original_bytes": 125053,
+      "archive_bytes": 125053,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-empty-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-near.png",
+      "original_sha256": "94b5c383de8c804bc718d241d490b0cf69d4c5f427d7c0eb091fa67fe2676ee2",
+      "archive_sha256": "94b5c383de8c804bc718d241d490b0cf69d4c5f427d7c0eb091fa67fe2676ee2",
+      "original_bytes": 123484,
+      "archive_bytes": 123484,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-empty-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-normal-low.png",
+      "original_sha256": "0eaadf0a585cf01e9ad301f39c313cf6bb9603ad228b0995387a839e3c1cc3ab",
+      "archive_sha256": "0eaadf0a585cf01e9ad301f39c313cf6bb9603ad228b0995387a839e3c1cc3ab",
+      "original_bytes": 31200,
+      "archive_bytes": 31200,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-empty-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-normal.png",
+      "original_sha256": "d8b2cb3b4d8d2c7fea056c05835390e4ade2b33a62e2d8eb41673a03e3ba3b52",
+      "archive_sha256": "d8b2cb3b4d8d2c7fea056c05835390e4ade2b33a62e2d8eb41673a03e3ba3b52",
+      "original_bytes": 21621,
+      "archive_bytes": 21621,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-empty-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-reverse.png",
+      "original_sha256": "7c8e3a8b38a582cb0e623484dc27f176125b93a40a938558be86cc6c65f3493e",
+      "archive_sha256": "7c8e3a8b38a582cb0e623484dc27f176125b93a40a938558be86cc6c65f3493e",
+      "original_bytes": 123216,
+      "archive_bytes": 123216,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-iron-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-near.png",
+      "original_sha256": "423c2f0dd3cd4a8adf6d0e29316bedb05d577c00247fd484d66301b28bf41a5b",
+      "archive_sha256": "423c2f0dd3cd4a8adf6d0e29316bedb05d577c00247fd484d66301b28bf41a5b",
+      "original_bytes": 123765,
+      "archive_bytes": 123765,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-iron-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-normal-low.png",
+      "original_sha256": "fff753cb59f1e496886e5314934e19f8bb1002365a81a042ed2a0fecc827a2c3",
+      "archive_sha256": "fff753cb59f1e496886e5314934e19f8bb1002365a81a042ed2a0fecc827a2c3",
+      "original_bytes": 31362,
+      "archive_bytes": 31362,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-iron-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-normal.png",
+      "original_sha256": "8045cb99f2ac289eb4e42e239200df44c9b74cb603adc5496b47aa59f28ccff6",
+      "archive_sha256": "8045cb99f2ac289eb4e42e239200df44c9b74cb603adc5496b47aa59f28ccff6",
+      "original_bytes": 21813,
+      "archive_bytes": 21813,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-iron-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-reverse.png",
+      "original_sha256": "a86d97bc5f36fa63fa1491811f9ec5ac28f010292388c44eef9667dba08d1650",
+      "archive_sha256": "a86d97bc5f36fa63fa1491811f9ec5ac28f010292388c44eef9667dba08d1650",
+      "original_bytes": 123407,
+      "archive_bytes": 123407,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-iron_ore-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-near.png",
+      "original_sha256": "eacff7fc7fbd2bd4900ea8bea0d12d6f5d8c91e3aee87aa1ff80cda55150a64c",
+      "archive_sha256": "eacff7fc7fbd2bd4900ea8bea0d12d6f5d8c91e3aee87aa1ff80cda55150a64c",
+      "original_bytes": 124524,
+      "archive_bytes": 124524,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-iron_ore-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-normal-low.png",
+      "original_sha256": "63ab311a3b9e6893dba066190a05ed8372dd6b4763b0a73489cca80893574cf8",
+      "archive_sha256": "63ab311a3b9e6893dba066190a05ed8372dd6b4763b0a73489cca80893574cf8",
+      "original_bytes": 31629,
+      "archive_bytes": 31629,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-iron_ore-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-normal.png",
+      "original_sha256": "a4a85fcf8991ff722f0c6032d7cf426072e2e63704302de0cb914c9aa8306c96",
+      "archive_sha256": "a4a85fcf8991ff722f0c6032d7cf426072e2e63704302de0cb914c9aa8306c96",
+      "original_bytes": 22349,
+      "archive_bytes": 22349,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-iron_ore-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-reverse.png",
+      "original_sha256": "96870b85a95d469da1a4f83e6bcdbf379c6bf6cd2a902f70bd3ff92e5bf6be0a",
+      "archive_sha256": "96870b85a95d469da1a4f83e6bcdbf379c6bf6cd2a902f70bd3ff92e5bf6be0a",
+      "original_bytes": 121387,
+      "archive_bytes": 121387,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-mixed-a-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-near.png",
+      "original_sha256": "1eb4988fd2a5165e93a102cc29d97abf19d16ce10e21266462d559b7039b5512",
+      "archive_sha256": "1eb4988fd2a5165e93a102cc29d97abf19d16ce10e21266462d559b7039b5512",
+      "original_bytes": 123997,
+      "archive_bytes": 123997,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-mixed-a-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-normal-low.png",
+      "original_sha256": "bafc43dd050584cfc22d18c1eecb2df395eb60a7101746967e8ba94bab25bd47",
+      "archive_sha256": "bafc43dd050584cfc22d18c1eecb2df395eb60a7101746967e8ba94bab25bd47",
+      "original_bytes": 32133,
+      "archive_bytes": 32133,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-mixed-a-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-normal.png",
+      "original_sha256": "bcd96840047cdb688ddb9241fb2abd6dcff0d1503b00be4d7fd43dee764c79ac",
+      "archive_sha256": "bcd96840047cdb688ddb9241fb2abd6dcff0d1503b00be4d7fd43dee764c79ac",
+      "original_bytes": 22725,
+      "archive_bytes": 22725,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-mixed-a-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-reverse.png",
+      "original_sha256": "5e06fe40460785dbdfa22ee4b3fe30c971bfad8baa181e8c1c4b3eb1f25dd432",
+      "archive_sha256": "5e06fe40460785dbdfa22ee4b3fe30c971bfad8baa181e8c1c4b3eb1f25dd432",
+      "original_bytes": 123359,
+      "archive_bytes": 123359,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-mixed-b-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-near.png",
+      "original_sha256": "04095d493b0cf66f4fac1d748a37696ed057053d133b66a931a83e7516cc485f",
+      "archive_sha256": "04095d493b0cf66f4fac1d748a37696ed057053d133b66a931a83e7516cc485f",
+      "original_bytes": 125780,
+      "archive_bytes": 125780,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-mixed-b-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-normal-low.png",
+      "original_sha256": "a3d7d5954db0391c2375549dfef06b7316490dc903b432a8550f9ae5526245ac",
+      "archive_sha256": "a3d7d5954db0391c2375549dfef06b7316490dc903b432a8550f9ae5526245ac",
+      "original_bytes": 31697,
+      "archive_bytes": 31697,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-mixed-b-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-normal.png",
+      "original_sha256": "310841b4883fd37a131853808ffe9affaeb8542c0f702b8edbb6a293454d613f",
+      "archive_sha256": "310841b4883fd37a131853808ffe9affaeb8542c0f702b8edbb6a293454d613f",
+      "original_bytes": 22307,
+      "archive_bytes": 22307,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-mixed-b-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-reverse.png",
+      "original_sha256": "01e470a323c0e90809faa27410a269d038754a18040af5c90a14fadb20a6fdd4",
+      "archive_sha256": "01e470a323c0e90809faa27410a269d038754a18040af5c90a14fadb20a6fdd4",
+      "original_bytes": 124955,
+      "archive_bytes": 124955,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-parts-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-near.png",
+      "original_sha256": "b001448eb078b12e32ac4b02649a1aee1e57e93313220b3e422b6d554b5708f7",
+      "archive_sha256": "b001448eb078b12e32ac4b02649a1aee1e57e93313220b3e422b6d554b5708f7",
+      "original_bytes": 123086,
+      "archive_bytes": 123086,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-parts-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-normal-low.png",
+      "original_sha256": "d702f593bee65ec5cd1353d59e535739d8bfb9695422e9fda43efb8b6a85f7ad",
+      "archive_sha256": "d702f593bee65ec5cd1353d59e535739d8bfb9695422e9fda43efb8b6a85f7ad",
+      "original_bytes": 31377,
+      "archive_bytes": 31377,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-parts-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-normal.png",
+      "original_sha256": "43a20ad0238cf78873032b40583bdc499588ae1bdfad9254abf93e34091c1763",
+      "archive_sha256": "43a20ad0238cf78873032b40583bdc499588ae1bdfad9254abf93e34091c1763",
+      "original_bytes": 22009,
+      "archive_bytes": 22009,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/cargo-parts-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-reverse.png",
+      "original_sha256": "059a651b1917a1474feec55f95aee03229fefd32bcb0eb753bbb61c5cafc1ad8",
+      "archive_sha256": "059a651b1917a1474feec55f95aee03229fefd32bcb0eb753bbb61c5cafc1ad8",
+      "original_bytes": 122122,
+      "archive_bytes": 122122,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-cable-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-cable-near.png",
+      "original_sha256": "3c3c152f00e18de6badbeb9123234a94381d6b425314e592c9d32f6239a40f74",
+      "archive_sha256": "3c3c152f00e18de6badbeb9123234a94381d6b425314e592c9d32f6239a40f74",
+      "original_bytes": 258661,
+      "archive_bytes": 258661,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-cable-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-cable-normal-low.png",
+      "original_sha256": "121f7d369dc993a0e168101addad7be1cc63c0233206e2214b45ae86103d534a",
+      "archive_sha256": "121f7d369dc993a0e168101addad7be1cc63c0233206e2214b45ae86103d534a",
+      "original_bytes": 44242,
+      "archive_bytes": 44242,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-cable-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-cable-normal.png",
+      "original_sha256": "ec75125b6726045578799e163d8699e518522036c058f09909b8282fa1ad1706",
+      "archive_sha256": "ec75125b6726045578799e163d8699e518522036c058f09909b8282fa1ad1706",
+      "original_bytes": 32655,
+      "archive_bytes": 32655,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-copper-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-copper-near.png",
+      "original_sha256": "5c3d3a3a140ccb74bc01c14f5c5d82cc8c7b5ad016c8dd16ee62a134f298c0fa",
+      "archive_sha256": "5c3d3a3a140ccb74bc01c14f5c5d82cc8c7b5ad016c8dd16ee62a134f298c0fa",
+      "original_bytes": 247218,
+      "archive_bytes": 247218,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-copper-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-copper-normal-low.png",
+      "original_sha256": "f69ba9db389ed29afa89282a477191540b20893f0b4d64635fe0284406f9da22",
+      "archive_sha256": "f69ba9db389ed29afa89282a477191540b20893f0b4d64635fe0284406f9da22",
+      "original_bytes": 44284,
+      "archive_bytes": 44284,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-copper-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-copper-normal.png",
+      "original_sha256": "f89f55ab5667f86d755f6101ca13f571410d93dec392823952068860e401ec64",
+      "archive_sha256": "f89f55ab5667f86d755f6101ca13f571410d93dec392823952068860e401ec64",
+      "original_bytes": 32723,
+      "archive_bytes": 32723,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-parts-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-parts-near.png",
+      "original_sha256": "f8d838353bf80ebf3b89c543b0befc206fdcb5b7e82c24529a8286bab4b92ff3",
+      "archive_sha256": "f8d838353bf80ebf3b89c543b0befc206fdcb5b7e82c24529a8286bab4b92ff3",
+      "original_bytes": 250537,
+      "archive_bytes": 250537,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-parts-normal-low.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-parts-normal-low.png",
+      "original_sha256": "be84bf6a274fd75ba47d82d9a54c0ac8edf51155991b22bd7840f7ff9ed711c5",
+      "archive_sha256": "be84bf6a274fd75ba47d82d9a54c0ac8edf51155991b22bd7840f7ff9ed711c5",
+      "original_bytes": 44214,
+      "archive_bytes": 44214,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/output-parts-normal.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/output-parts-normal.png",
+      "original_sha256": "82cc65743c2c10571a63bc1b288b28aa523c7acdb6751df1ff2bd381ed17f516",
+      "archive_sha256": "82cc65743c2c10571a63bc1b288b28aa523c7acdb6751df1ff2bd381ed17f516",
+      "original_bytes": 32751,
+      "archive_bytes": 32751,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-cable-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-cable-near.png",
+      "original_sha256": "74e03c60ee3fe0abba87d9a1198c13a973e4a5adf7be8931ded52bd667697fc2",
+      "archive_sha256": "74e03c60ee3fe0abba87d9a1198c13a973e4a5adf7be8931ded52bd667697fc2",
+      "original_bytes": 45836,
+      "archive_bytes": 45836,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-cable-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-cable-reverse.png",
+      "original_sha256": "fcdb7e9bc36401c445cbad28ad1246af25651a648dc2d3acf9e1a33e98ce696c",
+      "archive_sha256": "fcdb7e9bc36401c445cbad28ad1246af25651a648dc2d3acf9e1a33e98ce696c",
+      "original_bytes": 46154,
+      "archive_bytes": 46154,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-copper-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-copper-near.png",
+      "original_sha256": "b6b85e580dcbc6d92b742b4113b62f021d09ee18f4d10f0b90db1b123ea15b11",
+      "archive_sha256": "b6b85e580dcbc6d92b742b4113b62f021d09ee18f4d10f0b90db1b123ea15b11",
+      "original_bytes": 43127,
+      "archive_bytes": 43127,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-copper-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-copper-reverse.png",
+      "original_sha256": "f66d56c5f2b59f356b8ef2db82fe0bd5782d87639f7f80c9fa89c31e210da568",
+      "archive_sha256": "f66d56c5f2b59f356b8ef2db82fe0bd5782d87639f7f80c9fa89c31e210da568",
+      "original_bytes": 43131,
+      "archive_bytes": 43131,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-copper_ore-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-copper_ore-near.png",
+      "original_sha256": "9259563fe870e0586e62aacba7dc4172919dd1eb96119865d30136e3fb5cc0c9",
+      "archive_sha256": "9259563fe870e0586e62aacba7dc4172919dd1eb96119865d30136e3fb5cc0c9",
+      "original_bytes": 43279,
+      "archive_bytes": 43279,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-copper_ore-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-copper_ore-reverse.png",
+      "original_sha256": "92f17edbde90060b08b0903c5fcc0dcee9e038d9b4c726ae42a61568dbdf424a",
+      "archive_sha256": "92f17edbde90060b08b0903c5fcc0dcee9e038d9b4c726ae42a61568dbdf424a",
+      "original_bytes": 44355,
+      "archive_bytes": 44355,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-iron-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-iron-near.png",
+      "original_sha256": "082a3f9a525eacbdd2f9ec9f516306148a7575ead67c1842061fff3ae6ed55cb",
+      "archive_sha256": "082a3f9a525eacbdd2f9ec9f516306148a7575ead67c1842061fff3ae6ed55cb",
+      "original_bytes": 42392,
+      "archive_bytes": 42392,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-iron-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-iron-reverse.png",
+      "original_sha256": "21f333dbbf2c4129b985d0413fdd690d7b1db2b30b6de0a4886e0e85ca7f2bf5",
+      "archive_sha256": "21f333dbbf2c4129b985d0413fdd690d7b1db2b30b6de0a4886e0e85ca7f2bf5",
+      "original_bytes": 42394,
+      "archive_bytes": 42394,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-iron_ore-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-iron_ore-near.png",
+      "original_sha256": "25af949e3bcf4b9e1ff7c178c9196d03f497413e0ea83b4b3175e60acae150fc",
+      "archive_sha256": "25af949e3bcf4b9e1ff7c178c9196d03f497413e0ea83b4b3175e60acae150fc",
+      "original_bytes": 43888,
+      "archive_bytes": 43888,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-iron_ore-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-iron_ore-reverse.png",
+      "original_sha256": "3a16b559768f0079330804909f2afeb9ba2e794010d4eb6ef0799d4d019e4a5e",
+      "archive_sha256": "3a16b559768f0079330804909f2afeb9ba2e794010d4eb6ef0799d4d019e4a5e",
+      "original_bytes": 44008,
+      "archive_bytes": 44008,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-parts-near.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-parts-near.png",
+      "original_sha256": "79b27f39c24379b4264d8d78aa147277f933aee5e5931310ad96b134ff08cfe4",
+      "archive_sha256": "79b27f39c24379b4264d8d78aa147277f933aee5e5931310ad96b134ff08cfe4",
+      "original_bytes": 42613,
+      "archive_bytes": 42613,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/single-parts-reverse.png",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/single-parts-reverse.png",
+      "original_sha256": "5076e4a33fde2cc8f6308510ea8622a3444ab20549ead9d96935669d16bc4510",
+      "archive_sha256": "5076e4a33fde2cc8f6308510ea8622a3444ab20549ead9d96935669d16bc4510",
+      "original_bytes": 42626,
+      "archive_bytes": 42626,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/godot-r7/capture.json",
+      "archive": "docs/art/production/d12-resources-r7/godot-r7/capture.json",
+      "original_sha256": "206b5f59e985acc16d583745b25fdc58da10a15464680b557aa97e7a4c38b158",
+      "archive_sha256": "206b5f59e985acc16d583745b25fdc58da10a15464680b557aa97e7a4c38b158",
+      "original_bytes": 144001,
+      "archive_bytes": 144001,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "independent-review/A04a-six-grey-identifiers-carrier-r7-REVIEW.md",
+      "archive": "docs/art/production/d12-resources-r7/independent/REVIEW.md",
+      "original_sha256": "4a38bbbe2239156789a68a5493efe93f8daaec57dc675d35fec5f45ea68ee726",
+      "archive_sha256": "4a38bbbe2239156789a68a5493efe93f8daaec57dc675d35fec5f45ea68ee726",
+      "original_bytes": 7754,
+      "archive_bytes": 7754,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "independent-review/A04a-six-grey-identifiers-carrier-r7-identity.json",
+      "archive": "docs/art/production/d12-resources-r7/independent/identity.json",
+      "original_sha256": "d3a66f2774db1981244f1011ba8b554d1f049967a384e1afa9980b9897e393fd",
+      "archive_sha256": "10cac16e68bec95e5a1711f29ed55468f181a9a006692371ea831a53d4f2e2ff",
+      "original_bytes": 52288,
+      "archive_bytes": 46236,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/output-contact-check-r7.json",
+      "archive": "docs/art/production/d12-resources-r7/technical/output-contact-check-r7.json",
+      "original_sha256": "d98729ee040ce0e9c0f38f42916c2b7a4c0ac41da77a76160f63c2e8b354aa66",
+      "archive_sha256": "d98729ee040ce0e9c0f38f42916c2b7a4c0ac41da77a76160f63c2e8b354aa66",
+      "original_bytes": 2427,
+      "archive_bytes": 2427,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/root-readback-r7-source.json",
+      "archive": "docs/art/production/d12-resources-r7/technical/root-readback-r7-source.json",
+      "original_sha256": "da7c7bb69e869cb74f5a2baf17a01073066280cfcbecc3df4b0d12767a2e1c42",
+      "archive_sha256": "da7c7bb69e869cb74f5a2baf17a01073066280cfcbecc3df4b0d12767a2e1c42",
+      "original_bytes": 8315,
+      "archive_bytes": 8315,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/root-readback-r7-glb.json",
+      "archive": "docs/art/production/d12-resources-r7/technical/root-readback-r7-glb.json",
+      "original_sha256": "13f55caeedd6361f4ad96396300f6e0228ab33a299c0819f0dc86460886e5e35",
+      "archive_sha256": "13f55caeedd6361f4ad96396300f6e0228ab33a299c0819f0dc86460886e5e35",
+      "original_bytes": 8312,
+      "archive_bytes": 8312,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/root-readback-r7-source.log",
+      "archive": "docs/art/production/d12-resources-r7/technical/root-readback-r7-source.log",
+      "original_sha256": "bcd2e205d10601c8589ed1a74e61b07a45082dd7e2e40092855b0d9ca52926eb",
+      "archive_sha256": "800a25437158afe22c2bf037488dd9f8a49e92e147af9e8a4782c125fd46a23f",
+      "original_bytes": 322,
+      "archive_bytes": 280,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/root-readback-r7-glb.log",
+      "archive": "docs/art/production/d12-resources-r7/technical/root-readback-r7-glb.log",
+      "original_sha256": "510b8fc353a16eddd0dba70de466f17516a64444596c6a1504f19d23b4a72784",
+      "archive_sha256": "510b8fc353a16eddd0dba70de466f17516a64444596c6a1504f19d23b4a72784",
+      "original_bytes": 1134,
+      "archive_bytes": 1134,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01-carrier/author/carrier-check.json",
+      "archive": "docs/art/production/d12-resources-r7/technical/carrier-check.json",
+      "original_sha256": "be3cc96747e33b7515435035966f6997ed5e9afea580ee5d25469b3a4f018d94",
+      "archive_sha256": "be3cc96747e33b7515435035966f6997ed5e9afea580ee5d25469b3a4f018d94",
+      "original_bytes": 3652,
+      "archive_bytes": 3652,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/u01-carrier/author/readback-identity-check.json",
+      "archive": "docs/art/production/d12-resources-r7/technical/readback-identity-check.json",
+      "original_sha256": "29b4e1edddd092de9f951f18f61b5e9f846d826958d54ea4cfc02bf87d2f0350",
+      "archive_sha256": "29b4e1edddd092de9f951f18f61b5e9f846d826958d54ea4cfc02bf87d2f0350",
+      "original_bytes": 203,
+      "archive_bytes": 203,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/author/r7/fixture-check.json",
+      "archive": "docs/art/production/d12-resources-r7/technical/fixture-check.json",
+      "original_sha256": "15d20dea7e59f1d0b811bb6f7d90d27c1908da37af156b4a788e96d66b68a558",
+      "archive_sha256": "15d20dea7e59f1d0b811bb6f7d90d27c1908da37af156b4a788e96d66b68a558",
+      "original_bytes": 9808,
+      "archive_bytes": 9808,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/author/r7/fixture-capture.log",
+      "archive": "docs/art/production/d12-resources-r7/technical/fixture-capture.log",
+      "original_sha256": "429b25d088da95528ea3919530dbfbb806825fc948603cee26d519aa3e5780e0",
+      "archive_sha256": "429b25d088da95528ea3919530dbfbb806825fc948603cee26d519aa3e5780e0",
+      "original_bytes": 182,
+      "archive_bytes": 182,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/author/r7/fixture-run-receipt.json",
+      "archive": "docs/art/production/d12-resources-r7/technical/fixture-run-receipt.json",
+      "original_sha256": "8d8483ff2b4237c71753eb52f27fa4180e1d2db91c795f3513b0e723346d5a45",
+      "archive_sha256": "cfefd78d33a7dd2aa8ada2148c17f3c15213ab609d90a1cad1ec8058d571b088",
+      "original_bytes": 1084,
+      "archive_bytes": 1108,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/fixture/r7/resource-facts.json",
+      "archive": "docs/art/production/d12-resources-r7/technical/resource-facts.json",
+      "original_sha256": "f5ced89d2c8881d6666e4d03aa7153743e6e1233a5d346bef04d4aa534f321ad",
+      "archive_sha256": "f5ced89d2c8881d6666e4d03aa7153743e6e1233a5d346bef04d4aa534f321ad",
+      "original_bytes": 22006,
+      "archive_bytes": 22006,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/native-proof.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/native-proof.json",
+      "original_sha256": "c9ee1681e7148e9e88bb4f94d8dc7c226e2c2d047c7dc573669465dbf8514da7",
+      "archive_sha256": "181d5ff6b417efebc48a2a7ee56f9aedb6e14fe2b6445b60c9369da357f88c5f",
+      "original_bytes": 6684,
+      "archive_bytes": 6706,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/native-proof.log",
+      "archive": "docs/art/production/d12-resources-r7/portable/native-proof.log",
+      "original_sha256": "28107c3c63b8aa23ddd6cea9a7b0967c88541ef5f2b04251e4dc5c6ece049598",
+      "archive_sha256": "b02e8346c0f2934ae5a20c4dd30f895817f7c11fb027017be3f970da1a8d5043",
+      "original_bytes": 8273,
+      "archive_bytes": 8077,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/isolated-rebuild-proof.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/isolated-rebuild-proof.json",
+      "original_sha256": "8b375af873303b7ab8400cd1ce76a6802efdf934f3efa26b4d0b844c6c47d584",
+      "archive_sha256": "8642e75de181e81914148113107aef5d32f4715178ea5152ecad0e7928a49b76",
+      "original_bytes": 2917,
+      "archive_bytes": 2940,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/isolated-rebuild-proof.log",
+      "archive": "docs/art/production/d12-resources-r7/portable/isolated-rebuild-proof.log",
+      "original_sha256": "52e047b8293a99cf1dba3ef46816e31763501ffd9696f527826c3f8099bcc9c5",
+      "archive_sha256": "9ae2a0896c8328d6f1edc3a95dd94407f73bbb3171f4e0965db0b930de47a3f7",
+      "original_bytes": 2652,
+      "archive_bytes": 2687,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/isolated-rebuild.log",
+      "archive": "docs/art/production/d12-resources-r7/portable/isolated-rebuild.log",
+      "original_sha256": "9d053b6f840ce831c81f08b37e06fed6c1c89931076485b2d57f21e2b660b7f4",
+      "archive_sha256": "e6cdfeca593e6a741cf201773978c098bd3fb42cc34ba6241a593c2790f3183a",
+      "original_bytes": 1865,
+      "archive_bytes": 1827,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/isolated-stage.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/isolated-stage.json",
+      "original_sha256": "ec6dea49eaeefd3a782c2c11832f5acc26b524157d7b31d87b449fe802e91252",
+      "archive_sha256": "fb7418958cf2fab633e1809e7387f864431b5e19d3eb7870b757894bbf50d545",
+      "original_bytes": 1614,
+      "archive_bytes": 1609,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/current-verifier-receipt.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/current-verifier-receipt.json",
+      "original_sha256": "fc31231d5681c002643765995f15bb9a8c92e738a16e767e511d739565df6bfa",
+      "archive_sha256": "fbd0b5dacf78bfe226ee6ffc2e52656d63bed4807bcdf740b0e3882077315fb1",
+      "original_bytes": 27196,
+      "archive_bytes": 27104,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/current-verifier-stage.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/current-verifier-stage.json",
+      "original_sha256": "588023dab3b25eebbcce564bc468f294157ddcae7d0125a758e0f84e826db5f5",
+      "archive_sha256": "f54f126d83e34c27e4842821f6d62fdc1f2d3453f6355916fe0a1589a24db15f",
+      "original_bytes": 3085,
+      "archive_bytes": 3094,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/current-verifier-source.log",
+      "archive": "docs/art/production/d12-resources-r7/portable/current-verifier-source.log",
+      "original_sha256": "1ece5fca32a6bcb6bbcce48ddbad660354e169c44f2c96090909f72c1038141e",
+      "archive_sha256": "92b3c2cbfba4277f34d890c581e4804c0dd4ec80d940e195dfa56c6b24f96edf",
+      "original_bytes": 10501,
+      "archive_bytes": 11136,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/current-verifier-glb.log",
+      "archive": "docs/art/production/d12-resources-r7/portable/current-verifier-glb.log",
+      "original_sha256": "cac59f5b3dae09d0e55a503654080c01e47e7fd86160d6da66768237d2b7f1ad",
+      "archive_sha256": "51e528287fc94b07b5f1531d91dc2ba3e9340c7bff09bd88383889b6f147e4ae",
+      "original_bytes": 11119,
+      "archive_bytes": 11742,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/resources-grey-r7-before.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/resources-grey-r7-before.json",
+      "original_sha256": "e4df027d8bb38da25311e2e58dc1b48e0007d4e0e3b58a73e84761f98477fdad",
+      "archive_sha256": "e4df027d8bb38da25311e2e58dc1b48e0007d4e0e3b58a73e84761f98477fdad",
+      "original_bytes": 3957660,
+      "archive_bytes": 3957660,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/resource-pair-grey-r5-portable-before.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/resource-pair-grey-r5-portable-before.json",
+      "original_sha256": "b1f2b9dcd54d738f066b5edb1cc66ce6f9569e3786c3f18d25a49fc1e1dac5d6",
+      "archive_sha256": "b1f2b9dcd54d738f066b5edb1cc66ce6f9569e3786c3f18d25a49fc1e1dac5d6",
+      "original_bytes": 687535,
+      "archive_bytes": 687535,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/fresh-reopen-differences.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/fresh-reopen-differences.json",
+      "original_sha256": "08fd33d24aa13802de535d4541ddd53b8518e5dadacda4d78a525cc35158d583",
+      "archive_sha256": "08fd33d24aa13802de535d4541ddd53b8518e5dadacda4d78a525cc35158d583",
+      "original_bytes": 49679,
+      "archive_bytes": 49679,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/output/current-source-readback.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/output/current-source-readback.json",
+      "original_sha256": "96c009d8a0f1e57aa694288510d9ed40471e89ebb4492520ac1530f14b7510f5",
+      "archive_sha256": "3e276efd8f0420e9ca9a3fcafb74160549c1bf03b40612e16838b01d823e6eb7",
+      "original_bytes": 10445,
+      "archive_bytes": 10456,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "docs/art/production/d12-r1/resources/portable-r7/output/current-glb-readback.json",
+      "archive": "docs/art/production/d12-resources-r7/portable/output/current-glb-readback.json",
+      "original_sha256": "9876fa5fe6bcf91e0fdd562db027366a7cdf37a723ab5db8a901f37139514a42",
+      "archive_sha256": "9876fa5fe6bcf91e0fdd562db027366a7cdf37a723ab5db8a901f37139514a42",
+      "original_bytes": 9386,
+      "archive_bytes": 9386,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "docs/art/production/d12-r1/f02/author/before-rev4/source/processor-r1.glb",
+      "archive": "docs/art/production/d12-resources-r7/context/f02-rev3-processor.glb",
+      "original_sha256": "cf401d19b2f59d4b48df68582fb8c4da644490c30e0e3d046061f5a526c5a1be",
+      "archive_sha256": "cf401d19b2f59d4b48df68582fb8c4da644490c30e0e3d046061f5a526c5a1be",
+      "original_bytes": 65288,
+      "archive_bytes": 65288,
+      "private_paths_normalized": false
+    },
+    {
+      "original": "independent-review/A04a-r7-portable-source-addendum-REVIEW.md",
+      "archive": "docs/art/production/d12-resources-r7/independent/portable-source-addendum-REVIEW.md",
+      "original_sha256": "2e6a02e8fa6295e351ab2de8ce82f454e497610f2b3dae743cc53bf321e3aa31",
+      "archive_sha256": "80500d0b2b9cecda875e020fb0e76673978aa1e8afd8e3ebe887f67ac8f9ebba",
+      "original_bytes": 7266,
+      "archive_bytes": 7208,
+      "private_paths_normalized": true
+    },
+    {
+      "original": "independent-review/A04a-r7-portable-source-addendum-identity.json",
+      "archive": "docs/art/production/d12-resources-r7/independent/portable-source-addendum-identity.json",
+      "original_sha256": "28847f457e644eb69647f3f01a3b32029f433bb51443270e5a9206e5f49d59ce",
+      "archive_sha256": "69617ca9e635736b7f5123c520325a162960cb8c2c557757504c422e7a5162d0",
+      "original_bytes": 109280,
+      "archive_bytes": 106457,
+      "private_paths_normalized": true
+    }
+  ]
+}

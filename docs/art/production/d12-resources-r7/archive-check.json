@@ -1,0 +1,17 @@
+{
+  "status": "PASS_ARCHIVE_BINDINGS_NOT_NEW_VISUAL_SIGNOFF",
+  "original_pngs": 57,
+  "archived_raw_public_pairs": 89,
+  "current_capture_inputs_checked": 17,
+  "historical_capture_inputs_not_replayed": 14,
+  "resource_triangles": {
+    "iron_ore": 64,
+    "copper_ore": 48,
+    "iron": 188,
+    "copper": 124,
+    "parts": 412,
+    "cable": 460
+  },
+  "output_static_contacts": 12,
+  "portable_independent_identity": "PASS_SOURCE_IDENTITY_PORTABILITY_LIMITED"
+}

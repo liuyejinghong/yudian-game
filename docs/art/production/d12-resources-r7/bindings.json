@@ -1,0 +1,152 @@
+{
+  "capture_sources_to_current_files": {
+    "res://resources/iron_ore.glb": "art/exports/resources/d12-r1/r7/iron_ore.glb",
+    "res://class-icons/iron_ore.svg": "art/icons/resources-d12-r1/iron_ore.svg",
+    "res://resources/copper_ore.glb": "art/exports/resources/d12-r1/r7/copper_ore.glb",
+    "res://class-icons/copper_ore.svg": "art/icons/resources-d12-r1/copper_ore.svg",
+    "res://resources/iron.glb": "art/exports/resources/d12-r1/r7/iron.glb",
+    "res://class-icons/iron.svg": "art/icons/resources-d12-r1/iron.svg",
+    "res://resources/copper.glb": "art/exports/resources/d12-r1/r7/copper.glb",
+    "res://class-icons/copper.svg": "art/icons/resources-d12-r1/copper.svg",
+    "res://resources/parts.glb": "art/exports/resources/d12-r1/r7/parts.glb",
+    "res://class-icons/parts.svg": "art/icons/resources-d12-r1/parts.svg",
+    "res://resources/cable.glb": "art/exports/resources/d12-r1/r7/cable.glb",
+    "res://class-icons/cable.svg": "art/icons/resources-d12-r1/cable.svg",
+    "res://class-icons/mapping.json": "art/icons/resources-d12-r1/mapping.json",
+    "res://carrier.glb": "art/exports/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.glb",
+    "res://processor.glb": "docs/art/production/d12-resources-r7/context/f02-rev3-processor.glb",
+    "res://assets/units/tuoyun-r1/tuoyun-r1.glb": "art/source/units/tuoyun-r1/tuoyun-r1.glb",
+    "res://resource-facts.json": "docs/art/production/d12-resources-r7/technical/resource-facts.json"
+  },
+  "additional_current_files": {
+    "art/source/units/tuoyun-cargo-carrier-d12-r1/tuoyun-cargo-carrier-d12-r1.blend": "fe012561b6e301a10354a55f438cc43311588b51c82db86f4d3136558be9d327",
+    "art/source/units/tuoyun-cargo-carrier-d12-r1/generate_carrier.py": "4c5298d8750f10ad6e797c72b81de6b3a7bda62fabad5f84cd90bf1444bc8546",
+    "art/source/resources/d12-r1/r7-portable/resources-grey-r7.blend": "5b5eeb3a68fcd3160e40efe47e5af6e816e4d6543e221d3dc523c61b7a2cb200",
+    "art/source/resources/d12-r1/resource-pair-grey-r5-portable.blend": "de0fbdcc1af74b3e830c5ae41a62c46720e1993dc30cfd8e91cfacf3a6d1636b"
+  },
+  "resource_glbs": {
+    "iron_ore": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "triangles_independently_parsed": 64,
+      "bounds_declared": [
+        [
+          -0.21850284934043884,
+          0.0,
+          -0.1991950422525406
+        ],
+        [
+          0.2739032506942749,
+          0.34047049283981323,
+          0.22117018699645996
+        ]
+      ]
+    },
+    "copper_ore": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "triangles_independently_parsed": 48,
+      "bounds_declared": [
+        [
+          -0.22499999403953552,
+          0.0,
+          -0.18980124592781067
+        ],
+        [
+          0.22499999403953552,
+          0.21984724700450897,
+          0.18980127573013306
+        ]
+      ]
+    },
+    "iron": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "triangles_independently_parsed": 188,
+      "bounds_declared": [
+        [
+          -0.2095024734735489,
+          0.0,
+          -0.1344478577375412
+        ],
+        [
+          0.2095024734735489,
+          0.18000000715255737,
+          0.1344478577375412
+        ]
+      ]
+    },
+    "copper": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "triangles_independently_parsed": 124,
+      "bounds_declared": [
+        [
+          -0.2199999988079071,
+          0.0,
+          -0.07000000029802322
+        ],
+        [
+          0.2199999988079071,
+          0.14000000059604645,
+          0.07000000029802322
+        ]
+      ]
+    },
+    "parts": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "triangles_independently_parsed": 412,
+      "bounds_declared": [
+        [
+          -0.21000000834465027,
+          0.0,
+          -0.12999999523162842
+        ],
+        [
+          0.21000000834465027,
+          0.18000000715255737,
+          0.12999999523162842
+        ]
+      ]
+    },
+    "cable": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "triangles_independently_parsed": 460,
+      "bounds_declared": [
+        [
+          -0.20372575521469116,
+          0.0,
+          -0.17245610058307648
+        ],
+        [
+          0.20372575521469116,
+          0.13193953037261963,
+          0.17245610058307648
+        ]
+      ]
+    }
+  },
+  "capture_source_bridge": {
+    "original_r7_sha256": "73b927f43df0c179f80bc08696531719e201f3f2bb1bbb452b69c5eb96e396ce",
+    "portable_r7_sha256": "5b5eeb3a68fcd3160e40efe47e5af6e816e4d6543e221d3dc523c61b7a2cb200",
+    "portable_r5_sha256": "de0fbdcc1af74b3e830c5ae41a62c46720e1993dc30cfd8e91cfacf3a6d1636b",
+    "independent_portable_identity_appendix": "PASS_SOURCE_IDENTITY_PORTABILITY_LIMITED",
+    "independent_portable_identity_file": "docs/art/production/d12-resources-r7/independent/portable-source-addendum-identity.json",
+    "independent_portable_report_file": "docs/art/production/d12-resources-r7/independent/portable-source-addendum-REVIEW.md",
+    "independent_portable_identity_raw_sha256": "28847f457e644eb69647f3f01a3b32029f433bb51443270e5a9206e5f49d59ce",
+    "independent_portable_report_raw_sha256": "2e6a02e8fa6295e351ab2de8ce82f454e497610f2b3dae743cc53bf321e3aa31",
+    "original_r5_sha256": "425778ce1fb9acb95d406dd0078e07f6ab7503d77cac386be274b6f1eed34604"
+  },
+  "historical_capture_sources_not_replayed": {
+    "res://assets/units/tuoyun-r1/preview.gd": "45440d2d34d5c2cd5d49d93fbbdc02da627d07ce1914724d5cc3679fbe2961af",
+    "res://assets/units/tuoyun-r1/preview.tscn": "b7e20df60068ad04948efe329627625162675c6a0a7766d6caa74bf6cbb71e31",
+    "res://assets/units/tuoyun-r1/tuoyun-r1.glb.import": "003b3505fd4b9bff86e76f6a6e134ac04b7a8d5af2638fbf88789309738ec8ec",
+    "res://capture.gd": "b3e756acf42f5f448b57b68bd70ebf47c2e5abfdcec845f2d063efb0a92517ae",
+    "res://carrier.glb.import": "2bbca899c14e475af68e498d051cd738e83b5bda18c9d4f85b85aeea465794f2",
+    "res://manifest.json": "e1eb09a2c0d058c84320466f5b55befc05664baa389b47e2c3abca5618f368b8",
+    "res://processor.glb.import": "2f2e243bfffdef61a07b060b594c917712fde31b7e1042dc0fbf74a6d6573098",
+    "res://resources/cable.glb.import": "d9475f613f51b98e37b992a75e462e9bac2ecd8dd2fe3261d6b968ef14b0e4e4",
+    "res://resources/copper.glb.import": "69445e4649db62e46166c33977707a3da1d3e9ddabeeb4a69ef9f5b2981d97cf",
+    "res://resources/copper_ore.glb.import": "251cdfb8939302fb9c37bfacce574806aeb0e3929e4abf70240b5caae547a6b5",
+    "res://resources/iron.glb.import": "59631347586c3b2369bca40fdce0d49628e45916a5d82817e63c5d258d859075",
+    "res://resources/iron_ore.glb.import": "14b04a57ed7f48fce7f442996a835b81b8999e148cea0921f07822f57c448473",
+    "res://resources/parts.glb.import": "27243b953d4098b08c9e49783f533440ee1585ee6296407aa7a38e63c7204269",
+    "res://scenes/art_preview_r1/preview_view_r1.gd": "1b485c1bb539c3dd353c27dd24cd0fbab9b59001038282e137c5487348131282"
+  }
+}

@@ -1,0 +1,1857 @@
+{
+  "date": "2026-10-08",
+  "candidate": "A04a-r7-portable-source-addendum",
+  "verdict": "PASS_SOURCE_IDENTITY_PORTABILITY_LIMITED",
+  "scope": "Delivered native evidence and independently recomputed file/snapshot/GLB equivalence; no new images viewed or native runs repeated",
+  "files": {
+    "docs/art/production/d12-resources-r7/portable/current-verifier-receipt.json": {
+      "sha256": "fc31231d5681c002643765995f15bb9a8c92e738a16e767e511d739565df6bfa",
+      "bytes": 27196,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/current-verifier-stage.json": {
+      "sha256": "588023dab3b25eebbcce564bc468f294157ddcae7d0125a758e0f84e826db5f5",
+      "bytes": 3085,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/native-proof.json": {
+      "sha256": "c9ee1681e7148e9e88bb4f94d8dc7c226e2c2d047c7dc573669465dbf8514da7",
+      "bytes": 6684,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/isolated-rebuild-proof.json": {
+      "sha256": "8b375af873303b7ab8400cd1ce76a6802efdf934f3efa26b4d0b844c6c47d584",
+      "bytes": 2917,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/fresh-reopen-differences.json": {
+      "sha256": "08fd33d24aa13802de535d4541ddd53b8518e5dadacda4d78a525cc35158d583",
+      "bytes": 49679,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/sha256.json": {
+      "sha256": "25797a65ae4ec2c433f14435005a682661a6287e06e13f7e085071840adca052",
+      "bytes": 8741,
+      "role": "delivered_proof_or_index"
+    },
+    "art/source/resources/d12-r1/resource-pair-grey-r5-portable.blend": {
+      "sha256": "de0fbdcc1af74b3e830c5ae41a62c46720e1993dc30cfd8e91cfacf3a6d1636b",
+      "bytes": 98199,
+      "role": "portable_native_source"
+    },
+    "art/source/resources/d12-r1/r7-portable/prove_portable.py": {
+      "sha256": "d99c8a49c29daafca4409ef0f7a7343f27f2c7e14bef4385e1e337f10c9939ea",
+      "bytes": 6525,
+      "role": "current_verifier_input"
+    },
+    "art/source/resources/d12-r1/r7-portable/README.md": {
+      "sha256": "0a01b13fe6745c8f6eda0aa07b38f33497865e819738bb63fb6a1a8f792908e6",
+      "bytes": 4465,
+      "role": "bound_portable_proof_or_history"
+    },
+    "art/source/resources/d12-r1/r7-portable/resources-grey-r7.blend": {
+      "sha256": "5b5eeb3a68fcd3160e40efe47e5af6e816e4d6543e221d3dc523c61b7a2cb200",
+      "bytes": 112867,
+      "role": "portable_native_source"
+    },
+    "art/source/resources/d12-r1/r7-portable/build_resources.py": {
+      "sha256": "fde3382f5230f7b7590634f40c1235fdcf757a467c546dacd30af269084392cd",
+      "bytes": 8658,
+      "role": "current_verifier_input"
+    },
+    "art/source/resources/d12-r1/r7-portable/make_portable.py": {
+      "sha256": "56ec776eba0127f3131c12a64402e23b97254771c7ff6c054a8df9acf39cd772",
+      "bytes": 7290,
+      "role": "current_verifier_input"
+    },
+    "art/source/resources/d12-r1/r7-portable/verify_resources.py": {
+      "sha256": "4465626e4d93fe90eae7e01bf686aca61db4ddacb8f145455870036036833d59",
+      "bytes": 12254,
+      "role": "current_verifier_input"
+    },
+    "art/source/resources/d12-r1/r7-portable/prove_rebuild.py": {
+      "sha256": "888f6a25b82bf755db55108d43735e043222e84847352499855c519bcade3027",
+      "bytes": 1543,
+      "role": "bound_portable_proof_or_history"
+    },
+    "art/source/resources/d12-r1/r7-portable/iterations/prove_portable-first.py": {
+      "sha256": "b2cef46401e90149019d76a29e19ec5f536f1185287bc0d1daa67a70e64d3a8c",
+      "bytes": 5982,
+      "role": "bound_portable_proof_or_history"
+    },
+    "art/source/resources/d12-r1/r7-portable/iterations/prove_portable-second.py": {
+      "sha256": "1bb203b3a3300a79d282b4beb69d54896a54c6db37b1772433dd6586f350d2ce",
+      "bytes": 6095,
+      "role": "bound_portable_proof_or_history"
+    },
+    "art/source/resources/d12-r1/r7-portable/iterations/make_portable-first.py": {
+      "sha256": "fa64bdb068063d88b610404d6eeec0f3aa5e381683cc0223b452b9da67ba8a7f",
+      "bytes": 7041,
+      "role": "bound_portable_proof_or_history"
+    },
+    "art/source/resources/d12-r1/r7-portable/iterations/make_portable-second.py": {
+      "sha256": "bf0864da95cb0fec9adfbc10b13fbc2451df223360f3dfec3badc2c4a29d7fd0",
+      "bytes": 7195,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/native-proof-first-failure.log": {
+      "sha256": "ff9905c40eef00b289be4ba0fc2bbdab318a464426e8247b2f3729d7e6384b1b",
+      "bytes": 884,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/make-local.json": {
+      "sha256": "1145db132e887a13bfcd23b363e6aad9363911f5a08dedcb50149293bc299edc",
+      "bytes": 1967,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/current-verifier-glb.log": {
+      "sha256": "cac59f5b3dae09d0e55a503654080c01e47e7fd86160d6da66768237d2b7f1ad",
+      "bytes": 11119,
+      "role": "current_native_run_log"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/make-local.log": {
+      "sha256": "ce678d40349eca5a8ab854d1378c29a1d11addfdd33e8b102c2215df9fb297bc",
+      "bytes": 2382,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/REPORT.md": {
+      "sha256": "9c83dfac54426839cfaab1879ef4c6d1c5d0c6cdd76dca8d1b7f855def34bab4",
+      "bytes": 5169,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/resource-pair-grey-r5-portable-fresh-reopen.json": {
+      "sha256": "091940ebc39035b32e7855a0377b23a90bde591c433db2d773256a0dc01173b9",
+      "bytes": 637892,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/native-proof-second-failure.log": {
+      "sha256": "6d76bb86ae02130254a4c32c7ea6c559fc1f6e21faf7d360a8c71c3e034098fd",
+      "bytes": 884,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/native-proof.log": {
+      "sha256": "28107c3c63b8aa23ddd6cea9a7b0967c88541ef5f2b04251e4dc5c6ece049598",
+      "bytes": 8273,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/frozen-identity.json": {
+      "sha256": "c81dfbea5460c6e5198d61f654dd0a96287e9a7d491d9a13df3dc020d75f5561",
+      "bytes": 14070,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/make-local-first-failure.log": {
+      "sha256": "3fad7bcdae4379e8701929ee095621beb918002fb4cc611ff832f159ed25581f",
+      "bytes": 1139,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/resource-pair-grey-r5-portable-after.json": {
+      "sha256": "b1f2b9dcd54d738f066b5edb1cc66ce6f9569e3786c3f18d25a49fc1e1dac5d6",
+      "bytes": 687535,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/resources-grey-r7-before.json": {
+      "sha256": "e4df027d8bb38da25311e2e58dc1b48e0007d4e0e3b58a73e84761f98477fdad",
+      "bytes": 3957660,
+      "role": "current_verifier_input"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/isolated-glb-readback.log": {
+      "sha256": "97dfb07f92dbbff720fad8afb3aac9a42bdd8ce8d4fb8d8f0c7d88e1f2dbe1a4",
+      "bytes": 10741,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/resource-pair-grey-r5-portable-before.json": {
+      "sha256": "b1f2b9dcd54d738f066b5edb1cc66ce6f9569e3786c3f18d25a49fc1e1dac5d6",
+      "bytes": 687535,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/PLAN.md": {
+      "sha256": "d9db8de4395f16ecf2c94ed677d89c683089672835c69cb86ebd1cf426e6df71",
+      "bytes": 1531,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/isolated-rebuild.log": {
+      "sha256": "9d053b6f840ce831c81f08b37e06fed6c1c89931076485b2d57f21e2b660b7f4",
+      "bytes": 1865,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/isolated-source-readback.log": {
+      "sha256": "4752e243ff2e46313988688cefb9da45bc2182ee6e278185cb6a4e86c5ccb9b5",
+      "bytes": 10116,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/isolated-stage.json": {
+      "sha256": "ec6dea49eaeefd3a782c2c11832f5acc26b524157d7b31d87b449fe802e91252",
+      "bytes": 1614,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/resources-grey-r7-fresh-reopen.json": {
+      "sha256": "ab884d82a858fbff1f0c09bbb7373fce9cbeedbdd4c22c4d7a7f1cca45a0fa58",
+      "bytes": 3957660,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/make-local-second-failure.log": {
+      "sha256": "9aa1179d7af25c141ba3503bbaa9b8a12119ad5a458d960ad636f542c7dfb3e9",
+      "bytes": 1373,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/resources-grey-r7-after.json": {
+      "sha256": "e4df027d8bb38da25311e2e58dc1b48e0007d4e0e3b58a73e84761f98477fdad",
+      "bytes": 3957660,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/isolated-rebuild-proof.log": {
+      "sha256": "52e047b8293a99cf1dba3ef46816e31763501ffd9696f527826c3f8099bcc9c5",
+      "bytes": 2652,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/current-verifier-source.log": {
+      "sha256": "1ece5fca32a6bcb6bbcce48ddbad660354e169c44f2c96090909f72c1038141e",
+      "bytes": 10501,
+      "role": "current_native_run_log"
+    },
+    "docs/art/production/d12-resources-r7/portable/output/current-source-readback.json": {
+      "sha256": "96c009d8a0f1e57aa694288510d9ed40471e89ebb4492520ac1530f14b7510f5",
+      "bytes": 10445,
+      "role": "current_native_readback"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/output/isolated-delivery-sha256.json": {
+      "sha256": "470f5ca1fed411b4579473b542db868225703ce8a2c36631dc7436b6bc354dad",
+      "bytes": 838,
+      "role": "bound_portable_proof_or_history"
+    },
+    "docs/art/production/d12-resources-r7/portable/output/current-glb-readback.json": {
+      "sha256": "9876fa5fe6bcf91e0fdd562db027366a7cdf37a723ab5db8a901f37139514a42",
+      "bytes": 9386,
+      "role": "current_native_readback"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/output/isolated-source-readback.json": {
+      "sha256": "57d8dbf401a2a60f56a10507d33ed614be4241dbf446d162970e00ff476b8081",
+      "bytes": 9389,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/output/isolated-build-audit.json": {
+      "sha256": "87a0ae66f430d176c24d0991bc4b9c0852c8afcc936c0a41489815336affdb05",
+      "bytes": 6786,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/output/isolated-glb-readback.json": {
+      "sha256": "9876fa5fe6bcf91e0fdd562db027366a7cdf37a723ab5db8a901f37139514a42",
+      "bytes": 9386,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/isolated-rebuild-proof.json": {
+      "sha256": "8b375af873303b7ab8400cd1ce76a6802efdf934f3efa26b4d0b844c6c47d584",
+      "bytes": 2917,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/sha256.json": {
+      "sha256": "b426523c5f7b6c88a9fad318898d02916f240e54b9459a2dc08cb576b7822d02",
+      "bytes": 5843,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/REPORT.md": {
+      "sha256": "d6879c1220e1302dc840ab99a2e7ef2b188b65e6f366ce0d7a56ab304412676f",
+      "bytes": 3530,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/verify_resources-before-snapshot-check.py": {
+      "sha256": "65dfdcf226ecdc1c153b39e21b0ec0e8a589bd1ab99cb598b2796d09a634fab3",
+      "bytes": 11682,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/native-proof.json": {
+      "sha256": "c9ee1681e7148e9e88bb4f94d8dc7c226e2c2d047c7dc573669465dbf8514da7",
+      "bytes": 6684,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/isolated-source-readback.json": {
+      "sha256": "57d8dbf401a2a60f56a10507d33ed614be4241dbf446d162970e00ff476b8081",
+      "bytes": 9389,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/isolated-glb-readback.log": {
+      "sha256": "97dfb07f92dbbff720fad8afb3aac9a42bdd8ce8d4fb8d8f0c7d88e1f2dbe1a4",
+      "bytes": 10741,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/isolated-glb-readback.json": {
+      "sha256": "9876fa5fe6bcf91e0fdd562db027366a7cdf37a723ab5db8a901f37139514a42",
+      "bytes": 9386,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/isolated-source-readback.log": {
+      "sha256": "4752e243ff2e46313988688cefb9da45bc2182ee6e278185cb6a4e86c5ccb9b5",
+      "bytes": 10116,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/README-before-correction.md": {
+      "sha256": "6d706441d57fb5e7ff3612d05f5bc133218b5b1555aca3dda48e51aa9d11477e",
+      "bytes": 3455,
+      "role": "bound_portable_proof_or_history"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/portable-r7/prior-current-verifier-correction/isolated-stage.json": {
+      "sha256": "ec6dea49eaeefd3a782c2c11832f5acc26b524157d7b31d87b449fe802e91252",
+      "bytes": 1614,
+      "role": "bound_portable_proof_or_history"
+    },
+    "art/source/resources/d12-r1/r7/resources-grey-r7.blend": {
+      "sha256": "73b927f43df0c179f80bc08696531719e201f3f2bb1bbb452b69c5eb96e396ce",
+      "bytes": 112853,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "art/exports/resources/d12-r1/r7/copper.glb": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "bytes": 5092,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "art/exports/resources/d12-r1/r7/parts.glb": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "bytes": 10180,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "art/exports/resources/d12-r1/r7/cable.glb": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "bytes": 13300,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "art/exports/resources/d12-r1/r7/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "art/exports/resources/d12-r1/r7/copper_ore.glb": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "bytes": 3324,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "art/exports/resources/d12-r1/r7/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "art/source/resources/d12-r1/r7/build_resources.py": {
+      "sha256": "49e6f44f71039487a1aa449289188a5ea8bfb9784c471948f6a5d79c4f21f499",
+      "bytes": 8493,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/source/resources/d12-r1/r7/verify_resources.py": {
+      "sha256": "c9f2026886d65ed9a7ce94e5feed5b818ac7df6b25a6ff44230dcae80be7b048",
+      "bytes": 11584,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/icons/resources-d12-r1/cable.svg": {
+      "sha256": "6bc50dcc6974e01ba390e8c7834ea323eb1548d7f9ef752e6e6af5d58fc3f4ed",
+      "bytes": 322,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/icons/resources-d12-r1/copper.svg": {
+      "sha256": "cc890d16598c1ba4d76d6b011c88358483fd36af425e0818c6e26b367dc3b447",
+      "bytes": 359,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/icons/resources-d12-r1/copper_ore.svg": {
+      "sha256": "cdc294f181ee40d1eb2fdcc1c5da0502f2aa68134ffd205399a500a7b68df344",
+      "bytes": 329,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/icons/resources-d12-r1/iron.svg": {
+      "sha256": "5949b410c504c40aacef91453d8a80543499359479971d2e1958f55daf4d887a",
+      "bytes": 300,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/icons/resources-d12-r1/iron_ore.svg": {
+      "sha256": "cd0caae18b1c8a397882ddc8165f32646823421ebc9107beaf5e940fc5a101a7",
+      "bytes": 336,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/icons/resources-d12-r1/mapping.json": {
+      "sha256": "0fc0109278358182d0d934b4b1c4b1c5fe03fb48d03ffa1f573e93c048fded7d",
+      "bytes": 958,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/icons/resources-d12-r1/parts.svg": {
+      "sha256": "9fa6e96696e04e7177163afbca124f54c69fe13a3d57948d100acb8f315c98cc",
+      "bytes": 199,
+      "role": "unchanged_frozen_r7"
+    },
+    "docs/art/production/d12-resources-r7/technical/fixture-capture.log": {
+      "sha256": "429b25d088da95528ea3919530dbfbb806825fc948603cee26d519aa3e5780e0",
+      "bytes": 182,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-check-first-failure.txt": {
+      "sha256": "9162b81dd466247b069a118a30ba95a5259ca2605cff6dcf974024a5c5a857b8",
+      "bytes": 244,
+      "role": "unchanged_frozen_r7"
+    },
+    "docs/art/production/d12-resources-r7/technical/fixture-check.json": {
+      "sha256": "15d20dea7e59f1d0b811bb6f7d90d27c1908da37af156b4a788e96d66b68a558",
+      "bytes": 9808,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-check.log": {
+      "sha256": "b712c4dc4eda90d736cecfbaec2722223daac78d0c99af05db3aa128b1cb144e",
+      "bytes": 99,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-failure-missing-facts.log": {
+      "sha256": "c18d1965ecdea76a909e09d1558ff2442452d7063fa01e36c2c3918223f7e75f",
+      "bytes": 189,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-import.log": {
+      "sha256": "032997f304d41c4734817f5b32d957808101c367807dfe983fc2e2a3ae6ac64c",
+      "bytes": 8620,
+      "role": "unchanged_frozen_r7"
+    },
+    "docs/art/production/d12-resources-r7/technical/fixture-run-receipt.json": {
+      "sha256": "8d8483ff2b4237c71753eb52f27fa4180e1d2db91c795f3513b0e723346d5a45",
+      "bytes": 1084,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/capture.gd": {
+      "sha256": "b3e756acf42f5f448b57b68bd70ebf47c2e5abfdcec845f2d063efb0a92517ae",
+      "bytes": 13572,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/check_capture.py": {
+      "sha256": "91a50571aef0650ba3c7a09089c9218a948f11062f4af50f0e8eaba6464fb245",
+      "bytes": 10352,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/assets/units/tuoyun-r1/tuoyun-r1.glb.import": {
+      "sha256": "003b3505fd4b9bff86e76f6a6e134ac04b7a8d5af2638fbf88789309738ec8ec",
+      "bytes": 1163,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/carrier.glb.import": {
+      "sha256": "2bbca899c14e475af68e498d051cd738e83b5bda18c9d4f85b85aeea465794f2",
+      "bytes": 1135,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/processor.glb.import": {
+      "sha256": "2f2e243bfffdef61a07b060b594c917712fde31b7e1042dc0fbf74a6d6573098",
+      "bytes": 1141,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/cable.glb.import": {
+      "sha256": "d9475f613f51b98e37b992a75e462e9bac2ecd8dd2fe3261d6b968ef14b0e4e4",
+      "bytes": 1139,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/copper.glb.import": {
+      "sha256": "69445e4649db62e46166c33977707a3da1d3e9ddabeeb4a69ef9f5b2981d97cf",
+      "bytes": 1141,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/copper_ore.glb.import": {
+      "sha256": "251cdfb8939302fb9c37bfacce574806aeb0e3929e4abf70240b5caae547a6b5",
+      "bytes": 1154,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/iron.glb.import": {
+      "sha256": "59631347586c3b2369bca40fdce0d49628e45916a5d82817e63c5d258d859075",
+      "bytes": 1135,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/iron_ore.glb.import": {
+      "sha256": "14b04a57ed7f48fce7f442996a835b81b8999e148cea0921f07822f57c448473",
+      "bytes": 1147,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/effective-imports/resources/parts.glb.import": {
+      "sha256": "27243b953d4098b08c9e49783f533440ee1585ee6296407aa7a38e63c7204269",
+      "bytes": 1139,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/iterations/check_capture-first.py": {
+      "sha256": "31ed39c81539943a947282af06706b5be1921f9955843673db2915e8a449912a",
+      "bytes": 10287,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/mapping-r6-original.json": {
+      "sha256": "f46b92e2bb14660637547150f6bc355c610a280201153956787bf36a3586d2a6",
+      "bytes": 634,
+      "role": "unchanged_frozen_r7"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/fixture/r7/prepare.py": {
+      "sha256": "30bcd341a61e345c2aa63cae3ac4a99731794e07deea47d0b5f57841ec3058bc",
+      "bytes": 4892,
+      "role": "unchanged_frozen_r7"
+    },
+    "docs/art/production/d12-resources-r7/technical/resource-facts.json": {
+      "sha256": "f5ced89d2c8881d6666e4d03aa7153743e6e1233a5d346bef04d4aa534f321ad",
+      "bytes": 22006,
+      "role": "unchanged_frozen_r7"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/capture.json": {
+      "sha256": "206b5f59e985acc16d583745b25fdc58da10a15464680b557aa97e7a4c38b158",
+      "bytes": 144001,
+      "role": "unchanged_frozen_r7"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-near.png": {
+      "sha256": "09c42788ce8018ba7b5321c91a33d0908e6b242df496af6b1c3126bf52d69bfc",
+      "bytes": 128103,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-normal-low.png": {
+      "sha256": "b84c5678c7814a4766076abaad53c0cc71c43f19c2bb8208deec1d05edee086a",
+      "bytes": 31575,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-normal.png": {
+      "sha256": "4310501a12f9adeba866b4be63585dc5ab72cec40ead1e6bc544d5645e53e33f",
+      "bytes": 22185,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-cable-reverse.png": {
+      "sha256": "80ac2da3a03afd77e9d81e73d2d3c7e6cccc46d141083a482888f6d04b9b72f0",
+      "bytes": 127232,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-near.png": {
+      "sha256": "1fcb0077e51f6ccbd98215fb608dd6a4b09304e17bad280927e9d4cb6a601a6a",
+      "bytes": 123348,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-normal-low.png": {
+      "sha256": "7f9487fcf81935167627a3fedd69ef4af5a58153cfa47f6435076e886832fe41",
+      "bytes": 31452,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-normal.png": {
+      "sha256": "6e143496366ee0f7c908503ecea0a9843dee7397abb1e416d99cf39a4e54c9a8",
+      "bytes": 21918,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper-reverse.png": {
+      "sha256": "d47077daee545bd4f2446cf6fcddc4789ffd703d86735de774a5b1117d648600",
+      "bytes": 123266,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-near.png": {
+      "sha256": "747776d149b976bde8318111351f7687c8b76e0357599546faed5454c4260aac",
+      "bytes": 125197,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-normal-low.png": {
+      "sha256": "858aa6195f2248134a1fbe7589997bdf0a74cf70736074cb269cf2925a0d95ce",
+      "bytes": 31602,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-normal.png": {
+      "sha256": "7a998aa91186a167228f6775feb68100c90ee09007a404111e26bb7037bc135e",
+      "bytes": 22187,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-copper_ore-reverse.png": {
+      "sha256": "8772a3636a7693f2788e33064094b07a8bc6eb3c2ab391d19e5e64f0a28bc6ae",
+      "bytes": 125053,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-near.png": {
+      "sha256": "94b5c383de8c804bc718d241d490b0cf69d4c5f427d7c0eb091fa67fe2676ee2",
+      "bytes": 123484,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-normal-low.png": {
+      "sha256": "0eaadf0a585cf01e9ad301f39c313cf6bb9603ad228b0995387a839e3c1cc3ab",
+      "bytes": 31200,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-normal.png": {
+      "sha256": "d8b2cb3b4d8d2c7fea056c05835390e4ade2b33a62e2d8eb41673a03e3ba3b52",
+      "bytes": 21621,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-empty-reverse.png": {
+      "sha256": "7c8e3a8b38a582cb0e623484dc27f176125b93a40a938558be86cc6c65f3493e",
+      "bytes": 123216,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-near.png": {
+      "sha256": "423c2f0dd3cd4a8adf6d0e29316bedb05d577c00247fd484d66301b28bf41a5b",
+      "bytes": 123765,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-normal-low.png": {
+      "sha256": "fff753cb59f1e496886e5314934e19f8bb1002365a81a042ed2a0fecc827a2c3",
+      "bytes": 31362,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-normal.png": {
+      "sha256": "8045cb99f2ac289eb4e42e239200df44c9b74cb603adc5496b47aa59f28ccff6",
+      "bytes": 21813,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron-reverse.png": {
+      "sha256": "a86d97bc5f36fa63fa1491811f9ec5ac28f010292388c44eef9667dba08d1650",
+      "bytes": 123407,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-near.png": {
+      "sha256": "eacff7fc7fbd2bd4900ea8bea0d12d6f5d8c91e3aee87aa1ff80cda55150a64c",
+      "bytes": 124524,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-normal-low.png": {
+      "sha256": "63ab311a3b9e6893dba066190a05ed8372dd6b4763b0a73489cca80893574cf8",
+      "bytes": 31629,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-normal.png": {
+      "sha256": "a4a85fcf8991ff722f0c6032d7cf426072e2e63704302de0cb914c9aa8306c96",
+      "bytes": 22349,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-iron_ore-reverse.png": {
+      "sha256": "96870b85a95d469da1a4f83e6bcdbf379c6bf6cd2a902f70bd3ff92e5bf6be0a",
+      "bytes": 121387,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-near.png": {
+      "sha256": "1eb4988fd2a5165e93a102cc29d97abf19d16ce10e21266462d559b7039b5512",
+      "bytes": 123997,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-normal-low.png": {
+      "sha256": "bafc43dd050584cfc22d18c1eecb2df395eb60a7101746967e8ba94bab25bd47",
+      "bytes": 32133,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-normal.png": {
+      "sha256": "bcd96840047cdb688ddb9241fb2abd6dcff0d1503b00be4d7fd43dee764c79ac",
+      "bytes": 22725,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-a-reverse.png": {
+      "sha256": "5e06fe40460785dbdfa22ee4b3fe30c971bfad8baa181e8c1c4b3eb1f25dd432",
+      "bytes": 123359,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-near.png": {
+      "sha256": "04095d493b0cf66f4fac1d748a37696ed057053d133b66a931a83e7516cc485f",
+      "bytes": 125780,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-normal-low.png": {
+      "sha256": "a3d7d5954db0391c2375549dfef06b7316490dc903b432a8550f9ae5526245ac",
+      "bytes": 31697,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-normal.png": {
+      "sha256": "310841b4883fd37a131853808ffe9affaeb8542c0f702b8edbb6a293454d613f",
+      "bytes": 22307,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-mixed-b-reverse.png": {
+      "sha256": "01e470a323c0e90809faa27410a269d038754a18040af5c90a14fadb20a6fdd4",
+      "bytes": 124955,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-near.png": {
+      "sha256": "b001448eb078b12e32ac4b02649a1aee1e57e93313220b3e422b6d554b5708f7",
+      "bytes": 123086,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-normal-low.png": {
+      "sha256": "d702f593bee65ec5cd1353d59e535739d8bfb9695422e9fda43efb8b6a85f7ad",
+      "bytes": 31377,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-normal.png": {
+      "sha256": "43a20ad0238cf78873032b40583bdc499588ae1bdfad9254abf93e34091c1763",
+      "bytes": 22009,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/cargo-parts-reverse.png": {
+      "sha256": "059a651b1917a1474feec55f95aee03229fefd32bcb0eb753bbb61c5cafc1ad8",
+      "bytes": 122122,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-near.png": {
+      "sha256": "3c3c152f00e18de6badbeb9123234a94381d6b425314e592c9d32f6239a40f74",
+      "bytes": 258661,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-normal-low.png": {
+      "sha256": "121f7d369dc993a0e168101addad7be1cc63c0233206e2214b45ae86103d534a",
+      "bytes": 44242,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-cable-normal.png": {
+      "sha256": "ec75125b6726045578799e163d8699e518522036c058f09909b8282fa1ad1706",
+      "bytes": 32655,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-near.png": {
+      "sha256": "5c3d3a3a140ccb74bc01c14f5c5d82cc8c7b5ad016c8dd16ee62a134f298c0fa",
+      "bytes": 247218,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-normal-low.png": {
+      "sha256": "f69ba9db389ed29afa89282a477191540b20893f0b4d64635fe0284406f9da22",
+      "bytes": 44284,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-copper-normal.png": {
+      "sha256": "f89f55ab5667f86d755f6101ca13f571410d93dec392823952068860e401ec64",
+      "bytes": 32723,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-near.png": {
+      "sha256": "f8d838353bf80ebf3b89c543b0befc206fdcb5b7e82c24529a8286bab4b92ff3",
+      "bytes": 250537,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-normal-low.png": {
+      "sha256": "be84bf6a274fd75ba47d82d9a54c0ac8edf51155991b22bd7840f7ff9ed711c5",
+      "bytes": 44214,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/output-parts-normal.png": {
+      "sha256": "82cc65743c2c10571a63bc1b288b28aa523c7acdb6751df1ff2bd381ed17f516",
+      "bytes": 32751,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-cable-near.png": {
+      "sha256": "74e03c60ee3fe0abba87d9a1198c13a973e4a5adf7be8931ded52bd667697fc2",
+      "bytes": 45836,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-cable-reverse.png": {
+      "sha256": "fcdb7e9bc36401c445cbad28ad1246af25651a648dc2d3acf9e1a33e98ce696c",
+      "bytes": 46154,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper-near.png": {
+      "sha256": "b6b85e580dcbc6d92b742b4113b62f021d09ee18f4d10f0b90db1b123ea15b11",
+      "bytes": 43127,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper-reverse.png": {
+      "sha256": "f66d56c5f2b59f356b8ef2db82fe0bd5782d87639f7f80c9fa89c31e210da568",
+      "bytes": 43131,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper_ore-near.png": {
+      "sha256": "9259563fe870e0586e62aacba7dc4172919dd1eb96119865d30136e3fb5cc0c9",
+      "bytes": 43279,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-copper_ore-reverse.png": {
+      "sha256": "92f17edbde90060b08b0903c5fcc0dcee9e038d9b4c726ae42a61568dbdf424a",
+      "bytes": 44355,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron-near.png": {
+      "sha256": "082a3f9a525eacbdd2f9ec9f516306148a7575ead67c1842061fff3ae6ed55cb",
+      "bytes": 42392,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron-reverse.png": {
+      "sha256": "21f333dbbf2c4129b985d0413fdd690d7b1db2b30b6de0a4886e0e85ca7f2bf5",
+      "bytes": 42394,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron_ore-near.png": {
+      "sha256": "25af949e3bcf4b9e1ff7c178c9196d03f497413e0ea83b4b3175e60acae150fc",
+      "bytes": 43888,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-iron_ore-reverse.png": {
+      "sha256": "3a16b559768f0079330804909f2afeb9ba2e794010d4eb6ef0799d4d019e4a5e",
+      "bytes": 44008,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-parts-near.png": {
+      "sha256": "79b27f39c24379b4264d8d78aa147277f933aee5e5931310ad96b134ff08cfe4",
+      "bytes": 42613,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "docs/art/production/d12-resources-r7/godot-r7/single-parts-reverse.png": {
+      "sha256": "5076e4a33fde2cc8f6308510ea8622a3444ab20549ead9d96935669d16bc4510",
+      "bytes": 42626,
+      "role": "prior_review_visual_evidence_or_source"
+    },
+    "historical-evidence/not-published/docs/art/production/d12-r1/resources/author/r7/fixture-REPORT.md": {
+      "sha256": "bf6d20b67f1fa339f4476cb053837bae52ec3cae059312ed4c82f5d6a3b11961",
+      "bytes": 4700,
+      "role": "unchanged_frozen_r7"
+    },
+    "art/source/resources/d12-r1/resource-pair-grey-r5.blend": {
+      "sha256": "425778ce1fb9acb95d406dd0078e07f6ab7503d77cac386be274b6f1eed34604",
+      "bytes": 101667,
+      "role": "original_frozen_source"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-resources-r7/portable/resources-grey-r7-before.json": {
+      "sha256": "e4df027d8bb38da25311e2e58dc1b48e0007d4e0e3b58a73e84761f98477fdad",
+      "bytes": 3957660,
+      "role": "actual_current_isolated_input"
+    },
+    ".agents/skills/scenario-blender-hard-surface/scripts/bx_hardsurface.py": {
+      "sha256": "a7eb60b356c16609573ea8bb0005cd1278e908dcd7593eb7ff1f749ceb7b9999",
+      "bytes": 69529,
+      "role": "current_verifier_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/.agents/skills/scenario-blender-hard-surface/scripts/bx_hardsurface.py": {
+      "sha256": "a7eb60b356c16609573ea8bb0005cd1278e908dcd7593eb7ff1f749ceb7b9999",
+      "bytes": 69529,
+      "role": "actual_current_isolated_input"
+    },
+    ".agents/skills/scenario-blender-expert/scripts/bx_audit.py": {
+      "sha256": "a4afe1bede3cf6c227c557aa9a5efd3ac6aafaa44adf0dc401cf238f0e06f951",
+      "bytes": 9781,
+      "role": "current_verifier_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/.agents/skills/scenario-blender-expert/scripts/bx_audit.py": {
+      "sha256": "a4afe1bede3cf6c227c557aa9a5efd3ac6aafaa44adf0dc401cf238f0e06f951",
+      "bytes": 9781,
+      "role": "actual_current_isolated_input"
+    },
+    ".agents/skills/scenario-blender-expert/scripts/bx_review.py": {
+      "sha256": "3862dc1452960f01219206bbc0f24d487810d0f4cda6ab41b97108e522e53986",
+      "bytes": 14914,
+      "role": "current_verifier_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/.agents/skills/scenario-blender-expert/scripts/bx_review.py": {
+      "sha256": "3862dc1452960f01219206bbc0f24d487810d0f4cda6ab41b97108e522e53986",
+      "bytes": 14914,
+      "role": "actual_current_isolated_input"
+    },
+    ".agents/skills/scenario-blender-expert/scripts/bx_gui.py": {
+      "sha256": "d5c020f27d2714f7f773da30cfa190017be453a621bb45f1eccececa3a33d60c",
+      "bytes": 8951,
+      "role": "current_verifier_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/.agents/skills/scenario-blender-expert/scripts/bx_gui.py": {
+      "sha256": "d5c020f27d2714f7f773da30cfa190017be453a621bb45f1eccececa3a33d60c",
+      "bytes": 8951,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/exports/resources/d12-r1/r7/copper.glb": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "bytes": 5092,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/exports/resources/d12-r1/r7/parts.glb": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "bytes": 10180,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/exports/resources/d12-r1/r7/cable.glb": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "bytes": 13300,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/exports/resources/d12-r1/r7/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/exports/resources/d12-r1/r7/copper_ore.glb": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "bytes": 3324,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/exports/resources/d12-r1/r7/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "actual_current_isolated_input"
+    },
+    "art/exports/resources/d12-r1/r5/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "current_verifier_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/exports/resources/d12-r1/r5/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "actual_current_isolated_input"
+    },
+    "art/exports/resources/d12-r1/r5/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "current_verifier_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/exports/resources/d12-r1/r5/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/source/resources/d12-r1/resource-pair-grey-r5-portable.blend": {
+      "sha256": "de0fbdcc1af74b3e830c5ae41a62c46720e1993dc30cfd8e91cfacf3a6d1636b",
+      "bytes": 98199,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/source/resources/d12-r1/r7-portable/prove_portable.py": {
+      "sha256": "d99c8a49c29daafca4409ef0f7a7343f27f2c7e14bef4385e1e337f10c9939ea",
+      "bytes": 6525,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/source/resources/d12-r1/r7-portable/resources-grey-r7.blend": {
+      "sha256": "5b5eeb3a68fcd3160e40efe47e5af6e816e4d6543e221d3dc523c61b7a2cb200",
+      "bytes": 112867,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/source/resources/d12-r1/r7-portable/build_resources.py": {
+      "sha256": "fde3382f5230f7b7590634f40c1235fdcf757a467c546dacd30af269084392cd",
+      "bytes": 8658,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/source/resources/d12-r1/r7-portable/make_portable.py": {
+      "sha256": "56ec776eba0127f3131c12a64402e23b97254771c7ff6c054a8df9acf39cd772",
+      "bytes": 7290,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/art/source/resources/d12-r1/r7-portable/verify_resources.py": {
+      "sha256": "4465626e4d93fe90eae7e01bf686aca61db4ddacb8f145455870036036833d59",
+      "bytes": 12254,
+      "role": "actual_current_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable-near.png": {
+      "sha256": "934c3764e751adcdfe416216221af43760f71ac790fccb65eb12329cd8d073f2",
+      "bytes": 271975,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-readback.json": {
+      "sha256": "96c009d8a0f1e57aa694288510d9ed40471e89ebb4492520ac1530f14b7510f5",
+      "bytes": 10445,
+      "role": "actual_current_native_readback"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts-near.png": {
+      "sha256": "e83ab1327f22f90551ae04a63ea63ac04ca0f25f3d44ec95a66943b2b13dd362",
+      "bytes": 310599,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron-near.png": {
+      "sha256": "f4fc1d29b0ad053bb30ce66d0b043c77671145e3c19cf2de395bae47cc196b67",
+      "bytes": 305169,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore-near.png": {
+      "sha256": "36fe741c825246cc6a0c41ce58bb21a65d7b23e93c46569a10221caf3df41fe7",
+      "bytes": 290409,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore-near.png": {
+      "sha256": "0ea8bb600e1eda353c63693edf86bc613bf2b3bd512ab23b0b158c6f1921c186",
+      "bytes": 336239,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper-near.png": {
+      "sha256": "2f7e07e5d0d87a6457c848dd572ff90c176f428afcb3cbb636a72c6908c2fbed",
+      "bytes": 262714,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore-near.png": {
+      "sha256": "82fa3363b1c2a0924e4a4f9cb715592f34baa5f4a88c4e928378416cc207e270",
+      "bytes": 336076,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable-near.png": {
+      "sha256": "503e4defc2ba86895cc8453fc4f49763c07cded0711b81828dc46f10c11857e3",
+      "bytes": 271948,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron-near.png": {
+      "sha256": "6f8e46d4f1e2e45798cc439ac48d8cfbb8377b818264a395a8198eabfbd5032b",
+      "bytes": 304997,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts-near.png": {
+      "sha256": "e5465c3db131ea972bc3b8d262670bd62344217b0eae50c111d6e9dacc0c9179",
+      "bytes": 310734,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore-near.png": {
+      "sha256": "e0803f1e27e5ac7d10ac061ecfc3759b973a7284ecef55cdf2efebc6ad605fb6",
+      "bytes": 290327,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper-near.png": {
+      "sha256": "f1ecca6f52a70b49a044c3701ad2f3454aeadb20fd7fb5d2dce4eb617bc8dad5",
+      "bytes": 262532,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-readback.json": {
+      "sha256": "9876fa5fe6bcf91e0fdd562db027366a7cdf37a723ab5db8a901f37139514a42",
+      "bytes": 9386,
+      "role": "actual_current_native_readback"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/silhouette_back.png": {
+      "sha256": "97613a5125c7077eda9c5cb21e6bfd97232a5367042366626c61e1ce61055cb5",
+      "bytes": 81028,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/review_sheet.png": {
+      "sha256": "c8df61c14cb612f87ab5394bac780e876d9525f55d6b03e7c7bfec536f16c638",
+      "bytes": 935758,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/silhouette_low.png": {
+      "sha256": "2efcb671a2985fd98ad7a33e2d66a236e60a658bbe18625ccf0de53921f2b879",
+      "bytes": 80848,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/hsgrey_threequarter.png": {
+      "sha256": "3ef4bac6cbd2d93d575407b734f058eb54aea8f6afce0bf2cd9fa4812230af6f",
+      "bytes": 187353,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/silhouette_front.png": {
+      "sha256": "97613a5125c7077eda9c5cb21e6bfd97232a5367042366626c61e1ce61055cb5",
+      "bytes": 81028,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/silhouette_threequarter.png": {
+      "sha256": "8fada9ec4481bbbb688e44f6268b28c8d9c12e5261c6fc092b6c9098cad8d3ea",
+      "bytes": 79075,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/hsgrey_low.png": {
+      "sha256": "7f39e0cd0a5772723ca27aaebd2376b482564ca20e014ffce4a04d59c0f49ea5",
+      "bytes": 165480,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/hsgrey_front.png": {
+      "sha256": "832822300923679d7aa6c537dd187663e6af571230557d9fef2c2236c9005c95",
+      "bytes": 162031,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/hsgrey_back.png": {
+      "sha256": "ac1350e80817f4088c660a31c076d1b37e3d3f188b079e0a05123dcf4189f046",
+      "bytes": 161995,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/silhouette_back.png": {
+      "sha256": "4a0f36e42d1068c82cff571def8fd7b0f3f6f79920f213f0be0d16faf8f1e4d5",
+      "bytes": 83945,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/review_sheet.png": {
+      "sha256": "5d5ae072106425911885e0083cb843cd390aa91da87c63121c15eb543ba479af",
+      "bytes": 1019086,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/silhouette_low.png": {
+      "sha256": "5e425ed14e2b20a83f377aeabac69d827cb9535c922ea6a237b4c4d09df76f79",
+      "bytes": 81425,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/hsgrey_threequarter.png": {
+      "sha256": "c10fe73bbefad7fad98323aae82024119658e796ce6793bf2a32a2de6bf19977",
+      "bytes": 184167,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/silhouette_front.png": {
+      "sha256": "1363270910616adec33f2c8a9a87ff1976df3ee219409c800ec17c17bc9829ab",
+      "bytes": 82444,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/silhouette_threequarter.png": {
+      "sha256": "15163b037296b35c697f6833850d4eee932309ea96b00165adf0ea5d5624eefd",
+      "bytes": 80696,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/hsgrey_low.png": {
+      "sha256": "031d6c691f2491132a58e0567429d9ac1a50ad2e0149f26e974064b1dc51c426",
+      "bytes": 166759,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/hsgrey_front.png": {
+      "sha256": "941abadcf5893a6f2e1abfdee26eb946519f968851057f4f57f0303bf83fdeb3",
+      "bytes": 175331,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/hsgrey_back.png": {
+      "sha256": "4d8d06688b8c6490a03d385c449a079b325c81957e9c13f2a5a4d12f8fd969f1",
+      "bytes": 173480,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron_ore/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/silhouette_back.png": {
+      "sha256": "0b1657b79b7055ff1f07b885e5de0d35b3dd01635b462d653e44da5644cdcee4",
+      "bytes": 78940,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/review_sheet.png": {
+      "sha256": "2f01512b9752aaeba3d4861729324df2c813051b7fa0ae1934ac7e027d803ce8",
+      "bytes": 881543,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/silhouette_low.png": {
+      "sha256": "c0662588ecea8c0c17b1f3bd9ae0c3e9a65caeead1c58c098447e028f909c175",
+      "bytes": 80286,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/hsgrey_threequarter.png": {
+      "sha256": "31ee8f4f508dbf90c3d15ffe74920859605a0c2c94c631c77d6bd32105347061",
+      "bytes": 158867,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/silhouette_front.png": {
+      "sha256": "0b1657b79b7055ff1f07b885e5de0d35b3dd01635b462d653e44da5644cdcee4",
+      "bytes": 78940,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/silhouette_threequarter.png": {
+      "sha256": "6d82e7c15988be1134e2b779bdfa9299cbd9d2e20bfd11080eac207ab246706d",
+      "bytes": 80535,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/hsgrey_low.png": {
+      "sha256": "a39344a9e834a904e0f388f78cb85ea9f84c34b6bee078ceec18cd0aff0f13ab",
+      "bytes": 158340,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/hsgrey_front.png": {
+      "sha256": "cde591db50178e83f66e2eca45bafc1545dcf0108053f39359ba5bc09273af46",
+      "bytes": 148754,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/hsgrey_back.png": {
+      "sha256": "e780dc9a053b73675c130585479d60799a69ceaaaa0dd543e85935b50d7f5660",
+      "bytes": 148724,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/silhouette_back.png": {
+      "sha256": "eab8663b3957e1827e251eac543019ec2b6af751cf9e1645cd344a950573529d",
+      "bytes": 79782,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/review_sheet.png": {
+      "sha256": "19bb9cb3887d81cfa953bcf58114161f0a23ee34128b4986ad3e0b79c2fa4951",
+      "bytes": 937814,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/silhouette_low.png": {
+      "sha256": "448842456b9d9c7b0ff82e3bf48950c76f8c01a771e612a061ba91f2e1a4e567",
+      "bytes": 80388,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/hsgrey_threequarter.png": {
+      "sha256": "db6eb8cb76ea6eb6d2d1a9ef98e777b185115287a3ac5f3c149e3795b2bb199a",
+      "bytes": 170275,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/silhouette_front.png": {
+      "sha256": "df185cf06c18de1c4d90f6615801e178e9cfa9e97f1be65a501ec56d077bbcc0",
+      "bytes": 80336,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/silhouette_threequarter.png": {
+      "sha256": "3c18eef06ee2c0e151685d3b6fc353c18f881ee4f4449130251473a319f89476",
+      "bytes": 79125,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/hsgrey_low.png": {
+      "sha256": "bcf4eb4a2f4862e9caf11f62f6bef30fa10ffdf692eb6683aaa06b7b5816b321",
+      "bytes": 156138,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/hsgrey_front.png": {
+      "sha256": "253aa18a555bc367b0462543be980404b22ab3bc2086b9498bf44000bc464704",
+      "bytes": 160358,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/hsgrey_back.png": {
+      "sha256": "31b124809c398734a5becd79da325d15c5f3c2da904ff6e3cd63d3fab989351d",
+      "bytes": 162075,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper_ore/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/silhouette_back.png": {
+      "sha256": "f6720f66f162c0a726d3114672aa08401bbef7344b65eeb3bcad5f16645fad56",
+      "bytes": 80928,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/review_sheet.png": {
+      "sha256": "31a87632d5532c76c7bee8602361cd1a3e9e516351f76ee536667b803a51bdbb",
+      "bytes": 935418,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/silhouette_low.png": {
+      "sha256": "c98fc6c57707300af068e3277654c3f388800ec0e7c749739329fdc124203219",
+      "bytes": 80748,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/hsgrey_threequarter.png": {
+      "sha256": "269ae7e8c6c809b380732f486133af942f24127cb2493b181a2c77d3b7985086",
+      "bytes": 187317,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/silhouette_front.png": {
+      "sha256": "f6720f66f162c0a726d3114672aa08401bbef7344b65eeb3bcad5f16645fad56",
+      "bytes": 80928,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/silhouette_threequarter.png": {
+      "sha256": "64885d1fb256f48e22af89a7d9a96b9dffacb543261692d075f631863beff659",
+      "bytes": 78975,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/hsgrey_low.png": {
+      "sha256": "da79fda3fa4be008afb3c1188f82704215694049942e156bac39ee221c93a680",
+      "bytes": 165309,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/hsgrey_front.png": {
+      "sha256": "40a2f7a1cfb44129f009cf607dbdcc79cc99614ca84f48d0075d49402d1faf8a",
+      "bytes": 161931,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/hsgrey_back.png": {
+      "sha256": "790f69431939ed12e766ce7e3b57abdcb26174da83506645a7ec6953f1eef692",
+      "bytes": 161809,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-iron/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/silhouette_back.png": {
+      "sha256": "0249eaeaae712339c89e7c6fe875b0b7d21c7bf5ecdfebc73aeb1253517e0ac0",
+      "bytes": 80762,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/review_sheet.png": {
+      "sha256": "48e14f77ec21e963e434f79d2edd562f92279e139726fc15698e6b69d2b075a7",
+      "bytes": 948619,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/silhouette_low.png": {
+      "sha256": "712fb663d07f54f698ef45324bdce9cd4c1537f05d15f0f018ff4f32c8b3115f",
+      "bytes": 81294,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/hsgrey_threequarter.png": {
+      "sha256": "6de120316701c5b2cab2f453c1b1befb769885902a0a807dfa8cd3ef49c3c140",
+      "bytes": 181574,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/silhouette_front.png": {
+      "sha256": "9149dfbe8e39c8e1022de488a3a4c2a6837ec2d5130a1dd7e0e2ce0495cf08f3",
+      "bytes": 81168,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/silhouette_threequarter.png": {
+      "sha256": "fecbe1111dfa7da7cab9e081bd9390f6b25e5be7132a4e88f7a9e1473be3a196",
+      "bytes": 87846,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/hsgrey_low.png": {
+      "sha256": "fed11850acbc8346d34c5f2cee0476e42f4fde754db732302e1762d7d32a13f1",
+      "bytes": 155330,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/hsgrey_front.png": {
+      "sha256": "0b9b4705a64edd069cfda55fce23977ac4a636c157fa5060959e3d62da72bfcb",
+      "bytes": 150110,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/hsgrey_back.png": {
+      "sha256": "dd0272d49580680924f76eb7d818c1a6dc9b94e6bdcbdb34fa2fc354bc3619cc",
+      "bytes": 149634,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-cable/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/silhouette_back.png": {
+      "sha256": "3c8e357633fc2b2053ecabba3bcaf738c1ab68d393c9e7e8dd60aa52d3307e47",
+      "bytes": 79216,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/review_sheet.png": {
+      "sha256": "8ac7683ba0b719c7fc5eea689245351478c33f941bed3683c0d89e7d57fec5ce",
+      "bytes": 936906,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/silhouette_low.png": {
+      "sha256": "bb2efe3eace1186c9924e04403f19a50495c4776d570206fbed8a8e840530e3d",
+      "bytes": 82081,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/hsgrey_threequarter.png": {
+      "sha256": "37f187333de4303c75307201d8481d743ba0efee9c042a7761fae9d3063c8ed1",
+      "bytes": 181549,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/silhouette_front.png": {
+      "sha256": "3c8e357633fc2b2053ecabba3bcaf738c1ab68d393c9e7e8dd60aa52d3307e47",
+      "bytes": 79216,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/silhouette_threequarter.png": {
+      "sha256": "edcec768dbf8abd7933459ec395bfefb893103d3265ae4d87d46628a1fb3d712",
+      "bytes": 81635,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/hsgrey_low.png": {
+      "sha256": "7abbcc68dc333d2f5aaaa1493820b04039340d5a3c63b46aa5d521b1e856187d",
+      "bytes": 166841,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/hsgrey_front.png": {
+      "sha256": "366706e1503e7b971fc19363e0950cb4ceb4ee5ba1257ac5ae7933d936d26dde",
+      "bytes": 153344,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/hsgrey_back.png": {
+      "sha256": "1c17b0024a41ac3f7616bee1afe7429b42e175432077a96fca9decac730c1d51",
+      "bytes": 153279,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-parts/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/silhouette_back.png": {
+      "sha256": "6a49024b6c4bfdce3cc0239484aa356fa9aa4f88a0e260047e0c9f9f173016f1",
+      "bytes": 78840,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/review_sheet.png": {
+      "sha256": "0dbd1fb1a47e7ea582490cf896124ba30aedd056a3ed0ddcd28e3411b7d8e63d",
+      "bytes": 881676,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/silhouette_low.png": {
+      "sha256": "9557b8ef802d9fddb1c44ccc6d757ca03bc2c3c3234a486325496609b2b1ceea",
+      "bytes": 80186,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/hsgrey_threequarter.png": {
+      "sha256": "a373a4452c800c4bf52c3eb22d8fa7a8be49e85ee62e5697aa8cb3159840f249",
+      "bytes": 158709,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/silhouette_front.png": {
+      "sha256": "6a49024b6c4bfdce3cc0239484aa356fa9aa4f88a0e260047e0c9f9f173016f1",
+      "bytes": 78840,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/silhouette_threequarter.png": {
+      "sha256": "da426760dc1c2d64b79ca3d9a1d68141feb0ad071cb2fd394d6050dfa4caf212",
+      "bytes": 80435,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/hsgrey_low.png": {
+      "sha256": "96ea6ea9e6d93bd3b8daa97c72b485f44a309f5111b888c6f2cc7a94e44b922e",
+      "bytes": 158348,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/hsgrey_front.png": {
+      "sha256": "fa6fbc79b5ebffb836e1d2ec201b0f190db4e30a7f3aff23a4b8781cc60ed855",
+      "bytes": 148654,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/hsgrey_back.png": {
+      "sha256": "de3c4e0042e0d2ae7701591cfcd8d9f26c281490bb69e2fe786c2eb0237be19a",
+      "bytes": 148624,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/glb-copper/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/silhouette_back.png": {
+      "sha256": "c039cb10928f9f47ad8c9faa443a543ca5d92c2fcf56650d8f871fd0bd115dc3",
+      "bytes": 84045,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/review_sheet.png": {
+      "sha256": "593c16d6d9af73128bb71cbe229f804a98fc6244616febc54cee3278756100d1",
+      "bytes": 1019096,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/silhouette_low.png": {
+      "sha256": "48101332f52e5184ee50d89f39649e2bec6d8c8517762e7c87b17d0f92e3f4e5",
+      "bytes": 81525,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/hsgrey_threequarter.png": {
+      "sha256": "f7ce71bfea3cb45e7286b74c5cee629565a80236ca801be104c983ba88e628c5",
+      "bytes": 184373,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/silhouette_front.png": {
+      "sha256": "fcfca279d437495b76dfa23eac156cd818802c309f679747a649bd0d204cd8de",
+      "bytes": 82544,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/silhouette_threequarter.png": {
+      "sha256": "12ecca1c92561d9f77e8f0779f71d05681fbb242dc2b5af2f76f2c7a24bc1d83",
+      "bytes": 80796,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/hsgrey_low.png": {
+      "sha256": "b3e9fc75ed8c322eaa698a0a1afc9c272b705bde3b411f5b2979401c14cdc843",
+      "bytes": 166856,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/hsgrey_front.png": {
+      "sha256": "0834800933cca8790713bb06bd1adaab1d3f94ca27e17be1ef61fe7e09fa5b4a",
+      "bytes": 175431,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/hsgrey_back.png": {
+      "sha256": "8901f9c9cf3469c4d56b366b2c70bd443fc7c1cce50bf97931d7f0ddfa8e6c11",
+      "bytes": 173542,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-iron_ore/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/silhouette_back.png": {
+      "sha256": "dbc714cbd48041cbf0de2179a855432b8676c3f2b275a9d4f74f6994d2796312",
+      "bytes": 80862,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/review_sheet.png": {
+      "sha256": "298e1725705996f9f316014201edba43b5f1461703b959bf5c9d30a1461ff8d5",
+      "bytes": 948847,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/silhouette_low.png": {
+      "sha256": "43869f42c484077e03868ce099d83ca852065ee625ecf8e3f858fcf69b442605",
+      "bytes": 81391,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/hsgrey_threequarter.png": {
+      "sha256": "9a0c7f347753cc4030f60caa7a7e343379a2558906268c128c186eba5773e4cc",
+      "bytes": 181671,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/silhouette_front.png": {
+      "sha256": "92b49ab0569f2eaa5a3f96bffb3c8bbebdc93d8fa1019a908be868f3a5031ebd",
+      "bytes": 81268,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/silhouette_threequarter.png": {
+      "sha256": "bad01bcec41db014c0e1ba250a356769e90d3b2cfbbf0b89124c0588fdbd1c2b",
+      "bytes": 87946,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/hsgrey_low.png": {
+      "sha256": "2e364ad185f1c2793ec9c92ef6ca7c6b86478360125456b8af6c66ca30b3a080",
+      "bytes": 155473,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/hsgrey_front.png": {
+      "sha256": "b06462e8351408ed011797a164ca29943ebf4f1b71b8799b9e7ed0774670b705",
+      "bytes": 150156,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/hsgrey_back.png": {
+      "sha256": "d3d15e988a26a1a3894518729bc1a68f772973db0c9af997d60c2b971dd4e19d",
+      "bytes": 149720,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-cable/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/silhouette_back.png": {
+      "sha256": "1cc1890397441a12a29b633a599506eda09466648ca7dfb6d01dcc8e5cfb0c69",
+      "bytes": 79316,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/review_sheet.png": {
+      "sha256": "ed6480a3a9bc486f1ce683a6f3ec5612c565c0e62e41595e4e071b6e9d95edcc",
+      "bytes": 937035,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/silhouette_low.png": {
+      "sha256": "1a9a7bffa1ad912e701b992f38fc88fa4f22a1a59dcdef57a19016be02cc15dc",
+      "bytes": 82181,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/hsgrey_threequarter.png": {
+      "sha256": "fecff6f98565e35d84b1a7b499f149d50e1c3e0cf38afbf6a798cec4d309e854",
+      "bytes": 181630,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/silhouette_front.png": {
+      "sha256": "1cc1890397441a12a29b633a599506eda09466648ca7dfb6d01dcc8e5cfb0c69",
+      "bytes": 79316,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/silhouette_threequarter.png": {
+      "sha256": "28119d4249751abed00c1e2a9dbcf1b9dab2d6067c2e7d244045c79859f78ec0",
+      "bytes": 81735,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/hsgrey_low.png": {
+      "sha256": "06270808105945555a73d172aef8598217395dc1cad188acd256800965acb9bd",
+      "bytes": 166906,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/hsgrey_front.png": {
+      "sha256": "9b4e0442793fd4dd2ca3320675b995c6622fa276fe43a7cbd0b9011ce97edac3",
+      "bytes": 153444,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/hsgrey_back.png": {
+      "sha256": "d37116d7a68438111197473a29ad4c683f6d307937e66ae69d9e9858030df0a7",
+      "bytes": 153379,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-parts/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/silhouette_back.png": {
+      "sha256": "ca4141c0c3513d5965983063ab0a87a6232441b5149a1837419fcd8ad5efa84e",
+      "bytes": 79882,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/review_sheet.png": {
+      "sha256": "c786159a97253ae1597ed584318e5157e38a47ecb056a574b7e6348211ede2c3",
+      "bytes": 937943,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/silhouette_low.png": {
+      "sha256": "67c66844b0fa02dc87711b337d751205aaac90cbf7dabce18b523b08f4d695a3",
+      "bytes": 80488,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/hsgrey_threequarter.png": {
+      "sha256": "ac7471553ab7f8be075a8c2806cc1f7212eebff5ddc2d075a43884e7dd489d63",
+      "bytes": 170329,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/silhouette_front.png": {
+      "sha256": "0272a7b379544ad960b40809e6fd026c850fe7418d7a0ca6661f7616789a386a",
+      "bytes": 80436,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/silhouette_threequarter.png": {
+      "sha256": "ae6e57b350d0ce83af568be40f5ddd3d423fb4339dc650ad7e411fc8231bd7e3",
+      "bytes": 79225,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/hsgrey_low.png": {
+      "sha256": "3355a5228f9c21f1fe64343b14787e5a1b87a56f15abb98175158c9375f92c68",
+      "bytes": 156253,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/hsgrey_front.png": {
+      "sha256": "e8b4bd132e335aed4a82d21495a38bf74221aa1a1945d59c6718c8a65bf4b758",
+      "bytes": 160454,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/hsgrey_back.png": {
+      "sha256": "b297f2e20b181216458c9a9d1656fe5bc3684b9553432881bf5c05ddf95a9aa3",
+      "bytes": 162150,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-current-verify/docs/art/production/d12-r1/resources/portable-r7/output/source-copper_ore/review_sheet_legend.txt": {
+      "sha256": "a9f71f3ad1f6b64ed06eae784c2dd7cbdee31e176d1873b1fa92694d1f2a92e5",
+      "bytes": 173,
+      "role": "actual_current_isolated_output_not_visually_assessed"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/.agents/skills/scenario-blender-hard-surface/scripts/bx_hardsurface.py": {
+      "sha256": "a7eb60b356c16609573ea8bb0005cd1278e908dcd7593eb7ff1f749ceb7b9999",
+      "bytes": 69529,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/.agents/skills/scenario-blender-expert/scripts/bx_audit.py": {
+      "sha256": "a4afe1bede3cf6c227c557aa9a5efd3ac6aafaa44adf0dc401cf238f0e06f951",
+      "bytes": 9781,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/.agents/skills/scenario-blender-expert/scripts/bx_review.py": {
+      "sha256": "3862dc1452960f01219206bbc0f24d487810d0f4cda6ab41b97108e522e53986",
+      "bytes": 14914,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/.agents/skills/scenario-blender-expert/scripts/bx_gui.py": {
+      "sha256": "d5c020f27d2714f7f773da30cfa190017be453a621bb45f1eccececa3a33d60c",
+      "bytes": 8951,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/exports/resources/d12-r1/r5/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/exports/resources/d12-r1/r5/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/source/resources/d12-r1/resource-pair-grey-r5-portable.blend": {
+      "sha256": "de0fbdcc1af74b3e830c5ae41a62c46720e1993dc30cfd8e91cfacf3a6d1636b",
+      "bytes": 98199,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/source/resources/d12-r1/r7-portable/prove_portable.py": {
+      "sha256": "d99c8a49c29daafca4409ef0f7a7343f27f2c7e14bef4385e1e337f10c9939ea",
+      "bytes": 6525,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/source/resources/d12-r1/r7-portable/build_resources.py": {
+      "sha256": "fde3382f5230f7b7590634f40c1235fdcf757a467c546dacd30af269084392cd",
+      "bytes": 8658,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/source/resources/d12-r1/r7-portable/make_portable.py": {
+      "sha256": "56ec776eba0127f3131c12a64402e23b97254771c7ff6c054a8df9acf39cd772",
+      "bytes": 7290,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/source/resources/d12-r1/r7-portable/verify_resources.py": {
+      "sha256": "65dfdcf226ecdc1c153b39e21b0ec0e8a589bd1ab99cb598b2796d09a634fab3",
+      "bytes": 11682,
+      "role": "actual_historical_isolated_input"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/source/resources/d12-r1/r7-portable/resources-grey-r7.blend": {
+      "sha256": "c4380e554db0777fcfe944c462b6b1cf3da681acb3ae8e1ffa22bd02deaf171d",
+      "bytes": 114973,
+      "role": "actual_isolated_rebuilt_source"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/copper.glb": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "bytes": 5092,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/parts.glb": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "bytes": 10180,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/cable.glb": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "bytes": 13300,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/copper_ore.glb": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "bytes": 3324,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/copper.glb": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "bytes": 5092,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/parts.glb": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "bytes": 10180,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/cable.glb": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "bytes": 13300,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/copper_ore.glb": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "bytes": 3324,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resource-pair-grey-r5-portable/original/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resource-pair-grey-r5-portable/original/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resource-pair-grey-r5-portable/portable/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-export-proof/resource-pair-grey-r5-portable/portable/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "native_original_or_portable_export_exact_frozen"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/exports/resources/d12-r1/r7/iron_ore.glb": {
+      "sha256": "fa34ecfe193ba92a47bc00b1c0107417f0d08ea9f4d168d7fe581352b49a3b56",
+      "bytes": 4356,
+      "role": "actual_isolated_rebuilt_glb"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/exports/resources/d12-r1/r7/iron.glb": {
+      "sha256": "9fb81404b00fe13b6f61c4dab9ea34d920225804dff573b150c9e49b040a5970",
+      "bytes": 5276,
+      "role": "actual_isolated_rebuilt_glb"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/exports/resources/d12-r1/r7/copper_ore.glb": {
+      "sha256": "7f779c0a3ee22d0db0d78b0fb01d265cd4307df1d53981e1640c9aa85af13f67",
+      "bytes": 3324,
+      "role": "actual_isolated_rebuilt_glb"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/exports/resources/d12-r1/r7/copper.glb": {
+      "sha256": "f4f2a914361a8c574423e3842a3a9e0eaa3586d8267663c688172886139fbc2d",
+      "bytes": 5092,
+      "role": "actual_isolated_rebuilt_glb"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/exports/resources/d12-r1/r7/parts.glb": {
+      "sha256": "2d6413deeaee92881474da6ef9111d09472ecde91e44069f8564c6f7548d2c49",
+      "bytes": 10180,
+      "role": "actual_isolated_rebuilt_glb"
+    },
+    "historical-local-project/yudian-r7-portable-rebuild/art/exports/resources/d12-r1/r7/cable.glb": {
+      "sha256": "4ff6f1601b959583c0ad6bd030afd3907326fdffa72272e8c80f146f8ba1cca3",
+      "bytes": 13300,
+      "role": "actual_isolated_rebuilt_glb"
+    },
+    "docs/art/production/d12-resources-r7/independent/identity.json": {
+      "sha256": "d3a66f2774db1981244f1011ba8b554d1f049967a384e1afa9980b9897e393fd",
+      "bytes": 52288,
+      "role": "prior_independent_identity"
+    },
+    "docs/art/production/d12-resources-r7/independent/REVIEW.md": {
+      "sha256": "4a38bbbe2239156789a68a5493efe93f8daaec57dc675d35fec5f45ea68ee726",
+      "bytes": 7754,
+      "role": "prior_independent_review"
+    }
+  },
+  "independent_snapshot_comparisons": {
+    "resource-pair-grey-r5-portable": {
+      "before_after_exact": true,
+      "bound_materials": [
+        "grey_shape_review"
+      ],
+      "fresh_session_uid_changes": [],
+      "fresh_non_uid_changes": [
+        "/materials/Material"
+      ],
+      "snapshot_objects": [
+        "iron",
+        "iron_ore"
+      ],
+      "base_evaluated_mesh_material_transform_modifiers_metadata_node_groups_preserved": true
+    },
+    "resources-grey-r7": {
+      "before_after_exact": true,
+      "bound_materials": [
+        "grey_shape_review"
+      ],
+      "fresh_session_uid_changes": [
+        "/materials/grey_shape_review/properties/session_uid",
+        "/objects/cable/object_properties/session_uid",
+        "/objects/copper/object_properties/session_uid",
+        "/objects/copper_ore/object_properties/session_uid",
+        "/objects/iron/object_properties/session_uid",
+        "/objects/iron_ore/object_properties/session_uid",
+        "/objects/parts/object_properties/session_uid"
+      ],
+      "fresh_non_uid_changes": [],
+      "snapshot_objects": [
+        "cable",
+        "copper",
+        "copper_ore",
+        "iron",
+        "iron_ore",
+        "parts"
+      ],
+      "base_evaluated_mesh_material_transform_modifiers_metadata_node_groups_preserved": true
+    }
+  },
+  "independent_exact_export_checks": {
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/copper.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/parts.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/cable.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/iron.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/copper_ore.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/original/iron_ore.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/copper.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/parts.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/cable.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/iron.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/copper_ore.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resources-grey-r7/portable/iron_ore.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resource-pair-grey-r5-portable/original/iron.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resource-pair-grey-r5-portable/original/iron_ore.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resource-pair-grey-r5-portable/portable/iron.glb": true,
+    "historical-local-project/yudian-r7-portable-export-proof/resource-pair-grey-r5-portable/portable/iron_ore.glb": true
+  },
+  "isolated_six_rebuilt_GLBs_byte_exact": true,
+  "triangles": {
+    "iron_ore": 64,
+    "iron": 188,
+    "copper_ore": 48,
+    "copper": 124,
+    "parts": 412,
+    "cable": 460
+  },
+  "original_linked_blends_absent_in_both_isolated_trees": true,
+  "current_verifier": {
+    "sha256": "4465626e4d93fe90eae7e01bf686aca61db4ddacb8f145455870036036833d59",
+    "stage_sha256": "588023dab3b25eebbcce564bc468f294157ddcae7d0125a758e0f84e826db5f5",
+    "19_inputs_exact_in_source_and_actual_isolated_tree": true,
+    "134_outputs_exact_in_actual_isolated_tree": true,
+    "render_output_paths_are_relative_to_receipt_cwd": "Only renamed current-source/current-glb JSON copies are delivered to production; 134 output paths resolve under actual isolated cwd",
+    "two_native_receipts_log_json_bindings_match": true,
+    "native_exit_codes": "0 as recorded by delivered receipt, not independently rerun"
+  },
+  "historical_stage_verifier_mismatch": {
+    "art/source/resources/d12-r1/r7-portable/verify_resources.py": {
+      "declared": "30fc3e8900347d876034eea128d01e80fa312c235a57d7d49227a9ca28999d67",
+      "actual": "65dfdcf226ecdc1c153b39e21b0ec0e8a589bd1ab99cb598b2796d09a634fab3"
+    }
+  },
+  "native_library_closure": "source-bound native evidence read; no new bpy traversal",
+  "fresh_default_Material": "r5-only removed zero-user, no fake user, absent from base/evaluated slots and all other snapshot references",
+  "native_Blender_rebuild_reopen_render": "NOT_RUN by independent reviewer",
+  "new_image_visual_assessment": "NOT_ASSESSED; original 57-image limited verdict unchanged",
+  "Main_dynamic_performance_owner": "NOT_RUN",
+  "report": {
+    "path": "docs/art/production/d12-resources-r7/independent/portable-source-addendum-REVIEW.md",
+    "sha256": "2e6a02e8fa6295e351ab2de8ce82f454e497610f2b3dae743cc53bf321e3aa31"
+  }
+}
