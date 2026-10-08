@@ -20,7 +20,8 @@ public partial class Main
     private string PlayerNotice()
     {
         if (_groundFault) return _groundMessage;
-        if (BootstrapEnabled && _buildJob is {} b && (_levelJob?.Active != true)) return b.Reason + "\n" + _playerNotice;
+        if (BootstrapEnabled && _buildJob is {} b && (_levelJob?.Active != true))
+            return b.Reason.Length==0||b.Reason==_playerNotice?_playerNotice:b.Reason+"\n"+_playerNotice;
         if (_loadPending != null || _userPaused || _levelJob?.Active != true || _levelJob.Message == _playerNotice) return _playerNotice;
         return _levelJob.Message + "\n" + _playerNotice;
     }

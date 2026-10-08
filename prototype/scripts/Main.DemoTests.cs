@@ -12,14 +12,29 @@ public partial class Main
     private double _demoTime;
     private byte[] _demoBytes=[];
     private string _demoPath="";
+    private string _demoStock="";
     private void DemoCheck(bool passed,string name)
-    { GroundRequire(passed,name); GD.Print("DEMO_CHECK PASS "+name); }
+    { if(!passed)GetTree().Quit(1);GroundRequire(passed,name); GD.Print("DEMO_CHECK PASS "+name); }
     private void DemoTestStep()
     {
         if(OperatingSystem.IsWindows())throw new PlatformNotSupportedException("demo permission check requires Unix");
+        if(_groundFrame>=900)GetTree().Quit(1);
         GroundRequire(_groundFrame<900,"demo test timeout");
         if(!_groundReady||!_groundRobots.All(a=>a.IsOnFloor())||_groundFrame<90)return;
         string phase=System.Environment.GetEnvironmentVariable("YUDIAN_DEMO_TEST_PHASE")??"prepare";
+        if(_demoStep==22)
+        {
+            DemoCheck(_userPaused&&_buildJob?.Stage=="Cancelled","paused cancellation reaches current construction");
+            _demoStock=JsonSerializer.Serialize(_ledger.Snapshot().Containers,SaveOptions);
+            QueuePlayerAction("retry");_demoStep=23;return;
+        }
+        if(_demoStep==23)
+        {
+            var current=ReadDevelopment();
+            DemoCheck(_userPaused&&_buildJob?.Active==true&&current.Reason==_buildJob.Reason&&!current.Reason.Contains("已取消")&&!current.Reason.Contains("180秒"),"paused retry replaces old cancellation or timeout reason");
+            DemoCheck(_demoStock==JsonSerializer.Serialize(_ledger.Snapshot().Containers,SaveOptions),"retry does not consume or move material while paused");
+            _demoFrame=_groundFrame;_demoStep=21;return;
+        }
         if(_demoStep==21)
         {
             if(_groundFrame-_demoFrame<3)return;
@@ -60,6 +75,11 @@ public partial class Main
                 if(phase=="cargo")DemoCheck(view.Transit.Contains("结构件4")&&view.Need=="无需新增生产","actual cargo closes production gap without becoming warehouse stock");
                 if(phase=="completed")DemoCheck(view.Stage=="已完成"&&view.Need=="无需新增生产"&&view.Directions!.All(d=>d.Cost==FormatMaterials(BuildCost(d.Id))),"completed goal and configured direction costs are truthful");
                 DemoCheck(before==JsonSerializer.Serialize(CaptureBootstrap(),SaveOptions),"read model does not mutate authoritative facts");
+                if(phase=="retry")
+                {
+                    DemoCheck(_buildJob?.Active==true&&_development?.Stage=="Building","real clearance fixture exercises active construction");
+                    QueuePlayerAction("cancel");_demoStep=22;return;
+                }
             }
             _demoFrame=_groundFrame;_demoStep=21;return;
         }

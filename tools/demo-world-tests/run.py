@@ -19,4 +19,5 @@ for phase,name in [('recipe','recipe-input'),('cargo','cargo'),('completed','sto
     save=a.output/(phase+'.json');save.write_bytes((a.r3_checkpoints/('yudian-d12-gui-r3-'+name+'.json')).read_bytes());run(phase,save)
 save=a.output/'ore.json';save.write_bytes(a.ore_save.read_bytes());run('ore',save)
 save=a.output/'output.json';save.write_bytes((a.ore_save.parent/'output.json').read_bytes());run('output',save)
-print('DEMO_WORLD_TESTS PASS processes=8')
+save=a.output/'retry.json';save.write_bytes((a.ore_save.parent/'clearance.json').read_bytes());run('retry',save)
+print('DEMO_WORLD_TESTS PASS processes=9')

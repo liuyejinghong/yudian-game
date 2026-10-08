@@ -300,7 +300,8 @@ public partial class Main
         var patch=TerrainDataCodec.ParsePatch(j.Patch);
         j.Stage=patch.HeightsM.SequenceEqual(_liveTerrain!.Current.HeightsM)||j.Type=="connection"?"Fetching":"Preparing";
         if(j.Stage=="Preparing"&&patch.Base.Version!=_liveTerrain.Current.Version)throw new InvalidOperationException("地形已变化，保留工程；需另选位置");
-        j.Waiting=0;_playerNotice="继续原工程；不会重扣已消耗物料";
+        j.Waiting=0;j.Reason=j.Stage=="Fetching"?"重新安排余料运输，保留现场与载货":"重新安排让位与施工，保留已结算物料";
+        _playerNotice="继续原工程；不会重扣已消耗物料";
     }
 
     private bool TickBuildWork(GroundPatrol actor,BuildJob j,double delta,double duration)
