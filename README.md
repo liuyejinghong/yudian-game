@@ -1,5 +1,7 @@
 # 余电 · Yudian
 
+**当前节点：D1.2 r7，等待所有者试玩验收。** 从[验收节点与新会话入口](docs/workflow/2026-10-08-d12-r7-acceptance.md)核对固定版本、已接入美术、PR 和未验边界；本轮先收反馈，后续任务暂不派发。
+
 2026-10-08：默认「余电.app」已更新为 D1.2 r7：新游戏／继续存档／保存退出、有限采矿加工、真实运输建设及两个发展方向已接通。r7九项原生检查、1920与1280实际窗口闭环通过；原D1.1包和存档保留。[试玩操作](prototype/README.md) / [验收范围与留项](docs/engineering/reports/2026-10-08-d12-production-verification.md)。
 
 2026-10-07：本机「余电.app」已切换到通过真实鼠标保存/关闭/重开验收的D1.1自举建设包；真实运料、施工、付费供电与充电维修已接通。[试玩操作](prototype/README.md) / [D1.1证据与范围](docs/engineering/reports/2026-10-07-d11-bootstrap-verification.md)。
