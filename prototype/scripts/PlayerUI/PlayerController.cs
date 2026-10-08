@@ -438,7 +438,7 @@ public partial class PlayerController : Node
         var box = new VBoxContainer();
         box.AddThemeConstantOverride("separation", 6);
         panel.AddChild(box);
-        _titleLabel = NewLabel("余电 · 整平作业", 20, Palette.Text);
+        _titleLabel = NewLabel("余电", 20, Palette.Text);
         box.AddChild(_titleLabel);
         // 信息区限高滚动：设施与库存随游戏增长，面板不得遮满 1280x800 世界。
         _infoScroll = new ScrollContainer
@@ -740,7 +740,7 @@ public partial class PlayerController : Node
     {
         bool boot = BootstrapOn;
         if (boot) EnsureBootstrapControls(_bootstrap!);
-        _titleLabel.Text = boot ? "余电 · 基地建设" : "余电 · 整平作业";
+        _titleLabel.Text = "余电";
         _rowModes.Visible = boot;
         _connectButton.Visible = boot;
         _retryButton.Visible = boot;
@@ -785,6 +785,12 @@ public partial class PlayerController : Node
                 _supportLabel.Visible = true;
                 _supportLabel.Text = $"电量 {support.Energy:0.#}/{support.Capacity:0} · 耐久 {support.Durability:0.#}/{support.Capacity:0} · 载货 {support.Cargo}" +
                     "\n" + support.State + (support.Reason.Length > 0 ? "：" + support.Reason : "");
+            }
+            else
+            {
+                // 未选机时的首屏保障汇总：按权威 State 原文分组计数，不推导电力/预算阈值。
+                _supportLabel.Visible = true;
+                _supportLabel.Text = "保障 " + string.Join("／", b.Robots.GroupBy(r => r.State).Select(g => g.Key + g.Count()));
             }
         }
 

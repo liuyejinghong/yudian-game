@@ -213,6 +213,39 @@ public partial class PlayerUiSelfTest : SceneTree
                     "五种建设模式按钮建立（来自真实蓝图）");
                 Check(((Label)_ui.FindChild("StockLabel", true, false)!).Text.Contains("铁料"),
                     "库存与电力显示真实着陆器数据：" + ((Label)_ui.FindChild("StockLabel", true, false)!).Text);
+
+                // 未选机首屏保障汇总：与权威 DTO 按真实 State 分组计数完全一致
+                var supportLabel = (Label)_ui.FindChild("SupportLabel", true, false)!;
+                string GroupText(Yudian.BootstrapReadModel b) =>
+                    "保障 " + string.Join("／", b.Robots.GroupBy(r => r.State).Select(g => g.Key + g.Count()));
+                Check(supportLabel.Visible && supportLabel.Text == GroupText(_world.ReadBootstrap()),
+                    "未选机时显示全体保障汇总：" + supportLabel.Text);
+
+                // 选机后切单机真实保障：电量/耐久/载货与该机 State 原文
+                string? supportRobot = null;
+                foreach (var robot in _world.ReadPlayerRobots())
+                {
+                    var pos = _camera.UnprojectPosition(robot.Position + Vector3.Up * 0.45f);
+                    var rect = Root.GetVisibleRect();
+                    if (pos.X > 340 && pos.Y > 80 && pos.X < rect.Size.X - 80 && pos.Y < rect.Size.Y - 200)
+                    {
+                        supportRobot = robot.Id;
+                        Click(pos);
+                        break;
+                    }
+                }
+                await Frames(3);
+                if (supportRobot is { } supportId)
+                {
+                    var single = _world.ReadBootstrap().Robots.FirstOrDefault(r => r.Id == supportId);
+                    Check(supportLabel.Visible && supportLabel.Text.Contains("电量") && supportLabel.Text.Contains("耐久") &&
+                        supportLabel.Text.Contains("载货") && single != null && supportLabel.Text.Contains(single.State),
+                        "选机后显示该机单机保障：" + supportLabel.Text.Replace("\n", " "));
+                    PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+                    await Frames(2);
+                }
+                else
+                    NotRun("选机单机保障（无机器人投影在可点区域）");
                 Check(_ui.FindChild("ConnectButton", true, false) is Button && _ui.FindChild("RetryButton", true, false) is Button,
                     "铺电缆与重试入口建立");
 
