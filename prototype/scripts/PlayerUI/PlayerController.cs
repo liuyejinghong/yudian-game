@@ -138,6 +138,8 @@ public partial class PlayerController : Node
     {
         if (!_initialized) return;
         var state = _world.ReadPlayerState();
+        if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true } click && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
+            GD.Print($"PLAYER_GUI_CLICK double={click.DoubleClick} entry={state.EntryOpen} gate={_entryCloseGate.ToString(Inv)}");
         if (state.EntryOpen || state.EntryLoading) return; // 入口期间世界不接收任何输入
         if (_entryCloseGate > 0f) return; // 入口刚关闭：吞掉双击第二击，不选中世界
         switch (@event)
@@ -178,7 +180,7 @@ public partial class PlayerController : Node
             {
                 case MouseButton.Left:
                     _leftPress = button.Position;
-                    _leftTracking = true;
+                    _leftTracking = !button.DoubleClick;
                     break;
                 case MouseButton.Right:
                     _panGrab = button.Position;

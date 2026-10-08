@@ -1,0 +1,314 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+PLAYER_UI_SELFTEST begin
+MAIN_GROUND_IDENTITY build_sha256=663e4bde66087c2a5e4a954c31deb07fb0e03d4938239a861f2f76dbaf4a1284 loaded_mvid=d770af6f-d147-45a4-9cd0-4f4d7ac53958 CLR=10.0.12 display=headless
+[Yudian] fixture=s_small seed=20261004 facilities=0 robots=0 benchmark=False
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=0 query_frame=1 rays=4225
+MAIN_GROUND_READY robots=12 facilities=1
+PLAYER_UI_SELFTEST viewport=(1280, 800)
+PLAYER_UI_SELFTEST ENTRY begin
+PLAYER_UI_SELFTEST PASS 入口遮罩在 EntryOpen 时可见
+PLAYER_UI_SELFTEST PASS 入口期间运行中 HUD 隐藏（保存/暂停/建造不可点）
+PLAYER_UI_SELFTEST PASS 入口按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST PASS 入口自动聚焦开始新游戏（回车即可开始）
+PLAYER_UI_SELFTEST PASS 世界就绪后开始新游戏可用
+PLAYER_UI_SELFTEST PASS 无存档时继续存档禁用
+PLAYER_UI_SELFTEST PASS 入口期间点击世界无穿透、无选择
+PLAYER_UI_SELFTEST PASS 入口期间键盘不透传镜头
+PLAYER_UI_SELFTEST PASS 入口期间暂停命令被权威拒绝
+PLAYER_UI_SELFTEST PASS 入口期间保存被权威拒绝（不盖旧档）
+PLAYER_UI_SELFTEST PASS 1920x1080 入口遮罩与三按钮完整可见不越界
+PLAYER_UI_SELFTEST PASS 存档存在时继续存档启用
+PLAYER_COMMAND_REJECTED '0xE8' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+PLAYER_UI_SELFTEST PASS 坏档后仍留在入口（EntryOpen 保持）
+PLAYER_UI_SELFTEST PASS 坏档后入口遮罩仍显示
+PLAYER_UI_SELFTEST PASS 坏档后当前世界完好
+PLAYER_UI_SELFTEST PASS 开始新游戏持有键盘焦点
+PLAYER_UI_SELFTEST PASS 双提交后入口只离开一次且不再回来
+PLAYER_UI_SELFTEST PASS 开始新游戏不泄漏世界任务
+PLAYER_UI_SELFTEST PASS 新游戏权威提示先建保障：先建太阳能、充电、维修和加工，再选择发展方向
+PLAYER_UI_SELFTEST PASS 开始后运行中 HUD 恢复显示
+PLAYER_GUI_CLICK double=False entry=False gate=0.2201742
+PLAYER_UI_SELFTEST PASS 入口关闭短窗内第二击不选中世界：左键点选机器人或地面；右键取消选择
+PLAYER_GUI_CLICK double=True entry=False gate=0
+PLAYER_UI_SELFTEST PASS 平台双击第二击在短门禁过期后仍不选世界
+PLAYER_UI_SELFTEST ENTRY end
+PLAYER_UI_SELFTEST PASS HUD 建立确认按钮
+PLAYER_UI_SELFTEST PASS HUD 建立选择标签
+PLAYER_UI_SELFTEST PASS 普通场景 12 台机器人
+PLAYER_UI_SELFTEST PASS 找到合法预览点：可整平 · 半径 2m，目标高度 0m
+PLAYER_UI_SELFTEST PASS 设施重叠预览非法
+PLAYER_UI_SELFTEST PASS 场外预览非法
+PLAYER_UI_SELFTEST PASS 望山不能当筑垒执行
+PLAYER_GUI_CLICK double=False entry=False gate=0
+PLAYER_UI_SELFTEST PASS 地面点选后显示已选位置：已选位置 (-20.3, -16.3) · 可整平 · 半径 2m，目标高度 0m
+自动分配筑垒
+PLAYER_UI_SELFTEST PASS 点击 HUD 面板不穿透（选择保持）
+PLAYER_GUI_CLICK double=False entry=False gate=0
+PLAYER_UI_SELFTEST PASS 空点清除选择且不下命令
+PLAYER_UI_SELFTEST PASS 空点后仍无任务
+PLAYER_GUI_CLICK double=False entry=False gate=0
+PLAYER_UI_SELFTEST PASS 机器人点选生效：已选 望山 1 · 本批仅筑垒执行整平
+PLAYER_GUI_CLICK double=False entry=False gate=0
+LEVEL_JOB_START id=level-1 worker=Robot_Zhulei_2 base=0 station=(-14.840517, 2.3841858E-07, -16.295805) distance=34.842
+PLAYER_UI_SELFTEST PASS 确认后任务活动
+PLAYER_UI_SELFTEST PASS 双击只产生一个任务（level-1）：level-1
+PLAYER_UI_SELFTEST PASS 任务行不泄露内部任务 ID：前往现场 · 执行者 筑垒 2
+PLAYER_UI_SELFTEST PASS 0 进度阶段不显示百分比冒充总进度：前往现场 · 执行者 筑垒 2
+PLAYER_UI_SELFTEST PASS 任务行显示中文阶段与执行者：前往现场 · 执行者 筑垒 2
+PLAYER_UI_SELFTEST PASS 执行者是筑垒：Robot_Zhulei_2
+PLAYER_UI_SELFTEST PASS 阶段文本：前往现场
+LEVEL_JOB_END id=level-1 stage=Cancelled base=0 applied=none current=0 message=已取消；未改造地形
+PLAYER_UI_SELFTEST PASS 取消后无活动任务
+PLAYER_UI_SELFTEST PASS 暂停后按钮显示继续
+PLAYER_UI_SELFTEST PASS 暂停时模拟时间不推进
+PLAYER_UI_SELFTEST PASS 暂停期间镜头按钮旋转可用
+PLAYER_UI_SELFTEST PASS 暂停期间 WASD 平移可用
+PLAYER_UI_SELFTEST PASS 滚轮缩放可用
+PLAYER_UI_SELFTEST PASS 连续拖动只累计实际总位移
+PLAYER_UI_SELFTEST PASS 暂停期间镜头旋转可用
+PLAYER_UI_SELFTEST PASS Esc 清除预览而不重建旧选区
+PLAYER_UI_SELFTEST PASS 未知操作被拒：未知操作，未执行
+PLAYER_SAVE_OK version=0 stage=Cancelled time=2.116666666666664
+PLAYER_UI_SELFTEST PASS 保存成功可见
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=312 query_frame=313 rays=4225
+PLAYER_LOAD_READY version=0 stage=Cancelled paused=False time=2.116666666666664
+PLAYER_UI_SELFTEST PASS 读取后世界就绪
+PLAYER_UI_SELFTEST PASS 读取完成后 UI 仍可用
+PLAYER_UI_SELFTEST PASS 整平模式按钮建立
+PLAYER_UI_SELFTEST PASS 五种建设模式按钮建立（来自真实蓝图）
+PLAYER_UI_SELFTEST PASS 库存与电力显示真实着陆器数据：库存 铁料 17（可用17） · 铜料 5（可用5） · 结构件 21（可用21） · 线缆 20（可用20） · 组件套件 8（可用8）
+日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST PASS 未选机时显示全体保障汇总：保障 可用12
+PLAYER_GUI_CLICK double=False entry=False gate=0
+PLAYER_UI_SELFTEST PASS 选机后显示该机单机保障：电量 100/100 · 耐久 100/100 · 载货 0 可用
+PLAYER_UI_SELFTEST PASS 铺电缆与重试入口建立
+PLAYER_UI_SELFTEST PASS 90度朝向控件生效：朝向 90°
+PLAYER_UI_SELFTEST PASS 朝向 270° 回绕到 0°：朝向 0°
+PLAYER_UI_SELFTEST PASS 建设模式找到合法预览点：可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+PLAYER_GUI_CLICK double=False entry=False gate=0
+PLAYER_UI_SELFTEST PASS 建设模式点选地面显示已选位置
+PLAYER_UI_SELFTEST PASS 已选位置显示材料成本：已选位置 (-20.4, -16.2) · 可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+成本 铁料3、铜料2、结构件3、线缆2、组件套件1 · 朝向 0° · 确认即一次授权：缺料时自动采集/运输/加工并完成该建设，无需逐配方手点
+PLAYER_UI_SELFTEST PASS 确认建设产生真实建设任务：build-1 · 准备建设
+PLAYER_UI_SELFTEST CAMUI begin
+PLAYER_UI_SELFTEST PASS 九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）
+PLAYER_UI_SELFTEST PASS 镜头按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST PASS 镜头行与全部按钮在视口内不裁切
+PLAYER_UI_SELFTEST PASS 『前』按钮沿当前朝向明显平移: 13.76m
+PLAYER_UI_SELFTEST PASS 『右转』单次15度: 0.2618rad
+PLAYER_UI_SELFTEST PASS 旋转后『前』沿新朝向平移
+PLAYER_UI_SELFTEST PASS 连点三次『右转』45度不受工程冷却: 0.7854rad
+PLAYER_UI_SELFTEST PASS 连续拉近到下限后不再变化
+PLAYER_UI_SELFTEST PASS 连续拉远到上限后不再变化
+PLAYER_UI_SELFTEST PASS 平移到前限后不再变化
+PLAYER_UI_SELFTEST PASS 平移到后限后不再变化
+PLAYER_UI_SELFTEST PASS 复位恢复初始焦点/距离/朝向
+PLAYER_SAVE_OK version=0 stage= time=6.649999999999982
+PLAYER_UI_SELFTEST PASS 保存成功（冷却未被镜头按钮占用）
+PLAYER_UI_SELFTEST PASS 镜头操作不下达任务
+PLAYER_UI_SELFTEST CAMUI end
+PLAYER_UI_SELFTEST CAMERADIAG begin accumulated_input=True
+PLAYER_UI_SELFTEST CAMERADIAG initial origin=31.85,28.80,19.85 basisZ=0.61,0.63,0.49
+PLAYER_UI_SELFTEST CAMERADIAG same-frame Q rotation=0rad originBefore=31.85,28.80,19.85 originAfter=31.85,28.80,19.85 IsKeyPressed(preParse/afterPress/afterRelease/postFlush)=False/False/False/False
+PLAYER_UI_SELFTEST CAMERADIAG same-frame Right move=0m originAfter=31.85,28.80,19.85 IsKeyPressed(preParse/afterPress/afterRelease)=False/False/False
+PLAYER_UI_SELFTEST CAMERADIAG frame-span Q(2帧) rotation=0.01128rad polledDuringPress=True
+PLAYER_UI_SELFTEST PASS 跨帧短按Q被轮询到(旋转非零): 0.01128rad polled=True
+PLAYER_UI_SELFTEST CAMERADIAG frame-span Right(2帧) move=0.57m polledDuringPress=True
+PLAYER_UI_SELFTEST PASS 跨帧短按Right被轮询到(平移非零): 0.57m polled=True
+PLAYER_UI_SELFTEST CAMERADIAG short Q(60ms) rotation=0.04809rad polled=True
+PLAYER_UI_SELFTEST PASS 人级短按Q(60ms)旋转可见(期望约0.06rad): 0.04809
+PLAYER_UI_SELFTEST PASS 长按Q(0.3s)旋转显著
+PLAYER_UI_SELFTEST PASS 长按Right(0.3s)平移显著
+PLAYER_UI_SELFTEST CAMERADIAG wheel-up x1 originΔ=5.506m
+PLAYER_UI_SELFTEST PASS 滚轮上滚拉近可见: 5.506m
+PLAYER_UI_SELFTEST CAMERADIAG MagnifyGesture factor=1.25 originΔ=8.075m basisΔ=0rad
+PLAYER_UI_SELFTEST CAMERADIAG PanGesture delta=(240,0) originΔ=31.01m basisΔ=0rad
+PLAYER_UI_SELFTEST PASS MagnifyGesture 捏合缩放驱动相机: Δ=12.11m
+PLAYER_UI_SELFTEST PASS PanGesture 双指平移驱动相机: Δ=9.69m
+PLAYER_UI_SELFTEST PASS 右键拖动平移可见: 0.5477m
+PLAYER_UI_SELFTEST CAMERADIAG 右键拖动=0.5477m HUD面板释放后无键移动Δ=0m → 无残留
+PLAYER_UI_SELFTEST CAMERADIAG end
+PLAYER_UI_SELFTEST DEV begin
+PLAYER_UI_SELFTEST PASS 补维修耗材与读取旧档按钮建立
+PLAYER_UI_SELFTEST PASS 发展标题显示提供者：发展 · 自动筹备
+PLAYER_UI_SELFTEST PASS 发展核心行显示目标/当前动作/下一步/净缺口（权威原文）
+PLAYER_UI_SELFTEST PASS 供给/在途/在制按权威有值显示在核心行
+PLAYER_UI_SELFTEST PASS 已备长明细不挤占核心首屏
+PLAYER_UI_SELFTEST PASS 方向详情默认折叠不挤占首屏
+PLAYER_UI_SELFTEST PASS 方向详情可展开查看
+PLAYER_UI_SELFTEST PASS 两方向逐字段显示权威 Name/Cost/Need/Consequence/Feasible/Reason
+PLAYER_UI_SELFTEST PASS 发展详情展开后可见已备/矿点权威原文
+PLAYER_UI_SELFTEST PASS 方向详情可再次折叠
+PLAYER_UI_SELFTEST PASS 经营按钮按 dev.Enabled 可见，旧档读取在世界就绪时可用
+PLAYER_UI_SELFTEST PASS 建设确认按钮短文案表达缺料前置授权：建设·含前置授权
+PLAYER_UI_SELFTEST PASS 建设模式找到合法预览点：可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+PLAYER_GUI_CLICK double=False entry=False gate=0
+PLAYER_UI_SELFTEST PASS 已选位置说明一次授权采集/运输/加工/该建设：已选位置 (-20.5, -0.5) · 可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+成本 铁料3、铜料2、结构件3、线缆2、组件套件1 · 朝向 0° · 确认即一次授权：缺料时自动采集/运输/加工并完成该建设，无需逐配方手点
+PLAYER_UI_SELFTEST PASS 补维修耗材按钮在视口内不裁切: (308, 742), (68, 31)
+PLAYER_UI_SELFTEST PASS 读取旧档按钮在视口内不裁切: (386, 742), (56, 31)
+PLAYER_UI_SELFTEST PASS 发展面板在视口内起始
+PLAYER_UI_SELFTEST PASS 第四行命令栏整体不与操作提示重叠: barTop=617 hintsBottom=610
+PLAYER_UI_SELFTEST PASS 设施列表默认折叠不挤占首屏
+PLAYER_UI_SELFTEST PASS 设施列表展开显示真实状态：着陆器 · 已建成
+PLAYER_UI_SELFTEST PASS 设施列表可再次折叠
+PLAYER_COMMAND_REJECTED 请先建设维修站
+PLAYER_UI_SELFTEST PASS restock 请求被权威接受且双击只提交一次：已取消；地形、现场物料与在途货物保留
+操作未执行：请先建设维修站
+PLAYER_SAVE_OK version=0 stage= time=10.783333333333449
+MAIN_GROUND_SYNC authority=0 bound=0 verified=0 assigned_frame=836 query_frame=837 rays=4225
+PLAYER_LOAD_READY version=0 stage= paused=False time=10.783333333333449
+PLAYER_UI_SELFTEST PASS 读取后世界就绪
+PLAYER_UI_SELFTEST PASS 读取后发展面板仍显示提供者：发展 · 自动筹备
+PLAYER_UI_SELFTEST PASS 读取后补维修耗材按钮仍可用
+PLAYER_UI_SELFTEST PASS 读取后旧档按钮仍可用
+PLAYER_UI_SELFTEST DEV end
+PLAYER_UI_SELFTEST PASS 1920x1080 确认按钮定宽（整平/建设文字切换不位移）: 176
+PLAYER_UI_SELFTEST PASS 1920x1080 暂停/保存退出等关键控制完整可见不裁切
+PLAYER_UI_SELFTEST PASS 1920x1080 库存/功率行在首屏可视区且含权威功率: 库存 铁料 17（可用17） · 铜料 5（可用5） · 结构件 21（可用21） · 线缆 20（可用20） · 组件套件 8（可用8） · 日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST PASS 1920x1080 当前动作与保障行在首屏可视区
+PLAYER_UI_SELFTEST PASS 1920x1080 发展核心行（下一步/净缺口）在首屏可视区: bottom=417/460
+PLAYER_UI_SELFTEST PASS 1920x1080 命令栏不与操作提示重叠: barTop=897 hintsBottom=890
+PLAYER_UI_SELFTEST PASS 1280x800 确认按钮定宽（整平/建设文字切换不位移）: 176
+PLAYER_UI_SELFTEST PASS 1280x800 暂停/保存退出等关键控制完整可见不裁切
+PLAYER_UI_SELFTEST PASS 1280x800 库存/功率行在首屏可视区且含权威功率: 库存 铁料 17（可用17） · 铜料 5（可用5） · 结构件 21（可用21） · 线缆 20（可用20） · 组件套件 8（可用8） · 日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST PASS 1280x800 当前动作与保障行在首屏可视区
+PLAYER_UI_SELFTEST PASS 1280x800 发展核心行（下一步/净缺口）在首屏可视区: bottom=417/460
+PLAYER_UI_SELFTEST PASS 1280x800 命令栏不与操作提示重叠: barTop=617 hintsBottom=610
+PLAYER_UI_SELFTEST summary checks=127 failures=0
+PLAYER_UI_SELFTEST result PASS 入口遮罩在 EntryOpen 时可见
+PLAYER_UI_SELFTEST result PASS 入口期间运行中 HUD 隐藏（保存/暂停/建造不可点）
+PLAYER_UI_SELFTEST result PASS 入口按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST result PASS 入口自动聚焦开始新游戏（回车即可开始）
+PLAYER_UI_SELFTEST result PASS 世界就绪后开始新游戏可用
+PLAYER_UI_SELFTEST result PASS 无存档时继续存档禁用
+PLAYER_UI_SELFTEST result PASS 入口期间点击世界无穿透、无选择
+PLAYER_UI_SELFTEST result PASS 入口期间键盘不透传镜头
+PLAYER_UI_SELFTEST result PASS 入口期间暂停命令被权威拒绝
+PLAYER_UI_SELFTEST result PASS 入口期间保存被权威拒绝（不盖旧档）
+PLAYER_UI_SELFTEST result PASS 1920x1080 入口遮罩与三按钮完整可见不越界
+PLAYER_UI_SELFTEST result PASS 存档存在时继续存档启用
+PLAYER_UI_SELFTEST result PASS 坏档后仍留在入口（EntryOpen 保持）
+PLAYER_UI_SELFTEST result PASS 坏档后入口遮罩仍显示
+PLAYER_UI_SELFTEST result PASS 坏档后当前世界完好
+PLAYER_UI_SELFTEST result PASS 开始新游戏持有键盘焦点
+PLAYER_UI_SELFTEST result PASS 双提交后入口只离开一次且不再回来
+PLAYER_UI_SELFTEST result PASS 开始新游戏不泄漏世界任务
+PLAYER_UI_SELFTEST result PASS 新游戏权威提示先建保障：先建太阳能、充电、维修和加工，再选择发展方向
+PLAYER_UI_SELFTEST result PASS 开始后运行中 HUD 恢复显示
+PLAYER_UI_SELFTEST result PASS 入口关闭短窗内第二击不选中世界：左键点选机器人或地面；右键取消选择
+PLAYER_UI_SELFTEST result PASS 平台双击第二击在短门禁过期后仍不选世界
+PLAYER_UI_SELFTEST result PASS HUD 建立确认按钮
+PLAYER_UI_SELFTEST result PASS HUD 建立选择标签
+PLAYER_UI_SELFTEST result PASS 普通场景 12 台机器人
+PLAYER_UI_SELFTEST result PASS 找到合法预览点：可整平 · 半径 2m，目标高度 0m
+PLAYER_UI_SELFTEST result PASS 设施重叠预览非法
+PLAYER_UI_SELFTEST result PASS 场外预览非法
+PLAYER_UI_SELFTEST result PASS 望山不能当筑垒执行
+PLAYER_UI_SELFTEST result PASS 地面点选后显示已选位置：已选位置 (-20.3, -16.3) · 可整平 · 半径 2m，目标高度 0m
+自动分配筑垒
+PLAYER_UI_SELFTEST result PASS 点击 HUD 面板不穿透（选择保持）
+PLAYER_UI_SELFTEST result PASS 空点清除选择且不下命令
+PLAYER_UI_SELFTEST result PASS 空点后仍无任务
+PLAYER_UI_SELFTEST result PASS 机器人点选生效：已选 望山 1 · 本批仅筑垒执行整平
+PLAYER_UI_SELFTEST result PASS 确认后任务活动
+PLAYER_UI_SELFTEST result PASS 双击只产生一个任务（level-1）：level-1
+PLAYER_UI_SELFTEST result PASS 任务行不泄露内部任务 ID：前往现场 · 执行者 筑垒 2
+PLAYER_UI_SELFTEST result PASS 0 进度阶段不显示百分比冒充总进度：前往现场 · 执行者 筑垒 2
+PLAYER_UI_SELFTEST result PASS 任务行显示中文阶段与执行者：前往现场 · 执行者 筑垒 2
+PLAYER_UI_SELFTEST result PASS 执行者是筑垒：Robot_Zhulei_2
+PLAYER_UI_SELFTEST result PASS 阶段文本：前往现场
+PLAYER_UI_SELFTEST result PASS 取消后无活动任务
+PLAYER_UI_SELFTEST result PASS 暂停后按钮显示继续
+PLAYER_UI_SELFTEST result PASS 暂停时模拟时间不推进
+PLAYER_UI_SELFTEST result PASS 暂停期间镜头按钮旋转可用
+PLAYER_UI_SELFTEST result PASS 暂停期间 WASD 平移可用
+PLAYER_UI_SELFTEST result PASS 滚轮缩放可用
+PLAYER_UI_SELFTEST result PASS 连续拖动只累计实际总位移
+PLAYER_UI_SELFTEST result PASS 暂停期间镜头旋转可用
+PLAYER_UI_SELFTEST result PASS Esc 清除预览而不重建旧选区
+PLAYER_UI_SELFTEST result PASS 未知操作被拒：未知操作，未执行
+PLAYER_UI_SELFTEST result PASS 保存成功可见
+PLAYER_UI_SELFTEST result PASS 读取后世界就绪
+PLAYER_UI_SELFTEST result PASS 读取完成后 UI 仍可用
+PLAYER_UI_SELFTEST result PASS 整平模式按钮建立
+PLAYER_UI_SELFTEST result PASS 五种建设模式按钮建立（来自真实蓝图）
+PLAYER_UI_SELFTEST result PASS 库存与电力显示真实着陆器数据：库存 铁料 17（可用17） · 铜料 5（可用5） · 结构件 21（可用21） · 线缆 20（可用20） · 组件套件 8（可用8）
+日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST result PASS 未选机时显示全体保障汇总：保障 可用12
+PLAYER_UI_SELFTEST result PASS 选机后显示该机单机保障：电量 100/100 · 耐久 100/100 · 载货 0 可用
+PLAYER_UI_SELFTEST result PASS 铺电缆与重试入口建立
+PLAYER_UI_SELFTEST result PASS 90度朝向控件生效：朝向 90°
+PLAYER_UI_SELFTEST result PASS 朝向 270° 回绕到 0°：朝向 0°
+PLAYER_UI_SELFTEST result PASS 建设模式找到合法预览点：可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+PLAYER_UI_SELFTEST result PASS 建设模式点选地面显示已选位置
+PLAYER_UI_SELFTEST result PASS 已选位置显示材料成本：已选位置 (-20.4, -16.2) · 可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+成本 铁料3、铜料2、结构件3、线缆2、组件套件1 · 朝向 0° · 确认即一次授权：缺料时自动采集/运输/加工并完成该建设，无需逐配方手点
+PLAYER_UI_SELFTEST result PASS 确认建设产生真实建设任务：build-1 · 准备建设
+PLAYER_UI_SELFTEST result PASS 九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）
+PLAYER_UI_SELFTEST result PASS 镜头按钮保留键盘焦点可访问
+PLAYER_UI_SELFTEST result PASS 镜头行与全部按钮在视口内不裁切
+PLAYER_UI_SELFTEST result PASS 『前』按钮沿当前朝向明显平移: 13.76m
+PLAYER_UI_SELFTEST result PASS 『右转』单次15度: 0.2618rad
+PLAYER_UI_SELFTEST result PASS 旋转后『前』沿新朝向平移
+PLAYER_UI_SELFTEST result PASS 连点三次『右转』45度不受工程冷却: 0.7854rad
+PLAYER_UI_SELFTEST result PASS 连续拉近到下限后不再变化
+PLAYER_UI_SELFTEST result PASS 连续拉远到上限后不再变化
+PLAYER_UI_SELFTEST result PASS 平移到前限后不再变化
+PLAYER_UI_SELFTEST result PASS 平移到后限后不再变化
+PLAYER_UI_SELFTEST result PASS 复位恢复初始焦点/距离/朝向
+PLAYER_UI_SELFTEST result PASS 保存成功（冷却未被镜头按钮占用）
+PLAYER_UI_SELFTEST result PASS 镜头操作不下达任务
+PLAYER_UI_SELFTEST result PASS 跨帧短按Q被轮询到(旋转非零): 0.01128rad polled=True
+PLAYER_UI_SELFTEST result PASS 跨帧短按Right被轮询到(平移非零): 0.57m polled=True
+PLAYER_UI_SELFTEST result PASS 人级短按Q(60ms)旋转可见(期望约0.06rad): 0.04809
+PLAYER_UI_SELFTEST result PASS 长按Q(0.3s)旋转显著
+PLAYER_UI_SELFTEST result PASS 长按Right(0.3s)平移显著
+PLAYER_UI_SELFTEST result PASS 滚轮上滚拉近可见: 5.506m
+PLAYER_UI_SELFTEST result PASS MagnifyGesture 捏合缩放驱动相机: Δ=12.11m
+PLAYER_UI_SELFTEST result PASS PanGesture 双指平移驱动相机: Δ=9.69m
+PLAYER_UI_SELFTEST result PASS 右键拖动平移可见: 0.5477m
+PLAYER_UI_SELFTEST result PASS 补维修耗材与读取旧档按钮建立
+PLAYER_UI_SELFTEST result PASS 发展标题显示提供者：发展 · 自动筹备
+PLAYER_UI_SELFTEST result PASS 发展核心行显示目标/当前动作/下一步/净缺口（权威原文）
+PLAYER_UI_SELFTEST result PASS 供给/在途/在制按权威有值显示在核心行
+PLAYER_UI_SELFTEST result PASS 已备长明细不挤占核心首屏
+PLAYER_UI_SELFTEST result PASS 方向详情默认折叠不挤占首屏
+PLAYER_UI_SELFTEST result PASS 方向详情可展开查看
+PLAYER_UI_SELFTEST result PASS 两方向逐字段显示权威 Name/Cost/Need/Consequence/Feasible/Reason
+PLAYER_UI_SELFTEST result PASS 发展详情展开后可见已备/矿点权威原文
+PLAYER_UI_SELFTEST result PASS 方向详情可再次折叠
+PLAYER_UI_SELFTEST result PASS 经营按钮按 dev.Enabled 可见，旧档读取在世界就绪时可用
+PLAYER_UI_SELFTEST result PASS 建设确认按钮短文案表达缺料前置授权：建设·含前置授权
+PLAYER_UI_SELFTEST result PASS 建设模式找到合法预览点：可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+PLAYER_UI_SELFTEST result PASS 已选位置说明一次授权采集/运输/加工/该建设：已选位置 (-20.5, -0.5) · 可建设 · 充电桩 · 铁料3、铜料2、结构件3、线缆2、组件套件1
+成本 铁料3、铜料2、结构件3、线缆2、组件套件1 · 朝向 0° · 确认即一次授权：缺料时自动采集/运输/加工并完成该建设，无需逐配方手点
+PLAYER_UI_SELFTEST result PASS 补维修耗材按钮在视口内不裁切: (308, 742), (68, 31)
+PLAYER_UI_SELFTEST result PASS 读取旧档按钮在视口内不裁切: (386, 742), (56, 31)
+PLAYER_UI_SELFTEST result PASS 发展面板在视口内起始
+PLAYER_UI_SELFTEST result PASS 第四行命令栏整体不与操作提示重叠: barTop=617 hintsBottom=610
+PLAYER_UI_SELFTEST result PASS 设施列表默认折叠不挤占首屏
+PLAYER_UI_SELFTEST result PASS 设施列表展开显示真实状态：着陆器 · 已建成
+PLAYER_UI_SELFTEST result PASS 设施列表可再次折叠
+PLAYER_UI_SELFTEST result PASS restock 请求被权威接受且双击只提交一次：已取消；地形、现场物料与在途货物保留
+操作未执行：请先建设维修站
+PLAYER_UI_SELFTEST result PASS 读取后世界就绪
+PLAYER_UI_SELFTEST result PASS 读取后发展面板仍显示提供者：发展 · 自动筹备
+PLAYER_UI_SELFTEST result PASS 读取后补维修耗材按钮仍可用
+PLAYER_UI_SELFTEST result PASS 读取后旧档按钮仍可用
+PLAYER_UI_SELFTEST result PASS 1920x1080 确认按钮定宽（整平/建设文字切换不位移）: 176
+PLAYER_UI_SELFTEST result PASS 1920x1080 暂停/保存退出等关键控制完整可见不裁切
+PLAYER_UI_SELFTEST result PASS 1920x1080 库存/功率行在首屏可视区且含权威功率: 库存 铁料 17（可用17） · 铜料 5（可用5） · 结构件 21（可用21） · 线缆 20（可用20） · 组件套件 8（可用8） · 日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST result PASS 1920x1080 当前动作与保障行在首屏可视区
+PLAYER_UI_SELFTEST result PASS 1920x1080 发展核心行（下一步/净缺口）在首屏可视区: bottom=417/460
+PLAYER_UI_SELFTEST result PASS 1920x1080 命令栏不与操作提示重叠: barTop=897 hintsBottom=890
+PLAYER_UI_SELFTEST result PASS 1280x800 确认按钮定宽（整平/建设文字切换不位移）: 176
+PLAYER_UI_SELFTEST result PASS 1280x800 暂停/保存退出等关键控制完整可见不裁切
+PLAYER_UI_SELFTEST result PASS 1280x800 库存/功率行在首屏可视区且含权威功率: 库存 铁料 17（可用17） · 铜料 5（可用5） · 结构件 21（可用21） · 线缆 20（可用20） · 组件套件 8（可用8） · 日照 · 发电 0 /s · 电缆连接 ≤12m，每段4线缆
+PLAYER_UI_SELFTEST result PASS 1280x800 当前动作与保障行在首屏可视区
+PLAYER_UI_SELFTEST result PASS 1280x800 发展核心行（下一步/净缺口）在首屏可视区: bottom=417/460
+PLAYER_UI_SELFTEST result PASS 1280x800 命令栏不与操作提示重叠: barTop=617 hintsBottom=610
+PLAYER_UI_SELFTEST SAVEQUIT begin
+PLAYER_SAVE_OK version=0 stage= time=11.450000000000149
+PLAYER_UI_SELFTEST SAVEQUIT saved; 等待 Main 退出进程

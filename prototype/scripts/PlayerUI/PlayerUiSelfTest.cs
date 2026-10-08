@@ -398,7 +398,12 @@ public partial class PlayerUiSelfTest : SceneTree
         await Frames(3);
         Check(!selection.Text.Contains("已选位置") && _world.ReadPlayerState().Job == null,
             "入口关闭短窗内第二击不选中世界：" + selection.Text);
-        await RealSeconds(0.4); // 等门禁过期，后续世界交互恢复正常
+        await RealSeconds(0.5);
+        Root.PushInput(new InputEventMouseButton { ButtonIndex = MouseButton.Left, Pressed = true, DoubleClick = true, Position = newGameCenter });
+        Root.PushInput(new InputEventMouseButton { ButtonIndex = MouseButton.Left, Pressed = false, Position = newGameCenter });
+        await Frames(3);
+        Check(!selection.Text.Contains("已选位置") && !selection.Text.Contains("已选机器人") && _world.ReadPlayerState().Job == null,
+            "平台双击第二击在短门禁过期后仍不选世界");
         GD.Print("PLAYER_UI_SELFTEST ENTRY end");
     }
 

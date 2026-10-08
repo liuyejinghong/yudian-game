@@ -487,3 +487,7 @@ r4后段GUI辅助：同r3真实cargo隔离副本载入成功暂停，HUD真实�
 最后UI交付00d7ddb整合3f99e3b：headless126项PASS/exit0，现货明细与矿点进原发展详情折叠、首屏功率/保障/下一步/缺口、跨帧第2击防透传。主控简化门禁由前一帧遮罩Visible派生，沿既有CommandCooldownS，关闭帧不减之前的dt；无重复前态字段。集成首轮自测因入口Notice变短，旧“点中心”点到开始按钮，保留失败；改点面板外且加强EntryOpen断言后integrated-r2 126项全PASS/真实SaveQuit exit0，编译0警告0错误。Main新GUI_SIZE与实际建设阶段/原因会进入新的r5固定候选；后续任何UI验收修正由主控负责，不再派第四follow-up。r4两GUI进程均正常退出0，实际尺寸均1920，保留而不代签1280。
 
 2026-10-08 r5候选8原生PASS，尚未GUI；独立reviewer发现暂停取消后retry仍保旧Reason，真实clearance源码红复现。仅RetryBaseBuild更新当前阶段原因、HUD等同提示去重；新增第9暂停重试反例确认账容器不变。旧测试GroundRequire被FailGround捕获重复，红进程手停130留存；DemoCheck失败先Quit1。显式SDK环境source9/集成UI126均exit0通过，build0警告0错误；另导新r6，不覆盖r5。
+
+r6九原生PASS/exit0；实际1920双击开始仍第2击选地，无任务。r4/r6同一步两次实窗失败，暂停重复冷却方案，architect重新审原生DoubleClick事件路线；下一候选另导r7，不覆盖r6。旧短窗测试不覆盖超过.35秒的平台双击，补相应反例后再实窗。
+
+architect重计划后，直接沿原生DoubleClick标志，第二press清_leftTracking，release不再选世界。源码实际Metal记录double=True/entry=False/gate=0；双击不选地，普通单击仍选地，正常close0。延迟超过门禁的新反例与其余UI共127检查PASS/SaveQuit0；build0警告错误。仅两UI文件窄修及test-only事件日志，另导r7，生产/持久化不改。
