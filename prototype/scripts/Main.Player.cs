@@ -9,7 +9,8 @@ public partial class Main
 {
     private bool _playerMode, _userPaused, _projectionPaused, _entryOpen;
     private double _playerTime;
-    private sealed record PlayerCommand(string Action, Vector3 Center, long Version, string? Worker, float Yaw = 0);
+    private sealed record PlayerCommand(string Action, Vector3 Center, long Version, string? Worker, float Yaw = 0,
+        string? Source = null, int Slot = 0, bool Confirmed = false, double UiScale = 1, double CameraSpeed = 1);
     private PlayerCommand? _playerCommand;
     private string _playerNotice = "选择筑垒或地面，预览后下达整平";
     public PlayerReadModel ReadPlayerState() => new(
@@ -70,7 +71,7 @@ public partial class Main
     private void QueuePlayer(PlayerCommand command)
     {
         if (!_playerMode) return;
-        if (_entryOpen && command.Action is not ("newgame" or "load" or "recover")) { _playerNotice = "请先选择开始新游戏或继续存档"; return; }
+        if (_entryOpen && command.Action is not ("newgame" or "load" or "recover" or "settings") && !command.Action.StartsWith("lifecycle:", StringComparison.Ordinal)) { _playerNotice = "请先选择开始新游戏或继续存档"; return; }
         if (_playerCommand != null) { _playerNotice = "操作正在处理，请稍候"; return; }
         _playerCommand = command;
     }
@@ -80,11 +81,19 @@ public partial class Main
         _playerCommand = null;
         try
         {
-            if (command.Action == "newgame")
+            if (command.Action.StartsWith("lifecycle:", StringComparison.Ordinal)) ProcessLifecycle(command);
+            else if (command.Action.StartsWith("tutorial:", StringComparison.Ordinal)) ProcessTutorialAction(command);
+            else if (command.Action == "settings") ProcessSettings(command);
+            else if (command.Action == "connection") ProcessExplicitConnection(command);
+            else if (command.Action == "newgame")
             {
-                if (!_entryOpen) { _playerNotice = "新游戏只在启动入口选择"; return; }
-                if (!ReadPlayerState().Ready) { _playerNotice = "等待世界准备完成"; return; }
-                _entryOpen = false; PauseGround(false); _playerNotice = "先建太阳能、充电、维修和加工，再选择发展方向";
+                if (TutorialEnabled) ProcessLifecycle(command with { Action = "lifecycle:newgame" });
+                else
+                {
+                    if (!_entryOpen) { _playerNotice = "新游戏只在启动入口选择"; return; }
+                    if (!ReadPlayerState().Ready) { _playerNotice = "等待世界准备完成"; return; }
+                    _entryOpen = false; PauseGround(false); _playerNotice = "先建太阳能、充电、维修和加工，再选择发展方向";
+                }
             }
             else if (command.Action == "pause") { _userPaused = !_userPaused; PauseGround(_projectionPaused); _playerNotice = _userPaused ? "模拟已暂停，镜头和界面仍可操作" : "模拟继续"; }
             else if (command.Action == "recover") { RecoverGround(); _playerNotice = "正在重新验证物理投影"; }
@@ -92,6 +101,7 @@ public partial class Main
             else if(command.Action=="legacy")LoadPlayer(true);
             else if (command.Action == "save") SavePlayer();
             else if (command.Action == "savequit") { if (SavePlayer()) GetTree().Quit(); }
+            else if (_menuPaused && command.Action is not ("save" or "load" or "recover" or "pause")) _playerNotice = "菜单打开期间不接受世界工程；请返回局内";
             else if (!ReadPlayerState().Ready) _playerNotice = "等待世界恢复后再操作";
             else if (command.Action == "connect" && BootstrapEnabled) ConnectNextFacility();
             else if(command.Action=="restock"&&DevelopmentEnabled)StartRestock();
@@ -101,7 +111,7 @@ public partial class Main
             {
                 string type = command.Action[6..]; var preview = PreviewBuild(type,command.Center,command.Yaw);
                 if (!preview.Legal) _playerNotice=preview.Reason;
-                else if(command.Version != _liveTerrain!.Current.Version) _playerNotice="世界已变化，请重预览";
+                else if(command.Version != _intentVersion) _playerNotice="世界或材料已变化，请重预览";
                 else if(DevelopmentEnabled)StartDevelopment(type,preview.Center,command.Yaw);
                 else StartBaseBuild(type,preview.Center,command.Yaw);
             }
@@ -114,8 +124,13 @@ public partial class Main
                 else { StartLevelJob(command.Center.X, command.Center.Z, command.Worker); _playerNotice = _levelJob?.Message ?? _levelNotice; }
             }
         }
-        catch (Exception ex) { _playerNotice = command.Action == "load" ? "读取失败：存档损坏、不支持或无法访问；当前世界与原档保留"
-                : command.Action is "save" or "savequit" ? "保存失败；此前存档保留，请检查可用空间与访问权限" : "操作未执行：" + ex.Message; GD.Print("PLAYER_COMMAND_REJECTED " + ex.Message); }
+        catch (Exception ex)
+        {
+            _playerNotice = command.Action is "load" or "lifecycle:load" ? "读取失败：存档损坏、不支持或无法访问；当前世界、菜单与原档保留"
+                : command.Action is "save" or "savequit" or "lifecycle:save" or "lifecycle:leave-save" ? "保存失败；当前世界、菜单与此前存档保留，请检查可用空间与访问权限"
+                : command.Action == "settings" ? "设置保存失败；旧设置与当前世界保留" : "操作未执行：" + ex.Message;
+            GD.Print("PLAYER_COMMAND_REJECTED " + ex.Message);
+        }
     }
 
     private (GroundPatrol? Worker, Vector3 Station) FindLevelWorker(TerrainPatch patch, Vector3 center, string? workerId)

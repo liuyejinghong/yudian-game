@@ -67,7 +67,7 @@ public partial class Main : Node3D
     private string _fixtureHash = "";
     private string _runId = "";
     private double _animTime;
-    private bool _captured;
+    private bool _captured, _windowTelemetrySettled;
     private string? _guiCaptureKey;
     private string? _guiCapturePending;
 
@@ -104,6 +104,8 @@ public partial class Main : Node3D
             BuildCamera();
             if (_playerMode)
             {
+                InitializePlayerLifecycle();
+                GetTree().AutoAcceptQuit = false;
                 var controller = new Yudian.PlayerUI.PlayerController { Name = "PlayerController" }; AddChild(controller); controller.Initialize(this, _camera);
             }
             if (_benchmark) StartBenchmark();
@@ -115,6 +117,11 @@ public partial class Main : Node3D
 
     public override void _Process(double delta)
     {
+        if (!_windowTelemetrySettled && _playerMode && Engine.GetProcessFrames() > 10 && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
+        {
+            _windowTelemetrySettled = true; var window = GetWindow(); var viewport = GetViewport();
+            GD.Print($"PLAYER_WINDOW_SETTLED size={window.Size} position={window.Position} visible={viewport.GetVisibleRect().Size} final_scale={viewport.GetFinalTransform().Scale} screen_scale={DisplayServer.ScreenGetScale(window.CurrentScreen)} dpi={DisplayServer.ScreenGetDpi(window.CurrentScreen)} usable={DisplayServer.ScreenGetUsableRect(window.CurrentScreen)} content_mode={window.ContentScaleMode} content_size={window.ContentScaleSize} content_factor={window.ContentScaleFactor} mode={window.Mode}");
+        }
         var capture = System.Environment.GetEnvironmentVariable("YUDIAN_CAPTURE_PNG");
         if (!_captured && capture != null && Engine.GetProcessFrames() > 120)
         {
@@ -127,7 +134,7 @@ public partial class Main : Node3D
         {
             string id = BootstrapEnabled && _buildJob != null ? _buildJob.Id : _levelJob?.Id ?? "none";
             string stage = BootstrapEnabled && _buildJob != null ? _buildJob.Stage : _levelJob?.Stage.ToString() ?? "Idle";
-            string key = $"{_liveTerrain!.Current.Version}-{id}-{stage}-{_userPaused}-{ReadPlayerState().Ready}-{_entryOpen}-{_playerNotice.GetHashCode():x8}";
+            string key = $"{_liveTerrain!.Current.Version}-{id}-{stage}-{_userPaused}-{ReadPlayerState().Ready}-{_entryOpen}-{_lifecyclePage}-{_menuPaused}-{_playerSettings.Revision}-{ReadTutorial().StageId}-{_playerNotice.GetHashCode():x8}";
             if (key != _guiCaptureKey)
             {
                 if (_guiCapturePending == key)
@@ -140,7 +147,7 @@ public partial class Main : Node3D
                 _guiCapturePending = key;
             }
         }
-        float dt = _playerMode && (_entryOpen || _userPaused || _loadPending != null) ? 0 : (float)delta;
+        float dt = _playerMode && (_entryOpen || _menuPaused || _userPaused || _loadPending != null) ? 0 : (float)delta;
         _animTime += dt;
 
         foreach (var s in _spinners)
@@ -219,12 +226,21 @@ public partial class Main : Node3D
                 "1280x800" => new Vector2I(1280, 800), "1920x1200" => new Vector2I(1920, 1200),
                 null or "" => size, _ => throw new InvalidOperationException("GUI test size must be 1280x800 or 1920x1200"),
             };
+        float playerDisplayScale = _playerMode && DisplayServer.GetName() != "headless" && OperatingSystem.IsMacOS()
+            ? DisplayServer.ScreenGetScale(GetWindow().CurrentScreen) : 1f;
+        if (!float.IsFinite(playerDisplayScale) || playerDisplayScale < 1) playerDisplayScale = 1;
         if (_playerMode && DisplayServer.GetName() != "headless")
         {
-            var available = DisplayServer.ScreenGetUsableRect().Size - new Vector2I(60, 100);
+            size = new Vector2I(Mathf.RoundToInt(size.X * playerDisplayScale), Mathf.RoundToInt(size.Y * playerDisplayScale));
+            var margin = new Vector2I(Mathf.RoundToInt(60 * playerDisplayScale), Mathf.RoundToInt(100 * playerDisplayScale));
+            var available = DisplayServer.ScreenGetUsableRect(GetWindow().CurrentScreen).Size - margin;
             size = new Vector2I(Math.Min(size.X, available.X), Math.Min(size.Y, available.Y));
+            GetWindow().ContentScaleMode = Window.ContentScaleModeEnum.CanvasItems;
+            GetWindow().ContentScaleSize = Vector2I.Zero;
+            GetWindow().ContentScaleFactor = playerDisplayScale;
         }
         GetWindow().Size = size;
+        if (_playerMode && DisplayServer.GetName() != "headless") GetWindow().MoveToCenter();
         var vp = GetViewport();
         vp.Msaa3D = _cfg.Quality.Msaa3d switch
         {
@@ -235,6 +251,11 @@ public partial class Main : Node3D
         };
         vp.ScreenSpaceAA = _cfg.Quality.Fxaa ? Viewport.ScreenSpaceAAEnum.Fxaa : Viewport.ScreenSpaceAAEnum.Disabled;
         vp.Scaling3DScale = _cfg.Quality.Scaling3dScale;
+        if (_playerMode && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
+        {
+            var window = GetWindow();
+            GD.Print($"PLAYER_WINDOW_TELEMETRY size={window.Size} visible={vp.GetVisibleRect().Size} final_scale={vp.GetFinalTransform().Scale} screen_scale={DisplayServer.ScreenGetScale()} dpi={DisplayServer.ScreenGetDpi()} usable={DisplayServer.ScreenGetUsableRect()} content_mode={window.ContentScaleMode} content_size={window.ContentScaleSize} content_factor={window.ContentScaleFactor} mode={window.Mode}");
+        }
     }
 
     private void BuildLightAndEnvironment()
@@ -556,6 +577,13 @@ public partial class Main : Node3D
 
     public override void _Notification(int what)
     {
+        if (what == NotificationWMCloseRequest && _playerMode)
+        {
+            // Window close crosses the same save/discard/cancel boundary as the menu.
+            if (TutorialEnabled) QueueLifecycle("quit");
+            else QueuePlayerAction("savequit");
+            return;
+        }
         if (what == NotificationWMCloseRequest && _recorder != null)
         {
             try { _recorder.Finish(Summary(), "interrupted"); }

@@ -45,10 +45,14 @@ public partial class Main
         public required RobotSave[] Robots { get; init; }
         public required JobSave? Job { get; init; }
         public BootstrapSave? Bootstrap { get; init; }
+        public TutorialProgress? Tutorial { get; init; }
     }
+    private static T CloneSaveValue<T>(T value) => JsonSerializer.Deserialize<T>(JsonSerializer.Serialize(value, SaveOptions), SaveOptions)!;
+    private static PlayerSave ClonePlayer(PlayerSave value) => CloneSaveValue(value);
     private static readonly JsonSerializerOptions SaveOptions = new() { UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow };
-    private string PlayerSavePath => (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_DEVELOPMENT_SELF_TEST") == "1")
-        ? System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_TEST_SAVE") ?? "/private/tmp/yudian-player-test.json"
+    private string PlayerSavePath => TutorialEnabled ? TutorialSlotPath(_activeSlot) : LegacyAuthorityTest || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1"
+        ? System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_TEST_SAVE") is { Length: > 0 } test && Path.IsPathFullyQualified(test)
+            ? test : throw new InvalidOperationException("工程测试必须提供绝对 TEST_SAVE 路径")
         : ProjectSettings.GlobalizePath(DevelopmentEnabled ? "user://saves/d12-player-v3.json" : BootstrapEnabled ? "user://saves/d11-player-v2.json" : "user://saves/d1-player-v1.json");
     private PlayerSave? _loadPending, _loadRollback;
     private bool _loadRecovered;
@@ -65,7 +69,9 @@ public partial class Main
         if (BootstrapEnabled) SettleBaseMovement();
         return new()
         {
-        Schema = DevelopmentEnabled ? 3 : BootstrapEnabled ? 2 : 1, Bootstrap = BootstrapEnabled ? CaptureBootstrap() : null, FixtureHash = _fixtureHash, Terrain = TerrainDataCodec.Serialize(_liveTerrain!.Current),
+        Schema = TutorialEnabled ? 4 : DevelopmentEnabled ? 3 : BootstrapEnabled ? 2 : 1,
+        Tutorial = TutorialEnabled ? CaptureTutorial() : null,
+        Bootstrap = BootstrapEnabled ? CaptureBootstrap() : null, FixtureHash = _fixtureHash, Terrain = TerrainDataCodec.Serialize(_liveTerrain!.Current),
         Time = _playerTime, Paused = _userPaused, Permission = _liveTerrain.PermissionGranted, Cancelled = _liveTerrain.CancellationRequested, Sequence = _levelSequence,
         Robots = _groundRobots.Select(x => new RobotSave { Id = x.Name.ToString(), Position = SavedVector(x.GlobalPosition), Velocity = SavedVector(x.Velocity), Yaw = x.Rotation.Y }).ToArray(),
         Job = _levelJob is not {} j ? null : new JobSave
@@ -76,14 +82,15 @@ public partial class Main
         }
         };
     }
-    private bool SavePlayer()
+    private bool SavePlayer() => SavePlayerTo(PlayerSavePath);
+    private bool SavePlayerTo(string path)
     {
         if (_entryOpen) { _playerNotice = "请先选择新游戏或继续存档再保存"; return false; }
-        if (!_groundReady || _loadPending != null) { _playerNotice = "等待世界恢复后保存"; return false; }
+        if (!_groundReady || _groundFault || _loadPending != null) { _playerNotice = "等待世界恢复后保存"; return false; }
         if (_groundRobots.Any(x => !x.IsOnFloor())) { _playerNotice = "等待机器人贴地后保存"; return false; }
         var snapshot = CapturePlayer(); ValidatePlayerSave(snapshot);
         string text = JsonSerializer.Serialize(snapshot, SaveOptions);
-        string path = PlayerSavePath; Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+        Directory.CreateDirectory(Path.GetDirectoryName(path)!);
         string temporary = path + "." + Guid.NewGuid().ToString("N") + ".tmp";
         try
         {
@@ -110,23 +117,52 @@ public partial class Main
         else if (element.ValueKind == JsonValueKind.Array)
             foreach (var child in element.EnumerateArray()) RejectDuplicateFields(child);
     }
-    private void LoadPlayer(bool legacy=false)
+    private void LoadPlayer(bool legacy = false)
     {
-        if (!_groundReady || _loadPending != null) { _playerNotice = "等待当前世界恢复后读取"; return; }
-        var path = legacy ? ProjectSettings.GlobalizePath("user://saves/d11-player-v2.json") : PlayerSavePath;
-        if (!File.Exists(path)) { _playerNotice = "还没有存档"; return; }
+        if (legacy) throw new InvalidOperationException("旧档只通过副本放入新槽验证读取；正式历史存档不自动访问");
+        LoadPlayerFrom(PlayerSavePath, _activeSlot);
+    }
+    private static PlayerSave ReadPlayerSaveFile(string path)
+    {
+        if (!File.Exists(path)) throw new InvalidDataException("还没有存档");
         if (new FileInfo(path).Length > 4_000_000) throw new InvalidDataException("存档过大，未读取");
         string text = File.ReadAllText(path);
         using (var document = JsonDocument.Parse(text)) RejectDuplicateFields(document.RootElement);
-        var snapshot = JsonSerializer.Deserialize<PlayerSave>(text, SaveOptions) ?? throw new InvalidDataException("空存档");
-        var terrain = ValidatePlayerSave(snapshot);
-        _loadRollback = CapturePlayer(); _loadRecovered = false;
-        ApplyPlayerLoad(snapshot, terrain);
+        return JsonSerializer.Deserialize<PlayerSave>(text, SaveOptions) ?? throw new InvalidDataException("空存档");
+    }
+    private void LoadPlayerFrom(string path, int slot)
+    {
+        if (!_groundReady || _groundFault || _loadPending != null) throw new InvalidOperationException("等待当前世界恢复后读取");
+        BeginPlayerTransition(ReadPlayerSaveFile(path), "load", slot);
+    }
+    private void BeginPlayerTransition(PlayerSave source, string kind, int slot)
+    {
+        var snapshot = ClonePlayer(source); var terrain = ValidatePlayerSave(snapshot);
+        _loadRollback = ClonePlayer(CapturePlayer()); _lifecycleRollback = TutorialEnabled ? CaptureLifecycleRollback() : null;
+        _loadRecovered = false; _transitionKind = kind; _transitionSlot = slot;
+        try { ApplyPlayerLoad(snapshot, terrain); }
+        catch
+        {
+            if (_loadPending != null && _loadRollback != null)
+            {
+                var rollback = _loadRollback; _loadRollback = null; _loadRecovered = true;
+                ApplyPlayerLoad(rollback, TerrainDataCodec.ParseSnapshot(rollback.Terrain));
+                _playerNotice = "读取应用失败，正在恢复原世界";
+                GD.Print("PLAYER_LOAD_APPLY_ROLLBACK");
+            }
+            else
+            {
+                if (_lifecycleRollback != null) RestoreLifecycleRollback(_lifecycleRollback);
+                _loadRollback = null; _lifecycleRollback = null;
+            }
+            throw;
+        }
     }
     private void ApplyPlayerLoad(PlayerSave snapshot, TerrainSnapshot terrain)
     {
+        snapshot = ClonePlayer(snapshot);
         var next = new TerrainRegionView(); AddChild(next);
-        if (_playerTestInjectLoadFault && (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_DEMO_SELF_TEST") == "1"))
+        if (_playerTestInjectLoadFault && (TutorialTest || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_DEMO_SELF_TEST") == "1"))
         { _playerTestInjectLoadFault = false; next.AfterMeshBoundForTest = () => throw new InvalidOperationException("synthetic player load projection fault"); }
         try { next.Initialize(terrain); next.PermissionGranted = snapshot.Permission; next.CancellationRequested = snapshot.Cancelled; }
         catch { RemoveChild(next); next.QueueFree(); throw; }
@@ -141,20 +177,23 @@ public partial class Main
             actor.ClearOrder(); actor.GlobalPosition = LoadVector(saved.Position); actor.Velocity = LoadVector(saved.Velocity); actor.Rotation = new Vector3(0, saved.Yaw, 0);
         }
         if (BootstrapEnabled) ApplyBootstrap(snapshot.Bootstrap!);
+        if (TutorialEnabled) ApplyTutorial(snapshot.Tutorial);
+        _intentVersion++;
         PauseGround(true); _playerNotice = "存档已读取，等待地形和实体物理验证";
     }
     private TerrainSnapshot ValidatePlayerSave(PlayerSave saved)
     {
-        if ((DevelopmentEnabled ? saved.Schema is not (2 or 3) : saved.Schema != (BootstrapEnabled ? 2 : 1)) || (saved.Schema == 1 && saved.Bootstrap != null) || saved.FixtureHash != _fixtureHash) throw new InvalidDataException("存档版本或场景配置不匹配，原档保留");
+        if ((DevelopmentEnabled ? saved.Schema is not (2 or 3 or 4) || saved.Schema == 4 && !TutorialEnabled : saved.Schema != (BootstrapEnabled ? 2 : 1)) || (saved.Schema == 1 && saved.Bootstrap != null) || saved.FixtureHash != _fixtureHash) throw new InvalidDataException("存档版本或场景配置不匹配，原档保留");
         if (!double.IsFinite(saved.Time) || saved.Time < 0 || saved.Time > 1e12 || saved.Sequence < 0)
             throw new InvalidDataException("存档时间或任务序号无效");
         var terrain = TerrainDataCodec.ParseSnapshot(saved.Terrain);
         if (terrain.RegionId != _liveInitial.RegionId || terrain.Rows != _liveInitial.Rows || terrain.Columns != _liveInitial.Columns ||
             terrain.OriginXM != _liveInitial.OriginXM || terrain.OriginZM != _liveInitial.OriginZM || terrain.SpacingM != _liveInitial.SpacingM)
             throw new InvalidDataException("存档区域不匹配");
-        if (saved.Robots == null || saved.Robots.Length != _groundRobots.Count || saved.Robots.Select(x => x?.Id).Distinct().Count() != _groundRobots.Count)
+        if (saved.Robots == null || saved.Robots.Any(r => r == null) || saved.Robots.Length != _groundRobots.Count || saved.Robots.Select(x => x.Id).Distinct().Count() != _groundRobots.Count)
             throw new InvalidDataException("存档机器人集合无效");
         if (BootstrapEnabled) ValidateBootstrap(saved, terrain);
+        ValidateTutorial(saved);
         foreach (var robot in saved.Robots)
         {
             if (robot == null || !_groundRobots.Any(x => x.Name.ToString() == robot.Id)) throw new InvalidDataException("未知机器人身份");
@@ -264,7 +303,10 @@ public partial class Main
         }
         if (BootstrapEnabled) RestoreBaseOrders(saved.Bootstrap!);
         if (!_loadRecovered) _entryOpen = false;
-        _loadPending = null; _loadRollback = null; RestorePlayerVisuals(); PauseGround(false); _playerNotice = _loadRecovered ? "读取失败；已恢复原世界与任务，原档保留" : _userPaused ? "读取完成；保持用户暂停" : "读取完成；继续原任务";
+        _loadPending = null; _loadRollback = null; CompleteLifecycleTransition(_loadRecovered);
+        RestorePlayerVisuals(); PauseGround(false);
+        if (_transitionKind != "newgame" || _loadRecovered)
+            _playerNotice = _loadRecovered ? "读取失败；已恢复原世界与任务，原档保留" : _userPaused ? "读取完成；保持用户暂停" : "读取完成；继续原任务";
         GD.Print($"PLAYER_LOAD_READY version={_liveTerrain.Current.Version} stage={_levelJob?.Stage} paused={_userPaused} time={_playerTime:R}");
     }
 }

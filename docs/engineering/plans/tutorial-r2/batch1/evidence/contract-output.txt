@@ -1,0 +1,43 @@
+2026-10-14 — r1 baseline independent verification
+
+Source/package identity
+  Old package PCK SHA256: 8cf854790304c9ceaa7e0901c00fd13082df9e04c3a53de0676dea889346ca86
+  Independent old-r1 manifest comparison: 207 files; 0 mismatch or missing
+  Independent raw baseline: 294 files; 0 mismatches
+  Independent baseline tools comparison: 10 files; 0 mismatch or missing
+
+Build (exit=0)
+  Build succeeded.
+      0 Warning(s)
+      0 Error(s)
+  Time Elapsed 00:00:05.92
+
+Import via existing run_godot.sh (exit=0)
+  Godot Engine v4.7.2.stable.mono.official.ed1daf0bf
+  ERROR lines: 0
+
+Native GUI startup (home observed; gameplay input not verified)
+  Metal 4.0 - Forward+ - Using Device #0: Apple - Apple M3 Pro (Apple9)
+  MAIN_GROUND_IDENTITY build_sha256=91ea0cf7f7471227ee900e9eb61a28750f9714d7e5d6c19e278a4385350e9145 loaded_mvid=64157721-4498-4839-9016-bd963083fc49 CLR=10.0.12 display=macOS
+  MAIN_GROUND_READY robots=12 facilities=1
+  PLAYER_GUI_PAGE page=home epoch=0 slot=1
+  Old export native CLR: 8.0.31
+
+Navigation contracts (.NET 10.0.12; exit=0)
+  culture: invariant — 46 PASS
+  culture: de-DE — 46 PASS
+  ALL CHECKS PASSED
+
+Lifecycle engineering contracts (headless; exit=0)
+  TUTORIAL_BOUNDARIES PASS menu_pause settings duplicate_fields projection_rollback save_failure newgame_reset double_submit close_confirmation detached_dto
+  PASS: boundaries exit=0
+  TUTORIAL_WORLD_TESTS PASS processes=1
+  Engine ERROR lines: 0
+
+Landmark static contracts
+  tutorial-mars-r1 landmark static verification — 46/46 PASS
+
+Scope
+  This is the preserved r1 development baseline, not implemented r2 remediation.
+  r2 HUD, B002 normal-UI reproduction/recovery, and blind player acceptance: NOT_RUN.
+  Initial import PATH error, unspecified navigation framework, and lifecycle 90s timeout are recorded as failed attempts in VERIFICATION.md; their raw files were preserved.

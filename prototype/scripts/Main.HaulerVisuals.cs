@@ -8,7 +8,7 @@ public partial class Main
     private readonly Dictionary<GroundPatrol,(Node3D Visual,Vector3 Previous,double Time,string State)> _haulerVisuals=new();
     private void AttachHaulerVisual(GroundPatrol actor)
     {
-        var visual=GD.Load<PackedScene>("res://assets/units/tuoyun-r1/preview.tscn").Instantiate<Node3D>();
+        var visual=GD.Load<PackedScene>("res://assets/units/tuoyun-hf-mvp-r1/preview.tscn").Instantiate<Node3D>();
         actor.AddChild(visual);_haulerVisuals.Add(actor,(visual,actor.GlobalPosition,0,"idle"));
     }
     private string BaseVisualState(GroundPatrol actor,bool moving)

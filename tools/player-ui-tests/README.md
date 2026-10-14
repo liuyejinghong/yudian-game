@@ -1,68 +1,59 @@
-# E01 Player UI 自测（tools/player-ui-tests）
+# E01 / tutorial-mvp Player UI 自测（tools/player-ui-tests）
 
-E01 交付物 `Yudian.PlayerUI.PlayerController` 的自测入口说明。共享场景未改动；
-自测脚本本体在 `prototype/scripts/PlayerUI/PlayerUiSelfTest.cs`（C# `--script`
-入口必须位于被编译的程序集内，故放在独占的 PlayerUI 目录），本目录只放运行
-说明与脚本。
+`Yudian.PlayerUI.PlayerController`（tutorial-mvp r1 新 UI）的自测入口。自测脚本本体在
+`prototype/scripts/PlayerUI/PlayerUiSelfTest.cs`（C# `--script` 入口必须位于被编译的程序集内，故放在独占的 PlayerUI 目录），本目录只放运行说明与脚本。
 
 ## 运行
 
 ```sh
 cd /path/to/yudian-game
-./tools/player-ui-tests/run-selftest.sh
+./tools/player-ui-tests/run-selftest.sh      # 完整自测
+./tools/player-ui-tests/run-camera-diag.sh   # 只跑相机验收与输入诊断
 ```
 
-环境变量（可选，默认 `$HOME` 下常见安装位置）：
+运行前必须给出**私有产物根**（repo 外；脚本与自测都不写 repo、不碰正式存档）：
 
-- `YUDIAN_GODOT`：Godot 4 可执行文件，默认 `$HOME/Applications/Godot.app/Contents/MacOS/Godot`
-- `YUDIAN_DOTNET`：dotnet 可执行文件，默认 `$HOME/.dotnet/dotnet`；`DOTNET_ROOT` 取其目录
+- 显式 `YUDIAN_UI_TEST_ROOT`（绝对路径）→ 直接使用全新目录；已有 saves 或同名日志会拒绝，绝不删除旧证据；
+- 否则给出 `CLAUDE_JOB_DIR` → 在 `$CLAUDE_JOB_DIR/tmp/player-ui-tests` 下派生唯一 run 目录
+  （`run-<时间戳>-<pid>`，不覆盖旧 run 产物）；runner 与自测使用同一 root；
+- 两者都无 → fail-fast 并提示传入参数，绝不回落 repo 或正式存档目录。
 
-等价手打（`YUDIAN_GODOT=<godot>`、`YUDIAN_DOTNET=<dotnet>`，Godot 4.x）：
+工具定位不猜个人安装：Godot 默认 `<repo 同级>/tools-bin/Godot.app/Contents/MacOS/Godot`
+（已核存在），或显式 `YUDIAN_GODOT`；dotnet 默认 `$HOME/.dotnet/dotnet` 或显式 `YUDIAN_DOTNET`；
+任一缺失即失败退出（码 2）。
 
-```sh
-cd prototype
-"$YUDIAN_DOTNET" build
-"$YUDIAN_GODOT" --headless --path . --script res://scripts/PlayerUI/PlayerUiSelfTest.cs
-```
+## 输出
 
-## 行为
+- 构建完整输出写 `$YUDIAN_UI_TEST_ROOT/build.log`，运行完整输出写 `selftest.log`（camera-diag 写 `camera-diag.log`），退出码保留实际进程值。
+- 自测进入场景前清理继承的 `YUDIAN_*` 标记，只有自己的 `GUI_TEST` 与 `saves/player-ui-test-save.json` 生效；不继承其他工程 case 的教学根、资产跳过或自测模式。
+- headless 用 `--fixed-fps 60` 的正常 1/60 delta 加快模拟，没有 `Engine.TimeScale`、健康/资源/设施注入。相机按帧时长测量；命令防双击仍按真实时间等待。
+- 原生布局独立入口：`YUDIAN_UI_LAYOUT_CAPTURE_ONLY=1` 后运行同一 C# script，真实按钮切建造与 ray/机器人排除扫描的现场地面选点，分别截图正常草案和完整非法拒因。需要定向复验已建世界时，`YUDIAN_UI_LAYOUT_RESUME_SLOT` 只接受同一次修复私有根内正常保存的槽副本，按字节复制到全新根后公开 `QueueLifecycle(load)`；不编辑 JSON，不发设施/资源。此模式最后实际点保存并返回主页；不包含未跑的首套/相机用例，summary 只计本次执行项。
+- `YUDIAN_UI_CONNECTION_CAPTURE_ONLY=1` 配合正常私有 `YUDIAN_UI_LAYOUT_RESUME_SLOT`，只核接线100/150%的面板、提示、成本/净缺口、完整来源行/距范围、拒因与确认关闭同时位于外层真实 viewport 和内层 scroll mask，输出两张连接图并保存返回主页。用于独立收口具体连接布局失败，不重放已通过的付费建设与相机。
+- native 图只从本次 `Root` viewport 捕获，写 `captures`，不读桌面；逻辑尺寸乘屏幕 DPI 后设置物理窗口，合成输入显式 `inLocalCoords:true`，百分比缩放单独作用于 UI。
+- 脚本退出码即 Godot 真实退出码：0=全过，1=有失败，3=无失败但存在 BLOCKED
+  （`BLOCKED` 表示因权威协议 stub 未实现而无法真实执行的检查，不是通过）。
 
-- 加载真实 `res://scenes/Main.tscn`（默认即玩家模式），等 `ReadPlayerState().Ready`。
-- 复用 Main 默认注册的 PlayerController；显式 GUI_TEST 和独立临时保存槽，不覆盖用户档。
-- 断言：HUD 六按钮/标签建立；动态寻找合法预览点、设施重叠与场外非法、望山不能当筑垒；
-  地面点选→确认启用→按钮双击只产生一个 `level-1` 任务且执行者是筑垒；取消；
-  暂停时模拟时间冻结但 WASD/滚轮/旋转/UI 可用；连续拖动不重复累计，Esc清除预览；未知命令被拒；保存可见成功；读取恢复；
-  HUD 面板点击不穿透、空点清除选择且不下命令。
-- D1.1 追加（仅 `ReadBootstrap().Enabled` 时检查，否则输出 `NOT_RUN` 不计失败）：
-  整平+五种蓝图模式按钮来自真实 `BootstrapReadModel`；库存/电力显示真实着陆器数据（含"铁料"）；
-  连接电缆与重试入口建立；90度朝向按钮 0°→90°→…→0° 回绕；
-  建设模式走真实合同：选充电桩→`PreviewBuild` 扫描合法点→点地面显示已选位置与材料成本→
-  确认产生真实 `build-*` 建设任务→取消恢复。
-- 每项输出 `PLAYER_UI_SELFTEST PASS/FAIL <描述>`，末行
-  `PLAYER_UI_SELFTEST summary checks=N failures=M`；退出码 0=全过，1=有失败或超时。
-- 个别依赖投影位置的检查（机器人点选）在画面内找不到目标时输出 `NOT_RUN`，不计失败。
+## 覆盖
 
-## CAMERA-01 镜头验收与诊断（快速重跑）
-
-```sh
-cd /path/to/yudian-game
-./tools/player-ui-tests/run-camera-diag.sh   # 相机按钮验收 + 镜头诊断 phase
-./tools/player-ui-tests/run-selftest.sh      # 完整自测（原 38 项 + 末尾同一验收/诊断 phase）
-```
-
-输出行前缀 `PLAYER_UI_SELFTEST CAMUI`（按钮验收）与 `PLAYER_UI_SELFTEST CAMERADIAG`
-（输入诊断），在 Main 场景和现有 PlayerController 上驱动合成点击/输入事件。
-两个入口均先构建，避免验证旧程序集。
-
-- 相机按钮验收（CAMUI）：九按钮（前/后/左/右、拉近/拉远、左转/右转、复位）建立与
-  视口内不裁切；单次点击沿当前朝向明显平移/约15度旋转；连点不受工程冷却且镜头按钮
-  紧跟的保存立即执行；缩放/平移两侧到限幅后不再变化；复位精确恢复初始机位；
-  镜头操作不下达任务；保留键盘焦点。
-- REQUIRE_GESTURES：`MagnifyGesture`（捏合缩放）与 `PanGesture`（双指平移）必须驱动
-  相机（合成手势只作接缝验证，不替代物理触控板验收）。
-- 同帧 press+release 短按 Q/Right：自动化边界，只记录前后
-  origin/basis 与 `Input.IsKeyPressed` 采样，不判红。
-- 跨帧短按（press → 2帧 → release）与人级短按 Q（60ms）、跨帧短按 Right：轮询路径
-  （`UpdateCamera` 逐帧 `Input.IsKeyPressed`），丢失则红。
-- 长按 0.3s Q/Right 阳性对照；滚轮上滚（事件路径 `PushInput`）。
-- 右键拖动；在 HUD 面板（`MouseFilter=Stop`）上释放后无按键移动，测 `_panGrab` 残留拖动。
+- 主页（`EntryOverlay`）：标题居中、五按钮（新游戏/继续游戏/存档/设置/退出）、初始焦点、
+  世界输入不穿透、1920 与大窗布局、标题字号基数 ≥ 40；「继续游戏」目标槽策略
+  （优先所选可载入槽，否则最近 SavedAtUtc 的可载入槽，全无则禁用，并按目标槽显示标注）——
+  合成用例纯逻辑断言，不依赖世界；槽摘要显示本地时间与目标名称，不显示 raw ISO/内部阶段 id。
+- 生命周期（`ReadLifecycle`/`QueueLifecycle`）：newgame / slots / settings / pause / leave
+  流程与键盘焦点、Esc 返回语义；权威协议 stub 未实现时输出 `BLOCKED`（不是通过），
+  退化为旧兼容命令只为继续跑相机/布局检查。
+- 教学上报：始终读真实 `ReadTutorial`；相机操作与真实机器人选择（真实 ID）在实际发生的那一刻
+  按（世界 × 阶段 × 操作）去重上报 `QueueTutorialAction`——覆盖冻结的 `observe-team`
+  认识镜头/选择阶段及后续阶段，每世界首次即可；页面出现、自测接缝都不会伪报。
+- Esc：局内 → 暂停菜单（不再“只清除选区”，选区保持）；菜单/确认页 → back；
+  接线面板打开时先关闭面板。
+- 局内 HUD：目标标题来自 `ReadTutorial`（≥24）、必要指令、下一步/进度、功率、typed Available 摘要与非零在途/在制、真实作业同屏。完整原指令/为什么/覆盖、7种四字段库存、发展/设施/按键可在低频详情区回看，展开详情只滚明细。建造方案保完整成本/净缺口/拒因、选定供电来源与距离、供料路线和后果；全库存与备选来源回看。显式接线位于常用操作栏，候选逐项列出、Esc 先关闭。
+- 设置：从 `ReadSettings` 读真实值并实际生效（100/125/150% → 正文字号 18/23/27，
+  镜头速度影响平移速率，精简/详细切换提示详略）；`QueueSettings` 写回。
+- 接线独立真实用例：有限正常初始库存，`QueueBuild` 建太阳能(-3,-14)与充电桩(-3,-3)；真实常用接线按钮展开面板，候选行点击明确来源、确认双击；真实运输施工完成才断言 `ServiceConnected`、目标来源、教学推进与私有保存账本 `spent.cable` 增4。开局只有登陆器时，空候选用已建太阳能＋用电设施判断，不报告伪 BLOCKED。
+- 设置失败恢复：只在本次私有根制造配置写入失败，等待 UI 草案回显超时，再只改镜头速度；断言不携带失败缩放/提示值，收尾恢复旧设置。
+- 拖动归属：右键拖动→Esc→菜单内释放→继续→无键实际 mouse motion；HUD 内释放后继续实际 motion；两条都断言无残留平移。
+- 相机：九按钮、平移/旋转/缩放/复位、手势、右键拖动残留、短按/长按轮询诊断；先等 UI 的 game 页与可见复位按钮完成布局，再核配置初始焦点/距离/basis，方向 dot≥0.95 的原严格断言保持。
+- 尺寸与缩放：1280×800 与1860×939逻辑点，100/125/150%；1920×1200仅headless扩展。默认低频明细折叠、滚动位置为0，逐项核目标/指令/下一步/资源/作业、完整成本/缺口/拒因/电源/供料在所属滚动遮罩内，且与确认同时可见。遮罩外即FAIL。打印 `PX`/`CORE_RECT` 和 native viewport PNG；dummy 渲染的图为 `CAPTURE NOT_RUN`，不冒充视觉通过。
+- 保存/读取兼容路径（权威旧接口）只使用私有测试档（断言为非 repo 的绝对路径）；
+- 收尾按生命周期 `home`→`leave-save`→主页核私有槽可读，再由测试树打印完整 summary 并退出；返回主页不应被误测为退出应用。

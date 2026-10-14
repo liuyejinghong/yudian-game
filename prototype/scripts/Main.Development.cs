@@ -32,6 +32,7 @@ public partial class Main
         public float Yaw { get; init; }
         public string? Facility { get; init; }
         public string? Source { get; init; }
+        public string? RecoveryFacility { get; init; }
         public string Supply { get; init; } = "lander";
         public string Stage { get; set; } = "Supplying";
         public string Reason { get; set; } = "";
@@ -71,19 +72,31 @@ public partial class Main
     private Dictionary<string,int> UsableStock() => MaterialLedger.Materials.ToDictionary(m=>m,m=>ProductionSources.Sum(c=>_ledger.Available(c,m)));
     private Dictionary<string,int> WarehouseStock() => MaterialLedger.Materials.ToDictionary(m=>m,m=>Warehouses.Sum(c=>_ledger.Available(c,m)));
     private Dictionary<string,int> OreRemaining() => _mines.ToDictionary(m=>m.Material,m=>m.Remaining);
-    private string StartupGuard(string type)
+    private string StartupGuard(string type, Vector3? center = null)
     {
-        if(!DevelopmentEnabled || ProductionPrerequisite.Length==0)return "";
-        // Keep one finite support set safe before optional duplicates or storage consume its resources.
-        var needed=_bootstrapConfig.Buildings.Where(b=>b.Id!="storage"&&!_baseFacilities.Any(f=>f.Built&&f.Type==b.Id)&&b.Id!=type).ToArray();
-        var cost=BuildCost(type);
-        foreach(var m in MaterialLedger.Materials)
+        if (!DevelopmentEnabled || ProductionPrerequisite.Length == 0) return "";
+        bool recovery = center != null && RecoveryTarget(type, center.Value) != null;
+        var needed = _bootstrapConfig.Buildings.Where(b => b.Id != "storage" && !_baseFacilities.Any(f => f.Built && f.Type == b.Id) && b.Id != type).ToArray();
+        var cost = BuildCost(type);
+        var usable = UsableStock();
+        foreach (var m in MaterialLedger.Materials)
         {
-            int reserve=needed.Sum(b=>b.Cost.GetValueOrDefault(m));
-            if(m=="parts" && needed.Any(b=>b.Id=="repair"))reserve+=_bootstrapConfig.RepairParts*2;
-            if(m=="cable")reserve+=_bootstrapConfig.ConnectionCables*(3-_baseFacilities.Count(f=>f.Source!=null));
-            if(_ledger.Available("lander",m)-cost.GetValueOrDefault(m)<reserve)
-                return "保护首套自举物资：先完成太阳能、充电、维修和加工及连接";
+            int reserve = needed.Sum(b => b.Cost.GetValueOrDefault(m));
+            if (m == "parts" && needed.Any(b => b.Id == "repair")) reserve += _bootstrapConfig.RepairParts * 2;
+            if (m == "cable")
+            {
+                int missingLines = new[] { "charger", "repair", "processor" }.Count(t => !_baseFacilities.Any(f => f.Type == t && ServiceConnected(f)));
+                reserve += _bootstrapConfig.ConnectionCables * missingLines;
+            }
+            int available = usable[m];
+            if (recovery && m != "kit" && RecoveryProductionPrerequisite(RecoveryTarget(type, center!.Value)!.Id).Length == 0)
+            {
+                var demand = cost.ToDictionary(x => x.Key, x => x.Value + (x.Key == m ? reserve : 0));
+                if (!demand.ContainsKey(m) && reserve > 0) demand[m] = reserve;
+                if (ProductionPlan.Create(demand, usable, _bootstrapConfig.Recipes, OreRemaining()).Feasible) continue;
+            }
+            if (available - cost.GetValueOrDefault(m) < reserve)
+                return "保护首套自举物资：保留尚缺保障设施与接线；先完成真实缺项或选择明确供电恢复位置";
         }
         return "";
     }
@@ -91,6 +104,14 @@ public partial class Main
         ? "缺料前置：请先选址建加工设施，并在太阳能12m内连接电缆"
         : !_baseFacilities.Any(f=>f.Type=="charger"&&ServiceConnected(f))||!_baseFacilities.Any(f=>f.Type=="repair"&&ServiceConnected(f))
         ? "缺料前置：请先建成并连接充电桩和维修站，保护后续作业" : "";
+    private string RecoveryProductionPrerequisite(string? facilityId)
+    {
+        var target = _baseFacilities.FirstOrDefault(f => f.Id == facilityId && f.Built && f.Source == null && f.Type is "repair" or "charger" or "processor");
+        if (target == null) return ProductionPrerequisite;
+        if (!_baseFacilities.Any(f => f.Type == "processor" && ServiceConnected(f))) return "供电恢复缺料仍需已有接线加工设施";
+        if (!_baseFacilities.Any(f => f.Type == "charger" && ServiceConnected(f))) return "供电恢复缺料仍需已有接线充电桩";
+        return "";
+    }
     private Dictionary<string,int> DevelopmentDemand(string type)
     {
         if(type!="restock")return BuildCost(type);
@@ -98,12 +119,27 @@ public partial class Main
         int quantity=repair==null?4:Math.Max(0,4-_ledger.Count(repair.Id,"parts"));
         return quantity==0?new():new(){{"parts",quantity}};
     }
-    private string DevelopmentFeasibility(string type)
+    private string DevelopmentFeasibility(string type, string? recoveryFacility = null)
     {
         var cost=DevelopmentDemand(type);
         var stock=UsableStock();
+        if (recoveryFacility != null && type is not ("solar" or "connection")) return "恢复补料仅授权具体太阳能或接线目标";
+        if (recoveryFacility != null)
+        {
+            // Account for every still-missing support obligation and its finite cables together.
+            // This prevents a cheap recovery proposal from using the only remaining kit/materials.
+            var demand = new Dictionary<string, int>(cost);
+            foreach (var definition in _bootstrapConfig.Buildings.Where(b => b.Id != "storage" && !_baseFacilities.Any(f => f.Built && f.Type == b.Id)))
+                foreach (var item in BuildCost(definition.Id)) demand[item.Key] = demand.GetValueOrDefault(item.Key) + item.Value;
+            int lines = new[] { "charger", "repair", "processor" }.Count(t => !_baseFacilities.Any(f => f.Type == t && ServiceConnected(f)));
+            if (type == "connection") lines = Math.Max(0, lines - 1);
+            demand["cable"] = demand.GetValueOrDefault("cable") + lines * _bootstrapConfig.ConnectionCables;
+            var full = ProductionPlan.Create(demand, stock, _bootstrapConfig.Recipes, OreRemaining());
+            if (!full.Feasible) return "有限恢复与剩余首套义务不可达：" + full.Reason;
+        }
         if(cost.All(x=>stock[x.Key]>=x.Value))return "";
-        if(ProductionPrerequisite.Length>0)return ProductionPrerequisite;
+        string prerequisite = recoveryFacility == null ? ProductionPrerequisite : RecoveryProductionPrerequisite(recoveryFacility);
+        if(prerequisite.Length>0)return prerequisite;
         var plan=ProductionPlan.Create(cost,stock,_bootstrapConfig.Recipes,OreRemaining());
         return plan.Feasible?"":plan.Reason;
     }
@@ -160,10 +196,12 @@ public partial class Main
     private void StartDevelopment(string type,Vector3 center,float yaw,string? facility=null,string? source=null)
     {
         if(HasCurrentWork)throw new InvalidOperationException("先完成或取消当前目标");
-        string refusal=DevelopmentFeasibility(type);if(refusal.Length>0)throw new InvalidOperationException(refusal);
+        var recovery = RecoveryTarget(type, center, facility);
+        string refusal=DevelopmentFeasibility(type, recovery?.Id);if(refusal.Length>0)throw new InvalidOperationException(refusal);
         string supply=ChooseBuildSupply(DevelopmentDemand(type),center);
         RetireTerminalJobs();
-        _development=new(){Id="goal-"+(++_developmentSequence),Type=type,Center=SavedVector(center),Yaw=yaw,Facility=facility,Source=source,Supply=supply};
+        _development=new(){Id="goal-"+(++_developmentSequence),Type=type,Center=SavedVector(center),Yaw=yaw,Facility=facility,Source=source,RecoveryFacility=recovery?.Id,Supply=supply};
+        RecordTutorialAuthorization(_development); _intentVersion++;
         _playerNotice="已授权此目标的有限采集、运输、加工和建设；可暂停或取消";
     }
     private void StartRestock()
@@ -251,7 +289,7 @@ public partial class Main
         var goal=_development;
         if(goal.Stage=="Building")
         {
-            if(_buildJob?.Stage=="Completed"){goal.Stage="Completed";goal.Reason="发展目标已建成；选择下一方向";}
+            if(_buildJob?.Stage=="Completed"){goal.Stage="Completed";goal.Reason=TutorialEnabled?"工程已完成；下一步按真实教学缺项与发展历史更新":"发展目标已建成；选择下一方向";_intentVersion++;}
             else if(_buildJob?.Stage is "Blocked" or "Cancelled"){goal.Stage="Blocked";goal.Reason=_buildJob.Reason;}
             return;
         }
@@ -293,7 +331,7 @@ public partial class Main
         finally
         {
             if(_liveTerrain.Current.Version==patch.Base.Version+1&&_liveTerrain.Current.HeightsM.SequenceEqual(patch.HeightsM))
-            {_ledger=next;mine.Remaining-=task.Quantity;task.Paid=true;task.Stage="Physics";_resourceViewDirty=true;}
+            {_ledger=next;mine.Remaining-=task.Quantity;task.Paid=true;task.Stage="Physics";_intentVersion++;_resourceViewDirty=true;}
         }
         task.Reason=task.Paid?"矿量与现场产物已提交，等待物理投影":"等待作业范围腾空，尚未采出";
     }
@@ -322,7 +360,7 @@ public partial class Main
             if(OutputStore(recipe.Output.Values.Sum()*t.Quantity)==null){t.Reason="仓储空间不足；加工不产货，先释放容量";t.Waiting=0;return;}
             _remainingPower[f.Source]-=recipe.Power;_recipeWorked=true;
             t.Work=Math.Min(recipe.WorkSeconds*t.Quantity,t.Work+delta);t.Reason="加工设施实际用电生产："+MaterialName(t.Material);
-            if(t.Work>=recipe.WorkSeconds*t.Quantity){_ledger=prospective;t.Stage="Completed";t.Reason="配方已结算；出料留在加工设施等待实运";_resourceViewDirty=true;}
+            if(t.Work>=recipe.WorkSeconds*t.Quantity){_ledger=prospective;t.Stage="Completed";t.Reason="配方已结算；出料留在加工设施等待实运";_intentVersion++;_resourceViewDirty=true;}
         }
         else
         {
@@ -389,7 +427,7 @@ public partial class Main
     private void TransferMaterials(string operation,string goal,string source,string destination,Dictionary<string,int> amounts)
     {
         _ledger.Transfer(operation,goal,source,destination,amounts);
-        _resourceViewDirty=true;
+        _intentVersion++; _resourceViewDirty=true;
     }
     private readonly List<Node3D> _resourceViews=new();
     private CanvasLayer? _cargoGlyphLayer;

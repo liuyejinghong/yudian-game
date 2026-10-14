@@ -16,7 +16,7 @@ public partial class Main
         public required int GoalSequence { get; init; }
         public required int ProductionSequence { get; init; }
     }
-    private DevelopmentSave CaptureDevelopment()=>new(){Mines=_mines.ToArray(),Tasks=_productionTasks.ToArray(),Goal=_development,GoalSequence=_developmentSequence,ProductionSequence=_productionSequence};
+    private DevelopmentSave CaptureDevelopment()=>CloneSaveValue(new DevelopmentSave {Mines=_mines.ToArray(),Tasks=_productionTasks.ToArray(),Goal=_development,GoalSequence=_developmentSequence,ProductionSequence=_productionSequence});
     private static bool DevelopmentContainer(DevelopmentSave d,string id)=>d.Mines.Any(m=>m.Id==id)||d.Tasks.Any(t=>t.Kind=="recipe"&&t.Destination==id);
     private static bool ValidProductionStation(DevelopmentSave d,string station,string actor)
         => d.Goal?.Active==true && d.Tasks.Any(t=>t.Goal==d.Goal.Id&&t.Kind=="haul"&&t.Robot==actor&&
@@ -26,6 +26,7 @@ public partial class Main
         _mines.Clear();_productionTasks.Clear();_development=null;_developmentSequence=0;_productionSequence=0;
         if(!DevelopmentEnabled)return;
         if(saved==null){InitializeDevelopment();return;}
+        saved = CloneSaveValue(saved);
         _mines.AddRange(saved.Mines);_productionTasks.AddRange(saved.Tasks);_development=saved.Goal;_developmentSequence=saved.GoalSequence;_productionSequence=saved.ProductionSequence;
         RebuildResourceViews();
     }
@@ -38,6 +39,7 @@ public partial class Main
             return;
         }
         if(d==null||d.Mines==null||d.Tasks==null||d.Mines.Length!=2||d.Tasks.Length>1000||d.GoalSequence<0||d.GoalSequence>10000||d.ProductionSequence<0||d.ProductionSequence>1000||d.Tasks.Length!=d.ProductionSequence)throw new InvalidDataException("生产集合或序号无效");
+        if (d.Mines.Any(m => m == null) || d.Tasks.Any(t => t == null)) throw new InvalidDataException("生产必需集合含空对象");
         var mining=b.Ledger.Mining??[];var recipes=b.Ledger.Recipes??[];
         string[] mineIds=["mine-iron","mine-copper"];
         if(!d.Mines.Select(m=>m?.Id).Order().SequenceEqual(mineIds.Order()))throw new InvalidDataException("矿点集合无效");
@@ -62,6 +64,12 @@ public partial class Main
             if(b.Build!=null&&b.Build.Supply!=g.Supply)throw new InvalidDataException("目标与工程仓库不一致");
             if(!b.Facilities.Any(f=>f.Id==g.Supply&&f.Built&&f.Type is "lander" or "storage"))throw new InvalidDataException("目标仓库引用无效");
             var p=LoadVector(g.Center);
+            if (g.RecoveryFacility != null)
+            {
+                var recovery = b.Facilities.FirstOrDefault(f => f.Id == g.RecoveryFacility && f.Built && f.Type is "repair" or "charger" or "processor");
+                if (recovery == null || g.Type is not ("solar" or "connection") || g.Type == "solar" && XzDistance(LoadVector(recovery.Position), p) > config.ConnectionRangeM
+                    || g.Type == "connection" && g.Facility != recovery.Id) throw new InvalidDataException("供电恢复授权没有具体保障目标");
+            }
             if(p.Y!=0||Math.Abs(p.X)>=_cfg.Terrain.Size/2||Math.Abs(p.Z)>=_cfg.Terrain.Size/2)throw new InvalidDataException("目标位置无效");
             if(g.Type=="connection")
             {
@@ -105,7 +113,7 @@ public partial class Main
         for(int i=0;i<d.Tasks.Length;i++)
         {
             var t=d.Tasks[i];
-            if(t==null||t.Id!="prod-"+(i+1)||!taskIds.Add(t.Id)||!t.Goal.StartsWith("goal-")||!int.TryParse(t.Goal[5..],out int goalId)||goalId<1||goalId>d.GoalSequence||t.Kind is not ("mine" or "recipe" or "haul")||!MaterialLedger.Materials.Contains(t.Material)||t.Quantity<1||t.Quantity>(t.Kind=="recipe"?4:8)||!Container(t.Source)||!Container(t.Destination)||!FiniteRange(t.Work,240)||!FiniteRange(t.Waiting,181)||t.Reason==null||t.Reason.Length>1000||t.Stage is not ("Fetching" or "Pickup" or "CargoWaiting" or "Delivering" or "Travel" or "Working" or "Physics" or "Completed" or "Cancelled" or "Blocked"))throw new InvalidDataException("生产任务身份或字段无效");
+            if(t==null||t.Id!="prod-"+(i+1)||string.IsNullOrWhiteSpace(t.Goal)||string.IsNullOrWhiteSpace(t.Source)||string.IsNullOrWhiteSpace(t.Destination)||!taskIds.Add(t.Id)||!t.Goal.StartsWith("goal-")||!int.TryParse(t.Goal[5..],out int goalId)||goalId<1||goalId>d.GoalSequence||t.Kind is not ("mine" or "recipe" or "haul")||!MaterialLedger.Materials.Contains(t.Material)||t.Quantity<1||t.Quantity>(t.Kind=="recipe"?4:8)||!Container(t.Source)||!Container(t.Destination)||!FiniteRange(t.Work,240)||!FiniteRange(t.Waiting,181)||t.Reason==null||t.Reason.Length>1000||t.Stage is not ("Fetching" or "Pickup" or "CargoWaiting" or "Delivering" or "Travel" or "Working" or "Physics" or "Completed" or "Cancelled" or "Blocked"))throw new InvalidDataException("生产任务身份或字段无效");
             bool live=t.Stage is not ("Completed" or "Cancelled");
             if(live&&(d.Goal?.Active!=true&&d.Goal?.Stage!="Blocked"||t.Goal!=d.Goal.Id))throw new InvalidDataException("生产没有活动目标授权");
             if(t.Stage is "Cancelled" or "Blocked" && (t.ResumeStage==null||t.ResumeStage is "Completed" or "Cancelled" or "Blocked"))throw new InvalidDataException("生产重试阶段无效");
