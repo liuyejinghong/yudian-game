@@ -1,6 +1,6 @@
 # Computer use：人机并行与模型无关执行层
 
-2026-10-14｜本机组件取证、公开资料核验与随后获准的有界测试见 [实际结果](2026-10-14-sky-mcp-test/RESULTS.md)：Sky握手/10工具发现通过，但真实get_app_state被`-10000 Sender process is not authenticated`拒绝。独立agent-desktop后台AX实际完成设置/返回和新游戏→game状态；六段采样未观测游戏前台，但另有两次启动后前台快照与game状态下旧主页截图。持续后台和新鲜窗口画面未通过，世界选址/键盘NOT_RUN。Cua Driver与VM未安装/运行，未改系统权限或Codex配置。本页不改变r2玩法规格，也不关闭原审核B001/B002或D001。
+2026-10-14｜最新[官方cua_repl接入实测](2026-10-14-sky-mcp-test/CUA-REPL-RESULTS.md)：正常注册用户MCP codex-cu并回读Connected，指定应用正常审批后后台Calculator六按钮12×12实际回读144；真实Claude宿主的官方Elicitation接缝也已测试。Godot完整窗口/输入仍受timeoutReached/cgWindowNotFound与启动前置阻断，未定位根因，不签完整computer use通过。此前[直接Sky客户端与独立AX测试](2026-10-14-sky-mcp-test/RESULTS.md)保留为不同路径证据；直接客户端的-10000拒绝不能外推cua_repl。Cua Driver与VM未安装/运行，系统权限与Codex信任配置未改。本页不改变r2规格，也不关闭B001/B002或D001。
 
 所有者指出：Codex的computer use已可用、有独立代理光标；自动化不应与人类争鼠标和屏幕。今后将“所有者在其他应用继续工作时，自动化仍能定向操作目标、保持系统指针与焦点”作为工具验收条件。
 
