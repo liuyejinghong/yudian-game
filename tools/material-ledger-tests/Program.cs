@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using Yudian.Resources;
 static class Check {
  static int n;
@@ -9,6 +10,17 @@ static class Check {
  static void Reject(Action a){bool caught=false;try{a();}catch(ArgumentException){caught=true;}catch(InvalidOperationException){caught=true;}True(caught,"negative operation accepted");}
  static void Main(string[] args){
   var config=JsonSerializer.Deserialize<BootstrapConfig>(System.IO.File.ReadAllText(args[0]));config.Validate();
+  var catalog=new DefinitionCatalog(config);
+  True(catalog.Materials.Count==7&&catalog.Recipes.Count==4&&catalog.Buildings.Count==5,"catalog copies config sizes");
+  True(DefinitionCatalog.MaterialIds.Count==7&&MaterialLedger.Materials.Count==7&&MaterialLedger.Materials.Length==7&&MaterialLedger.Materials is MaterialIdSet&&MaterialLedger.Materials.GetType()!=typeof(string[])&&!(catalog.Recipes is RecipeCatalogDefinition[])&&!(catalog.Buildings is BuildingCatalogDefinition[]),"definition surfaces are not mutable arrays");
+  True(Enumerable.Range(0,7).All(i=>DefinitionCatalog.MaterialIds[i]==MaterialLedger.Materials[i])&&DefinitionCatalog.Material("kit").Name=="组件套件"&&DefinitionCatalog.Material("iron_ore").VisualRef.EndsWith("iron_ore.svg"),"static material identities and metadata");
+  Reject(()=>DefinitionCatalog.Material("unobtainium"));
+  True(catalog.Buildings.All(b=>b.Name==config.Buildings.Single(c=>c.Id==b.Id).Name)&&catalog.Recipes.Single(r=>r.Id=="iron").Input["iron_ore"]==2,"catalog names and quantities from config");
+  bool castBlocked=false;try{((Dictionary<string,int>)catalog.Recipes.Single(r=>r.Id=="iron").Input)["iron_ore"]=9;}catch(InvalidCastException){castBlocked=true;}
+  True(castBlocked&&catalog.Recipes.Single(r=>r.Id=="iron").Input is not Dictionary<string,int>&&catalog.Buildings.Single(b=>b.Id=="solar").Cost is not Dictionary<string,int>,"quantity maps are read-only");
+  config.Recipes[0].Input["iron_ore"]=9;config.Buildings[0].Cost["iron"]=99;
+  True(catalog.Recipes.Single(r=>r.Id=="iron").Input["iron_ore"]==2&&catalog.Buildings.Single(b=>b.Id=="solar").Cost["iron"]==4,"catalog isolated from later config mutation");
+  config.Recipes[0].Input["iron_ore"]=2;config.Buildings[0].Cost["iron"]=4;
   var ledger=new MaterialLedger(new(new[]{new ContainerStock("lander",500,new(config.Initial)),new ContainerStock("cargo",8,new()),new ContainerStock("site",100,new()),new ContainerStock("spent",1000,new())},Array.Empty<MaterialReservation>(),new()));
   var totals=ledger.Totals();var five=new Dictionary<string,int>{{"parts",5}};
   ledger.Reserve("a","lander",five);True(ledger.Count("lander","parts")==48&&ledger.Available("lander","parts")==43,"reservation consumed stock");
@@ -48,6 +60,28 @@ static class Check {
   True(restored.Totals()["iron"]==2,"restored recipe reissued output");
   var corrupted=restored.Snapshot();corrupted.Recipes[0].Output["iron"]=3;
   Reject(()=>new MaterialLedger(corrupted).ValidateBalance(zero,config.Recipes,"test-v1"));
+  BootstrapConfig Mutate(Action<JsonNode> change){
+   var node=JsonNode.Parse(System.IO.File.ReadAllText(args[0]))!;
+   change(node);
+   return JsonSerializer.Deserialize<BootstrapConfig>(node.ToJsonString())!;
+  }
+  var extended=Mutate(n=>n["Recipes"]!.AsArray().Add(JsonNode.Parse(@"{""Id"":""gear"",""Input"":{""iron"":1},""Output"":{""iron_ore"":1},""WorkSeconds"":4,""Power"":1}")));
+  extended.Validate();
+  var extCatalog=new DefinitionCatalog(extended);
+  True(extCatalog.Recipes.Count==5&&extCatalog.Recipes[4].Name=="gear"&&extCatalog.Recipes[4].VisualRef==""&&extCatalog.Recipes[4].Description=="扩展配方。","legal fifth recipe catalogued, not rejected by count");
+  True(catalog.Materials.All(m=>m.Description.IndexOf("mine-",StringComparison.Ordinal)<0)&&catalog.Buildings.Single(b=>b.Id=="storage").Description.Contains("100容量"),"player-facing descriptions without internal ids or engineering notes");
+  Reject(Mutate(n=>n["Recipes"]!.AsArray().Add(JsonNode.Parse(@"{""Id"":""iron"",""Input"":{""iron"":1},""Output"":{""iron_ore"":1},""WorkSeconds"":4,""Power"":1}"))).Validate);
+  Reject(Mutate(n=>n["Recipes"]!.AsArray().Add(JsonNode.Parse(@"{""Id"":""kit"",""Input"":{""iron"":1},""Output"":{""kit"":1},""WorkSeconds"":4,""Power"":1}"))).Validate);
+  Reject(Mutate(n=>n["Recipes"]!.AsArray().Add(JsonNode.Parse(@"{""Id"":""gear"",""Input"":{""rock"":1},""Output"":{""iron_ore"":1},""WorkSeconds"":4,""Power"":1}"))).Validate);
+  Reject(Mutate(n=>n["Recipes"]!.AsArray().Add(null)).Validate);
+  Reject(Mutate(n=>n["Buildings"]!.AsArray().Add(null)).Validate);
+  Reject(Mutate(n=>n["Recipes"]!.AsArray().Add(JsonNode.Parse(@"{""Id"":""alloy"",""Input"":{""iron"":1},""Output"":{""iron"":1,""copper"":1},""WorkSeconds"":4,""Power"":1}"))).Validate);
+  Reject(Mutate(n=>n["Recipes"]!.AsArray().Add(JsonNode.Parse(@"{""Id"":""iron-alt"",""Input"":{""copper"":1},""Output"":{""iron"":1},""WorkSeconds"":4,""Power"":1}"))).Validate);
+  Reject(Mutate(n=>{var a=n["Buildings"]!.AsArray();a.RemoveAt(Enumerable.Range(0,a.Count).Single(i=>a[i]!["Id"]!.GetValue<string>()=="charger"));}).Validate);
+  Reject(Mutate(n=>n["Buildings"]!.AsArray().Add(JsonNode.Parse(@"{""Id"":""solar"",""Name"":""重复"",""Radius"":2,""WorkSeconds"":5,""Cost"":{""iron"":1}}"))).Validate);
+  var extBuilding=Mutate(n=>n["Buildings"]!.AsArray().Add(JsonNode.Parse(@"{""Id"":""beacon"",""Name"":""信标"",""Radius"":2,""WorkSeconds"":3,""Cost"":{""iron"":1}}")));
+  extBuilding.Validate();
+  True(new DefinitionCatalog(extBuilding).Buildings.Count==6,"legal sixth building catalogued without startup obligation change");
   config.Initial["cable"]=0;Reject(()=>config.Validate());
   Console.WriteLine($"MATERIAL_LEDGER_PASS checks={n}");
  }

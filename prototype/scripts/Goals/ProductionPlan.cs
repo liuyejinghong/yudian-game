@@ -99,10 +99,11 @@ public static class ProductionPlan
         Amounts(demand, 0, "需求数量无效");
         Amounts(available, 0, "可用数量无效");
         Amounts(remainingOre, 0, "矿量数量无效");
-        if (recipes == null || recipes.Length != 4) throw new ArgumentException("配方数量无效");
+        if (recipes == null || recipes.Length == 0) throw new ArgumentException("配方集合无效");
+        var recipeIds = new HashSet<string>(StringComparer.Ordinal);
         foreach (var r in recipes)
         {
-            if (r == null) throw new ArgumentException("配方定义无效");
+            if (r == null || string.IsNullOrWhiteSpace(r.Id) || !recipeIds.Add(r.Id)) throw new ArgumentException("配方定义无效");
             Amounts(r.Input, 1, "配方投入无效");
             if (r.Output == null || r.Output.Count != 1 || r.Output.ContainsKey("kit") ||
                 r.Output.Any(x => !MaterialLedger.Materials.Contains(x.Key) || x.Value < 1 || x.Value > MaterialLedger.Limit))
