@@ -42,6 +42,10 @@
 
 - 首轮实施Workflow中，主控向运行中的B执行者发续接消息后出现额外执行上下文，B报告Main.Player.cs的两次mtime/内容冲突。主控停止首轮A/B/D工作流及续接上下文，保留已落地DTO与Main.Player/Lifecycle/PlayerSave局部成果；核journal/执行记录后从现有差异重新派单一writer，不回滚有效成果。HUD独写PlayerUI继续，无重叠文件。
 - 后续运行中的workflow执行者不再中途SendMessage续接；完成后需要修正才开新pass。原失败/停止记录保留，不能算完成结果。
+- 中途编译3个UI自测适配错误修正后，实施结束编译0 warning/0 error；首轮headlessUI仍187项中2失败/1阻断（接线ID断言、布局选点），先诊断再返对应owner，不降低标准。R2authority首轮600秒限时仅到自然step16/time479秒、ERROR0后超时124，保原件；固定可复跑私有runner调整墙钟时限，不改变模拟步长/物料/健康/路线。原教学生命周期边界已完整exit0 PASS。
+- R2专用authority第二轮1800秒仍超时124、ERROR0，已到自然step32/time718.4秒运输；两次未完成后停止加时盲试，重计划昂贵DTO/route/深复制检查按intentVersion/阶段变化与定期兜底调度，真实模拟步长/资源/健康/路线不改。另完整原full-storage prepare/resume自然合同已两进程exit0 PASS、ERROR0。
+- 独立Sol整体审确认管理层级/生命周期/首次建设/稳定ID/旧等待理由/目标卡/诊断入口等合同缺口，integration-fixes.md冻结局部返工。HUD已落地；权威返工因API502中断无结果，重派Sol续接保局部成果，未将缺失结果当通过。
+- UI第二轮762项/17失败/1阻断，ERROR0：4项测试顺序使空蓝图前提不成立，13项建设卡主按钮/收益溢出已由真实矩形确认。两失败后固定ui-layout-replan.md：主操作/阻塞常驻，完整成本/来源内部滚动；最小局部调整与新证据目录重验。
 
 ## 实际验证记录
 

@@ -1,6 +1,6 @@
 # tutorial-r2 批1 · 实施合同
 
-2026-10-14｜所有者已授权按既定方案修复、创建任务、独立分支提交推送及 draft PR；原生自动化由 Codex 执行。本合同固定本轮公共协议与文件所有权，补充上级 remediation-plan.md / hud-spec.md；不重写其历史状态。
+2026-10-14｜所有者已授权按既定方案修复、创建任务、独立分支提交推送及 draft PR；原生自动化由 Codex 执行。本合同固定本轮公共协议与文件所有权，补充上级 remediation-plan.md / hud-spec.md；不重写其历史状态。集成后已证局部缺口按 [integration-fixes.md](integration-fixes.md) 补充稳定build任务身份与WorldTransitionRevision；两轮实际UI失败后的布局决策见 [ui-layout-replan.md](ui-layout-replan.md)。
 
 ## 目标与交付边界
 
