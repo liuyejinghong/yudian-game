@@ -1,5 +1,5 @@
 #!/bin/sh
-# CAMERA-01 镜头验收与诊断：只跑相机按钮验收 + 镜头输入诊断 phase（快速可重跑）。
+# CAMERA-01 镜头验收与诊断：只跑相机输入验收（真实 engine input）+ 镜头输入诊断 phase（快速可重跑）。
 # 完整 UI 自测仍走 run-selftest.sh（同一私有产物根合同）。
 # 私有产物根（必需，repo 外）：YUDIAN_UI_TEST_ROOT 绝对路径，或 CLAUDE_JOB_DIR（在其
 # tmp/player-ui-tests 下派生唯一 run 目录）；两者都无 fail-fast，绝不回落 repo/正式目录。

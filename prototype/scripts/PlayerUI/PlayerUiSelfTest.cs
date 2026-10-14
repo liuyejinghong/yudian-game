@@ -33,6 +33,11 @@ public partial class PlayerUiSelfTest : SceneTree
     private Basis _configuredCameraBasis;
     private float _configuredCameraDistance;
     private bool _cameraOnly, _layoutOnly, _resumeLayout, _connectionOnly;
+    // 进入世界后的初姿（首次 HUD 就绪时记录）；布局类用例前经控制器 testhook 恢复，不被前序真实手势影响。
+    private Basis _initialCameraBasis = Basis.Identity;
+    private Vector3 _initialCameraFocus;
+    private float _initialCameraDistance = 26f;
+    private bool _initialCameraCaptured;
 
     public override void _Initialize()
     {
@@ -149,7 +154,7 @@ public partial class PlayerUiSelfTest : SceneTree
             {
                 GD.Print("PLAYER_UI_SELFTEST mode=camera-diag-only");
                 await ForceEnterWorldOrBlock();
-                await CameraUiChecks();
+                await CameraInputChecks();
                 await CameraDiag();
                 Report();
                 Quit(ExitCode());
@@ -160,14 +165,19 @@ public partial class PlayerUiSelfTest : SceneTree
             await WorldSelectionChecks();
             await EscAndPauseChecks();
             await DragAcrossMenuChecks();
+            await BuildModeNullTypeChecks(); // 首次建设空蓝图检查必须在选定蓝图之前：排在其后会把测试前提误报成失败
             await BuildPlanDraftChecks();
+            await TypedPickAndReturnContextChecks();
+            await ManagementGateChecks();
+            await LeaveCancelOverlayOffChecks();
             await ConnectPanelChecks();
             await TutorialPanelChecks();
             await SettingsChecks();
-            await CameraUiChecks();
+            await CameraInputChecks();
             await CameraDiag();
             await RealConstructionConnectionChecks();
             await SaveLoadCompatChecks();
+            await TransitionRevisionChecks();
             await DevPanelChecks();
             await LayoutAndScaleChecks();
             await Finale();
@@ -202,9 +212,31 @@ public partial class PlayerUiSelfTest : SceneTree
 
     private async System.Threading.Tasks.Task WaitForGameHud(string label)
     {
-        var reset = (Button)_ui.FindChild("CameraResetButton", true, false)!;
-        await WaitFor(() => _world.ReadLifecycle().Page == "game" && _ui.PageForTest == "game" && reset.IsVisibleInTree(), 10, label);
+        // 九个镜头方向按钮已移除；局内 HUD 就绪以底部工具组可见为准。
+        var tools = _ui.FindChild("ToolsRow", true, false) as Control;
+        await WaitFor(() => _world.ReadLifecycle().Page == "game" && _ui.PageForTest == "game" && tools is { Visible: true }, 10, label);
         await Frames(3); // ProcessFrame 在控制器 _Process 前发出；容器还需要后续布局。
+        CaptureInitialCameraOnce();
+    }
+
+    // 只记录一次进世界初姿（镜头焦点/距离/朝向），供布局用例前的 testhook 复位使用。
+    private void CaptureInitialCameraOnce()
+    {
+        if (_initialCameraCaptured) return;
+        _initialCameraCaptured = true;
+        _initialCameraBasis = _camera.GlobalBasis;
+        _initialCameraFocus = _ui.CameraFocusForTest;
+        _initialCameraDistance = _ui.CameraDistanceForTest;
+        GD.Print("PLAYER_UI_SELFTEST CAM_CAPTURE initialFocus=" + Fmt(_initialCameraFocus) + " distance=" + F(_initialCameraDistance));
+    }
+
+    // 布局用例前把镜头恢复到初姿：前序 CAMERA 诊断/手势会真实移动镜头；用控制器 testhook 复位，不改生产相机路径。
+    private async System.Threading.Tasks.Task RestoreCameraForLayout()
+    {
+        _ui.ResetCameraForTest(_initialCameraBasis, _initialCameraFocus, _initialCameraDistance);
+        await Frames(2);
+        GD.Print("PLAYER_UI_SELFTEST LAYOUT_CAM restoredFocus=" + Fmt(_ui.CameraFocusForTest) +
+            " distance=" + F(_ui.CameraDistanceForTest));
     }
 
     // ---- 真实像素/视口证据：逻辑视口 vs 窗口 vs 最终变换 vs 主题字号 ----
@@ -213,7 +245,7 @@ public partial class PlayerUiSelfTest : SceneTree
         var viewport = Root.GetVisibleRect().Size;
         var window = Root.Size;
         var finalScale = Root.GetFinalTransform().Scale;
-        var job = _ui.FindChild("JobLabel", true, false) as Label;
+        var job = _ui.FindChild("GoalInstructionLabel", true, false) as Label;
         var goal = _ui.FindChild("GoalTitleLabel", true, false) as Label;
         GD.Print($"PLAYER_UI_SELFTEST PX[{tag}] window={window.X}x{window.Y} viewport={viewport.X}x{viewport.Y}" +
             $" finalScale=({F(finalScale.X)},{F(finalScale.Y)}) display={DisplayServer.GetName()}" +
@@ -262,12 +294,12 @@ public partial class PlayerUiSelfTest : SceneTree
             Blocked("主页就绪态焦点/可用性（世界未就绪）：newGame.Disabled=" + newGame.Disabled);
         }
 
-        // 世界输入不穿透：点击/键盘镜头/暂停命令
-        var selection = (Label)_ui.FindChild("SelectionLabel", true, false)!;
+        // 世界输入不穿透：点击/键盘镜头/暂停命令（浏览点击不产生 typed 选择或选址）
         var view = Root.GetVisibleRect().Size;
         Click(new Vector2(view.X * .8f, view.Y * .5f));
         await Frames(3);
-        Check(!selection.Text.Contains("已选位置") && _world.ReadPlayerState().Job == null, "主页期间点击世界无穿透、无选择");
+        Check(_ui.SelectedObjectIdForTest == null && _ui.SelectedSiteForTest == null && _world.ReadPlayerState().Job == null,
+            "主页期间点击世界无穿透、无选择");
         var camBefore = _camera.GlobalPosition;
         PressKey(Key.W, true); await SimulationSeconds(0.25); PressKey(Key.W, false); await Frames(2);
         Check(_camera.GlobalPosition.DistanceTo(camBefore) < 1e-5, "主页期间键盘不透传镜头");
@@ -316,15 +348,17 @@ public partial class PlayerUiSelfTest : SceneTree
         GD.Print("PLAYER_UI_SELFTEST NOTE 已用旧兼容 newgame 进入世界：新生命周期流程仍计 BLOCKED，不被视作通过");
     }
 
-    // ---- 局内选择/确认/取消（旧合同：PreviewLevel/QueueLevel 路径保持可用） ----
+    // ---- 局内：typed 浏览选择、整地选址、工程确认与经管理层的工程取消 ----
     private async System.Threading.Tasks.Task WorldSelectionChecks()
     {
         GD.Print("PLAYER_UI_SELFTEST WORLD begin");
-        Check(_ui.FindChild("ConfirmButton", true, false) is Button, "HUD 建立确认按钮");
-        Check(_ui.FindChild("SelectionLabel", true, false) is Label, "HUD 建立选择标签");
-        Check(_ui.FindChild("GoalTitleLabel", true, false) is Label && _ui.FindChild("PowerLabel", true, false) is Label &&
-            _ui.FindChild("StockLabel", true, false) is Label && _ui.FindChild("PlanTagLabel", true, false) is Label,
-            "HUD 建立目标/功率/库存/建造方案标签");
+        Check(_ui.FindChild("ConfirmButton", true, false) is Button, "HUD 建立确认按钮（选址准备卡内）");
+        Check(_ui.FindChild("ToolBuildButton", true, false) is Button && _ui.FindChild("ToolLevelButton", true, false) is Button
+            && _ui.FindChild("ToolMaterialsButton", true, false) is Button && _ui.FindChild("ToolWorkButton", true, false) is Button,
+            "底部工具组建建设/整地/基地物资/工程入口");
+        Check(_ui.FindChild("GoalTitleLabel", true, false) is Label && _ui.FindChild("TopPowerLabel", true, false) is Label &&
+            _ui.FindChild("TopStockChip_iron", true, false) is Button && _ui.FindChild("WorkRowPanel", true, false) is Control,
+            "HUD 建立顶栏（发电/库内现货）与独立活动工程行");
         Check(_world.ReadPlayerRobots().Length == 12, "普通场景 12 台机器人");
 
         var legal = FindLegalSite();
@@ -333,47 +367,79 @@ public partial class PlayerUiSelfTest : SceneTree
         Check(!_world.PreviewLevel(new Vector3(28, 0, 28)).Legal, "场外预览非法");
         Check(!_world.PreviewLevel(legal.Center, "Robot_Wangshan_1").Legal, "望山不能当筑垒执行");
 
+        // 浏览模式：地面点不再直接选址；先进入整地模式，左键仅选址。
+        var objectScroll = (Control)_ui.FindChild("ObjectScroll", true, false)!;
         await ClickWorld(_camera.UnprojectPosition(new Vector3(legal.Center.X, 0.2f, legal.Center.Z)));
         await Frames(3);
-        var selection = (Label)_ui.FindChild("SelectionLabel", true, false)!;
-        Check(selection.Text.Contains("已选位置"), "地面点选后显示已选位置：" + selection.Text.Split('\n')[0]);
-        var confirm = (Button)_ui.FindChild("ConfirmButton", true, false)!;
-        await WaitFor(() => !confirm.Disabled, 5, "确认按钮启用");
-        Check(confirm.Text.Contains("确认整平"), "整平模式确认按钮文案：" + confirm.Text);
+        Check(!objectScroll.IsVisibleInTree() && _ui.SelectedObjectIdForTest == null && _ui.SelectedSiteForTest == null,
+            "浏览模式地面点不创建选址草案，也无空对象板");
+        Check(_ui.PlacementModeForTest == 0, "整地前无活动选址模式");
 
-        // 面板点击不穿透：点标题区域，选择保持
-        Click(new Vector2(120, 60));
-        await Frames(2);
-        Check(selection.Text.Contains("已选位置"), "点击 HUD 面板不穿透（选择保持）");
-
-        // 空点（天空）不下命令且清除选择
-        Click(new Vector2(Root.GetVisibleRect().Size.X / 2f, 15));
-        await Frames(2);
-        Check(!selection.Text.Contains("已选位置"), "空点清除选择且不下命令");
-        Check(_world.ReadPlayerState().Job == null, "空点后仍无任务");
-
-        // 机器人点选（选一台投影在画面内的）
+        // 机器人点选（选一台投影在画面内的）出现 typed 对象卡；机器人会移动，按最新权威投影重试
         string? clickedRobot = null;
         foreach (var robot in _world.ReadPlayerRobots())
         {
             var pos = _camera.UnprojectPosition(robot.Position + Vector3.Up * 0.45f);
             var rect = Root.GetVisibleRect();
-            if (pos.X > 80 && pos.Y > 80 && pos.X < rect.Size.X - 80 && pos.Y < rect.Size.Y - 160)
+            if (pos.X > 80 && pos.Y > 90 && pos.X < rect.Size.X - 80 && pos.Y < rect.Size.Y - 200)
             {
                 clickedRobot = robot.Id;
-                await ClickWorld(pos);
                 break;
             }
         }
-        await Frames(3);
-        if (clickedRobot != null)
-            Check(selection.Text.Contains("已选"), "机器人点选生效：" + selection.Text.Split('\n')[0]);
+        var objectTitle = (Label)_ui.FindChild("ObjectTitleLabel", true, false)!;
+        if (clickedRobot != null && await ClickWorldObject(clickedRobot, WorldObjectKind.Robot))
+        {
+            Check(_ui.SelectedObjectIdForTest == clickedRobot && _ui.SelectedKindForTest == WorldObjectKind.Robot
+                && objectScroll.IsVisibleInTree() && objectTitle.Text.Length > 0,
+                "机器人点选打开 typed 对象卡：" + objectTitle.Text);
+            var detail = _world.ReadObjectDetail(WorldObjectKind.Robot, clickedRobot, _world.ReadLifecycle().WorldEpoch);
+            var body = (Label)_ui.FindChild("ObjectBodyLabel", true, false)!;
+            Check(detail is { Robot: { } robotDetail } && body.Text.Contains("电量") && body.Text.Contains(robotDetail.State),
+                "对象卡显示权威机器人详情（电量/状态）：" + body.Text.Split('\n')[0]);
+        }
         else
-            Blocked("机器人点选（无机器人投影在画面内）");
+        {
+            Blocked("机器人点选（无机器人投影在画面内或点选未命中）");
+        }
 
-        // 确认按钮双击只提交一次（同一点位重选；整平走既有地形版本合同）
+        // 整地：显式模式进入；选址后经准备卡主按钮确认；placement 内点击机器人不换选。
+        var levelTool = (Button)_ui.FindChild("ToolLevelButton", true, false)!;
+        await CommandClick(levelTool);
+        await Frames(3);
+        Check(_ui.PlacementModeForTest == 1, "整地模式状态机为 1（level placement）");
+        Check(!objectScroll.IsVisibleInTree(), "进入选址后对象卡隐藏（互斥）");
         await ClickWorld(_camera.UnprojectPosition(new Vector3(legal.Center.X, 0.2f, legal.Center.Z)));
-        await WaitFor(() => !confirm.Disabled, 5, "确认按钮再次启用");
+        await Frames(4);
+        Check(_ui.SelectedSiteForTest is { } site && XzDistance(site, legal.Center) < 0.75f, "整地选址生效");
+        if (clickedRobot != null)
+        {
+            var current = _world.ReadPlayerRobots().Single(r => r.Id == clickedRobot);
+            var robotNow = _camera.UnprojectPosition(current.Position + Vector3.Up * 0.45f);
+            await ClickWorld(robotNow);
+            await Frames(3);
+            Check(_ui.SelectedObjectIdForTest == null && _ui.SelectedSiteForTest != null,
+                "placement 左键仅选址：点机器人位置不换选机器人，仍保持地面选址");
+            await ClickWorld(_camera.UnprojectPosition(new Vector3(legal.Center.X, 0.2f, legal.Center.Z)));
+            await Frames(3);
+        }
+        var confirm = (Button)_ui.FindChild("ConfirmButton", true, false)!;
+        await WaitFor(() => confirm.IsVisibleInTree() && !confirm.Disabled, 5, "整地确认按钮启用");
+        Check(confirm.Text.Contains("确认整平"), "整模式主按钮文案：" + confirm.Text);
+
+        // 面板点击不穿透：点标题区域，选址保持
+        Click(new Vector2(120, 60));
+        await Frames(2);
+        Check(_ui.SelectedSiteForTest != null, "点击 HUD 面板不穿透（选址保持）");
+
+        // 空点（天空）不下命令
+        Click(new Vector2(Root.GetVisibleRect().Size.X / 2f, 15));
+        await Frames(2);
+        Check(_world.ReadPlayerState().Job == null, "空点不下命令");
+
+        // 确认按钮双击只提交一次（整平走既有地形版本合同）
+        await ClickWorld(_camera.UnprojectPosition(new Vector3(legal.Center.X, 0.2f, legal.Center.Z)));
+        await WaitFor(() => confirm.IsVisibleInTree() && !confirm.Disabled, 5, "确认按钮再次启用");
         var center = confirm.GetGlobalRect().GetCenter();
         Click(center);
         Click(center);
@@ -381,23 +447,67 @@ public partial class PlayerUiSelfTest : SceneTree
         var job = _world.ReadPlayerState().Job;
         Check(job is { Active: true }, "确认后任务活动");
         Check(job?.Id == "level-1", "双击只产生一个任务（level-1）：" + job?.Id);
-        var jobLabel = (Label)_ui.FindChild("JobLabel", true, false)!;
-        Check(!jobLabel.Text.Contains("level-"), "任务行不泄露内部任务 ID");
-        Check(!jobLabel.Text.Contains("进度 0%"), "0 进度阶段不显示百分比冒充总进度");
-        Check(jobLabel.Text.Contains("执行者"), "任务行显示中文阶段与执行者");
-        Check(job?.WorkerId.StartsWith("Robot_Zhulei_", StringComparison.Ordinal) == true, "执行者是筑垒：" + job?.WorkerId);
 
-        var cancel = (Button)_ui.FindChild("CancelButton", true, false)!;
-        await CommandClick(cancel);
+        // 独立活动工程行：有活动工程才显示，不随选中消失
+        var workRow = (Control)_ui.FindChild("WorkRowPanel", true, false)!;
+        var workRowLabel = (Label)_ui.FindChild("WorkRowLabel", true, false)!;
+        await WaitFor(() => workRow.Visible && workRowLabel.Text.Length > 0, 5, "活动工程行显示");
+        Check(!workRowLabel.Text.Contains("level-"), "活动工程行不泄露内部任务 ID：" + workRowLabel.Text.Split('\n')[0]);
+        Check(_ui.WorkForTest is { Active: true } work && work.WorkerIds.Any(w => w.StartsWith("Robot_Zhulei_", StringComparison.Ordinal)),
+            "权威 ReadWork 显示整平工程与筑垒执行者");
+
+        // 经管理层的工程取消：后果确认 → 同步关闭管理 → 单次提交
+        var workTool = (Button)_ui.FindChild("ToolWorkButton", true, false)!;
+        await CommandClick(workTool);
+        await Frames(4);
+        Check(_ui.ManagementOpenForTest && !_ui.ManagementMaterialsTabForTest && _world.ReadPlayerState().ManagementPaused,
+            "工程行入口打开管理层工程标签并真实临停");
+        var workCurrent = (Label)_ui.FindChild("WorkCurrentLabel", true, false)!;
+        Check(workCurrent.Text.Contains("整平") || workCurrent.Text.Contains("已授权"), "工程标签显示当前整平工程：" + workCurrent.Text.Split('\n')[0]);
+        var cancelButton = (Button)_ui.FindChild("WorkCancelButton", true, false)!;
+        await CommandClick(cancelButton);
+        await Frames(3);
+        Check(_ui.CancelConfirmOpenForTest && ((Control)_ui.FindChild("CancelConfirmBox", true, false)!).Visible,
+            "取消工程先显示后果确认子层");
+        var cancelLabel = (Label)_ui.FindChild("CancelConfirmLabel", true, false)!;
+        Check(cancelLabel.Text.Contains("已发生") && cancelLabel.Text.Contains("保留"), "取消确认显示已发生工作与保留后果：" + cancelLabel.Text.Split('\n')[^1]);
+        // 取消确认是最顶层：独占指针与焦点，下层标签/按钮不可动；Esc 只退确认层
+        var matTabButton = (Button)_ui.FindChild("ManagementMaterialsTabButton", true, false)!;
+        Click(matTabButton.GetGlobalRect().GetCenter());
+        await Frames(3);
+        Check(_ui.CancelConfirmOpenForTest && !_ui.ManagementMaterialsTabForTest, "取消确认期间下层标签不可动（指针独占）");
+        Click(cancelButton.GetGlobalRect().GetCenter());
+        await Frames(3);
+        Check(_ui.CancelConfirmOpenForTest, "取消确认期间下层取消按钮不可再点");
+        PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+        await Frames(3);
+        Check(!_ui.CancelConfirmOpenForTest && _ui.ManagementOpenForTest, "Esc 只退取消确认层（管理层仍开）");
+        await CommandClick(cancelButton);
+        await Frames(3);
+        Check(_ui.CancelConfirmOpenForTest, "取消确认可重新打开");
+        var confirmYes = (Button)_ui.FindChild("CancelConfirmYesButton", true, false)!;
+        var yesCenter = confirmYes.GetGlobalRect().GetCenter();
+        Click(yesCenter);
+        Click(yesCenter); // 双击：冷却门禁保证单次提交
         await WaitFor(() => _world.ReadPlayerState().Job is not { Active: true }, 10, "取消生效");
+        Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused,
+            "确认取消后同步关闭管理层并释放自己的临停");
+        await Frames(3);
         Check((_world.ReadPlayerState().Job?.Active ?? false) == false, "取消后无活动任务");
+        var history = _world.ReadWorkHistory();
+        Check(history.Any(w => w.GoalId == "level-1" && w.Status == PlayerWorkStatus.Cancelled),
+            "取消后历史出现真实取消记录：" + string.Join("/", history.Select(w => w.Name + ":" + w.Status)));
+        // 收尾退出整地选址（后续用例从浏览模式开始）
+        PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+        await Frames(3);
+        Check(_ui.PlacementModeForTest == 0, "整地用例收尾退出选址");
 
         // 用户手动暂停：模拟时间冻结，但相机与 UI 仍可操作
-        var pause = (Button)_ui.FindChild("PauseButton", true, false)!;
+        var pause = (Button)_ui.FindChild("TopPauseButton", true, false)!;
         await CommandClick(pause);
         await WaitFor(() => _world.ReadPlayerState().Paused, 10, "手动暂停生效");
         await Frames(2);
-        Check(((Button)_ui.FindChild("PauseButton", true, false)!).Text == "继续", "手动暂停后按钮显示继续");
+        Check(((Button)_ui.FindChild("TopPauseButton", true, false)!).Text == "继续", "手动暂停后按钮显示继续");
         double frozen = _world.ReadPlayerState().TimeSeconds;
         await Frames(30);
         Check(Math.Abs(_world.ReadPlayerState().TimeSeconds - frozen) < 1e-9, "暂停时模拟时间不推进");
@@ -411,22 +521,33 @@ public partial class PlayerUiSelfTest : SceneTree
         GD.Print("PLAYER_UI_SELFTEST WORLD end");
     }
 
-    // ---- Esc 新语义：局内返回/暂停而不是旧"只清除选区"；选区保持 ----
+    // ---- Esc 逐层：选址预览 → 局内暂停；Esc 不取消正式工程，选区保持 ----
     private async System.Threading.Tasks.Task EscAndPauseChecks()
     {
         GD.Print("PLAYER_UI_SELFTEST ESC begin");
         var legal = FindLegalSite();
+        // 第一层：整地选址中 Esc 先退预览（不开暂停、不取消任何工程）
+        var levelTool = (Button)_ui.FindChild("ToolLevelButton", true, false)!;
+        await CommandClick(levelTool);
+        await Frames(3);
         await ClickWorld(_camera.UnprojectPosition(new Vector3(legal.Center.X, 0.2f, legal.Center.Z)));
         await Frames(3);
-        var selection = (Label)_ui.FindChild("SelectionLabel", true, false)!;
-        Check(selection.Text.Contains("已选位置"), "Esc 检查前置：已有选择");
+        Check(_ui.PlacementModeForTest == 1 && _ui.SelectedSiteForTest != null, "Esc 检查前置：处于选址且有选中点");
         PressKey(Key.Escape, true); PressKey(Key.Escape, false);
         await Frames(3);
-        Check(selection.Text.Contains("已选位置"), "局内 Esc 不再清除选区（改为返回/暂停语义）");
+        Check(_ui.PlacementModeForTest == 0 && _ui.SelectedSiteForTest == null && _world.ReadLifecycle().Page == "game",
+            "选址中 Esc 先退出预览（普通预览取消不确认，Page 仍为 game）");
+        Check(_world.ReadPlayerState().Job is not { Active: true }, "Esc 退出预览不取消、也不创建正式工程");
+
+        // 第二层：局内 Esc 开暂停菜单；选中的 typed 对象保持
+        string? before = _ui.SelectedObjectIdForTest;
+        PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+        await Frames(3);
         var page = _world.ReadLifecycle().Page;
         if (page == "pause")
         {
             Check(true, "局内 Esc 打开暂停菜单（Page=pause）");
+            Check(_ui.SelectedObjectIdForTest == before, "Esc 进暂停不清 typed 选区");
             var resume = (Button)_ui.FindChild("PauseResumeButton", true, false)!;
             await Frames(2);
             Check(resume.HasFocus(), "暂停菜单初始焦点在继续");
@@ -472,7 +593,7 @@ public partial class PlayerUiSelfTest : SceneTree
         GD.Print("PLAYER_UI_SELFTEST DRAG_MENU end");
     }
 
-    // ---- 建造方案（只读草案） ----
+    // ---- 建造方案（只读草案；建设经底部工具进入，蓝图行选择类型） ----
     private async System.Threading.Tasks.Task BuildPlanDraftChecks()
     {
         GD.Print("PLAYER_UI_SELFTEST PLAN begin");
@@ -497,33 +618,428 @@ public partial class PlayerUiSelfTest : SceneTree
             Blocked("建造方案检查（当前阶段无合法建设点，类型候选：" + string.Join("/", candidates) + "）");
             return;
         }
+        var buildTool = (Button)_ui.FindChild("ToolBuildButton", true, false)!;
+        await CommandClick(buildTool);
+        await Frames(3);
+        Check(_ui.PlacementModeForTest == 2, "建设工具进入选址模式");
         await CommandClick((Button)_ui.FindChild("ModeButton_" + type, true, false)!);
         await Frames(3);
+        Check(_ui.BuildTypeForTest == type, "蓝图按钮真实选定类型：" + type);
         Check(site.Legal, "建设模式找到合法预览点（" + type + "）：" + site.Reason);
         await ClickWorld(_camera.UnprojectPosition(new Vector3(site.Center.X, 0.2f, site.Center.Z)));
         await Frames(6);
         var tag = (Label)_ui.FindChild("PlanTagLabel", true, false)!;
         var selection = (Label)_ui.FindChild("SelectionLabel", true, false)!;
         var confirm = (Button)_ui.FindChild("ConfirmButton", true, false)!;
-        Check(tag.Visible && tag.Text.Contains("草案，无承诺"), "选中建造点时显示『草案，无承诺』：" + tag.Text);
-        Check(selection.Text.Contains("已选位置") && selection.Text.Contains("朝向"), "建造选择显示位置与朝向");
-        Check(confirm.Text.Contains("建设·含前置授权"), "建设确认按钮文案含前置授权：" + confirm.Text);
+        var title = (Label)_ui.FindChild("PlanTitleLabel", true, false)!;
+        Check(title.Text.StartsWith("准备建设："), "建设卡标题按新文案『准备建设』：" + title.Text);
+        Check(tag.Visible && tag.Text.Contains("尚未下达"), "未提交时显示『尚未下达』：" + tag.Text);
+        Check(selection.Text.Contains("已选位置") && selection.Text.Contains("朝向") && selection.Text.Contains("仅选址"),
+            "建设选择显示位置、朝向，并说明左键仅选址");
+        Check(confirm.Text.Contains("开始建造"), "建设主按钮文案：" + confirm.Text);
         var plan = _world.ReadBuildPlan(type, site.Center, 0);
         if (plan.CanSubmit)
         {
-            await WaitFor(() => !confirm.Disabled, 5, "可提交时确认按钮启用");
-            Check(true, "ReadBuildPlan.CanSubmit=true 时确认按钮启用（权威实现已生效）");
+            await WaitFor(() => confirm.IsVisibleInTree() && !confirm.Disabled, 5, "可提交时确认按钮启用");
+            Check(true, "ReadBuildPlan.CanSubmit=true 时主按钮启用（权威实现已生效）");
         }
         else
         {
-            Check(confirm.Disabled, "CanSubmit=false 时确认按钮禁用（不产生未授权提交）");
+            Check(confirm.Disabled, "CanSubmit=false 时主按钮禁用（不产生未授权提交）");
             var reason = (Label)_ui.FindChild("PlanReasonLabel", true, false)!;
-            Check(!reason.Visible || reason.Text.Length > 0, "不可提交原因完整显示：" + (reason.Visible ? reason.Text : "（权威未给出原因）"));
-            Blocked("建造方案完整字段（成本/缺口/供料/电源/后果）与真实提交（权威当前 CanSubmit=false：“" + plan.SubmitReason + "”）");
+            Check(reason.Visible && reason.Text.Length > 0, "当前阻塞固定可见：" + reason.Text);
+            Blocked("建造方案完整提交（权威当前 CanSubmit=false：“" + plan.SubmitReason + "”）");
         }
-        // 退出建设模式回到整平
-        if (_ui.FindChild("ModeLevelButton", true, false) is Button levelMode) { await CommandClick(levelMode); await Frames(2); }
+        Check(_ui.FindChild("PlanAutoLabel", true, false) is Label { Visible: true }, "建设卡明示缺料由机器人自动准备");
+        // 重复入口：再次点击建设工具退出选址
+        await CommandClick(buildTool);
+        await Frames(3);
+        Check(_ui.PlacementModeForTest == 0, "再次点击建设工具退出选址（重复入口关闭）");
         GD.Print("PLAYER_UI_SELFTEST PLAN end");
+    }
+
+    // ---- typed 浏览（矿点/设施）与 placement returncontext ----
+    private async System.Threading.Tasks.Task TypedPickAndReturnContextChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST TYPED_PICK begin");
+        var objects = _world.ReadWorldObjects();
+        GD.Print("PLAYER_UI_SELFTEST PICK_SCAN total=" + objects.Length +
+            " robots=" + objects.Count(o => o.Kind == WorldObjectKind.Robot) +
+            " mines=" + objects.Count(o => o.Kind == WorldObjectKind.Mine) +
+            " facilities=" + objects.Count(o => o.Kind == WorldObjectKind.Facility) +
+            " facilityIds=" + string.Join("/", objects.Where(o => o.Kind == WorldObjectKind.Facility).Select(o => o.Id)));
+        var objectScroll = (Control)_ui.FindChild("ObjectScroll", true, false)!;
+        // 矿点：点选后对象卡显示权威详情（剩余储量与产物）
+        var mine = objects.FirstOrDefault(o => o.Kind == WorldObjectKind.Mine);
+        if (mine is { } mineView && await ClickWorldObject(mineView.Id, WorldObjectKind.Mine))
+        {
+            var detail = _world.ReadObjectDetail(WorldObjectKind.Mine, mineView.Id, _world.ReadLifecycle().WorldEpoch);
+            Check(_ui.SelectedKindForTest == WorldObjectKind.Mine && objectScroll.IsVisibleInTree(),
+                "矿点点选打开 typed 对象卡：" + ((_ui.FindChild("ObjectTitleLabel", true, false) as Label)?.Text ?? ""));
+            var body = (_ui.FindChild("ObjectBodyLabel", true, false) as Label)?.Text ?? "";
+            Check(detail is { Mine: { } mineDetail } && body.Contains("剩余储量 " + mineDetail.Remaining.ToString(System.Globalization.CultureInfo.InvariantCulture)),
+                "矿点卡显示权威剩余储量：" + body.Split('\n')[0]);
+        }
+        else Blocked("矿点点选（无矿点投影在可点画面内）");
+        // 设施：着陆器为 Facility；显示建成/接线真实状态
+        var facility = objects.FirstOrDefault(o => o.Kind == WorldObjectKind.Facility);
+        if (facility is { } facilityView && await ClickWorldObject(facilityView.Id, WorldObjectKind.Facility))
+        {
+            var body = (_ui.FindChild("ObjectBodyLabel", true, false) as Label)?.Text ?? "";
+            Check(_ui.SelectedKindForTest == WorldObjectKind.Facility && (body.Contains("已建成") || body.Contains("建设中")),
+                "设施点选显示建成状态：" + body.Split('\n')[0]);
+        }
+        else Blocked("设施点选（无设施投影在可点画面内）");
+
+        // returncontext：选中对象 → 进入建设选址（镜头移动）→ Esc 退出恢复镜头与有效对象
+        var robot = objects.FirstOrDefault(o => o.Kind == WorldObjectKind.Robot && IsPickableOnScreen(o.Position));
+        if (robot is { } robotView && await ClickWorldObject(robotView.Id, WorldObjectKind.Robot))
+        {
+            Check(_ui.SelectedObjectIdForTest == robotView.Id, "returncontext 前置：已选中机器人 " + robotView.Id);
+        }
+        var focusBefore = _ui.CameraFocusForTest;
+        var distanceBefore = _ui.CameraDistanceForTest;
+        var basisBefore = _camera.GlobalBasis;
+        var buildTool = (Button)_ui.FindChild("ToolBuildButton", true, false)!;
+        await CommandClick(buildTool);
+        await Frames(3);
+        PressKey(Key.W, true);
+        await SimulationSeconds(0.25);
+        PressKey(Key.W, false);
+        await Frames(2);
+        Check(_ui.CameraFocusForTest.DistanceTo(focusBefore) > 0.2f, "选址期间镜头仍可移动");
+        PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+        await Frames(3);
+        Check(_ui.PlacementModeForTest == 0, "Esc 退出选址");
+        Check(_ui.CameraFocusForTest.DistanceTo(focusBefore) < 0.05f
+            && MathF.Abs(_ui.CameraDistanceForTest - distanceBefore) < 0.05f
+            && basisBefore.Z.AngleTo(_camera.GlobalBasis.Z) < 0.02f,
+            "退出选址恢复进入前镜头：dFocus=" + F(_ui.CameraFocusForTest.DistanceTo(focusBefore)));
+        if (robot is { } robotAfter)
+        {
+            bool stillValid = _world.ReadObjectDetail(WorldObjectKind.Robot, robotAfter.Id, _world.ReadLifecycle().WorldEpoch) != null;
+            Check(stillValid ? _ui.SelectedObjectIdForTest == robotAfter.Id : _ui.SelectedObjectIdForTest == null,
+                "退出选址按 epoch+stableID 重解析原有效对象：" + _ui.SelectedObjectIdForTest);
+        }
+        // 世界 epoch 变化（load）后临时 context 不复用
+        if (objects.Length == 0) { Blocked("context 清理前置（无世界对象）"); return; }
+        await ClickWorld(_camera.UnprojectPosition((robot ?? objects[0]).Position + Vector3.Up * 0.5f));
+        await Frames(3);
+        await RealSeconds(0.5);
+        _world.QueuePlayerAction("save");
+        await WaitFor(() => _world.ReadPlayerState().Notice.Contains("已保存"), 15, "context 清理前保存");
+        _world.QueuePlayerAction("load");
+        await WaitFor(() => _world.ReadPlayerState().Notice.Contains("读取完成"), 60, "epoch 变化用例读取");
+        await Frames(4);
+        Check(_ui.SelectedObjectIdForTest == null && _ui.PlacementModeForTest == 0 && !_ui.ConnectPanelOpenForTest,
+            "load 后 epoch 变化清临时选择/选址/接线 context");
+        GD.Print("PLAYER_UI_SELFTEST TYPED_PICK end");
+    }
+
+    // ---- 第一次建设未选蓝图：必须先选蓝图，禁提交，不整地 fallback ----
+    private async System.Threading.Tasks.Task BuildModeNullTypeChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST BUILD_NULL begin");
+        var buildTool = (Button)_ui.FindChild("ToolBuildButton", true, false)!;
+        await CommandClick(buildTool);
+        await Frames(3);
+        Check(_ui.PlacementModeForTest == 2 && _ui.BuildTypeForTest == null, "建设模式进入且未选蓝图");
+        var title = (Label)_ui.FindChild("PlanTitleLabel", true, false)!;
+        var confirm = (Button)_ui.FindChild("ConfirmButton", true, false)!;
+        await Frames(2);
+        Check(title.Text.Contains("选择蓝图"), "未选蓝图时建设卡明示先选择蓝图：" + title.Text);
+        Check(confirm.Disabled, "未选蓝图时提交禁用");
+        var legal = FindLegalSite();
+        await ClickWorld(_camera.UnprojectPosition(new Vector3(legal.Center.X, 0.2f, legal.Center.Z)));
+        await Frames(4);
+        Check(_ui.SelectedSiteForTest == null, "未选蓝图时地面点击不创建选址草案");
+        Check(_world.ReadPlayerState().Job is not { Active: true }, "未选蓝图时点击世界不产生整地任务（无 level fallback）");
+        if (_ui.FindChild("ModeButton_solar", true, false) is Button solar)
+        {
+            await CommandClick(solar);
+            await Frames(3);
+            Check(_ui.BuildTypeForTest == "solar", "选定蓝图后建设模式恢复可用");
+        }
+        await CommandClick(buildTool);
+        await Frames(3);
+        Check(_ui.PlacementModeForTest == 0, "建设空态用例退出选址");
+        GD.Print("PLAYER_UI_SELFTEST BUILD_NULL end");
+    }
+
+    // ---- 离开 game 同步丢弃管理覆盖层；取消退出再继续不复活管理 ----
+    private async System.Threading.Tasks.Task LeaveCancelOverlayOffChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST LEAVE_CANCEL begin");
+        var materialsTool = (Button)_ui.FindChild("ToolMaterialsButton", true, false)!;
+        await CommandClick(materialsTool);
+        await Frames(4);
+        Check(_ui.ManagementOpenForTest, "离开用例先打开管理层");
+        _world.QueueLifecycle("home"); // 管理层期间生命周期返回不被 gate 死锁
+        try
+        {
+            await WaitFor(() => _world.ReadLifecycle().Page == "leave", 5, "管理期间打开离开确认");
+            await Frames(3);
+            Check(!_ui.ManagementOpenForTest && !((Control)_ui.FindChild("ManagementOverlay", true, false)!).Visible,
+                "离开 game 同步丢弃管理覆盖层状态");
+        }
+        catch (TimeoutException)
+        {
+            Blocked("管理期间生命周期 home 返回（权威当前拒绝或未切换，Page=" + _world.ReadLifecycle().Page + "）");
+            Click(((Button)_ui.FindChild("ManagementCloseButton", true, false)!).GetGlobalRect().GetCenter());
+            await Frames(4);
+            _world.QueueLifecycle("home");
+            await WaitFor(() => _world.ReadLifecycle().Page == "leave", 5, "离开确认页（管理已先关闭）");
+            await Frames(2);
+        }
+        await CommandClick((Button)_ui.FindChild("LeaveCancelButton", true, false)!);
+        await WaitFor(() => _world.ReadLifecycle().Page is "pause" or "game", 5, "取消离开");
+        if (_world.ReadLifecycle().Page == "pause")
+        {
+            await CommandClick((Button)_ui.FindChild("PauseResumeButton", true, false)!);
+            await WaitFor(() => _world.ReadLifecycle().Page == "game", 5, "取消离开后继续经营");
+        }
+        await Frames(3);
+        Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused && _ui.PlacementModeForTest == 0,
+            "取消退出再继续：管理不复活、无残留临停、无选址");
+        GD.Print("PLAYER_UI_SELFTEST LEAVE_CANCEL end");
+    }
+
+    // ---- 读档/新游戏尝试轮次（WorldTransitionRevision）：失败尝试同 epoch 也清选址草案 ----
+    private async System.Threading.Tasks.Task TransitionRevisionChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST REVISION begin");
+        long revisionBefore = _world.ReadLifecycle().WorldTransitionRevision;
+        long epochBefore = _world.ReadLifecycle().WorldEpoch;
+        var levelTool = (Button)_ui.FindChild("ToolLevelButton", true, false)!;
+        await CommandClick(levelTool);
+        await Frames(3);
+        var legal = FindLegalSite();
+        await ClickWorld(_camera.UnprojectPosition(new Vector3(legal.Center.X, 0.2f, legal.Center.Z)));
+        await Frames(3);
+        Check(_ui.SelectedSiteForTest != null && _ui.PlacementModeForTest == 1, "revision 用例前置：已有整地选址草案");
+        await WaitFor(() => _world.ReadPlayerState().Ready && !_world.ReadLifecycle().Busy, 10, "revision 用例保存准备");
+        _world.QueueLifecycle("save", 2);
+        await WaitFor(() => !_world.ReadLifecycle().Busy, 10, "revision 用例保存槽2");
+        Check(_world.ReadLifecycle().Slots.Any(s => s.Slot == 2 && s.Exists), "revision 用例槽2已真实保存");
+        string slot2Path = System.IO.Path.Combine(_privateRoot, "d13-tutorial-v4-slot-2.json");
+        Check(System.IO.File.Exists(slot2Path), "revision 用例私槽2文件存在：" + slot2Path);
+        System.IO.File.WriteAllText(slot2Path, "{ broken json for failed-load-attempt test"); // 私有测试档：制造确定校验失败
+        _world.QueueLifecycle("load", 2, confirmed: true);
+        await RealSeconds(1.0);
+        await WaitFor(() => !_world.ReadLifecycle().Busy, 10, "失败读取尝试处理完成");
+        await Frames(6);
+        long revisionAfter = _world.ReadLifecycle().WorldTransitionRevision;
+        Check(revisionAfter > revisionBefore, "失败读取尝试递增 WorldTransitionRevision：" + revisionBefore + "→" + revisionAfter);
+        Check(_world.ReadLifecycle().WorldEpoch == epochBefore, "失败读取尝试保留当前世界（epoch 不变）");
+        Check(_ui.SelectedSiteForTest == null && _ui.PlacementModeForTest == 0 && _ui.SelectedObjectIdForTest == null,
+            "新尝试轮次清选址/整地/选择草案（同 epoch 不复用）");
+        GD.Print("PLAYER_UI_SELFTEST REVISION end");
+    }
+
+    private bool IsPickableOnScreen(Vector3 worldPos)
+    {
+        var pos = _camera.UnprojectPosition(worldPos + Vector3.Up * 0.6f);
+        var rect = Root.GetVisibleRect();
+        return pos.X > 80 && pos.Y > 90 && pos.X < rect.Size.X - 80 && pos.Y < rect.Size.Y - 200;
+    }
+
+    // 世界点选遮挡检测：这些 MouseFilter=Stop 的面板可见时，其矩形内的点击会被 GUI 吞掉，
+    // 不会到达世界 picker（诊断已证实对象卡占据右列时设施点选被吞）。
+    private static readonly string[] PickOccluders = { "InfoPanel", "ObjectPanel", "PlanPanel", "ConnectPanel", "TopBar", "WorkRowPanel", "ManagementOverlay" };
+
+    private bool OccludedByVisibleHud(Vector2 point)
+    {
+        foreach (string name in PickOccluders)
+            // IsVisibleInTree()：语境卡只显隐外层 Scroll，子面板自身 Visible 恒为 true，不能用它判遮挡。
+            if (_ui.FindChild(name, true, false) is Control panel && panel.IsVisibleInTree() && panel.GetGlobalRect().HasPoint(point))
+            {
+                GD.Print("PLAYER_UI_SELFTEST PICK_DIAG occluder=" + name + " rect=" + panel.GetGlobalRect() + " point=" + point);
+                return true;
+            }
+        return false;
+    }
+
+    // 找一个当前没有任何可见 HUD 面板覆盖的画面点（限世界带内），供真实右键清选用；找不到返回 null。
+    private Vector2? FindHudFreePoint()
+    {
+        var view = Root.GetVisibleRect().Size;
+        foreach (var fraction in new[]
+        {
+            new Vector2(0.5f, 0.55f), new Vector2(0.35f, 0.5f), new Vector2(0.5f, 0.35f),
+            new Vector2(0.3f, 0.6f), new Vector2(0.6f, 0.45f), new Vector2(0.25f, 0.65f),
+        })
+        {
+            var point = view * fraction;
+            if (point.X < 80 || point.Y < 90 || point.X > view.X - 80 || point.Y > view.Y - 200) continue;
+            if (!OccludedByVisibleHud(point)) return point;
+        }
+        return null;
+    }
+
+    // typed 点选带重试：机器人会移动，每次按最新权威投影重新计算屏幕点。
+    // 覆盖方式为真实 engine input 点击：以权威投影中心为基准，按投影半径取多个真实偏移点
+    //（单次中心射线可能被路过机器人或取景遮挡）；目标不在画面时用 testhook 对焦/拉近后重试，
+    // 不放宽生产 picker、不伪造选中。
+    private async System.Threading.Tasks.Task<bool> ClickWorldObject(string id, WorldObjectKind kind, int attempts = 6)
+    {
+        for (int attempt = 0; attempt < attempts; attempt++)
+        {
+            var view = Array.Find(_world.ReadWorldObjects(), o => o.Id == id && o.Kind == kind);
+            if (view == null)
+            {
+                GD.Print("PLAYER_UI_SELFTEST PICK_DIAG id=" + id + " kind=" + kind + " attempt=" + attempt + " view=missing");
+                return false;
+            }
+            Vector3 center = view.Position + Vector3.Up * (kind == WorldObjectKind.Robot ? 0.45f : 0.6f);
+            var screen = _camera.UnprojectPosition(center);
+            var rect = Root.GetVisibleRect();
+            GD.Print("PLAYER_UI_SELFTEST PICK_DIAG id=" + id + " kind=" + kind + " attempt=" + attempt +
+                " world=" + Fmt(view.Position) + " radius=" + F(view.Radius) + " screen=" + Fmt(new Vector3(screen.X, screen.Y, 0)) +
+                " focus=" + Fmt(_ui.CameraFocusForTest) + " distance=" + F(_ui.CameraDistanceForTest));
+            bool inBand = screen.X > 80 && screen.Y > 90 && screen.X < rect.Size.X - 80 && screen.Y < rect.Size.Y - 200;
+            if (inBand && OccludedByVisibleHud(screen))
+            {
+                // 目标投影落在可见语境卡之下（如点选矿点后对象卡占据右列，MouseFilter=Stop 吞掉世界点击）。
+                // 被遮挡点上的任何点击（含右键）都会被面板吞掉，无法自清：改在无 HUD 挡世界的一点真实右键
+                // 清选（生产行为：右键单击取消选择），卡片收起后下一轮重试；不伪造选中、不改生产 picker。
+                Vector2? clearPoint = FindHudFreePoint();
+                if (clearPoint is { } point)
+                {
+                    GD.Print("PLAYER_UI_SELFTEST PICK_DIAG id=" + id + " attempt=" + attempt + " occluded, right-click clear at " + point);
+                    Root.PushInput(new InputEventMouseButton { ButtonIndex = MouseButton.Right, Pressed = true, Position = point }, inLocalCoords: true);
+                    Root.PushInput(new InputEventMouseButton { ButtonIndex = MouseButton.Right, Pressed = false, Position = point }, inLocalCoords: true);
+                    await Frames(3);
+                }
+                else GD.Print("PLAYER_UI_SELFTEST PICK_DIAG id=" + id + " attempt=" + attempt + " occluded and no HUD-free clear point");
+                continue;
+            }
+            if (inBand)
+            {
+                float radiusPx = MathF.Max(6f, (_camera.UnprojectPosition(center + _camera.GlobalBasis.X * view.Radius) - screen).Length());
+                var candidates = new[]
+                {
+                    screen,
+                    screen + new Vector2(radiusPx, 0), screen - new Vector2(radiusPx, 0),
+                    screen + new Vector2(0, radiusPx), screen - new Vector2(0, radiusPx),
+                };
+                foreach (var candidate in candidates)
+                {
+                    if (candidate.X < 0 || candidate.Y < 0 || candidate.X >= rect.Size.X || candidate.Y >= rect.Size.Y) continue;
+                    await ClickWorld(candidate);
+                    await Frames(3);
+                    if (_ui.SelectedObjectIdForTest == id && _ui.SelectedKindForTest == kind) return true;
+                }
+            }
+            else
+            {
+                // 目标不在画面（如着陆器在画面外）：先用 testhook 对焦，再不行拉近一档，全部为测试设施，不改生产相机路径。
+                if (attempt % 2 == 0) _ui.FocusCameraForTest(view.Position);
+                else _ui.ResetCameraForTest(_camera.GlobalBasis, view.Position, MathF.Max(14f, _ui.CameraDistanceForTest * 0.6f));
+                await Frames(2);
+            }
+        }
+        return _ui.SelectedObjectIdForTest == id && _ui.SelectedKindForTest == kind;
+    }
+
+    // ---- 管理层：门禁、重复入口、用户暂停保值、同 epoch 返回保 context ----
+    private async System.Threading.Tasks.Task ManagementGateChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST MGMT begin");
+        var materialsTool = (Button)_ui.FindChild("ToolMaterialsButton", true, false)!;
+        await CommandClick(materialsTool);
+        await Frames(4);
+        Check(_ui.ManagementOpenForTest && _ui.ManagementMaterialsTabForTest && _world.ReadPlayerState().ManagementPaused,
+            "基地物资入口打开管理层并真实临停");
+        var overlay = (Control)_ui.FindChild("ManagementOverlay", true, false)!;
+        Check(overlay.Visible && overlay is ColorRect { MouseFilter: Control.MouseFilterEnum.Stop }, "管理遮罩 MouseFilter.Stop 全屏拦截");
+        // 世界点击不穿透：世界选区不变
+        string? selectedBefore = _ui.SelectedObjectIdForTest;
+        Click(new Vector2(Root.GetVisibleRect().Size.X * 0.5f, Root.GetVisibleRect().Size.Y * 0.6f));
+        await Frames(3);
+        Check(_ui.SelectedObjectIdForTest == selectedBefore && _ui.ManagementOpenForTest,
+            "管理层期间世界点击不穿透（无选址/选择）");
+        // 键盘门禁：按 W 镜头不动（每帧 camera Input.IsKeyPressed 被门禁）
+        var cameraBefore = _camera.GlobalPosition;
+        PressKey(Key.W, true);
+        await SimulationSeconds(0.25);
+        PressKey(Key.W, false);
+        await Frames(2);
+        Check(cameraBefore.DistanceTo(_camera.GlobalPosition) < 1e-4f, "管理层期间键盘轮询不驱动镜头");
+        // 世界命令被权威拒绝（level 是世界意图；管理层门禁下必须拒绝且无任务）
+        await RealSeconds(0.5);
+        _world.QueueLevel(new Vector3(8, 0, 8), _world.ReadPlayerState().Version);
+        await Frames(4);
+        Check(_world.ReadPlayerState().Notice.Contains("管理面板打开期间不接受世界操作") && _world.ReadPlayerState().Job is not { Active: true },
+            "管理层期间世界命令被权威拒绝：" + _world.ReadPlayerState().Notice.Split('\n')[0]);
+        // 关联工程：预约按 GoalId/TaskId 真实解析；空态或行内"查看关联工程"实际按钮（不展示内部目标 ID）
+        var reservationsNow = _world.ReadMaterialsDetail().Reservations;
+        var relatedEmpty = (Label)_ui.FindChild("MatRelatedLabel", true, false)!;
+        Check(!relatedEmpty.Text.Contains("goal-") && !relatedEmpty.Text.Contains("build-"), "关联工程文案不泄露内部目标 ID");
+        if (reservationsNow.Length == 0)
+        {
+            Check(relatedEmpty.Visible && relatedEmpty.Text.Contains("无关联工程"), "无真实预留时关联工程空态：" + relatedEmpty.Text);
+        }
+        else if (_ui.FindChild("RelatedWorkButton", true, false) is Button relatedOpen)
+        {
+            Click(relatedOpen.GetGlobalRect().GetCenter());
+            await Frames(3);
+            Check(!_ui.ManagementMaterialsTabForTest && ((Control)_ui.FindChild("RelatedWorkBox", true, false)!).Visible,
+                "预留行按钮进入同层关联工程详情");
+            PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+            await Frames(3);
+            Check(_ui.ManagementOpenForTest && _ui.ManagementMaterialsTabForTest, "Esc 先退关联工程子详情回物资标签（管理层仍开）");
+        }
+        else Check(false, "存在预留但未建立查看关联工程按钮");
+        // 同一覆盖层标签互切
+        var workTab = (Button)_ui.FindChild("ManagementWorkTabButton", true, false)!;
+        await CommandClick(workTab);
+        await Frames(3);
+        Check(_ui.ManagementOpenForTest && !_ui.ManagementMaterialsTabForTest, "物资→工程为同层标签切换");
+        // 用户手动暂停保值：管理层打开期间手动暂停，关闭后保持
+        var topPause = (Button)_ui.FindChild("TopPauseButton", true, false)!;
+        Click(topPause.GetGlobalRect().GetCenter()); // 遮罩上不可点：此处应无效果
+        await Frames(3);
+        Check(!_world.ReadPlayerState().Paused, "遮罩挡住 HUD 按钮（手动暂停未被误触）");
+        // Esc 同样只退一层
+        PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+        await Frames(4);
+        Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused && _world.ReadLifecycle().Page == "game",
+            "Esc 关闭管理层并释放自己的临停（不开暂停菜单）");
+        // 遮罩在底部工具上方：管理期间真实点击建设/物资工具不进入选址、也不触发关闭
+        await CommandClick(materialsTool);
+        await Frames(4);
+        Check(_ui.ManagementOpenForTest && _ui.ManagementMaterialsTabForTest, "重新打开管理层");
+        await CommandClick((Button)_ui.FindChild("ToolBuildButton", true, false)!);
+        await Frames(3);
+        Check(_ui.ManagementOpenForTest && _ui.PlacementModeForTest == 0, "遮罩挡底部建设工具：不进入选址也不关闭");
+        await CommandClick(materialsTool);
+        await Frames(3);
+        Check(_ui.ManagementOpenForTest && _ui.ManagementMaterialsTabForTest, "遮罩挡物资工具：被覆盖的重复入口不再可达");
+        Click(((Button)_ui.FindChild("ManagementCloseButton", true, false)!).GetGlobalRect().GetCenter());
+        await Frames(4);
+        Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused, "关闭按钮释放自己的临停");
+        // 管理层开关不翻转用户暂停（开/关都走真实控件）
+        var pauseTool = (Button)_ui.FindChild("TopPauseButton", true, false)!;
+        await CommandClick(pauseTool);
+        await WaitFor(() => _world.ReadPlayerState().Paused, 10, "先置用户手动暂停");
+        await CommandClick(materialsTool);
+        await Frames(4);
+        Check(_ui.ManagementOpenForTest && _world.ReadPlayerState().Paused, "用户手动暂停在管理层打开期间保持");
+        Click(((Button)_ui.FindChild("ManagementCloseButton", true, false)!).GetGlobalRect().GetCenter());
+        await Frames(4);
+        Check(!_ui.ManagementOpenForTest && _world.ReadPlayerState().Paused, "关闭管理层只释放自己的临停，手动暂停保值");
+        await CommandClick(pauseTool);
+        await WaitFor(() => !_world.ReadPlayerState().Paused, 10, "恢复运行");
+        // 同 epoch 普通暂停菜单返回保 context
+        var menu = (Button)_ui.FindChild("TopMenuButton", true, false)!;
+        await CommandClick(menu);
+        await WaitFor(() => _world.ReadLifecycle().Page == "pause", 5, "菜单打开");
+        await CommandClick((Button)_ui.FindChild("PauseResumeButton", true, false)!);
+        await WaitFor(() => _world.ReadLifecycle().Page == "game", 5, "同 epoch 返回局内");
+        await Frames(2);
+        Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused,
+            "同 epoch 菜单返回不残留管理临停");
+        GD.Print("PLAYER_UI_SELFTEST MGMT end");
     }
 
     // ---- 显式接线面板 ----
@@ -661,12 +1177,59 @@ public partial class PlayerUiSelfTest : SceneTree
         if (!plan.CanSubmit) throw new InvalidOperationException("正常建造不可提交 " + type + "：" + plan.SubmitReason);
         ulong started = Time.GetTicksMsec();
         _world.QueueBuild(type, position, 0, plan.ObservedVersion);
+        await Frames(3);
+        if (type == "solar") await ReservationWorkDetailChecks(); // 首次真实建设过程内覆盖：物资预约→关联工程详情，不只空态
         await WaitForSimulation(() => _world.ReadBootstrap().Facilities.Any(f => f.Built && f.Type == type)
             && _world.ReadPlayerState().Job is not { Active: true }, 220, "正常 " + type + " 实际建成");
         var facility = _world.ReadBootstrap().Facilities.Single(f => f.Built && f.Type == type);
         GD.Print("PLAYER_UI_SELFTEST REAL_BUILD type=" + type + " id=" + facility.Id + " elapsed=" +
             ((Time.GetTicksMsec() - started) / 1000.0).ToString("0.###", Inv) + " simulation=" + _world.ReadPlayerState().TimeSeconds.ToString("0.###", Inv));
         return facility;
+    }
+
+    // 真实建设授权后的物资预约（世界运行中等待出现，不注入材料）：预约 Goal 应解析到当前工程
+    // （TaskId/GoalId 任一口径），物资标签行内“查看关联工程”按钮实际跳同层工程详情；检查后关闭
+    // 管理层释放临停让建设继续。预约时机按权威规则，未出现则如实 BLOCKED，不伪造。
+    private async System.Threading.Tasks.Task ReservationWorkDetailChecks()
+    {
+        bool reserved = true;
+        try
+        {
+            await WaitFor(() => _world.ReadPlayerState().Job is { Active: true } && _world.ReadMaterialsDetail().Reservations.Length > 0,
+                15, "真实建设授权产生物资预约");
+        }
+        catch (TimeoutException) { reserved = false; }
+        if (!reserved || _world.ReadPlayerState().Job is not { Active: true })
+        {
+            Blocked("真实建设物资预约（15 秒内未见预约或工程已推进；按权威时机，不注入材料）");
+            return;
+        }
+        var work = _world.ReadWork()!;
+        await CommandClick((Button)_ui.FindChild("ToolMaterialsButton", true, false)!);
+        await Frames(4);
+        Check(_ui.ManagementOpenForTest && _ui.ManagementMaterialsTabForTest && _world.ReadPlayerState().ManagementPaused,
+            "真实建设过程打开基地物资标签并真实临停");
+        var reservations = _world.ReadMaterialsDetail().Reservations;
+        Check(reservations.Length > 0 && reservations.All(r => r.GoalId == work.TaskId || r.GoalId == work.GoalId),
+            "建设预约 Goal 对应当前真实工程（TaskId=" + work.TaskId + " GoalId=" + work.GoalId + "）：" +
+            string.Join(",", reservations.Select(r => r.GoalId + " " + r.Name + "×" + r.Quantity)));
+        if (_ui.FindChild("RelatedWorkButton", true, false) is Button relatedOpen)
+        {
+            Click(relatedOpen.GetGlobalRect().GetCenter());
+            await Frames(3);
+            var detailLabel = (Label)_ui.FindChild("RelatedWorkDetailLabel", true, false)!;
+            Check(!_ui.ManagementMaterialsTabForTest && ((Control)_ui.FindChild("RelatedWorkBox", true, false)!).Visible
+                && detailLabel.Text.Contains(work.Name),
+                "预约行按钮实际跳同层关联工程详情：" + detailLabel.Text.Split('\n')[0]);
+            PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+            await Frames(3);
+            Check(_ui.ManagementOpenForTest && _ui.ManagementMaterialsTabForTest, "Esc 从关联工程详情退回物资标签（管理层仍开）");
+        }
+        else Blocked("关联工程行按钮（真实预约存在但未建立行入口）");
+        Click(((Button)_ui.FindChild("ManagementCloseButton", true, false)!).GetGlobalRect().GetCenter());
+        await Frames(4);
+        Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused,
+            "真实建设检查后关闭管理层释放临停（建设继续）");
     }
 
     private async System.Threading.Tasks.Task SavePrivateSlot(string label)
@@ -708,6 +1271,23 @@ public partial class PlayerUiSelfTest : SceneTree
         {
             Check(title.Text == "自主经营", "教学未启用时显示自主经营：" + title.Text);
         }
+        // 目标卡整卡收成一行（标题保留），再展开恢复核心与为什么；freeplay 结尾确认后目标卡隐藏由真实通关轨覆盖
+        if (_ui.FindChild("GoalFoldToggle", true, false) is Button fold && fold.IsVisibleInTree())
+        {
+            Click(fold.GetGlobalRect().GetCenter());
+            await Frames(3);
+            var instructionLabel = (Label)_ui.FindChild("GoalInstructionLabel", true, false)!;
+            var actionLabel = (Label)_ui.FindChild("GoalActionLabel", true, false)!;
+            Check(title.IsVisibleInTree() && !instructionLabel.IsVisibleInTree() && !actionLabel.IsVisibleInTree(),
+                "目标卡可收成一行（标题保留）");
+            Click(fold.GetGlobalRect().GetCenter());
+            await Frames(3);
+            Check(instructionLabel.IsVisibleInTree() && actionLabel.IsVisibleInTree(), "目标卡可再次展开");
+            var whyLabel = (Label)_ui.FindChild("GoalWhyLabel", true, false)!;
+            if (whyLabel.Text.Length > "为什么：".Length)
+                Check(whyLabel.IsVisibleInTree(), "展开目标核心显示为什么：" + whyLabel.Text.Split('\n')[0]);
+        }
+        else Blocked("目标卡收展开关（GoalFoldToggle 未建立或教学未启用）");
         // 学习操作上报：实际按 Q 旋转相机后不产生世界任务，且不伪造达成
         var jobBefore = _world.ReadPlayerState().Job;
         PressKey(Key.Q, true); await SimulationSeconds(0.15); PressKey(Key.Q, false);
@@ -722,7 +1302,7 @@ public partial class PlayerUiSelfTest : SceneTree
         GD.Print("PLAYER_UI_SELFTEST SETTINGS begin");
         var settings = _world.ReadSettings();
         Check(_ui.UiScaleForTest == settings.UiScale || _ui.UiScaleForTest > 0, "UI 缩放初值来自权威 ReadSettings：" + _ui.UiScaleForTest.ToString("0.##", Inv));
-        var job = (Label)_ui.FindChild("JobLabel", true, false)!;
+        var job = (Label)_ui.FindChild("GoalInstructionLabel", true, false)!;
         var goal = (Label)_ui.FindChild("GoalTitleLabel", true, false)!;
 
         // 150%：字体按 1.5 实际变大
@@ -831,133 +1411,43 @@ public partial class PlayerUiSelfTest : SceneTree
         return before.DistanceTo(_camera.GlobalPosition);
     }
 
-    // ---- 相机按钮与输入诊断（沿用 CAMERA-01 覆盖） ----
-    private async System.Threading.Tasks.Task CameraUiChecks()
+    // ---- 相机输入（九个镜头方向按钮已移除；用真实 engine input 与状态合同验收） ----
+    private async System.Threading.Tasks.Task CameraInputChecks()
     {
         GD.Print("PLAYER_UI_SELFTEST CAMUI begin");
-        Button? Cam(string name) => _ui.FindChild(name, true, false) as Button;
-        var forward = Cam("CameraForwardButton");
-        var back = Cam("CameraBackButton");
-        var left = Cam("CameraLeftButton");
-        var right = Cam("CameraRightButton");
-        var zoomIn = Cam("CameraZoomInButton");
-        var zoomOut = Cam("CameraZoomOutButton");
-        var rotL = Cam("CameraRotateLeftButton");
-        var rotR = Cam("CameraRotateRightButton");
-        var reset = Cam("CameraResetButton");
-        var buttons = new[] { forward, back, left, right, zoomIn, zoomOut, rotL, rotR, reset };
-        Check(buttons.All(b => b != null), "九个镜头按钮建立（前后左右/拉近拉远/左右转/复位）");
-        if (buttons.Any(b => b == null)) { Blocked("镜头按钮操作（按钮未建立）"); return; }
-        Check(forward!.FocusMode != Control.FocusModeEnum.None, "镜头按钮保留键盘焦点可访问");
+        Check(_ui.FindChild("CameraForwardButton", true, false) == null && _ui.FindChild("CameraResetButton", true, false) == null,
+            "九个镜头方向按钮不再建立（真实键鼠/触控板映射替代）");
+        await WaitForGameHud("相机输入检查前 HUD 可见");
+        var hints = (_ui.FindChild("Hints", true, false) as Label)?.Text ?? "";
+        Check(hints.Contains("Q/E") && hints.Contains("滚轮") && hints.Contains("WASD"),
+            "帮助文本与真实映射一致（Q/E 旋转、滚轮缩放、WASD 平移）：" + hints);
 
-        await WaitForGameHud("镜头检查前 UI 已处理 game 且复位按钮可见");
-        Click(reset!.GetGlobalRect().GetCenter());
-        await Frames(3);
-        Check(_ui.CameraFocusForTest.DistanceTo(_configuredCameraFocus) < 0.01f
-            && MathF.Abs(_ui.CameraDistanceForTest - _configuredCameraDistance) < 0.01f
-            && _configuredCameraBasis.Z.AngleTo(_camera.GlobalBasis.Z) < 1e-3f
-            && _configuredCameraBasis.X.AngleTo(_camera.GlobalBasis.X) < 1e-3f
-            && _camera.GlobalPosition.DistanceTo(_configuredCameraOrigin) < 0.01f,
-            "真实复位先恢复配置初始焦点/距离/朝向：focus=" + Fmt(_ui.CameraFocusForTest) + " dist=" + F(_ui.CameraDistanceForTest));
-        var baseOrigin = _configuredCameraOrigin;
-        var baseBasisZ = _configuredCameraBasis.Z;
-        Diag("camui-start origin=" + Fmt(_camera.GlobalPosition) + " focus=" + Fmt(_ui.CameraFocusForTest) +
-            " dist=" + F(_ui.CameraDistanceForTest) + " baseOrigin=" + Fmt(baseOrigin));
+        // 复位合同：真实 Q/E 与滚轮改变镜头后，状态合同仍可经 F 定位与初始姿态不可伪造地验证。
+        // 这里验证输入→状态因果：Q 旋转、W 平移、滚轮缩放各自改变被测状态。
+        var basisBefore = _camera.GlobalBasis;
+        PressKey(Key.Q, true);
+        await SimulationSeconds(0.15);
+        PressKey(Key.Q, false);
+        await Frames(2);
+        Check(basisBefore.Z.AngleTo(_camera.GlobalBasis.Z) > 1e-4f, "真实 Q 旋转相机");
 
-        var view = Root.GetVisibleRect().Size;
-        bool InView(Control c)
-        {
-            var r = c.GetGlobalRect();
-            return r.Position.Y >= 0f && r.End.Y <= view.Y && r.Position.X >= 0f && r.End.X <= view.X;
-        }
-        Check(buttons.All(b => InView(b!)), "镜头按钮在视口内不裁切");
+        var originBefore = _camera.GlobalPosition;
+        PressKey(Key.W, true);
+        await SimulationSeconds(0.2);
+        PressKey(Key.W, false);
+        await Frames(2);
+        Check(originBefore.DistanceTo(_camera.GlobalPosition) > 0.2f, "真实 W 沿朝向平移");
 
-        Vector3 FlatForward()
-        {
-            var f = -_camera.GlobalBasis.Z;
-            f.Y = 0f;
-            return f.Normalized();
-        }
-        Vector2 Xz(Vector3 v) => new(v.X, v.Z);
-
-        var want = Xz(FlatForward()).Normalized();
-        var o = _camera.GlobalPosition;
-        Click(forward.GetGlobalRect().GetCenter());
+        float distanceBefore = _ui.CameraDistanceForTest;
+        Wheel(true);
         await Frames(2);
-        var moved = Xz(_camera.GlobalPosition - o);
-        Diag("forward1 moved=" + F(moved.Length()) + " focus=" + Fmt(_ui.CameraFocusForTest) + " dist=" + F(_ui.CameraDistanceForTest));
-        Check(moved.Length() > 2f && moved.Normalized().Dot(want) > 0.95f, "『前』按钮沿当前朝向明显平移: " + F(moved.Length()) + "m");
-
-        var b0 = _camera.GlobalBasis.Z;
-        Click(rotR!.GetGlobalRect().GetCenter());
-        await Frames(2);
-        float rot = MathF.Abs(Xz(b0).AngleTo(Xz(_camera.GlobalBasis.Z)));
-        Diag("rotR1 rot=" + F(rot) + " focus=" + Fmt(_ui.CameraFocusForTest) + " dist=" + F(_ui.CameraDistanceForTest));
-        Check(MathF.Abs(rot - Mathf.Pi / 12f) < 0.01f, "『右转』单次15度: " + F(rot) + "rad");
-
-        want = Xz(FlatForward()).Normalized();
-        o = _camera.GlobalPosition;
-        Diag("pre-rot-forward dist=" + F(_ui.CameraDistanceForTest) + " focus=" + Fmt(_ui.CameraFocusForTest) +
-            " keys Q=" + Input.IsKeyPressed(Key.Q) + " E=" + Input.IsKeyPressed(Key.E) + " W=" + Input.IsKeyPressed(Key.W) + " S=" + Input.IsKeyPressed(Key.S));
-        Click(forward.GetGlobalRect().GetCenter());
-        await Frames(2);
-        moved = Xz(_camera.GlobalPosition - o);
-        Diag("post-rot-forward moved=" + F(moved.Length()) + " dist=" + F(_ui.CameraDistanceForTest) + " focus=" + Fmt(_ui.CameraFocusForTest));
-        Check(moved.Length() > 2f && moved.Normalized().Dot(want) > 0.95f,
-            "旋转后『前』沿新朝向平移: " + F(moved.Length()) + "m dot=" + F(moved.Normalized().Dot(want)));
-
-        b0 = _camera.GlobalBasis.Z;
-        for (int i = 0; i < 3; i++) Click(rotR.GetGlobalRect().GetCenter());
-        await Frames(2);
-        rot = MathF.Abs(Xz(b0).AngleTo(Xz(_camera.GlobalBasis.Z)));
-        Check(MathF.Abs(rot - Mathf.Pi / 4f) < 0.01f, "连点三次『右转』45度不受工程冷却: " + F(rot) + "rad");
-
-        Click(reset.GetGlobalRect().GetCenter());
-        await Frames(2);
-        for (int i = 0; i < 22; i++) Click(zoomIn!.GetGlobalRect().GetCenter());
-        await Frames(2);
-        o = _camera.GlobalPosition;
-        Click(zoomIn!.GetGlobalRect().GetCenter());
-        await Frames(2);
-        Check(o.DistanceTo(_camera.GlobalPosition) < 0.05f, "连续拉近到下限后不再变化");
-        for (int i = 0; i < 30; i++) Click(zoomOut!.GetGlobalRect().GetCenter());
-        await Frames(2);
-        o = _camera.GlobalPosition;
-        Click(zoomOut!.GetGlobalRect().GetCenter());
-        await Frames(2);
-        Check(o.DistanceTo(_camera.GlobalPosition) < 0.05f, "连续拉远到上限后不再变化");
-
-        Click(reset.GetGlobalRect().GetCenter());
-        await Frames(2);
-        for (int i = 0; i < 40; i++) Click(forward.GetGlobalRect().GetCenter());
-        await Frames(2);
-        o = _camera.GlobalPosition;
-        Click(forward.GetGlobalRect().GetCenter());
-        await Frames(2);
-        Check(Xz(o - _camera.GlobalPosition).Length() < 0.05f, "平移到前限后不再变化");
-        for (int i = 0; i < 80; i++) Click(back!.GetGlobalRect().GetCenter());
-        await Frames(2);
-        o = _camera.GlobalPosition;
-        Click(back!.GetGlobalRect().GetCenter());
-        await Frames(2);
-        Check(Xz(o - _camera.GlobalPosition).Length() < 0.05f, "平移到后限后不再变化");
-
-        Click(rotL!.GetGlobalRect().GetCenter());
-        Click(zoomIn.GetGlobalRect().GetCenter());
-        Click(forward.GetGlobalRect().GetCenter());
-        await Frames(2);
-        Diag("pre-reset dist=" + F(_ui.CameraDistanceForTest) + " focus=" + Fmt(_ui.CameraFocusForTest));
-        Click(reset.GetGlobalRect().GetCenter());
-        await Frames(2);
-        Diag("post-reset dist=" + F(_ui.CameraDistanceForTest) + " focus=" + Fmt(_ui.CameraFocusForTest) +
-            " origin=" + Fmt(_camera.GlobalPosition) + " baseOrigin=" + Fmt(baseOrigin));
-        Check(baseBasisZ.AngleTo(_camera.GlobalBasis.Z) < 1e-3f && baseOrigin.DistanceTo(_camera.GlobalPosition) < 0.01f,
-            "复位恢复初始焦点/距离/朝向: dAngle=" + F(baseBasisZ.AngleTo(_camera.GlobalBasis.Z)) + " dPos=" + F(baseOrigin.DistanceTo(_camera.GlobalPosition)));
+        Check(_ui.CameraDistanceForTest < distanceBefore, "真实滚轮拉近（状态合同距离变小）");
 
         // 镜头操作不下达任务
         Check(_world.ReadPlayerState().Job is not { Active: true }, "镜头操作不下达任务");
         GD.Print("PLAYER_UI_SELFTEST CAMUI end");
     }
+
 
     private async System.Threading.Tasks.Task CameraDiag()
     {
@@ -1124,7 +1614,7 @@ public partial class PlayerUiSelfTest : SceneTree
         var diagToggle = (Button)_ui.FindChild("DiagToggle", true, false)!;
         var restock = _ui.FindChild("RestockButton", true, false) as Button;
         var legacy = _ui.FindChild("LegacyLoadButton", true, false) as Button;
-        Check(restock != null && legacy != null, "补维修耗材与读取旧档按钮建立（诊断折叠内）");
+        Check(restock != null && legacy != null, "补维修耗材（常规工具行）与读取旧档（诊断）按钮建立");
         Click(diagToggle.GetGlobalRect().GetCenter());
         await Frames(4);
         Check(_ui.FindChild("DiagRow", true, false) is Control { Visible: true }, "诊断折叠可展开（低频操作与常规操作分离）");
@@ -1208,6 +1698,7 @@ public partial class PlayerUiSelfTest : SceneTree
     {
         GD.Print("PLAYER_UI_SELFTEST LAYOUT begin");
         await WaitForGameHud("布局检查前 HUD 可见");
+        await RestoreCameraForLayout(); // 前序 CAMERA 诊断真实手势移动过镜头：布局前恢复测试初姿
         await CloseDiagnosticsByClick();
         foreach (string name in new[] { "InfoDetailsToggle", "PlanDetailsToggle", "MilestonesToggle", "DevDirectionsToggle", "FacilityToggle" })
             if (_ui.FindChild(name, true, false) is Button { ButtonPressed: true } fold)
@@ -1217,12 +1708,12 @@ public partial class PlayerUiSelfTest : SceneTree
             }
         Check(_ui.FindChild("InfoDetailsScroll", true, false) is Control { Visible: false }
             && _ui.FindChild("MilestonesLabel", true, false) is Control { Visible: false }, "布局默认低频详情确实收起");
-        Click(((Button)_ui.FindChild("CameraResetButton", true, false)!).GetGlobalRect().GetCenter());
-        await Frames(4);
 
+        // 当期三尺寸（1280x800、1920x1080、1920x1200）各跑 100/125/150%；1860x939 仅作 legacy 额外样本，不冒充 1080。
         var sizes = DisplayServer.GetName() == "headless"
-            ? new[] { new Vector2I(1920, 1200), new Vector2I(1860, 939), new Vector2I(1280, 800) }
+            ? new[] { new Vector2I(1920, 1200), new Vector2I(1920, 1080), new Vector2I(1280, 800), new Vector2I(1860, 939) }
             : new[] { new Vector2I(1860, 939), new Vector2I(1280, 800) };
+        var buildTool = (Button)_ui.FindChild("ToolBuildButton", true, false)!;
         foreach (var size in sizes)
         {
             ResizeLogicalViewport(size);
@@ -1233,6 +1724,8 @@ public partial class PlayerUiSelfTest : SceneTree
                 var planScroll = (ScrollContainer)_ui.FindChild("PlanScroll", true, false)!;
                 info.ScrollVertical = 0;
                 planScroll.ScrollVertical = 0;
+                if (_ui.FindChild("PlanReasonScroll", true, false) is ScrollContainer reasonReset) reasonReset.ScrollVertical = 0;
+                if (_ui.FindChild("PlanCostScroll", true, false) is ScrollContainer costReset) costReset.ScrollVertical = 0;
                 await Frames(6);
                 string tag = size.X + "x" + size.Y + "-scale" + (int)(scale * 100);
                 PrintPixelEvidence(tag);
@@ -1241,6 +1734,8 @@ public partial class PlayerUiSelfTest : SceneTree
 
                 if (_ui.FindChild("ModeButton_solar", true, false) is Button solarMode)
                 {
+                    await CommandClick(buildTool);
+                    await Frames(3);
                     await CommandClick(solarMode);
                     await Frames(4);
                     Check(_ui.BuildTypeForTest == "solar", tag + " 真实点击太阳能模式按钮已生效");
@@ -1255,6 +1750,8 @@ public partial class PlayerUiSelfTest : SceneTree
                         tag + " 真正选中无遮挡地面与可见草案成本后抓图");
                     info.ScrollVertical = 0;
                     planScroll.ScrollVertical = 0;
+                    if (_ui.FindChild("PlanReasonScroll", true, false) is ScrollContainer reasonResetPlan) reasonResetPlan.ScrollVertical = 0;
+                    if (_ui.FindChild("PlanCostScroll", true, false) is ScrollContainer costResetPlan) costResetPlan.ScrollVertical = 0;
                     await Frames(4);
                     CheckCoreHudVisibility(tag + "-plan", true);
                     await CaptureViewport(tag + "-plan");
@@ -1275,12 +1772,34 @@ public partial class PlayerUiSelfTest : SceneTree
                     }
                     CheckCoreHudVisibility(tag + "-illegal", true);
                     await CaptureViewport(tag + "-illegal");
-                    await CommandClick((Button)_ui.FindChild("ModeLevelButton", true, false)!);
+                    await CommandClick(buildTool); // 再次点击建设工具退出选址
                     await Frames(4);
+                    Check(_ui.PlacementModeForTest == 0, tag + " 布局用例退出选址复位");
                 }
                 else Blocked(tag + " 建造核心字段（太阳能模式按钮未建立）");
             }
         }
+        // 管理/确认面板受视口 clamp：150% 时面板完整在视口内、关闭按钮同屏、高度让出边距
+        _ui.ApplySettingsForTest(1.5, 1, "detailed");
+        await Frames(4);
+        await CommandClick((Button)_ui.FindChild("ToolMaterialsButton", true, false)!);
+        await Frames(4);
+        Check(_ui.ManagementOpenForTest, "clamp 用例打开管理层");
+        var clampView = Root.GetVisibleRect();
+        var panelRect = ((Control)_ui.FindChild("ManagementPanel", true, false)!).GetGlobalRect();
+        GD.Print("PLAYER_UI_SELFTEST MGMT_RECT panel=" + panelRect + " viewport=" + clampView);
+        Check(panelRect.Position.X >= -0.5f && panelRect.Position.Y >= -0.5f
+            && panelRect.End.X <= clampView.End.X + 0.5f && panelRect.End.Y <= clampView.End.Y + 0.5f,
+            "150% 管理面板完整在视口内（clamp）");
+        Check(panelRect.Size.Y <= clampView.Size.Y - 20f,
+            "面板高度让出视口边距（clamp 生效）：" + F(panelRect.Size.Y) + "<=" + F(clampView.Size.Y - 20f));
+        var clampClose = (Button)_ui.FindChild("ManagementCloseButton", true, false)!;
+        var closeRect = clampClose.GetGlobalRect();
+        Check(clampClose.IsVisibleInTree() && closeRect.End.Y <= clampView.End.Y && closeRect.End.X <= clampView.End.X,
+            "关闭按钮在 clamp 后同屏可见");
+        Click(closeRect.GetCenter());
+        await Frames(4);
+        Check(!_ui.ManagementOpenForTest, "clamp 用例关闭管理层");
         _ui.ApplySettingsForTest(1, 1, "detailed");
         ResizeLogicalViewport(new Vector2I(1280, 800));
         await Frames(4);
@@ -1343,16 +1862,21 @@ public partial class PlayerUiSelfTest : SceneTree
         var plan = ((Control)_ui.FindChild("PlanScroll", true, false)!).GetGlobalRect();
         var bar = ((Control)_ui.FindChild("CommandBar", true, false)!).GetGlobalRect();
         var robots = _world.ReadPlayerRobots();
+        // 只读诊断：打印当前镜头与逐类拒因计数；不放宽 picker、不注入材料。
+        int rejectFrustum = 0, rejectNoGround = 0, rejectRobot = 0, rejectOutOfBounds = 0, rejectLegality = 0;
+        GD.Print("PLAYER_UI_SELFTEST LAYOUT_SITE_SCAN type=" + type + " illegal=" + illegal +
+            " focus=" + Fmt(_ui.CameraFocusForTest) + " distance=" + F(_ui.CameraDistanceForTest) +
+            " bandX=[" + F(info.End.X + 24) + "," + F(plan.Position.X - 24) + "] bandY=[" + F(view.Y * 0.42f) + "," + F(bar.Position.Y - 24) + "]");
         for (float y = view.Y * 0.42f; y < bar.Position.Y - 24; y += 18f)
             for (float x = info.End.X + 24; x < plan.Position.X - 24; x += 18f)
             {
                 var screen = new Vector2(x, y);
                 var origin = _camera.ProjectRayOrigin(screen);
                 var direction = _camera.ProjectRayNormal(screen);
-                if (direction.Y >= -1e-4f) continue;
+                if (direction.Y >= -1e-4f) { rejectFrustum++; continue; }
                 using var query = PhysicsRayQueryParameters3D.Create(origin + direction * 0.5f, origin + direction * 400f, 1);
                 using var hit = _world.GetWorld3D().DirectSpaceState.IntersectRay(query);
-                if (hit.Count == 0) continue;
+                if (hit.Count == 0) { rejectNoGround++; continue; }
                 var ground = hit["position"].AsVector3();
                 bool hitsRobot = robots.Any(robot =>
                 {
@@ -1360,21 +1884,26 @@ public partial class PlayerUiSelfTest : SceneTree
                     float along = (center - origin).Dot(direction);
                     return along > 0.5f && (origin + direction * along).DistanceTo(center) <= MathF.Max(robot.Radius + 0.5f, along * 0.02f) + 0.35f;
                 });
-                if (hitsRobot) continue;
-                if (MathF.Abs(ground.X) > 24 || MathF.Abs(ground.Z) > 24) continue;
+                if (hitsRobot) { rejectRobot++; continue; }
+                if (MathF.Abs(ground.X) > 24 || MathF.Abs(ground.Z) > 24) { rejectOutOfBounds++; continue; }
                 var draft = _world.ReadBuildPlan(type, ground);
-                if (draft.CandidateLegal == illegal) continue;
+                if (draft.CandidateLegal == illegal) { rejectLegality++; continue; }
                 GD.Print("PLAYER_UI_SELFTEST LAYOUT_SITE type=" + type + " illegal=" + illegal + " screen=" + screen +
                     " world=" + Fmt(ground) + " candidate=" + draft.CandidateLegal + " reason=" + draft.CandidateReason);
                 return (screen, ground);
             }
-        throw new InvalidOperationException("现场无无遮挡、无机器人拦截的" + (illegal ? "非法" : "合法") + "地面候选");
+        throw new InvalidOperationException(
+            "现场无无遮挡、无机器人拦截的" + (illegal ? "非法" : "合法") + "地面候选" +
+            " focus=" + Fmt(_ui.CameraFocusForTest) + " distance=" + F(_ui.CameraDistanceForTest) +
+            " rejects: frustum=" + rejectFrustum + " noGround=" + rejectNoGround + " robot=" + rejectRobot +
+            " outOfBounds=" + rejectOutOfBounds + " legality=" + rejectLegality);
     }
 
     private void CheckCoreHudVisibility(string tag, bool building)
     {
         var view = Root.GetVisibleRect();
         var bar = (Control)_ui.FindChild("CommandBar", true, false)!;
+        var topBar = (Control)_ui.FindChild("TopBar", true, false)!;
         var info = (ScrollContainer)_ui.FindChild("InfoScroll", true, false)!;
         var plan = (ScrollContainer)_ui.FindChild("PlanScroll", true, false)!;
         static bool Contains(Rect2 outer, Rect2 inner) => inner.Position.X >= outer.Position.X - 0.5f
@@ -1385,7 +1914,8 @@ public partial class PlayerUiSelfTest : SceneTree
             if (scroll.GetVScrollBar().IsVisibleInTree()) mask.Size = new Vector2(mask.Size.X - scroll.GetVScrollBar().Size.X, mask.Size.Y);
             return mask;
         }
-        foreach (string name in new[] { "GoalTitleLabel", "GoalInstructionLabel", "GoalActionLabel", "PowerLabel", "StockLabel", "JobLabel" })
+        // 目标卡核心行在左列滚动遮罩内且不被命令栏遮住
+        foreach (string name in new[] { "GoalTitleLabel", "GoalInstructionLabel", "GoalActionLabel" })
         {
             var label = (Label)_ui.FindChild(name, true, false)!;
             var rect = label.GetGlobalRect();
@@ -1396,23 +1926,91 @@ public partial class PlayerUiSelfTest : SceneTree
         }
         Check(((Label)_ui.FindChild("GoalActionLabel", true, false)!).Text.Contains(_world.ReadTutorial().Achieved + "/" + _world.ReadTutorial().Total),
             tag + " 教学进度与下一步在核心区同时显示");
+        // 顶栏常驻：发电、昼夜、库内现货（Stored 口径）、警报位
+        foreach (string name in new[] { "TopPowerLabel", "TopDayLabel", "TopPauseButton", "TopMenuButton" })
+        {
+            var control = (Control)_ui.FindChild(name, true, false)!;
+            var rect = control.GetGlobalRect();
+            Check(control.IsVisibleInTree() && Contains(view, rect) && Contains(topBar.GetGlobalRect(), rect),
+                tag + " " + name + " 常驻顶栏且完整可见");
+        }
+        var chip = (Button)_ui.FindChild("TopStockChip_iron", true, false)!;
+        Check(chip.IsVisibleInTree() && chip.Text.Length > 1 && Contains(topBar.GetGlobalRect(), chip.GetGlobalRect()),
+            tag + " 顶栏库内现货chip显示 Stored 口径：" + chip.Text);
+        // 独立活动工程行：有活动才显示，显示时完整可见
+        var workRow = (Control)_ui.FindChild("WorkRowPanel", true, false)!;
+        if (workRow.Visible)
+        {
+            var workRect = ((Control)_ui.FindChild("WorkRowLabel", true, false)!).GetGlobalRect();
+            Check(Contains(view, workRect) && !bar.GetGlobalRect().Intersects(workRect), tag + " 活动工程行完整可见且不压命令栏");
+        }
         if (building)
-            foreach (string name in new[] { "PlanTagLabel", "PlanCostLabel", "PlanGapLabel", "PlanReasonLabel", "PlanPowerLabel", "PlanSupplyLabel", "PlanConsequenceLabel" })
+        {
+            // 布局合同：固定操作区（标题/场址/状态/当前阻塞/主按钮/自动前置）不滚动且完整在屏；
+            // 成本/供料/后果在默认可见的内部滚动区可查。两组使用准确区分的 mask，失败不得改 BLOCKED。
+            var planMask = ScrollMask(plan);
+            foreach (string name in new[] { "PlanTitleLabel", "SelectionLabel", "PlanTagLabel", "PlanReasonLabel", "PlanAutoLabel", "ConfirmButton", "ExitPlacementButton" })
             {
-                var label = (Label)_ui.FindChild(name, true, false)!;
-                if (name == "PlanReasonLabel" && !label.Visible && label.Text.Length == 0) continue;
-                var rect = label.GetGlobalRect();
-                var mask = ScrollMask(plan);
-                GD.Print("PLAYER_UI_SELFTEST CORE_RECT[" + tag + "] " + name + "=" + rect + " mask=" + mask + " textChars=" + label.Text.Length);
-                Check(label.IsVisibleInTree() && label.Text.Length > 0 && Contains(view, rect) && Contains(mask, rect)
-                    && !bar.GetGlobalRect().Intersects(rect), tag + " " + name + " 与核心目标/资源/确认同时完整可见");
+                var control = (Control)_ui.FindChild(name, true, false)!;
+                if (!control.IsVisibleInTree() && control is Label { Text.Length: 0 }) continue;
+                var rect = control.GetGlobalRect();
+                GD.Print("PLAYER_UI_SELFTEST CORE_RECT[" + tag + "] " + name + "=" + rect + " planMask=" + planMask + " textChars=" + (control is Label l ? l.Text.Length : 0));
+                Check(control.IsVisibleInTree() && Contains(view, rect) && Contains(planMask, rect)
+                    && !bar.GetGlobalRect().Intersects(rect), tag + " " + name + " 固定操作区完整可见不被命令栏遮挡");
             }
-        foreach (string name in new[] { "ConfirmButton", "CancelButton", "PauseButton", "CameraResetButton" })
+            var reasonLabel = (Label)_ui.FindChild("PlanReasonLabel", true, false)!;
+            var reasonScroll = (ScrollContainer)_ui.FindChild("PlanReasonScroll", true, false)!;
+            if (reasonLabel.Text.Length > 0 && reasonScroll.IsVisibleInTree())
+            {
+                // 拒因小滚动块：块本身完整在屏，超长拒因经区内滚动可查全（不截断、不折叠）。
+                var reasonMask = ScrollMask(reasonScroll);
+                var reasonRect = reasonLabel.GetGlobalRect();
+                float hidden = MathF.Max(0f, reasonRect.Size.Y - reasonMask.Size.Y);
+                GD.Print("PLAYER_UI_SELFTEST REASON_RECT[" + tag + "] label=" + reasonRect + " mask=" + reasonMask +
+                    " maxScroll=" + F((float)reasonScroll.GetVScrollBar().MaxValue) + " hidden=" + F(hidden));
+                Check(Contains(view, reasonMask) && Contains(planMask, reasonMask), tag + " 拒因小滚动块完整在视口与外层遮罩内");
+                Check(reasonScroll.GetVScrollBar().MaxValue >= hidden - 2f, tag + " 完整拒因未被截断（超出部分区内滚动可查全）");
+                Check(reasonRect.Position.Y >= reasonMask.Position.Y - 1f && reasonRect.Position.Y < reasonMask.End.Y,
+                    tag + " 拒因默认从顶部开始可读");
+            }
+            var costScroll = (ScrollContainer)_ui.FindChild("PlanCostScroll", true, false)!;
+            if (costScroll.IsVisibleInTree())
+            {
+                var confirm = (Button)_ui.FindChild("ConfirmButton", true, false)!;
+                var costMask = ScrollMask(costScroll);
+                GD.Print("PLAYER_UI_SELFTEST COST_MASK[" + tag + "] costScroll=" + costScroll.GetGlobalRect() + " mask=" + costMask +
+                    " confirmEnd=" + F(confirm.GetGlobalRect().End.Y) + " maxScroll=" + F((float)costScroll.GetVScrollBar().MaxValue));
+                Check(Contains(view, costMask) && Contains(planMask, costMask) && costMask.Size.Y >= 40f,
+                    tag + " 内部成本滚动区默认可见并完整在外层遮罩内");
+                Check(confirm.GetGlobalRect().End.Y <= costScroll.GetGlobalRect().Position.Y + 1f,
+                    tag + " 开始/退出按钮先于多行成本/来源（无需滚动到主按钮）");
+                foreach (string name in new[] { "PlanCostLabel", "PlanSupplyLabel", "PlanConsequenceLabel" })
+                {
+                    var label = (Label)_ui.FindChild(name, true, false)!;
+                    if (!label.IsVisibleInTree() && label.Text.Length == 0) continue;
+                    var rect = label.GetGlobalRect();
+                    float maxScroll = (float)costScroll.GetVScrollBar().MaxValue;
+                    bool costTopVisible = rect.Position.Y >= costMask.Position.Y - 1f && rect.Position.Y < costMask.End.Y;
+                    bool fullyVisibleNow = rect.Position.Y >= costMask.Position.Y - 1f && rect.End.Y <= costMask.End.Y + 1f;
+                    bool reachableByScroll = rect.Position.Y >= costMask.Position.Y - maxScroll - 1f && rect.End.Y <= costMask.End.Y + maxScroll + 1f;
+                    GD.Print("PLAYER_UI_SELFTEST COST_RECT[" + tag + "] " + name + "=" + rect + " mask=" + costMask +
+                        " maxScroll=" + F(maxScroll) + " textChars=" + label.Text.Length);
+                    if (name == "PlanCostLabel")
+                        Check(label.IsVisibleInTree() && costTopVisible,
+                            tag + " " + name + " 完整需/已有/缺口默认从顶部可见");
+                    else
+                        Check(label.IsVisibleInTree() && (fullyVisibleNow || reachableByScroll),
+                            tag + " " + name + " 完整内容区内滚动可达（不截断不删除）");
+                }
+            }
+        }
+        // 底部工具组完整可见且不与信息列/顶栏重叠
+        foreach (string name in new[] { "ToolBuildButton", "ToolLevelButton", "ToolMaterialsButton", "ToolWorkButton" })
         {
             var button = (Button)_ui.FindChild(name, true, false)!;
             var rect = button.GetGlobalRect();
-            Check(button.IsVisibleInTree() && Contains(view, rect) && !info.GetGlobalRect().Intersects(rect) && !plan.GetGlobalRect().Intersects(rect),
-                tag + " " + name + " 完整可见且不与信息列重叠");
+            Check(button.IsVisibleInTree() && Contains(view, rect) && !info.GetGlobalRect().Intersects(rect) && !topBar.GetGlobalRect().Intersects(rect),
+                tag + " " + name + " 完整可见且不与信息列/顶栏重叠");
         }
     }
 

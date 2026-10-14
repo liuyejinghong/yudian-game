@@ -32,6 +32,10 @@ public partial class PlayerController : Node
     private const float PlanIntervalS = 0.15f;
     private const float EconomyIntervalS = 0.25f;
     private const float ConnectIntervalS = 0.3f;
+    private const float ObjectsIntervalS = 0.25f;
+    private const float DetailIntervalS = 0.3f;
+    private const float WorkIntervalS = 0.4f;
+    private const float ManagementIntervalS = 0.3f;
     private const float MinDistanceM = 7f, MaxDistanceM = 70f;
     private const float ClickSlackPx = 8f;
     private const double SlotEchoSeconds = 0.6;
@@ -49,25 +53,33 @@ public partial class PlayerController : Node
     private Basis _cameraBasis = Basis.Identity;
     private Vector3 _focus = Vector3.Zero;
     private float _distance = 26f;
-    private Basis _initialBasis = Basis.Identity;
-    private Vector3 _initialFocus = Vector3.Zero;
-    private float _initialDistance = 26f;
     private Vector2 _mousePos;
     private Vector2? _panGrab;
     private bool _rightDragged;
     private Vector2 _leftPress;
     private bool _leftTracking, _aimCleared;
 
-    // 选择与预览：只存选择指针与最近一次预览结果，不存世界事实。
+    // 选择与预览：typed 对象只存 Kind+Id 指针，详情按 epoch 重新解析；不存世界事实。
     private Vector3? _selectedSite;
     private Vector3? _hoverPoint;
-    private string? _selectedRobotId;
+    private WorldObjectKind _selectedKind;
+    private string? _selectedObjectId;
+    private PlayerObjectDetailView? _objectDetail;
+    private long _objectDetailEpoch = long.MinValue;
+    private float _objectTimer;
     private PlayerSitePreview? _preview;
     private float _previewTimer;
     private float _commandCooldown;
     private PlayerRobotView[] _robots = [];
+    private WorldObjectView[] _worldObjects = [];
+    private float _objectsTimer;
 
-    // 建设模式：null 为整平；蓝图与基地状态只信 ReadBootstrap，每帧重读。
+    // 场地模式：0 浏览、1 整地选址、2 建设选址；互斥于对象卡；进入时保存 returncontext（含当时 world epoch）。
+    private int _placementMode;
+    private sealed record PlacementContext(Basis Basis, Vector3 Focus, float Distance, WorldObjectKind? Kind, string? ObjectId, long Epoch);
+    private PlacementContext? _placementReturn;
+
+    // 建设模式：null 为整地；蓝图与基地状态只信 ReadBootstrap，每帧重读。
     private BootstrapReadModel? _bootstrap;
     private string? _buildType;
     private BuildBlueprintView? _currentBlueprint;
@@ -81,6 +93,21 @@ public partial class PlayerController : Node
     private string _page = "";
     private float _pageGate; // 回到 game 的短门禁：吞掉关闭页面的第二击，不选中世界
     private long _lastEpoch = long.MinValue;
+    private long _lastTransitionRevision = long.MinValue; // 读档/新游戏尝试轮次：每次真实尝试（含校验失败）都递增
+    private int _authorityReleaseFrames; // 权威管理临停解除的连续观察帧数
+
+    // 管理层：同步结果成功才标 open；关闭只释放自己的临停，不翻转用户手动暂停。
+    private bool _managementOpen, _managementTabMaterials = true, _managementClosePending;
+    private PlayerMaterialsView? _materialsView;
+    private PlayerDefinitionsView? _definitions;
+    private PlayerWorkView? _work;
+    private PlayerWorkView[] _workHistory = [];
+    private float _managementTimer, _workTimer;
+    private string _materialFilter = "";
+    private string _materialLocationFilter = "";
+    private bool _cancelConfirmOpen;
+    private string? _cancelGoalId;
+    private string _managementFilterSignature = "";
 
     // 设置：从 ReadSettings 读真实值，经 QueueSettings 写；UI/镜头按该值实际生效。
     private PlayerSettingsView? _settingsView;
@@ -120,6 +147,9 @@ public partial class PlayerController : Node
     private readonly List<(Control Control, int BaseSize)> _sizeTargets = [];
     private readonly List<(Control Control, Vector2 BaseSize)> _minSizeTargets = [];
 
+    // 管理层打开期间收回键盘焦点的局内控件（只顶层接受焦点）。
+    private readonly List<Button> _gameFocusables = [];
+
     private Node3D _markers = null!;
     private GodotObject _markerFactory = null!;
     private Marker _previewMarker = null!, _siteMarker = null!, _jobMarker = null!, _selectMarker = null!;
@@ -147,9 +177,6 @@ public partial class PlayerController : Node
 
         BuildMarkers();
         BuildHud();
-        _initialBasis = _cameraBasis;
-        _initialFocus = _focus;
-        _initialDistance = _distance;
         _initialized = true;
     }
 
@@ -160,7 +187,8 @@ public partial class PlayerController : Node
         _commandCooldown = MathF.Max(0f, _commandCooldown - dt);
         var state = _world.ReadPlayerState();
         var lifecycle = _world.ReadLifecycle();
-        ObserveLifecycle(lifecycle, dt);
+        ObserveLifecycle(lifecycle, state, dt);
+        RetryCloseManagement(lifecycle);
         ReadSettingsAndApply();
 
         bool inGame = _page == "game";
@@ -170,6 +198,19 @@ public partial class PlayerController : Node
             FlushPendingLearning(lifecycle);
             _robots = _world.ReadPlayerRobots();
             _bootstrap = _world.ReadBootstrap();
+            _objectsTimer -= dt;
+            if (_objectsTimer <= 0f)
+            {
+                _worldObjects = _world.ReadWorldObjects();
+                _objectsTimer = ObjectsIntervalS;
+            }
+            _workTimer -= dt;
+            if (_workTimer <= 0f)
+            {
+                _work = _world.ReadWork();
+                _workHistory = _world.ReadWorkHistory();
+                _workTimer = WorkIntervalS;
+            }
             UpdateCamera(state.ExtentM + 4f, dt);
             UpdateAimAndPreview(state, dt);
         }
@@ -184,13 +225,40 @@ public partial class PlayerController : Node
         UpdateMarkers(state);
     }
 
-    // 生命周期观察：epoch 变化清选择/草案/输入状态；页面变化时切换输入归属与初始焦点。
-    private void ObserveLifecycle(PlayerLifecycleView lifecycle, float dt)
+    // 生命周期观察：尝试轮次/epoch 变化清选择与草案；页面变化切换输入归属；离开 game 或权威临停解除同步丢弃管理层状态。
+    private void ObserveLifecycle(PlayerLifecycleView lifecycle, PlayerReadModel state, float dt)
     {
         if (_lifecycle is { } previous && (previous.Page != lifecycle.Page || previous.Busy != lifecycle.Busy))
             ClearInputTracking();
         _lifecycle = lifecycle;
         _pageGate = MathF.Max(0f, _pageGate - dt);
+        // 读档/新游戏尝试轮次：权威在每次真实尝试（含校验失败）的执行入口递增；见到新轮次即清选址/预览/returncontext，
+        // 同 epoch 的失败尝试也不复用上一轮草案。首次观察不算变化。
+        if (lifecycle.WorldTransitionRevision != _lastTransitionRevision)
+        {
+            bool firstRevision = _lastTransitionRevision == long.MinValue;
+            _lastTransitionRevision = lifecycle.WorldTransitionRevision;
+            if (!firstRevision)
+            {
+                ClearSelection();
+                _placementMode = 0;
+                _placementReturn = null;
+                _preview = null;
+                _plan = null;
+                SyncModeToggles();
+            }
+        }
+        // 离开 game（菜单/离开确认/生命周期切换）：同步丢弃管理覆盖层状态；返回局内不复活旧管理。
+        if ((_managementOpen || _managementClosePending) && lifecycle.Page != "game")
+            DiscardManagementUiState();
+        // 权威已解除管理临停（如管理期间被生命周期边界清掉）：连续两帧未见临停即同步丢弃，UI 不再自认打开。
+        if (_managementOpen && !_managementClosePending && lifecycle.Page == "game" && !lifecycle.Busy
+            && lifecycle.WorldEpoch == CurrentEpoch() && !state.ManagementPaused)
+        {
+            _authorityReleaseFrames++;
+            if (_authorityReleaseFrames >= 2) { _authorityReleaseFrames = 0; DiscardManagementUiState(); }
+        }
+        else _authorityReleaseFrames = 0;
         if (lifecycle.WorldEpoch != _lastEpoch)
         {
             bool first = _lastEpoch == long.MinValue;
@@ -198,8 +266,21 @@ public partial class PlayerController : Node
             _connectOptionsEpoch = long.MinValue;
             if (!first)
             {
+                DiscardManagementUiState();
                 ClearSelection();
                 _plan = null;
+                _placementMode = 0;
+                _placementReturn = null;
+                _preview = null;
+                _materialsView = null;
+                _definitions = null;
+                _work = null;
+                _workHistory = [];
+                _materialFilter = "";
+                _materialLocationFilter = "";
+                _managementFilterSignature = "";
+                _relatedSignature = "";
+                _relatedWorkGoalId = null; // 新世界无旧预约；关联子详情与行随世界丢弃
                 _learnedOps.Clear();
                 _pendingLearn.Clear(); // 上一个世界的未确认操作不跨世界发送
                 _learnedStage = "";
@@ -212,6 +293,7 @@ public partial class PlayerController : Node
                 _pageGate = CommandCooldownS;
             }
         }
+        if (lifecycle.Busy) { _preview = null; _plan = null; } // loading/busy 期间临时预览不可复用
         if (lifecycle.Page != _page)
         {
             _page = lifecycle.Page;
@@ -256,22 +338,33 @@ public partial class PlayerController : Node
         var state = _world.ReadPlayerState();
         if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true } click && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
             GD.Print($"PLAYER_GUI_CLICK double={click.DoubleClick} page={lifecycle.Page} gate={_pageGate.ToString(Inv)}");
-        // Esc：顶层返回。接线面板先关闭；页面按各自 Back 语义；局内打开暂停菜单（不再是旧"只清除选区"）。
+        // Esc 每次只退一层：确认/子详情 → 管理层 → 显式接线 → 选址预览 → 局内暂停；Esc 不取消正式工程。
+        // 菜单页的 Esc 始终走页面 Back 语义，不被局内覆盖层状态截走。
         if (@event is InputEventKey { Pressed: true, Echo: false, Keycode: Key.Escape })
         {
             GetViewport().SetInputAsHandled();
-            if (_connectPanelOpen) { CloseConnectPanel(); return; }
             if (!inGame) { QueueLifecycle(EscapeActionFor(lifecycle.Page)); return; }
+            if (_cancelConfirmOpen) { CloseCancelConfirm(); return; } // Esc 只退取消确认层
+            if (_managementOpen)
+            {
+                if (_relatedWorkGoalId != null) { CloseRelatedWorkDetail(); return; } // Esc 先退关联工程子详情
+                CloseManagement();
+                return;
+            }
+            if (_connectPanelOpen) { CloseConnectPanel(); return; }
+            if (PlacementActive) { ExitPlacement(); return; } // 普通预览取消不确认
             QueueLifecycle("pause");
             return;
         }
+        // 管理层门禁：遮罩挡鼠标，其余键盘也不透传为世界操作。
+        if (_managementOpen) return;
         // 菜单/确认/恢复期间不把鼠标键盘透传为世界命令；页面输入归属由权威 ReadLifecycle 判定。
         if (!inGame || lifecycle.Busy) return;
         if (_pageGate > 0f) return;
         switch (@event)
         {
             case InputEventKey key when key.Pressed && !key.Echo && key.Keycode == Key.F:
-                var target = _selectedSite ?? Array.Find(_robots, r => r.Id == _selectedRobotId)?.Position ?? state.Job?.Center;
+                Vector3? target = _selectedSite ?? ObjectPosition(_selectedKind, _selectedObjectId) ?? state.Job?.Center;
                 if (target is { } p) _focus = new Vector3(p.X, 0, p.Z);
                 break;
             case InputEventMouseMotion motion:
@@ -337,7 +430,7 @@ public partial class PlayerController : Node
                 break;
             case MouseButton.Right:
                 _panGrab = null;
-                if (!_rightDragged) ClearSelection(); // 右键单击取消选择，拖动是平移
+                if (!_rightDragged && !PlacementActive) ClearSelection(); // 右键单击取消选择（选址模式退出走 Esc/退出按钮）
                 break;
             case MouseButton.Middle:
                 _panGrab = null;
@@ -348,21 +441,30 @@ public partial class PlayerController : Node
     private void HandleClick(Vector2 screenPos)
     {
         _aimCleared = false;
-        string? robot = PickRobot(screenPos);
-        if (robot != null)
+        if (PlacementActive)
         {
-            _selectedRobotId = robot;
+            // 建设模式未选蓝图：左键不选址、不预览；必须先在蓝图行选择类型。
+            if (_placementMode == 2 && _buildType == null) return;
+            // 选址模式：左键仅选址与移动预览；同一次点击不选机器人、不提交。
+            if (GroundHit(screenPos, out var point))
+            {
+                _selectedSite = point;
+                _preview = null;
+                _plan = null;
+            }
+            return;
+        }
+        if (PickWorldObject(screenPos) is { } pick)
+        {
+            _selectedKind = pick.Kind;
+            _selectedObjectId = pick.Id;
+            _objectDetail = null;
+            _objectTimer = 0f;
+            _objectDetailEpoch = long.MinValue;
             _selectedSite = null;
             _preview = null;
             _plan = null;
-            ReportLearning("select-robot", robot); // 只记录真实发生的选中操作
-            return;
-        }
-        if (GroundHit(screenPos, out var point))
-        {
-            _selectedSite = point;
-            _preview = null;
-            _plan = null;
+            if (pick.Kind == WorldObjectKind.Robot) ReportLearning("select-robot", pick.Id); // 只记录真实发生的选中操作
             return;
         }
         // 空点：仅清除选择，不下任何命令。
@@ -372,7 +474,8 @@ public partial class PlayerController : Node
     private void ClearSelection()
     {
         _hoverPoint = null; _aimCleared = true;
-        _selectedRobotId = null;
+        _selectedObjectId = null;
+        _objectDetail = null;
         _selectedSite = null;
         _preview = null;
         _plan = null;
@@ -380,7 +483,7 @@ public partial class PlayerController : Node
 
     // ---- 相机 ----
 
-    // 水平视轴供键盘、手势和按钮共用。
+    // 水平视轴供键盘、手势共用。
     private (Vector3 Forward, Vector3 Right) FlatAxes()
     {
         var forward = -_cameraBasis.Z;
@@ -394,6 +497,12 @@ public partial class PlayerController : Node
 
     private void UpdateCamera(float focusLimit, float dt)
     {
+        if (_managementOpen)
+        {
+            // 管理层门禁：每帧键盘轮询不驱动镜头；只保持当前姿态。
+            _camera.GlobalTransform = new Transform3D(_cameraBasis, _focus + _cameraBasis.Z * _distance);
+            return;
+        }
         float rotation = (Input.IsKeyPressed(Key.Q) ? 1 : 0) - (Input.IsKeyPressed(Key.E) ? 1 : 0);
         _cameraBasis = _cameraBasis.Rotated(Vector3.Up, rotation * dt).Orthonormalized();
         var axes = FlatAxes();
@@ -412,23 +521,6 @@ public partial class PlayerController : Node
         _focus = new Vector3(Mathf.Clamp(_focus.X, -focusLimit, focusLimit), 0,
             Mathf.Clamp(_focus.Z, -focusLimit, focusLimit));
         _camera.GlobalTransform = new Transform3D(_cameraBasis, _focus + _cameraBasis.Z * _distance);
-    }
-
-    // ---- 镜头按钮 ----
-    private void PanCamera(float side, float forward)
-    {
-        var axes = FlatAxes();
-        _focus += (axes.Forward * forward + axes.Right * side) * (_distance * 0.3f);
-        NoteCameraOperation();
-    }
-    private void ZoomCamera(float scale) { _distance = Mathf.Clamp(_distance * ZoomSteps(scale), MinDistanceM, MaxDistanceM); NoteCameraOperation(); }
-    private void RotateCamera(float radians) { _cameraBasis = _cameraBasis.Rotated(Vector3.Up, radians).Orthonormalized(); NoteCameraOperation(); }
-    private void ResetCamera()
-    {
-        _cameraBasis = _initialBasis;
-        _focus = _initialFocus;
-        _distance = _initialDistance;
-        NoteCameraOperation();
     }
 
     // ---- 选择几何 ----
@@ -455,35 +547,36 @@ public partial class PlayerController : Node
         return true;
     }
 
-    private string? PickRobot(Vector2 screenPos)
+    // typed 浏览选择：机器人/矿点/设施统一按权威 ReadWorldObjects 投影拾取，取最近者。
+    private (WorldObjectKind Kind, string Id)? PickWorldObject(Vector2 screenPos)
     {
         var origin = _camera.ProjectRayOrigin(screenPos);
         var dir = _camera.ProjectRayNormal(screenPos);
-        string? best = null;
+        (WorldObjectKind Kind, string Id)? best = null;
         float bestAlong = float.MaxValue;
-        foreach (var robot in _robots)
+        foreach (var view in _worldObjects)
         {
-            var center = robot.Position + Vector3.Up * 0.45f;
+            var center = view.Position + Vector3.Up * (view.Kind == WorldObjectKind.Robot ? 0.45f : 0.6f);
             float along = (center - origin).Dot(dir);
             if (along <= 0.5f) continue;
             float miss = (origin + dir * along).DistanceTo(center);
-            if (miss <= MathF.Max(robot.Radius + 0.5f, along * 0.02f) && along < bestAlong)
+            if (miss <= MathF.Max(view.Radius + 0.6f, along * 0.02f) && along < bestAlong)
             {
                 bestAlong = along;
-                best = robot.Id;
+                best = (view.Kind, view.Id);
             }
         }
         return best;
     }
 
-    // 望山/驮运不能当筑垒执行：非筑垒选择一律传 null，由权威自动选可达者。
-    private string? SelectedWorkerId()
-        => _selectedRobotId is { } id && id.StartsWith("Robot_Zhulei_", StringComparison.Ordinal) ? id : null;
+    private Vector3? ObjectPosition(WorldObjectKind kind, string? id)
+        => id is { } wanted && Array.Find(_worldObjects, o => o.Kind == kind && o.Id == wanted) is { } view ? view.Position : null;
 
-    // ---- 建设模式 ----
+    // ---- 场地模式（建设/整地）与 returncontext ----
 
     private bool BootstrapOn => _bootstrap is { Enabled: true };
-    private bool Building => BootstrapOn && _buildType != null;
+    private bool PlacementActive => _placementMode != 0;
+    private bool Building => _placementMode == 2 && _buildType != null;
     private float YawRadians() => _yawSteps switch
     {
         1 => MathF.PI / 2f,
@@ -492,75 +585,182 @@ public partial class PlayerController : Node
         _ => 0f,
     };
 
-    // 蓝图按钮只在首次读到 Enabled 且有蓝图时建立一次；种类来自配置，不写死。
-    private void EnsureBootstrapControls(BootstrapReadModel boot)
+    private void EnterPlacement(int mode)
     {
-        if (_modesBuilt) return;
-        _modesBuilt = true;
-        _modeGroup = new ButtonGroup();
-        var level = ModeToggle("ModeLevelButton", "整平", null);
-        level.ButtonPressed = true;
-        _rowModes.AddChild(level);
-        foreach (var blueprint in boot.Blueprints)
-        {
-            var button = ModeToggle("ModeButton_" + blueprint.Id, blueprint.Name, blueprint);
-            _rowModes.AddChild(button);
-            _modeButtons[blueprint.Id] = button;
-        }
-        _rotateButton = MakeButton("RotateButton", "朝向 0°", RotateYaw);
-        _rotateButton.FocusMode = Control.FocusModeEnum.All;
-        _rowModes.AddChild(_rotateButton);
-    }
-
-    private Button ModeToggle(string name, string text, BuildBlueprintView? blueprint)
-    {
-        var button = new Button
-        {
-            Name = name,
-            Text = text,
-            ToggleMode = true,
-            FocusMode = Control.FocusModeEnum.None,
-        };
-        StyleButton(button, accent: false);
-        _sizeTargets.Add((button, SizeBody));
-        button.ButtonGroup = _modeGroup;
-        button.Pressed += () =>
-        {
-            button.ButtonPressed = true; // ButtonGroup 允许全部弹起，这里强制保持单选
-            SelectMode(blueprint);
-        };
-        return button;
-    }
-
-    private void SelectMode(BuildBlueprintView? blueprint)
-    {
-        _currentBlueprint = blueprint;
-        _buildType = blueprint?.Id;
-        _buildRadius = blueprint?.Radius ?? SiteRadiusM;
+        if (_managementOpen || _cancelConfirmOpen) return; // 管理层/确认层期间动作门禁：不能只靠焦点抑制
+        if (!BootstrapOn) return;
+        if (_placementMode == mode) { ExitPlacement(); return; } // 重复入口：再次点击退出选址
+        if (!PlacementActive)
+            _placementReturn = new PlacementContext(_cameraBasis, _focus, _distance,
+                _selectedObjectId is { } id ? _selectedKind : null, _selectedObjectId, CurrentEpoch());
+        _placementMode = mode;
+        _selectedSite = null;
+        _preview = null;
+        _plan = null;
         _yawSteps = 0;
         if (_rotateButton != null) _rotateButton.Text = "朝向 0°";
-        _preview = null;
-        _plan = null;
+        _selectedObjectId = null; // 建设卡与对象卡互斥
+        _objectDetail = null;
+        _hoverPoint = null;
+        SyncModeToggles();
     }
 
-    private void RotateYaw()
+    // 退出选址：恢复进入前镜头与有效对象；对象按 epoch+stableID 重验，消失则清选。
+    private void ExitPlacement()
     {
-        _yawSteps = (_yawSteps + 1) % 4;
-        _rotateButton!.Text = "朝向 " + _yawSteps * 90 + "°";
+        if (!PlacementActive) return;
+        _placementMode = 0;
+        _selectedSite = null;
         _preview = null;
         _plan = null;
+        _yawSteps = 0;
+        SyncModeToggles();
+        var restore = _placementReturn;
+        _placementReturn = null;
+        if (restore is { } ctx)
+        {
+            _cameraBasis = ctx.Basis;
+            _focus = ctx.Focus;
+            _distance = ctx.Distance;
+            // returncontext 记录进入时 epoch：世界已切换（load/newgame）时只恢复镜头，不恢复旧世界对象选择。
+            if (ctx.Epoch == CurrentEpoch() && ctx.Kind is { } kind && ctx.ObjectId is { } id
+                && _world.ReadObjectDetail(kind, id, _lastEpoch) != null)
+            {
+                _selectedKind = kind;
+                _selectedObjectId = id;
+                _objectDetail = null;
+                _objectTimer = 0f;
+                _objectDetailEpoch = long.MinValue;
+            }
+        }
+    }
+
+    // ---- 管理层（独立临停；打开/关闭都走权威同步结果） ----
+
+    private long CurrentEpoch() => _lifecycle?.WorldEpoch ?? _lastEpoch;
+
+    private void OpenManagement(bool materialsTab)
+    {
+        if (_page != "game") return;
+        if (_managementOpen)
+        {
+            if (_managementTabMaterials == materialsTab) { CloseManagement(); return; } // 重复入口关闭同视图
+            _managementTabMaterials = materialsTab; // 同一覆盖层内切换标签
+            _cancelConfirmOpen = false;
+            SyncCancelConfirmVisibility();
+            _managementTimer = 0f;
+            return;
+        }
+        CloseConnectPanel(); // 单一管理层，不与接线面板叠层
+        if (!_world.SetPlayerManagement(true, CurrentEpoch())) return; // 同步结果成功才开
+        _managementOpen = true;
+        _managementTabMaterials = materialsTab;
+        _cancelConfirmOpen = false;
+        _cancelGoalId = null;
+        _managementTimer = 0f;
+        _managementFilterSignature = "";
+        _managementOverlay.Visible = true; // 遮罩当帧即挡世界点击
+        SuppressGameFocus();
+        GrabManagementFocus();
+    }
+
+    private void CloseManagement()
+    {
+        if (!_managementOpen) return;
+        long epoch = CurrentEpoch();
+        if (_world.SetPlayerManagement(false, epoch))
+        {
+            _managementOpen = false;
+            _managementClosePending = false;
+            _cancelConfirmOpen = false;
+            _cancelGoalId = null;
+            SyncCancelConfirmVisibility();
+            _managementOverlay.Visible = false;
+            UnsuppressGameFocus();
+            RevalidateSelectedObject();
+        }
+        else _managementClosePending = true; // 命令在途：下一帧重试释放自己的临停
+    }
+
+    private void RetryCloseManagement(PlayerLifecycleView lifecycle)
+    {
+        if (!_managementClosePending) return;
+        if (lifecycle.Page != "game" || lifecycle.WorldEpoch != CurrentEpoch())
+        {
+            // 权威已在生命周期切换时清临停；UI 只丢自己的覆盖层状态。
+            _managementClosePending = false;
+            _managementOpen = false;
+            _cancelConfirmOpen = false;
+            SyncCancelConfirmVisibility();
+            _managementOverlay.Visible = false;
+            UnsuppressGameFocus();
+            return;
+        }
+        if (_world.SetPlayerManagement(false, lifecycle.WorldEpoch))
+        {
+            _managementClosePending = false;
+            _managementOpen = false;
+            _cancelConfirmOpen = false;
+            _cancelGoalId = null;
+            SyncCancelConfirmVisibility();
+            _managementOverlay.Visible = false;
+            UnsuppressGameFocus();
+            RevalidateSelectedObject();
+        }
+    }
+
+    // 管理层期间被抑制的局内按钮焦点恢复。
+    private void SuppressGameFocus() { foreach (var button in _gameFocusables) button.FocusMode = Control.FocusModeEnum.None; }
+    private void UnsuppressGameFocus() { foreach (var button in _gameFocusables) button.FocusMode = Control.FocusModeEnum.All; }
+
+    // 权威侧已结束管理（生命周期边界/临停解除/离开 game）：UI 只丢弃自己的覆盖层状态，不复活、不再发命令。
+    private void DiscardManagementUiState()
+    {
+        _managementOpen = false;
+        _managementClosePending = false;
+        _cancelConfirmOpen = false;
+        _cancelGoalId = null;
+        _relatedWorkGoalId = null;
+        _authorityReleaseFrames = 0;
+        SyncCancelConfirmVisibility();
+        _managementOverlay.Visible = false;
+        UnsuppressGameFocus();
+    }
+
+    private void RevalidateSelectedObject()
+    {
+        if (_selectedObjectId is not { } id) return;
+        if (_world.ReadObjectDetail(_selectedKind, id, CurrentEpoch()) == null)
+        {
+            _selectedObjectId = null;
+            _objectDetail = null;
+        }
     }
 
     // ---- 预览与建造方案 ----
 
     private void UpdateAimAndPreview(PlayerReadModel state, float dt)
     {
+        if (!PlacementActive)
+        {
+            _preview = null;
+            _plan = null;
+            _hoverPoint = null;
+            return;
+        }
+        if (_placementMode == 2 && _buildType == null)
+        {
+            // 建设模式未选蓝图：无预览、无草案，也不整地 fallback。
+            _preview = null;
+            _plan = null;
+            return;
+        }
         bool jobActive = state.Job is { Active: true };
-        // 活动工程期间仍允许建设模式继续瞄准（只读草案，不预约）；整平模式仍需先完成或取消。
+        // 活动工程期间仍允许建设模式继续瞄准（只读草案，不预约）；整地模式仍需先完成或取消。
         if (_selectedSite == null && !_aimCleared)
             _hoverPoint = MousePlanePoint(_mousePos);
         var aim = _selectedSite ?? _hoverPoint;
-        if (aim is not { } target || (!Building && jobActive))
+        if (aim is not { } target || (_placementMode == 1 && jobActive))
         {
             _preview = null;
             _plan = null;
@@ -574,7 +774,7 @@ public partial class PlayerController : Node
         {
             _preview = Building
                 ? _world.PreviewBuild(_buildType!, target, YawRadians())
-                : _world.PreviewLevel(target, SelectedWorkerId());
+                : _world.PreviewLevel(target);
             _previewTimer = PreviewIntervalS;
             _plan = null; // 位置/版本变化后草案必须重读，不能拿旧版本号下达
         }
@@ -695,6 +895,29 @@ public partial class PlayerController : Node
     internal bool ConnectPanelOpenForTest => _connectPanelOpen;
     internal float CameraDistanceForTest => _distance;
     internal Vector3 CameraFocusForTest => _focus;
+    internal bool ManagementOpenForTest => _managementOpen;
+    internal bool ManagementMaterialsTabForTest => _managementTabMaterials;
+    internal bool CancelConfirmOpenForTest => _cancelConfirmOpen;
+    internal int PlacementModeForTest => _placementMode;
+    internal string? SelectedObjectIdForTest => _selectedObjectId;
+    internal WorldObjectKind SelectedKindForTest => _selectedKind;
+    internal PlayerWorkView? WorkForTest => _work;
+
+    // 自测接缝：只由 tools/player-ui-tests 的相机诊断/布局用例调用，恢复测试记录的初姿；玩家流程不经过，不改生产相机路径。
+    internal void ResetCameraForTest(Basis basis, Vector3 focus, float distance)
+    {
+        _cameraBasis = basis.Orthonormalized();
+        _focus = new Vector3(focus.X, 0, focus.Z);
+        _distance = Mathf.Clamp(distance, MinDistanceM, MaxDistanceM);
+        _camera.GlobalTransform = new Transform3D(_cameraBasis, _focus + _cameraBasis.Z * _distance);
+    }
+
+    // 等价按 F 把镜头焦点移到世界位置；只动镜头，不改世界、选择或工程状态。
+    internal void FocusCameraForTest(Vector3 worldXz)
+    {
+        _focus = new Vector3(worldXz.X, 0, worldXz.Z);
+        _camera.GlobalTransform = new Transform3D(_cameraBasis, _focus + _cameraBasis.Z * _distance);
+    }
 
     // ---- 教学学习操作上报（只报真实发生的相机/选中操作，不伪造达成；每世界每阶段首次一次） ----
 
@@ -816,17 +1039,11 @@ public partial class PlayerController : Node
         return button;
     }
 
-    // 镜头按钮：不参与工程冷却，并保留键盘焦点（可访问性）。
-    private void AddCamButton(HFlowContainer row, string name, string text, Action command)
-    {
-        var button = MakeButton(name, text, command, commandCooldown: false);
-        button.FocusMode = Control.FocusModeEnum.All;
-        row.AddChild(button);
-    }
-
     // 确认按钮在 MakeButton 层已过冷却；这里只提交意图，不重复门禁。
     private void DoConfirm()
     {
+        if (_managementOpen || _cancelConfirmOpen) return; // 管理层/确认层期间不提交
+        if (_placementMode == 2 && _buildType == null) return; // 未选蓝图：不提交，也不整地 fallback
         if (_preview is not { Legal: true } preview) return;
         if (Building && _buildType is { } type)
         {
@@ -835,7 +1052,7 @@ public partial class PlayerController : Node
         }
         else
         {
-            _world.QueueLevel(preview.Center, preview.Version, SelectedWorkerId());
+            _world.QueueLevel(preview.Center, preview.Version);
         }
     }
 
@@ -873,10 +1090,16 @@ public partial class PlayerController : Node
         bool inGame = _page == "game";
         float radius = _preview?.Radius ?? (Building ? _buildRadius : SiteRadiusM);
         PlaceMarker(_previewMarker, inGame ? _preview?.Center : null, _preview is { Legal: true } ? "legal" : "illegal", radius, state);
-        PlaceMarker(_siteMarker, inGame && _preview == null ? _selectedSite : null, "hover", radius, state);
+        PlaceMarker(_siteMarker, inGame && PlacementActive && _preview == null ? _selectedSite : null, "hover", radius, state);
         PlaceMarker(_jobMarker, inGame ? state.Job?.Center : null, _world.PlayerJobApplied ? "committed" : "hover", SiteRadiusM, state);
-        var selected = Array.Find(_robots, r => r.Id == _selectedRobotId);
-        PlaceMarker(_selectMarker, inGame ? selected?.Position : null, "selected", (selected?.Radius ?? 1f) + .35f, state);
+        Vector3? selectedPos = null;
+        float selectedRadius = 1.35f;
+        if (_selectedObjectId is { } sid && Array.Find(_worldObjects, o => o.Id == sid && o.Kind == _selectedKind) is { } view)
+        {
+            selectedPos = view.Position;
+            selectedRadius = view.Radius + 0.35f;
+        }
+        PlaceMarker(_selectMarker, inGame ? selectedPos : null, "selected", selectedRadius, state);
     }
 
     private void PlaceMarker(Marker marker, Vector3? center, string kind, float radius, PlayerReadModel state)
@@ -893,17 +1116,10 @@ public partial class PlayerController : Node
 
     // ---- 展示映射（只做类型/阶段到中文的呈现，不反算规则数值） ----
 
-    private static string StageDisplay(string stage) => stage switch
-    {
-        "Travelling" => "前往工位", "Working" => "整平中", "WaitingForSpace" => "等待场地腾空",
-        "AwaitingPhysics" => "确认地表", "Completed" => "已完成", "Cancelled" => "已取消",
-        "Failed" => "无法继续", _ => stage,
-    };
-
     private static string TypeDisplay(string type) => type switch
     {
         "solar" => "太阳能阵列", "charger" => "充电桩", "repair" => "维修站",
-        "processor" => "加工设施", "storage" => "仓储",
+        "processor" => "加工设施", "storage" => "仓储", "connection" => "电缆接线",
         _ => type,
     };
 
@@ -931,8 +1147,8 @@ public partial class PlayerController : Node
         => string.IsNullOrEmpty(workerId) ? "未分配" // 加工/发展任务可能没有执行者字符串
             : Array.Find(_robots, r => r.Id == workerId) is { } robot ? robot.Name : workerId;
 
-    private static string FacilityName(BootstrapReadModel boot, string id)
-        => Array.Find(boot.Facilities, f => f.Id == id) is { } facility ? facility.Name : id;
+    private string FacilitySourceName(string sourceId)
+        => _bootstrap is { } boot && Array.Find(boot.Facilities, f => f.Id == sourceId) is { } facility ? facility.Name : TypeDisplay(sourceId);
 
     private static string F(float v) => v.ToString("G4", Inv);
 
@@ -944,6 +1160,57 @@ public partial class PlayerController : Node
         var gaps = amounts.Where(a => a.Quantity > 0).ToArray();
         return gaps.Length == 0 ? "无" : string.Join(" ", gaps.Select(a => a.Name + " 缺" + a.Quantity));
     }
+
+    private static string WorkKindDisplay(PlayerWorkKind kind) => kind switch
+    {
+        PlayerWorkKind.Build => "建设", PlayerWorkKind.Connection => "接线", PlayerWorkKind.Restock => "补料",
+        PlayerWorkKind.Mine => "采矿", PlayerWorkKind.Recipe => "加工", PlayerWorkKind.Haul => "运输",
+        PlayerWorkKind.Level => "整平", _ => "工程",
+    };
+
+    private static string WorkStageDisplay(PlayerWorkStage stage) => stage switch
+    {
+        PlayerWorkStage.Authorized => "已授权", PlayerWorkStage.PreparingMaterials => "准备材料",
+        PlayerWorkStage.Travelling => "前往工位", PlayerWorkStage.Mining => "采矿中",
+        PlayerWorkStage.Processing => "加工中", PlayerWorkStage.Transporting => "运输中",
+        PlayerWorkStage.WaitingForRoute => "等待运输路线", PlayerWorkStage.Levelling => "整平中",
+        PlayerWorkStage.AwaitingPhysics => "确认地表", PlayerWorkStage.Constructing => "施工中",
+        PlayerWorkStage.Completed => "已完成", PlayerWorkStage.Cancelled => "已取消",
+        PlayerWorkStage.Blocked => "受阻", _ => "进行中",
+    };
+
+    private static string WorkStatusDisplay(PlayerWorkStatus status) => status switch
+    {
+        PlayerWorkStatus.Running => "进行中", PlayerWorkStatus.Waiting => "等待",
+        PlayerWorkStatus.Blocked => "受阻", PlayerWorkStatus.Completed => "已完成",
+        PlayerWorkStatus.Cancelled => "已取消", PlayerWorkStatus.Failed => "无法继续",
+        _ => "进行中",
+    };
+
+    // 拒因显示：权威 Reason 原文优先；确无原因时按枚举给"原因未知"，不伪归因。
+    private static string WorkReasonDisplay(PlayerReasonCode code, string reason)
+        => reason.Length > 0 ? reason : code switch
+        {
+            PlayerReasonCode.None => "",
+            PlayerReasonCode.Unknown => "原因未知",
+            PlayerReasonCode.WaitingForWorker => "等待执行机器人",
+            PlayerReasonCode.WaitingForStation => "等待工位",
+            PlayerReasonCode.WaitingForRoute => "等待运输路线",
+            PlayerReasonCode.WaitingForPower => "等待供电",
+            PlayerReasonCode.WaitingForProjection => "等待地表确认",
+            PlayerReasonCode.Completed => "已完成",
+            PlayerReasonCode.Cancelled => "已取消",
+            PlayerReasonCode.Blocked => "受阻",
+            _ => "",
+        };
+
+    private static string ContainerKindDisplay(MaterialContainerKind kind) => kind switch
+    {
+        MaterialContainerKind.Warehouse => "仓库", MaterialContainerKind.RobotCargo => "机器人携带",
+        MaterialContainerKind.Mine => "矿点", MaterialContainerKind.Worksite => "工地",
+        MaterialContainerKind.Processing => "加工", MaterialContainerKind.Consumed => "已消耗",
+        _ => "其他",
+    };
 
     public override void _ExitTree() => _markerFactory?.Dispose();
 }
