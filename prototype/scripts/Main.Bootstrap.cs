@@ -83,6 +83,8 @@ public partial class Main
         public double Waiting { get; set; }
         public int Trip { get; set; }
         public string Reason { get; set; } = "";
+        [System.Text.Json.Serialization.JsonIgnore]
+        public PlayerReasonCode FeedbackCode { get; set; } = PlayerReasonCode.Unknown;
         public bool Active => Stage is not ("Completed" or "Cancelled" or "Blocked");
     }
     private BuildingDefinition Definition(string type) => _bootstrapConfig.Buildings.Single(x => x.Id == type);
@@ -155,7 +157,7 @@ public partial class Main
             _health.Select(x=>new RobotSupportView(x.Key,x.Value.Energy,x.Value.Durability,_bootstrapConfig.Capacity,_ledger.Load(CargoContainer(x.Key)),
                 x.Value.Energy<=0&&x.Value.Durability<=0?"零电且机械停机":x.Value.Energy<=0?"零电停机":x.Value.Durability<=0?"机械停机":_services.TryGetValue(x.Key,out var s)?s.Blocked?"保障阻塞，可重试":s.Returning?"保障返程":s.Kind=="repair"?"维修保障":"回充保障":"可用",x.Value.Reason)).ToArray(),_baseRevision);
     }
-    private static string MaterialName(string m)=>m switch {"iron_ore"=>"铁矿","copper_ore"=>"铜矿","iron"=>"铁料","copper"=>"铜料","parts"=>"结构件","cable"=>"线缆",_=>"组件套件"};
+    private static string MaterialName(string m) => DefinitionCatalog.Material(m).Name;
     private static string FormatMaterials(Dictionary<string,int> amounts)=>string.Join("、",amounts.Select(x=>$"{MaterialName(x.Key)}{x.Value}"));
     private TerrainPatch BuildPatch(TerrainSnapshot t, Vector3 center, float radius, string id)
     {
@@ -171,6 +173,7 @@ public partial class Main
     private RouteResult FindRoute(GroundPatrol a, Vector3 to) => PlanBaseRoute(a, to).Route;
     private bool OrderBase(GroundPatrol actor,Vector3 destination)
     {
+        if (_managementPaused) return false;
         var planned = PlanBaseRoute(actor, destination);
         if(!planned.Route.Found){_health[actor.Name.ToString()].Reason=planned.Route.Reason;return false;}
         AssignPlannedRoute(actor, destination, planned.Route, planned.Escape); return true;
@@ -230,8 +233,8 @@ public partial class Main
     }
     private void CancelBaseBuild()
     {
-        if(_buildJob?.Active!=true)return;
-        var j=_buildJob;j.Stage="Cancelled";j.Reason="已取消；地形、现场物料与在途货物保留";_ledger.Release(j.Id);
+        if(_buildJob is not {} j || (!j.Active && j.Stage != "Blocked"))return;
+        j.Stage="Cancelled";j.Reason="已取消；地形、现场物料与在途货物保留";j.FeedbackCode=PlayerReasonCode.Cancelled;_ledger.Release(j.Id);
         foreach(var id in new[]{j.Builder,j.Hauler}.Concat(j.Clearance.Keys).Distinct())
         ClearBaseWorkOrder(id);
         _playerNotice=j.Reason;
@@ -245,8 +248,11 @@ public partial class Main
     {
         var site=_baseFacilities.Single(f=>f.Id==j.Facility);
         var dock=FreeStation(site,hauler);
-        if(dock==null||!TakeStation(site.Id,j.Hauler))return false;
-        j.HaulStation=SavedVector(dock.Value);return OrderBase(hauler,dock.Value);
+        if(dock==null){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="已取货并保留载荷；当前未找到可达卸货工位候选";return false;}
+        if(!TakeStation(site.Id,j.Hauler)){j.FeedbackCode=PlayerReasonCode.WaitingForStation;j.Reason="已取货并保留载荷；等待卸货工位占用解除";return false;}
+        j.HaulStation=SavedVector(dock.Value);
+        if(!OrderBase(hauler,dock.Value)){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="已取货并保留载荷；卸货路线重验未找到路线";return false;}
+        j.FeedbackCode=PlayerReasonCode.None;j.Reason="已真实取货，驮运载货前往工地";return true;
     }
     private static string BaseStageText(string stage)=>stage switch
     {
@@ -286,7 +292,7 @@ public partial class Main
         var patch=TerrainDataCodec.ParsePatch(j.Patch);
         j.Stage=patch.HeightsM.SequenceEqual(_liveTerrain!.Current.HeightsM)||j.Type=="connection"?"Fetching":"Preparing";
         if(j.Stage=="Preparing"&&patch.Base.Version!=_liveTerrain.Current.Version)throw new InvalidOperationException("地形已变化，保留工程；需另选位置");
-        j.Waiting=0;j.Reason=j.Stage=="Fetching"?"重新安排余料运输，保留现场与载货":"重新安排让位与施工，保留已结算物料";
+        j.Waiting=0;j.FeedbackCode=PlayerReasonCode.None;j.Reason=j.Stage=="Fetching"?"重新安排余料运输，保留现场与载货":"重新安排让位与施工，保留已结算物料";
         _playerNotice="继续原工程；不会重扣已消耗物料";
     }
 
@@ -298,7 +304,8 @@ public partial class Main
     }
     private void TickBaseBuild(double delta)
     {
-        var j=_buildJob;if(j?.Active!=true)return;
+        var j=_buildJob;if(_managementPaused || j?.Active!=true)return;
+        j.FeedbackCode=PlayerReasonCode.None;
         var builder=Actor(j.Builder);var hauler=Actor(j.Hauler);var station=LoadVector(j.Station);var center=LoadVector(j.Center);var cargo=CargoContainer(j.Hauler);string buffer=j.Type=="connection"?j.Id:j.Facility;
         if(Servicing(builder)||Servicing(hauler)){j.Reason="保障中，原工程、载荷与进度保留";return;}
         if(!Operational(builder)||!Operational(hauler)){j.Reason="执行者停机；货物与工程保留，救援尚待D2";return;}
@@ -343,11 +350,13 @@ public partial class Main
             case "Fetching":
                 StopBase(builder);ReleaseStations(j.Builder);
                 var depot=_baseFacilities.Single(f=>f.Id==j.Supply);var dock=FreeStation(depot,hauler);
-                if(dock==null||!TakeStation(j.Supply,j.Hauler))break;
-                if(OrderBase(hauler,dock.Value)){j.Stage="Pickup";j.Reason="驮运前往"+BaseName(depot.Type)+"取货";}break;
+                if(dock==null){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="等待取货；当前未找到可达"+BaseName(depot.Type)+"取货工位候选";break;}
+                if(!TakeStation(j.Supply,j.Hauler)){j.FeedbackCode=PlayerReasonCode.WaitingForStation;j.Reason="等待"+BaseName(depot.Type)+"取货工位占用解除";break;}
+                if(OrderBase(hauler,dock.Value)){j.Stage="Pickup";j.Reason="驮运前往"+BaseName(depot.Type)+"取货";}
+                else{j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="取货路线重验未找到路线；尚未交接物料";}break;
             case "Pickup":
-                if(!TakeStation(j.Supply,j.Hauler))break;
-                if(!_routes.TryGetValue(j.Hauler,out var pickup)||!Arrived(hauler,pickup.Destination))break;
+                if(!TakeStation(j.Supply,j.Hauler)){j.FeedbackCode=PlayerReasonCode.WaitingForStation;j.Reason="等待取货工位占用解除；尚未交接物料";break;}
+                if(!_routes.TryGetValue(j.Hauler,out var pickup)||!Arrived(hauler,pickup.Destination)){if(!hauler.HasOrder){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="尚未到达取货位；当前路线未继续执行，物料仍在仓内";}break;}
                 if(_ledger.Load(cargo)>0)TransferMaterials(j.Id+"-return-"+j.Trip,j.Id,cargo,j.Supply,new(_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value)));
                 var need=j.Cost.ToDictionary(x=>x.Key,x=>Math.Max(0,x.Value-_ledger.Count(buffer,x.Key)));int remaining=_bootstrapConfig.CargoCapacity;
                 var load=new Dictionary<string,int>();foreach(var pair in need){int n=Math.Min(remaining,pair.Value);if(n>0){load.Add(pair.Key,n);remaining-=n;}}
@@ -361,8 +370,8 @@ public partial class Main
                 break;
             case "CargoWaiting":if(OrderDelivery(j,hauler))j.Stage="Delivering";break;
             case "Delivering":
-                if(!TakeStation(j.Facility,j.Hauler))break;
-                if(j.HaulStation==null||!Arrived(hauler,LoadVector(j.HaulStation)))break;
+                if(!TakeStation(j.Facility,j.Hauler)){j.FeedbackCode=PlayerReasonCode.WaitingForStation;j.Reason="载货保留；等待卸货工位占用解除";break;}
+                if(j.HaulStation==null||!Arrived(hauler,LoadVector(j.HaulStation))){if(!hauler.HasOrder){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="载货未到卸货位；当前路线未继续执行";}break;}
                 var items=_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value);
                 TransferMaterials(j.Id+"-unload-"+j.Trip,j.Id,cargo,buffer,items);j.Trip++;ReleaseStations(j.Hauler);j.Stage="Fetching";j.Reason="物料已在现场交接；继续补足余料";break;
             case "BuilderTravel":
@@ -389,6 +398,7 @@ public partial class Main
     {var h=_health[actor.Name.ToString()];h.Energy=Math.Max(0,h.Energy-_bootstrapConfig.WorkEnergyPerSecond*delta);h.Durability=Math.Max(0,h.Durability-_bootstrapConfig.WorkWearPerSecond*delta);}
     private void SettleBaseMovement()
     {
+        if (_managementPaused) return;
         foreach(var actor in _groundRobots)
         {
             var h=_health[actor.Name.ToString()];double moved=Math.Max(0,actor.TravelledM-h.Travel);h.Travel=actor.TravelledM;
@@ -397,10 +407,12 @@ public partial class Main
     }
     private void TickBootstrap(double delta)
     {
+        if (_managementPaused) return;
         _recipeWorked=false;TickBaseRoutes(delta);TickBaseServices(delta);TickBaseBuild(delta);TickDevelopment(delta);
     }
     private void TickBaseRoutes(double delta)
     {
+        if (_managementPaused) return;
         foreach(var pair in _routes.ToArray())
         {
             var a=Actor(pair.Key);var r=pair.Value;if(_services.TryGetValue(pair.Key,out var waiting)&&waiting.Blocked)continue;
@@ -420,6 +432,7 @@ public partial class Main
     }
     private void TickBaseServices(double delta)
     {
+        if (_managementPaused) return;
         foreach(var actor in _groundRobots)
         {
             string id=actor.Name.ToString();var h=_health[id];

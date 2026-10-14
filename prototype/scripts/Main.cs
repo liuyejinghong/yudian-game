@@ -86,6 +86,7 @@ public partial class Main : Node3D
                 .All(name => System.Environment.GetEnvironmentVariable(name) != "1");
             if (_entryOpen) _playerNotice = "选择开始新游戏或继续存档";
             _liveMode = options.LiveTerrain || _playerMode;
+            ValidateR2TestIsolation();
             if (_liveMode) PrepareLiveTerrain();
             _duration = options.Duration ?? _cfg.Benchmark.DurationSeconds;
             ValidateProbeGeometry();
@@ -147,7 +148,7 @@ public partial class Main : Node3D
                 _guiCapturePending = key;
             }
         }
-        float dt = _playerMode && (_entryOpen || _menuPaused || _userPaused || _loadPending != null) ? 0 : (float)delta;
+        float dt = _playerMode && (_entryOpen || _menuPaused || _userPaused || _managementPaused || _loadPending != null) ? 0 : (float)delta;
         _animTime += dt;
 
         foreach (var s in _spinners)
@@ -223,8 +224,8 @@ public partial class Main : Node3D
         if (_playerMode && System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_TEST") == "1")
             size = System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_GUI_SIZE") switch
             {
-                "1280x800" => new Vector2I(1280, 800), "1920x1200" => new Vector2I(1920, 1200),
-                null or "" => size, _ => throw new InvalidOperationException("GUI test size must be 1280x800 or 1920x1200"),
+                "1280x800" => new Vector2I(1280, 800), "1920x1080" => new Vector2I(1920, 1080), "1920x1200" => new Vector2I(1920, 1200),
+                null or "" => size, _ => throw new InvalidOperationException("GUI test size must be 1280x800, 1920x1080 or 1920x1200"),
             };
         float playerDisplayScale = _playerMode && DisplayServer.GetName() != "headless" && OperatingSystem.IsMacOS()
             ? DisplayServer.ScreenGetScale(GetWindow().CurrentScreen) : 1f;

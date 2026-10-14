@@ -10,7 +10,7 @@ namespace Yudian;
 
 public partial class Main
 {
-    private static MaterialAmountView[] AmountViews(Dictionary<string, int> amounts) => MaterialLedger.Materials
+    private static MaterialAmountView[] AmountViews(IReadOnlyDictionary<string, int> amounts) => MaterialLedger.Materials
         .Where(m => amounts.GetValueOrDefault(m) > 0).Select(m => new MaterialAmountView(m, MaterialName(m), amounts[m])).ToArray();
     private Dictionary<string, int> PlanningAvailableStock()
     {
@@ -118,9 +118,10 @@ public partial class Main
         bool known = _bootstrapConfig != null && _bootstrapConfig.Buildings.Any(b => b.Id == type);
         if (!known || _bootstrapConfig == null || !_groundReady)
             return new(type, known ? BaseName(type) : type, center, yaw, 2, false, false, candidate, candidate, [], [], [], [], null, [], null, null, 12,
-                "", false, true, CurrentGoal.Length == 0 ? null : CurrentGoal, CurrentWorkStage, _intentVersion, _liveTerrain?.Current.Version ?? 0);
+                "", false, true, CurrentGoal.Length == 0 ? null : CurrentGoal, CurrentWorkStage, _intentVersion, _liveTerrain?.Current.Version ?? 0, [], _worldEpoch);
         center.Y = 0;
-        float radius = (float)Definition(type).Radius; var cost = BuildCost(type); var stock = PlanningAvailableStock();
+        // Same unreserved physical sources as DevelopmentFeasibility/TickDevelopment. No expected output or route claim.
+        float radius = (float)Definition(type).Radius; var cost = BuildCost(type); var stock = DevelopmentEnabled ? UsableStock() : PlanningAvailableStock();
         var gap = cost.Where(x => stock[x.Key] < x.Value).ToDictionary(x => x.Key, x => x.Value - stock[x.Key]);
         var power = PowerCandidates(center); var source = power.FirstOrDefault(p => p.InRange); var recovery = RecoveryTarget(type, center);
         string submit = candidate;
@@ -146,7 +147,8 @@ public partial class Main
         return new(type, BaseName(type), center, yaw, radius + (float)_liveTerrain!.Current.SpacingM, candidate.Length == 0, submit.Length == 0,
             candidate.Length == 0 ? "选址、朝向与供电覆盖合法" : candidate, submit.Length == 0 ? "可授权一个工程；材料沿真实生产和施工链结算" : submit,
             AmountViews(cost), AmountViews(gap), ReadMaterialStock(), routes, supply, power, source?.SourceId, source?.DistanceM,
-            _bootstrapConfig.ConnectionRangeM, consequence, recovery != null, true, CurrentGoal.Length == 0 ? null : CurrentGoal, CurrentWorkStage, _intentVersion, _liveTerrain.Current.Version);
+            _bootstrapConfig.ConnectionRangeM, consequence, recovery != null, true, CurrentGoal.Length == 0 ? null : CurrentGoal, CurrentWorkStage, _intentVersion, _liveTerrain.Current.Version,
+            AmountViews(stock), _worldEpoch);
     }
     public ConnectionOptionView[] ReadConnectionOptions(string? facilityId = null)
     {
@@ -160,7 +162,7 @@ public partial class Main
         string candidate = facility.Source != null ? "设施已有真实接线，不能免费重接" : distance > _bootstrapConfig.ConnectionRangeM ? "此太阳能超出12m接线范围" : "";
         if (candidate.Length == 0 && !_liveTerrain!.PermissionGranted) candidate = "未获接线权限";
         if (candidate.Length == 0 && TutorialEnabled && facility.Id == TutorialSecondChargerId && source.Id != TutorialExpansionSolarId) candidate = "迁移目标须明确接入新增太阳能";
-        var cost = BuildCost("connection"); var stock = PlanningAvailableStock();
+        var cost = BuildCost("connection"); var stock = DevelopmentEnabled ? UsableStock() : PlanningAvailableStock();
         var gap = cost.Where(x => stock[x.Key] < x.Value).ToDictionary(x => x.Key, x => x.Value - stock[x.Key]); var recovery = RecoveryTarget("connection", LoadVector(facility.Position), facility.Id);
         string submit = candidate; string? supply = null;
         if (submit.Length == 0 && !ReadPlayerState().Ready) submit = "等待世界与实体物理准备";

@@ -125,7 +125,7 @@ public partial class Main
             new TutorialMilestoneView("storage-supply", "新增仓储实际供应第二充电桩", !_tutorial.LegacyPractice && TutorialStorageSupplied),
             new TutorialMilestoneView("second-charger", "第二充电桩明确接入新增阵列", !_tutorial.LegacyPractice && newCharger != null && ServiceConnected(newCharger) && newCharger.Source == TutorialExpansionSolarId),
         };
-        string stage = "solar", title = "建设第一座太阳能", instruction = "选择位置与朝向，比较12m覆盖、成本与运输距离。", why = "机器人代劳施工；你决定基地布局。", action = "build";
+        string stage = "solar", title = "建设第一座太阳能", instruction = "选择太阳能蓝图与位置，检查12m覆盖、完整成本和运输距离后授权；机器人送料、整平并施工。", why = "你决定布局；建成阵列在日照时发电，用电设施还要明确接线。", action = "build";
         string? needed = "solar", facility = null, source = null;
         if (solar != null)
         {
@@ -152,8 +152,8 @@ public partial class Main
                 }
                 else if (first?.Completed != true)
                 {
-                    stage = "first-direction"; title = "选择第一次发展方向"; instruction = "仓储增加容量与供料位置；新增太阳能增加功率与覆盖。两项都需要真实补料。";
-                    why = "比较成本与后果后选择，当前工程期间可预规划下一项。"; action = "choose"; needed = null;
+                    stage = "first-direction"; title = "选择第一次发展方向"; instruction = "先点矿点可查看剩余量与加工产物，再比较仓储的容量/供料位置和太阳能的功率/覆盖。授权一项后，机器人自动采矿、运入加工设施、送料并施工。";
+                    why = "矿物先留在现场，加工产物再由驮运送到仓库或工程；组件套件只能消耗有限启动库存。"; action = "choose"; needed = null;
                 }
                 else if (second?.Completed != true)
                 {

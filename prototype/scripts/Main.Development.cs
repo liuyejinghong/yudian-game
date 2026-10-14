@@ -36,6 +36,8 @@ public partial class Main
         public string Supply { get; init; } = "lander";
         public string Stage { get; set; } = "Supplying";
         public string Reason { get; set; } = "";
+        [System.Text.Json.Serialization.JsonIgnore]
+        public PlayerReasonCode FeedbackCode { get; set; } = PlayerReasonCode.Unknown;
         public bool Active => Stage is "Supplying" or "Building";
     }
     private sealed class ProductionTask
@@ -56,6 +58,8 @@ public partial class Main
         public bool Paid { get; set; }
         public string? Patch { get; set; }
         public string Reason { get; set; } = "";
+        [System.Text.Json.Serialization.JsonIgnore]
+        public PlayerReasonCode FeedbackCode { get; set; } = PlayerReasonCode.Unknown;
     }
     private void InitializeDevelopment()
     {
@@ -76,7 +80,7 @@ public partial class Main
     {
         if (!DevelopmentEnabled || ProductionPrerequisite.Length == 0) return "";
         bool recovery = center != null && RecoveryTarget(type, center.Value) != null;
-        var needed = _bootstrapConfig.Buildings.Where(b => b.Id != "storage" && !_baseFacilities.Any(f => f.Built && f.Type == b.Id) && b.Id != type).ToArray();
+        var needed = _bootstrapConfig.Buildings.Where(b => b.Id is "solar" or "charger" or "repair" or "processor" && !_baseFacilities.Any(f => f.Built && f.Type == b.Id) && b.Id != type).ToArray();
         var cost = BuildCost(type);
         var usable = UsableStock();
         foreach (var m in MaterialLedger.Materials)
@@ -129,7 +133,7 @@ public partial class Main
             // Account for every still-missing support obligation and its finite cables together.
             // This prevents a cheap recovery proposal from using the only remaining kit/materials.
             var demand = new Dictionary<string, int>(cost);
-            foreach (var definition in _bootstrapConfig.Buildings.Where(b => b.Id != "storage" && !_baseFacilities.Any(f => f.Built && f.Type == b.Id)))
+            foreach (var definition in _bootstrapConfig.Buildings.Where(b => b.Id is "solar" or "charger" or "repair" or "processor" && !_baseFacilities.Any(f => f.Built && f.Type == b.Id)))
                 foreach (var item in BuildCost(definition.Id)) demand[item.Key] = demand.GetValueOrDefault(item.Key) + item.Value;
             int lines = new[] { "charger", "repair", "processor" }.Count(t => !_baseFacilities.Any(f => f.Type == t && ServiceConnected(f)));
             if (type == "connection") lines = Math.Max(0, lines - 1);
@@ -181,7 +185,10 @@ public partial class Main
                 reason.Length==0,reason);
         }).ToArray();
         string supply=goal==null?"":_baseFacilities.FirstOrDefault(f=>f.Id==goal.Supply) is {} f?BaseName(f.Type):"";
-        string reasonText=(goal?.Stage=="Building"?_buildJob?.Reason:null)??task?.Reason??goal?.Reason??"先建太阳能、充电、维修、加工，并接通三段电缆";
+        string reasonText=(goal?.Stage=="Building"&&_buildJob is {} currentBuild
+            ?currentBuild.Stage=="CargoWaiting"&&currentBuild.FeedbackCode==PlayerReasonCode.Unknown?UnknownDeliveryReason(currentBuild.Hauler):currentBuild.Reason:null)
+            ??(task?.Stage=="CargoWaiting"&&task.FeedbackCode==PlayerReasonCode.Unknown?UnknownDeliveryReason(task.Robot):task?.Reason)
+            ??goal?.Reason??"先建太阳能、充电、维修、加工，并接通三段电缆";
         if(reasonText.Length==0)reasonText="开始筹备材料，机器人会自动补前置";
         return new(true,"自动筹备",goal==null?"先建基础设施":goal.Type=="restock"?"补维修耗材":BaseName(goal.Type),stage,
             need.Length==0?"无需新增生产":need,reasonText,string.Join("\n",directions.Select(d=>$"{d.Name} · {d.Cost} → {d.Consequence}")),
@@ -245,7 +252,7 @@ public partial class Main
     private void StartHaul(string source,string destination,string material,int quantity)
     {
         GroundPatrol? actor=source.StartsWith("cargo:")?Actor(source[6..]):_groundRobots.FirstOrDefault(a=>a.Name.ToString().StartsWith("Robot_Tuoyun_")&&Operational(a)&&!Servicing(a)&&_ledger.Load(CargoContainer(a.Name.ToString()))==0);
-        if(actor==null||!Operational(actor)||Servicing(actor)){_development!.Reason="等待可行动的空载驮运或货物原持有者";return;}
+        if(actor==null||!Operational(actor)||Servicing(actor)){_development!.FeedbackCode=PlayerReasonCode.WaitingForWorker;_development.Reason="等待可行动的空载驮运或货物原持有者";return;}
         int n=Math.Min(quantity,Math.Min(_bootstrapConfig.CargoCapacity,_ledger.Available(source,material)));
         var task=new ProductionTask{Id="prod-"+(++_productionSequence),Goal=_development!.Id,Kind="haul",Material=material,Quantity=n,Source=source,Destination=destination,Robot=actor.Name.ToString()};
         _productionTasks.Add(task);
@@ -266,7 +273,7 @@ public partial class Main
     {
         var m=_mines.Single(m=>m.Material==material);
         var worker=_groundRobots.FirstOrDefault(a=>a.Name.ToString().StartsWith("Robot_Zhulei_")&&Operational(a)&&!Servicing(a)&&MaterialDock(m.Id,a)!=null);
-        if(worker==null){_development!.Reason="矿点没有可达、可行动的筑垒";return;}
+        if(worker==null){_development!.FeedbackCode=PlayerReasonCode.Unknown;_development.Reason="矿点没有可达、可行动的筑垒";return;}
         var station=MaterialDock(m.Id,worker)!.Value;
         _productionTasks.Add(new(){Id="prod-"+(++_productionSequence),Goal=_development!.Id,Kind="mine",Material=material,Quantity=Math.Min(8,Math.Min(quantity,m.Remaining)),Source=m.Id,Destination=m.Id,Robot=worker.Name.ToString(),Station=SavedVector(station),Stage="Travel"});
     }
@@ -285,7 +292,7 @@ public partial class Main
     }
     private void TickDevelopment(double delta)
     {
-        if(!DevelopmentEnabled||_development?.Active!=true)return;
+        if(_managementPaused || !DevelopmentEnabled||_development?.Active!=true)return;
         var goal=_development;
         if(goal.Stage=="Building")
         {
@@ -295,6 +302,7 @@ public partial class Main
         }
         var task=Production;
         if(task!=null){TickProduction(task,delta);return;}
+        goal.FeedbackCode=PlayerReasonCode.None;
         var demand=DevelopmentDemand(goal.Type);
         var stock=UsableStock();
         if(demand.All(x=>stock[x.Key]>=x.Value))
@@ -337,7 +345,8 @@ public partial class Main
     }
     private void TickProduction(ProductionTask t,double delta)
     {
-        if(t.Stage=="Blocked")return;
+        if(_managementPaused || t.Stage=="Blocked")return;
+        t.FeedbackCode=PlayerReasonCode.None;
         var actor=t.Robot==null?null:Actor(t.Robot);
         if(actor!=null&&(Servicing(actor)||!Operational(actor))){t.Reason="执行者保障或停机；载荷与原进度保留";return;}
         t.Waiting+=delta;
@@ -345,7 +354,11 @@ public partial class Main
         string previous=t.Stage;
         if(t.Kind=="mine")
         {
-            if(t.Stage=="Travel"&&OrderBase(actor!,LoadVector(t.Station!)))t.Stage="Working";
+            if(t.Stage=="Travel")
+            {
+                if(OrderBase(actor!,LoadVector(t.Station!))){t.Stage="Working";t.Reason="筑垒前往矿点施工站";}
+                else{t.FeedbackCode=PlayerReasonCode.WaitingForRoute;t.Reason="矿点工作路线重验未找到路线；尚未采出物料";}
+            }
             else if(t.Stage=="Working"&&Arrived(actor!,LoadVector(t.Station!)))
             {double step=Math.Min(6-t.Work,WorkBudget(actor!,delta));t.Work+=step;SpendWork(actor!,step);t.Reason="筑垒现场采集；耗电与磨损计入";if(t.Work>=6)CommitMine(t);}
             else if(t.Stage=="Physics"&&_groundVerified==_liveTerrain!.Current.Version){StopBase(actor!);t.Stage="Completed";t.Patch=null;t.Reason="采矿完成；现场物料等待实运";}
@@ -355,9 +368,9 @@ public partial class Main
             var recipe=Recipe(t.Material);var f=_baseFacilities.Single(f=>f.Id==t.Source);
             var prospective=new MaterialLedger(_ledger.Snapshot());
             prospective.Convert(t.Id+"-recipe",t.Destination,_bootstrapConfig.Version,recipe,t.Quantity);
-            if(!Powered(f)||f.Source==null){t.Reason="加工等待日照/已连接电源；投入保留，未产出";t.Waiting=0;return;}
-            if(!_remainingPower.TryGetValue(f.Source,out double power)||power<recipe.Power){t.Reason="等待功率；现有充电/维修优先";t.Waiting=0;return;}
-            if(OutputStore(recipe.Output.Values.Sum()*t.Quantity)==null){t.Reason="仓储空间不足；加工不产货，先释放容量";t.Waiting=0;return;}
+            if(!Powered(f)||f.Source==null){t.FeedbackCode=PlayerReasonCode.WaitingForPower;t.Reason="加工等待日照/已连接电源；投入保留，未产出";t.Waiting=0;return;}
+            if(!_remainingPower.TryGetValue(f.Source,out double power)||power<recipe.Power){t.FeedbackCode=PlayerReasonCode.WaitingForPower;t.Reason="等待功率；现有充电/维修优先";t.Waiting=0;return;}
+            if(OutputStore(recipe.Output.Values.Sum()*t.Quantity)==null){t.FeedbackCode=PlayerReasonCode.Blocked;t.Reason="仓储空间不足；加工不产货，先释放容量";t.Waiting=0;return;}
             _remainingPower[f.Source]-=recipe.Power;_recipeWorked=true;
             t.Work=Math.Min(recipe.WorkSeconds*t.Quantity,t.Work+delta);t.Reason="加工设施实际用电生产："+MaterialName(t.Material);
             if(t.Work>=recipe.WorkSeconds*t.Quantity){_ledger=prospective;t.Stage="Completed";t.Reason="配方已结算；出料留在加工设施等待实运";_intentVersion++;_resourceViewDirty=true;}
@@ -369,17 +382,26 @@ public partial class Main
             {
                 case "Fetching":
                     var pickup=MaterialDock(t.Source,actor!);
-                    if(pickup!=null&&TakeStation(t.Source,t.Robot!)&&OrderBase(actor!,pickup.Value)){t.Station=SavedVector(pickup.Value);t.Stage="Pickup";t.Reason="驮运前往真实取货位";}break;
+                    if(pickup==null){t.FeedbackCode=PlayerReasonCode.WaitingForRoute;t.Reason="尚未取货；当前未找到可达取货工位候选";break;}
+                    if(!TakeStation(t.Source,t.Robot!)){t.FeedbackCode=PlayerReasonCode.WaitingForStation;t.Reason="尚未取货；等待取货工位占用解除";break;}
+                    if(OrderBase(actor!,pickup.Value)){t.Station=SavedVector(pickup.Value);t.Stage="Pickup";t.Reason="驮运前往真实取货位";}
+                    else{t.FeedbackCode=PlayerReasonCode.WaitingForRoute;t.Reason="取货路线重验未找到路线；物料仍在原位置";}break;
                 case "Pickup":
-                    if(!TakeStation(t.Source,t.Robot!)||!Arrived(actor!,LoadVector(t.Station!)))break;
-                    TransferMaterials(t.Id+"-take",t.Id,t.Source,cargo,new(){{t.Material,t.Quantity}});t.Paid=true;ReleaseStations(t.Robot!);t.Stage="CargoWaiting";break;
+                    if(!TakeStation(t.Source,t.Robot!)){t.FeedbackCode=PlayerReasonCode.WaitingForStation;t.Reason="尚未取货；等待取货工位占用解除";break;}
+                    if(!Arrived(actor!,LoadVector(t.Station!))){if(!actor!.HasOrder){t.FeedbackCode=PlayerReasonCode.WaitingForRoute;t.Reason="尚未到达取货位；当前路线未继续执行";}break;}
+                    TransferMaterials(t.Id+"-take",t.Id,t.Source,cargo,new(){{t.Material,t.Quantity}});t.Paid=true;ReleaseStations(t.Robot!);t.Stage="CargoWaiting";
+                    t.FeedbackCode=PlayerReasonCode.WaitingForRoute;t.Reason="物料已交接到驮运载荷；等待安排真实卸货位";break;
                 case "CargoWaiting":
                     var delivery=MaterialDock(t.Destination,actor!);
-                    if(delivery!=null&&TakeStation(t.Destination,t.Robot!)&&OrderBase(actor!,delivery.Value)){t.Station=SavedVector(delivery.Value);t.Stage="Delivering";t.Reason="真实载货运输："+MaterialName(t.Material)+t.Quantity;}break;
+                    if(delivery==null){t.FeedbackCode=PlayerReasonCode.WaitingForRoute;t.Reason="载荷保留；当前未找到可达卸货工位候选";break;}
+                    if(!TakeStation(t.Destination,t.Robot!)){t.FeedbackCode=PlayerReasonCode.WaitingForStation;t.Reason="载荷保留；等待卸货工位占用解除";break;}
+                    if(OrderBase(actor!,delivery.Value)){t.Station=SavedVector(delivery.Value);t.Stage="Delivering";t.Reason="真实载货运输："+MaterialName(t.Material)+t.Quantity;}
+                    else{t.FeedbackCode=PlayerReasonCode.WaitingForRoute;t.Reason="载荷保留；卸货路线重验未找到路线";}break;
                 case "Delivering":
-                    if(!TakeStation(t.Destination,t.Robot!)||!Arrived(actor!,LoadVector(t.Station!)))break;
+                    if(!TakeStation(t.Destination,t.Robot!)){t.FeedbackCode=PlayerReasonCode.WaitingForStation;t.Reason="载荷保留；等待卸货工位占用解除";break;}
+                    if(!Arrived(actor!,LoadVector(t.Station!))){if(!actor!.HasOrder){t.FeedbackCode=PlayerReasonCode.WaitingForRoute;t.Reason="载货未到卸货位；当前路线未继续执行";}break;}
                     try{TransferMaterials(t.Id+"-unload",t.Id,cargo,t.Destination,new(){{t.Material,t.Quantity}});}
-                    catch(InvalidOperationException ex){t.Reason=ex.Message;t.Waiting=0;return;}
+                    catch(InvalidOperationException ex){t.FeedbackCode=PlayerReasonCode.Blocked;t.Reason=ex.Message;t.Waiting=0;return;}
                     StopBase(actor!);ReleaseStations(t.Robot!);t.Stage="Completed";t.Reason="已到站卸货，物料归属已交接";break;
             }
         }
@@ -389,9 +411,9 @@ public partial class Main
     private void CancelDevelopment()
     {
         if(_development?.Active!=true&&_development?.Stage!="Blocked")return;
-        if(_buildJob?.Active==true)CancelBaseBuild();
+        if(_buildJob?.Active==true || _buildJob?.Stage=="Blocked")CancelBaseBuild();
         var t=Production;
-        if(t!=null){if(t.Stage!="Blocked")t.ResumeStage=t.Stage;t.Stage="Cancelled";if(t.Robot!=null)ClearBaseWorkOrder(t.Robot);}
+        if(t!=null){if(t.Stage!="Blocked")t.ResumeStage=t.Stage;t.Stage="Cancelled";t.FeedbackCode=PlayerReasonCode.Cancelled;t.Reason="已取消后续生产；已开挖、投入、产物与载荷保留";if(t.Robot!=null)ClearBaseWorkOrder(t.Robot);}
         _development.Stage="Cancelled";_development.Reason="目标取消；已开挖、投入、产物与在途货物保留，不产生新义务";_playerNotice=_development.Reason;
     }
     private void RetryDevelopment()
@@ -401,14 +423,14 @@ public partial class Main
         var task=_productionTasks.LastOrDefault(t=>t.Goal==_development.Id&&t.Stage is "Blocked" or "Cancelled");
         if(task!=null)
         {
-            task.Stage=task.ResumeStage??"Fetching";task.Waiting=0;
+            task.Stage=task.ResumeStage??"Fetching";task.Waiting=0;task.FeedbackCode=PlayerReasonCode.None;task.Reason="继续原生产任务；已结算投入、产物与载荷保留";
             if(task.Robot!=null)
             {
                 if(task.Kind=="mine")task.Stage=task.Paid?"Physics":"Travel";
                 else task.Stage=task.Paid?"CargoWaiting":"Fetching";
             }
         }
-        _development.Stage="Supplying";_development.Reason="继续原目标，保留已结算物料";_playerNotice=_development.Reason;
+        _development.Stage="Supplying";_development.FeedbackCode=PlayerReasonCode.None;_development.Reason="继续原目标，保留已结算物料";_playerNotice=_development.Reason;
     }
     private void TickProcessorVisuals()
     {

@@ -132,11 +132,13 @@ public partial class Main
     }
     private void LoadPlayerFrom(string path, int slot)
     {
+        BeginWorldTransitionAttempt();
         if (!_groundReady || _groundFault || _loadPending != null) throw new InvalidOperationException("等待当前世界恢复后读取");
         BeginPlayerTransition(ReadPlayerSaveFile(path), "load", slot);
     }
     private void BeginPlayerTransition(PlayerSave source, string kind, int slot)
     {
+        if (kind == "newgame") BeginWorldTransitionAttempt();
         var snapshot = ClonePlayer(source); var terrain = ValidatePlayerSave(snapshot);
         _loadRollback = ClonePlayer(CapturePlayer()); _lifecycleRollback = TutorialEnabled ? CaptureLifecycleRollback() : null;
         _loadRecovered = false; _transitionKind = kind; _transitionSlot = slot;
