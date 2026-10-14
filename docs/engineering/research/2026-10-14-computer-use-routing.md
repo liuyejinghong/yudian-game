@@ -1,6 +1,6 @@
 # Computer use：人机并行与模型无关执行层
 
-2026-10-14｜状态：本机组件只读取证与公开资料核验完成；MCP跨客户端握手、后台Godot输入、Cua Driver及VM运行均 NOT_RUN。未安装、改工具配置、改权限、开启新服务或操作真人桌面。本页不改变r2玩法规格，也不关闭原审核B001/B002或D001。
+2026-10-14｜本机组件取证、公开资料核验与随后获准的有界测试见 [实际结果](2026-10-14-sky-mcp-test/RESULTS.md)：Sky握手/10工具发现通过，但真实get_app_state被`-10000 Sender process is not authenticated`拒绝。独立agent-desktop后台AX实际完成设置/返回和新游戏→game状态；六段采样未观测游戏前台，但另有两次启动后前台快照与game状态下旧主页截图。持续后台和新鲜窗口画面未通过，世界选址/键盘NOT_RUN。Cua Driver与VM未安装/运行，未改系统权限或Codex配置。本页不改变r2玩法规格，也不关闭原审核B001/B002或D001。
 
 所有者指出：Codex的computer use已可用、有独立代理光标；自动化不应与人类争鼠标和屏幕。今后将“所有者在其他应用继续工作时，自动化仍能定向操作目标、保持系统指针与焦点”作为工具验收条件。
 
@@ -53,10 +53,10 @@ OpenAI Computer Use API让模型返回动作，文档原句“You provide the en
 
 | 方案 | 人机并行依据 | 对当前Godot/macOS任务的结论 |
 |---|---|---|
-| 本机Codex Sky | 官方macOS后台使用与own cursor；所有者已报告成功，本机有匹配服务 | 优先核现成MCP入口，保留现有宿主和授权；跨客户端与Godot后台输入NOT_RUN |
+| 本机Codex Sky | 官方macOS后台使用与own cursor；所有者已报告成功，本机有匹配服务 | 现成MCP握手通过，但本CLI独立发送者真实状态查询被鉴权拒绝；不伪造身份或借宿主绕过 |
 | Cua Driver | 公开模型无关SDK/CLI/MCP；quickstart明确“Your own window and pointer stay where they were: the moving cursor is the agent's overlay” | 开放替代首选候选；有只接受前台/HID输入等边界，Godot未在支持表验证，不能先签成功 |
 | Cua Spaces/Lume macOS VM | Apple Silicon独立macOS guest桌面；guest输入与主机输入分离 | 完整隔离备选；需测试Godot.NET/Metal功能，VM回归不能代主机性能与真实触控板体验 |
-| agent-desktop/Peekaboo | 定向语义动作可后台；物理输入不自动成为独立会话 | 适合AX工具和小范围系统UI；当前物理回退不能满足默认人机并行 |
+| agent-desktop/Peekaboo | 定向语义动作可后台；物理输入不自动成为独立会话 | agent-desktop实际完成后台设置/返回和新游戏状态操作；持续后台启动、新鲜窗口画面未通过，世界坐标/键盘未跑 |
 
 Cua Driver支持表列Electron/Tauri/AppKit/SwiftUI/WKWebView，未列Godot；其边界包括部分后台scroll/drag形态拒绝、minimized keyboard commit、仅HID-tap输入应用。应明确拒绝或回退独立环境，不强迫所有者错峰来掩盖局限。
 
@@ -73,10 +73,11 @@ Apple ParavirtualizedGraphics官方DocC JSON明确框架为macOS VM提供hardwar
 - [Peekaboo作者仓库](https://github.com/steipete/Peekaboo)
 - [Apple ParavirtualizedGraphics](https://developer.apple.com/documentation/paravirtualizedgraphics)（正文从官方[DocC JSON](https://developer.apple.com/tutorials/data/documentation/paravirtualizedgraphics.json)核验）
 
-## 5. 下一步最小验证（本轮未执行）
+## 5. 已测入口与后续最小验证
 
-1. 对本机Sky原生MCP客户端做限时initialize/tools/list，不改disabled配置、可信runtime身份或应用授权。确认截图/点按/键盘的实际schema及取消行为；若拒绝，保原原因，不伪造Codex身份或代理绕过。
-2. 若连接成立，限定独立游戏测试窗口及私有存档，运行一次打开面板/返回/世界选址；同时核系统指针、foreground、用户另一应用的焦点与输入保持。只有满足人机并行条件才能接受该工具。
-3. Sky第三方宿主不兼容时，可保留已获授权的Codex宿主转交窄操作任务，或评估Cua Driver；若应用需要前台物理输入，转独立macOS guest。交互回归、原生Metal与主机性能分开记录。
+1. 原生Sky客户端通过官方launcher的`mcp`入口完成限时initialize/tools/list，未改disabled配置或调用身份。真实get_app_state被发送者鉴权拒绝后停止；不借受信任宿主、代理或私有IPC代此客户端绕过。
+2. 对已在后台运行的私有Godot窗口，agent-desktop默认headless新鲜ref AXPress及控件/日志回读实际完成设置/返回和新游戏→game状态。`find`曾成功，也曾两次TIMEOUT；改新窗口snapshot恢复取得控件。所列六段采样均未观测目标前台，自然pointer活动未归因；仅接受菜单/状态范围。
+3. `open -g -n`后一次前台快照不符已停止；fresh launch参数两次拒绝后按重计划移除不支持的`--cwd`，保绝对项目路径及私有槽，实际启动及新游戏状态操作成功。但game状态两次窗口截图仍为相同旧主页。再启现有viewport取图入口的实例，15s采样后约7s前台快照true，立即停止。持续后台启动与新鲜可见世界未通过，不再回退物理输入，原因仍未定位。
+4. 当前工具不足以支持完整游戏computer use。后续评估公开Cua Driver并实际验证Godot、正常宿主权限、持续后台与取图；需要前台/HID输入时再考虑独立macOS guest。新工具/VM未安装，交互回归、原生Metal与主机性能分开记录。
 
-本轮只读`SkyComputerUseClient --help`被工作树命令守卫阻断，未取得运行帮助；没有改写命令绕过、开启MCP或连接Sky服务。故本页不给“跨客户端已跑通”的配置承诺。
+早期含空格客户端直接命令曾被工作树守卫阻断；随后找到官方无空格launcher并正常取得help及MCP结果。当前结论来自真实执行：协议可发现，独立发送者未获Sky动作信任；菜单AX另有有限成功证据。
