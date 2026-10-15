@@ -1145,6 +1145,75 @@ public partial class PlayerUiSelfTest : SceneTree
         var connectionJob = _world.ReadPlayerState().Job!;
         Check(_world.ReadTutorial().StageId == "charger-wire" && !_world.ReadBootstrap().Facilities.Single(f => f.Id == charger.Id).ServiceConnected,
             "确认点击仅授权；施工中仍不算接线里程碑");
+        // N001 回归锁：真实活动接线执行中（工程行占高度、拒因出现）在 1280×800@150% 下，
+        // 接线固定核心（确认/关闭/完整拒因）与活动工程行必须完整在视口和外层滚动遮罩内，
+        // 不因候选列表变长被挤出（run01 E041/E057 的复现状态）。
+        _ui.ApplySettingsForTest(1.5, 1, "detailed");
+        await WaitFor(() => _ui.FindChild("WorkRowPanel", true, false) is Control { Visible: true }, 5,
+            "N001 活动工程行在接线执行中出现（_work 按节流间隔刷新）");
+        await Frames(6);
+        var n001View = Root.GetVisibleRect();
+        var n001Mask = ((Control)_ui.FindChild("ConnectScroll", true, false)!).GetGlobalRect();
+        bool N001InView(Control control)
+        {
+            var rect = control.GetGlobalRect();
+            bool inside = control.IsVisibleInTree()
+                && rect.Position.X >= n001View.Position.X - 0.5f && rect.Position.Y >= n001View.Position.Y - 0.5f
+                && rect.End.X <= n001View.End.X + 0.5f && rect.End.Y <= n001View.End.Y + 0.5f;
+            GD.Print("PLAYER_UI_SELFTEST N001_RECT name=" + control.Name + " rect=" + rect + " mask=" + n001Mask + " viewport=" + n001View + " inView=" + inside);
+            return inside;
+        }
+        // 工程行在接线面板之外的独立行：只要求完整在视口内；接线固定核心要求视口+外层滚动遮罩内。
+        bool N001InViewAndMask(Control control)
+        {
+            var rect = control.GetGlobalRect();
+            bool inside = N001InView(control)
+                && rect.Position.X >= n001Mask.Position.X - 0.5f && rect.Position.Y >= n001Mask.Position.Y - 0.5f
+                && rect.End.X <= n001Mask.End.X + 0.5f && rect.End.Y <= n001Mask.End.Y + 0.5f;
+            return inside;
+        }
+        Check(_ui.FindChild("WorkRowPanel", true, false) is Control { Visible: true }
+            && N001InView((Control)_ui.FindChild("WorkRowLabel", true, false)!),
+            "N001 活动接线执行中工程行完整在 1280×800@150% 视口内");
+        Check(N001InViewAndMask((Button)_ui.FindChild("ConnectSubmitButton", true, false)!),
+            "N001 接线执行中确认按钮常驻视口与滚动遮罩内（不随候选/拒因滚走）");
+        Check(N001InViewAndMask((Button)_ui.FindChild("ConnectCloseButton", true, false)!),
+            "N001 接线执行中关闭按钮常驻视口与滚动遮罩内");
+        var n001Reason = (Label)_ui.FindChild("ConnectReasonLabel", true, false)!;
+        if (n001Reason.IsVisibleInTree())
+            Check(N001InViewAndMask(n001Reason), "N001 接线执行中完整拒因常驻视口与滚动遮罩内：" + n001Reason.Text);
+        else
+            GD.Print("PLAYER_UI_SELFTEST N001 reason not visible this frame（提交后该 pair 不再是候选，选中被清空）；拒因常驻合同由可见态与 ConnectionLayoutChecks 锁定");
+        // N001-f 回归锁：候选列表自身（不只核心）上下完整在视口与外层滚动遮罩内——
+        // 旧实现 96 保底把列表底部顶出外层遮罩被裁、末项滚不到（原生 7098）；列表只拿核心外实际剩余预算。
+        var n001List = (ScrollContainer)_ui.FindChild("ConnectList", true, false)!;
+        Check(n001List.IsVisibleInTree() && N001InViewAndMask(n001List),
+            "N001 候选列表真实 rect 完整在视口与外层滚动遮罩内（min 0 不保底顶破遮罩）");
+        var n001Rows = new List<Button>();
+        foreach (Node rowNode in n001List.FindChildren("ConnectRow_*", "", true, false))
+            if (rowNode is Button rowButton) n001Rows.Add(rowButton);
+        Check(n001Rows.Count > 0, "N001 候选列表仍列出真实候选行（不删候选换通过）");
+        // 真实滚到底（按节点 clamp，不伪造位置），末行 pair 按钮必须完整在列表内层遮罩与外层遮罩内且未禁用。
+        n001List.ScrollVertical = int.MaxValue; // 属性为 int：按节点自身 clamp 到实际最大滚动位
+        await Frames(3);
+        var n001Last = n001Rows[^1];
+        var n001ListRect = n001List.GetGlobalRect();
+        var n001LastRect = n001Last.GetGlobalRect();
+        bool n001LastInList = n001Last.IsVisibleInTree() && !n001Last.Disabled
+            && n001LastRect.Position.X >= n001ListRect.Position.X - 0.5f && n001LastRect.Position.Y >= n001ListRect.Position.Y - 0.5f
+            && n001LastRect.End.X <= n001ListRect.End.X + 0.5f && n001LastRect.End.Y <= n001ListRect.End.Y + 0.5f
+            && N001InViewAndMask(n001Last);
+        GD.Print("PLAYER_UI_SELFTEST N001_LIST rect=" + n001ListRect + " last=" + n001LastRect +
+            " scroll=" + n001List.ScrollVertical.ToString("0.##", Inv) + " inList=" + n001LastInList);
+        Check(n001LastInList, "N001 真实滚底后最后一个候选 pair 按钮完整在列表内层与外层遮罩内且可点击");
+        Click(n001LastRect.GetCenter());
+        await Frames(3);
+        var n001Cost = (Label)_ui.FindChild("ConnectCostLabel", true, false)!;
+        Check(n001Cost.Text.Contains("已选") && n001Cost.Text.Contains("成本"),
+            "N001 列表末行真实点击后选择链仍活（已选 pair 与整条费用常驻）：" + n001Cost.Text.Split('\n')[0]);
+        await CaptureViewport("1280x800-scale150-connection-active-work");
+        _ui.ApplySettingsForTest(1, 1, "detailed");
+        await Frames(4);
         await WaitForSimulation(() => _world.ReadBootstrap().Facilities.Single(f => f.Id == charger.Id).ServiceConnected
             && _world.ReadPlayerState().Job is not { Active: true }, 220, "真实运输与付费铺线完成");
         var connected = _world.ReadBootstrap().Facilities.Single(f => f.Id == charger.Id);
@@ -1218,9 +1287,45 @@ public partial class PlayerUiSelfTest : SceneTree
             Click(relatedOpen.GetGlobalRect().GetCenter());
             await Frames(3);
             var detailLabel = (Label)_ui.FindChild("RelatedWorkDetailLabel", true, false)!;
-            Check(!_ui.ManagementMaterialsTabForTest && ((Control)_ui.FindChild("RelatedWorkBox", true, false)!).Visible
-                && detailLabel.Text.Contains(work.Name),
+            var relatedBox = (Control)_ui.FindChild("RelatedWorkBox", true, false)!;
+            Check(!_ui.ManagementMaterialsTabForTest && relatedBox.Visible && detailLabel.Text.Contains(work.Name),
                 "预约行按钮实际跳同层关联工程详情：" + detailLabel.Text.Split('\n')[0]);
+            // N004 回归锁：关联工程详情内可见且启用的取消按钮必须打开明确后果确认（run02 E357/E358
+            // 旧实现点击无任何反馈）；确认卡指向当前明确目标，Esc 只退确认层并保留关联详情原状态。
+            var relatedCancel = (Button)_ui.FindChild("WorkCancelButton", true, false)!;
+            Check(relatedCancel.IsVisibleInTree() && !relatedCancel.Disabled, "N004 关联详情内取消工程按钮可见且启用");
+            Click(relatedCancel.GetGlobalRect().GetCenter());
+            await Frames(3);
+            var cancelBox = (Control)_ui.FindChild("CancelConfirmBox", true, false)!;
+            Check(_ui.CancelConfirmOpenForTest && cancelBox.Visible,
+                "N004 关联详情内点击取消工程打开后果确认（不再无反馈）");
+            var cancelCardLabel = (Label)_ui.FindChild("CancelConfirmLabel", true, false)!;
+            Check(cancelCardLabel.Text.Contains(work.Name) && cancelCardLabel.Text.Contains("已发生"),
+                "N004 确认卡指向明确当前目标：" + cancelCardLabel.Text.Split('\n')[0]);
+            PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+            await Frames(3);
+            Check(!_ui.CancelConfirmOpenForTest && _ui.ManagementOpenForTest && relatedBox.Visible
+                && detailLabel.Text.Contains(work.Name),
+                "N004 Esc 只退确认层，关联工程详情原状态保留");
+            // N004-f 回归锁：关联工程详情仍打开时直接点管理层「关闭」按钮（不经 Esc 退层）——
+            // 关闭必须一并清关联子详情；重开（直接进工程标签）不得复活旧详情，随后还原链继续原 Esc 逐层断言。
+            Click(((Button)_ui.FindChild("ManagementCloseButton", true, false)!).GetGlobalRect().GetCenter());
+            await Frames(4);
+            Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused,
+                "N004 关联工程详情打开时直接点关闭：管理层关闭并释放临停");
+            await CommandClick((Button)_ui.FindChild("ToolWorkButton", true, false)!);
+            await Frames(4);
+            Check(_ui.ManagementOpenForTest && !_ui.ManagementMaterialsTabForTest
+                && !((Control)_ui.FindChild("RelatedWorkBox", true, false)!).Visible,
+                "N004 直接关闭后重开管理层（工程标签）不复活关联工程子详情");
+            await CommandClick((Button)_ui.FindChild("ManagementMaterialsTabButton", true, false)!);
+            await Frames(3);
+            var relatedAgain = (Button?)_ui.FindChild("RelatedWorkButton", true, false);
+            Check(relatedAgain is { Visible: true }, "N004 还原链：真实预约仍在，关联工程行入口可见");
+            Click(relatedAgain!.GetGlobalRect().GetCenter());
+            await Frames(3);
+            Check(!_ui.ManagementMaterialsTabForTest && ((Control)_ui.FindChild("RelatedWorkBox", true, false)!).Visible,
+                "N004 还原链：重新进入关联工程详情后继续原 Esc 逐层链");
             PressKey(Key.Escape, true); PressKey(Key.Escape, false);
             await Frames(3);
             Check(_ui.ManagementOpenForTest && _ui.ManagementMaterialsTabForTest, "Esc 从关联工程详情退回物资标签（管理层仍开）");
@@ -1230,6 +1335,16 @@ public partial class PlayerUiSelfTest : SceneTree
         await Frames(4);
         Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused,
             "真实建设检查后关闭管理层释放临停（建设继续）");
+        // N004：关闭管理统一清关联临时 ID——重开管理层不得复活旧关联工程子详情。
+        await CommandClick((Button)_ui.FindChild("ToolWorkButton", true, false)!);
+        await Frames(4);
+        Check(_ui.ManagementOpenForTest && !_ui.ManagementMaterialsTabForTest
+            && !((Control)_ui.FindChild("RelatedWorkBox", true, false)!).Visible,
+            "N004 关闭重开管理层不复活关联工程子详情");
+        Click(((Button)_ui.FindChild("ManagementCloseButton", true, false)!).GetGlobalRect().GetCenter());
+        await Frames(4);
+        Check(!_ui.ManagementOpenForTest && !_world.ReadPlayerState().ManagementPaused,
+            "N004 复验后再次关闭管理层释放临停（建设继续）");
     }
 
     private async System.Threading.Tasks.Task SavePrivateSlot(string label)
@@ -1769,6 +1884,19 @@ public partial class PlayerUiSelfTest : SceneTree
                         var reason = (Label)_ui.FindChild("PlanReasonLabel", true, false)!;
                         Check(!refused.CandidateLegal && !refused.CanSubmit && reason.IsVisibleInTree()
                             && reason.Text.Contains(refused.CandidateReason), tag + " 非法方案显示完整权威拒因：" + reason.Text);
+                        // N002 回归锁：预览与草案可能给出同一条拒因（如“作业范围内有机器人”重复）；
+                        // 显示必须按首次出现精确保序去重，且权威给出的不同原因都保留，不互相吞并。
+                        var previewWhy = _world.PreviewBuild("solar", actual, 0f);
+                        var expectedReasons = new List<string>();
+                        if (!previewWhy.Legal && previewWhy.Reason.Length > 0) expectedReasons.Add(previewWhy.Reason);
+                        if (!refused.CandidateLegal && refused.CandidateReason.Length > 0) expectedReasons.Add(refused.CandidateReason);
+                        if (!refused.CanSubmit && refused.SubmitReason.Length > 0 && refused.SubmitReason != refused.CandidateReason)
+                            expectedReasons.Add(refused.SubmitReason);
+                        var distinctExpected = expectedReasons.Distinct().ToList();
+                        var shownReasons = reason.Text.Length == 0 ? new string[0] : reason.Text.Split('；');
+                        Check(shownReasons.SequenceEqual(distinctExpected),
+                            tag + " N002 拒因精确保序去重且不同原因保留：shown=" + reason.Text +
+                            " expected=" + string.Join("；", distinctExpected));
                     }
                     CheckCoreHudVisibility(tag + "-illegal", true);
                     await CaptureViewport(tag + "-illegal");
