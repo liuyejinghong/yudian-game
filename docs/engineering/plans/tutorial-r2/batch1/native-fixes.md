@@ -79,9 +79,9 @@
 - A/B独立根：两流程PASS（音频Dummy；两根原seed hash同cb347b8a）。A组直接建设：E044 goal-9/build-8 solar Completed、center(12.505365,0,-11.181097)/yaw0、Time 2045.9166666651347、正常保存成功，E045退出ERROR0。B组先手动整平（E046 Completed、center(12.52281,0,-11.197887)、terrain v5、Message“整平已提交，物理验证完成”、已保存）再solar：E047 goal-9/build-8 Completed、设施Built=true、center(12.43391,0,-11.311815)/yaw0、Time 2210.4500000005346、正常保存成功，E048退出ERROR0。不作严格同点同相效率比较。
 - E001–E046 checkpoint、退出日志、截图与启动样本留存于私有验收目录，档身份SHA在私有记录；公开仓库只记E编号与本节事实，不收私人路径或存档数据。N002待最终图形复验；N001与reuse-save原生仍FAIL待新候选复验；均不代签。
 
-## 本轮最终状态（2026-10-15收束，run-02/run-03）
+## 本轮最终状态（2026-10-15收束，run-02/run-03；历史快照，最新见文末run-04）
 
-任务停在可证阻断；上文历史分段与全部失败原件保留，本节为当前总口径。新修复代码 `e080363`（历史Completed矿站保存）与 `262033d`（接线预算）工程验收全过；新候选 `4bd52ff` 已导出并push成功（`e6e5318..4bd52ff` exit0，PR #63；首次TLS `SSL_ERROR_SYSCALL` 失败保留为史实）：clean、304raw逐项match、PCK `d86046fb…a1e33ab0c`、Yudian.dll `01bb1f9e…425bb6752`、engine同旧候选、CLR8.0.31、strict/arm64、导出ERROR0；相较4f311e6仅3个raw源码差异，HEAD后续纯文档前进不改候选身份。
+任务停在可证阻断；上文历史分段与全部失败原件保留，本节为run03收束时口径，最新见文末run04。新修复代码 `e080363`（历史Completed矿站保存）与 `262033d`（接线预算）工程验收全过；新候选 `4bd52ff` 已导出并push成功（`e6e5318..4bd52ff` exit0，PR #63；首次TLS `SSL_ERROR_SYSCALL` 失败保留为史实）：clean、304raw逐项match、PCK `d86046fb…a1e33ab0c`、Yudian.dll `01bb1f9e…425bb6752`、engine同旧候选、CLR8.0.31、strict/arm64、导出ERROR0；相较4f311e6仅3个raw源码差异，HEAD后续纯文档前进不改候选身份。
 
 | 项 | 状态 | 依据/范围 |
 |---|---|---|
@@ -95,6 +95,28 @@
 | CUA原生绑定（静音clone） | BLOCKED（工具侧未证） | path timeout/bundle cg；jsreset、exact bundle、唯一running name、fresh same bundle均试仍cg；系统AX/screen权限granted，不归因用户权限或新修死锁，枚举原因未证、不判服务死锁 |
 | N002 | NOT_RUN | run-03入口已备未启动 |
 | 精确1920×1080/1200 | BLOCKED | 屏幕钳制1860×889，布局未测不签 |
-| D001/G001无提示真人 | NOT_RUN | 旧正式P1台账不改 |
+| G001无提示真人验收 | NOT_RUN | D001仍为确认P1；旧正式P1台账不改 |
 
 run-03三入口种子字节SHA经receipt实测不变（connection/reuse/n002）；旧run-02静音connection进程99081非本轮主控启动，未操作。只读调查收束，无支持可用的新绑定办法；不改服务/信任/OS。证据index由主控最后生成；私有详细报告在run-03/report.md与run-02/report-run02.md。
+
+## 2026-10-15 解锁后run04最新状态（当前总口径）
+
+用户提示“应该是电脑锁屏了，你现在再试试？”并解锁后，同旧实例AX截图恢复，run-04正常载档与操作；上文收束表为锁屏阻断下的历史快照，其中“新包N001/reuse原生BLOCKED（未载档）”不再代表当前状态；未改系统权限/服务/信任。候选身份：源4bd52ff46ee3d2d477ecae96488ebc4bbdaf14e4、PCK d86046fbde3dbc22bfd7bee5a3198f5fc14473b129ceaa37eeb87a8a1e33ab0c、Yudian.dll 01bb1f9e764637820d286a9b326931062032a2572454127e3e16878425bb6752、engine 7b9bf0197b4b67172f365c90b626880db4f50de64056a256471af897f4722d53、完整raw快照304项（manifest所列212项本轮再次0差，不把manifest字段条数说304）、strict/arm64、CLR8.0.31、导出ERROR0；三clone PCK哈希与固定候选一致（E022）；HEAD cbca52e（run04开始时文档HEAD）仅docs不影响包；修复commits e080363/262033d已push。
+
+run-04三入口独立clone均加官方 `--audio-driver Dummy`+Metal真实图形；普通CoreAudio/声音仍BLOCKED未签，与锁屏是不同问题。批1本轮游戏内缺陷复验通过；音频/精确大尺寸/真人验收分列：
+
+| 项 | 状态 | 依据/范围 |
+|---|---|---|
+| N001接线三倍率 | PASS（run-04新包） | E001/E011/E012–E015；限逻辑1280×800（Retina 2560×1600 scale2） |
+| reuse-save整链含冷载 | PASS（run-04新包） | E002–E007、E016–E017；E007已修正“identical”误记，pre-correction原件.bak保留 |
+| N002预览拒因 | PASS（run-04新包） | E008==E009完整JSON全等、E010、E018–E020 |
+| 种子/原件完整 | 实测不变 | E030/E032/E350原字节SHA不变（E022）；测试槽后经正常保存变化，不称live槽仍seed SHA |
+| 退出日志与进程 | 全净 | E004 saveOK2、E006 saveOK2、E010 saveOK3、E011 saveOK2，全部ERROR0/rejected0；RUN04运行进程NONE（E021） |
+
+- N001细节：正常设置150%→载原E030活动build-12 Delivering→手动暂停，真实8 pairs/滚条/末项选择，长短拒因均响应；同world 150%/125%/100%分别实测滚底402/253/186；末项9.8m完整可读可选，target/source/费用线缆4/净缺口无/拒因/确认（按规则禁用）/关闭完整在面板，关闭实际可用。四份GUI_TEST新帧主控已读（CUA截图旧帧不可作视觉PASS；正常菜单返回触发游戏自身捕获，未改程序或state）。E001与E030同Time 10540.633333264095/Paused=true，仅正常载入归零的Velocity与HealthTravel，不称snapshot全等；不宣称未观察的首渲染帧或超长拒因内部scroll。
+- reuse细节：正常UI载E032原字节（E002=E032）；blueprint仓储点击[650,1000]与原失败位置(-5.286148,0,10.807249)/yaw0完全相同；真实退仓/整平/物流/施工至build-10 Completed→正常保存E003→正常退出E004（29行、载v13）→同根冷载Continue→保存E005→正常退出E006（18行、载v14，与E004不同日志）；E003/E005同Time 7139.98333331358，冷载后仅2个HealthTravel归零；terrain v13→14而历史矿站prod1/2/3/15/16/17站高-0.21634348保留（当前地面0）；原35任务JSON语义相同、仅新增haul36/37（cargo铁4/结构件4→build-8），真实build-10消耗铁4/结构件4/套件1，Mining/Recipes不变、无新增采矿配方不赠料（spent是已消耗账不叫库存）；主控独立asserts实际输出 CONTROLLER_NATIVE_REUSE_CONTRACT_PASS original35=true new_haul2=true no_mining_recipe=true same_site=true cold_time_terrain_ledger_development=true。
+- N002细节：原E350正常载入→manual pause保存E008基线→solar预览合法(2,7.6)按钮可用；非法(-4.9,24.5)仅一次“设施与作业站须位于场地内部”、(-15.6,9.3)仅一次“建设不得覆盖已知矿点与采集包络”；回合法按钮可用；未提交任何工程，退出预览正常保存E009，E008==E009完整JSON全等（Time 136.61666666666753，无预约消耗/地形变化）。不宣称同帧两个不同拒因的原生覆盖——Main.Planning 115–151只构造一个非空候选理由，保Distinct工程不同字符串不丢合同，不造场景改权威。
+
+继承保留（不重跑不抹）：run-02旧候选4f311e6已PASS——N003/B002原目标恢复/运输与完成冷载、N004关联取消/Esc/direct close/重开、取消保货/地形释放预约、较早production→complete save、A/B直接建vs先平后建两root同seed流程（不作同点效率比较）；旧候选N001/reuse FAIL保为历史已修复反例。“新包只3 raw改变”指追加两fix相较4f311e6，不是PR整体仅3文件。
+
+仍BLOCKED/未签（分列不并入本轮PASS）：普通CoreAudio启动（run-02两次AudioComponentInstanceNew/HALC_ProxyObject IPC阻塞；Dummy不代声音/普通启动）；精确1920×1080/1920×1200钳成1860×889（不改display、不签大尺寸布局）；真人G001 NOT_RUN、D001仍P1、旧正式台账P0=0/P1=1/P2=0不改；批2/3不推进、默认app/正式档/旧证据不动、未merge/main/force。工程证据沿用run-03实际数字（39/1130/28，主控已亲验且经Sol审）不重跑；私有详报run-04/report.md、results.json、findings.md；证据index由主控最后生成。
