@@ -43,4 +43,23 @@
 
 审查限制（如实记录）：独立Sol增量复核两次未能完成——首次API 502中断无报告；续接尝试因会话压缩丢失agent派发通道失败。改由主控以独立verifier角色（实施均由owner agent完成，角色分离成立）按review-delta-checklist 10项抽查代审：兼容ID/revision递增/CargoWaiting投影/管理门禁/测试调度无注入/布局固定区与内滚动/null蓝图顺序/revision消费/几何断言扩展在位/无fakeSelected，未发现新缺陷。该复核深度不及Sol全量审，作为残余风险保留，建议后续会话补一次Sol增量复核。
 
-原生多尺寸/缩放、真实鼠标键盘、后台computer use、B002正常UI复现与同目标恢复：NOT_RUN，由Codex原生协议承担。D001真人无提示G001：NOT_RUN，仍为确认P1。
+原生多尺寸/缩放、真实鼠标键盘、后台computer use、B002正常UI复现与同目标恢复：此为2026-10-14基线交付当时的NOT_RUN记录，后续run01/run02与下节分别补证，不覆盖旧结论。D001真人无提示G001：NOT_RUN，仍为确认P1。
+
+## 2026-10-15 · 原生发现修复轮
+
+本轮按所有者交回run02优先修N003/N004并保留N001/N002，详[native-fixes.md](native-fixes.md)。原正式台账不变，新增建议独立登记。原生已证首套保障/缺料经营/教学8/8/同世界冷载成果保留，但含取消换址，不签全量通过。
+
+| 检查 | 主控实际结果 | 范围 |
+|---|---|---|
+| 原生根因复现 | 独立根正常UI加载E248与E140原字节、原目标重试；四卸货端点终点接网失败，具名障碍/地形拒因；两实例正常退出、ERROR0 | 诊断包，非修复恢复PASS；未改原档 |
+| 集成编译与导入 | fixed-build03：0警告0错误；import exit0、ERROR0 | 中途UI新增测试float/int错误原件保留，实施者已修 |
+| 导航与工位 | 100项PASS、ALL CHECKS PASSED | 原四轴优先、有限确定候选、float半径上限、严格路由保持 |
+| HUD终轮 | 主控独立1130 checks / 0 failures / 0 blocked、exit0、ERROR0 | 补活动接线列表末项可达、关联详情直接关闭再重开、取消确认/去重；dummy截图不代原生 |
+| 通用R2权威 | R2_AUTHORITY完整PASS、exit0、ERROR0 | 保存修正前同物流运行版，专门新增站保存由下项另验，不偷换覆盖 |
+| 新工位专项（主控独立） | N003、B002各自原goal/build/center/yaw保持、完成；各运输中与完成后公共保存/恢复PASS；取消路径运输中与取消后保存恢复PASS，三轮ERROR0 | 隔离真实Main工程驱动，新增诊断harness仅测读取/合法公共命令与detached非法存档反例；不是原生输入 |
+| 取消事实 | 实际before Delivering→Cancelled，Containers/Operations/Mining/Recipes/Terrain全等；cable2/kit1预约两行释放 | 不要求Reservations字段全等；原货未瞬返；再利用新目标原生未跑 |
+| 独立审查 | Sol发现新增站保存旧四轴校验P1及列表预算P2，均局部返工，增量复审未发现同合同新阻塞 | 取消ID/版本/epoch、保存阶段兼容与原strictroute边界保留 |
+| 固定候选 | 源4f311e6、clean、304raw逐项一致、arm64/严格签名、内嵌CLR8.0.31；导出ERROR0 | PCK f28a71696ad982160b95071b48983c58b18afab8e68673d6160e29007777c267 |
+| 新包原生尝试 | 启动到主页；CUA两次timeout/cgWindowNotFound，未载档，终止自有PID；原种子不变 | BLOCKED；终止退出日志34条Godot清理/渲染ERROR，保原件，不签无ERROR |
+
+最终新包N001–N004原生复验、原目标恢复/正常保存冷载、取消与货物再利用、精确大尺寸、A/B各根结果仍BLOCKED或NOT_RUN；新入口和自包含Codex复验prompt已准备。D001真人无提示轨继续NOT_RUN。分支推送及GitHub API均遇TLS连接失败，本地提交与新包完好；未声称远程已更新。
