@@ -1,3 +1,6 @@
+# Task worktrees are registered separately from source files.
+/.claude/worktrees/
+
 tools/**/bin/
 tools/**/obj/
 .zcode/
