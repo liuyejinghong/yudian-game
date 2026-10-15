@@ -175,7 +175,20 @@ public partial class Main
             // Builder standoff includes the patch's changed cells and an extra 1.4m beyond the body.
             double builderOffset=patch.Base.SpacingM*2+1.4-_groundRobots.Single(a=>a.Name.ToString()==b.Builder).BodyRadius;
             if(!AtPort(f,b.Builder,builderStation,builderOffset)||TouchesFootprint(patch,builderStation.X,builderStation.Z,Actor(b.Builder).BodyRadius))throw new InvalidDataException("施工站不属于当前工程");
-            if(b.HaulStation!=null&&!AtPort(f,b.Hauler,LoadVector(b.HaulStation),1.2))throw new InvalidDataException("卸货站不属于当前工程");
+            bool AtHaulPort(Vector3 position)
+            {
+                if(AtPort(f,b.Hauler,position,1.2))return true;
+                if(b.Type=="connection")return false;
+                var origin=LoadVector(f.Position);float body=Actor(b.Hauler).BodyRadius;
+                float radius=Radius(f)+body+1.2f,edge=Radius(f)+(float)terrain.SpacingM*2+body;
+                // Completed jobs retain the station chosen while the facility was unfinished.
+                return Math.Abs(position.X)<_cfg.Terrain.Size/2&&Math.Abs(position.Z)<_cfg.Terrain.Size/2
+                    &&Math.Abs(position.Y-SavedGroundHeight(terrain,position.X,position.Z))<.0001
+                    &&StationCandidates.Enumerate(terrain,origin.X,origin.Z,radius,edge)
+                        .Any(candidate=>candidate.Kind!="original-axis"&&Math.Abs(position.X-(float)candidate.Point.X)<.0001
+                            &&Math.Abs(position.Z-(float)candidate.Point.Z)<.0001);
+            }
+            if(b.HaulStation!=null&&!AtHaulPort(LoadVector(b.HaulStation)))throw new InvalidDataException("卸货站不属于当前工程");
             if(b.Active)
             {
                 if(b.Stage is "LevelTravel" or "Levelling" or "Building" && TaskDestination(b.Builder)!=builderStation)throw new InvalidDataException("筑垒目的地与施工站不一致");

@@ -43,4 +43,50 @@
 
 审查限制（如实记录）：独立Sol增量复核两次未能完成——首次API 502中断无报告；续接尝试因会话压缩丢失agent派发通道失败。改由主控以独立verifier角色（实施均由owner agent完成，角色分离成立）按review-delta-checklist 10项抽查代审：兼容ID/revision递增/CargoWaiting投影/管理门禁/测试调度无注入/布局固定区与内滚动/null蓝图顺序/revision消费/几何断言扩展在位/无fakeSelected，未发现新缺陷。该复核深度不及Sol全量审，作为残余风险保留，建议后续会话补一次Sol增量复核。
 
-原生多尺寸/缩放、真实鼠标键盘、后台computer use、B002正常UI复现与同目标恢复：NOT_RUN，由Codex原生协议承担。D001真人无提示G001：NOT_RUN，仍为确认P1。
+原生多尺寸/缩放、真实鼠标键盘、后台computer use、B002正常UI复现与同目标恢复：此为2026-10-14基线交付当时的NOT_RUN记录，后续run01/run02与下节分别补证，不覆盖旧结论。D001真人无提示G001：NOT_RUN，仍为确认P1。
+
+## 2026-10-15 · 原生发现修复轮
+
+本轮按所有者交回run02优先修N003/N004并保留N001/N002，详[native-fixes.md](native-fixes.md)。原正式台账不变，新增建议独立登记。原生已证首套保障/缺料经营/教学8/8/同世界冷载成果保留，但含取消换址，不签全量通过。
+
+| 检查 | 主控实际结果 | 范围 |
+|---|---|---|
+| 原生根因复现 | 独立根正常UI加载E248与E140原字节、原目标重试；四卸货端点终点接网失败，具名障碍/地形拒因；两实例正常退出、ERROR0 | 诊断包，非修复恢复PASS；未改原档 |
+| 集成编译与导入 | fixed-build03：0警告0错误；import exit0、ERROR0 | 中途UI新增测试float/int错误原件保留，实施者已修 |
+| 导航与工位 | 100项PASS、ALL CHECKS PASSED | 原四轴优先、有限确定候选、float半径上限、严格路由保持 |
+| HUD终轮 | 主控独立1130 checks / 0 failures / 0 blocked、exit0、ERROR0 | 补活动接线列表末项可达、关联详情直接关闭再重开、取消确认/去重；dummy截图不代原生 |
+| 通用R2权威 | R2_AUTHORITY完整PASS、exit0、ERROR0 | 保存修正前同物流运行版，专门新增站保存由下项另验，不偷换覆盖 |
+| 新工位专项（主控独立） | N003、B002各自原goal/build/center/yaw保持、完成；各运输中与完成后公共保存/恢复PASS；取消路径运输中与取消后保存恢复PASS，三轮ERROR0 | 隔离真实Main工程驱动，新增诊断harness仅测读取/合法公共命令与detached非法存档反例；不是原生输入 |
+| 取消事实 | 实际before Delivering→Cancelled，Containers/Operations/Mining/Recipes/Terrain全等；cable2/kit1预约两行释放 | 不要求Reservations字段全等；原货未瞬返；再利用新目标原生未跑 |
+| 独立审查 | Sol发现新增站保存旧四轴校验P1及列表预算P2，均局部返工，增量复审未发现同合同新阻塞 | 取消ID/版本/epoch、保存阶段兼容与原strictroute边界保留 |
+| 固定候选 | 源4f311e6、clean、304raw逐项一致、arm64/严格签名、内嵌CLR8.0.31；导出ERROR0 | PCK f28a71696ad982160b95071b48983c58b18afab8e68673d6160e29007777c267 |
+| 新包原生尝试 | 启动到主页；CUA两次timeout/cgWindowNotFound，未载档，终止自有PID；原种子不变 | BLOCKED；终止退出日志34条Godot清理/渲染ERROR，保原件，不签无ERROR |
+| run-02主控原生复验 | N003 goal-9/build-9与B002 goal-9/build-8原字节现场正常UI续行，同ID/中心/朝向完成、设施Built=true；各运输保存→冷载续行→Completed→完成后冷载，Terrain保持；E001–E012六组退出日志全ERROR0、进程退出 | 所有者新授权主控亲自执行；run-02独立于run-01，旧工具阻断与34ERROR历史保留；仅签原目标恢复与正常保存冷载，不代N001/N002/N004、取消/再利用、精确尺寸与A/B |
+| run-02 N004关联取消 | 原E350正常UI载入，真实建设goal-1/build-1至运输阶段；物资预约查看关联→取消点名确认，Esc仅退确认层、关联直接Close再重开无旧详情（截图留证）；确认后真实取消E013→E014同Time、Delivering→Cancelled，Terrain与Ledger四字段全等；E015退出ERROR0 | 只签N004原生行为与该次普通工程取消事实；不代N001接线（初启动工具超时调查中）与N002原生 |
+| run-02 取消保货/保地形/预约释放 | 原E248初Blocked预约已释放（非有预约样本）；手动暂停重试至Fetching真实预约cable2/kit1（E017）→物资预约详情取消确认→E018；E019判据time/terrain/Containers/Operations/Mining/Recipes全等、预约两行→[]、货舱铁4/结构4保持；E020退出ERROR0 | 取消事实与预约释放原生签认；货物再利用仍未跑，不代签 |
+| run-02 N001接线原生反例 | 普通CoreAudio两次启动（26421/35903）主线程样本均停于AudioComponentInstanceNew/AudioDeviceGetProperty/HALC_ProxyObject同步IPC，未进场景、日志0字节、captures空：BLOCKED，不判游戏逻辑；仅新私有clone加官方 `--audio-driver Dummy`（Metal/正常CUA/同源4f311e6与PCK不变，audio不在PASS）正常UI 1280×800/UI150%：确认/关闭可见（E027），滚动末端最后pair被裁（E028），点选末pair更长拒因后列表高度0（E029），E030活动态正常保存、E031退出ERROR0 | N001本轮FAIL返修中；headless1130 PASS与AX点击可达不代完整可读；普通启动不签 |
+| run-02 货物再利用与保存失败 | 正常载入E248→暂停取消→保存E032（旧valid档槽与其字节完全相同）；合法新storage约(-5.3,10.8)提交，旧货真实退仓（仓储铁4/结构4出现），新build-10 storage Completed（E033截图）；完成后normal save失败（E034），拒因实有记录：E035第39行 `PLAYER_COMMAND_REJECTED`“采矿任务阶段或工位无效”（此前搜索漏关键字）；不保存正常退出E035 ERROR0 | 再利用链事实成立但无持久化对比，整链不签PASS；reuse-save建议P1（不改正式P0/P1/P2账）；根因已核定：Main.DevelopmentSave.cs:123历史Completed mine AtDock用当前terrain高度、整平v13→14差0.216343477m、throw早于写文件，非磁盘/权限；Sol按冻结修法实施中（仅Completed mine免地表高度相等，其余校验/严格性/schema/旧档/模拟不变）；不改已过的物流/取消结论 |
+| run-03-controller 工程验收（reuse-save修复） | 最小修复commit `e080363`（Main.DevelopmentSave唯一7+3 diff，带决策trailers）后主控独立复跑 `run_fixed.py --run-name run-03-controller` exit0；亲读stdout 39–83：28 cases、公共保存/载入/保存PASS、snapshot全等、slot3与.bak字节相等、ERROR0/command_rejected0 | 仅Completed mine免当前地表高度相等的隔离工程验收；不代原生，待HUD完成后导新候选原生复验 |
+| run-02 接线专用合同与full终轮（N001修法） | 修法commit `262033d`（Hud.cs+SelfTest）；主控独立编译0警告0错误；专用合同conn log 39/0/0、ERROR0：8pairs、longList98px、last59px、scrollMax500、inListTrue、短/长list 98/98；full终轮主控亲读1130/0/0、ERROR0、后台exit0 | 首次主控测试传归档路径被私有root门拒（ERROR保原件、已停进程），原字节复制允许根后完成；Sol静态复审无可证新增阻断，首帧/多pair三倍率/长reason内滚待新包原生优先补100/125/150；工程/合同数字不代完整可读，N001原生复验未过前仍记FAIL；红例原件（主控白名单/root门调用失败、writer layout旧红例、E030原备份同样486/1）全保留 |
+| run-02 较早生产起点 | 自然从夜加工等待推进到采集/运输/施工：E039 goal-9/build-9 Completed、原中心/yaw0、Built=true、Time 6910.266666650256（约6558.43→6910.27），新增mining1/recipes4、configHash与基线同；正常保存成功、E040退出ERROR0 | PASS（主控签认）：自然生产→运输→施工完成/保存；无单独冷载轨，同目标冷载证在N003恢复轨另列；音频Dummy |
+| run-02 精确大尺寸 | E041/E042请求1920×1080/1920×1200均被钳制到逻辑1860×889（像素3720×1778、scale2、dpi163）；主页与设置三倍率实操真实执行 | BLOCKED：钳制后游戏布局未测不签；系统display设置未改 |
+| run-02 A/B独立根 | 两根原seed hash同cb347b8a。A组（直接solar）：E044 goal-9/build-8 Completed、center(12.505365,0,-11.181097)/yaw0、Time 2045.9166666651347、正常保存成功，E045退出ERROR0；B组（先整平再solar）：E046手动整平Completed并保存（center(12.52281,0,-11.197887)、terrain v5、“整平已提交，物理验证完成”），E047 goal-9/build-8 Completed/Built=true、center(12.43391,0,-11.311815)/yaw0、Time 2210.4500000005346、正常保存成功，E048退出ERROR0 | 两流程PASS（音频Dummy）；不作严格同点同相效率比较 |
+
+原目标恢复与正常保存冷载（N003、B002）、N004关联取消与取消保货/保地形/预约释放、较早生产起点自然生产→运输→施工完成/保存、A/B之A组直接建设/保存已由主控run-02原生PASS（详[native-fixes.md](native-fixes.md)）；b002-active已正常unpause（无需retry）至Completed并正常保存E036、E037退出ERROR0（Metal+Dummy，非普通音频；冷载未取不另签）；N001接线原生与reuse-save原生仍FAIL待修后新包复验（工程侧262033d/e080363均已过主控独立验证：专用合同39/0/0+full1130/0/0 ERROR0、run-03-controller 28cases全PASS；两commit尚未push，只三raw源码相较4f311e6改变、其余301个raw含配置/美术/导航相同）；N002待最终图形复验；精确1920×1080/1920×1200实测钳制到1860×889记BLOCKED（不签游戏布局）；A/B两独立根两流程PASS（E044–E048，不作严格同点同相效率比较）；新候选待导出，新入口和自包含Codex复验prompt已准备；所有红例原件保留不改写。
+
+## 本轮最终状态（2026-10-15收束；历史快照，最新见文末run-04）
+
+上文各行与失败原件为历史记录，本节为run03收束时口径，最新见文末run04；状态表与关键证据见 [native-fixes.md](native-fixes.md)“本轮最终状态”。要点：run-02旧候选（4f311e6）原生PASS保留（N003/B002恢复与冷载、N004/取消、较早生产、A/B）；旧候选N001与reuse-save FAIL保留不删。新修复 `e080363`/`262033d` 工程全过（run-03-controller 28cases、专用合同39/0/0、full 1130/0/0、ERROR0）。新候选 `4bd52ff` 已导出并push成功（PCK `d86046fb…`、DLL `01bb1f9e…`、304raw match、strict/arm64、CLR8.0.31、导出ERROR0；首次TLS失败保史实；后续纯文档提交不改候选身份）。新包N001/reuse原生BLOCKED（connection两次启动、reuse一次启动，均到home未载档、0输入；三次终止各34条清理ERROR保；工具尝试path timeout/bundle cg/jsreset/exact bundle/唯一running name/fresh same bundle均cg，全局未分错case；系统AX/screen权限granted，不归因用户权限或新修死锁，CUA枚举原因未证）；普通CoreAudio启动BLOCKED独立记录；N002 NOT_RUN、精确尺寸BLOCKED、G001真人验收NOT_RUN、D001仍为确认P1、旧P1台账不改。run-03三入口种子SHA实测不变；任务停在可证阻断，不改服务/信任/OS；证据index由主控生成。D001真人轨G001继续NOT_RUN、D001仍P1。首次推送与API均遇TLS连接失败，网络恢复后已正常推送修复分支并开draft PR [#63](https://github.com/liuyejinghong/yudian-game/pull/63)，原失败保留。当前新候选固定4bd52ff，旧run02候选为4f311e6；后续纯文档不改新包身份；未合并或推main。
+
+## 2026-10-15 解锁后run04新包原生复验（当前总口径）
+
+上节收束为锁屏阻断下的历史快照。用户提示并解锁后，同旧实例AX截图恢复，run-04在固定候选4bd52ff三入口独立clone（官方Dummy音频+Metal）正常载档复验；批1本轮游戏内缺陷复验通过，音频/精确大尺寸/真人验收分列如下：
+
+| 检查 | 主控实际结果 | 范围 |
+|---|---|---|
+| N001接线三倍率 | PASS：150%载E030活动build-12手动暂停，8真实pair/滚条/末项可选、长短拒因均响应；同world 150%/125%/100%分别滚底402/253/186、末项9.8m完整可读可选；确认按规则禁用完整可见、关闭实际可用；四份GUI_TEST新帧已读（E012–E015）；正常保存退出PID56836，退出日志E011 ERROR0/rejected0/saveOK2；E001与E030同Time 10540.633333264095/Paused=true，仅Velocity与HealthTravel载入归零 | 限逻辑1280×800（Retina scale2）；不签首渲染帧、超长拒因内部scroll与大尺寸布局 |
+| reuse-save整链 | PASS：E032原字节载入（E002=E032），同原失败选址(-5.286148,0,10.807249)/yaw0真实退仓→整平→物流→build-10 Completed→保存E003→退出E004→冷载Continue→保存E005→退出E006；E003/E005同Time 7139.98333331358仅2个HealthTravel归零；terrain v13→14历史矿站站高-0.21634348保留；35任务语义同、仅新haul36/37、真实消耗铁4/结构件4/套件1；主控asserts CONTROLLER_NATIVE_REUSE_CONTRACT_PASS全true；E004（29行/载v13）与E006（18行/载v14）不同日志各ERROR0/rejected0/saveOK2，E007已修正“identical”误记 | Dummy音频；不称snapshot全等、不称live槽仍seed SHA、无新增配方不赠料 |
+| N002预览拒因 | PASS：E350载入E008基线后合法(2,7.6)可提交；(-4.9,24.5)与(-15.6,9.3)两类真实拒因各仅一次；E008==E009完整JSON全等（Time 136.61666666666753、无预约/地形变化）；E010 ERROR0/rejected0/saveOK3（PID96337） | 不宣称同帧两拒因覆盖（Main.Planning单非空候选理由） |
+| 主控终判 | E021：controller_verified=true、originals三案不变、四退出日志（E004/E006/E010/E011）ERROR/reject全0、RUN04 process NONE；E022：三clone PCK=固定候选、E030/E032/E350原种子SHA实测不变 | 完整raw快照304项；manifest所列212项本轮再次0差；工程证据沿用run-03实际数字（39/1130/28，主控亲验+Sol审）不重跑 |
+
+仍BLOCKED/NOT_RUN（分列）：普通CoreAudio启动（音频IPC，与锁屏无关）、精确1920×1080/1200（钳制1860×889）、G001真人验收NOT_RUN、D001仍为确认P1、旧正式P1台账不改；e080363/262033d已push、候选4bd52ff已推送（PR #63 draft OPEN，base/head实核正确）。私有详报run-04/report.md、results.json、findings.md；证据index由主控生成。

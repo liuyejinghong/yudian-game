@@ -657,6 +657,7 @@ public partial class PlayerController : Node
         _managementTabMaterials = materialsTab;
         _cancelConfirmOpen = false;
         _cancelGoalId = null;
+        DiscardRelatedWorkDetail(); // 重复入口只重开视图：不残留上次会话的关联子详情
         _managementTimer = 0f;
         _managementFilterSignature = "";
         _managementOverlay.Visible = true; // 遮罩当帧即挡世界点击
@@ -674,6 +675,7 @@ public partial class PlayerController : Node
             _managementClosePending = false;
             _cancelConfirmOpen = false;
             _cancelGoalId = null;
+            DiscardRelatedWorkDetail(); // 关闭统一清关联临时 ID：重开不复活旧子详情（N004）
             SyncCancelConfirmVisibility();
             _managementOverlay.Visible = false;
             UnsuppressGameFocus();
@@ -691,6 +693,7 @@ public partial class PlayerController : Node
             _managementClosePending = false;
             _managementOpen = false;
             _cancelConfirmOpen = false;
+            DiscardRelatedWorkDetail();
             SyncCancelConfirmVisibility();
             _managementOverlay.Visible = false;
             UnsuppressGameFocus();
@@ -702,6 +705,7 @@ public partial class PlayerController : Node
             _managementOpen = false;
             _cancelConfirmOpen = false;
             _cancelGoalId = null;
+            DiscardRelatedWorkDetail();
             SyncCancelConfirmVisibility();
             _managementOverlay.Visible = false;
             UnsuppressGameFocus();
@@ -720,11 +724,18 @@ public partial class PlayerController : Node
         _managementClosePending = false;
         _cancelConfirmOpen = false;
         _cancelGoalId = null;
-        _relatedWorkGoalId = null;
+        DiscardRelatedWorkDetail();
         _authorityReleaseFrames = 0;
         SyncCancelConfirmVisibility();
         _managementOverlay.Visible = false;
         UnsuppressGameFocus();
+    }
+
+    // 关联工程子详情是管理层内的临时 ID 态：关闭/丢弃管理层时统一清掉，重开不复活（N004）。
+    private void DiscardRelatedWorkDetail()
+    {
+        _relatedWorkGoalId = null;
+        _relatedWorkBox.Visible = false;
     }
 
     private void RevalidateSelectedObject()
