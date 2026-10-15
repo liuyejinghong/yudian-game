@@ -66,11 +66,12 @@ public partial class PlayerController
 
     private PanelContainer _connectPanel = null!;
     private VBoxContainer _connectCore = null!; // 接线固定核心（标题/提示/成本/缺口/拒因小scroll/操作按钮），不随候选列表滚动
-    private Label _connectHintLabel = null!, _connectCostLabel = null!, _connectGapLabel = null!, _connectReasonLabel = null!;
+    private Label _connectTitleLabel = null!, _connectHintLabel = null!, _connectCostLabel = null!, _connectGapLabel = null!, _connectReasonLabel = null!;
     private ScrollContainer _connectReasonScroll = null!;
     private ScrollContainer _connectListScroll = null!;
     private VBoxContainer _connectListBox = null!;
     private Button _connectSubmitButton = null!, _connectCloseButton = null!;
+    private float _connectContextHeight = 160f; // 当前帧接线面板实际可用高度（UpdateColumnGeometry 同帧写入，接线预算只读它）
 
     // 管理覆盖层（root 内最后绘制：高于命令栏与教学结尾卡；取消确认又是其内最顶层）
     private Control _managementOverlay = null!;
@@ -368,6 +369,7 @@ public partial class PlayerController
         _connectCore.AddThemeConstantOverride("separation", 6);
         connectBox.AddChild(_connectCore);
         var connectTitle = TrackLabel("ConnectTitleLabel", "接线", SizeHeading, Palette.Text);
+        _connectTitleLabel = connectTitle;
         _connectHintLabel = InfoLabel("ConnectHintLabel", SizeSmall, Palette.TextDim);
         _connectCostLabel = InfoLabel("ConnectCostLabel", SizeBody, Palette.Text);
         _connectGapLabel = InfoLabel("ConnectGapLabel", SizeBody, Palette.Text);
@@ -807,11 +809,10 @@ public partial class PlayerController
         _objectScroll.Size = _planScroll.Size;
         _connectScroll.Position = _planScroll.Position;
         _connectScroll.Size = _planScroll.Size;
-        // 接线候选列表只拿固定核心之外的实际剩余预算（真实像素）：预算含面板上下 padding（10+10）
-        // 与核心/列表间 separation 6，共 26；下限 0——剩余不足时收缩列表本身而不是顶破外层遮罩
-        // （旧 96 保底在活动工程行挤压下把列表底部顶出遮罩被裁、末项滚不到，原生 7098），
-        // 封顶 480 防长视口把列表拉得过高；expand 拿满剩余空间，列表真实 rect 始终在外层遮罩内（N001）。
-        _connectListScroll.CustomMinimumSize = new Vector2(0, Mathf.Clamp(contextHeight - _connectCore.GetCombinedMinimumSize().Y - 26f, 0f, 480f));
+        // N001 后续：接线预算不在几何阶段计算——那时 RefreshConnectPanel 尚未写入本帧的提示/成本/拒因文本，
+        // 读到的是上一帧的核心 min（选择变化帧直接错）。这里只记录当前帧真实可用高度，
+        // 列表/拒因块预算由 UpdateConnectLayout 在内容同帧写入后统一分配。
+        _connectContextHeight = contextHeight;
         // 核心不会随详情滚走；低频区域只使用核心剩下的高度。
         _infoDetailsScroll.CustomMinimumSize = new Vector2(0, MathF.Max(80f, height - _infoCore.GetCombinedMinimumSize().Y - _infoDetailsToggle.Size.Y - 32f));
         // 建设卡：默认可见的成本滚动区拿固定核心之外的剩余预算（真实像素，clamp 保底 64、封顶 360），
@@ -1761,16 +1762,87 @@ public partial class PlayerController
         bool reasonVisible = _connectReasonLabel.Text.Length > 0;
         _connectReasonLabel.Visible = reasonVisible;
         _connectReasonScroll.Visible = reasonVisible; // 完整拒因固定核心内小滚动块，超长区内滚动不截断
-        // 拒因块高度按行数自适应（约 14 个全角字/行、至多 3 行封顶）：短拒因不占预算，长拒因区内滚动。
-        if (reasonVisible)
-        {
-            int reasonLines = Math.Min(3, 1 + _connectReasonLabel.Text.Length / 14);
-            _connectReasonScroll.CustomMinimumSize = new Vector2(0,
-                Mathf.Max(40f, reasonLines * SizeSmall * 1.35f * (float)_uiScale + 8f));
-        }
         bool canSubmit = selected is { CanSubmit: true } && !(_lifecycle?.Busy ?? false) && _commandCooldown <= 0f;
         _connectSubmitButton.Disabled = !canSubmit;
         _connectSubmitButton.Text = selected is not null ? "确认接线" : "先选来源";
+        // N001 后续：文本与可见性写入后同帧统一分配布局预算（真实字体度量，不按字符数猜行数），
+        // 选择变化的当帧即得到正确的列表/拒因高度，不会出现 0 高或裁一帧。
+        UpdateConnectLayout(selected);
+    }
+
+    // N001 后续：接线面板布局预算同帧统一计算。优先级：标题/完整成本/净缺口/确认与关闭常驻 →
+    // 候选列表保一个完整最长多行 pair 的实际高度 → 拒因块拿剩余预算（超长区内滚动，不截断不省略）。
+    // 有真实选择时非关键重复 hint 让位（未选择仍显示帮助）；总预算不超过外层遮罩当前帧高度，
+    // 不把固定保底盲加回去顶破视口；选择/拒因长短变化都只在预算内重新分配。
+    private void UpdateConnectLayout(ConnectionOptionView? selected)
+    {
+        float height = _connectContextHeight;
+        const float panelPadV = 22f; // PanelStyle 上下 ContentMargin 10+10 加底边框
+        const float boxSep = 6f;     // connectBox 与 connectCore 的 separation
+        // 面板内容宽：滚动区宽 - 左右内边距 14+14 与边框；核心行量宽再留 2px 余量（宁可略高不裁）。
+        float width = MathF.Max(80f, _connectScroll.Size.X - 32f);
+        float barAllowance = MathF.Max(12f, MathF.Ceiling(_connectListScroll.GetVScrollBar().GetCombinedMinimumSize().X));
+
+        bool hintVisible = selected == null; // 有真实选择时非关键重复 hint 让位；未选择仍帮助
+        _connectHintLabel.Visible = hintVisible;
+
+        // 核心行高按真实字体度量定 min：容器布局与本预算一致；度量宽略窄、高度略加，方向上只可能高不裁。
+        float titleH = MeasureLabelHeight(_connectTitleLabel, width) + 2f;
+        float hintH = hintVisible ? MeasureLabelHeight(_connectHintLabel, width) + 2f : 0f;
+        float costH = MeasureLabelHeight(_connectCostLabel, width) + 2f;
+        float gapH = MeasureLabelHeight(_connectGapLabel, width) + 2f;
+        float actionsH = _connectSubmitButton.GetCombinedMinimumSize().Y;
+        _connectTitleLabel.CustomMinimumSize = new Vector2(0, MathF.Ceiling(titleH));
+        if (hintVisible) _connectHintLabel.CustomMinimumSize = new Vector2(0, MathF.Ceiling(hintH));
+        _connectCostLabel.CustomMinimumSize = new Vector2(0, MathF.Ceiling(costH));
+        _connectGapLabel.CustomMinimumSize = new Vector2(0, MathF.Ceiling(gapH));
+
+        // 一个完整最长多行候选 pair 的实际高度：按钮文本按列表内容宽（滚动条 + 左右内边距 12+12）折行，
+        // 再加按钮上下内边距 6+6；同样量宽略窄，只可能高不裁。
+        float rowTextWidth = MathF.Max(40f, width - barAllowance - 28f);
+        float longestRow = 0f;
+        foreach (var (_, button) in _connectRows)
+            longestRow = MathF.Max(longestRow, MathF.Ceiling(MeasureTextHeight(button, button.Text, rowTextWidth)) + 14f);
+        if (longestRow <= 0f) longestRow = 48f * (float)_uiScale; // 无候选行时给稳定保底，布局不抖
+
+        int coreChildren = 1 + (hintVisible ? 1 : 0) + 1 + 1 + (_connectReasonScroll.Visible ? 1 : 0) + 1;
+        float essential = panelPadV + titleH + hintH + costH + gapH + actionsH + boxSep * coreChildren;
+        float remaining = MathF.Max(0f, height - essential);
+
+        // 拒因块：完整文本按内容宽（滚动时再让出滚动条）度量；最少保一行可读，超出预算就区内滚动。
+        float reasonMeasured = _connectReasonScroll.Visible
+            ? MeasureLabelHeight(_connectReasonLabel, MathF.Max(40f, width - barAllowance)) + 2f : 0f;
+        float reasonLine = _connectReasonLabel.GetThemeFont("font").GetHeight(_connectReasonLabel.GetThemeFontSize("font_size"));
+        float reasonMin = reasonLine + 6f;
+        float reasonBudget = MathF.Max(reasonMin, remaining - longestRow); // 列表优先保一个完整最长 pair
+        float reasonH = _connectReasonScroll.Visible ? MathF.Min(MathF.Max(reasonMin, reasonMeasured), reasonBudget) : 0f;
+        if (_connectReasonScroll.Visible)
+            _connectReasonScroll.CustomMinimumSize = new Vector2(0, MathF.Ceiling(reasonH));
+
+        // 列表拿其余全部（expand 拿满剩余空间；封顶 480 防长视口拉得过高）；剩余不足时收缩的是列表，
+        // 不为凑固定保底顶破外层遮罩（原生 7098/N001 教训）。
+        float listMin = Mathf.Clamp(remaining - reasonH, 0f, 480f);
+        _connectListScroll.CustomMinimumSize = new Vector2(0, MathF.Ceiling(listMin));
+    }
+
+    private static float MeasureLabelHeight(Label label, float width) => MeasureTextHeight(label, label.Text, width);
+
+    // 真实字体度量：给定宽度折行后的文本高度。先按字体度量折行总高推回行数，再按控件自身
+    // line_separation 重建行距（与 Label/Button 实际排版同公式）。量宽比实际再窄 4px：无论哪种
+    // 换行规则都只会更早折行，行数只可能多不会少，度量结果不小于真实布局高度（宁可略高不裁）。
+    private static float MeasureTextHeight(Control control, string text, float width)
+    {
+        if (text.Length == 0) return 0f;
+        var font = control.GetThemeFont("font");
+        int size = control.GetThemeFontSize("font_size");
+        float lineHeight = MathF.Max(1f, font.GetHeight(size));
+        float lineSep = control.GetThemeConstant("line_separation");
+        var extent = font.GetMultilineStringSize(text, HorizontalAlignment.Left, MathF.Max(1f, width - 4f), size);
+        // 实测：折行总高 extent.Y 的每行行进比 fontH 略大（如 27/26、47/23），不能向下取整反推行数
+        // （会把 1 行计成 2 行、把预算翻倍压没列表）。行进只略大于 fontH，按 fontH 四舍五入还原行数，
+        // 结果与 extent.Y 取大并补 line_separation，方向上只可能略高不裁。
+        int lines = Math.Max(1, (int)MathF.Round(extent.Y / lineHeight, MidpointRounding.AwayFromZero));
+        return MathF.Max(extent.Y, lines * lineHeight + (lines - 1) * lineSep);
     }
 
     private string _connectSignature = "";

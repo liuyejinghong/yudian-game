@@ -138,6 +138,7 @@ public partial class PlayerUiSelfTest : SceneTree
                 else await ForceEnterWorldOrBlock();
                 if (!_connectionOnly) await LayoutAndScaleChecks();
                 if (_resumeLayout) await ConnectionLayoutChecks();
+                if (_resumeLayout) await ConnectionMultiPairActiveChecks();
                 await Finale();
                 return;
             }
@@ -1963,9 +1964,13 @@ public partial class PlayerUiSelfTest : SceneTree
                 GD.Print("PLAYER_UI_SELFTEST CONNECT_RECT scale=" + scale.ToString("0.##", Inv) + " name=" + control.Name + " rect=" + rect + " mask=" + mask + " viewport=" + view + " inside=" + inside);
                 return inside;
             }
-            Check(InMask(panel) && InMask((Control)_ui.FindChild("ConnectHintLabel", true, false)!)
-                && InMask(confirm) && InMask((Button)_ui.FindChild("ConnectCloseButton", true, false)!),
-                "接线" + (int)(scale * 100) + "%面板/说明/确认关闭完整在真实视口与滚动遮罩内");
+            // N001 后续：有真实选择时非关键重复 hint 让位（N001-f 合同：未选择仍显示帮助），
+            // 遮罩内 containment 断言保留在面板/确认/关闭与成本/缺口/拒因/候选行上。
+            var hintLabel = (Control)_ui.FindChild("ConnectHintLabel", true, false)!;
+            Check(InMask(panel) && InMask(confirm) && InMask((Button)_ui.FindChild("ConnectCloseButton", true, false)!),
+                "接线" + (int)(scale * 100) + "%面板/确认关闭完整在真实视口与滚动遮罩内");
+            Check(!hintLabel.IsVisibleInTree(),
+                "接线" + (int)(scale * 100) + "%有真实选择时非关键重复提示让位（未选择仍帮助）");
             Check(option.Cost.All(c => cost.Text.Contains(c.Name + "×" + c.Quantity)) && InMask(cost) && InMask(gap),
                 "接线" + (int)(scale * 100) + "%真实所选成本/净缺口常驻可见：" + cost.Text + " / " + gap.Text);
             Check(InMask(row) && row.Text.Contains(option.DistanceM.ToString("0.#", Inv) + "m/" + option.RangeM.ToString("0.#", Inv) + "m"),
@@ -1980,6 +1985,131 @@ public partial class PlayerUiSelfTest : SceneTree
         _ui.ApplySettingsForTest(1, 1, "detailed");
         await Frames(4);
     }
+
+    // N001-f 后续回归：真实活动接线态（私有槽原字节续读，E030 活动暂停现场）。run-02 E027–E029 复现状态——
+    // 1280×800@150%、活动工程行占高、多 pair 候选、长短拒因并存。锁定最小合同：
+    // 至少 2 个真实 pair 且列表实际可滚（ScrollMax>0）；长拒因不把列表压没（滚底后末 pair 完整在
+    // 列表内层遮罩/外层遮罩/视口内且不被命令栏遮挡）；末 pair 真实点击变选中；已选 target/source、
+    // 完整费用、净缺口、确认/关闭常驻可见；短拒因态列表不小于长拒因态。不 fakeworld、不注入资源。
+    private async System.Threading.Tasks.Task ConnectionMultiPairActiveChecks()
+    {
+        GD.Print("PLAYER_UI_SELFTEST N001F begin");
+        ResizeLogicalViewport(new Vector2I(1280, 800));
+        _ui.ApplySettingsForTest(1.5, 1, "detailed");
+        await Frames(5);
+        // 续读槽必须是真实活动接线态（E030 保存时 goal-12 connection Building/Active）；
+        // 用错槽直接失败，不静默跳过，也不造工作。
+        await WaitFor(() => ((Control)_ui.FindChild("WorkRowPanel", true, false)!).Visible, 5,
+            "N001F 续读槽含真实活动接线工程（活动工程行）");
+        Check(_world.ReadWork() is { Active: true }, "N001F 续读世界存在真实活动接线工程：" +
+            WorkKindDisplayOf(_world.ReadWork()));
+        await OpenConnectionPanelByClick();
+        var options = _world.ReadConnectionOptions();
+        string ReasonOf(ConnectionOptionView o) => !o.CandidateLegal ? o.CandidateReason : o.SubmitReason;
+        Check(options.Length >= 2, "N001F 至少 2 个真实 pair 候选（E030 世界应 8 对）：" + options.Length);
+        var list = (ScrollContainer)_ui.FindChild("ConnectList", true, false)!;
+        var rows = list.FindChildren("ConnectRow_*", "", true, false).OfType<Button>().ToList();
+        Check(rows.Count == options.Length, "N001F 候选行与权威选项一一对应：" + rows.Count + "/" + options.Length);
+        var view = Root.GetVisibleRect();
+        var bar = (Control)_ui.FindChild("CommandBar", true, false)!;
+        var mask = ((Control)_ui.FindChild("ConnectScroll", true, false)!).GetGlobalRect();
+        var cost = (Label)_ui.FindChild("ConnectCostLabel", true, false)!;
+        var gap = (Label)_ui.FindChild("ConnectGapLabel", true, false)!;
+        var reason = (Label)_ui.FindChild("ConnectReasonLabel", true, false)!;
+        var reasonScroll = (ScrollContainer)_ui.FindChild("ConnectReasonScroll", true, false)!;
+        var submit = (Button)_ui.FindChild("ConnectSubmitButton", true, false)!;
+        var close = (Button)_ui.FindChild("ConnectCloseButton", true, false)!;
+        bool InViewMask(Control control)
+        {
+            var rect = control.GetGlobalRect();
+            bool inside = control.IsVisibleInTree()
+                && rect.Position.X >= mask.Position.X - 0.5f && rect.Position.Y >= mask.Position.Y - 0.5f
+                && rect.End.X <= mask.End.X + 0.5f && rect.End.Y <= mask.End.Y + 0.5f
+                && rect.Position.X >= view.Position.X - 0.5f && rect.Position.Y >= view.Position.Y - 0.5f
+                && rect.End.X <= view.End.X + 0.5f && rect.End.Y <= view.End.Y + 0.5f;
+            GD.Print("PLAYER_UI_SELFTEST N001F_RECT name=" + control.Name + " rect=" + rect + " mask=" + mask +
+                " viewport=" + view + " inView=" + inside);
+            return inside;
+        }
+        Button RowOf(ConnectionOptionView option)
+            => rows[Array.FindIndex(options, o => o.FacilityId == option.FacilityId && o.SourceId == option.SourceId)];
+
+        // 长短拒因两个真实 pair：按权威拒因文本长度取最长与最短（非空）。
+        var longPair = options.OrderByDescending(o => ReasonOf(o).Length).First();
+        var shortPair = options.Where(o => ReasonOf(o).Length > 0).OrderBy(o => ReasonOf(o).Length).First();
+        Check(ReasonOf(longPair).Length > ReasonOf(shortPair).Length,
+            "N001F 长短拒因 pair 真实存在：" + ReasonOf(longPair).Length + " 字 vs " + ReasonOf(shortPair).Length + " 字");
+
+        async System.Threading.Tasks.Task SelectPair(Button row, ConnectionOptionView option, string tag)
+        {
+            ScrollIntoView(row);
+            await Frames(2);
+            Click(row.GetGlobalRect().GetCenter());
+            await Frames(4);
+            Check(cost.Text.Contains("已选 " + option.FacilityName) && cost.Text.Contains("← " + option.SourceName)
+                && option.Cost.All(c => cost.Text.Contains(c.Name + "×" + c.Quantity)),
+                tag + " 已选 target/source 与完整费用常驻（语义不省略）：" + cost.Text.Replace("\n", " | "));
+            // 同类设施 pair 名字相同（充电桩 ← 太阳能阵列）：拒因文本是选中身份的真实证据。
+            if (ReasonOf(option).Length > 0)
+                Check(reason.Text.Contains(ReasonOf(option)),
+                    tag + " 点击后拒因切换为该 pair 的权威拒因（点击命中真实目标）：" + reason.Text);
+            Check(InViewMask(cost) && InViewMask(gap), tag + " 完整费用/净缺口在外层遮罩与视口内");
+            Check(InViewMask(submit) && InViewMask(close), tag + " 确认/关闭常驻视口与外层遮罩内（不随候选/拒因滚走）");
+        }
+
+        // 长拒因态：E029 复现锁（旧实现点击后列表 0px）。
+        await SelectPair(RowOf(longPair), longPair, "N001F-长拒因");
+        Check(reason.IsVisibleInTree() && reason.Text.Contains(ReasonOf(longPair)) && InViewMask(reasonScroll),
+            "N001F 长拒因完整显示在固定核心拒因块内：" + reason.Text);
+        Check(InViewMask(list), "N001F 候选列表真实 rect 完整在视口与外层滚动遮罩内");
+        float longListH = list.GetGlobalRect().Size.Y;
+        float scrollMax = (float)list.GetVScrollBar().MaxValue;
+        Check(scrollMax > 0f, "N001F 多 pair 候选列表实际可滚动（ScrollMax=" + F(scrollMax) + "）");
+        list.ScrollVertical = int.MaxValue; // 属性为 int：按节点自身 clamp 到实际最大滚动位
+        await Frames(3);
+        var lastRow = rows[^1];
+        var lastOption = options[^1];
+        var listRect = list.GetGlobalRect();
+        var lastRect = lastRow.GetGlobalRect();
+        bool lastIn = lastRow.IsVisibleInTree() && !lastRow.Disabled
+            && lastRect.Position.X >= listRect.Position.X - 0.5f && lastRect.Position.Y >= listRect.Position.Y - 0.5f
+            && lastRect.End.X <= listRect.End.X + 0.5f && lastRect.End.Y <= listRect.End.Y + 0.5f
+            && InViewMask(lastRow) && !bar.GetGlobalRect().Intersects(lastRect);
+        GD.Print("PLAYER_UI_SELFTEST N001F_LIST longReasonH=" + F(reasonScroll.GetGlobalRect().Size.Y) +
+            " listH=" + F(listRect.Size.Y) + " last=" + lastRect + " scrollMax=" + F(scrollMax) + " inList=" + lastIn);
+        Check(lastIn, "N001F 长拒因态真实滚底：最后多行 pair 完整在列表内层/外层遮罩与视口内且不被命令栏遮挡（E028 锁）");
+        Check(listRect.Size.Y >= lastRect.Size.Y - 1f,
+            "N001F 长拒因不压没列表：列表高度仍容纳一个完整最长多行 pair（" + F(listRect.Size.Y) + " ≥ " + F(lastRect.Size.Y) + "，E029 锁）");
+        // 末 pair 真实点击变选中（读真实选中态样式，不伪造）。
+        Click(lastRect.GetCenter());
+        await Frames(3);
+        var selectedStyle = lastRow.GetThemeStylebox("normal") as StyleBoxFlat;
+        Check(selectedStyle is { BorderWidthBottom: 2 } && selectedStyle.BorderColor == new Color("c96f2e"),
+            "N001F 末 pair 真实点击后变选中（Accent 选中态边框）");
+        Check(cost.Text.Contains("已选 " + lastOption.FacilityName) && cost.Text.Contains("← " + lastOption.SourceName),
+            "N001F 末 pair 选中后 target/source 常驻费用行：" + cost.Text.Split('\n')[0]);
+
+        // 短拒因态：预算按真实行高重分配，列表不小于长拒因态。
+        await SelectPair(RowOf(shortPair), shortPair, "N001F-短拒因");
+        float shortListH = list.GetGlobalRect().Size.Y;
+        GD.Print("PLAYER_UI_SELFTEST N001F_COMPARE longListH=" + F(longListH) + " shortListH=" + F(shortListH) +
+            " shortReasonH=" + F(reasonScroll.IsVisibleInTree() ? reasonScroll.GetGlobalRect().Size.Y : 0f));
+        if (reason.IsVisibleInTree())
+            Check(reason.Text.Contains(ReasonOf(shortPair)) && InViewMask(reasonScroll),
+                "N001F 短拒因完整显示在固定核心拒因块内：" + reason.Text);
+        Check(shortListH >= longListH - 2f,
+            "N001F 短拒因态列表不小于长拒因态（预算按真实排版重分配）：" + F(shortListH) + " vs " + F(longListH));
+
+        PressKey(Key.Escape, true); PressKey(Key.Escape, false);
+        await Frames(4);
+        Check(!_ui.ConnectPanelOpenForTest, "N001F 用例关闭接线面板");
+        _ui.ApplySettingsForTest(1, 1, "detailed");
+        await Frames(4);
+        GD.Print("PLAYER_UI_SELFTEST N001F end");
+    }
+
+    private static string WorkKindDisplayOf(PlayerWorkView? work)
+        => work is null ? "（无工程）" : work.Kind + " · " + work.Stage + (work.Reason.Length > 0 ? " · " + work.Reason : "");
 
     private static float XzDistance(Vector3 a, Vector3 b) => new Vector2(a.X - b.X, a.Z - b.Z).Length();
 
