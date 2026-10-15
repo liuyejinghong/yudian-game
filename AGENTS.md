@@ -110,3 +110,5 @@ Issues 记录在本仓库的 GitHub Issues（`gh` CLI）。See `docs/agents/issu
 - When 原生进程在渲染而 computer use 返回 cgWindowNotFound，do 先核对是否锁屏并在解锁后复读同一窗口；未取得对照证据不归因游戏、权限或服务故障。
 
 - When 并行任务交付后，do 核对成果已提交保存并收拢闲置worktree，维护单一开发入口与恢复清单；未提交或在用目录先保留，不让历史工作树长期散落。
+
+- When 所有者要求主线归拢与唯一开发入口，do 以main（repo）为唯一日常交付状态，当前开发指向repo；临时隔离仅限任务期间并及时集成收尾，先备份并分类独有未提交内容，在用目录不删。
