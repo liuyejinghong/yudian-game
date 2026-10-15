@@ -95,7 +95,7 @@ public partial class Main
             var facility=b.Facilities.FirstOrDefault(f=>f.Id==(batch?.Source??id));
             return facility?.Position??throw new InvalidDataException("没有真实生产端点");
         }
-        bool AtDock(string container,string robot,float[] point)
+        bool AtDock(string container,string robot,float[] point,bool requireCurrentHeight=true)
         {
             var p=LoadVector(point);var origin=LoadVector(Origin(container));
             var batch=d.Tasks.FirstOrDefault(t=>t.Kind=="recipe"&&t.Destination==container);
@@ -103,7 +103,9 @@ public partial class Main
             double radius=facility==null?2:facility.Type=="lander"?2.3:config.Buildings.Single(x=>x.Id==facility.Type).Radius;
             double offset=facility==null?terrain.SpacingM*2+1.4:1.2;
             double distance=radius+Actor(robot).BodyRadius+offset;
-            return ((Math.Abs(Math.Abs(p.X-origin.X)-distance)<.0001&&p.Z==origin.Z)||(Math.Abs(Math.Abs(p.Z-origin.Z)-distance)<.0001&&p.X==origin.X)) && Math.Abs(p.Y-SavedGroundHeight(terrain,p.X,p.Z))<.0001;
+            return Math.Abs(p.X)<_cfg.Terrain.Size/2&&Math.Abs(p.Z)<_cfg.Terrain.Size/2
+                &&((Math.Abs(Math.Abs(p.X-origin.X)-distance)<.0001&&p.Z==origin.Z)||(Math.Abs(Math.Abs(p.Z-origin.Z)-distance)<.0001&&p.X==origin.X))
+                &&(!requireCurrentHeight||Math.Abs(p.Y-SavedGroundHeight(terrain,p.X,p.Z))<.0001);
         }
         void CheckTransfer(ProductionTask t,string suffix,string from,string to,Dictionary<string,int> amounts,bool expected)
         {
@@ -120,7 +122,9 @@ public partial class Main
             string phase=t.Stage is "Cancelled" or "Blocked"?t.ResumeStage!:t.Stage;
             if(t.Kind=="mine")
             {
-                if(t.Material is not ("iron_ore" or "copper_ore")||t.Source!=t.Destination||!mineIds.Contains(t.Source)||t.Robot==null||!t.Robot.StartsWith("Robot_Zhulei_")||!b.Health.ContainsKey(t.Robot)||t.Station==null||!AtDock(t.Source,t.Robot,t.Station)||t.Work>6||phase is not ("Travel" or "Working" or "Physics" or "Completed"))throw new InvalidDataException("采矿任务阶段或工位无效");
+                // Completed mine stations are historical; later legal levelling may change their ground height.
+                // Cancelled, blocked and active mines can resume, so they still require the current surface.
+                if(t.Material is not ("iron_ore" or "copper_ore")||t.Source!=t.Destination||!mineIds.Contains(t.Source)||t.Robot==null||!t.Robot.StartsWith("Robot_Zhulei_")||!b.Health.ContainsKey(t.Robot)||t.Station==null||!AtDock(t.Source,t.Robot,t.Station,requireCurrentHeight:t.Stage!="Completed")||t.Work>6||phase is not ("Travel" or "Working" or "Physics" or "Completed"))throw new InvalidDataException("采矿任务阶段或工位无效");
                 var receipt=mining.SingleOrDefault(r=>r.Operation==t.Id+"-mine");
                 if(t.Paid!=(receipt!=null)||receipt!=null&&(receipt.Site!=t.Source||receipt.Material!=t.Material||receipt.Quantity!=t.Quantity)||t.Paid&&t.Work!=6||phase is "Physics" or "Completed"&&!t.Paid)throw new InvalidDataException("采矿任务与结算不一致");
                 if(t.Patch!=null)
