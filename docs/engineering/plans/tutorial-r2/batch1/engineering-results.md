@@ -62,4 +62,4 @@
 | 固定候选 | 源4f311e6、clean、304raw逐项一致、arm64/严格签名、内嵌CLR8.0.31；导出ERROR0 | PCK f28a71696ad982160b95071b48983c58b18afab8e68673d6160e29007777c267 |
 | 新包原生尝试 | 启动到主页；CUA两次timeout/cgWindowNotFound，未载档，终止自有PID；原种子不变 | BLOCKED；终止退出日志34条Godot清理/渲染ERROR，保原件，不签无ERROR |
 
-最终新包N001–N004原生复验、原目标恢复/正常保存冷载、取消与货物再利用、精确大尺寸、A/B各根结果仍BLOCKED或NOT_RUN；新入口和自包含Codex复验prompt已准备。D001真人无提示轨继续NOT_RUN。分支推送及GitHub API均遇TLS连接失败，本地提交与新包完好；未声称远程已更新。
+最终新包N001–N004原生复验、原目标恢复/正常保存冷载、取消与货物再利用、精确大尺寸、A/B各根结果仍BLOCKED或NOT_RUN；新入口和自包含Codex复验prompt已准备。D001真人无提示轨继续NOT_RUN。首次推送与API均遇TLS连接失败，网络恢复后已正常推送修复分支并开draft PR [#63](https://github.com/liuyejinghong/yudian-game/pull/63)，原失败保留。游戏源与新包仍固定4f311e6，后续仅文档；未合并或推main。
