@@ -78,3 +78,23 @@
 - 精确大尺寸：BLOCKED（exact-dimensions-status.json）。E041/E042请求1920×1080/1920×1200均被屏幕钳制到逻辑1860×889（像素3720×1778、scale2、dpi163）；主页与设置三倍率实操真实执行，钳制后游戏布局未测不签，系统display设置未改。
 - A/B独立根：两流程PASS（音频Dummy；两根原seed hash同cb347b8a）。A组直接建设：E044 goal-9/build-8 solar Completed、center(12.505365,0,-11.181097)/yaw0、Time 2045.9166666651347、正常保存成功，E045退出ERROR0。B组先手动整平（E046 Completed、center(12.52281,0,-11.197887)、terrain v5、Message“整平已提交，物理验证完成”、已保存）再solar：E047 goal-9/build-8 Completed、设施Built=true、center(12.43391,0,-11.311815)/yaw0、Time 2210.4500000005346、正常保存成功，E048退出ERROR0。不作严格同点同相效率比较。
 - E001–E046 checkpoint、退出日志、截图与启动样本留存于私有验收目录，档身份SHA在私有记录；公开仓库只记E编号与本节事实，不收私人路径或存档数据。N002待最终图形复验；N001与reuse-save原生仍FAIL待新候选复验；均不代签。
+
+## 本轮最终状态（2026-10-15收束，run-02/run-03）
+
+任务停在可证阻断；上文历史分段与全部失败原件保留，本节为当前总口径。新修复代码 `e080363`（历史Completed矿站保存）与 `262033d`（接线预算）工程验收全过；新候选 `4bd52ff` 已导出并push成功（`e6e5318..4bd52ff` exit0，PR #63；首次TLS `SSL_ERROR_SYSCALL` 失败保留为史实）：clean、304raw逐项match、PCK `d86046fb…a1e33ab0c`、Yudian.dll `01bb1f9e…425bb6752`、engine同旧候选、CLR8.0.31、strict/arm64、导出ERROR0；相较4f311e6仅3个raw源码差异，HEAD后续纯文档前进不改候选身份。
+
+| 项 | 状态 | 依据/范围 |
+|---|---|---|
+| N003/B002原目标恢复、运输/完成冷载 | PASS（run-02旧候选） | E001–E012；另有旧CargoWaiting直接续行完成/保存E036/E037（未单独冷载），退出日志ERROR0 |
+| N004关联取消、取消保货/保地形/预约释放 | PASS（run-02旧候选） | E013–E020，五项事实全等 |
+| 较早生产起点、A/B两流程 | PASS（run-02旧候选） | E038–E040、E044–E048；不作同点同相效率比较 |
+| N001接线、reuse-save（旧候选4f311e6） | FAIL，保留不删 | E027–E031、E032–E035反例 |
+| 新修复工程验收 | PASS | run-03-controller 28cases全PASS；接线专用合同39/0/0、full终轮1130/0/0、ERROR0 |
+| 新候选（4bd52ff）N001/reuse原生 | BLOCKED（未载档） | connection两次启动、reuse一次启动，均到home未载档、0输入；三次终止各留34条清理ERROR |
+| 普通CoreAudio启动 | BLOCKED（独立记录） | run-02两次26421/35903停于音频IPC等待，不判游戏逻辑 |
+| CUA原生绑定（静音clone） | BLOCKED（工具侧未证） | path timeout/bundle cg；jsreset、exact bundle、唯一running name、fresh same bundle均试仍cg；系统AX/screen权限granted，不归因用户权限或新修死锁，枚举原因未证、不判服务死锁 |
+| N002 | NOT_RUN | run-03入口已备未启动 |
+| 精确1920×1080/1200 | BLOCKED | 屏幕钳制1860×889，布局未测不签 |
+| D001/G001无提示真人 | NOT_RUN | 旧正式P1台账不改 |
+
+run-03三入口种子字节SHA经receipt实测不变（connection/reuse/n002）；旧run-02静音connection进程99081非本轮主控启动，未操作。只读调查收束，无支持可用的新绑定办法；不改服务/信任/OS。证据index由主控最后生成；私有详细报告在run-03/report.md与run-02/report-run02.md。

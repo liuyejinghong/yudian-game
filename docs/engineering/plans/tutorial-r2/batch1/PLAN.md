@@ -63,3 +63,7 @@
 
 基线复制、构建、资源导入、Metal原生主页、导航合同、生命周期工程边界已实际通过；准确结果、失败回退、输入工具阻断和可重复命令见 [VERIFICATION.md](VERIFICATION.md)。
 批1公共协议已固定、DTO字段主控已核、任务图已回读。新增文档检查实际PASS；批1工程实施、Sol审查、固定候选导出与draft PR已完成，GUI工程回归终轮1130/0/0。原生复验进行中：run-02主控已亲自PASS N003/B002原目标恢复与正常保存冷载、N004关联取消与取消保货/保地形/预约释放、较早生产起点自然生产→运输→施工完成/保存、A/B之A组直接建设/保存；N001接线原生本轮FAIL（writer修法commit `262033d`：主控专用合同39/0/0 ERROR0与full终轮1130/0/0、ERROR0均过，原生复验未过前仍记FAIL；普通CoreAudio启动另记BLOCKED不判游戏逻辑），货物再利用保存失败（reuse-save建议P1，根因已核定、最小修复commit `e080363`已过主控run-03-controller复验，原生仍FAIL待修后复验），N002待最终图形复验，精确尺寸BLOCKED（钳制1860×889），A/B两流程已PASS，无提示玩家验收（D001）未执行；新候选待导出（两commit尚未push，只三raw源码相较4f311e6改变）。
+
+## 本轮收束（2026-10-15最终）
+
+任务停在可证阻断，逐项终态表见 native-fixes.md“本轮最终状态”。要点：run-02旧候选PASS成果保留（N003/B002、N004/取消、较早生产、A/B）；旧候选N001/reuse-save FAIL保留。新修复 `e080363`/`262033d` 工程全过；新候选 `4bd52ff` 导出成功并已push（`e6e5318..4bd52ff`，PR #63；首次TLS失败保史实；PCK `d86046fb…`/DLL `01bb1f9e…`/304raw/strict arm64/CLR8.0.31/导出ERROR0；仅3 raw源码差异为本次追加返修相较4f311e6（PR整体另含早前原物流/HUD多文件修复），纯文档HEAD前进不改候选身份）。新包N001/reuse原生BLOCKED（未载档0输入，绑定cg，jsreset/exact/唯一running name/fresh same bundle均试；34清理ERROR保；不归因用户权限或新修死锁，枚举原因未证）；普通CoreAudio启动BLOCKED独立记录；N002 NOT_RUN、精确尺寸BLOCKED、D001/G001 NOT_RUN、旧P1台账不改。不改服务/信任/OS；证据index由主控最后生成。
