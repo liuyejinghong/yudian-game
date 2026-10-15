@@ -1,0 +1,18 @@
+{
+ "generated": "2026-10-14",
+ "description": "tutorial-r2 \u62791 \u8865\u5145\uff1a\u540c\u4efd\u6559\u5b66 r1 \u7684\u9a8c\u8bc1\u5165\u53e3\u4e0e\u6765\u6e90\u5408\u540c\uff08\u76f8\u5bf9\u8def\u5f84\u2192sha256\uff0c\u4e0e\u4e3b\u63a7\u4efb\u52a1\u7b2c2\u6b65\u540c\u6e90\u5feb\u7167\uff1bbin/obj/__pycache__ \u4e0d\u542b\uff09",
+ "aggregate_sha256": "394f1c3556c75fbcb637848fde174496248f6751bac66fd570a52eaefb1c130a",
+ "file_count": 10,
+ "files": {
+  "docs/engineering/contracts/tutorial-mvp-r1.md": "7ac55fe1e34b7492a5244fc8a84f574213f534dc0f484cc824546e1399a6a5c2",
+  "tools/navigation-tests/Navigation.Tests.csproj": "5172244de4f1ba66789eaf9502aec5914c2aaf9138fd66769d1543e29da198b1",
+  "tools/navigation-tests/NavigationContractTests.cs": "882fd75810ef8da6ced9e57401f0b3c8d2a5eee9ed22ba92e3e7ddb2a33b49a9",
+  "tools/navigation-tests/Program.cs": "fe56236a355156555892616b214b74459ae5ebbbb9d9bd36c6804ad73b60d886",
+  "tools/navigation-tests/README.md": "16a2a6077f9b4d3bdc9196c3f94522c9074adbe23bca251cb7ba5763b9e91a03",
+  "tools/player-ui-tests/README.md": "b614929ea5f87719ef1d500ef4d115bde9df683f39bd8cead00d7ef601b9fa7a",
+  "tools/player-ui-tests/run-camera-diag.sh": "eb89cd4b9b3983eb5adb81dd4efa583c11a7e29e9f10401d005b6aa4a0e62938",
+  "tools/player-ui-tests/run-selftest.sh": "79684bdfb2dfc6972dd5719de53ea6ab7bd173adf6eadc4304c98dd7407cde90",
+  "tools/tutorial-mars-tests/verify_tutorial_mars_landmark.py": "a5cdafb5490cb7fef6e00a01488189d98a68a810ce87ada0a3848c01cb6dc659",
+  "tools/tutorial-world-tests/run.py": "60973653f891776c72b2ffbdf09def8ca78e915defe67582e18631fe7e385cad"
+ }
+}

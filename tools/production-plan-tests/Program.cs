@@ -69,7 +69,12 @@ static class Check {
   Throws(()=>ProductionPlan.Create(D("iron",-1),D(),recipes,ore96));
   Throws(()=>ProductionPlan.Create(D("iron",100_001),D(),recipes,ore96));
   Throws(()=>ProductionPlan.Create(D(),null!,recipes,ore96));
-  Throws(()=>ProductionPlan.Create(D(),D(),new[]{recipes[0],recipes[1],recipes[2]},ore96));
+  True(ProductionPlan.Create(D(),D(),new[]{recipes[0],recipes[1],recipes[2]},ore96).Feasible,"recipe subset no longer gated by exact count");
+  Throws(()=>ProductionPlan.Create(D(),D(),Array.Empty<RecipeDefinition>(),ore96));
+  Throws(()=>ProductionPlan.Create(D(),D(),new[]{R("iron",D("iron_ore",2),D("iron",1)),R("iron",D("copper_ore",2),D("copper",1)),recipes[2],recipes[3]},ore96));
+  var five=recipes.Append(R("recycle",D("iron",1),D("iron_ore",1))).ToArray();
+  Feasible(ProductionPlan.Create(D(),D(),five,ore96));
+  Feasible(ProductionPlan.Create(D("cable",2),D(),five,ore96),new ProductionStep("mine","copper_ore",2),new ProductionStep("recipe","copper",1),new ProductionStep("recipe","cable",1));
   Throws(()=>ProductionPlan.Create(D(),D(),recipes.Append(R("kitx",D("iron",1),D("kit",1))).ToArray(),ore96));
   Throws(()=>ProductionPlan.Create(D(),D(),recipes.Append(R("dup",D("iron",1),D("iron",1))).ToArray(),ore96));
   Throws(()=>ProductionPlan.Create(D(),D(),recipes.Append(R("multi",D("iron",1),new Dictionary<string,int>{{"iron",1},{"copper",1}})).ToArray(),ore96));

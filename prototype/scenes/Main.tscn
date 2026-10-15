@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/Main.cs" id="1_main"]
+[ext_resource type="PackedScene" path="res://assets/environment/tutorial-mars-r1/mars-outcrop-landmark.tscn" id="2_mars_landmark"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_main")
+
+[node name="TutorialMarsOutcrop" parent="." instance=ExtResource("2_mars_landmark")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.35, 0, -33.5)

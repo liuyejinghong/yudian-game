@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections.Generic;
 using Yudian.Terrain;
@@ -39,7 +40,13 @@ public static class BoundedRoute
         NavObstacle[] obstacles,
         double maxSlopeDegrees = 30)
     {
+        return FindWithTerrainMargin(terrain, start, destination, bodyRadius, obstacles, 0, maxSlopeDegrees);
+    }
+    internal static RouteResult FindWithTerrainMargin(TerrainSnapshot terrain, NavPoint start, NavPoint destination, double bodyRadius,
+        NavObstacle[] obstacles, double terrainMargin, double maxSlopeDegrees = 30)
+    {
         ValidateInput(terrain, start, destination, bodyRadius, obstacles, maxSlopeDegrees);
+        if (!double.IsFinite(terrainMargin) || terrainMargin < 0 || terrainMargin > 1) throw new ArgumentException("terrain margin must be finite in [0,1]");
 
         int rows = terrain.Rows;
         int columns = terrain.Columns;
@@ -59,7 +66,7 @@ public static class BoundedRoute
             centerZ[i] = obstacles[i].Center.Z;
         }
 
-        var context = new GridContext(terrain, originX, originZ, spacing, bodyRadius, centerX, centerZ, inflated, maxSlopeDegrees);
+        var context = new GridContext(terrain, originX, originZ, spacing, bodyRadius, centerX, centerZ, inflated, maxSlopeDegrees, terrainMargin);
 
         // 结点占位预判只作剪枝；段级校验仍是唯一裁决（端点采样同样检查障碍与收缩场界）。
         bool[] free = new bool[rows * columns];
@@ -87,6 +94,47 @@ public static class BoundedRoute
 
         RouteResult route = Search(context, free, entries, exitSet, start, destination);
         return route;
+    }
+
+    // Main also uses this read-only check to distinguish an unsafe legacy starting footprint
+    // from an ordinary route failure. It does not authorize movement or relax route geometry.
+    internal static bool FootprintClear(TerrainSnapshot terrain, NavPoint point, double bodyRadius, double maxSlopeDegrees = 30)
+    {
+        ValidateInput(terrain, point, point, bodyRadius, Array.Empty<NavObstacle>(), maxSlopeDegrees);
+        var context = new GridContext(terrain, terrain.OriginXM, terrain.OriginZM, terrain.SpacingM, bodyRadius,
+            Array.Empty<double>(), Array.Empty<double>(), Array.Empty<double>(), maxSlopeDegrees);
+        return context.CenterInField(point.X, point.Z) && context.SweptTerrainClear(point.X, point.Z, point.X, point.Z);
+    }
+
+    // Read-only evidence for the same connection enumeration and SegmentClear branches used by Find.
+    // No A* search, physics query, route assignment or relaxed geometry is performed here.
+    internal sealed record GeometryRejection(string Kind, NavPoint Point, string Check,
+        int? ObstacleIndex = null, int? Row = null, int? Column = null, string? Triangle = null,
+        double? SlopeDegrees = null, double? DistanceM = null, double? LimitM = null);
+    internal sealed record ConnectionDiagnostic(int Row, int Column, NavPoint Node, bool Clear, GeometryRejection? FirstReject);
+    private sealed class GeometryTrace
+    {
+        public GeometryRejection? FirstReject { get; set; }
+    }
+    internal static ConnectionDiagnostic[] DiagnoseConnections(TerrainSnapshot terrain, NavPoint point, double bodyRadius,
+        NavObstacle[] obstacles, double terrainMargin, bool isStart, double maxSlopeDegrees = 30)
+    {
+        ValidateInput(terrain, point, point, bodyRadius, obstacles, maxSlopeDegrees);
+        if (!double.IsFinite(terrainMargin) || terrainMargin < 0 || terrainMargin > 1) throw new ArgumentException("terrain margin must be finite in [0,1]");
+        var centerX = new double[obstacles.Length];
+        var centerZ = new double[obstacles.Length];
+        var inflated = new double[obstacles.Length];
+        for (int i = 0; i < obstacles.Length; i++)
+        {
+            centerX[i] = obstacles[i].Center.X;
+            centerZ[i] = obstacles[i].Center.Z;
+            inflated[i] = obstacles[i].Radius + bodyRadius;
+        }
+        var context = new GridContext(terrain, terrain.OriginXM, terrain.OriginZM, terrain.SpacingM, bodyRadius,
+            centerX, centerZ, inflated, maxSlopeDegrees, terrainMargin);
+        var diagnostics = new List<ConnectionDiagnostic>();
+        CollectConnectionNodes(context, point, isStart, diagnostics);
+        return diagnostics.ToArray();
     }
 
     // ---- 输入校验：全部先行，非法输入无副作用 ----
@@ -128,7 +176,8 @@ public static class BoundedRoute
 
     // ---- start/destination 与网格的连接：包含所在格 3x3 邻域，逐段完整校验 ----
 
-    private static List<int> CollectConnectionNodes(GridContext context, NavPoint point, bool isStart)
+    private static List<int> CollectConnectionNodes(GridContext context, NavPoint point, bool isStart,
+        List<ConnectionDiagnostic>? diagnostics = null)
     {
         int column0 = Clamp((int)Math.Floor((point.X - context.OriginX) / context.Spacing), 0, context.Columns - 1);
         int row0 = Clamp((int)Math.Floor((point.Z - context.OriginZ) / context.Spacing), 0, context.Rows - 1);
@@ -144,9 +193,11 @@ public static class BoundedRoute
                     continue;
                 double x = context.OriginX + column * context.Spacing;
                 double z = context.OriginZ + row * context.Spacing;
+                var trace = diagnostics == null ? null : new GeometryTrace();
                 bool clear = isStart
-                    ? context.SegmentClear(point.X, point.Z, x, z)
-                    : context.SegmentClear(x, z, point.X, point.Z);
+                    ? context.SegmentClear(point.X, point.Z, x, z, trace)
+                    : context.SegmentClear(x, z, point.X, point.Z, trace);
+                diagnostics?.Add(new(row, column, new(x, z), clear, trace?.FirstReject));
                 if (clear)
                     connected.Add(row * context.Columns + column);
             }
@@ -281,6 +332,8 @@ public static class BoundedRoute
         private readonly double[] _centerZ;
         private readonly double[] _inflated;
         private readonly double _maxSlopeDegrees;
+        private readonly double _bodyRadius;
+        private readonly double _maxGradientSquared;
 
         public GridContext(
             TerrainSnapshot terrain,
@@ -291,7 +344,8 @@ public static class BoundedRoute
             double[] centerX,
             double[] centerZ,
             double[] inflated,
-            double maxSlopeDegrees)
+            double maxSlopeDegrees,
+            double terrainMargin = 0)
         {
             _terrain = terrain;
             OriginX = originX;
@@ -307,6 +361,9 @@ public static class BoundedRoute
             _centerZ = centerZ;
             _inflated = inflated;
             _maxSlopeDegrees = maxSlopeDegrees;
+            _bodyRadius = bodyRadius + terrainMargin;
+            double maximumGradient = Math.Tan(maxSlopeDegrees / DegreesPerRadian);
+            _maxGradientSquared = maximumGradient * maximumGradient;
         }
 
         public TerrainSnapshot Terrain => _terrain;
@@ -342,14 +399,18 @@ public static class BoundedRoute
             return Math.Sqrt(dx * dx + dz * dz + dh * dh);
         }
 
-        public bool BlockedAt(double x, double z)
+        public bool BlockedAt(double x, double z, GeometryTrace? trace = null)
         {
             for (int i = 0; i < _inflated.Length; i++)
             {
                 double dx = x - _centerX[i];
                 double dz = z - _centerZ[i];
                 if (dx * dx + dz * dz <= _inflated[i] * _inflated[i])
+                {
+                    if (trace != null) trace.FirstReject = new("obstacle", new(x, z), "sample", ObstacleIndex: i,
+                        DistanceM: Math.Sqrt(dx * dx + dz * dz), LimitM: _inflated[i]);
                     return true;
+                }
             }
             return false;
         }
@@ -359,7 +420,7 @@ public static class BoundedRoute
         /// 越界采样非法、不 clamp）、膨胀圆障碍与相邻采样点坡度；另做圆-线段精确距离
         /// 复验，防止采样间隙漏检。端点即采样点，一并受检。
         /// </summary>
-        public bool SegmentClear(double x1, double z1, double x2, double z2)
+        public bool SegmentClear(double x1, double z1, double x2, double z2, GeometryTrace? trace = null)
         {
             double dx = x2 - x1;
             double dz = z2 - z1;
@@ -376,8 +437,11 @@ public static class BoundedRoute
                 double x = x1 + dx * t;
                 double z = z1 + dz * t;
                 if (!CenterInField(x, z))
+                {
+                    if (trace != null) trace.FirstReject = new("field", new(x, z), "sample");
                     return false;
-                if (BlockedAt(x, z))
+                }
+                if (BlockedAt(x, z, trace))
                     return false;
                 double height = HeightAt(x, z);
                 if (i > 0)
@@ -386,18 +450,93 @@ public static class BoundedRoute
                     double horizontal = length / samples;
                     double slopeDegrees = Math.Atan2(Math.Abs(dh), horizontal) * DegreesPerRadian;
                     if (slopeDegrees > _maxSlopeDegrees)
+                    {
+                        if (trace != null) trace.FirstReject = new("terrainCenter", new(x, z), "sampleSlope",
+                            Row: Clamp((int)Math.Floor((z - OriginZ) / Spacing), 0, Rows - 2),
+                            Column: Clamp((int)Math.Floor((x - OriginX) / Spacing), 0, Columns - 2), SlopeDegrees: slopeDegrees);
                         return false;
+                    }
                 }
                 previousHeight = height;
             }
 
+            if (!SweptTerrainClear(x1, z1, x2, z2, trace)) return false;
             for (int i = 0; i < _inflated.Length; i++)
             {
                 double distanceSquared = PointSegmentDistanceSquared(_centerX[i], _centerZ[i], x1, z1, x2, z2);
                 if (distanceSquared < _inflated[i] * _inflated[i])
+                {
+                    if (trace != null) trace.FirstReject = new("obstacle", new(_centerX[i], _centerZ[i]), "exactSegment", ObstacleIndex: i,
+                        DistanceM: Math.Sqrt(distanceSquared), LimitM: _inflated[i]);
                     return false;
+                }
             }
             return true;
+        }
+
+        // A segment swept by a circular body is a capsule in XZ. Test every actual
+        // triangle intersecting that capsule, including the start/end discs. This catches
+        // sideways steep faces that a centre-line elevation derivative cannot describe.
+        public bool SweptTerrainClear(double x1, double z1, double x2, double z2, GeometryTrace? trace = null)
+        {
+            int left = Clamp((int)Math.Floor((Math.Min(x1, x2) - _bodyRadius - OriginX) / Spacing), 0, Columns - 2);
+            int right = Clamp((int)Math.Floor((Math.Max(x1, x2) + _bodyRadius - OriginX) / Spacing), 0, Columns - 2);
+            int top = Clamp((int)Math.Floor((Math.Min(z1, z2) - _bodyRadius - OriginZ) / Spacing), 0, Rows - 2);
+            int bottom = Clamp((int)Math.Floor((Math.Max(z1, z2) + _bodyRadius - OriginZ) / Spacing), 0, Rows - 2);
+            var from = new NavPoint(x1, z1); var to = new NavPoint(x2, z2);
+            double radiusSquared = _bodyRadius * _bodyRadius;
+            for (int row = top; row <= bottom; row++)
+                for (int column = left; column <= right; column++)
+                {
+                    double x = OriginX + column * Spacing, z = OriginZ + row * Spacing;
+                    double a = _terrain.GetHeight(row, column), b = _terrain.GetHeight(row, column + 1);
+                    double c = _terrain.GetHeight(row + 1, column), d = _terrain.GetHeight(row + 1, column + 1);
+                    double firstX = (b - a) / Spacing, firstZ = (d - b) / Spacing;
+                    double secondX = (d - c) / Spacing, secondZ = (c - a) / Spacing;
+                    var pa = new NavPoint(x, z); var pb = new NavPoint(x + Spacing, z);
+                    var pc = new NavPoint(x, z + Spacing); var pd = new NavPoint(x + Spacing, z + Spacing);
+                    if (firstX * firstX + firstZ * firstZ > _maxGradientSquared + 1e-12
+                        && SegmentTriangleDistanceSquared(from, to, pa, pd, pb) <= radiusSquared)
+                    {
+                        if (trace != null) trace.FirstReject = new("sweptTriangle", from, "capsuleTriangle", Row: row, Column: column, Triangle: "a-d-b",
+                            SlopeDegrees: Math.Atan(Math.Sqrt(firstX * firstX + firstZ * firstZ)) * DegreesPerRadian,
+                            DistanceM: Math.Sqrt(SegmentTriangleDistanceSquared(from, to, pa, pd, pb)), LimitM: _bodyRadius);
+                        return false;
+                    }
+                    if (secondX * secondX + secondZ * secondZ > _maxGradientSquared + 1e-12
+                        && SegmentTriangleDistanceSquared(from, to, pa, pc, pd) <= radiusSquared)
+                    {
+                        if (trace != null) trace.FirstReject = new("sweptTriangle", from, "capsuleTriangle", Row: row, Column: column, Triangle: "a-c-d",
+                            SlopeDegrees: Math.Atan(Math.Sqrt(secondX * secondX + secondZ * secondZ)) * DegreesPerRadian,
+                            DistanceM: Math.Sqrt(SegmentTriangleDistanceSquared(from, to, pa, pc, pd)), LimitM: _bodyRadius);
+                        return false;
+                    }
+                }
+            return true;
+        }
+        private static double Cross(NavPoint a, NavPoint b, NavPoint c) => (b.X - a.X) * (c.Z - a.Z) - (b.Z - a.Z) * (c.X - a.X);
+        private static bool InsideTriangle(NavPoint p, NavPoint a, NavPoint b, NavPoint c)
+        {
+            double first = Cross(a, b, p), second = Cross(b, c, p), third = Cross(c, a, p);
+            return first >= 0 && second >= 0 && third >= 0 || first <= 0 && second <= 0 && third <= 0;
+        }
+        private static bool SegmentsIntersect(NavPoint a, NavPoint b, NavPoint c, NavPoint d)
+        {
+            double one = Cross(a, b, c), two = Cross(a, b, d), three = Cross(c, d, a), four = Cross(c, d, b);
+            if ((one > 0 && two < 0 || one < 0 && two > 0) && (three > 0 && four < 0 || three < 0 && four > 0)) return true;
+            bool On(NavPoint p, NavPoint u, NavPoint v) => p.X >= Math.Min(u.X, v.X) && p.X <= Math.Max(u.X, v.X) && p.Z >= Math.Min(u.Z, v.Z) && p.Z <= Math.Max(u.Z, v.Z);
+            return one == 0 && On(c, a, b) || two == 0 && On(d, a, b) || three == 0 && On(a, c, d) || four == 0 && On(b, c, d);
+        }
+        private static double SegmentEdgeDistanceSquared(NavPoint a, NavPoint b, NavPoint c, NavPoint d)
+        {
+            if (SegmentsIntersect(a, b, c, d)) return 0;
+            return Math.Min(Math.Min(PointSegmentDistanceSquared(a.X, a.Z, c.X, c.Z, d.X, d.Z), PointSegmentDistanceSquared(b.X, b.Z, c.X, c.Z, d.X, d.Z)),
+                Math.Min(PointSegmentDistanceSquared(c.X, c.Z, a.X, a.Z, b.X, b.Z), PointSegmentDistanceSquared(d.X, d.Z, a.X, a.Z, b.X, b.Z)));
+        }
+        private static double SegmentTriangleDistanceSquared(NavPoint from, NavPoint to, NavPoint a, NavPoint b, NavPoint c)
+        {
+            if (InsideTriangle(from, a, b, c) || InsideTriangle(to, a, b, c)) return 0;
+            return Math.Min(SegmentEdgeDistanceSquared(from, to, a, b), Math.Min(SegmentEdgeDistanceSquared(from, to, b, c), SegmentEdgeDistanceSquared(from, to, c, a)));
         }
 
         /// <summary>现有网格的连续高度：cell 内按冻结的 a-d 对角线分三角平面插值。</summary>

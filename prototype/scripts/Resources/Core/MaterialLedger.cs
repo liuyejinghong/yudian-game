@@ -15,7 +15,8 @@ public sealed record LedgerSnapshot(ContainerStock[] Containers, MaterialReserva
 // One simulation-thread writer. Cargo and spent materials remain physical custody locations.
 public sealed class MaterialLedger
 {
-    public static readonly string[] Materials = ["iron_ore", "copper_ore", "iron", "copper", "parts", "cable", "kit"];
+    // Identity set is owned by DefinitionCatalog; kept here as an unmodifiable read surface for legacy consumers.
+    public static readonly MaterialIdSet Materials = DefinitionCatalog.MaterialIds;
     public const int Limit = 100_000;
     private readonly Dictionary<string, ContainerStock> _containers;
     private readonly List<MaterialReservation> _reservations;

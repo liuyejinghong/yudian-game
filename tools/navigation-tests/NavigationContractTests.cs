@@ -24,6 +24,10 @@ internal static class NavigationContractTests
         Start_Or_Destination_Outside_Field_Unreachable();
         StartEqualsDestination_OnGrid();
         Deterministic_Repeat_SameResult();
+        SideSlope_Footprint_Rejects_LowCenterline();
+        SweptTriangle_Avoids_LateralRidge();
+        InitialUnsafeFootprint_And_StrictMargin();
+        TerrainMargin_DoesNotInflateNeighbourBodies();
         return Check.Failed;
     }
 
@@ -338,6 +342,82 @@ internal static class NavigationContractTests
                 Check.True(PointEquals(first.Points[i], second.Points[i]), $"waypoint {i} must match on repeat");
             Check.True(first.LengthM == second.LengthM, "LengthM must match on repeat");
             Check.True(first.Reason == second.Reason, "Reason must match on repeat");
+        });
+    }
+
+    private static void SideSlope_Footprint_Rejects_LowCenterline()
+    {
+        var terrain = MakeSnapshot(13, 15, (r, c) => r <= 5 ? c * .25 : c * .25 + 1.5);
+        // The start is on a ~14 degree centre face; its 1.4m circle touches a 56deg
+        // lateral face. Centre elevation along X alone must never authorize that body.
+        var start = new NavPoint(2, 4.2); var target = new NavPoint(12, 4.2);
+        var unsafeRoute = BoundedRoute.Find(terrain, start, target, 1.4, Array.Empty<NavObstacle>());
+        Check.Ok("sideways steep triangle rejects low-slope centre footprint", () => Check.True(!unsafeRoute.Found, "1.4m footprint must not touch the sideways ridge"));
+        var small = BoundedRoute.Find(terrain, start, target, .4, Array.Empty<NavObstacle>());
+        Check.Ok("smaller footprint clear of lateral triangle remains routable", () => Check.True(small.Found, small.Reason));
+    }
+    private static void SweptTriangle_Avoids_LateralRidge()
+    {
+        var terrain = MakeSnapshot(16, 18, (r, c) => r is 6 or 7 && c is >= 6 and <= 10 ? 2 : 0);
+        var start = new NavPoint(2, 5); var target = new NavPoint(15, 5);
+        var route = BoundedRoute.Find(terrain, start, target, 1.4, Array.Empty<NavObstacle>());
+        Check.Ok("swept body detours around lateral steep triangles", () =>
+        {
+            Check.True(route.Found, route.Reason);
+            Check.True(Array.Exists(route.Points, p => p.Z < 4 || p.Z > 9), "route must go around the full body footprint, not skim the ridge centreline");
+            var all = new List<NavPoint> { start }; all.AddRange(route.Points);
+            // Independent frozen band [5,11]×[5,8], the exact bounding rectangle
+            // of this fixture's steep transition triangles. Use geometric segment/edge
+            // distance, not the implementation's footprint helper or lateral samples.
+            NavPoint[] box = [new(5, 5), new(11, 5), new(11, 8), new(5, 8)];
+            for (int segment = 0; segment + 1 < all.Count; segment++)
+            {
+                var from = all[segment]; var to = all[segment + 1];
+                Check.True(!(from.X >= 5 && from.X <= 11 && from.Z >= 5 && from.Z <= 8)
+                    && !(to.X >= 5 && to.X <= 11 && to.Z >= 5 && to.Z <= 8), "segment endpoint enters steep-ridge band");
+                for (int edge = 0; edge < 4; edge++)
+                {
+                    var a = box[edge]; var b = box[(edge + 1) % 4];
+                    Check.True(!IndependentIntersects(from, to, a, b), "segment crosses steep-ridge band");
+                    double nearest = Math.Min(Math.Min(PointSegmentDistanceSquared(from.X, from.Z, a.X, a.Z, b.X, b.Z), PointSegmentDistanceSquared(to.X, to.Z, a.X, a.Z, b.X, b.Z)),
+                        Math.Min(PointSegmentDistanceSquared(a.X, a.Z, from.X, from.Z, to.X, to.Z), PointSegmentDistanceSquared(b.X, b.Z, from.X, from.Z, to.X, to.Z)));
+                    Check.True(nearest > 1.4 * 1.4, "swept segment touches independently frozen steep-ridge band");
+                }
+            }
+        });
+    }
+    private static void TerrainMargin_DoesNotInflateNeighbourBodies()
+    {
+        var terrain = MakeSnapshot(15, 15, (_, _) => 0);
+        var route = BoundedRoute.FindWithTerrainMargin(terrain, new(3, 4), new(3, 11), 1.4, [new(new(6, 4), 1.4)], .25);
+        Check.Ok("3m-spaced 1.4m bodies retain legal start with terrain-only turn margin", () => Check.True(route.Found, route.Reason));
+        var overlapping = BoundedRoute.FindWithTerrainMargin(terrain, new(3, 4), new(3, 11), 1.4, [new(new(5.7, 4), 1.4)], .25);
+        Check.Ok("terrain-only turn margin still rejects actual overlapping bodies", () => Check.True(!overlapping.Found, "overlap must remain physically forbidden"));
+    }
+
+    private static bool IndependentIntersects(NavPoint a, NavPoint b, NavPoint c, NavPoint d)
+    {
+        double Area(NavPoint p, NavPoint q, NavPoint r) => (q.X - p.X) * (r.Z - p.Z) - (q.Z - p.Z) * (r.X - p.X);
+        double first = Area(a, b, c), second = Area(a, b, d), third = Area(c, d, a), fourth = Area(c, d, b);
+        return first * second <= 0 && third * fourth <= 0
+            && Math.Max(Math.Min(a.X, b.X), Math.Min(c.X, d.X)) <= Math.Min(Math.Max(a.X, b.X), Math.Max(c.X, d.X))
+            && Math.Max(Math.Min(a.Z, b.Z), Math.Min(c.Z, d.Z)) <= Math.Min(Math.Max(a.Z, b.Z), Math.Max(c.Z, d.Z));
+    }
+    private static void InitialUnsafeFootprint_And_StrictMargin()
+    {
+        var terrain = MakeSnapshot(12, 12, (r, c) => r == 6 && c == 6 ? 3 : 0);
+        var unsafePoint = new NavPoint(5.6, 5.6);
+        Check.Ok("unsafe initial contact is not an ordinary zero-distance route", () =>
+        {
+            Check.True(!BoundedRoute.FootprintClear(terrain, unsafePoint, 1.4), "footprint must detect true steep triangle contact");
+            Check.True(!BoundedRoute.Find(terrain, unsafePoint, unsafePoint, 1.4, Array.Empty<NavObstacle>()).Found, "trivial route cannot bypass initial contact");
+        });
+        var obstacle = new[] { new NavObstacle(new(5, 5), 1.0) };
+        Check.Ok("swept route never crosses solid obstacle", () =>
+        {
+            var route = BoundedRoute.Find(MakeSnapshot(12, 12, (_, _) => 0), new(2, 5), new(9, 5), 1.4, obstacle);
+            Check.True(route.Found, route.Reason);
+            AssertSegmentsValid(MakeSnapshot(12, 12, (_, _) => 0), new(2, 5), route.Points, 1.4, obstacle, 30, "swept-solid");
         });
     }
 

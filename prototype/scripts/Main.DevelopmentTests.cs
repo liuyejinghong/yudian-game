@@ -35,7 +35,7 @@ public partial class Main
                     var d=json["Bootstrap"]!["Development"]!;d["GoalSequence"]=1;
                     d["Goal"]=JsonSerializer.SerializeToNode(new DevelopmentGoal{Id="goal-1",Type="restock",Center=[7,0,-22]},SaveOptions);
                 });
-                if(DevelopmentPhase=="processor-first"){D12Build("processor",new(-14,0,-14));_developmentTestStep=200;break;}
+                if(DevelopmentPhase=="processor-first"){D12Build("solar",new(-3,0,-14));_developmentTestStep=199;break;}
                 if(DevelopmentPhase.StartsWith("resume")){QueuePlayerAction("load");_developmentTestStep=90;break;}
                 if(DevelopmentPhase=="legacy"){QueuePlayerAction("load");_developmentTestStep=95;break;}
                 D12Build("solar",new(-3,0,-14));_developmentTestStep=1;break;
@@ -203,6 +203,8 @@ public partial class Main
             case 93:
                 if(_userPaused||!DevelopmentComplete)break;
                 ValidatePlayerSave(CapturePlayer());GD.Print("D12_TEST RESTORED phase="+DevelopmentPhase);GetTree().Quit();break;
+            case 199:
+                if(!DevelopmentComplete)break;D12Build("processor",new(-14,0,-14));_developmentTestStep=200;break;
             case 200:
                 if(!DevelopmentComplete)break;
                 GroundRequire(!PreviewBuild("storage",new(9,0,9)).Legal,"processor first does not release remaining support reserves");

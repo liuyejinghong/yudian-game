@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://assets/units/tuoyun-hf-mvp-r1/preview.gd" id="1_wrap"]
+[ext_resource type="PackedScene" path="res://assets/units/tuoyun-hf-mvp-r1/tuoyun-hf-mvp-r1.glb" id="2_glb"]
+[ext_resource type="AnimationLibrary" path="res://assets/units/tuoyun-hf-mvp-r1/verified-r1-actions.tres" id="3_actions"]
+
+[node name="SampleRoot" type="Node3D"]
+script = ExtResource("1_wrap")
+
+[node name="Model" parent="." instance=ExtResource("2_glb")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model"]
+root_node = NodePath("..")
+libraries = {
+&"": ExtResource("3_actions")
+}

@@ -92,6 +92,7 @@ public partial class Main
 
     private void TickLevelJob(double delta)
     {
+        if (_managementPaused) return;
         var job = _levelJob;
         if (job?.Active == true)
         {

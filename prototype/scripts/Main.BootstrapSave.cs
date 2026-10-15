@@ -59,6 +59,9 @@ public partial class Main
         }
         if(s.ConfigHash!=ConfigHash(config.Version)||s.Revision<0||s.Revision>1_000_000||s.BuildSequence<0||s.BuildSequence>10000||s.ServiceSequence<0||s.ServiceSequence>100000||s.Facilities==null||s.Facilities.Length==0||s.Facilities.Length>500||s.Health==null||s.Services==null||s.Stations==null||s.Destinations==null)
             throw new InvalidDataException("自举配置、版本或集合无效");
+        if (s.Facilities.Any(f => f == null) || s.Services.Any(service => service == null) || s.Health.Any(h => h.Value == null)
+            || s.Destinations.Any(d => d.Value == null) || s.Ledger == null)
+            throw new InvalidDataException("自举必需集合含空对象");
         var ledger=new MaterialLedger(s.Ledger);
         if(!s.Ledger.Containers.Any(c=>c.Id=="lander"&&c.Capacity==500)||!s.Ledger.Containers.Any(c=>c.Id=="spent"&&c.Capacity==MaterialLedger.Limit))throw new InvalidDataException("缺少固定库存或消耗容器");
         foreach(var c in s.Ledger.Containers)
@@ -83,6 +86,8 @@ public partial class Main
             if(f.Id!="lander"&&(!f.Id.StartsWith("build-")||!int.TryParse(f.Id[6..],out int i)||i<1||i>s.BuildSequence))throw new InvalidDataException("未知设施来源");
             if(s.Facilities.Any(other=>other!=f&&XzDistance(LoadVector(other.Position),p)<=radius+Radius(other)))throw new InvalidDataException("设施相互重叠");
             if(f.Source is {} source&&(!f.Built||f.Type is "solar" or "lander" or "storage"||!s.Facilities.Any(x=>x.Id==source&&x.Built&&x.Type=="solar"&&XzDistance(LoadVector(x.Position),p)<=config.ConnectionRangeM)))throw new InvalidDataException("供电来源或线缆距离无效");
+            // Unwired legacy facilities may legitimately be outside every existing array's range.
+            // Coverage guards belong to new authorization, never to legacy layout admission.
             if(f.Id!="lander"&&f.Built)CheckConsumed(f.Id,f.Id,Def(f.Type).Cost);
             if(f.Source!=null)
             {
@@ -99,7 +104,7 @@ public partial class Main
         if(s.Services.Length>saved.Robots.Length||s.Services.Select(x=>x.Robot).Distinct().Count()!=s.Services.Length||s.Services.Select(x=>x.Id).Distinct().Count()!=s.Services.Length)throw new InvalidDataException("重复服务关系");
         foreach(var service in s.Services)
         {
-            if(service==null||!s.Health.ContainsKey(service.Robot)||!service.Id.StartsWith("service-")||!int.TryParse(service.Id[8..],out int id)||id<1||id>s.ServiceSequence||service.Kind is not ("charge" or "repair")||!s.Facilities.Any(f=>f.Id==service.Facility&&f.Built&&f.Type==(service.Kind=="charge"?"charger":"repair"))||(!service.Returning&&!service.Blocked&&(!s.Stations.TryGetValue(service.Facility,out var owner)||owner!=service.Robot))||!FiniteRange(service.Progress,config.RepairSeconds)||!FiniteRange(service.Waiting,1e12))throw new InvalidDataException("服务身份或预约不一致");
+            if(service==null||string.IsNullOrWhiteSpace(service.Id)||string.IsNullOrWhiteSpace(service.Robot)||string.IsNullOrWhiteSpace(service.Facility)||!s.Health.ContainsKey(service.Robot)||!service.Id.StartsWith("service-")||!int.TryParse(service.Id[8..],out int id)||id<1||id>s.ServiceSequence||service.Kind is not ("charge" or "repair")||!s.Facilities.Any(f=>f.Id==service.Facility&&f.Built&&f.Type==(service.Kind=="charge"?"charger":"repair"))||(!service.Returning&&!service.Blocked&&(!s.Stations.TryGetValue(service.Facility,out var owner)||owner!=service.Robot))||!FiniteRange(service.Progress,config.RepairSeconds)||!FiniteRange(service.Waiting,1e12))throw new InvalidDataException("服务身份或预约不一致");
             var servicePosition=LoadVector(service.Station);var facility=s.Facilities.Single(f=>f.Id==service.Facility);
             var actor=_groundRobots.Single(a=>a.Name.ToString()==service.Robot);var fpos=LoadVector(facility.Position);float reach=Radius(facility)+actor.BodyRadius+1.2f;
             bool station=(Math.Abs(Math.Abs(servicePosition.X-fpos.X)-reach)<.0001 && servicePosition.Z==fpos.Z)||(Math.Abs(Math.Abs(servicePosition.Z-fpos.Z)-reach)<.0001 && servicePosition.X==fpos.X);
@@ -131,7 +136,7 @@ public partial class Main
         if(s.Build is {} b)
         {
             string[] stages=["Preparing","LevelTravel","Levelling","LevelPhysics","Fetching","Pickup","CargoWaiting","Delivering","BuilderTravel","Building","Completed","Cancelled","Blocked"];
-            if(!stages.Contains(b.Stage)||!b.Id.StartsWith("build-")||!int.TryParse(b.Id[6..],out int id)||id<1||id>s.BuildSequence||!s.Health.ContainsKey(b.Builder)||!b.Builder.StartsWith("Robot_Zhulei_")||!s.Health.ContainsKey(b.Hauler)||!b.Hauler.StartsWith("Robot_Tuoyun_")||b.Builder==b.Hauler||b.Type!="connection"&&!config.Buildings.Any(x=>x.Id==b.Type)||!s.Facilities.Any(x=>x.Id==b.Facility)||!FiniteRange(b.Work,b.Type=="connection"?3:Math.Max(3,Def(b.Type).WorkSeconds))||!FiniteRange(b.Waiting,181)||b.Trip<0||b.Trip>10000||b.Reason==null||b.Reason.Length>1000)
+            if(!stages.Contains(b.Stage)||string.IsNullOrWhiteSpace(b.Id)||string.IsNullOrWhiteSpace(b.Builder)||string.IsNullOrWhiteSpace(b.Hauler)||!b.Id.StartsWith("build-")||!int.TryParse(b.Id[6..],out int id)||id<1||id>s.BuildSequence||!s.Health.ContainsKey(b.Builder)||!b.Builder.StartsWith("Robot_Zhulei_")||!s.Health.ContainsKey(b.Hauler)||!b.Hauler.StartsWith("Robot_Tuoyun_")||b.Builder==b.Hauler||b.Type!="connection"&&!config.Buildings.Any(x=>x.Id==b.Type)||!s.Facilities.Any(x=>x.Id==b.Facility)||!FiniteRange(b.Work,b.Type=="connection"?3:Math.Max(3,Def(b.Type).WorkSeconds))||!FiniteRange(b.Waiting,181)||b.Trip<0||b.Trip>10000||b.Reason==null||b.Reason.Length>1000)
                 throw new InvalidDataException("工程身份、阶段或时间无效");
             if(b.Stage=="Levelling"&&b.Work>3)throw new InvalidDataException("整平进度越过阶段上限");
             foreach(var operation in s.Ledger.Operations.Keys.Where(k=>k.StartsWith(b.Id+"-")))
@@ -170,7 +175,20 @@ public partial class Main
             // Builder standoff includes the patch's changed cells and an extra 1.4m beyond the body.
             double builderOffset=patch.Base.SpacingM*2+1.4-_groundRobots.Single(a=>a.Name.ToString()==b.Builder).BodyRadius;
             if(!AtPort(f,b.Builder,builderStation,builderOffset)||TouchesFootprint(patch,builderStation.X,builderStation.Z,Actor(b.Builder).BodyRadius))throw new InvalidDataException("施工站不属于当前工程");
-            if(b.HaulStation!=null&&!AtPort(f,b.Hauler,LoadVector(b.HaulStation),1.2))throw new InvalidDataException("卸货站不属于当前工程");
+            bool AtHaulPort(Vector3 position)
+            {
+                if(AtPort(f,b.Hauler,position,1.2))return true;
+                if(b.Type=="connection")return false;
+                var origin=LoadVector(f.Position);float body=Actor(b.Hauler).BodyRadius;
+                float radius=Radius(f)+body+1.2f,edge=Radius(f)+(float)terrain.SpacingM*2+body;
+                // Completed jobs retain the station chosen while the facility was unfinished.
+                return Math.Abs(position.X)<_cfg.Terrain.Size/2&&Math.Abs(position.Z)<_cfg.Terrain.Size/2
+                    &&Math.Abs(position.Y-SavedGroundHeight(terrain,position.X,position.Z))<.0001
+                    &&StationCandidates.Enumerate(terrain,origin.X,origin.Z,radius,edge)
+                        .Any(candidate=>candidate.Kind!="original-axis"&&Math.Abs(position.X-(float)candidate.Point.X)<.0001
+                            &&Math.Abs(position.Z-(float)candidate.Point.Z)<.0001);
+            }
+            if(b.HaulStation!=null&&!AtHaulPort(LoadVector(b.HaulStation)))throw new InvalidDataException("卸货站不属于当前工程");
             if(b.Active)
             {
                 if(b.Stage is "LevelTravel" or "Levelling" or "Building" && TaskDestination(b.Builder)!=builderStation)throw new InvalidDataException("筑垒目的地与施工站不一致");
@@ -208,6 +226,7 @@ public partial class Main
     }
     private void ApplyBootstrap(BootstrapSave s)
     {
+        s = CloneSaveValue(s);
         _bootstrapConfig=LoadBootstrapConfig(s.ConfigVersion??"d11-bootstrap-1");
         _ledger=new(s.Ledger);_baseFacilities.Clear();_baseFacilities.AddRange(s.Facilities);_baseRevision=s.Revision;_buildSequence=s.BuildSequence;_serviceSequence=s.ServiceSequence;_buildJob=s.Build;
         _health.Clear();foreach(var x in s.Health){x.Value.Travel=Actor(x.Key).TravelledM;_health.Add(x.Key,x.Value);}

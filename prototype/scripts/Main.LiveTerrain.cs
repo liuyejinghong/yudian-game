@@ -98,9 +98,10 @@ public partial class Main
             if (_playerMode)
             {
                 if (BootstrapEnabled && _groundReady) SettleBaseMovement();
+                CaptureInitialPlayerOnce();
                 ProcessPlayerCommand();
                 FinishPlayerLoad();
-                if (!_entryOpen && !_userPaused && _loadPending == null && !_groundFault && _groundVerified == _liveTerrain.Current.Version)
+                if (!_entryOpen && !_menuPaused && !_userPaused && !_managementPaused && _loadPending == null && !_groundFault && _groundVerified == _liveTerrain.Current.Version)
                 { _playerTime += delta; if (BootstrapEnabled) TickBootstrap(delta); TickLevelJob(delta); }
             }
             else TickLevelJob(delta);
@@ -109,6 +110,8 @@ public partial class Main
             if (System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1") PlayerTestStep();
             if (System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1") BootstrapTestStep();
             if(System.Environment.GetEnvironmentVariable("YUDIAN_DEVELOPMENT_SELF_TEST")=="1")DevelopmentTestStep();
+            if (R2SelfTest) R2TestStep();
+            if (TutorialTest) TutorialTestStep();
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") LevelTestStep(delta);
             if (System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1") GroundTestStep();
             if (BootstrapEnabled && _groundReady)
@@ -118,7 +121,8 @@ public partial class Main
                 foreach(var actor in _groundRobots)
                 {
                     var health=_health[actor.Name.ToString()];
-                    actor.SetMovementBudget((float)Math.Min(health.Energy/_bootstrapConfig.MoveEnergyPerM,health.Durability/_bootstrapConfig.MoveWearPerM));
+                    float available = (float)Math.Min(health.Energy/_bootstrapConfig.MoveEnergyPerM,health.Durability/_bootstrapConfig.MoveWearPerM);
+                    actor.SetMovementBudget(actor.Paused || !_groundReady ? 0 : available);
                 }
             }
             if (_groundStatus != null) _groundStatus.Text = $"权威 v{_liveTerrain.Current.Version} · 绑定 v{_liveTerrain.ProjectionVersion?.ToString() ?? "未知"} · 物理 v{_groundVerified?.ToString() ?? "待验"}\n" +
@@ -129,7 +133,7 @@ public partial class Main
         {
             GroundFault(ex);
             if (_playerMode && _loadPending != null && _loadRollback != null) { FinishPlayerLoad(); return; }
-            if(System.Environment.GetEnvironmentVariable("YUDIAN_DEVELOPMENT_SELF_TEST")=="1" || System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" ||
+            if(R2SelfTest || TutorialTest || System.Environment.GetEnvironmentVariable("YUDIAN_DEVELOPMENT_SELF_TEST")=="1" || System.Environment.GetEnvironmentVariable("YUDIAN_BOOTSTRAP_SELF_TEST") == "1" || System.Environment.GetEnvironmentVariable("YUDIAN_PLAYER_SELF_TEST") == "1" ||
                 System.Environment.GetEnvironmentVariable("YUDIAN_LIVE_SELF_TEST") == "1" ||
                 System.Environment.GetEnvironmentVariable("YUDIAN_LEVEL_SELF_TEST") == "1") Fail(ex);
         }
@@ -241,7 +245,7 @@ public partial class Main
             _groundMessage = result.Status.ToString();
             if (result.Status != TerrainCommitStatus.Committed)
             { PauseGround(false); return result; }
-            _groundAssignedFrame = _groundFrame; _groundVerified = null;
+            _groundAssignedFrame = _groundFrame; _groundVerified = null; _intentVersion++;
             if (region.ProjectionVersion != region.Current.Version) GroundFault(new InvalidOperationException(region.ProjectionError));
             GD.Print($"MAIN_GROUND_COMMIT authority={region.Current.Version} bound={region.ProjectionVersion} paused={_groundRobots.All(x => x.Paused)}");
             return result;
@@ -259,8 +263,11 @@ public partial class Main
         _projectionPaused = value;
         foreach (var actor in _groundRobots)
         {
-            actor.Paused = value || (_playerMode && (_entryOpen || _userPaused || _loadPending != null)) || (BootstrapEnabled && !Operational(actor));
-            actor.SetPhysicsProcess(!(_playerMode && _userPaused && _loadPending == null));
+            actor.Paused = value || (_playerMode && (_entryOpen || _menuPaused || _userPaused || _managementPaused || _loadPending != null)) || (BootstrapEnabled && !Operational(actor));
+            // Main keeps processing queued commands. Bodies freeze only after they are grounded;
+            // projection/load barriers still need gravity so physical restoration can finish.
+            bool modalFreeze = _playerMode && (_userPaused || _menuPaused || _entryOpen || _managementPaused) && _loadPending == null && actor.IsOnFloor() && _groundVerified == _liveTerrain?.Current.Version;
+            actor.SetPhysicsProcess(!modalFreeze);
         }
     }
     private void GroundFault(Exception ex)

@@ -45,6 +45,8 @@ public partial class Main
         public required Vector3 Destination;
         public long WorldVersion, FacilityRevision;
         public double Seconds, Stalled;
+        public bool Escaping;
+        public Vector3 EscapeDestination;
     }
     private sealed class ServiceJob
     {
@@ -81,6 +83,8 @@ public partial class Main
         public double Waiting { get; set; }
         public int Trip { get; set; }
         public string Reason { get; set; } = "";
+        [System.Text.Json.Serialization.JsonIgnore]
+        public PlayerReasonCode FeedbackCode { get; set; } = PlayerReasonCode.Unknown;
         public bool Active => Stage is not ("Completed" or "Cancelled" or "Blocked");
     }
     private BuildingDefinition Definition(string type) => _bootstrapConfig.Buildings.Single(x => x.Id == type);
@@ -149,11 +153,11 @@ public partial class Main
         string stock=string.Join(" · ",MaterialLedger.Materials.Where(m=>depots.Sum(c=>_ledger.Count(c,m))>0||_bootstrapConfig.Initial[m]>0).Select(m=>$"{MaterialName(m)} {depots.Sum(c=>_ledger.Count(c,m))}（可用{depots.Sum(c=>_ledger.Available(c,m))}）"));
         return new(true,stock,$"{(Daylight?"日照":"夜间")} · 发电 {_baseFacilities.Count(f=>f.Type=="solar"&&Powered(f))*_bootstrapConfig.SolarOutput:0.#} /s · 电缆连接 ≤{_bootstrapConfig.ConnectionRangeM:0}m，每段{_bootstrapConfig.ConnectionCables}线缆",
             _bootstrapConfig.Buildings.Select(b=>new BuildBlueprintView(b.Id,b.Name,(float)b.Radius,FormatMaterials(BuildCost(b.Id)))).ToArray(),
-            _baseFacilities.Select(f=>new FacilityView(f.Id,f.Type,BaseName(f.Type),LoadVector(f.Position),BaseRadius(f),f.Built,Powered(f),f.Source)).ToArray(),
+            _baseFacilities.Select(f=>new FacilityView(f.Id,f.Type,BaseName(f.Type),LoadVector(f.Position),BaseRadius(f),f.Built,Powered(f),f.Source,ServiceConnected(f))).ToArray(),
             _health.Select(x=>new RobotSupportView(x.Key,x.Value.Energy,x.Value.Durability,_bootstrapConfig.Capacity,_ledger.Load(CargoContainer(x.Key)),
                 x.Value.Energy<=0&&x.Value.Durability<=0?"零电且机械停机":x.Value.Energy<=0?"零电停机":x.Value.Durability<=0?"机械停机":_services.TryGetValue(x.Key,out var s)?s.Blocked?"保障阻塞，可重试":s.Returning?"保障返程":s.Kind=="repair"?"维修保障":"回充保障":"可用",x.Value.Reason)).ToArray(),_baseRevision);
     }
-    private static string MaterialName(string m)=>m switch {"iron_ore"=>"铁矿","copper_ore"=>"铜矿","iron"=>"铁料","copper"=>"铜料","parts"=>"结构件","cable"=>"线缆",_=>"组件套件"};
+    private static string MaterialName(string m) => DefinitionCatalog.Material(m).Name;
     private static string FormatMaterials(Dictionary<string,int> amounts)=>string.Join("、",amounts.Select(x=>$"{MaterialName(x.Key)}{x.Value}"));
     private TerrainPatch BuildPatch(TerrainSnapshot t, Vector3 center, float radius, string id)
     {
@@ -166,41 +170,41 @@ public partial class Main
     private bool BuildClearingActor(string actor)=>_buildJob is {} j&&(actor==j.Hauler||DevelopmentEnabled&&_productionTasks.Any(t=>t.Goal==_development?.Id&&t.Kind=="haul"&&t.Robot==actor));
     private NavObstacle[] RouteObstacles(string actor, bool includeSites=true)=>_baseFacilities.Where(f=>(f.Built||includeSites)&&!(!f.Built&&f.Id==_buildJob?.Facility&&_buildJob.Stage=="Preparing"&&BuildClearingActor(actor))).Select(f=>new NavObstacle(new(LoadVector(f.Position).X,LoadVector(f.Position).Z),BaseRadius(f)))
         .Concat(_groundRobots.Where(a=>a.Name.ToString()!=actor).Select(a=>new NavObstacle(new(a.GlobalPosition.X,a.GlobalPosition.Z),a.BodyRadius))).ToArray();
-    private RouteResult FindRoute(GroundPatrol a, Vector3 to)=>BoundedRoute.Find(_liveTerrain!.Current,new(a.GlobalPosition.X,a.GlobalPosition.Z),new(to.X,to.Z),a.BodyRadius,RouteObstacles(a.Name.ToString()));
+    private RouteResult FindRoute(GroundPatrol a, Vector3 to) => PlanBaseRoute(a, to).Route;
     private bool OrderBase(GroundPatrol actor,Vector3 destination)
     {
-        var route=FindRoute(actor,destination);if(!route.Found){_health[actor.Name.ToString()].Reason=route.Reason;return false;}
-        actor.SetRoute(route.Points.Select(p=>new Vector3((float)p.X,(float)SavedGroundHeight(_liveTerrain!.Current,(float)p.X,(float)p.Z),(float)p.Z)).ToArray());
-        _routes[actor.Name.ToString()]=new(){Destination=destination,WorldVersion=route.WorldVersion,FacilityRevision=_baseRevision};return true;
+        if (_managementPaused) return false;
+        var planned = PlanBaseRoute(actor, destination);
+        if(!planned.Route.Found){_health[actor.Name.ToString()].Reason=planned.Route.Reason;return false;}
+        AssignPlannedRoute(actor, destination, planned.Route, planned.Escape); return true;
     }
     private Vector3? FreeStation(BaseFacility f,GroundPatrol a,TerrainPatch? excluded=null)
     {
+        var diagnostics=BeginDeliveryStationDiagnostics(f,a,excluded);
         var p=LoadVector(f.Position);float d=BaseRadius(f)+a.BodyRadius+1.2f;
-        foreach(var offset in new[]{new Vector3(d,0,0),new Vector3(-d,0,0),new Vector3(0,0,d),new Vector3(0,0,-d)})
-        {var station=p+offset;if(excluded!=null&&(TouchesFootprint(excluded,station.X,station.Z,a.BodyRadius)||_buildJob!.Clearance.Any(x=>x.Key!=a.Name.ToString()&&XzDistance(station,LoadVector(x.Value))<=a.BodyRadius+Actor(x.Key).BodyRadius+.5f)))continue;if(FindRoute(a,station).Found){station.Y=(float)SavedGroundHeight(_liveTerrain!.Current,station.X,station.Z);return station;}}
+        var terrain=_liveTerrain!.Current;
+        bool unloading=excluded==null&&!f.Built&&_buildJob is {} job&&job.Facility==f.Id&&job.Hauler==a.Name.ToString()&&job.Type!="connection";
+        // Share the existing construction-station outer bound; never widen service, pickup or wire docks.
+        float? edge=unloading?BaseRadius(f)+(float)terrain.SpacingM*2+a.BodyRadius:null;
+        foreach(var candidate in StationCandidates.Enumerate(terrain,p.X,p.Z,d,edge))
+        {
+            var station=new Vector3((float)candidate.Point.X,p.Y,(float)candidate.Point.Z);
+            if(excluded!=null&&(TouchesFootprint(excluded,station.X,station.Z,a.BodyRadius)||_buildJob!.Clearance.Any(x=>x.Key!=a.Name.ToString()&&XzDistance(station,LoadVector(x.Value))<=a.BodyRadius+Actor(x.Key).BodyRadius+.5f)))continue;
+            var route=FindRoute(a,station);
+            diagnostics?.Add(new(station,route,candidate));
+            if(route.Found){station.Y=(float)SavedGroundHeight(_liveTerrain!.Current,station.X,station.Z);CompleteDeliveryStationDiagnostics(f,a,diagnostics);return station;}
+        }
+        CompleteDeliveryStationDiagnostics(f,a,diagnostics);
         return null;
     }
     private bool TakeStation(string facility,string robot)=>!_stations.TryGetValue(facility,out var owner)?_stations.TryAdd(facility,robot):owner==robot;
     private void ReleaseStations(string robot){foreach(var key in _stations.Where(x=>x.Value==robot).Select(x=>x.Key).ToArray())_stations.Remove(key);}
     private static bool Arrived(GroundPatrol actor,Vector3 station)=>actor.IsOnFloor()&&actor.OrderReached&&XzDistance(actor.GlobalPosition,station)<=.25f&&new Vector2(actor.Velocity.X,actor.Velocity.Z).Length()<=.05f;
-    public PlayerSitePreview PreviewBuild(string type,Vector3 center,float yaw=0)
+    public PlayerSitePreview PreviewBuild(string type, Vector3 center, float yaw = 0)
     {
-        if(!BootstrapEnabled||!ReadPlayerState().Ready)return new(false,"等待世界准备",center,_liveTerrain?.Current.Version??0,0);
-        if(!_bootstrapConfig.Buildings.Any(b=>b.Id==type)||!float.IsFinite(yaw)||Math.Abs(yaw)>MathF.PI||!float.IsFinite(center.X)||!float.IsFinite(center.Z))return new(false,"设施或朝向无效",center,_liveTerrain!.Current.Version,0);
-        float radius=(float)Definition(type).Radius;center.Y=0;
-        string why="";var t=_liveTerrain!.Current;
-        if(HasCurrentWork)why="先完成或取消当前工程";
-        else if(!_liveTerrain.PermissionGranted||_liveTerrain.CancellationRequested)why="未获建设权限";
-        else if(Math.Abs(center.X)+radius+t.SpacingM*3+2>=_cfg.Terrain.Size/2||Math.Abs(center.Z)+radius+t.SpacingM*3+2>=_cfg.Terrain.Size/2)why="设施与作业站须位于场地内部";
-        else if(_baseFacilities.Any(f=>XzDistance(LoadVector(f.Position),center)<=BaseRadius(f)+radius+(float)t.SpacingM*2+1))why="与设施或已有工程重叠";
-        else if(_groundRobots.Any(a=>XzDistance(a.GlobalPosition,center)<=a.BodyRadius+radius+(float)t.SpacingM*2))why="作业范围内有机器人";
-        else if(DevelopmentEnabled&&_mines.Any(m=>XzDistance(LoadVector(m.Position),center)<=radius+2+(float)t.SpacingM*2+1))why="建设不得覆盖已知矿点与采集包络";
-        else if(StartupGuard(type) is { Length: >0 } guard)why=guard;
-        else if(DevelopmentEnabled)why=DevelopmentFeasibility(type);
-        else if(BuildCost(type).Any(x=>_ledger.Available("lander",x.Key)<x.Value))why="有限启动库存不足："+FormatMaterials(BuildCost(type));
-        if(why.Length==0&&!_groundRobots.Any(a=>a.Name.ToString().StartsWith("Robot_Zhulei_")&&Operational(a)))why="没有可行动的筑垒";
-        string gap=DevelopmentEnabled?FormatMaterials(BuildCost(type).Where(x=>UsableStock()[x.Key]<x.Value).ToDictionary(x=>x.Key,x=>x.Value-UsableStock()[x.Key])):"";
-        return new(why.Length==0,why.Length==0?"可建设 · "+BaseName(type)+" · "+FormatMaterials(BuildCost(type))+(gap.Length==0?"":" · 净缺口 "+gap):why,center,t.Version,0,radius+(float)t.SpacingM);
+        var plan = ReadBuildPlan(type, center, yaw);
+        return new(plan.CanSubmit, plan.CanSubmit ? "可建设 · " + plan.Name + " · " + FormatMaterials(BuildCost(type)) : plan.SubmitReason,
+            plan.Center, plan.ObservedVersion, 0, plan.Radius);
     }
     public void QueueBuild(string type,Vector3 center,float yaw,long observedVersion)
         =>QueuePlayer(new("build:"+type,center,observedVersion,null,yaw));
@@ -211,17 +215,19 @@ public partial class Main
         var builder=_groundRobots.Where(a=>a.Name.ToString().StartsWith("Robot_Zhulei_")&&Operational(a)&&!Servicing(a)).OrderBy(a=>XzDistance(a.GlobalPosition,center)).FirstOrDefault();
         var hauler=_groundRobots.Where(a=>a.Name.ToString().StartsWith("Robot_Tuoyun_")&&Operational(a)&&!Servicing(a)).OrderBy(a=>_ledger.Load(CargoContainer(a.Name.ToString()))==0?1:0).FirstOrDefault();
         if(builder==null||hauler==null)throw new InvalidOperationException("需要可行动的筑垒和驮运");
-        string id="build-"+(++_buildSequence);var cost=BuildCost(type);
+        string id="build-"+(_buildSequence+1);var cost=BuildCost(type);
         var f=wire?_baseFacilities.Single(f=>f.Id==connectionTarget):new BaseFacility{Id=id,Type=type,Position=SavedVector(new(center.X,0,center.Z)),Yaw=yaw};
         var patch=wire?GroundPatchFromHeights(_liveTerrain!.Current,_liveTerrain.Current.HeightsM.ToArray(),id):BuildPatch(_liveTerrain!.Current,center,BaseRadius(f),id);
         var station=FindBuildStation(builder,center,patch,BaseRadius(f));
         if(station==null)throw new InvalidOperationException("没有可达且不触及整平范围的施工站");
-        if(!wire)_ledger.AddContainer(f.Id,100);
-        else _ledger.AddContainer(id,100);
-        _ledger.Reserve(id,supply,cost);
+        var nextLedger = new MaterialLedger(_ledger.Snapshot());
+        nextLedger.AddContainer(wire ? id : f.Id, 100);
+        nextLedger.Reserve(id,supply,cost);
+        _ledger = nextLedger; _buildSequence++;
         _levelJob=null;
         _buildJob=new(){Id=id,Type=type,Facility=f.Id,Source=source,Supply=supply,Center=SavedVector(new(center.X,0,center.Z)),Yaw=yaw,Cost=cost,Builder=builder.Name.ToString(),Hauler=hauler.Name.ToString(),Station=SavedVector(station.Value),Patch=TerrainDataCodec.Serialize(patch)};
         if(!wire){_baseFacilities.Add(f);_baseRevision++;RebuildBaseFacilities();}
+        if (!wire && !TutorialEnabled) _intentVersion++;
         _playerNotice="已登记工程；运输和实际工段后落成";
     }
     private Vector3? FindBuildStation(GroundPatrol actor,Vector3 center,TerrainPatch patch,float radius)
@@ -233,19 +239,14 @@ public partial class Main
     }
     private void ConnectNextFacility()
     {
-        if(HasCurrentWork)throw new InvalidOperationException("先完成或取消当前工程");
-        foreach(var f in _baseFacilities.Where(f=>f.Built&&f.Type is not ("solar" or "lander" or "storage")&&f.Source==null))
-        {
-            var source=_baseFacilities.Where(s=>s.Built&&s.Type=="solar"&&XzDistance(LoadVector(s.Position),LoadVector(f.Position))<=_bootstrapConfig.ConnectionRangeM).OrderBy(s=>XzDistance(LoadVector(s.Position),LoadVector(f.Position))).FirstOrDefault();
-            if(source==null)continue;
-            if(DevelopmentEnabled)StartDevelopment("connection",LoadVector(f.Position),f.Yaw,f.Id,source.Id);else StartBaseBuild("connection",LoadVector(f.Position),f.Yaw,f.Id,source.Id);return;
-        }
-        throw new InvalidOperationException("没有位于已建阵列12m内且尚未连接的用电设施");
+        var option = ReadConnectionOptions().Where(o => o.CanSubmit).OrderBy(o => o.DistanceM).FirstOrDefault()
+            ?? throw new InvalidOperationException("没有可付费连接且位于已建阵列12m内的未接线设施");
+        ProcessExplicitConnection(new("connection", Vector3.Zero, option.ObservedVersion, option.FacilityId, 0, option.SourceId));
     }
     private void CancelBaseBuild()
     {
-        if(_buildJob?.Active!=true)return;
-        var j=_buildJob;j.Stage="Cancelled";j.Reason="已取消；地形、现场物料与在途货物保留";_ledger.Release(j.Id);
+        if(_buildJob is not {} j || (!j.Active && j.Stage != "Blocked"))return;
+        j.Stage="Cancelled";j.Reason="已取消；地形、现场物料与在途货物保留";j.FeedbackCode=PlayerReasonCode.Cancelled;_ledger.Release(j.Id);
         foreach(var id in new[]{j.Builder,j.Hauler}.Concat(j.Clearance.Keys).Distinct())
         ClearBaseWorkOrder(id);
         _playerNotice=j.Reason;
@@ -259,8 +260,11 @@ public partial class Main
     {
         var site=_baseFacilities.Single(f=>f.Id==j.Facility);
         var dock=FreeStation(site,hauler);
-        if(dock==null||!TakeStation(site.Id,j.Hauler))return false;
-        j.HaulStation=SavedVector(dock.Value);return OrderBase(hauler,dock.Value);
+        if(dock==null){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="已取货并保留载荷；当前未找到可达卸货工位候选";return false;}
+        if(!TakeStation(site.Id,j.Hauler)){j.FeedbackCode=PlayerReasonCode.WaitingForStation;j.Reason="已取货并保留载荷；等待卸货工位占用解除";return false;}
+        j.HaulStation=SavedVector(dock.Value);
+        if(!OrderBase(hauler,dock.Value)){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="已取货并保留载荷；卸货路线重验未找到路线";return false;}
+        j.FeedbackCode=PlayerReasonCode.None;j.Reason="已真实取货，驮运载货前往工地";return true;
     }
     private static string BaseStageText(string stage)=>stage switch
     {
@@ -300,7 +304,7 @@ public partial class Main
         var patch=TerrainDataCodec.ParsePatch(j.Patch);
         j.Stage=patch.HeightsM.SequenceEqual(_liveTerrain!.Current.HeightsM)||j.Type=="connection"?"Fetching":"Preparing";
         if(j.Stage=="Preparing"&&patch.Base.Version!=_liveTerrain.Current.Version)throw new InvalidOperationException("地形已变化，保留工程；需另选位置");
-        j.Waiting=0;j.Reason=j.Stage=="Fetching"?"重新安排余料运输，保留现场与载货":"重新安排让位与施工，保留已结算物料";
+        j.Waiting=0;j.FeedbackCode=PlayerReasonCode.None;j.Reason=j.Stage=="Fetching"?"重新安排余料运输，保留现场与载货":"重新安排让位与施工，保留已结算物料";
         _playerNotice="继续原工程；不会重扣已消耗物料";
     }
 
@@ -312,7 +316,8 @@ public partial class Main
     }
     private void TickBaseBuild(double delta)
     {
-        var j=_buildJob;if(j?.Active!=true)return;
+        var j=_buildJob;if(_managementPaused || j?.Active!=true)return;
+        j.FeedbackCode=PlayerReasonCode.None;
         var builder=Actor(j.Builder);var hauler=Actor(j.Hauler);var station=LoadVector(j.Station);var center=LoadVector(j.Center);var cargo=CargoContainer(j.Hauler);string buffer=j.Type=="connection"?j.Id:j.Facility;
         if(Servicing(builder)||Servicing(hauler)){j.Reason="保障中，原工程、载荷与进度保留";return;}
         if(!Operational(builder)||!Operational(hauler)){j.Reason="执行者停机；货物与工程保留，救援尚待D2";return;}
@@ -357,11 +362,13 @@ public partial class Main
             case "Fetching":
                 StopBase(builder);ReleaseStations(j.Builder);
                 var depot=_baseFacilities.Single(f=>f.Id==j.Supply);var dock=FreeStation(depot,hauler);
-                if(dock==null||!TakeStation(j.Supply,j.Hauler))break;
-                if(OrderBase(hauler,dock.Value)){j.Stage="Pickup";j.Reason="驮运前往"+BaseName(depot.Type)+"取货";}break;
+                if(dock==null){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="等待取货；当前未找到可达"+BaseName(depot.Type)+"取货工位候选";break;}
+                if(!TakeStation(j.Supply,j.Hauler)){j.FeedbackCode=PlayerReasonCode.WaitingForStation;j.Reason="等待"+BaseName(depot.Type)+"取货工位占用解除";break;}
+                if(OrderBase(hauler,dock.Value)){j.Stage="Pickup";j.Reason="驮运前往"+BaseName(depot.Type)+"取货";}
+                else{j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="取货路线重验未找到路线；尚未交接物料";}break;
             case "Pickup":
-                if(!TakeStation(j.Supply,j.Hauler))break;
-                if(!_routes.TryGetValue(j.Hauler,out var pickup)||!Arrived(hauler,pickup.Destination))break;
+                if(!TakeStation(j.Supply,j.Hauler)){j.FeedbackCode=PlayerReasonCode.WaitingForStation;j.Reason="等待取货工位占用解除；尚未交接物料";break;}
+                if(!_routes.TryGetValue(j.Hauler,out var pickup)||!Arrived(hauler,pickup.Destination)){if(!hauler.HasOrder){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="尚未到达取货位；当前路线未继续执行，物料仍在仓内";}break;}
                 if(_ledger.Load(cargo)>0)TransferMaterials(j.Id+"-return-"+j.Trip,j.Id,cargo,j.Supply,new(_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value)));
                 var need=j.Cost.ToDictionary(x=>x.Key,x=>Math.Max(0,x.Value-_ledger.Count(buffer,x.Key)));int remaining=_bootstrapConfig.CargoCapacity;
                 var load=new Dictionary<string,int>();foreach(var pair in need){int n=Math.Min(remaining,pair.Value);if(n>0){load.Add(pair.Key,n);remaining-=n;}}
@@ -375,8 +382,8 @@ public partial class Main
                 break;
             case "CargoWaiting":if(OrderDelivery(j,hauler))j.Stage="Delivering";break;
             case "Delivering":
-                if(!TakeStation(j.Facility,j.Hauler))break;
-                if(j.HaulStation==null||!Arrived(hauler,LoadVector(j.HaulStation)))break;
+                if(!TakeStation(j.Facility,j.Hauler)){j.FeedbackCode=PlayerReasonCode.WaitingForStation;j.Reason="载货保留；等待卸货工位占用解除";break;}
+                if(j.HaulStation==null||!Arrived(hauler,LoadVector(j.HaulStation))){if(!hauler.HasOrder){j.FeedbackCode=PlayerReasonCode.WaitingForRoute;j.Reason="载货未到卸货位；当前路线未继续执行";}break;}
                 var items=_ledger.Snapshot().Containers.Single(c=>c.Id==cargo).Items.Where(x=>x.Value>0).ToDictionary(x=>x.Key,x=>x.Value);
                 TransferMaterials(j.Id+"-unload-"+j.Trip,j.Id,cargo,buffer,items);j.Trip++;ReleaseStations(j.Hauler);j.Stage="Fetching";j.Reason="物料已在现场交接；继续补足余料";break;
             case "BuilderTravel":
@@ -389,7 +396,8 @@ public partial class Main
                 if(j.Type!="connection"&&_groundRobots.Any(a=>XzDistance(a.GlobalPosition,center)<BaseRadius(f)+a.BodyRadius)){j.Reason="等待落成占地空闲";break;}
                 TransferMaterials(j.Id+"-consume",j.Id,buffer,"spent",j.Type=="connection"?j.Cost:Definition(j.Type).Cost);
                 if(j.Type=="connection"){f.Source=j.Source;f.ConnectionId=j.Id;}else f.Built=true;
-                _baseRevision++;RebuildBaseFacilities();StopBase(builder);ReleaseStations(j.Builder);_ledger.Release(j.Id);j.Stage="Completed";j.Reason=j.Type=="connection"?"电缆已铺设；按日照与实际出力供电":"已落成："+BaseName(j.Type);_playerNotice=j.Reason;break;
+                _baseRevision++;RebuildBaseFacilities();StopBase(builder);ReleaseStations(j.Builder);_ledger.Release(j.Id);j.Stage="Completed";j.Reason=j.Type=="connection"?"电缆已铺设；按日照与实际出力供电":"已落成："+BaseName(j.Type);_playerNotice=j.Reason;
+                RecordTutorialBuild(j); _intentVersion++; break;
         }
         if(j.Stage!=previous)j.Waiting=0;
     }
@@ -402,6 +410,7 @@ public partial class Main
     {var h=_health[actor.Name.ToString()];h.Energy=Math.Max(0,h.Energy-_bootstrapConfig.WorkEnergyPerSecond*delta);h.Durability=Math.Max(0,h.Durability-_bootstrapConfig.WorkWearPerSecond*delta);}
     private void SettleBaseMovement()
     {
+        if (_managementPaused) return;
         foreach(var actor in _groundRobots)
         {
             var h=_health[actor.Name.ToString()];double moved=Math.Max(0,actor.TravelledM-h.Travel);h.Travel=actor.TravelledM;
@@ -410,16 +419,21 @@ public partial class Main
     }
     private void TickBootstrap(double delta)
     {
+        if (_managementPaused) return;
         _recipeWorked=false;TickBaseRoutes(delta);TickBaseServices(delta);TickBaseBuild(delta);TickDevelopment(delta);
     }
     private void TickBaseRoutes(double delta)
     {
+        if (_managementPaused) return;
         foreach(var pair in _routes.ToArray())
         {
             var a=Actor(pair.Key);var r=pair.Value;if(_services.TryGetValue(pair.Key,out var waiting)&&waiting.Blocked)continue;
             if(!Operational(a)||a.Paused||Arrived(a,r.Destination))continue;
             r.Seconds+=delta;r.Stalled=a.Blocked||!a.HasOrder?r.Stalled+delta:0;
-            if(r.WorldVersion!=_liveTerrain!.Current.Version||r.FacilityRevision!=_baseRevision||r.Stalled>.6)
+            bool changed = r.WorldVersion != _liveTerrain!.Current.Version || r.FacilityRevision != _baseRevision;
+            if (r.Escaping && XzDistance(a.GlobalPosition, r.EscapeDestination) <= GroundPatrol.WaypointReachXzM
+                && BoundedRoute.FootprintClear(_liveTerrain!.Current, new(a.GlobalPosition.X, a.GlobalPosition.Z), RouteFootprint(a))) r.Escaping = false;
+            if(changed || !r.Escaping && r.Stalled>.6)
             {double elapsed=r.Seconds;if(OrderBase(a,r.Destination))_routes[pair.Key].Seconds=elapsed;else{a.ClearOrder();r.Stalled=0;}}
             if(r.Seconds>120)
             {
@@ -430,6 +444,7 @@ public partial class Main
     }
     private void TickBaseServices(double delta)
     {
+        if (_managementPaused) return;
         foreach(var actor in _groundRobots)
         {
             string id=actor.Name.ToString();var h=_health[id];

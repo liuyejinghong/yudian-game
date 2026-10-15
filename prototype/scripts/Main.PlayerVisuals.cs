@@ -19,7 +19,7 @@ public partial class Main
         if(_resourceViewDirty){RebuildResourceViews();_resourceViewDirty=false;}
         TickCargoGlyphs();
         UpdatePlayerSurface();
-        bool frozen = _entryOpen || _userPaused || _projectionPaused || _loadPending != null || _groundFault;
+        bool frozen = _entryOpen || _menuPaused || _userPaused || _managementPaused || _projectionPaused || _loadPending != null || _groundFault;
         foreach (var actor in _groundRobots)
         {
             if (!_playerVisuals.TryGetValue(actor, out var item)) continue;
