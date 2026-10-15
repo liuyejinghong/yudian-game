@@ -13,6 +13,7 @@
 | N002 | 建议P2 | HUD重复加入相同preview/plan拒因。按精确文本保序去重，不丢不同真实阻塞原因。 |
 | N004 | 建议P2 | 关联详情显示启用取消按钮，但入口因关联ID非空直接返回。关联当前工程可以打开已有后果确认，历史关联不得取消别的当前目标；Esc逐层返回与确认重验保持。不是底层取消队列失败。 |
 | B002 | 既有技术候选 | 旧已受理太阳能正常加载后仍Blocked180，原目标恢复FAIL。取消后的货物再利用另项PASS；不得互相替代。 |
+| reuse-save | 建议P1，run-02新增、独立分诊 | 再利用链至新storage Completed成立，但完成后normal save失败（E034）且无异常日志；不保存退出E035 ERROR0，先前valid档字节未变。保存当前成果失败而旧档保；不改正式P0=0/P1=1/P2=0账。独立Sol私有scratch正常公开命令复现取throw，暂不生产改；不猜磁盘权限。 |
 
 旧正式台账仍为P0=0/P1=1/P2=0。D001为确认P1，须无提示真人G001关闭，AI教学8/8不能关闭。
 
@@ -56,6 +57,19 @@
 
 最终候选的首个N003私有入口启动到主页，但两次观察分别timeoutReached/cgWindowNotFound，未执行读档；停止该观察路径后仅终止自有PID，种子原字节未变。退出日志出现34条Godot静态字符串/渲染清理ERROR，保留原件，不签该run日志干净或原目标恢复。此前诊断包两原目标正常重试日志均ERROR0；不能替代最终修复包验收。
 
-新包原目标恢复、原生保存冷载、取消保货/地形、再利用：BLOCKED或NOT_RUN，逐项交后续Codex正常UI复验。主控另在隔离Main工程驱动实际复验N003/B002同目标Completed与各两次公共保存恢复、取消后公共保存恢复，三组ERROR0；只读结果核原ID/位置/朝向未换，取消物料/交易/地形不变而cable2/kit1预约释放。此为工程证据不代原生。精确1920×1080/1920×1200三倍率与A/B两独立根已备，未跑仍NOT_RUN，不以实际小窗代签。代码和工程修复已完成，批1原生验收尚未关闭，批2/批3未开。
+新包原目标恢复与正常保存冷载已由主控run-02亲自原生PASS（N003、B002）；N004关联取消与取消保货/保地形/预约释放亦已run-02原生PASS（见下节）。N001接线原生本轮FAIL（普通CoreAudio启动另记BLOCKED，不判游戏逻辑；静音实例复现真实布局缺陷），GLM HUD writer已按冻结预算修法返修；货物再利用链至新storage Completed成立但完成后保存失败（reuse-save建议P1，独立Sol私有scratch复现取throw中），整链不签PASS；N002原生复验仍NOT_RUN。新候选待N001返修与reuse-save两项集成后固定。主控另在隔离Main工程驱动实际复验N003/B002同目标Completed与各两次公共保存恢复、取消后公共保存恢复，三组ERROR0；只读结果核原ID/位置/朝向未换，取消物料/交易/地形不变而cable2/kit1预约释放。此为工程证据，其中原目标恢复与取消事实现另有run-02原生签认，货物再利用仍不代原生。精确1920×1080/1920×1200三倍率与A/B两独立根已备，未跑仍NOT_RUN，不以实际小窗代签。代码和工程修复已完成，批1原生验收总项仍进行（已结清N003/B002/N004与取消保货保地形；N001与reuse-save返修中），批2/批3未开。
 
 首次修复分支推送与API核对遇GitHub TLS连接失败，原失败保留；网络恢复后的正常重试已推送至 `52f4750`，draft PR为 [#63](https://github.com/liuyejinghong/yudian-game/pull/63)，基于原批1分支、不合并。候选游戏源仍固定4f311e6，后续仅文档更新。结果与可继续执行的本机验收prompt保留于新的私有run目录。
+
+## 2026-10-15 · run-02 主控亲自原生复验（N003/B002/N004与取消保货保地形PASS）
+
+所有者新授权：run-02由主控亲自操作、核验与记录，独立于旧run-01；run-01工具阻断与退出34条ERROR历史原件保留，不覆盖、不改判。固定源 `4f311e6` 候选（PCK同 `f28a716…`），正常CUA输入、GUI_TEST与独立私有根，无自动driver/资源注入/时钟修改。原目标恢复轨（N003/B002）原现场仅原字节复制进新私有根，不换址、不取消、不编辑存档；取消轨（N004、cancel-materials）按各自步骤经确认真实取消；N001静音clone仅添加官方 `--audio-driver Dummy`（Metal/正常CUA/同源不变，audio不在PASS）。
+
+- N003 原目标恢复与正常保存冷载：PASS。E248原字节副本正常UI载入Blocked现场，原步骤诊断→重试工程/保障，保持 goal-9/build-9、solar、中心(17.129562,0,-10.15947)、yaw0，真实进入Delivering。运输中正常菜单保存E001（Time 7075.733333314515，同半径22.5°斜向HaulStation(22.2109,0.09208831,-8.054711)），E002退出ERROR0。同app/根冷启动→继续，运输档读取并实际续交货/取下一批；原目标落成，教学5/8→6/8，E003（Time 7175.133333313069）goal/build均Completed、build-9设施Built=true、ID/中心/朝向不变，E004退出ERROR0。再冷载继续显示已落成、教学6/8、无进行中工程，E005（Time 7217.333333312455）事实保持、Terrain与E003完全相同，E006退出ERROR0、自有进程退出。运输冷载与完成成果冷载分别有原字节保存与退出日志，不宣称全世界字节不变；正常原生画面为逻辑1280×800，不代其他尺寸。
+- B002 原目标恢复与正常保存冷载：PASS。E140原字节副本正常UI载入，保持 goal-9/build-8、中心(12.406353,0,-11.329565)、yaw0。运输中正常保存E007（Time 2430.7833333366734，HaulStation(6.701397,0.5676698,-13.692635)）；E008退出日志ERROR0，DELIVERY_STATION_SET 四轴先行、按序评估前51候选即于SelectedIndex50命中施工安全外缘6.175m、202.5°斜向候选Found=true，站址与HaulStation一致（同半径202.5°候选仍Found=false；总64候选未全评估）。正常运输存档冷载→继续→原目标Completed：E009（Time 2478.2166666706107）goal/build均Completed、build-8设施Built=true、ID/中心/朝向不变，E010退出ERROR0。完成后冷载E011（Time 2486.833333337387）原目标/中心/朝向保持、Terrain与E009完全相同，E012退出ERROR0、进程退出。
+- N004 关联取消与普通工程取消：PASS。原E350现场正常UI载入，真实建设goal-1/build-1至运输阶段；经物资预约查看关联详情，取消打开点名确认，Esc后画面仅退确认层；关联详情仍开时直接Close再重开无旧详情残留（截图留证）。确认后真实取消：E013（Time 371.4333333333242，build-1 Delivering）→E014（同Time，goal-1/build-1均Cancelled），Terrain与Ledger的Containers/Operations/Mining/Recipes四字段全等；E015退出ERROR0。
+- 取消保货/保地形/预约释放（cancel-materials）：PASS。原E248独立根载入，初Blocked时预约已释放、不是有预约样本；正常手动暂停→重试原goal-9/build-9进入Fetching，真实预约cable2/kit1（build-8）落账后保存E017（Time 7053.566666648171，Paused）；经物资预约相关详情点取消→确认真实取消→E018（同Time，Cancelled）。E019判据：time/terrain/Containers/Operations/Mining/Recipes全等，预约两行→[]，驮运1货舱铁4/结构4及其余原值保持；释放的是线缆2/套件1预约，未移动库存；E020退出ERROR0。
+- N001 活动接线原生：本轮FAIL，返修中。普通CoreAudio两次启动（PID 26421/35903）主线程样本均等待 AudioComponentInstanceNew/AudioDeviceGetProperty/HALC_ProxyObject 同步IPC，未进场景、原生日志0字节、captures空，两sample保留：普通启动BLOCKED，不判游戏逻辑、不签普通启动。仅新私有clone添加官方 `--audio-driver Dummy`（Metal/正常CUA/同源4f311e6与PCK `f28a716…`不变，audio不在PASS），静音实例正常UI设置150%→载入原档继续→暂停→接线：确认/关闭按钮可见（E027）；真实滚动到末端，最后多行pair被裁只余尾行（E028）；点击末pair拒因变更为“迁移目标须明确接入新增太阳能”，更长文本致候选列表高度0（E029）。E030活动接线态正常保存（connection Delivering，Paused）、E031正常退出ERROR0；1280×800 telemetry实证。此前headless1130 PASS与AX点击可达不代完整可读，N001不得据此签过。
+- 货物再利用与保存失败（reuse-materials）：整链不签PASS。同静音clone正常载入原E248→暂停取消goal-9/build-9→正常保存E032（Cancelled、预约空、驮运1铁4/结构4在舱）；正常UI新storage预览约(-5.3,10.8) yaw0合法→提交unpause，旧货真实退仓、仓储铁4/结构4出现，新build-10 storage Completed（E033截图）。但完成后normal save失败（E034），无具体异常日志；不保存正常退出E035 ERROR0，先前valid档槽与E032字节完全相同。再利用事实与冷载无持久化对比不签PASS；reuse-save单独记建议P1，不猜磁盘权限，不改已过的物流/取消结论。
+- 两项返修已派：N001唯一GLM HUD writer按冻结预算修法（main无重叠）；reuse-save独立Sol私有scratch正常公开命令复现取throw，暂不生产改。新候选待两项集成后固定。b002-active原生正常载入后paused CargoWaiting→unpause即Delivering，进行中不签PASS。
+- E001–E035 checkpoint、退出日志、截图与启动样本留存于私有验收目录，档身份SHA在私有记录；公开仓库只记E编号与本节事实，不收私人路径或存档数据。N002原生、精确尺寸与A/B未在本run结清；N001与reuse-save返修中，均不代签。
