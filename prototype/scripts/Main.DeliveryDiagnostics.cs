@@ -14,7 +14,7 @@ public partial class Main
 {
     private string? _deliveryDiagnosticSignature;
     private ulong _deliveryDiagnosticFrame;
-    private sealed record DeliveryCandidateDiagnostic(Vector3 Station, RouteResult Route);
+    private sealed record DeliveryCandidateDiagnostic(Vector3 Station, RouteResult Route, StationCandidates.Candidate Candidate);
     private sealed record DeliveryObstacleDiagnostic(string Id, string Kind, string Type, NavObstacle Geometry);
 
     // Only the normal UI's private acceptance world may emit this evidence. No path is logged.
@@ -37,6 +37,10 @@ public partial class Main
     private void CompleteDeliveryStationDiagnostics(BaseFacility facility, GroundPatrol actor, List<DeliveryCandidateDiagnostic>? candidates)
     {
         if (candidates == null || _buildJob is not {} job) return;
+        ulong frame = Engine.GetPhysicsFrames();
+        // Gate before obstacle/signature construction, including the bounded fallback candidate list.
+        if (_deliveryDiagnosticSignature != null && frame - _deliveryDiagnosticFrame < (ulong)Math.Max(1, Engine.PhysicsTicksPerSecond)) return;
+        _deliveryDiagnosticFrame = frame;
         string actorId = actor.Name.ToString();
         var terrain = _liveTerrain!.Current;
         var start = actor.GlobalPosition;
@@ -57,11 +61,7 @@ public partial class Main
                 c.Route.WorldVersion, LengthM = Math.Round(c.Route.LengthM, 3) }).ToArray()
         });
         if (_deliveryDiagnosticSignature == signature) return;
-        ulong frame = Engine.GetPhysicsFrames();
-        // Moving blockers can change every frame; emit the latest changed set at most once per physics second.
-        if (_deliveryDiagnosticSignature != null && frame - _deliveryDiagnosticFrame < (ulong)Math.Max(1, Engine.PhysicsTicksPerSecond)) return;
         _deliveryDiagnosticSignature = signature;
-        _deliveryDiagnosticFrame = frame;
 
         bool startFootprintClear = BoundedRoute.FootprintClear(terrain, new(start.X, start.Z), RouteFootprint(actor));
         var startConnections = BoundedRoute.DiagnoseConnections(terrain, new(start.X, start.Z), actor.BodyRadius,
@@ -76,7 +76,8 @@ public partial class Main
             TerrainVersion = terrain.Version, BaseRevision = _baseRevision, WorldEpoch = _worldEpoch,
             Facility = facility.Id, FacilityType = facility.Type, FacilityBuilt = facility.Built, FacilityCenter = DiagnosticPosition(LoadVector(facility.Position)),
             Build = job.Id, BuildStage = job.Stage, Goal = _development?.Id, GoalStage = _development?.Stage,
-            job.Builder, job.Hauler, job.Trip, EvaluatedCandidates = candidates.Count, AllFourEvaluated = candidates.Count == 4,
+            job.Builder, job.Hauler, job.Trip, EvaluatedCandidates = candidates.Count,
+            AllFourEvaluated = candidates.Count(c => c.Candidate.Kind == "original-axis") == 4,
             SelectedIndex = candidates.FindIndex(c => c.Route.Found),
             StartConnections = startConnections.Select(c => ConnectionEvidence(c, identified)).ToArray()
         }));
@@ -89,7 +90,9 @@ public partial class Main
             GD.Print("DELIVERY_STATION_CANDIDATE " + JsonSerializer.Serialize(new
             {
                 Actor = actorId, Facility = facility.Id, Build = job.Id, BuildStage = job.Stage, Goal = _development?.Id,
-                TerrainVersion = terrain.Version, BaseRevision = _baseRevision, Index = index, Axis = new[] { "+X", "-X", "+Z", "-Z" }[index],
+                TerrainVersion = terrain.Version, BaseRevision = _baseRevision, Index = index, candidate.Candidate.Axis,
+                candidate.Candidate.Kind, candidate.Candidate.RingIndex, candidate.Candidate.DirectionIndex,
+                candidate.Candidate.RadiusM, candidate.Candidate.AngleDegrees,
                 Station = DiagnosticPosition(candidate.Station), GroundHeightM = SavedGroundHeight(terrain, candidate.Station.X, candidate.Station.Z),
                 candidate.Route.Found, candidate.Route.Reason, candidate.Route.WorldVersion, candidate.Route.LengthM,
                 EndpointFootprintClear = BoundedRoute.FootprintClear(terrain, endpoint, RouteFootprint(actor)),

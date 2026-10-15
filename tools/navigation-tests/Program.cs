@@ -16,6 +16,7 @@ internal static class Program
             CultureInfo.CurrentCulture = culture;
             CultureInfo.CurrentUICulture = culture;
             Console.WriteLine($"== culture: '{culture.Name}' / {System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription} ==");
+            StationCandidateContractTests.RunAll();
             failedTotal += NavigationContractTests.RunAll();
         }
 

@@ -182,12 +182,16 @@ public partial class Main
     {
         var diagnostics=BeginDeliveryStationDiagnostics(f,a,excluded);
         var p=LoadVector(f.Position);float d=BaseRadius(f)+a.BodyRadius+1.2f;
-        foreach(var offset in new[]{new Vector3(d,0,0),new Vector3(-d,0,0),new Vector3(0,0,d),new Vector3(0,0,-d)})
+        var terrain=_liveTerrain!.Current;
+        bool unloading=excluded==null&&!f.Built&&_buildJob is {} job&&job.Facility==f.Id&&job.Hauler==a.Name.ToString()&&job.Type!="connection";
+        // Share the existing construction-station outer bound; never widen service, pickup or wire docks.
+        float? edge=unloading?BaseRadius(f)+(float)terrain.SpacingM*2+a.BodyRadius:null;
+        foreach(var candidate in StationCandidates.Enumerate(terrain,p.X,p.Z,d,edge))
         {
-            var station=p+offset;
+            var station=new Vector3((float)candidate.Point.X,p.Y,(float)candidate.Point.Z);
             if(excluded!=null&&(TouchesFootprint(excluded,station.X,station.Z,a.BodyRadius)||_buildJob!.Clearance.Any(x=>x.Key!=a.Name.ToString()&&XzDistance(station,LoadVector(x.Value))<=a.BodyRadius+Actor(x.Key).BodyRadius+.5f)))continue;
             var route=FindRoute(a,station);
-            diagnostics?.Add(new(station,route));
+            diagnostics?.Add(new(station,route,candidate));
             if(route.Found){station.Y=(float)SavedGroundHeight(_liveTerrain!.Current,station.X,station.Z);CompleteDeliveryStationDiagnostics(f,a,diagnostics);return station;}
         }
         CompleteDeliveryStationDiagnostics(f,a,diagnostics);
